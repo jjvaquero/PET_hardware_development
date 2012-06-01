@@ -1,0 +1,141 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'ifclk'
+Slack : -8.332
+TNS   : -16.063
+
+Type  : Slow Model Setup 'wen'
+Slack : -7.494
+TNS   : -3503.664
+
+Type  : Slow Model Setup 'control_fifo:inst2|EA[0]'
+Slack : -6.363
+TNS   : -2897.874
+
+Type  : Slow Model Setup 'control_disparo:inst|EA[1]'
+Slack : -4.846
+TNS   : -2081.249
+
+Type  : Slow Model Setup 'inst4|altpll_component|pll|clk[1]'
+Slack : -3.088
+TNS   : -35.505
+
+Type  : Slow Model Hold 'control_disparo:inst|EA[1]'
+Slack : -3.884
+TNS   : -270.682
+
+Type  : Slow Model Hold 'control_fifo:inst2|EA[0]'
+Slack : -2.886
+TNS   : -63.879
+
+Type  : Slow Model Hold 'ifclk'
+Slack : -2.663
+TNS   : -15.042
+
+Type  : Slow Model Hold 'wen'
+Slack : -1.236
+TNS   : -2.290
+
+Type  : Slow Model Hold 'inst4|altpll_component|pll|clk[1]'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'ifclk'
+Slack : 8.757
+TNS   : 0.000
+
+Type  : Slow Model Removal 'ifclk'
+Slack : 11.820
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'control_fifo:inst2|EA[0]'
+Slack : -2.064
+TNS   : -4104.632
+
+Type  : Slow Model Minimum Pulse Width 'wen'
+Slack : -2.064
+TNS   : -2053.785
+
+Type  : Slow Model Minimum Pulse Width 'control_disparo:inst|EA[1]'
+Slack : -2.064
+TNS   : -2052.316
+
+Type  : Slow Model Minimum Pulse Width 'ifclk'
+Slack : 7.852
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'inst4|altpll_component|pll|clk[1]'
+Slack : 8.888
+TNS   : 0.000
+
+Type  : Fast Model Setup 'ifclk'
+Slack : -3.025
+TNS   : -5.858
+
+Type  : Fast Model Setup 'wen'
+Slack : -2.383
+TNS   : -1033.447
+
+Type  : Fast Model Setup 'control_fifo:inst2|EA[0]'
+Slack : -2.327
+TNS   : -1003.985
+
+Type  : Fast Model Setup 'control_disparo:inst|EA[1]'
+Slack : -1.587
+TNS   : -608.138
+
+Type  : Fast Model Setup 'inst4|altpll_component|pll|clk[1]'
+Slack : -1.511
+TNS   : -17.776
+
+Type  : Fast Model Hold 'control_fifo:inst2|EA[0]'
+Slack : -1.722
+TNS   : -28.346
+
+Type  : Fast Model Hold 'ifclk'
+Slack : -1.693
+TNS   : -13.102
+
+Type  : Fast Model Hold 'control_disparo:inst|EA[1]'
+Slack : -1.343
+TNS   : -41.865
+
+Type  : Fast Model Hold 'wen'
+Slack : -0.547
+TNS   : -1.032
+
+Type  : Fast Model Hold 'inst4|altpll_component|pll|clk[1]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'ifclk'
+Slack : 9.627
+TNS   : 0.000
+
+Type  : Fast Model Removal 'ifclk'
+Slack : 11.082
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'control_fifo:inst2|EA[0]'
+Slack : -1.880
+TNS   : -3725.600
+
+Type  : Fast Model Minimum Pulse Width 'wen'
+Slack : -1.880
+TNS   : -1864.022
+
+Type  : Fast Model Minimum Pulse Width 'control_disparo:inst|EA[1]'
+Slack : -1.880
+TNS   : -1862.800
+
+Type  : Fast Model Minimum Pulse Width 'ifclk'
+Slack : 8.036
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'inst4|altpll_component|pll|clk[1]'
+Slack : 8.999
+TNS   : 0.000
+
+------------------------------------------------------------

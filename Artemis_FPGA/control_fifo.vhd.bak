@@ -1,0 +1,137 @@
+LIBRARY IEEE;
+
+use IEEE.STD_LOGIC_1164.ALL;
+
+
+entity control_fifo is
+		
+port(
+	--entradas
+	
+	n_data: in std_logic; --n_data = nbusy1 and nbusy2 and ....and de todas las nbusy
+	dataIn_1: in std_logic_vector(11 downto 0);
+	dataIn_2: in std_logic_vector(11 downto 0);
+	fifo_clk: in std_logic; --reloj del sistema
+	--salidas
+	--NGATE: out std_logic;
+	nRead1 : out std_logic;
+	nRead2 : out std_logic;
+	nRead3 : out std_logic; --de momento esta no la utilizare
+	dataOut: out std_logic_vector(15 downto 0)
+	);
+end control_fifo;
+
+architecture lectura of control_fifo is
+
+--cosas para la maquina de estados
+
+type STATE_TYPE is (E0, E1, E2, E3); 
+attribute ENUM_ENCODING: STRING; 
+attribute ENUM_ENCODING of STATE_TYPE:type is "0000 0001 0010 0011";
+
+signal  EA, EP        : STATE_TYPE;  
+ 
+ signal reset: std_logic:='0';
+ signal s_write : std_logic;
+  
+ 
+begin
+
+
+
+--proceso para el control de la maquina de estados
+process (fifo_clk,reset) 
+
+    begin 
+
+        if (reset='0') then 
+           	EA <= E0; --maquina de estados
+        elsif (fifo_clk'event and fifo_clk= '1') then 
+				EA <= EP;
+        end if;
+		  --EA <= EP;
+end process; 
+
+
+process (EA, n_data,fifo_clk)  
+begin 
+
+
+       case EA is 
+			when E0 =>   
+					nRead1<='1'; --las read llevan logica inversa
+					nRead2<='1';
+					reset <='1';
+					if (n_data='1') then --tengo un dato nuevo para leer 
+							nRead1<='0';
+							EP <= E1;  --todas las asignaciones a EP
+					else
+							sRead1<='0'; --Activo nread1
+							EP <= E0;
+					end if;
+				
+			when E1 =>   --leo el primer conversor
+					nRead1<='0'; --las read llevan logica inversa
+					nRead2<='1';
+					reset <='1';
+					--s_write<='0'; 
+					dataOut(15 downto 12)<="0001";
+					dataOut(11 downto 0)<=dataIn_1(11 downto 0);
+					if (fifo_clk = '1') then
+						EP<=E2; 
+					else
+						EP<=E1; 
+					end if;
+						
+		
+			when E2 =>   --leo el segundo conversor
+					nRead1<='0'; --las read llevan logica inversa
+					nRead2<='1';
+					reset <='1';
+					--s_write<='0'; 
+					dataOut(15 downto 12)<="0010";
+					dataOut(11 downto 0)<=dataIn_2(11 downto 0);
+					if (fifo_clk = '1') then
+						nRead1<='1';
+						nRead2<='0';
+						EP<=E3; 
+					else
+						EP<=E2; 
+					end if;
+					
+			when E3 =>   --leo el tercer conversor
+					nRead1<='1'; --las read llevan logica inversa
+					nRead2<='0';
+					reset <='1';
+					--s_write<='0'; 
+					dataOut(15 downto 12)<="0001";
+					dataOut(11 downto 0)<=dataIn_1(11 downto 0);
+					if (fifo_clk = '1') then
+						EP<=E4; 
+					else
+						EP<=E3; 
+					end if;
+					
+			 when E4 =>   --leo el cuarto conversor
+					nRead1<='1'; --las read llevan logica inversa
+					nRead2<='0';
+					reset <='1';
+					--s_write<='0'; 
+					dataOut(15 downto 12)<="0001";
+					dataOut(11 downto 0)<=dataIn_2(11 downto 0);
+					if (fifo_clk = '1') then
+						EP<=E0; 
+					else
+						EP<=E4; 
+					end if;
+				
+							
+       end case; 
+		 
+
+end process; 
+
+	
+	
+end lectura;
+	
