@@ -1,0 +1,7 @@
+
+State Machine - |Template|control_disparo:inst|EA
+Name EA.E3 EA.E2 EA.E1 EA.E0 
+EA.E0 0 0 0 0 
+EA.E1 0 0 1 1 
+EA.E2 0 1 0 1 
+EA.E3 1 0 0 1 
