@@ -10874,9 +10874,6 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
-# hierarchies {
-Retrasar_entrada:inst2
-}
 # macro_sequence
 
 # end
@@ -15390,26 +15387,6 @@ aglobal111.inc
 
 # end
 # entity
-Template
-# storage
-db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
-db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
-# case_insensitive
-# source_file
-template.bdf
-a310e7459ad360e618a3ef168a38b724
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 PLL_48M_in
 # storage
 db|QUSBEVB_REVA_EP2C20_Template.(41).cnf
@@ -15440,6 +15417,26 @@ PLL_48M_in:inst1
 
 # end
 # entity
+Template
+# storage
+db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
+db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
+# case_insensitive
+# source_file
+template.bdf
+19bb50f953128bab96fd47f50ac2967
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
 control_disparo
 # storage
 db|QUSBEVB_REVA_EP2C20_Template.(40).cnf
@@ -15451,7 +15448,7 @@ ON
 # case_insensitive
 # source_file
 control_disparo.vhdl
-f711c92655baa2ba8bb8307cea93b091
+6dedc5408cb2dff6766245656ec7a821
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT

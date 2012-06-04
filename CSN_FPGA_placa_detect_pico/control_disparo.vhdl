@@ -33,7 +33,7 @@ signal  EA, EP        : STATE_TYPE;
  signal integrando : std_logic:='0';
  
  shared variable cuenta_180 : integer range 0 to 511:=0; 
- shared variable t_integracion : integer range 0 to 511:=4; --tiempo de integracion dado al condensador, antes valia 10
+ shared variable t_integracion : integer range 0 to 511:=5; --tiempo de integracion dado al condensador, antes valia 10
 
  signal conv_sig, desInt_sig: std_logic;
  
@@ -72,7 +72,7 @@ begin
 					conv_sig<='1';
 					reset <='1';
 					integrando<='0';
-					PA_1<='0';
+					PA_1<='1';
 					PA_0<='0';
 					if (Comp='1') then --if(LLD ='1') si se activa LLD, comienza la conversion
 							EP <= E1;  --todas las asignaciones eran a EP
@@ -85,6 +85,7 @@ begin
 					desInt_sig<='0';
 					conv_sig<='1';
 					integrando<='1';
+					reset <='1';
 					PA_1<='0';
 					PA_0<='1';
 					--conv_sig<='0';
@@ -98,6 +99,7 @@ begin
            when E2 => --ahora ya aplico lo sennal de conversion, espero un poco 
 					--ngate_sig<='0';
 					desInt_sig<='0';
+					reset <='1';
 					conv_sig<='0';
 					integrando<='1';
 					PA_1<=clk; --'1';
@@ -114,6 +116,7 @@ begin
 					conv_sig<='0';
 					integrando<='0';
 					desInt_sig<='0';
+					reset <='1';
 					PA_1<='1';
 					PA_0<='1';
 					if (NBUSY = '1') then
@@ -130,7 +133,8 @@ begin
 					end if; 
 	      when E4 => --ahora ya espero a que termine la conversion
 					--ngate_sig<='0';
-					conv_sig<='0';
+					conv_sig<='1';
+					reset <='1';
 					integrando<='1';
 					desInt_sig<='1';
 					PA_1<='1';
