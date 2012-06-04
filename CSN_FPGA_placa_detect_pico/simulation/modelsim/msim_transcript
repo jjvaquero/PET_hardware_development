@@ -1,0 +1,30 @@
+# Reading C:/altera/11.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do QUSBEVB_REVA_EP2C20_Template_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying c:\altera\11.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied c:\altera\11.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Documents and Settings/rchil/Desktop/DAQ_USB/FPGA/daq_sub_fpga/control_disparo.vhdl}
+# Model Technology ModelSim ALTERA vcom 10.0c Compiler 2011.09 Sep 21 2011
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity control_disparo
+# -- Compiling architecture disparador of control_disparo
+# ** Warning: [4] C:/Documents and Settings/rchil/Desktop/DAQ_USB/FPGA/daq_sub_fpga/control_disparo.vhdl(31): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: [4] C:/Documents and Settings/rchil/Desktop/DAQ_USB/FPGA/daq_sub_fpga/control_disparo.vhdl(40): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# vcom -93 -work work {C:/Documents and Settings/rchil/Desktop/DAQ_USB/FPGA/daq_sub_fpga/fifo0.vhd}
+# Model Technology ModelSim ALTERA vcom 10.0c Compiler 2011.09 Sep 21 2011
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fifo0
+# -- Compiling architecture SYN of fifo0
+# 
+#  
