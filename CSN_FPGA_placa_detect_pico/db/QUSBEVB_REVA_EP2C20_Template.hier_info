@@ -1,7 +1,7 @@
 |Template
 IO_E3 => control_disparo:inst.NBUSY
 ifclk => PLL_48M_in:inst1.inclk0
-IO_E1 => control_disparo:inst.Comp
+IO_E1 => Retrasar_entrada:inst2.Entrada
 
 
 |Template|control_disparo:inst
@@ -11,7 +11,7 @@ NBUSY => Mux5.IN7
 NBUSY => Mux7.IN5
 NBUSY => process_1.IN1
 NBUSY => Mux6.IN2
-clk => Mux3.IN3
+clk => Mux3.IN7
 clk => EA[0].CLK
 clk => EA[1].CLK
 clk => EA[2].CLK
@@ -63,5 +63,15 @@ phaseupdown => ~NO_FANOUT~
 phasestep => ~NO_FANOUT~
 configupdate => ~NO_FANOUT~
 fbmimicbidir <> <GND>
+
+
+|Template|Retrasar_entrada:inst2
+Entrada => q0_Entrada.DATAIN
+clk => q5_Entrada.CLK
+clk => q4_Entrada.CLK
+clk => q3_Entrada.CLK
+clk => q2_Entrada.CLK
+clk => q1_Entrada.CLK
+clk => q0_Entrada.CLK
 
 
