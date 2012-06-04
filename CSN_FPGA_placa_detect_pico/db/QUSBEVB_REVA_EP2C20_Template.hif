@@ -15390,36 +15390,6 @@ aglobal111.inc
 
 # end
 # entity
-control_disparo
-# storage
-db|QUSBEVB_REVA_EP2C20_Template.(40).cnf
-db|QUSBEVB_REVA_EP2C20_Template.(40).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-control_disparo.vhdl
-bed5a9d4225866a53aff607a47307a3b
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-control_disparo:inst
-}
-# macro_sequence
-
-# end
-# entity
 Template
 # storage
 db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
@@ -15465,6 +15435,36 @@ ON
 }
 # hierarchies {
 PLL_48M_in:inst1
+}
+# macro_sequence
+
+# end
+# entity
+control_disparo
+# storage
+db|QUSBEVB_REVA_EP2C20_Template.(40).cnf
+db|QUSBEVB_REVA_EP2C20_Template.(40).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+control_disparo.vhdl
+f711c92655baa2ba8bb8307cea93b091
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+control_disparo:inst
 }
 # macro_sequence
 
