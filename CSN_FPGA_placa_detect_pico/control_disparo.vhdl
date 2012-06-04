@@ -72,7 +72,7 @@ begin
 					conv_sig<='1';
 					reset <='1';
 					integrando<='0';
-					PA_1<='1';
+					PA_1<='0';
 					PA_0<='0';
 					if (Comp='1') then --if(LLD ='1') si se activa LLD, comienza la conversion
 							EP <= E1;  --todas las asignaciones eran a EP
