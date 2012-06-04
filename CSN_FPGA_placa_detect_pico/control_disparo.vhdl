@@ -23,9 +23,9 @@ architecture disparador of control_disparo is
 
 --cosas para la maquina de estados
 
-type STATE_TYPE is (E0, E1, E2, E3); 
+type STATE_TYPE is (E0, E1, E2, E3, E4); 
 attribute ENUM_ENCODING: STRING; 
-attribute ENUM_ENCODING of STATE_TYPE:type is "0000 0001 0010 0011";
+attribute ENUM_ENCODING of STATE_TYPE:type is "0000 0001 0010 0011 0100";
 
 signal  EA, EP        : STATE_TYPE;  
  
@@ -68,13 +68,13 @@ begin
 
        case EA is 
 			when E0 =>   
-					desInt_sig<='1';
+					desInt_sig<='0';
 					conv_sig<='1';
 					reset <='1';
 					integrando<='0';
 					PA_1<='0';
 					PA_0<='0';
-					if (Comp='0') then --if(LLD ='1') si se activa LLD, comienza la conversion
+					if (Comp='1') then --if(LLD ='1') si se activa LLD, comienza la conversion
 							EP <= E1;  --todas las asignaciones eran a EP
 					else
 							EP <= E0;
@@ -82,7 +82,7 @@ begin
 				
 			when E1 =>   --comienzo a integrar
 					--conv_sig<='1';
-					desInt_sig<='1';
+					desInt_sig<='0';
 					conv_sig<='1';
 					integrando<='1';
 					PA_1<='0';
@@ -97,7 +97,7 @@ begin
 		
            when E2 => --ahora ya aplico lo sennal de conversion, espero un poco 
 					--ngate_sig<='0';
-					desInt_sig<='1';
+					desInt_sig<='0';
 					conv_sig<='0';
 					integrando<='1';
 					PA_1<=clk; --'1';
@@ -113,12 +113,13 @@ begin
 					--ngate_sig<='0';
 					conv_sig<='0';
 					integrando<='0';
-					desInt_sig<='1';
+					desInt_sig<='0';
 					PA_1<='1';
 					PA_0<='1';
 					if (NBUSY = '1') then
-					   desInt_sig<='0'; --cierro la puerta al terminar 
-						EP <= E0; 		
+					   desInt_sig<='1'; --descargo el condensador
+						integrando<='1'; --comienzo a contar pulsos, no integrar...
+						EP <= E4; 		
 						--if cuenta_180 > t_integracion then
 						--	EP<= E0; --hago esto para dar tiempo a la puerta
 						--	t_integracion:=0;
@@ -127,6 +128,27 @@ begin
 					else
 						EP<= E3; 
 					end if; 
+	      when E4 => --ahora ya espero a que termine la conversion
+					--ngate_sig<='0';
+					conv_sig<='0';
+					integrando<='1';
+					desInt_sig<='1';
+					PA_1<='1';
+					PA_0<='1';
+				   if  cuenta_180 > t_integracion then  -- espero el tiempo de integracion
+					   integrando<='0';
+						conv_sig<='1';
+					   desInt_sig<='0'; --cierro la puerta al terminar 
+						EP <= E0; 		
+						--if cuenta_180 > t_integracion then
+						--	EP<= E0; --hago esto para dar tiempo a la puerta
+						--	t_integracion:=0;
+						--end if;
+						--reset<='0'; --no hace falta volver a pasar por reset
+					else
+						EP<= E4; 
+					end if; 
+				
 							
        end case; 
 		 
