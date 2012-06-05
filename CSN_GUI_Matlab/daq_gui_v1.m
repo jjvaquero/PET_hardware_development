@@ -321,12 +321,12 @@ end
 %axes(handles.axes1);
 %plot(handles.axes1, dataConv);
 plot(handles.axes1,1:4096, handles.hist(1:4096),'*');
-xlim(handles.axes1,[25 4096]);
+xlim(handles.axes1,[250 4096]);
 %lo pongo en escala logaritmica
 %set(handles.axes1,'YScale','log');
 
 plot(handles.axes3,1:512, handles.hist_corr(1:512),'*');
-xlim(handles.axes3,[5 512]);
+xlim(handles.axes3,[30 512]);
 %set(handles.axes3,'YScale','log');
 title(handles.axes3,'Despues');
 
