@@ -11,12 +11,14 @@ port(
 	NBUSY: in std_logic;
 	clk: in std_logic; --reloj del sistema
    Comp: in std_logic;
+	dataIn: in std_logic_vector(11 downto 0);
 	--salidas
 	--NGATE: out std_logic;
 	DesInt: out std_logic;
 	NCONVSTART: out std_logic;
-	PA_1 : out std_logic;
-	PA_0 : out std_logic);
+	NREAD : out std_logic;
+	dataOut: out std_logic_vector(15 downto 0)
+	);
 end control_disparo;
 
 architecture disparador of control_disparo is
@@ -35,7 +37,7 @@ signal  EA, EP        : STATE_TYPE;
  shared variable cuenta_180 : integer range 0 to 511:=0; 
  shared variable t_integracion : integer range 0 to 511:=4; --tiempo de integracion dado al condensador, antes valia 10
 
- signal conv_sig, desInt_sig: std_logic;
+ signal conv_sig, desInt_sig, new_data: std_logic;
  
  
 begin
@@ -72,10 +74,10 @@ begin
 					conv_sig<='1';
 					reset <='1';
 					integrando<='0';
-					PA_1<='0';
-					PA_0<='0';
+					--new_data<='1';
 					if (Comp='0') then --if(LLD ='1') si se activa LLD, comienza la conversion
 							EP <= E1;  --todas las asignaciones eran a EP
+							new_data<='0';
 					else
 							EP <= E0;
 					end if;
@@ -85,8 +87,7 @@ begin
 					desInt_sig<='1';
 					conv_sig<='1';
 					integrando<='1';
-					PA_1<='0';
-					PA_0<='1';
+					--new_data<='0';
 					--conv_sig<='0';
 				    if  cuenta_180 > t_integracion then  -- espero el tiempo de integracion
 						EP <= E2;
@@ -100,8 +101,7 @@ begin
 					desInt_sig<='1';
 					conv_sig<='0';
 					integrando<='1';
-					PA_1<=clk; --'1';
-					PA_0<='0';
+					--new_data<='0';
 					--no coge bien lo de NBUSY = '0'...por ello espero un tiempo fijo
 				    if (NBUSY ='0') or (cuenta_180> 20) then 
 						EP <= E3;
@@ -114,11 +114,11 @@ begin
 					conv_sig<='0';
 					integrando<='0';
 					desInt_sig<='1';
-					PA_1<='1';
-					PA_0<='1';
+					--new_data<='0';
 					if (NBUSY = '1') then
 					   desInt_sig<='0'; --cierro la puerta al terminar 
 						EP <= E0; 		
+						new_data<='1';
 						--if cuenta_180 > t_integracion then
 						--	EP<= E0; --hago esto para dar tiempo a la puerta
 						--	t_integracion:=0;
@@ -133,8 +133,28 @@ begin
 --asigno las sennales a los pines correspondientes
 NCONVSTART<=conv_sig;
 DesInt<=desInt_sig;
+--NREAD<=new_data;
 
 end process; 
+
+ --proceso para la escritura en memoria
+process(new_data)  --(NBUSY)
+
+begin
+ --proceso2: process begin
+ -- wait until (NBUSY'event and NBUSY='1');
+-- if (NBUSY='1' and LLD='0') then
+ if (new_data='1') then
+   
+   dataOut(15 downto 12)<="0000";
+	dataOut(11 downto 0)<=dataIn(11 downto 0);
+	NREAD<='1'; --preparo para escribir
+	--new_data<='0';
+ else
+    NREAD<='0'; --after 100ns;
+ end if;
+ end process; -- proceso2;
+
 
 	
 end disparador;
