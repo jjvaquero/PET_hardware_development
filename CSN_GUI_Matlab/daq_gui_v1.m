@@ -108,7 +108,7 @@ QUSB_init(quick);
 %configuro la FPGA
 QUSB_FpgaInit(quick);
 %programo la FPGA
-QUSB_FpgaProgram(quick,'daq_fpga.rbf');
+QUSB_FpgaProgram(quick,'CSN_edu1.rbf'); %'daq_fpga.rbf');
 
 %aqui debo primero configurar la fpga y toda esa pelicula y luego activar
 %el timer
