@@ -121,40 +121,6 @@ applicable agreement for further details.
 	)
 	(annotation_block (location)(rect 488 384 544 400))
 )
-(pin
-	(output)
-	(rect 448 232 624 248)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "IO_G15" (rect 90 0 127 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-	(annotation_block (location)(rect 624 248 680 264))
-)
-(pin
-	(output)
-	(rect 448 248 624 264)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "IO_J12" (rect 90 0 125 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-	(annotation_block (location)(rect 624 264 680 280))
-)
 (symbol
 	(rect 240 200 400 328)
 	(text "control_disparo" (rect 5 0 79 12)(font "Arial" ))
@@ -344,30 +310,6 @@ applicable agreement for further details.
 (connector
 	(pt 416 248)
 	(pt 400 248)
-)
-(connector
-	(pt 424 240)
-	(pt 424 264)
-)
-(connector
-	(pt 448 240)
-	(pt 424 240)
-)
-(connector
-	(pt 424 264)
-	(pt 400 264)
-)
-(connector
-	(pt 432 256)
-	(pt 432 280)
-)
-(connector
-	(pt 448 256)
-	(pt 432 256)
-)
-(connector
-	(pt 432 280)
-	(pt 400 280)
 )
 (connector
 	(pt 240 232)
