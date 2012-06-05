@@ -35,7 +35,7 @@ signal  EA, EP        : STATE_TYPE;
  signal integrando : std_logic:='0';
  
  shared variable cuenta_180 : integer range 0 to 511:=0; 
- shared variable t_integracion : integer range 0 to 511:=4; --tiempo de integracion dado al condensador, antes valia 10
+ shared variable t_integracion : integer range 0 to 511:=5; --tiempo de integracion dado al condensador, antes valia 10
 
  signal conv_sig, desInt_sig, new_data: std_logic;
  
@@ -74,7 +74,7 @@ begin
 					conv_sig<='1';
 					reset <='1';
 					integrando<='0';
-					--new_data<='1';
+					new_data<='1';
 					if (Comp='0') then --if(LLD ='1') si se activa LLD, comienza la conversion
 							EP <= E1;  --todas las asignaciones eran a EP
 							new_data<='0';
@@ -87,7 +87,8 @@ begin
 					desInt_sig<='1';
 					conv_sig<='1';
 					integrando<='1';
-					--new_data<='0';
+					reset <='1';
+					new_data<='0';
 					--conv_sig<='0';
 				    if  cuenta_180 > t_integracion then  -- espero el tiempo de integracion
 						EP <= E2;
@@ -101,7 +102,8 @@ begin
 					desInt_sig<='1';
 					conv_sig<='0';
 					integrando<='1';
-					--new_data<='0';
+					new_data<='0';
+					reset <='1';
 					--no coge bien lo de NBUSY = '0'...por ello espero un tiempo fijo
 				    if (NBUSY ='0') or (cuenta_180> 20) then 
 						EP <= E3;
@@ -114,8 +116,9 @@ begin
 					conv_sig<='0';
 					integrando<='0';
 					desInt_sig<='1';
-					--new_data<='0';
-					if (NBUSY = '1') then
+					reset <='1';
+					new_data<='0';
+					if (NBUSY = '1') and (Comp='1')then
 					   desInt_sig<='0'; --cierro la puerta al terminar 
 						EP <= E0; 		
 						new_data<='1';
