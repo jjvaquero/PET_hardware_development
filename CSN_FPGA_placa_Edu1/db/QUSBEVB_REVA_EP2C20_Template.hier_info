@@ -19,10 +19,7 @@ ren => fifo0:inst3.rdreq
 
 
 |Template|control_disparo:inst
-NBUSY => Mux6.IN3
-NBUSY => Mux0.IN3
-NBUSY => Mux3.IN3
-NBUSY => Mux4.IN3
+NBUSY => process_1.IN0
 NBUSY => process_1.IN1
 clk => EA[0].CLK
 clk => EA[1].CLK
@@ -35,8 +32,9 @@ clk => cuenta_180[5].CLK
 clk => cuenta_180[6].CLK
 clk => cuenta_180[7].CLK
 clk => cuenta_180[8].CLK
-Comp => Mux4.IN0
-Comp => Mux6.IN2
+Comp => process_1.IN1
+Comp => Mux3.IN3
+Comp => Mux5.IN0
 dataIn[0] => dataOut[0]$latch.DATAIN
 dataIn[1] => dataOut[1]$latch.DATAIN
 dataIn[2] => dataOut[2]$latch.DATAIN
