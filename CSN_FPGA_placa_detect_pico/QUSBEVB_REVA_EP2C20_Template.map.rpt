@@ -1,5 +1,5 @@
 Analysis & Synthesis report for QUSBEVB_REVA_EP2C20_Template
-Tue Jun 05 12:20:46 2012
+Wed Jun 06 12:01:55 2012
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -14,11 +14,12 @@ Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: PLL_48M_in:inst1|altpll:altpll_component
- 11. altpll Parameter Settings by Entity Instance
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: PLL_48M_in:inst1|altpll:altpll_component
+ 12. altpll Parameter Settings by Entity Instance
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +45,16 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 05 12:20:46 2012    ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 06 12:01:55 2012    ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Web Edition ;
 ; Revision Name                      ; QUSBEVB_REVA_EP2C20_Template             ;
 ; Top-level Entity Name              ; Template                                 ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 29                                       ;
-;     Total combinational functions  ; 23                                       ;
+; Total logic elements               ; 32                                       ;
+;     Total combinational functions  ; 26                                       ;
 ;     Dedicated logic registers      ; 18                                       ;
 ; Total registers                    ; 18                                       ;
-; Total pins                         ; 6                                        ;
+; Total pins                         ; 8                                        ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
@@ -177,30 +178,30 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+------------------------------------------------+
 ; Resource                                    ; Usage                                          ;
 +---------------------------------------------+------------------------------------------------+
-; Estimated Total logic elements              ; 29                                             ;
+; Estimated Total logic elements              ; 32                                             ;
 ;                                             ;                                                ;
-; Total combinational functions               ; 23                                             ;
+; Total combinational functions               ; 26                                             ;
 ; Logic element usage by number of LUT inputs ;                                                ;
-;     -- 4 input functions                    ; 11                                             ;
-;     -- 3 input functions                    ; 1                                              ;
-;     -- <=2 input functions                  ; 11                                             ;
+;     -- 4 input functions                    ; 7                                              ;
+;     -- 3 input functions                    ; 7                                              ;
+;     -- <=2 input functions                  ; 12                                             ;
 ;                                             ;                                                ;
 ; Logic elements by mode                      ;                                                ;
-;     -- normal mode                          ; 15                                             ;
+;     -- normal mode                          ; 18                                             ;
 ;     -- arithmetic mode                      ; 8                                              ;
 ;                                             ;                                                ;
 ; Total registers                             ; 18                                             ;
 ;     -- Dedicated logic registers            ; 18                                             ;
 ;     -- I/O registers                        ; 0                                              ;
 ;                                             ;                                                ;
-; I/O pins                                    ; 6                                              ;
+; I/O pins                                    ; 8                                              ;
 ; Total PLLs                                  ; 1                                              ;
 ;     -- PLLs                                 ; 1                                              ;
 ;                                             ;                                                ;
 ; Maximum fan-out node                        ; PLL_48M_in:inst1|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 19                                             ;
-; Total fan-out                               ; 116                                            ;
-; Average fan-out                             ; 2.42                                           ;
+; Maximum fan-out                             ; 20                                             ;
+; Total fan-out                               ; 122                                            ;
+; Average fan-out                             ; 2.30                                           ;
 +---------------------------------------------+------------------------------------------------+
 
 
@@ -209,11 +210,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
 ; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Library Name ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
-; |Template                       ; 23 (0)            ; 18 (0)       ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |Template                                          ;              ;
+; |Template                       ; 26 (0)            ; 18 (0)       ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |Template                                          ;              ;
 ;    |PLL_48M_in:inst1|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst1                         ;              ;
 ;       |altpll:altpll_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst1|altpll:altpll_component ;              ;
 ;    |Retrasar_entrada:inst2|     ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|Retrasar_entrada:inst2                   ;              ;
-;    |control_disparo:inst|       ; 23 (23)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_disparo:inst                     ;              ;
+;    |control_disparo:inst|       ; 26 (26)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_disparo:inst                     ;              ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -225,6 +226,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------------+------------------------------------------------------------------------------------------------------------+
 ; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |Template|PLL_48M_in:inst1 ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_detect_pico/PLL_48M_in.vhd ;
 +--------+--------------+---------+--------------+--------------+----------------------------+------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++----------------------------------------------------+---------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal       ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------+------------------------+
+; control_disparo:inst|PA_0                          ; control_disparo:inst|Mux8 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                           ;                        ;
++----------------------------------------------------+---------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -648,7 +660,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 173 11/01/2011 SJ Web Edition
-    Info: Processing started: Tue Jun 05 12:20:40 2012
+    Info: Processing started: Wed Jun 06 12:01:49 2012
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CSN_fpga_detect_pico -c QUSBEVB_REVA_EP2C20_Template
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file pll_48m_in.vhd
@@ -667,11 +679,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file retrasa
     Info (12023): Found entity 1: Retrasar_entrada
 Info (12127): Elaborating entity "Template" for the top level hierarchy
 Info (12128): Elaborating entity "control_disparo" for hierarchy "control_disparo:inst"
-Warning (10541): VHDL Signal Declaration warning at control_disparo.vhdl(18): used implicit default value for signal "PA_1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at control_disparo.vhdl(19): used implicit default value for signal "PA_0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10542): VHDL Variable Declaration warning at control_disparo.vhdl(36): used initial value expression for variable "t_integracion" because variable was never assigned a value
 Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(161): signal "conv_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(162): signal "desInt_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at control_disparo.vhdl(65): inferring latch(es) for signal or variable "PA_0", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "PA_0" at control_disparo.vhdl(65)
 Info (12128): Elaborating entity "PLL_48M_in" for hierarchy "PLL_48M_in:inst1"
 Info (12128): Elaborating entity "altpll" for hierarchy "PLL_48M_in:inst1|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "PLL_48M_in:inst1|altpll:altpll_component"
@@ -736,6 +748,8 @@ Info (12133): Instantiated megafunction "PLL_48M_in:inst1|altpll:altpll_componen
     Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
 Info (12128): Elaborating entity "Retrasar_entrada" for hierarchy "Retrasar_entrada:inst2"
+Warning (13012): Latch control_disparo:inst|PA_0 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_disparo:inst|EA[0]
 Info (13086): Performing gate-level register retiming
 Info (13093): Not allowed to move 6 registers
     Info (13094): Not allowed to move at least 2 registers because they are in a sequence of registers directly fed by input pins
@@ -744,14 +758,14 @@ Info (13093): Not allowed to move 6 registers
 Info (13089): The Quartus II software applied gate-level register retiming to 0 clock domains
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding node "PLL_48M_in:inst1|altpll:altpll_component|pll"
-Info (21057): Implemented 36 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 41 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 29 logic cells
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 32 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 6 warnings
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 7 warnings
     Info: Peak virtual memory: 283 megabytes
-    Info: Processing ended: Tue Jun 05 12:20:46 2012
+    Info: Processing ended: Wed Jun 06 12:01:55 2012
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:05
 

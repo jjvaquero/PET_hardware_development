@@ -121,6 +121,38 @@ applicable agreement for further details.
 	)
 	(annotation_block (location)(rect 488 384 544 400))
 )
+(pin
+	(output)
+	(rect 488 256 664 272)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "IO_G15" (rect 90 0 127 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 488 272 664 288)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "IO_J12" (rect 90 0 125 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
 (symbol
 	(rect 240 200 400 328)
 	(text "control_disparo" (rect 5 0 79 12)(font "Arial" ))
@@ -370,5 +402,13 @@ applicable agreement for further details.
 (connector
 	(pt 224 376)
 	(pt 312 376)
+)
+(connector
+	(pt 400 280)
+	(pt 488 280)
+)
+(connector
+	(pt 400 264)
+	(pt 488 264)
 )
 (junction (pt 224 376))
