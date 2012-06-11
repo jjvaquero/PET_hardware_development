@@ -22,7 +22,7 @@ function varargout = daq_gui_v1(varargin)
 
 % Edit the above text to modify the response to help daq_gui_v1
 
-% Last Modified by GUIDE v2.5 28-Feb-2012 16:05:09
+% Last Modified by GUIDE v2.5 11-Jun-2012 12:37:41
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -57,6 +57,7 @@ function daq_gui_v1_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.guifig = gcf;
 handles.hist = zeros(4096,1);
 handles.hist_corr = zeros(512,1); %para meter ceros en un array
+handles.hist_save = zeros(512,35);
 handles.aux_val = 0;
 handles.tmp_hists = zeros(2500,100);
 handles.output = hObject;
@@ -64,7 +65,13 @@ handles.quick = Quick_USB('mi_quick'); %{@TmrFcn,handles.guifig},'BusyMode','Que
  %   'ExecutionMode','FixedRate','Period',2);
 handles.timer = timer('TimerFcn',{@lectPeriodica,handles.guifig}, 'BusyMode','Queue',...
      'ExecutionMode','FixedRate','Period', 1);
+ 
+handles.timer2 = timer('TimerFcn',{@lectPeriodica2,handles.guifig}, 'BusyMode','Queue',...
+     'ExecutionMode','FixedRate','Period', 180); %se activa cada 3 mins
+ handles.aux_val2 = 0;
+ 
 guidata(handles.guifig,handles);
+
 
 % Update handles structure
 guidata(hObject, handles);
@@ -101,6 +108,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 
 quick = handles.quick;  %instancio el quick creado antes
  timer = handles.timer; %timer para la lectura periodica
+ timer2 = handles.timer2; 
 %inicializo el quick y demas
 
 %lo configuro
@@ -119,6 +127,7 @@ QUSB_FpgaProgram(quick,'CSN_edu2.rbf'); %'daq_fpga.rbf');
 
  
  start(timer);
+ start(timer2);
 
  guidata(handles.guifig, handles);
 guidata(hObject, handles);
@@ -334,5 +343,47 @@ title(handles.axes3,'Despues');
 %set(handles.edit1,'string',num2str(dataConv(1)));
 guidata(handles.guifig, handles);
 
+
+function lectPeriodica2(src,event,handles) %Timer function
+handles = guidata(handles);
+handles.aux_val2 = handles.aux_val2 +1; 
+if aux_val2 <31 
+    %guardo el histograma corregido (rebineado a 512)
+    handles.hist_save(:,aux_val2) = handles.hist_corr(1:512);
+    %lo pongo todo a cero
+    handles.hist = zeros(4096,1);
+    handles.hist_corr = zeros(512,1); %para meter ceros en un array
+    hist_save = handles.hist_save;
+    save histograma_comp hist_save
+end
+guidata(handles.guifig, handles);
+
+
+% --- Executes on button press in pushbutton4.
+function pushbutton4_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton4 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+ timer = handles.timer; %timer para la lectura periodica
+ timer2 = handles.timer2; 
+%inicializo el quick y demas
+
+ stop(timer);
+ stop(timer2);
+ guidata(handles.guifig, handles);
+guidata(hObject, handles);
+
+
+% --- Executes on button press in pushbutton5.
+function pushbutton5_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton5 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+handles.hist = zeros(4096,1);
+handles.hist_corr = zeros(512,1); %para meter ceros en un array
+
+guidata(handles.guifig, handles);
+guidata(hObject, handles);
 
 
