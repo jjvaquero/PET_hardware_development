@@ -1,5 +1,5 @@
 Fitter report for QUSBEVB_REVA_EP2C20_Template
-Tue Jun 05 10:39:34 2012
+Mon Jun 11 11:27:12 2012
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -67,15 +67,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +------------------------------------+------------------------------------------+
-; Fitter Status                      ; Successful - Tue Jun 05 10:39:34 2012    ;
+; Fitter Status                      ; Successful - Mon Jun 11 11:27:12 2012    ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Web Edition ;
 ; Revision Name                      ; QUSBEVB_REVA_EP2C20_Template             ;
 ; Top-level Entity Name              ; Template                                 ;
 ; Family                             ; Cyclone II                               ;
 ; Device                             ; EP2C20F256C7                             ;
 ; Timing Models                      ; Final                                    ;
-; Total logic elements               ; 208 / 18,752 ( 1 % )                     ;
-;     Total combinational functions  ; 199 / 18,752 ( 1 % )                     ;
+; Total logic elements               ; 209 / 18,752 ( 1 % )                     ;
+;     Total combinational functions  ; 200 / 18,752 ( 1 % )                     ;
 ;     Dedicated logic registers      ; 121 / 18,752 ( < 1 % )                   ;
 ; Total registers                    ; 121                                      ;
 ; Total pins                         ; 35 / 152 ( 23 % )                        ;
@@ -148,46 +148,50 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                                                                                                                                          ;
-+------------------------------------------------------------------------------------------------------------------------------+------------------+--------------------+---------------------+-----------+----------------+------------------+------------------+-----------------------+
-; Node                                                                                                                         ; Action           ; Operation          ; Reason              ; Node Port ; Node Port Name ; Destination Node ; Destination Port ; Destination Port Name ;
-+------------------------------------------------------------------------------------------------------------------------------+------------------+--------------------+---------------------+-----------+----------------+------------------+------------------+-----------------------+
-; control_disparo:inst|Mux5~0                                                                                                  ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; control_disparo:inst|Mux5~1                                                                                                  ; Modified         ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; control_disparo:inst|Mux5~1_RESYN24_BDD25                                                                                    ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; control_disparo:inst|Mux5~1_RESYN26_BDD27                                                                                    ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; control_disparo:inst|Mux5~1_RESYN28_BDD29                                                                                    ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; control_disparo:inst|Mux5~1_RESYN30_BDD31                                                                                    ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; control_disparo:inst|process_1~0                                                                                             ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; control_disparo:inst|process_1~1                                                                                             ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; control_disparo:inst|process_1~2                                                                                             ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:wrfull_eq_comp1_msb|data_wire[0]~0                   ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~0               ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~1               ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~2               ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~3               ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~4               ; Modified         ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~4_RESYN32_BDD33 ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~4_RESYN34_BDD35 ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~4_RESYN36_BDD37 ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~4_RESYN38_BDD39 ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~2               ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~3               ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4               ; Modified         ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN40_BDD41 ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN42_BDD43 ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN44_BDD45 ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~0                                ; Modified         ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~0_OTERM71                        ; Retimed Register ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~9                   ; Modified         ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~21                  ; Modified         ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~22                  ; Modified         ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~23                  ; Modified         ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]~8                   ; Modified         ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]~8_OTERM75_OTERM81   ; Retimed Register ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~0_OTERM79                       ; Retimed Register ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-+------------------------------------------------------------------------------------------------------------------------------+------------------+--------------------+---------------------+-----------+----------------+------------------+------------------+-----------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                                                                                                                                                                                                                                             ;
++--------------------------------------------------------------------------------------------------------------------------------+------------+--------------------+---------------------+-----------+----------------+-------------------------------------------------------------------------------------------------------------------------+------------------+-----------------------+
+; Node                                                                                                                           ; Action     ; Operation          ; Reason              ; Node Port ; Node Port Name ; Destination Node                                                                                                        ; Destination Port ; Destination Port Name ;
++--------------------------------------------------------------------------------------------------------------------------------+------------+--------------------+---------------------+-----------+----------------+-------------------------------------------------------------------------------------------------------------------------+------------------+-----------------------+
+; control_disparo:inst|Mux5~0                                                                                                    ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; control_disparo:inst|Mux5~1                                                                                                    ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; control_disparo:inst|Mux5~2                                                                                                    ; Modified   ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; control_disparo:inst|Mux5~2_RESYN78_BDD79                                                                                      ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; control_disparo:inst|Mux5~2_RESYN80_BDD81                                                                                      ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~2                                  ; Duplicated ; Physical Synthesis ; Timing optimization ; COMBOUT   ;                ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~2_Duplicate_13              ; COMBOUT          ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~2                     ; Duplicated ; Physical Synthesis ; Timing optimization ; REGOUT    ;                ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~2_Duplicate_28 ; REGOUT           ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4                     ; Duplicated ; Physical Synthesis ; Timing optimization ; REGOUT    ;                ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4_Duplicate_26 ; REGOUT           ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4                     ; Duplicated ; Physical Synthesis ; Timing optimization ; REGOUT    ;                ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4_Duplicate_30 ; REGOUT           ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4                     ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~5                     ; Duplicated ; Physical Synthesis ; Timing optimization ; REGOUT    ;                ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~5_Duplicate_27 ; REGOUT           ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:rdempty_eq_comp1_msb|data_wire[0]~0                    ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:wrfull_eq_comp1_msb|data_wire[0]~0                     ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:wrfull_eq_comp_msb|data_wire[0]~0                      ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|int_wrfull                                                      ; Duplicated ; Physical Synthesis ; Timing optimization ; COMBOUT   ;                ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|int_wrfull~_Duplicate_1                                  ; COMBOUT          ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~0                  ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~1                  ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~2                  ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~3                  ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~4                  ; Modified   ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~4_RESYN82_BDD83    ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~4_RESYN84_BDD85    ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~4_RESYN86_BDD87    ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~4_RESYN88_BDD89    ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~1                  ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~2                  ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~3                  ; Modified   ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~3_RESYN90_BDD91    ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~3_RESYN92_BDD93    ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~3_RESYN94_BDD95    ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~2                 ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~3                 ; Deleted    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4                 ; Modified   ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN96_BDD97   ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN98_BDD99   ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN100_BDD101 ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~6                 ; Modified   ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~6_RESYN102_BDD103 ; Created    ; Physical Synthesis ; Timing optimization ;           ;                ;                                                                                                                         ;                  ;                       ;
++--------------------------------------------------------------------------------------------------------------------------------+------------+--------------------+---------------------+-----------+----------------+-------------------------------------------------------------------------------------------------------------------------+------------------+-----------------------+
 
 
 +----------------------------------------------------------------------------------------+
@@ -333,8 +337,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 380 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 380 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 379 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 379 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -357,7 +361,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 377     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 376     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -373,26 +377,26 @@ The pin-out file can be found in C:/Documents and Settings/rchil/Escritorio/Soft
 +---------------------------------------------+------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                        ;
 +---------------------------------------------+------------------------------------------------------------------------------+
-; Total logic elements                        ; 208 / 18,752 ( 1 % )                                                         ;
-;     -- Combinational with no register       ; 87                                                                           ;
+; Total logic elements                        ; 209 / 18,752 ( 1 % )                                                         ;
+;     -- Combinational with no register       ; 88                                                                           ;
 ;     -- Register only                        ; 9                                                                            ;
 ;     -- Combinational with a register        ; 112                                                                          ;
 ;                                             ;                                                                              ;
 ; Logic element usage by number of LUT inputs ;                                                                              ;
-;     -- 4 input functions                    ; 98                                                                           ;
-;     -- 3 input functions                    ; 54                                                                           ;
-;     -- <=2 input functions                  ; 47                                                                           ;
+;     -- 4 input functions                    ; 99                                                                           ;
+;     -- 3 input functions                    ; 55                                                                           ;
+;     -- <=2 input functions                  ; 46                                                                           ;
 ;     -- Register only                        ; 9                                                                            ;
 ;                                             ;                                                                              ;
 ; Logic elements by mode                      ;                                                                              ;
-;     -- normal mode                          ; 191                                                                          ;
+;     -- normal mode                          ; 192                                                                          ;
 ;     -- arithmetic mode                      ; 8                                                                            ;
 ;                                             ;                                                                              ;
 ; Total registers*                            ; 121 / 19,160 ( < 1 % )                                                       ;
 ;     -- Dedicated logic registers            ; 121 / 18,752 ( < 1 % )                                                       ;
 ;     -- I/O registers                        ; 0 / 408 ( 0 % )                                                              ;
 ;                                             ;                                                                              ;
-; Total LABs:  partially or completely used   ; 30 / 1,172 ( 3 % )                                                           ;
+; Total LABs:  partially or completely used   ; 32 / 1,172 ( 3 % )                                                           ;
 ; User inserted logic elements                ; 0                                                                            ;
 ; Virtual pins                                ; 0                                                                            ;
 ; I/O pins                                    ; 35 / 152 ( 23 % )                                                            ;
@@ -409,13 +413,13 @@ The pin-out file can be found in C:/Documents and Settings/rchil/Escritorio/Soft
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )                                                                ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )                                                                ;
 ; Average interconnect usage (total/H/V)      ; 1% / 1% / 1%                                                                 ;
-; Peak interconnect usage (total/H/V)         ; 3% / 3% / 3%                                                                 ;
+; Peak interconnect usage (total/H/V)         ; 4% / 4% / 4%                                                                 ;
 ; Maximum fan-out node                        ; control_disparo:inst|Mux3~clkctrl                                            ;
 ; Maximum fan-out                             ; 99                                                                           ;
 ; Highest non-global fan-out signal           ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|valid_rdreq~0 ;
 ; Highest non-global fan-out                  ; 51                                                                           ;
-; Total fan-out                               ; 1915                                                                         ;
-; Average fan-out                             ; 4.81                                                                         ;
+; Total fan-out                               ; 1921                                                                         ;
+; Average fan-out                             ; 4.80                                                                         ;
 +---------------------------------------------+------------------------------------------------------------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -428,26 +432,26 @@ The pin-out file can be found in C:/Documents and Settings/rchil/Escritorio/Soft
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 208 / 18752 ( 1 % )   ; 0 / 18752 ( 0 % )              ;
-;     -- Combinational with no register       ; 87                    ; 0                              ;
+; Total logic elements                        ; 209 / 18752 ( 1 % )   ; 0 / 18752 ( 0 % )              ;
+;     -- Combinational with no register       ; 88                    ; 0                              ;
 ;     -- Register only                        ; 9                     ; 0                              ;
 ;     -- Combinational with a register        ; 112                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 98                    ; 0                              ;
-;     -- 3 input functions                    ; 54                    ; 0                              ;
-;     -- <=2 input functions                  ; 47                    ; 0                              ;
+;     -- 4 input functions                    ; 99                    ; 0                              ;
+;     -- 3 input functions                    ; 55                    ; 0                              ;
+;     -- <=2 input functions                  ; 46                    ; 0                              ;
 ;     -- Register only                        ; 9                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 191                   ; 0                              ;
+;     -- normal mode                          ; 192                   ; 0                              ;
 ;     -- arithmetic mode                      ; 8                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Total registers                             ; 121                   ; 0                              ;
 ;     -- Dedicated logic registers            ; 121 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 30 / 1172 ( 2 % )     ; 0 / 1172 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 32 / 1172 ( 2 % )     ; 0 / 1172 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 35                    ; 0                              ;
@@ -465,8 +469,8 @@ The pin-out file can be found in C:/Documents and Settings/rchil/Escritorio/Soft
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 1945                  ; 21                             ;
-;     -- Registered Connections               ; 950                   ; 0                              ;
+;     -- Total Connections                    ; 1951                  ; 21                             ;
+;     -- Registered Connections               ; 956                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 19                             ;
@@ -925,28 +929,27 @@ Note: User assignments will override these defaults. The user specified values a
 +-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                    ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                                               ; Library Name ;
 +-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Template                                     ; 208 (1)     ; 121 (0)                   ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 35   ; 0            ; 87 (1)       ; 9 (0)             ; 112 (0)          ; |Template                                                                                                                                         ;              ;
+; |Template                                     ; 209 (1)     ; 121 (0)                   ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 35   ; 0            ; 88 (1)       ; 9 (0)             ; 112 (0)          ; |Template                                                                                                                                         ;              ;
 ;    |PLL_48M_in:inst1|                         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Template|PLL_48M_in:inst1                                                                                                                        ;              ;
 ;       |altpll:altpll_component|               ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Template|PLL_48M_in:inst1|altpll:altpll_component                                                                                                ;              ;
 ;    |Retrasar_entrada:inst2|                   ; 6 (6)       ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 5 (5)             ; 1 (1)            ; |Template|Retrasar_entrada:inst2                                                                                                                  ;              ;
-;    |control_disparo:inst|                     ; 36 (36)     ; 11 (11)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 24 (24)      ; 0 (0)             ; 12 (12)          ; |Template|control_disparo:inst                                                                                                                    ;              ;
-;    |fifo0:inst3|                              ; 166 (0)     ; 104 (0)                   ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 62 (0)       ; 4 (0)             ; 100 (0)          ; |Template|fifo0:inst3                                                                                                                             ;              ;
-;       |dcfifo:dcfifo_component|               ; 166 (0)     ; 104 (0)                   ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 62 (0)       ; 4 (0)             ; 100 (0)          ; |Template|fifo0:inst3|dcfifo:dcfifo_component                                                                                                     ;              ;
-;          |dcfifo_hnj1:auto_generated|         ; 166 (26)    ; 104 (27)                  ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 62 (2)       ; 4 (1)             ; 100 (4)          ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated                                                                          ;              ;
-;             |a_graycounter_g2c:wrptr_gp|      ; 32 (32)     ; 23 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 1 (1)             ; 22 (22)          ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp                                               ;              ;
-;             |a_graycounter_h2c:wrptr_g1p|     ; 28 (28)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 1 (1)             ; 22 (22)          ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p                                              ;              ;
-;             |a_graycounter_s96:rdptr_g1p|     ; 41 (41)     ; 28 (28)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (10)      ; 1 (1)             ; 30 (30)          ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p                                              ;              ;
+;    |control_disparo:inst|                     ; 35 (35)     ; 11 (11)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 12 (12)          ; |Template|control_disparo:inst                                                                                                                    ;              ;
+;    |fifo0:inst3|                              ; 168 (0)     ; 104 (0)                   ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 64 (0)       ; 4 (0)             ; 100 (0)          ; |Template|fifo0:inst3                                                                                                                             ;              ;
+;       |dcfifo:dcfifo_component|               ; 168 (0)     ; 104 (0)                   ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 64 (0)       ; 4 (0)             ; 100 (0)          ; |Template|fifo0:inst3|dcfifo:dcfifo_component                                                                                                     ;              ;
+;          |dcfifo_hnj1:auto_generated|         ; 168 (27)    ; 104 (27)                  ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 64 (2)       ; 4 (1)             ; 100 (5)          ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated                                                                          ;              ;
+;             |a_graycounter_g2c:wrptr_gp|      ; 34 (34)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 2 (2)             ; 24 (24)          ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp                                               ;              ;
+;             |a_graycounter_h2c:wrptr_g1p|     ; 28 (28)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 24 (24)          ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p                                              ;              ;
+;             |a_graycounter_s96:rdptr_g1p|     ; 41 (41)     ; 28 (28)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 1 (1)             ; 31 (31)          ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p                                              ;              ;
 ;             |altsyncram_1qu:fifo_ram|         ; 20 (0)      ; 3 (0)                     ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (0)       ; 0 (0)             ; 3 (0)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram                                                  ;              ;
 ;                |altsyncram_cec1:altsyncram14| ; 20 (3)      ; 3 (3)                     ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (0)       ; 0 (0)             ; 3 (2)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14                     ;              ;
 ;                   |decode_o37:decode_b|       ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b ;              ;
 ;                   |mux_nv7:mux18|             ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 1 (1)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|mux_nv7:mux18       ;              ;
-;             |cmpr_r16:rdempty_eq_comp_msb|    ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:rdempty_eq_comp_msb                                             ;              ;
-;             |cmpr_r16:wrfull_eq_comp_msb|     ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:wrfull_eq_comp_msb                                              ;              ;
+;             |cmpr_r16:rdempty_eq_comp_msb|    ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:rdempty_eq_comp_msb                                             ;              ;
 ;             |dffpipe_c2e:rdaclr|              ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr                                                       ;              ;
-;             |mux_1u7:rdemp_eq_comp_lsb_mux|   ; 10 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 7 (7)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux                                            ;              ;
-;             |mux_1u7:rdemp_eq_comp_msb_mux|   ; 10 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 3 (3)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux                                            ;              ;
-;             |mux_1u7:wrfull_eq_comp_lsb_mux|  ; 10 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 7 (7)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux                                           ;              ;
-;             |mux_1u7:wrfull_eq_comp_msb_mux|  ; 10 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 5 (5)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux                                           ;              ;
+;             |mux_1u7:rdemp_eq_comp_lsb_mux|   ; 10 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 5 (5)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux                                            ;              ;
+;             |mux_1u7:rdemp_eq_comp_msb_mux|   ; 10 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 2 (2)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux                                            ;              ;
+;             |mux_1u7:wrfull_eq_comp_lsb_mux|  ; 10 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 6 (6)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux                                           ;              ;
+;             |mux_1u7:wrfull_eq_comp_msb_mux|  ; 11 (11)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 5 (5)            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux                                           ;              ;
 +-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1002,33 +1005,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; IO_E3                                                                                ;                   ;         ;
 ;      - control_disparo:inst|Mux0~0                                                   ; 1                 ; 6       ;
 ;      - control_disparo:inst|Mux3~0                                                   ; 0                 ; 0       ;
-;      - control_disparo:inst|Mux5~1                                                   ; 0                 ; 0       ;
+;      - control_disparo:inst|Mux5~2                                                   ; 0                 ; 0       ;
 ; ifclk                                                                                ;                   ;         ;
 ; ren                                                                                  ;                   ;         ;
-;      - fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdcnt_addr_ena ; 1                 ; 6       ;
-;      - fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|valid_rdreq~0  ; 1                 ; 6       ;
+;      - fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdcnt_addr_ena ; 0                 ; 6       ;
+;      - fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|valid_rdreq~0  ; 0                 ; 6       ;
 ; data_in[11]                                                                          ;                   ;         ;
-;      - control_disparo:inst|dataOut[11]                                              ; 1                 ; 6       ;
+;      - control_disparo:inst|dataOut[11]                                              ; 0                 ; 6       ;
 ; data_in[10]                                                                          ;                   ;         ;
 ;      - control_disparo:inst|dataOut[10]                                              ; 0                 ; 6       ;
 ; data_in[9]                                                                           ;                   ;         ;
 ;      - control_disparo:inst|dataOut[9]                                               ; 1                 ; 6       ;
 ; data_in[8]                                                                           ;                   ;         ;
-;      - control_disparo:inst|dataOut[8]                                               ; 1                 ; 6       ;
+;      - control_disparo:inst|dataOut[8]                                               ; 0                 ; 6       ;
 ; data_in[7]                                                                           ;                   ;         ;
-;      - control_disparo:inst|dataOut[7]                                               ; 1                 ; 6       ;
+;      - control_disparo:inst|dataOut[7]                                               ; 0                 ; 6       ;
 ; data_in[6]                                                                           ;                   ;         ;
 ;      - control_disparo:inst|dataOut[6]                                               ; 1                 ; 6       ;
 ; data_in[5]                                                                           ;                   ;         ;
-;      - control_disparo:inst|dataOut[5]                                               ; 1                 ; 6       ;
+;      - control_disparo:inst|dataOut[5]                                               ; 0                 ; 6       ;
 ; data_in[4]                                                                           ;                   ;         ;
-;      - control_disparo:inst|dataOut[4]                                               ; 1                 ; 6       ;
+;      - control_disparo:inst|dataOut[4]                                               ; 0                 ; 6       ;
 ; data_in[3]                                                                           ;                   ;         ;
 ;      - control_disparo:inst|dataOut[3]                                               ; 0                 ; 6       ;
 ; data_in[2]                                                                           ;                   ;         ;
 ;      - control_disparo:inst|dataOut[2]                                               ; 1                 ; 6       ;
 ; data_in[1]                                                                           ;                   ;         ;
-;      - control_disparo:inst|dataOut[1]                                               ; 0                 ; 6       ;
+;      - control_disparo:inst|dataOut[1]                                               ; 1                 ; 6       ;
 ; data_in[0]                                                                           ;                   ;         ;
 ;      - control_disparo:inst|dataOut[0]                                               ; 1                 ; 6       ;
 ; IO_E1                                                                                ;                   ;         ;
@@ -1043,29 +1046,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; PLL_48M_in:inst1|altpll:altpll_component|_clk0                                                                                                     ; PLL_1              ; 12      ; Clock                      ; yes    ; Global Clock         ; GCLK3            ; --                        ;
 ; PLL_48M_in:inst1|altpll:altpll_component|_clk1                                                                                                     ; PLL_1              ; 6       ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; control_disparo:inst|Mux2~0                                                                                                                        ; LCCOMB_X2_Y20_N30  ; 9       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; control_disparo:inst|Mux3                                                                                                                          ; LCCOMB_X1_Y20_N22  ; 99      ; Clock, Latch enable        ; yes    ; Global Clock         ; GCLK1            ; --                        ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b|eq_node[0] ; LCCOMB_X40_Y17_N28 ; 16      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b|eq_node[1] ; LCCOMB_X40_Y17_N2  ; 16      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr|dffe20a[0]                                                       ; LCFF_X40_Y16_N9    ; 20      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|int_wrfull                                                                          ; LCCOMB_X37_Y17_N24 ; 20      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdcnt_addr_ena                                                                      ; LCCOMB_X36_Y16_N26 ; 43      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|valid_rdreq~0                                                                       ; LCCOMB_X36_Y16_N0  ; 51      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; control_disparo:inst|Mux1~1                                                                                                                        ; LCCOMB_X1_Y20_N14  ; 9       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; control_disparo:inst|Mux3                                                                                                                          ; LCCOMB_X1_Y20_N4   ; 99      ; Clock, Latch enable        ; yes    ; Global Clock         ; GCLK1            ; --                        ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b|eq_node[0] ; LCCOMB_X21_Y13_N0  ; 16      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b|eq_node[1] ; LCCOMB_X21_Y13_N30 ; 16      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr|dffe20a[0]                                                       ; LCFF_X23_Y12_N15   ; 20      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|int_wrfull                                                                          ; LCCOMB_X19_Y13_N10 ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|int_wrfull~_Duplicate_1                                                             ; LCCOMB_X20_Y12_N30 ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdcnt_addr_ena                                                                      ; LCCOMB_X21_Y12_N28 ; 43      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|valid_rdreq~0                                                                       ; LCCOMB_X21_Y12_N14 ; 51      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; ifclk                                                                                                                                              ; PIN_H2             ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
 ; ifclk                                                                                                                                              ; PIN_H2             ; 81      ; Clock                      ; yes    ; Global Clock         ; GCLK0            ; --                        ;
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                        ;
-+------------------------------------------------+-------------------+---------+----------------------+------------------+---------------------------+
-; Name                                           ; Location          ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------------------------------------------------+-------------------+---------+----------------------+------------------+---------------------------+
-; PLL_48M_in:inst1|altpll:altpll_component|_clk0 ; PLL_1             ; 12      ; Global Clock         ; GCLK3            ; --                        ;
-; PLL_48M_in:inst1|altpll:altpll_component|_clk1 ; PLL_1             ; 6       ; Global Clock         ; GCLK2            ; --                        ;
-; control_disparo:inst|Mux3                      ; LCCOMB_X1_Y20_N22 ; 99      ; Global Clock         ; GCLK1            ; --                        ;
-; ifclk                                          ; PIN_H2            ; 81      ; Global Clock         ; GCLK0            ; --                        ;
-+------------------------------------------------+-------------------+---------+----------------------+------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                       ;
++------------------------------------------------+------------------+---------+----------------------+------------------+---------------------------+
+; Name                                           ; Location         ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++------------------------------------------------+------------------+---------+----------------------+------------------+---------------------------+
+; PLL_48M_in:inst1|altpll:altpll_component|_clk0 ; PLL_1            ; 12      ; Global Clock         ; GCLK3            ; --                        ;
+; PLL_48M_in:inst1|altpll:altpll_component|_clk1 ; PLL_1            ; 6       ; Global Clock         ; GCLK2            ; --                        ;
+; control_disparo:inst|Mux3                      ; LCCOMB_X1_Y20_N4 ; 99      ; Global Clock         ; GCLK1            ; --                        ;
+; ifclk                                          ; PIN_H2           ; 81      ; Global Clock         ; GCLK0            ; --                        ;
++------------------------------------------------+------------------+---------+----------------------+------------------+---------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1075,75 +1079,71 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|valid_rdreq~0                                                                        ; 51      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdcnt_addr_ena                                                                       ; 43      ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[2]                                             ; 41      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[5]                                             ; 40      ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[2]                                             ; 40      ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[3]                                             ; 40      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[2]                                             ; 40      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[6]                                             ; 39      ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[3]                                             ; 39      ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[1]                                             ; 39      ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[4]                                             ; 39      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[0]                                             ; 39      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[5]                                             ; 39      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[3]                                             ; 39      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[0]                                             ; 39      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[7]                                             ; 38      ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[4]                                             ; 38      ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[1]                                             ; 38      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[6]                                             ; 38      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[4]                                             ; 38      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[1]                                             ; 38      ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[10]~12                                         ; 36      ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[9]~11                                          ; 36      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]~21                                         ; 36      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[10]~20                                         ; 36      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]~19                                          ; 36      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]~17                                          ; 36      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~16                                          ; 36      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[11]~13                                         ; 35      ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8]~10                                          ; 35      ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[10]~12                                         ; 35      ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[9]~11                                          ; 35      ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8]~10                                          ; 34      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b|eq_node[0]  ; 32      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b|eq_node[1]  ; 32      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr|dffe20a[0]                                                        ; 20      ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|int_wrfull                                                                           ; 20      ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|out_address_reg_a[0]            ; 16      ;
-; control_disparo:inst|Mux2~0                                                                                                                         ; 9       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|int_wrfull                                                                           ; 11      ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|int_wrfull~_Duplicate_1                                                              ; 9       ;
+; control_disparo:inst|Mux1~1                                                                                                                         ; 9       ;
 ; ~GND                                                                                                                                                ; 8       ;
 ; control_disparo:inst|EA[0]                                                                                                                          ; 8       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a1                                               ; 7       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a2                                               ; 7       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a5                                               ; 7       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~6                                          ; 7       ;
 ; control_disparo:inst|EA[1]                                                                                                                          ; 7       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a0                                               ; 6       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a3                                               ; 6       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a6                                               ; 6       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~6                                          ; 6       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a4                                               ; 6       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|wrfull_eq_comp_msb_mux_reg                                                           ; 6       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|wrfull_eq_comp_lsb_mux_reg                                                           ; 6       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~9                                          ; 6       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a7                                               ; 5       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a1                                               ; 5       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a4                                               ; 5       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~4                                            ; 5       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~1                                                       ; 5       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~25                                         ; 5       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~23                                         ; 5       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~14                                         ; 5       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|wrfull_eq_comp_msb_mux_reg                                                           ; 5       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|wrfull_eq_comp_lsb_mux_reg                                                           ; 5       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~9                                          ; 5       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]~8                                          ; 5       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~3                                          ; 5       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~3                                                      ; 4       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~1                                                      ; 4       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|parity9                                                  ; 4       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|_~4                                                      ; 4       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|parity5                                                  ; 4       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a9~0                                             ; 4       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~2                                            ; 4       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~4                                            ; 4       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~2                                                       ; 4       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|parity11                                                  ; 4       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~11                                         ; 4       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~13                                         ; 4       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~15                                         ; 4       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4                                          ; 4       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~5                                          ; 4       ;
 ; Retrasar_entrada:inst2|q5_Entrada                                                                                                                   ; 4       ;
-; control_disparo:inst|cuenta_180[3]                                                                                                                  ; 4       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~0_OTERM79                                              ; 3       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~0_OTERM71                                               ; 3       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4_Duplicate_30                             ; 3       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4_Duplicate_26                             ; 3       ;
 ; IO_E3                                                                                                                                               ; 3       ;
 ; control_disparo:inst|dataOut[0]                                                                                                                     ; 3       ;
 ; control_disparo:inst|dataOut[1]                                                                                                                     ; 3       ;
@@ -1157,14 +1157,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; control_disparo:inst|dataOut[9]                                                                                                                     ; 3       ;
 ; control_disparo:inst|dataOut[10]                                                                                                                    ; 3       ;
 ; control_disparo:inst|dataOut[11]                                                                                                                    ; 3       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8~1                                             ; 3       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~5                                                      ; 3       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~1                                                      ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|_~6                                                      ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a10~0                                            ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a11~0                                            ; 3       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a9~0                                             ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~6                                            ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a13~1                                            ; 3       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~0                                                      ; 3       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~3                                            ; 3       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~5                                            ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~1                                            ; 3       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~1                                                       ; 3       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~2                                                       ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdptr_g[8]                                                                           ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdptr_g[10]                                                                          ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdptr_g[7]                                                                           ; 3       ;
@@ -1182,21 +1187,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|_~1                                                      ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~10                                         ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~12                                         ; 3       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~2                                          ; 3       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~0                                                       ; 3       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~7                                          ; 3       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]~0                                          ; 3       ;
-; control_disparo:inst|LessThan0~0                                                                                                                    ; 3       ;
-; control_disparo:inst|cuenta_180[2]                                                                                                                  ; 3       ;
+; control_disparo:inst|LessThan0~2                                                                                                                    ; 3       ;
+; control_disparo:inst|cuenta_180[8]                                                                                                                  ; 3       ;
+; control_disparo:inst|cuenta_180[7]                                                                                                                  ; 3       ;
 ; control_disparo:inst|cuenta_180[1]                                                                                                                  ; 3       ;
-; control_disparo:inst|cuenta_180[4]                                                                                                                  ; 3       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]~8_OTERM75_OTERM81                          ; 2       ;
+; control_disparo:inst|cuenta_180[2]                                                                                                                  ; 3       ;
 ; ren                                                                                                                                                 ; 2       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~23                                         ; 2       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~22                                         ; 2       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|ram_address_b[12]                                                                    ; 2       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~6                                                      ; 2       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~5                                                       ; 2       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8~1                                             ; 2       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~3                                                      ; 2       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~2                                                      ; 2       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8~0                                             ; 2       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~3                                            ; 2       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~5                                            ; 2       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~3                                                       ; 2       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[7]                                                                   ; 2       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[1]                                                                   ; 2       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[0]                                                                   ; 2       ;
@@ -1206,17 +1212,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[4]                                                                   ; 2       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[6]                                                                   ; 2       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8]~1                                           ; 2       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~7                                          ; 2       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~2                                          ; 2       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdemp_eq_comp_msb_aeb                                                                ; 2       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdemp_eq_comp_lsb_aeb                                                                ; 2       ;
 ; control_disparo:inst|Mux3~0                                                                                                                         ; 2       ;
-; control_disparo:inst|LessThan0~2                                                                                                                    ; 2       ;
 ; control_disparo:inst|LessThan0~1                                                                                                                    ; 2       ;
-; control_disparo:inst|cuenta_180[0]                                                                                                                  ; 2       ;
-; control_disparo:inst|cuenta_180[8]                                                                                                                  ; 2       ;
-; control_disparo:inst|cuenta_180[7]                                                                                                                  ; 2       ;
 ; control_disparo:inst|cuenta_180[6]                                                                                                                  ; 2       ;
 ; control_disparo:inst|cuenta_180[5]                                                                                                                  ; 2       ;
+; control_disparo:inst|cuenta_180[4]                                                                                                                  ; 2       ;
+; control_disparo:inst|cuenta_180[3]                                                                                                                  ; 2       ;
+; control_disparo:inst|cuenta_180[0]                                                                                                                  ; 2       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr|dffe20a[0]~feeder                                                 ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~8feeder                                    ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~6feeder                                    ; 1       ;
@@ -1226,17 +1231,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]~2feeder                                     ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~0feeder                                     ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|p0addr~feeder                                                                        ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN44_BDD45                        ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN42_BDD43                        ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN40_BDD41                        ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~4_RESYN38_BDD39                        ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~4_RESYN36_BDD37                        ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~4_RESYN34_BDD35                        ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~4_RESYN32_BDD33                        ; 1       ;
-; control_disparo:inst|Mux5~1_RESYN30_BDD31                                                                                                           ; 1       ;
-; control_disparo:inst|Mux5~1_RESYN28_BDD29                                                                                                           ; 1       ;
-; control_disparo:inst|Mux5~1_RESYN26_BDD27                                                                                                           ; 1       ;
-; control_disparo:inst|Mux5~1_RESYN24_BDD25                                                                                                           ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~2_Duplicate_13                                          ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~2_Duplicate_28                             ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~5_Duplicate_27                             ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~6_RESYN102_BDD103                      ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN100_BDD101                      ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN98_BDD99                        ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4_RESYN96_BDD97                        ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~3_RESYN94_BDD95                         ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~3_RESYN92_BDD93                         ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~3_RESYN90_BDD91                         ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~4_RESYN88_BDD89                         ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~4_RESYN86_BDD87                         ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~4_RESYN84_BDD85                         ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~4_RESYN82_BDD83                         ; 1       ;
+; control_disparo:inst|Mux5~2_RESYN80_BDD81                                                                                                           ; 1       ;
+; control_disparo:inst|Mux5~2_RESYN78_BDD79                                                                                                           ; 1       ;
 ; IO_E1                                                                                                                                               ; 1       ;
 ; data_in[0]                                                                                                                                          ; 1       ;
 ; data_in[1]                                                                                                                                          ; 1       ;
@@ -1255,8 +1265,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~35                                         ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~34                                         ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~33                                         ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~23                                         ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~22                                         ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~21                                         ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~12                                                     ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~11                                                     ; 1       ;
@@ -1283,15 +1291,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|sub_parity6a0                                            ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~7                                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a7~0                                             ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~5                                                      ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~6                                                      ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~4                                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a1~0                                             ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a2~0                                             ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~4                                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a3~0                                             ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a6~0                                             ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a4~0                                             ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a5~0                                             ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~2                                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~8                                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|sub_parity12a3                                            ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|sub_parity12a2                                            ; 1       ;
@@ -1308,6 +1315,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[4]~17                                          ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[3]~16                                          ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[2]~15                                          ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~5                                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[1]~14                                          ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~4                                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|_~8                                                      ; 1       ;
@@ -1325,12 +1333,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~8                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~7                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~6                                      ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:wrfull_eq_comp_msb|data_wire[0]~0                                           ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~5                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~4                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~1                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~0                                            ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|_~0                                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a13~0                                            ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux|result_node[0]~0                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~9                                      ; 1       ;
@@ -1339,19 +1345,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~6                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~5                                      ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~4                                      ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~9                                       ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:rdempty_eq_comp_msb|data_wire[0]~0                                          ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~3                                      ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~2                                      ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~1                                      ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux|result_node[0]~0                                      ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~3                                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~8                                       ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:rdempty_eq_comp_msb|data_wire[0]~0                                          ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~7                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~6                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~5                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~4                                       ; 1       ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~3                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~24                                         ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~9                                          ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~8                                          ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~3                                       ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~2                                       ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~1                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux|result_node[0]~0                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~22                                         ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~7                                          ; 1       ;
@@ -1362,10 +1370,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~6                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~5                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~4                                       ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~3                                       ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~2                                       ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~1                                       ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux|result_node[0]~0                                       ; 1       ;
 ; Retrasar_entrada:inst2|q3_Entrada                                                                                                                   ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|address_reg_a[0]                ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]~5                                          ; 1       ;
@@ -1376,11 +1380,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]~2                                           ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~1                                           ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~0                                           ; 1       ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~0                                                       ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|p0addr                                                                               ; 1       ;
 ; Retrasar_entrada:inst2|q4_Entrada                                                                                                                   ; 1       ;
 ; control_disparo:inst|Mux4~0                                                                                                                         ; 1       ;
-; control_disparo:inst|Mux5~1                                                                                                                         ; 1       ;
+; control_disparo:inst|Mux5~3                                                                                                                         ; 1       ;
+; control_disparo:inst|Mux5~2                                                                                                                         ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|mux_nv7:mux18|result_node[0]~15 ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|mux_nv7:mux18|result_node[1]~14 ; 1       ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|mux_nv7:mux18|result_node[2]~13 ; 1       ;
@@ -1399,6 +1403,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|mux_nv7:mux18|result_node[15]~0 ; 1       ;
 ; control_disparo:inst|Mux0~0                                                                                                                         ; 1       ;
 ; control_disparo:inst|Mux1~0                                                                                                                         ; 1       ;
+; control_disparo:inst|LessThan0~0                                                                                                                    ; 1       ;
 ; control_disparo:inst|cuenta_180[8]~25                                                                                                               ; 1       ;
 ; control_disparo:inst|cuenta_180[7]~24                                                                                                               ; 1       ;
 ; control_disparo:inst|cuenta_180[7]~23                                                                                                               ; 1       ;
@@ -1451,13 +1456,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
-+--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Name                                                                                                                           ; Type ; Mode           ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size   ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF  ; Location                                                                                                                                                                                                                                                                                                                                                                                                                     ;
-+--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ALTSYNCRAM ; AUTO ; True Dual Port ; Dual Clocks ; 8192         ; 16           ; 8192         ; 16           ; yes                    ; yes                     ; yes                    ; no                      ; 131072 ; 8192                        ; 16                          ; 8192                        ; 16                          ; 131072              ; 32   ; None ; M4K_X41_Y12, M4K_X41_Y11, M4K_X41_Y13, M4K_X17_Y9, M4K_X41_Y14, M4K_X41_Y10, M4K_X17_Y14, M4K_X41_Y9, M4K_X17_Y15, M4K_X17_Y17, M4K_X17_Y18, M4K_X17_Y19, M4K_X41_Y19, M4K_X41_Y18, M4K_X17_Y24, M4K_X17_Y22, M4K_X17_Y16, M4K_X17_Y20, M4K_X41_Y24, M4K_X41_Y22, M4K_X17_Y13, M4K_X17_Y10, M4K_X41_Y16, M4K_X41_Y15, M4K_X17_Y12, M4K_X17_Y11, M4K_X17_Y23, M4K_X41_Y23, M4K_X41_Y20, M4K_X41_Y21, M4K_X17_Y21, M4K_X41_Y17 ;
-+--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
++--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Name                                                                                                                           ; Type ; Mode           ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size   ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF  ; Location                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ALTSYNCRAM ; AUTO ; True Dual Port ; Dual Clocks ; 8192         ; 16           ; 8192         ; 16           ; yes                    ; yes                     ; yes                    ; no                      ; 131072 ; 8192                        ; 16                          ; 8192                        ; 16                          ; 131072              ; 32   ; None ; M4K_X17_Y11, M4K_X17_Y8, M4K_X41_Y10, M4K_X17_Y9, M4K_X17_Y12, M4K_X17_Y7, M4K_X17_Y10, M4K_X41_Y8, M4K_X17_Y22, M4K_X17_Y21, M4K_X41_Y22, M4K_X41_Y11, M4K_X17_Y13, M4K_X17_Y14, M4K_X41_Y17, M4K_X41_Y13, M4K_X17_Y17, M4K_X41_Y21, M4K_X17_Y15, M4K_X17_Y16, M4K_X41_Y19, M4K_X41_Y20, M4K_X17_Y18, M4K_X17_Y23, M4K_X41_Y12, M4K_X41_Y14, M4K_X41_Y18, M4K_X41_Y9, M4K_X17_Y19, M4K_X17_Y20, M4K_X41_Y15, M4K_X41_Y16 ;
++--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
@@ -1466,154 +1471,157 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +----------------------------+------------------------+
 ; Interconnect Resource Type ; Usage                  ;
 +----------------------------+------------------------+
-; Block interconnects        ; 1,206 / 54,004 ( 2 % ) ;
-; C16 interconnects          ; 34 / 2,100 ( 2 % )     ;
-; C4 interconnects           ; 580 / 36,000 ( 2 % )   ;
-; Direct links               ; 84 / 54,004 ( < 1 % )  ;
+; Block interconnects        ; 1,234 / 54,004 ( 2 % ) ;
+; C16 interconnects          ; 37 / 2,100 ( 2 % )     ;
+; C4 interconnects           ; 645 / 36,000 ( 2 % )   ;
+; Direct links               ; 74 / 54,004 ( < 1 % )  ;
 ; Global clocks              ; 4 / 16 ( 25 % )        ;
-; Local interconnects        ; 145 / 18,752 ( < 1 % ) ;
-; R24 interconnects          ; 60 / 1,900 ( 3 % )     ;
-; R4 interconnects           ; 649 / 46,920 ( 1 % )   ;
+; Local interconnects        ; 129 / 18,752 ( < 1 % ) ;
+; R24 interconnects          ; 59 / 1,900 ( 3 % )     ;
+; R4 interconnects           ; 691 / 46,920 ( 1 % )   ;
 +----------------------------+------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 6.93) ; Number of LABs  (Total = 30) ;
+; Number of Logic Elements  (Average = 6.53) ; Number of LABs  (Total = 32) ;
 +--------------------------------------------+------------------------------+
-; 1                                          ; 16                           ;
+; 1                                          ; 18                           ;
 ; 2                                          ; 1                            ;
-; 3                                          ; 1                            ;
+; 3                                          ; 0                            ;
 ; 4                                          ; 0                            ;
 ; 5                                          ; 0                            ;
-; 6                                          ; 0                            ;
+; 6                                          ; 1                            ;
 ; 7                                          ; 0                            ;
 ; 8                                          ; 0                            ;
 ; 9                                          ; 0                            ;
 ; 10                                         ; 0                            ;
-; 11                                         ; 0                            ;
+; 11                                         ; 1                            ;
 ; 12                                         ; 0                            ;
-; 13                                         ; 1                            ;
-; 14                                         ; 1                            ;
+; 13                                         ; 0                            ;
+; 14                                         ; 2                            ;
 ; 15                                         ; 0                            ;
-; 16                                         ; 10                           ;
+; 16                                         ; 9                            ;
 +--------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.77) ; Number of LABs  (Total = 30) ;
+; LAB-wide Signals  (Average = 0.66) ; Number of LABs  (Total = 32) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 3                            ;
-; 1 Clock                            ; 10                           ;
-; 1 Clock enable                     ; 5                            ;
-; 2 Clocks                           ; 5                            ;
+; 1 Async. clear                     ; 1                            ;
+; 1 Clock                            ; 6                            ;
+; 1 Clock enable                     ; 6                            ;
+; 1 Sync. clear                      ; 1                            ;
+; 2 Clocks                           ; 7                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 10.87) ; Number of LABs  (Total = 30) ;
+; Number of Signals Sourced  (Average = 10.25) ; Number of LABs  (Total = 32) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 14                           ;
-; 2                                            ; 3                            ;
-; 3                                            ; 0                            ;
+; 1                                            ; 18                           ;
+; 2                                            ; 0                            ;
+; 3                                            ; 1                            ;
 ; 4                                            ; 0                            ;
-; 5                                            ; 1                            ;
+; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 0                            ;
+; 12                                           ; 1                            ;
 ; 13                                           ; 0                            ;
-; 14                                           ; 0                            ;
-; 15                                           ; 1                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 0                            ;
 ; 16                                           ; 0                            ;
 ; 17                                           ; 0                            ;
-; 18                                           ; 0                            ;
+; 18                                           ; 1                            ;
 ; 19                                           ; 0                            ;
-; 20                                           ; 0                            ;
+; 20                                           ; 1                            ;
 ; 21                                           ; 0                            ;
-; 22                                           ; 2                            ;
+; 22                                           ; 1                            ;
 ; 23                                           ; 1                            ;
 ; 24                                           ; 0                            ;
-; 25                                           ; 2                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 1                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 3                            ;
+; 27                                           ; 0                            ;
 ; 28                                           ; 2                            ;
-; 29                                           ; 1                            ;
+; 29                                           ; 0                            ;
 ; 30                                           ; 0                            ;
-; 31                                           ; 1                            ;
+; 31                                           ; 0                            ;
+; 32                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 4.80) ; Number of LABs  (Total = 30) ;
+; Number of Signals Sourced Out  (Average = 4.88) ; Number of LABs  (Total = 32) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 16                           ;
-; 2                                               ; 1                            ;
-; 3                                               ; 1                            ;
-; 4                                               ; 0                            ;
-; 5                                               ; 3                            ;
-; 6                                               ; 0                            ;
+; 1                                               ; 18                           ;
+; 2                                               ; 2                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 0                            ;
+; 6                                               ; 2                            ;
 ; 7                                               ; 0                            ;
 ; 8                                               ; 0                            ;
 ; 9                                               ; 1                            ;
-; 10                                              ; 1                            ;
+; 10                                              ; 0                            ;
 ; 11                                              ; 2                            ;
-; 12                                              ; 2                            ;
-; 13                                              ; 0                            ;
+; 12                                              ; 1                            ;
+; 13                                              ; 1                            ;
 ; 14                                              ; 2                            ;
-; 15                                              ; 1                            ;
+; 15                                              ; 0                            ;
+; 16                                              ; 1                            ;
+; 17                                              ; 0                            ;
+; 18                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 8.60) ; Number of LABs  (Total = 30) ;
+; Number of Distinct Inputs  (Average = 8.97) ; Number of LABs  (Total = 32) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
-; 1                                           ; 0                            ;
-; 2                                           ; 14                           ;
+; 1                                           ; 1                            ;
+; 2                                           ; 13                           ;
 ; 3                                           ; 2                            ;
-; 4                                           ; 0                            ;
-; 5                                           ; 2                            ;
-; 6                                           ; 0                            ;
+; 4                                           ; 2                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 1                            ;
 ; 7                                           ; 0                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 1                            ;
-; 10                                          ; 0                            ;
-; 11                                          ; 1                            ;
-; 12                                          ; 1                            ;
-; 13                                          ; 0                            ;
+; 10                                          ; 1                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 1                            ;
 ; 14                                          ; 0                            ;
 ; 15                                          ; 1                            ;
 ; 16                                          ; 0                            ;
 ; 17                                          ; 0                            ;
-; 18                                          ; 1                            ;
+; 18                                          ; 0                            ;
 ; 19                                          ; 0                            ;
 ; 20                                          ; 1                            ;
 ; 21                                          ; 0                            ;
-; 22                                          ; 1                            ;
-; 23                                          ; 0                            ;
+; 22                                          ; 2                            ;
+; 23                                          ; 1                            ;
 ; 24                                          ; 1                            ;
 ; 25                                          ; 1                            ;
 ; 26                                          ; 0                            ;
-; 27                                          ; 1                            ;
-; 28                                          ; 0                            ;
-; 29                                          ; 0                            ;
-; 30                                          ; 0                            ;
-; 31                                          ; 1                            ;
+; 27                                          ; 0                            ;
+; 28                                          ; 1                            ;
+; 29                                          ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -1652,7 +1660,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Fitter
     Info: Version 11.1 Build 173 11/01/2011 SJ Web Edition
-    Info: Processing started: Tue Jun 05 10:39:09 2012
+    Info: Processing started: Mon Jun 11 11:26:45 2012
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off CSN_fpga_edu1 -c QUSBEVB_REVA_EP2C20_Template
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (119006): Selected device EP2C20F256C7 for design "QUSBEVB_REVA_EP2C20_Template"
@@ -1762,7 +1770,7 @@ Info (128005): Physical synthesis algorithm automatic asynchronous signal pipeli
 Info (128002): Starting physical synthesis algorithm register retiming
 Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 0 ps
 Info (128002): Starting physical synthesis algorithm combinational resynthesis using boolean division
-Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 658 ps
+Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 0 ps
 Info (128001): Physical synthesis optimizations for speed complete: elapsed CPU time is 00:00:02
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "IO_A10" is assigned to location or region, but does not exist in design
@@ -1905,17 +1913,17 @@ Info (128002): Starting physical synthesis algorithm automatic asynchronous sign
 Info (128027): Automatic asynchronous signal pipelining - Execution Phase
 Info (128005): Physical synthesis algorithm automatic asynchronous signal pipelining complete
 Info (128002): Starting physical synthesis algorithm register retiming
-Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 503 ps
+Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 0 ps
 Info (128002): Starting physical synthesis algorithm combinational resynthesis using boolean division
-Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 0 ps
+Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 534 ps
 Info (128002): Starting physical synthesis algorithm logic and register replication
-Info (128003): Physical synthesis algorithm logic and register replication complete: estimated slack improvement of 0 ps
+Info (128003): Physical synthesis algorithm logic and register replication complete: estimated slack improvement of 392 ps
 Info (128002): Starting physical synthesis algorithm fanout splitting
 Info (128003): Physical synthesis algorithm fanout splitting complete: estimated slack improvement of 0 ps
-Info (128001): Physical synthesis optimizations for speed complete: elapsed CPU time is 00:00:08
+Info (128001): Physical synthesis optimizations for speed complete: elapsed CPU time is 00:00:09
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X38_Y14 to location X50_Y27
+    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X12_Y0 to location X24_Y13
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
@@ -1946,8 +1954,8 @@ Info (176045): Design uses memory blocks. Violating setup or hold times of memor
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info: Quartus II 32-bit Fitter was successful. 0 errors, 154 warnings
     Info: Peak virtual memory: 327 megabytes
-    Info: Processing ended: Tue Jun 05 10:39:35 2012
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Processing ended: Mon Jun 11 11:27:12 2012
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:26
 
 
