@@ -35,7 +35,7 @@ signal  EA, EP        : STATE_TYPE;
  signal integrando : std_logic:='0';
  
  shared variable cuenta_180 : integer range 0 to 511:=0; 
- shared variable t_integracion : integer range 0 to 511:=5; --tiempo de integracion dado al condensador, antes valia 10
+ shared variable t_integracion : integer range 0 to 511:=4; --tiempo de integracion dado al condensador, antes valia 10
 
  signal conv_sig, desInt_sig, new_data: std_logic;
  
@@ -105,7 +105,7 @@ begin
 					new_data<='0';
 					reset <='1';
 					--no coge bien lo de NBUSY = '0'...por ello espero un tiempo fijo
-				    if (NBUSY ='0') or (cuenta_180> 20) then 
+				    if (NBUSY ='0') or (cuenta_180> 5) then 
 						EP <= E3;
 					else
 						EP <= E2;
@@ -113,7 +113,7 @@ begin
 					
 			when E3 => --ahora ya espero a que termine la conversion
 					--ngate_sig<='0';
-					conv_sig<='0';
+					conv_sig<='1';
 					integrando<='0';
 					desInt_sig<='1';
 					reset <='1';
