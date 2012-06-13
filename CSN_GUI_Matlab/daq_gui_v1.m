@@ -326,7 +326,6 @@ if  handles.aux_val >= 200
        %lo pongo todo a cero
        handles.hist = zeros(4096,1);
        handles.hist_corr = zeros(512,1); %para meter ceros en un array
-       handles.hist_comp = zeros(512,1);
        hist_save = handles.hist_save;
        save('histograma_comp.mat','hist_save');
        disp('guardado');
@@ -388,22 +387,23 @@ function pushbutton6_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load red_prueba_13_6;
-val1 = sim(net,handles.hist_comp)
-[valor,clase] = max(val1);
-switch clase
-    case 1
-        str_tmp ='Bario 133';
-    case 2 
-        str_tmp ='Cobalto 60';
-    case 3
-        str_tmp ='Cesio 137';
-    case 4
-        str_tmp ='Manganeso 54';
-    case 5 
-        str_tmp ='Sodio 22';
-end
-disp(str_tmp);
+% load red_prueba_13_6;
+% val1 = sim(net,handles.hist_comp)
+% [valor,clase] = max(val1);
+% switch clase
+%     case 1
+%         str_tmp ='Bario 133';
+%     case 2 
+%         str_tmp ='Cobalto 60';
+%     case 3
+%         str_tmp ='Cesio 137';
+%     case 4
+%         str_tmp ='Manganeso 54';
+%     case 5 
+%         str_tmp ='Sodio 22';
+% end
+% disp(str_tmp);
+str_tmp = clasifica_cutre(handles.hist_comp);
 set(handles.text3,'String',str_tmp);
 guidata(handles.guifig, handles);
 guidata(hObject, handles);
