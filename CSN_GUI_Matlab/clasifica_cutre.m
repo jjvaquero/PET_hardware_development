@@ -6,12 +6,12 @@ function [str_isotopo,num_is] = clasifica_cutre(histo_entrada)
 
 %cargo el archivo con las medias, que asumo 
 %esta en la misma carpeta
-load medias_clasificacion.mat
+load medias_clasificacion_2.mat
 %primero para los dos sodios
 hist_calc = histo_entrada(1:400)';
 
-restas = zeros(5,400);
-for i = 1:5
+restas = zeros(8,400);
+for i = 1:8
     restas(i,:) = medias(i,:) - hist_calc;
 end
 sumas = sum(abs(restas'));
@@ -33,6 +33,15 @@ switch clase
     case 5 
         str_isotopo = 'Sodio 22';
         num_is = 5;
+    case 6
+        str_isotopo = 'Cobalto 57';
+        num_is = 6; 
+    case 7
+        str_isotopo = 'Zinc 65';
+        num_is = 7; 
+    case 8 
+        str_isotopo = 'Cadmio 109';
+        num_is = 8;        
 end
 
 disp(str_isotopo);
