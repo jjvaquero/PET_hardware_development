@@ -344,7 +344,7 @@ xlim(handles.axes1,[50 4096]);
 
 plot(handles.axes3,1:512, handles.hist_corr(1:512));
 xlim(handles.axes3,[5 512]);
-%set(handles.axes3,'XScale','log');
+%set(handles.axes3,'YScale','log');
 title(handles.axes3,'Despues');
 
 %plot(handles.axes1,temp,'*');
@@ -392,7 +392,7 @@ switch clase
     case 1
         str_tmp ='Bario 133';
     case 2 
-        str_tmp ='Cobalto 57';
+        str_tmp ='Cobalto 60';
     case 3
         str_tmp ='Cesio 137';
     case 4
