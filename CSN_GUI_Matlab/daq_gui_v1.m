@@ -58,6 +58,7 @@ handles.guifig = gcf;
 handles.hist = zeros(4096,1);
 handles.hist_corr = zeros(512,1); %para meter ceros en un array
 handles.hist_save = zeros(512,35);
+handles.hist_comp = zeros(512,1);
 handles.aux_val = 0;
 handles.aux_val2 = 0;
 handles.tmp_hists = zeros(2500,100);
@@ -321,9 +322,11 @@ if  handles.aux_val >= 200
     handles.aux_val2 = handles.aux_val2 +1;
     if handles.aux_val2 < 31
        handles.hist_save(:,handles.aux_val2) = handles.hist_corr(1:512);
+       handles.hist_comp = handles.hist_corr(1:512);
        %lo pongo todo a cero
        handles.hist = zeros(4096,1);
        handles.hist_corr = zeros(512,1); %para meter ceros en un array
+       handles.hist_comp = zeros(512,1);
        hist_save = handles.hist_save;
        save('histograma_comp.mat','hist_save');
        disp('guardado');
@@ -385,8 +388,8 @@ function pushbutton6_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load red_entrenada;
-val1 = sim(net,handles.hist_corr);
+load red_prueba_13_6;
+val1 = sim(net,handles.hist_comp)
 [valor,clase] = max(val1);
 switch clase
     case 1
