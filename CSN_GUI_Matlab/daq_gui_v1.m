@@ -114,7 +114,7 @@ QUSB_init(quick);
 %configuro la FPGA
 QUSB_FpgaInit(quick);
 %programo la FPGA
-QUSB_FpgaProgram(quick,'CSN_edu2.rbf'); %'daq_fpga.rbf');
+QUSB_FpgaProgram(quick,'CSN_detect_pico.rbf');%'CSN_edu2.rbf'); %'daq_fpga.rbf');
 
 %aqui debo primero configurar la fpga y toda esa pelicula y luego activar
 %el timer
@@ -345,8 +345,8 @@ xlim(handles.axes1,[50 4096]);
 %set(handles.axes1,'XScale','log');
 
 plot(handles.axes3,1:512, handles.hist_corr(1:512));
-xlim(handles.axes3,[5 512]);
-%set(handles.axes3,'YScale','log');
+xlim(handles.axes3,[5 450]);
+%set(handles.axes3,'XScale','log');
 title(handles.axes3,'Despues');
 
 %plot(handles.axes1,temp,'*');
