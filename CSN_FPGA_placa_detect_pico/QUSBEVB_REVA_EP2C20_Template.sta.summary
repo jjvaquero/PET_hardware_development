@@ -2,25 +2,25 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'control_disparo:inst|EA[0]'
-Slack : -5.239
-TNS   : -2313.389
-
 Type  : Slow Model Setup 'ifclk'
-Slack : -5.111
-TNS   : -9.777
+Slack : -5.363
+TNS   : -10.655
+
+Type  : Slow Model Setup 'control_disparo:inst|EA[0]'
+Slack : -4.836
+TNS   : -2099.607
 
 Type  : Slow Model Setup 'inst1|altpll_component|pll|clk[0]'
-Slack : -2.106
-TNS   : -23.316
+Slack : -1.772
+TNS   : -20.009
 
 Type  : Slow Model Setup 'inst1|altpll_component|pll|clk[1]'
-Slack : 18.766
+Slack : 18.961
 TNS   : 0.000
 
 Type  : Slow Model Hold 'control_disparo:inst|EA[0]'
-Slack : -0.603
-TNS   : -15.968
+Slack : -1.328
+TNS   : -2.655
 
 Type  : Slow Model Hold 'ifclk'
 Slack : 0.445
@@ -31,20 +31,20 @@ Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow Model Hold 'inst1|altpll_component|pll|clk[1]'
-Slack : 0.612
+Slack : 0.622
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'ifclk'
-Slack : 8.735
+Slack : 7.924
 TNS   : 0.000
 
 Type  : Slow Model Removal 'ifclk'
-Slack : 11.600
+Slack : 11.587
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'control_disparo:inst|EA[0]'
-Slack : -3.112
-TNS   : -3303.782
+Slack : -2.098
+TNS   : -2086.320
 
 Type  : Slow Model Minimum Pulse Width 'ifclk'
 Slack : 7.852
@@ -58,25 +58,25 @@ Type  : Slow Model Minimum Pulse Width 'inst1|altpll_component|pll|clk[0]'
 Slack : 32.221
 TNS   : 0.000
 
-Type  : Fast Model Setup 'control_disparo:inst|EA[0]'
-Slack : -1.859
-TNS   : -630.443
-
 Type  : Fast Model Setup 'ifclk'
-Slack : -1.856
-TNS   : -3.536
+Slack : -1.914
+TNS   : -3.799
+
+Type  : Fast Model Setup 'control_disparo:inst|EA[0]'
+Slack : -1.478
+TNS   : -554.873
 
 Type  : Fast Model Setup 'inst1|altpll_component|pll|clk[0]'
-Slack : -1.162
-TNS   : -13.023
+Slack : -1.039
+TNS   : -11.793
 
 Type  : Fast Model Setup 'inst1|altpll_component|pll|clk[1]'
-Slack : 19.475
+Slack : 19.538
 TNS   : 0.000
 
 Type  : Fast Model Hold 'control_disparo:inst|EA[0]'
-Slack : -0.187
-TNS   : -4.929
+Slack : -0.396
+TNS   : -0.757
 
 Type  : Fast Model Hold 'ifclk'
 Slack : 0.215
@@ -87,20 +87,20 @@ Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'inst1|altpll_component|pll|clk[1]'
-Slack : 0.236
+Slack : 0.241
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'ifclk'
-Slack : 9.618
+Slack : 9.320
 TNS   : 0.000
 
 Type  : Fast Model Removal 'ifclk'
-Slack : 11.002
+Slack : 10.998
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'control_disparo:inst|EA[0]'
-Slack : -2.282
-TNS   : -2293.548
+Slack : -1.901
+TNS   : -1883.312
 
 Type  : Fast Model Minimum Pulse Width 'ifclk'
 Slack : 8.036

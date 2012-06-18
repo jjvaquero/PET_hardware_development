@@ -100,7 +100,7 @@ begin
 					desInt_sig<='0';
 					reset <='1';
 					conv_sig<='0';
-					integrando<='1';
+					integrando<='0';
 					new_data<='0';
 					--no coge bien lo de NBUSY = '0'...por ello espero un tiempo fijo
 				    if (NBUSY ='0') then  -- (cuenta_180> 20) then 

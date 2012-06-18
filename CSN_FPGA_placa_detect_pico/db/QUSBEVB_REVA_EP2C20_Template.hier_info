@@ -20,7 +20,6 @@ ren => fifo0:inst3.rdreq
 
 |Template|control_disparo:inst
 NBUSY => process_1.IN0
-NBUSY => Mux2.IN7
 NBUSY => Mux6.IN4
 clk => EA[0].CLK
 clk => EA[1].CLK
