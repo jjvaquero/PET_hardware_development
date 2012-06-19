@@ -1,5 +1,5 @@
 Assembler report for QUSBEVB_REVA_EP2C20_Template
-Tue Apr 03 15:50:22 2012
+Tue Jun 19 17:51:40 2012
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -10,9 +10,9 @@ Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Documents and Settings/rchil/Escritorio/daq_sub_fpga/QUSBEVB_REVA_EP2C20_Template.sof
-  6. Assembler Device Options: C:/Documents and Settings/rchil/Escritorio/daq_sub_fpga/QUSBEVB_REVA_EP2C20_Template.pof
-  7. Assembler Device Options: C:/Documents and Settings/rchil/Escritorio/daq_sub_fpga/QUSBEVB_REVA_EP2C20_Template.rbf
+  5. Assembler Device Options: C:/Documents and Settings/rchil/Desktop/CSN_dosimetro/Software_desarrollado/CSN_FPGA_DAQ_USB_ToT/QUSBEVB_REVA_EP2C20_Template.sof
+  6. Assembler Device Options: C:/Documents and Settings/rchil/Desktop/CSN_dosimetro/Software_desarrollado/CSN_FPGA_DAQ_USB_ToT/QUSBEVB_REVA_EP2C20_Template.pof
+  7. Assembler Device Options: C:/Documents and Settings/rchil/Desktop/CSN_dosimetro/Software_desarrollado/CSN_FPGA_DAQ_USB_ToT/QUSBEVB_REVA_EP2C20_Template.rbf
   8. Assembler Messages
 
 
@@ -39,7 +39,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Apr 03 15:50:22 2012 ;
+; Assembler Status      ; Successful - Tue Jun 19 17:51:40 2012 ;
 ; Revision Name         ; QUSBEVB_REVA_EP2C20_Template          ;
 ; Top-level Entity Name ; Template                              ;
 ; Family                ; Cyclone II                            ;
@@ -79,48 +79,48 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                ;
-+------------------------------------------------------------------------------------------+
-; File Name                                                                                ;
-+------------------------------------------------------------------------------------------+
-; C:/Documents and Settings/rchil/Escritorio/daq_sub_fpga/QUSBEVB_REVA_EP2C20_Template.sof ;
-; C:/Documents and Settings/rchil/Escritorio/daq_sub_fpga/QUSBEVB_REVA_EP2C20_Template.pof ;
-; C:/Documents and Settings/rchil/Escritorio/daq_sub_fpga/QUSBEVB_REVA_EP2C20_Template.rbf ;
-+------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                         ;
++-----------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                         ;
++-----------------------------------------------------------------------------------------------------------------------------------+
+; C:/Documents and Settings/rchil/Desktop/CSN_dosimetro/Software_desarrollado/CSN_FPGA_DAQ_USB_ToT/QUSBEVB_REVA_EP2C20_Template.sof ;
+; C:/Documents and Settings/rchil/Desktop/CSN_dosimetro/Software_desarrollado/CSN_FPGA_DAQ_USB_ToT/QUSBEVB_REVA_EP2C20_Template.pof ;
+; C:/Documents and Settings/rchil/Desktop/CSN_dosimetro/Software_desarrollado/CSN_FPGA_DAQ_USB_ToT/QUSBEVB_REVA_EP2C20_Template.rbf ;
++-----------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Documents and Settings/rchil/Escritorio/daq_sub_fpga/QUSBEVB_REVA_EP2C20_Template.sof ;
-+----------------+---------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                           ;
-+----------------+---------------------------------------------------------------------------------------------------+
-; Device         ; EP2C20F256C7                                                                                      ;
-; JTAG usercode  ; 0xFFFFFFFF                                                                                        ;
-; Checksum       ; 0x00203D1B                                                                                        ;
-+----------------+---------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Documents and Settings/rchil/Desktop/CSN_dosimetro/Software_desarrollado/CSN_FPGA_DAQ_USB_ToT/QUSBEVB_REVA_EP2C20_Template.sof ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                                    ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; Device         ; EP2C20F256C7                                                                                                                               ;
+; JTAG usercode  ; 0xFFFFFFFF                                                                                                                                 ;
+; Checksum       ; 0x0020385E                                                                                                                                 ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Documents and Settings/rchil/Escritorio/daq_sub_fpga/QUSBEVB_REVA_EP2C20_Template.pof ;
-+--------------------+-----------------------------------------------------------------------------------------------+
-; Option             ; Setting                                                                                       ;
-+--------------------+-----------------------------------------------------------------------------------------------+
-; Device             ; EPC4                                                                                          ;
-; JTAG usercode      ; 0xFFFFFFFF                                                                                    ;
-; Checksum           ; 0x07187C9B                                                                                    ;
-; Compression Ratio  ; 3                                                                                             ;
-+--------------------+-----------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Documents and Settings/rchil/Desktop/CSN_dosimetro/Software_desarrollado/CSN_FPGA_DAQ_USB_ToT/QUSBEVB_REVA_EP2C20_Template.pof ;
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                                                                ;
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+; Device             ; EPC4                                                                                                                                   ;
+; JTAG usercode      ; 0xFFFFFFFF                                                                                                                             ;
+; Checksum           ; 0x0719C086                                                                                                                             ;
+; Compression Ratio  ; 3                                                                                                                                      ;
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Documents and Settings/rchil/Escritorio/daq_sub_fpga/QUSBEVB_REVA_EP2C20_Template.rbf ;
-+---------------------+----------------------------------------------------------------------------------------------+
-; Option              ; Setting                                                                                      ;
-+---------------------+----------------------------------------------------------------------------------------------+
-; Raw Binary File     ;                                                                                              ;
-;  Compression Ratio  ; 3                                                                                            ;
-+---------------------+----------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Documents and Settings/rchil/Desktop/CSN_dosimetro/Software_desarrollado/CSN_FPGA_DAQ_USB_ToT/QUSBEVB_REVA_EP2C20_Template.rbf ;
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+; Option              ; Setting                                                                                                                               ;
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+; Raw Binary File     ;                                                                                                                                       ;
+;  Compression Ratio  ; 3                                                                                                                                     ;
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -129,14 +129,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Assembler
     Info: Version 11.1 Build 173 11/01/2011 SJ Web Edition
-    Info: Processing started: Tue Apr 03 15:50:18 2012
-Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off daq_fpga -c QUSBEVB_REVA_EP2C20_Template
+    Info: Processing started: Tue Jun 19 17:51:14 2012
+Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off daq_fpga_tot -c QUSBEVB_REVA_EP2C20_Template
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 261 megabytes
-    Info: Processing ended: Tue Apr 03 15:50:22 2012
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 263 megabytes
+    Info: Processing ended: Tue Jun 19 17:51:40 2012
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:11
 
 
