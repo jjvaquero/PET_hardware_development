@@ -34,6 +34,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 216 320 272 336))
 )
 (pin
 	(input)
@@ -50,6 +51,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 216 336 272 352))
 )
 (pin
 	(input)
@@ -66,6 +68,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -48 80 8 96))
 )
 (pin
 	(output)
@@ -82,6 +85,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 888 312 944 328))
 )
 (pin
 	(output)
@@ -98,6 +102,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 880 256 936 272))
 )
 (pin
 	(output)
@@ -115,6 +120,7 @@ applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
+	(annotation_block (location)(rect 232 272 288 288))
 )
 (symbol
 	(rect 520 192 696 384)
@@ -288,14 +294,14 @@ applicable agreement for further details.
 		(pt 176 32)
 		(output)
 		(text "NREAD" (rect 0 0 38 12)(font "Arial" ))
-		(text "NREAD" (rect 123 27 155 39)(font "Arial" ))
+		(text "NREAD" (rect 123 27 161 39)(font "Arial" ))
 		(line (pt 176 32)(pt 160 32))
 	)
 	(port
 		(pt 176 48)
 		(output)
 		(text "dataOut[15..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "dataOut[15..0]" (rect 96 43 155 55)(font "Arial" ))
+		(text "dataOut[15..0]" (rect 96 43 166 55)(font "Arial" ))
 		(line (pt 176 48)(pt 160 48)(line_width 3))
 	)
 	(drawing

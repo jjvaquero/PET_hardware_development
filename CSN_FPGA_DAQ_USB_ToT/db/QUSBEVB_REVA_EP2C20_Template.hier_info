@@ -1699,8 +1699,27 @@ sel[0] => _.IN0
 
 
 |Template|control_tot:inst
+LLD => contando.DATAA
+LLD => EA[0].DATAIN
+LLD => dataOut[15].IN1
 LLD => NREAD.DATAIN
-clk => ~NO_FANOUT~
+clk => contador_tiempo[0].CLK
+clk => contador_tiempo[1].CLK
+clk => contador_tiempo[2].CLK
+clk => contador_tiempo[3].CLK
+clk => contador_tiempo[4].CLK
+clk => contador_tiempo[5].CLK
+clk => contador_tiempo[6].CLK
+clk => contador_tiempo[7].CLK
+clk => contador_tiempo[8].CLK
+clk => contador_tiempo[9].CLK
+clk => contador_tiempo[10].CLK
+clk => contador_tiempo[11].CLK
+clk => contador_tiempo[12].CLK
+clk => contador_tiempo[13].CLK
+clk => contador_tiempo[14].CLK
+clk => contador_tiempo[15].CLK
+clk => EA[0].CLK
 
 
 |Template|PLL_48M_in:inst4

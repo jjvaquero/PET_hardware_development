@@ -3,67 +3,91 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'IO_E13'
-Slack : -4.206
-TNS   : -1323.280
+Slack : -4.936
+TNS   : -1602.674
+
+Type  : Slow Model Setup 'inst4|altpll_component|pll|clk[1]'
+Slack : -3.712
+TNS   : -61.664
 
 Type  : Slow Model Setup 'ifclk'
-Slack : -4.135
-TNS   : -1203.956
+Slack : -3.575
+TNS   : -6.899
 
 Type  : Slow Model Hold 'IO_E13'
-Slack : 0.118
-TNS   : 0.000
+Slack : -4.226
+TNS   : -70.088
 
 Type  : Slow Model Hold 'ifclk'
 Slack : 0.445
 TNS   : 0.000
 
+Type  : Slow Model Hold 'inst4|altpll_component|pll|clk[1]'
+Slack : 0.445
+TNS   : 0.000
+
 Type  : Slow Model Recovery 'ifclk'
-Slack : -1.153
-TNS   : -19.770
+Slack : 8.455
+TNS   : 0.000
 
 Type  : Slow Model Removal 'ifclk'
-Slack : 1.670
+Slack : 11.603
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'IO_E13'
 Slack : -2.064
-TNS   : -2051.341
+TNS   : -2058.673
+
+Type  : Slow Model Minimum Pulse Width 'inst4|altpll_component|pll|clk[1]'
+Slack : 0.555
+TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'ifclk'
-Slack : -2.064
-TNS   : -1779.979
+Slack : 7.852
+TNS   : 0.000
+
+Type  : Fast Model Setup 'inst4|altpll_component|pll|clk[1]'
+Slack : -2.009
+TNS   : -33.482
 
 Type  : Fast Model Setup 'IO_E13'
 Slack : -1.457
-TNS   : -276.868
+TNS   : -346.396
 
 Type  : Fast Model Setup 'ifclk'
-Slack : -0.979
-TNS   : -211.437
+Slack : -1.009
+TNS   : -1.896
 
 Type  : Fast Model Hold 'IO_E13'
-Slack : -0.085
-TNS   : -0.085
+Slack : -2.613
+TNS   : -43.223
 
 Type  : Fast Model Hold 'ifclk'
+Slack : 0.141
+TNS   : 0.000
+
+Type  : Fast Model Hold 'inst4|altpll_component|pll|clk[1]'
 Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'ifclk'
-Slack : -0.286
-TNS   : -4.516
+Slack : 9.513
+TNS   : 0.000
 
 Type  : Fast Model Removal 'ifclk'
-Slack : 1.080
+Slack : 11.007
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'IO_E13'
 Slack : -1.880
-TNS   : -1862.022
+TNS   : -1868.022
+
+Type  : Fast Model Minimum Pulse Width 'inst4|altpll_component|pll|clk[1]'
+Slack : 0.666
+TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'ifclk'
-Slack : -1.880
-TNS   : -1615.540
+Slack : 8.036
+TNS   : 0.000
 
 ------------------------------------------------------------

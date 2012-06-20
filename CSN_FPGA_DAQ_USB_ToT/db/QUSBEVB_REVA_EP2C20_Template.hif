@@ -13973,56 +13973,6 @@ ON
 
 # end
 # entity
-Template
-# storage
-db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
-db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
-# case_insensitive
-# source_file
-template.bdf
-67c31b61e6f49b6684ac9cafb1b58331
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
-control_tot
-# storage
-db|QUSBEVB_REVA_EP2C20_Template.(41).cnf
-db|QUSBEVB_REVA_EP2C20_Template.(41).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-control_tot.vhdl
-a71fa85c21b45ca2c30abbf6ac6347
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-control_tot:inst
-}
-# macro_sequence
-
-# end
-# entity
 PLL_48M_in
 # storage
 db|QUSBEVB_REVA_EP2C20_Template.(48).cnf
@@ -15553,6 +15503,56 @@ a9a94c5be18105f7ae8c218a67ec9f7
 }
 # hierarchies {
 PLL_48M_in:inst4|altpll:altpll_component
+}
+# macro_sequence
+
+# end
+# entity
+Template
+# storage
+db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
+db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
+# case_insensitive
+# source_file
+template.bdf
+35acfcdbead6fc4d7c1359f5b2f5443
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+control_tot
+# storage
+db|QUSBEVB_REVA_EP2C20_Template.(41).cnf
+db|QUSBEVB_REVA_EP2C20_Template.(41).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+control_tot.vhdl
+2163468e166d1d7edaf0fb8ed8351855
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+control_tot:inst
 }
 # macro_sequence
 

@@ -1,6 +1,8 @@
 LIBRARY IEEE;
 
-use IEEE.STD_LOGIC_1164.ALL;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
 
 entity control_tot is
 		
@@ -29,7 +31,9 @@ signal  EA, EP        : STATE_TYPE;
  signal reset: std_logic:='0';
  signal contando : std_logic;
  
- shared variable contador_tiempo : std_logic_vector(15 downto 0) ; 
+ --shared variable contador_tiempo : std_logic_vector(15 downto 0) ; 
+ signal contador_tiempo : std_logic_vector(15 downto 0) ; 
+ shared variable tiempo : integer range 0 to 32000; 
  signal new_data: std_logic;
  
  
@@ -44,12 +48,16 @@ process (clk,reset)
 
         if (reset='0') then 
            	EA <= E0; --maquina de estados
-			   contador_tiempo := (others => '0');
-        else
+			   contador_tiempo <= (others => '0');
+			--	tiempo := 0;
+        elsif (clk'event and clk= '1') then 
 				if contando = '1' then
-					contador_tiempo := contador_tiempo or "0000000000000001";
+					--contador_tiempo<= contador_tiempo or "0000000000000001";
+				   contador_tiempo <= contador_tiempo +1;
+					tiempo := tiempo +1; 
 				else
-					contador_tiempo := (others => '0');
+					--contador_tiempo <= (others => '0');
+					tiempo:=0;
 				end if; 
 				EA <= EP;
         end if;
@@ -75,24 +83,27 @@ begin
 					end if;
 				
 			when E1 =>   --activo NGATE y comienzo a integrar
-					contando<='1';
+					contando<='1';				
 					reset <='1';
 					new_data<='0';
 				    if  (LLD='0') then  -- espero el tiempo de integracion
 						EP <= E0;
+						--contador_tiempo:=to_stdlogicvector(tiempo);
 						 contando<='1';
-					   new_data<='1';
+					    new_data<='1';
+						 dataOut<=contador_tiempo;
 						--integrando <='0';
 					else
 						 EP <= E1;
 					end if;
+			--estado para esperar a pasar el valor a la FIFO		
 							
        end case; 
 		 
 end process; 
 
 	
- --proceso para la escritura en memoria
+-- --proceso para la escritura en memoria
 process(new_data)  --(NBUSY)
 
 begin
@@ -100,9 +111,11 @@ begin
  -- wait until (NBUSY'event and NBUSY='1');
 -- if (NBUSY='1' and LLD='0') then
  if (new_data='1') then  
-   dataOut<=contador_tiempo;
+   --dataOut<=contador_tiempo;
+	--dataOut<=tiempo;
 	NREAD<='1'; --preparo para escribir
 	--new_data<='0';
+	--contador_tiempo <= (others => '0');
  else
     NREAD<='0'; --after 100ns;
  end if;
