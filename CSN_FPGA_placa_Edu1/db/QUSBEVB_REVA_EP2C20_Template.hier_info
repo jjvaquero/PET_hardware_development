@@ -2,7 +2,7 @@
 IO_E3 => control_disparo:inst.NBUSY
 ifclk => PLL_48M_in:inst1.inclk0
 ifclk => fifo0:inst3.rdclk
-IO_E1 => Retrasar_entrada:inst2.Entrada
+IO_E1 => control_disparo:inst.Comp
 data_in[0] => control_disparo:inst.dataIn[0]
 data_in[1] => control_disparo:inst.dataIn[1]
 data_in[2] => control_disparo:inst.dataIn[2]
@@ -85,16 +85,6 @@ phaseupdown => ~NO_FANOUT~
 phasestep => ~NO_FANOUT~
 configupdate => ~NO_FANOUT~
 fbmimicbidir <> <GND>
-
-
-|Template|Retrasar_entrada:inst2
-Entrada => q0_Entrada.DATAIN
-clk => q5_Entrada.CLK
-clk => q4_Entrada.CLK
-clk => q3_Entrada.CLK
-clk => q2_Entrada.CLK
-clk => q1_Entrada.CLK
-clk => q0_Entrada.CLK
 
 
 |Template|fifo0:inst3

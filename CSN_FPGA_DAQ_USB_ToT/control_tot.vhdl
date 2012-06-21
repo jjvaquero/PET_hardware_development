@@ -90,7 +90,7 @@ begin
 						EP <= E0;
 						--contador_tiempo:=to_stdlogicvector(tiempo);
 						 contando<='1';
-					    new_data<='1';
+					    --new_data<='1';
 						 dataOut<=contador_tiempo;
 						--integrando <='0';
 					else
