@@ -1,5 +1,5 @@
 Flow report for QUSBEVB_REVA_EP2C20_Template
-Mon Jun 11 11:27:24 2012
+Thu Jun 21 13:37:21 2012
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -38,17 +38,17 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Mon Jun 11 11:27:24 2012    ;
+; Flow Status                        ; Successful - Thu Jun 21 13:37:21 2012    ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Web Edition ;
 ; Revision Name                      ; QUSBEVB_REVA_EP2C20_Template             ;
 ; Top-level Entity Name              ; Template                                 ;
 ; Family                             ; Cyclone II                               ;
 ; Device                             ; EP2C20F256C7                             ;
 ; Timing Models                      ; Final                                    ;
-; Total logic elements               ; 209 / 18,752 ( 1 % )                     ;
-;     Total combinational functions  ; 200 / 18,752 ( 1 % )                     ;
-;     Dedicated logic registers      ; 121 / 18,752 ( < 1 % )                   ;
-; Total registers                    ; 121                                      ;
+; Total logic elements               ; 199 / 18,752 ( 1 % )                     ;
+;     Total combinational functions  ; 197 / 18,752 ( 1 % )                     ;
+;     Dedicated logic registers      ; 112 / 18,752 ( < 1 % )                   ;
+; Total registers                    ; 112                                      ;
 ; Total pins                         ; 35 / 152 ( 23 % )                        ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 131,072 / 239,616 ( 55 % )               ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+------------------------------+
 ; Option            ; Setting                      ;
 +-------------------+------------------------------+
-; Start date & time ; 06/11/2012 11:26:35          ;
+; Start date & time ; 06/21/2012 13:36:35          ;
 ; Main task         ; Compilation                  ;
 ; Revision Name     ; QUSBEVB_REVA_EP2C20_Template ;
 +-------------------+------------------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 ; Assignment Name                                   ; Value                                 ; Default Value                ; Entity Name ; Section Id     ;
 +---------------------------------------------------+---------------------------------------+------------------------------+-------------+----------------+
 ; ADV_NETLIST_OPT_SYNTH_GATE_RETIME                 ; On                                    ; Off                          ; --          ; --             ;
-; COMPILER_SIGNATURE_ID                             ; 86473290287.133940679502092           ; --                           ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                             ; 86473290287.134027859402336           ; --                           ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT                            ; Vhdl                                  ; --                           ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                               ; ModelSim-Altera (VHDL)                ; <None>                       ; --          ; --             ;
 ; IP_TOOL_NAME                                      ; FIFO                                  ; --                           ; --          ; --             ;
@@ -103,11 +103,11 @@ applicable agreement for further details.
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 292 MB              ; 00:00:09                           ;
-; Fitter                    ; 00:00:27     ; 1.0                     ; 327 MB              ; 00:00:25                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 261 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 236 MB              ; 00:00:05                           ;
+; Fitter                    ; 00:00:23     ; 1.0                     ; 326 MB              ; 00:00:23                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 261 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 236 MB              ; 00:00:05                           ;
 ; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 211 MB              ; 00:00:02                           ;
-; Total                     ; 00:00:49     ; --                      ; --                  ; 00:00:45                           ;
+; Total                     ; 00:00:45     ; --                      ; --                  ; 00:00:43                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

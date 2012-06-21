@@ -35,7 +35,7 @@ signal  EA, EP        : STATE_TYPE;
  signal integrando : std_logic:='0';
  
  shared variable cuenta_180 : integer range 0 to 511:=0; 
- shared variable t_integracion : integer range 0 to 511:=4; --tiempo de integracion dado al condensador, antes valia 10
+ shared variable t_integracion : integer range 0 to 511:=3; --tiempo de integracion dado al condensador, antes valia 10
 
  signal conv_sig, desInt_sig, new_data: std_logic;
  

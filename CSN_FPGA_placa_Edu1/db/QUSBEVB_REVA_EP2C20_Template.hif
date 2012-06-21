@@ -10938,9 +10938,6 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
-# hierarchies {
-Retrasar_entrada:inst2
-}
 # macro_sequence
 
 # end
@@ -15491,7 +15488,7 @@ db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
 # case_insensitive
 # source_file
 template.bdf
-b86f99869d3d3791e9642f07f38f3ba
+a21a24dc130eae3ef42d76b359a57f
 26
 # internal_option {
 BLOCK_DESIGN_NAMING
@@ -15515,7 +15512,7 @@ ON
 # case_insensitive
 # source_file
 control_disparo.vhdl
-bfa2fb2851654daa02a41a98eeb8274
+a29045a56c11def8aba51f62c3cd3f1
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
