@@ -116,7 +116,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : C12       :        :                   :      
 data_in[2]                   : C13       : input  : 3.3-V LVTTL       :         : 4         : Y              
 data_in[0]                   : C14       : input  : 3.3-V LVTTL       :         : 5         : Y              
 IO_C15                       : C15       : output : 3.3-V LVTTL       :         : 5         : Y              
-IO_C16                       : C16       : input  : 3.3-V LVTTL       :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 2         :                
@@ -147,7 +147,7 @@ GNDA_PLL2                    : E11       : gnd    :                   :         
 VCCA_PLL2                    : E12       : power  :                   : 1.2V    :           :                
 IO_E13                       : E13       : input  : 3.3-V LVTTL       :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E14       :        :                   :         : 5         :                
-IO_E15                       : E15       : output : 3.3-V LVTTL       :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E15       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E16       :        :                   :         : 5         :                
 DATA0                        : F1        : input  :                   :         : 2         :                
 TCK                          : F2        : input  :                   :         : 2         :                

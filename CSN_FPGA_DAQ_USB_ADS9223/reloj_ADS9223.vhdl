@@ -9,11 +9,11 @@ port(
 	--entradas
 	
 	comp: in std_logic;
-	control: in std_logic; 
 	clk: in std_logic;
+	control: in std_logic; 
 	--salidas
 	clkOut: out std_logic; 
-	clkValOut: out std_logic_vector(3 downto 0) 
+	clkValOut: out std_logic_vector(2 downto 0) 
 	);
 end reloj_ADS9223;
 

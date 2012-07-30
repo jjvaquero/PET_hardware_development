@@ -1,63 +1,42 @@
 |Template
-IO_C16 => control_disparo:inst.NBUSY
-ifclk => control_disparo:inst.clk
+IO_E13 => reloj_ADS9223:inst2.comp
 ifclk => PLL_48M_in:inst4.inclk0
 ifclk => fifo0:inst1.rdclk
-IO_E13 => Retrasar_entrada:inst3.Entrada
-data_in[0] => control_disparo:inst.dataIn[0]
-data_in[1] => control_disparo:inst.dataIn[1]
-data_in[2] => control_disparo:inst.dataIn[2]
-data_in[3] => control_disparo:inst.dataIn[3]
-data_in[4] => control_disparo:inst.dataIn[4]
-data_in[5] => control_disparo:inst.dataIn[5]
-data_in[6] => control_disparo:inst.dataIn[6]
-data_in[7] => control_disparo:inst.dataIn[7]
-data_in[8] => control_disparo:inst.dataIn[8]
-data_in[9] => control_disparo:inst.dataIn[9]
-data_in[10] => control_disparo:inst.dataIn[10]
-data_in[11] => control_disparo:inst.dataIn[11]
 ren => fifo0:inst1.rdreq
+data_in[0] => adapt_fifo:inst.dataIn[0]
+data_in[1] => adapt_fifo:inst.dataIn[1]
+data_in[2] => adapt_fifo:inst.dataIn[2]
+data_in[3] => adapt_fifo:inst.dataIn[3]
+data_in[4] => adapt_fifo:inst.dataIn[4]
+data_in[5] => adapt_fifo:inst.dataIn[5]
+data_in[6] => adapt_fifo:inst.dataIn[6]
+data_in[7] => adapt_fifo:inst.dataIn[7]
+data_in[8] => adapt_fifo:inst.dataIn[8]
+data_in[9] => adapt_fifo:inst.dataIn[9]
+data_in[10] => adapt_fifo:inst.dataIn[10]
+data_in[11] => adapt_fifo:inst.dataIn[11]
 
 
-|Template|control_disparo:inst
-NBUSY => process_1.IN0
-NBUSY => Mux2.IN1
-dataIn[0] => dataOut[0]$latch.DATAIN
-dataIn[1] => dataOut[1]$latch.DATAIN
-dataIn[2] => dataOut[2]$latch.DATAIN
-dataIn[3] => dataOut[3]$latch.DATAIN
-dataIn[4] => dataOut[4]$latch.DATAIN
-dataIn[5] => dataOut[5]$latch.DATAIN
-dataIn[6] => dataOut[6]$latch.DATAIN
-dataIn[7] => dataOut[7]$latch.DATAIN
-dataIn[8] => dataOut[8]$latch.DATAIN
-dataIn[9] => dataOut[9]$latch.DATAIN
-dataIn[10] => dataOut[10]$latch.DATAIN
-dataIn[11] => dataOut[11]$latch.DATAIN
+|Template|control_conv:inst5
+clk => ~NO_FANOUT~
+clkVal[0] => Mux0.IN10
+clkVal[0] => Mux1.IN10
+clkVal[0] => Mux2.IN10
+clkVal[1] => Mux0.IN9
+clkVal[1] => Mux1.IN9
+clkVal[1] => Mux2.IN9
+clkVal[2] => Mux0.IN8
+clkVal[2] => Mux1.IN8
+clkVal[2] => Mux2.IN8
+
+
+|Template|reloj_ADS9223:inst2
+comp => valClk.DATAA
+comp => EP[0].DATAA
+comp => valClk[0].DATAA
+comp => clkSig.DATAA
 clk => EA[0].CLK
-clk => EA[1].CLK
-clk => cuenta_180[0].CLK
-clk => cuenta_180[1].CLK
-clk => cuenta_180[2].CLK
-clk => cuenta_180[3].CLK
-clk => cuenta_180[4].CLK
-clk => cuenta_180[5].CLK
-clk => cuenta_180[6].CLK
-clk => cuenta_180[7].CLK
-clk => cuenta_180[8].CLK
-LLD => Mux2.IN3
-LLD => Mux4.IN3
-LLD => process_1.IN1
-
-
-|Template|Retrasar_entrada:inst3
-Entrada => q0_Entrada.DATAIN
-clk => q5_Entrada.CLK
-clk => q4_Entrada.CLK
-clk => q3_Entrada.CLK
-clk => q2_Entrada.CLK
-clk => q1_Entrada.CLK
-clk => q0_Entrada.CLK
+control => EP[0].DATAB
 
 
 |Template|PLL_48M_in:inst4
@@ -1789,5 +1768,31 @@ data[0] => result_node[0].IN1
 data[1] => result_node[0].IN1
 sel[0] => result_node[0].IN0
 sel[0] => _.IN0
+
+
+|Template|Retrasar_entrada:inst3
+Entrada => q0_Entrada.DATAIN
+clk => q5_Entrada.CLK
+clk => q4_Entrada.CLK
+clk => q3_Entrada.CLK
+clk => q2_Entrada.CLK
+clk => q1_Entrada.CLK
+clk => q0_Entrada.CLK
+
+
+|Template|adapt_fifo:inst
+dataIn[0] => dataOut[0].DATAIN
+dataIn[1] => dataOut[1].DATAIN
+dataIn[2] => dataOut[2].DATAIN
+dataIn[3] => dataOut[3].DATAIN
+dataIn[4] => dataOut[4].DATAIN
+dataIn[5] => dataOut[5].DATAIN
+dataIn[6] => dataOut[6].DATAIN
+dataIn[7] => dataOut[7].DATAIN
+dataIn[8] => dataOut[8].DATAIN
+dataIn[9] => dataOut[9].DATAIN
+dataIn[10] => dataOut[10].DATAIN
+dataIn[11] => dataOut[11].DATAIN
+clk => ~NO_FANOUT~
 
 

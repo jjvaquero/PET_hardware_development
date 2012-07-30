@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Apr 03 15:49:50 2012
+Analysis & Synthesis Status : Successful - Mon Jul 30 11:56:19 2012
 Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Web Edition
 Revision Name : QUSBEVB_REVA_EP2C20_Template
 Top-level Entity Name : Template
 Family : Cyclone II
-Total logic elements : 222
-    Total combinational functions : 187
-    Dedicated logic registers : 118
-Total registers : 118
-Total pins : 36
+Total logic elements : 241
+    Total combinational functions : 207
+    Dedicated logic registers : 108
+Total registers : 108
+Total pins : 34
 Total virtual pins : 0
 Total memory bits : 131,072
 Embedded Multiplier 9-bit elements : 0
