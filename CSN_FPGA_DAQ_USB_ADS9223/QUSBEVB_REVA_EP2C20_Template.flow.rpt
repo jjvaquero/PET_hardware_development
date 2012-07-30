@@ -1,5 +1,5 @@
 Flow report for QUSBEVB_REVA_EP2C20_Template
-Mon Jul 30 11:57:55 2012
+Mon Jul 30 12:27:11 2012
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Mon Jul 30 11:57:55 2012    ;
+; Flow Status                        ; Successful - Mon Jul 30 12:27:11 2012    ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Web Edition ;
 ; Revision Name                      ; QUSBEVB_REVA_EP2C20_Template             ;
 ; Top-level Entity Name              ; Template                                 ;
@@ -49,7 +49,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 217 / 18,752 ( 1 % )                     ;
 ;     Dedicated logic registers      ; 110 / 18,752 ( < 1 % )                   ;
 ; Total registers                    ; 110                                      ;
-; Total pins                         ; 34 / 152 ( 22 % )                        ;
+; Total pins                         ; 35 / 152 ( 23 % )                        ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 131,072 / 239,616 ( 55 % )               ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                           ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+------------------------------+
 ; Option            ; Setting                      ;
 +-------------------+------------------------------+
-; Start date & time ; 07/30/2012 11:56:05          ;
+; Start date & time ; 07/30/2012 12:25:34          ;
 ; Main task         ; Compilation                  ;
 ; Revision Name     ; QUSBEVB_REVA_EP2C20_Template ;
 +-------------------+------------------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 ; Assignment Name                                   ; Value                                 ; Default Value                ; Entity Name ; Section Id     ;
 +---------------------------------------------------+---------------------------------------+------------------------------+-------------+----------------+
 ; ADV_NETLIST_OPT_SYNTH_GATE_RETIME                 ; On                                    ; Off                          ; --          ; --             ;
-; COMPILER_SIGNATURE_ID                             ; 105417262079.134364216503788          ; --                           ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                             ; 105417262079.134364393402468          ; --                           ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT                            ; Vhdl                                  ; --                           ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                               ; ModelSim-Altera (VHDL)                ; <None>                       ; --          ; --             ;
 ; IP_TOOL_NAME                                      ; FIFO                                  ; --                           ; --          ; --             ;
@@ -102,12 +102,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:18     ; 1.0                     ; 298 MB              ; 00:00:15                           ;
-; Fitter                    ; 00:00:35     ; 1.0                     ; 329 MB              ; 00:00:25                           ;
-; Assembler                 ; 00:00:24     ; 1.0                     ; 263 MB              ; 00:00:11                           ;
-; TimeQuest Timing Analyzer ; 00:00:30     ; 1.0                     ; 239 MB              ; 00:00:13                           ;
-; EDA Netlist Writer        ; 00:00:20     ; 1.0                     ; 214 MB              ; 00:00:09                           ;
-; Total                     ; 00:02:07     ; --                      ; --                  ; 00:01:13                           ;
+; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 296 MB              ; 00:00:15                           ;
+; Fitter                    ; 00:00:31     ; 1.0                     ; 329 MB              ; 00:00:24                           ;
+; Assembler                 ; 00:00:25     ; 1.0                     ; 263 MB              ; 00:00:10                           ;
+; TimeQuest Timing Analyzer ; 00:00:28     ; 1.0                     ; 239 MB              ; 00:00:13                           ;
+; EDA Netlist Writer        ; 00:00:19     ; 1.0                     ; 214 MB              ; 00:00:09                           ;
+; Total                     ; 00:01:58     ; --                      ; --                  ; 00:01:11                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -13949,26 +13949,6 @@ aglobal111.inc
 
 # end
 # entity
-Template
-# storage
-db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
-db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
-# case_insensitive
-# source_file
-template.bdf
-188c7a9bf7b53119f740ef96b92b6d17
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 control_conv
 # storage
 db|QUSBEVB_REVA_EP2C20_Template.(40).cnf
@@ -15589,6 +15569,26 @@ ON
 }
 # hierarchies {
 adapt_fifo:inst
+}
+# macro_sequence
+
+# end
+# entity
+Template
+# storage
+db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
+db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
+# case_insensitive
+# source_file
+template.bdf
+9ee5ca212d7cd72d232a6ef145275e7
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
 }
 # macro_sequence
 

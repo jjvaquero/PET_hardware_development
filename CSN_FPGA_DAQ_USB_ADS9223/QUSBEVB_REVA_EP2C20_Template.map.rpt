@@ -1,5 +1,5 @@
 Analysis & Synthesis report for QUSBEVB_REVA_EP2C20_Template
-Mon Jul 30 11:56:19 2012
+Mon Jul 30 12:25:45 2012
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul 30 11:56:19 2012    ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul 30 12:25:45 2012    ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Web Edition ;
 ; Revision Name                      ; QUSBEVB_REVA_EP2C20_Template             ;
 ; Top-level Entity Name              ; Template                                 ;
@@ -76,7 +76,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 207                                      ;
 ;     Dedicated logic registers      ; 108                                      ;
 ; Total registers                    ; 108                                      ;
-; Total pins                         ; 34                                       ;
+; Total pins                         ; 35                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 131,072                                  ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
@@ -245,15 +245,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- Dedicated logic registers            ; 108                               ;
 ;     -- I/O registers                        ; 0                                 ;
 ;                                             ;                                   ;
-; I/O pins                                    ; 34                                ;
+; I/O pins                                    ; 35                                ;
 ; Total memory bits                           ; 131072                            ;
 ; Total PLLs                                  ; 1                                 ;
 ;     -- PLLs                                 ; 1                                 ;
 ;                                             ;                                   ;
 ; Maximum fan-out node                        ; Retrasar_entrada:inst3|q5_Entrada ;
 ; Maximum fan-out                             ; 85                                ;
-; Total fan-out                               ; 1914                              ;
-; Average fan-out                             ; 5.01                              ;
+; Total fan-out                               ; 1915                              ;
+; Average fan-out                             ; 5.00                              ;
 +---------------------------------------------+-----------------------------------+
 
 
@@ -262,7 +262,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Library Name ;
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Template                                     ; 207 (1)           ; 108 (0)      ; 131072      ; 0            ; 0       ; 0         ; 34   ; 0            ; |Template                                                                                                                                         ;              ;
+; |Template                                     ; 207 (1)           ; 108 (0)      ; 131072      ; 0            ; 0       ; 0         ; 35   ; 0            ; |Template                                                                                                                                         ;              ;
 ;    |PLL_48M_in:inst4|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst4                                                                                                                        ;              ;
 ;       |altpll:altpll_component|               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst4|altpll:altpll_component                                                                                                ;              ;
 ;    |Retrasar_entrada:inst3|                   ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|Retrasar_entrada:inst3                                                                                                                  ;              ;
@@ -1058,7 +1058,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 173 11/01/2011 SJ Web Edition
-    Info: Processing started: Mon Jul 30 11:56:00 2012
+    Info: Processing started: Mon Jul 30 12:25:29 2012
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off daq_fpga_ads9223 -c QUSBEVB_REVA_EP2C20_Template
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file pll_48m_in.vhd
@@ -1290,16 +1290,16 @@ Info (17049): 26 registers lost all their fanouts during netlist optimizations. 
     Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]" lost all its fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding node "PLL_48M_in:inst4|altpll:altpll_component|pll"
-Info (21057): Implemented 326 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 327 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 19 output pins
+    Info (21059): Implemented 20 output pins
     Info (21061): Implemented 259 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 31 warnings
-    Info: Peak virtual memory: 298 megabytes
-    Info: Processing ended: Mon Jul 30 11:56:19 2012
-    Info: Elapsed time: 00:00:19
+    Info: Peak virtual memory: 296 megabytes
+    Info: Processing ended: Mon Jul 30 12:25:45 2012
+    Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:16
 
 

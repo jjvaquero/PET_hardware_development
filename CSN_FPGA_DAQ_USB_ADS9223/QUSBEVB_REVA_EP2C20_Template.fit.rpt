@@ -1,5 +1,5 @@
 Fitter report for QUSBEVB_REVA_EP2C20_Template
-Mon Jul 30 11:56:56 2012
+Mon Jul 30 12:26:18 2012
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +------------------------------------+------------------------------------------+
-; Fitter Status                      ; Successful - Mon Jul 30 11:56:56 2012    ;
+; Fitter Status                      ; Successful - Mon Jul 30 12:26:18 2012    ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Web Edition ;
 ; Revision Name                      ; QUSBEVB_REVA_EP2C20_Template             ;
 ; Top-level Entity Name              ; Template                                 ;
@@ -78,7 +78,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 217 / 18,752 ( 1 % )                     ;
 ;     Dedicated logic registers      ; 110 / 18,752 ( < 1 % )                   ;
 ; Total registers                    ; 110                                      ;
-; Total pins                         ; 34 / 152 ( 22 % )                        ;
+; Total pins                         ; 35 / 152 ( 23 % )                        ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 131,072 / 239,616 ( 55 % )               ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                           ;
@@ -177,8 +177,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; reloj_ADS9223:inst2|Mux0~3_RESYN26_BDD27                                                                    ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
 ; reloj_ADS9223:inst2|Mux0~3_RESYN28_BDD29                                                                    ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
 ; reloj_ADS9223:inst2|Mux0~3_RESYN30_BDD31                                                                    ; Deleted          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; reloj_ADS9223:inst2|Mux0~3_RESYN52_BDD53                                                                    ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
-; reloj_ADS9223:inst2|Mux0~3_RESYN54_BDD55                                                                    ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
+; reloj_ADS9223:inst2|Mux0~3_RESYN60_BDD61                                                                    ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
+; reloj_ADS9223:inst2|Mux0~3_RESYN62_BDD63                                                                    ; Created          ; Physical Synthesis ; Timing optimization ;           ;                ;                  ;                  ;                       ;
 +-------------------------------------------------------------------------------------------------------------+------------------+--------------------+---------------------+-----------+----------------+------------------+------------------+-----------------------+
 
 
@@ -212,7 +212,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Location ;                ;              ; IO_D13     ; PIN_D13       ; QSF Assignment ;
 ; Location ;                ;              ; IO_D15     ; PIN_D15       ; QSF Assignment ;
 ; Location ;                ;              ; IO_D16     ; PIN_D16       ; QSF Assignment ;
-; Location ;                ;              ; IO_D2      ; PIN_D2        ; QSF Assignment ;
 ; Location ;                ;              ; IO_D7      ; PIN_D7        ; QSF Assignment ;
 ; Location ;                ;              ; IO_D8      ; PIN_D8        ; QSF Assignment ;
 ; Location ;                ;              ; IO_D9      ; PIN_D9        ; QSF Assignment ;
@@ -326,8 +325,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 391 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 391 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 392 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 392 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -350,7 +349,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 388     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 389     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -388,7 +387,7 @@ The pin-out file can be found in C:/Documents and Settings/rchil/Desktop/CSN_dos
 ; Total LABs:  partially or completely used   ; 24 / 1,172 ( 2 % )                                                           ;
 ; User inserted logic elements                ; 0                                                                            ;
 ; Virtual pins                                ; 0                                                                            ;
-; I/O pins                                    ; 34 / 152 ( 22 % )                                                            ;
+; I/O pins                                    ; 35 / 152 ( 23 % )                                                            ;
 ;     -- Clock pins                           ; 1 / 4 ( 25 % )                                                               ;
 ;     -- Dedicated input pins                 ; 0 / 8 ( 0 % )                                                                ;
 ; Global signals                              ; 5                                                                            ;
@@ -401,7 +400,7 @@ The pin-out file can be found in C:/Documents and Settings/rchil/Desktop/CSN_dos
 ; JTAGs                                       ; 0 / 1 ( 0 % )                                                                ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )                                                                ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )                                                                ;
-; Average interconnect usage (total/H/V)      ; 2% / 2% / 1%                                                                 ;
+; Average interconnect usage (total/H/V)      ; 1% / 1% / 1%                                                                 ;
 ; Peak interconnect usage (total/H/V)         ; 4% / 4% / 4%                                                                 ;
 ; Maximum fan-out node                        ; Retrasar_entrada:inst3|q5_Entrada~clkctrl                                    ;
 ; Maximum fan-out                             ; 86                                                                           ;
@@ -443,7 +442,7 @@ The pin-out file can be found in C:/Documents and Settings/rchil/Desktop/CSN_dos
 ; Total LABs:  partially or completely used   ; 24 / 1172 ( 2 % )     ; 0 / 1172 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 34                    ; 0                              ;
+; I/O pins                                    ; 35                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )        ; 0 / 52 ( 0 % )                 ;
 ; Total memory bits                           ; 131072                ; 0                              ;
 ; Total RAM block bits                        ; 147456                ; 0                              ;
@@ -467,7 +466,7 @@ The pin-out file can be found in C:/Documents and Settings/rchil/Desktop/CSN_dos
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
 ;     -- Input Ports                          ; 15                    ; 1                              ;
-;     -- Output Ports                         ; 19                    ; 2                              ;
+;     -- Output Ports                         ; 20                    ; 2                              ;
 ;     -- Bidir Ports                          ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Registered Ports                            ;                       ;                                ;
@@ -515,6 +514,7 @@ The pin-out file can be found in C:/Documents and Settings/rchil/Desktop/CSN_dos
 ; Name   ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
 +--------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 ; IO_C15 ; C15   ; 5        ; 50           ; 24           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; IO_D2  ; D2    ; 2        ; 0            ; 21           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; IO_G16 ; G16   ; 5        ; 50           ; 15           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; IO_M2  ; M2    ; 1        ; 0            ; 7            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; fd[0]  ; P12   ; 7        ; 42           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
@@ -542,7 +542,7 @@ The pin-out file can be found in C:/Documents and Settings/rchil/Desktop/CSN_dos
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
 ; 1        ; 1 / 22 ( 5 % )   ; 3.3V          ; --           ;
-; 2        ; 1 / 16 ( 6 % )   ; 3.3V          ; --           ;
+; 2        ; 2 / 16 ( 13 % )  ; 3.3V          ; --           ;
 ; 3        ; 4 / 18 ( 22 % )  ; 3.3V          ; --           ;
 ; 4        ; 7 / 18 ( 39 % )  ; 3.3V          ; --           ;
 ; 5        ; 4 / 24 ( 17 % )  ; 3.3V          ; --           ;
@@ -606,7 +606,7 @@ The pin-out file can be found in C:/Documents and Settings/rchil/Desktop/CSN_dos
 ; C15      ; 236        ; 5        ; IO_C15                          ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; C16      ; 237        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D1       ; 19         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; D2       ; 18         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; D2       ; 18         ; 2        ; IO_D2                           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; D3       ; 4          ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D4       ; 5          ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D5       ;            ;          ; GND_PLL3                        ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -917,16 +917,16 @@ Note: User assignments will override these defaults. The user specified values a
 +-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                    ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                                               ; Library Name ;
 +-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Template                                     ; 223 (1)     ; 110 (0)                   ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 34   ; 0            ; 113 (1)      ; 6 (0)             ; 104 (0)          ; |Template                                                                                                                                         ;              ;
+; |Template                                     ; 223 (1)     ; 110 (0)                   ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 35   ; 0            ; 113 (1)      ; 6 (0)             ; 104 (0)          ; |Template                                                                                                                                         ;              ;
 ;    |PLL_48M_in:inst4|                         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Template|PLL_48M_in:inst4                                                                                                                        ;              ;
 ;       |altpll:altpll_component|               ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Template|PLL_48M_in:inst4|altpll:altpll_component                                                                                                ;              ;
 ;    |Retrasar_entrada:inst3|                   ; 6 (6)       ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 5 (5)             ; 1 (1)            ; |Template|Retrasar_entrada:inst3                                                                                                                  ;              ;
 ;    |control_conv:inst5|                       ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 1 (1)            ; |Template|control_conv:inst5                                                                                                                      ;              ;
 ;    |fifo0:inst1|                              ; 162 (0)     ; 103 (0)                   ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 59 (0)       ; 1 (0)             ; 102 (0)          ; |Template|fifo0:inst1                                                                                                                             ;              ;
 ;       |dcfifo:dcfifo_component|               ; 162 (0)     ; 103 (0)                   ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 59 (0)       ; 1 (0)             ; 102 (0)          ; |Template|fifo0:inst1|dcfifo:dcfifo_component                                                                                                     ;              ;
-;          |dcfifo_hnj1:auto_generated|         ; 162 (28)    ; 103 (27)                  ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 59 (2)       ; 1 (0)             ; 102 (4)          ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated                                                                          ;              ;
+;          |dcfifo_hnj1:auto_generated|         ; 162 (27)    ; 103 (27)                  ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 59 (2)       ; 1 (0)             ; 102 (4)          ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated                                                                          ;              ;
 ;             |a_graycounter_g2c:wrptr_gp|      ; 31 (31)     ; 23 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 23 (23)          ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp                                               ;              ;
-;             |a_graycounter_h2c:wrptr_g1p|     ; 27 (27)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 22 (22)          ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p                                              ;              ;
+;             |a_graycounter_h2c:wrptr_g1p|     ; 27 (27)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 23 (23)          ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p                                              ;              ;
 ;             |a_graycounter_s96:rdptr_g1p|     ; 40 (40)     ; 28 (28)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 30 (30)          ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p                                              ;              ;
 ;             |altsyncram_1qu:fifo_ram|         ; 20 (0)      ; 3 (0)                     ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (0)       ; 1 (0)             ; 2 (0)            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram                                                  ;              ;
 ;                |altsyncram_cec1:altsyncram14| ; 20 (3)      ; 3 (3)                     ; 0 (0)         ; 131072      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (0)       ; 1 (1)             ; 2 (1)            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14                     ;              ;
@@ -939,7 +939,7 @@ Note: User assignments will override these defaults. The user specified values a
 ;             |mux_1u7:rdemp_eq_comp_lsb_mux|   ; 10 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 7 (7)            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux                                            ;              ;
 ;             |mux_1u7:rdemp_eq_comp_msb_mux|   ; 10 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 3 (3)            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux                                            ;              ;
 ;             |mux_1u7:wrfull_eq_comp_lsb_mux|  ; 10 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 8 (8)            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux                                           ;              ;
-;             |mux_1u7:wrfull_eq_comp_msb_mux|  ; 9 (9)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 5 (5)            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux                                           ;              ;
+;             |mux_1u7:wrfull_eq_comp_msb_mux|  ; 9 (9)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 4 (4)            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux                                           ;              ;
 ;    |reloj_ADS9223:inst2|                      ; 51 (51)     ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 50 (50)      ; 0 (0)             ; 1 (1)            ; |Template|reloj_ADS9223:inst2                                                                                                                     ;              ;
 +-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -953,6 +953,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; IO_C15      ; Output   ; --            ; --            ; --                    ; --  ;
 ; IO_G16      ; Output   ; --            ; --            ; --                    ; --  ;
 ; IO_M2       ; Output   ; --            ; --            ; --                    ; --  ;
+; IO_D2       ; Output   ; --            ; --            ; --                    ; --  ;
 ; fd[15]      ; Output   ; --            ; --            ; --                    ; --  ;
 ; fd[14]      ; Output   ; --            ; --            ; --                    ; --  ;
 ; fd[13]      ; Output   ; --            ; --            ; --                    ; --  ;
@@ -1002,8 +1003,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|valid_rdreq~0                                                       ; 1                 ; 6       ;
 ; ifclk                                                                                                                                     ;                   ;         ;
 ; data_in[11]                                                                                                                               ;                   ;         ;
-;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a11 ; 1                 ; 6       ;
-;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a27 ; 1                 ; 6       ;
+;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a11 ; 0                 ; 6       ;
+;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a27 ; 0                 ; 6       ;
 ; data_in[10]                                                                                                                               ;                   ;         ;
 ;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a10 ; 0                 ; 6       ;
 ;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a26 ; 0                 ; 6       ;
@@ -1020,20 +1021,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a6  ; 1                 ; 6       ;
 ;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a22 ; 1                 ; 6       ;
 ; data_in[5]                                                                                                                                ;                   ;         ;
-;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a5  ; 1                 ; 6       ;
-;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a21 ; 1                 ; 6       ;
+;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a5  ; 0                 ; 6       ;
+;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a21 ; 0                 ; 6       ;
 ; data_in[4]                                                                                                                                ;                   ;         ;
-;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a4  ; 0                 ; 6       ;
-;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a20 ; 0                 ; 6       ;
+;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a4  ; 1                 ; 6       ;
+;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a20 ; 1                 ; 6       ;
 ; data_in[3]                                                                                                                                ;                   ;         ;
-;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a3  ; 0                 ; 6       ;
-;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a19 ; 0                 ; 6       ;
+;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a3  ; 1                 ; 6       ;
+;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a19 ; 1                 ; 6       ;
 ; data_in[2]                                                                                                                                ;                   ;         ;
 ;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a2  ; 0                 ; 6       ;
 ;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a18 ; 0                 ; 6       ;
 ; data_in[1]                                                                                                                                ;                   ;         ;
-;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a1  ; 0                 ; 6       ;
-;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a17 ; 0                 ; 6       ;
+;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a1  ; 1                 ; 6       ;
+;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a17 ; 1                 ; 6       ;
 ; data_in[0]                                                                                                                                ;                   ;         ;
 ;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a0  ; 1                 ; 6       ;
 ;      - fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ram_block15a16 ; 1                 ; 6       ;
@@ -1047,17 +1048,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; PLL_48M_in:inst4|altpll:altpll_component|_clk0                                                                                                     ; PLL_1              ; 1       ; Clock                      ; yes    ; Global Clock         ; GCLK3            ; --                        ;
 ; PLL_48M_in:inst4|altpll:altpll_component|_clk1                                                                                                     ; PLL_1              ; 6       ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; Retrasar_entrada:inst3|q5_Entrada                                                                                                                  ; LCFF_X24_Y26_N23   ; 86      ; Clock                      ; yes    ; Global Clock         ; GCLK10           ; --                        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b|eq_node[0] ; LCCOMB_X21_Y18_N14 ; 16      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b|eq_node[1] ; LCCOMB_X22_Y18_N6  ; 16      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; Retrasar_entrada:inst3|q5_Entrada                                                                                                                  ; LCFF_X24_Y24_N25   ; 86      ; Clock                      ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b|eq_node[0] ; LCCOMB_X18_Y16_N22 ; 16      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b|eq_node[1] ; LCCOMB_X19_Y16_N6  ; 16      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr|dffe20a[0]                                                       ; LCFF_X20_Y15_N31   ; 20      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|int_wrfull                                                                          ; LCCOMB_X21_Y18_N24 ; 21      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdcnt_addr_ena                                                                      ; LCCOMB_X24_Y18_N4  ; 43      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|valid_rdreq~0                                                                       ; LCCOMB_X24_Y18_N22 ; 51      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|int_wrfull                                                                          ; LCCOMB_X18_Y16_N8  ; 21      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdcnt_addr_ena                                                                      ; LCCOMB_X20_Y17_N22 ; 43      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|valid_rdreq~0                                                                       ; LCCOMB_X20_Y17_N12 ; 51      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; ifclk                                                                                                                                              ; PIN_H2             ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
 ; ifclk                                                                                                                                              ; PIN_H2             ; 81      ; Clock                      ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; reloj_ADS9223:inst2|clkSig~1                                                                                                                       ; LCCOMB_X27_Y23_N12 ; 4       ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; reloj_ADS9223:inst2|valClk~1                                                                                                                       ; LCCOMB_X27_Y23_N26 ; 9       ; Latch enable               ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; reloj_ADS9223:inst2|clkSig~1                                                                                                                       ; LCCOMB_X31_Y24_N8  ; 4       ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; reloj_ADS9223:inst2|valClk~1                                                                                                                       ; LCCOMB_X31_Y24_N20 ; 9       ; Latch enable               ; yes    ; Global Clock         ; GCLK8            ; --                        ;
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1068,9 +1069,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
 ; PLL_48M_in:inst4|altpll:altpll_component|_clk0 ; PLL_1              ; 1       ; Global Clock         ; GCLK3            ; --                        ;
 ; PLL_48M_in:inst4|altpll:altpll_component|_clk1 ; PLL_1              ; 6       ; Global Clock         ; GCLK2            ; --                        ;
-; Retrasar_entrada:inst3|q5_Entrada              ; LCFF_X24_Y26_N23   ; 86      ; Global Clock         ; GCLK10           ; --                        ;
+; Retrasar_entrada:inst3|q5_Entrada              ; LCFF_X24_Y24_N25   ; 86      ; Global Clock         ; GCLK10           ; --                        ;
 ; ifclk                                          ; PIN_H2             ; 81      ; Global Clock         ; GCLK0            ; --                        ;
-; reloj_ADS9223:inst2|valClk~1                   ; LCCOMB_X27_Y23_N26 ; 9       ; Global Clock         ; GCLK8            ; --                        ;
+; reloj_ADS9223:inst2|valClk~1                   ; LCCOMB_X31_Y24_N20 ; 9       ; Global Clock         ; GCLK8            ; --                        ;
 +------------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1114,6 +1115,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ~GND                                                                                                                                                ; 8       ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a2                                               ; 7       ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a5                                               ; 7       ;
+; reloj_ADS9223:inst2|clkSig                                                                                                                          ; 6       ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4                                          ; 6       ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~6                                          ; 6       ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a0                                               ; 6       ;
@@ -1123,7 +1125,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; reloj_ADS9223:inst2|valClk~1                                                                                                                        ; 6       ;
 ; reloj_ADS9223:inst2|LessThan0~5                                                                                                                     ; 6       ;
 ; reloj_ADS9223:inst2|Add0~8                                                                                                                          ; 6       ;
-; reloj_ADS9223:inst2|clkSig                                                                                                                          ; 5       ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~23                                         ; 5       ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~22                                         ; 5       ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~14                                         ; 5       ;
@@ -1250,8 +1251,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]~2feeder                                     ; 1       ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~0feeder                                     ; 1       ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|p0addr~feeder                                                                        ; 1       ;
-; reloj_ADS9223:inst2|Mux0~3_RESYN54_BDD55                                                                                                            ; 1       ;
-; reloj_ADS9223:inst2|Mux0~3_RESYN52_BDD53                                                                                                            ; 1       ;
+; reloj_ADS9223:inst2|Mux0~3_RESYN62_BDD63                                                                                                            ; 1       ;
+; reloj_ADS9223:inst2|Mux0~3_RESYN60_BDD61                                                                                                            ; 1       ;
 ; reloj_ADS9223:inst2|Mux0~0_RESYN22_BDD23                                                                                                            ; 1       ;
 ; control_conv:inst5|Mux1~1_RESYN20_BDD21                                                                                                             ; 1       ;
 ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|_~0_OTERM3_OTERM7                                         ; 1       ;
@@ -1467,13 +1468,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
-+--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Name                                                                                                                           ; Type ; Mode           ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size   ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF  ; Location                                                                                                                                                                                                                                                                                                                                                                                                               ;
-+--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ALTSYNCRAM ; AUTO ; True Dual Port ; Dual Clocks ; 8192         ; 16           ; 8192         ; 16           ; yes                    ; yes                     ; yes                    ; no                      ; 131072 ; 8192                        ; 16                          ; 8192                        ; 16                          ; 131072              ; 32   ; None ; M4K_X41_Y6, M4K_X17_Y7, M4K_X41_Y14, M4K_X17_Y10, M4K_X41_Y12, M4K_X17_Y14, M4K_X17_Y6, M4K_X41_Y7, M4K_X41_Y10, M4K_X17_Y15, M4K_X17_Y9, M4K_X17_Y13, M4K_X17_Y12, M4K_X17_Y11, M4K_X17_Y21, M4K_X17_Y8, M4K_X17_Y19, M4K_X41_Y8, M4K_X17_Y18, M4K_X17_Y17, M4K_X17_Y20, M4K_X17_Y16, M4K_X41_Y15, M4K_X41_Y9, M4K_X41_Y21, M4K_X41_Y11, M4K_X41_Y19, M4K_X41_Y18, M4K_X41_Y16, M4K_X41_Y17, M4K_X41_Y20, M4K_X41_Y13 ;
-+--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Name                                                                                                                           ; Type ; Mode           ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size   ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF  ; Location                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ALTSYNCRAM ; AUTO ; True Dual Port ; Dual Clocks ; 8192         ; 16           ; 8192         ; 16           ; yes                    ; yes                     ; yes                    ; no                      ; 131072 ; 8192                        ; 16                          ; 8192                        ; 16                          ; 131072              ; 32   ; None ; M4K_X41_Y14, M4K_X17_Y10, M4K_X17_Y17, M4K_X17_Y8, M4K_X41_Y15, M4K_X41_Y8, M4K_X41_Y10, M4K_X17_Y9, M4K_X17_Y20, M4K_X41_Y23, M4K_X17_Y16, M4K_X17_Y15, M4K_X17_Y12, M4K_X17_Y11, M4K_X17_Y18, M4K_X17_Y21, M4K_X41_Y9, M4K_X41_Y12, M4K_X41_Y13, M4K_X41_Y11, M4K_X17_Y13, M4K_X17_Y14, M4K_X41_Y20, M4K_X41_Y21, M4K_X17_Y19, M4K_X17_Y23, M4K_X41_Y19, M4K_X41_Y22, M4K_X41_Y17, M4K_X41_Y16, M4K_X41_Y18, M4K_X17_Y22 ;
++--------------------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
@@ -1482,14 +1483,14 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +----------------------------+------------------------+
 ; Interconnect Resource Type ; Usage                  ;
 +----------------------------+------------------------+
-; Block interconnects        ; 1,237 / 54,004 ( 2 % ) ;
-; C16 interconnects          ; 42 / 2,100 ( 2 % )     ;
-; C4 interconnects           ; 615 / 36,000 ( 2 % )   ;
-; Direct links               ; 82 / 54,004 ( < 1 % )  ;
+; Block interconnects        ; 1,239 / 54,004 ( 2 % ) ;
+; C16 interconnects          ; 33 / 2,100 ( 2 % )     ;
+; C4 interconnects           ; 624 / 36,000 ( 2 % )   ;
+; Direct links               ; 94 / 54,004 ( < 1 % )  ;
 ; Global clocks              ; 5 / 16 ( 31 % )        ;
-; Local interconnects        ; 148 / 18,752 ( < 1 % ) ;
-; R24 interconnects          ; 59 / 1,900 ( 3 % )     ;
-; R4 interconnects           ; 756 / 46,920 ( 2 % )   ;
+; Local interconnects        ; 147 / 18,752 ( < 1 % ) ;
+; R24 interconnects          ; 61 / 1,900 ( 3 % )     ;
+; R4 interconnects           ; 696 / 46,920 ( 1 % )   ;
 +----------------------------+------------------------+
 
 
@@ -1532,7 +1533,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 13.83) ; Number of LABs  (Total = 24) ;
+; Number of Signals Sourced  (Average = 13.79) ; Number of LABs  (Total = 24) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 2                            ;
@@ -1562,8 +1563,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; 25                                           ; 0                            ;
 ; 26                                           ; 1                            ;
 ; 27                                           ; 3                            ;
-; 28                                           ; 2                            ;
-; 29                                           ; 1                            ;
+; 28                                           ; 3                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1667,7 +1667,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Fitter
     Info: Version 11.1 Build 173 11/01/2011 SJ Web Edition
-    Info: Processing started: Mon Jul 30 11:56:21 2012
+    Info: Processing started: Mon Jul 30 12:25:47 2012
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off daq_fpga_ads9223 -c QUSBEVB_REVA_EP2C20_Template
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (119006): Selected device EP2C20F256C7 for design "QUSBEVB_REVA_EP2C20_Template"
@@ -1855,7 +1855,6 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "IO_D13" is assigned to location or region, but does not exist in design
     Warning (15706): Node "IO_D15" is assigned to location or region, but does not exist in design
     Warning (15706): Node "IO_D16" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "IO_D2" is assigned to location or region, but does not exist in design
     Warning (15706): Node "IO_D7" is assigned to location or region, but does not exist in design
     Warning (15706): Node "IO_D8" is assigned to location or region, but does not exist in design
     Warning (15706): Node "IO_D9" is assigned to location or region, but does not exist in design
@@ -1960,7 +1959,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "scl" is assigned to location or region, but does not exist in design
     Warning (15706): Node "sda" is assigned to location or region, but does not exist in design
     Warning (15706): Node "wen" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1973,7 +1972,7 @@ Info (128005): Physical synthesis algorithm automatic asynchronous signal pipeli
 Info (128002): Starting physical synthesis algorithm register retiming
 Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 0 ps
 Info (128002): Starting physical synthesis algorithm combinational resynthesis using boolean division
-Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 25307 ps
+Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 25399 ps
 Info (128002): Starting physical synthesis algorithm logic and register replication
 Info (128003): Physical synthesis algorithm logic and register replication complete: estimated slack improvement of 0 ps
 Info (128002): Starting physical synthesis algorithm fanout splitting
@@ -1987,10 +1986,11 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (306004): Started post-fitting delay annotation
-Warning (306006): Found 19 output pins without output pin load capacitance assignment
+Warning (306006): Found 20 output pins without output pin load capacitance assignment
     Info (306007): Pin "IO_C15" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "IO_G16" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "IO_M2" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "IO_D2" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "fd[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "fd[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "fd[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -2010,10 +2010,10 @@ Warning (306006): Found 19 output pins without output pin load capacitance assig
 Info (306005): Delay annotation completed successfully
 Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info: Quartus II 32-bit Fitter was successful. 0 errors, 190 warnings
+Info: Quartus II 32-bit Fitter was successful. 0 errors, 189 warnings
     Info: Peak virtual memory: 329 megabytes
-    Info: Processing ended: Mon Jul 30 11:56:58 2012
-    Info: Elapsed time: 00:00:37
+    Info: Processing ended: Mon Jul 30 12:26:18 2012
+    Info: Elapsed time: 00:00:31
     Info: Total CPU time (on all processors): 00:00:25
 
 

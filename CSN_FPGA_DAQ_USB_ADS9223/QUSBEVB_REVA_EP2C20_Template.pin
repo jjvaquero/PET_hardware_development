@@ -118,7 +118,7 @@ data_in[0]                   : C14       : input  : 3.3-V LVTTL       :         
 IO_C15                       : C15       : output : 3.3-V LVTTL       :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 2         :                
+IO_D2                        : D2        : output : 3.3-V LVTTL       :         : 2         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D4        :        :                   :         : 2         :                
 GND_PLL3                     : D5        : gnd    :                   :         :           :                
