@@ -1,5 +1,5 @@
 Assembler report for QUSBEVB_REVA_EP2C20_Template
-Mon Jul 30 11:57:28 2012
+Mon Jul 30 12:26:45 2012
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -39,7 +39,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Jul 30 11:57:28 2012 ;
+; Assembler Status      ; Successful - Mon Jul 30 12:26:45 2012 ;
 ; Revision Name         ; QUSBEVB_REVA_EP2C20_Template          ;
 ; Top-level Entity Name ; Template                              ;
 ; Family                ; Cyclone II                            ;
@@ -97,7 +97,7 @@ applicable agreement for further details.
 +----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Device         ; EP2C20F256C7                                                                                                                                   ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                                                                                                     ;
-; Checksum       ; 0x00208BB8                                                                                                                                     ;
+; Checksum       ; 0x00203921                                                                                                                                     ;
 +----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -108,7 +108,7 @@ applicable agreement for further details.
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 ; Device             ; EPC4                                                                                                                                       ;
 ; JTAG usercode      ; 0xFFFFFFFF                                                                                                                                 ;
-; Checksum           ; 0x071745BE                                                                                                                                 ;
+; Checksum           ; 0x07181685                                                                                                                                 ;
 ; Compression Ratio  ; 3                                                                                                                                          ;
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -129,14 +129,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Assembler
     Info: Version 11.1 Build 173 11/01/2011 SJ Web Edition
-    Info: Processing started: Mon Jul 30 11:57:04 2012
+    Info: Processing started: Mon Jul 30 12:26:20 2012
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off daq_fpga_ads9223 -c QUSBEVB_REVA_EP2C20_Template
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 263 megabytes
-    Info: Processing ended: Mon Jul 30 11:57:28 2012
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Processing ended: Mon Jul 30 12:26:45 2012
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:10
 
 

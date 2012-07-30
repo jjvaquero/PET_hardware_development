@@ -156,6 +156,23 @@ applicable agreement for further details.
 	(flipy)
 	(annotation_block (location)(rect -56 376 0 392))
 )
+(pin
+	(output)
+	(rect 496 136 672 152)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "IO_D2" (rect 90 0 121 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 928 176 984 192))
+)
 (symbol
 	(rect 552 280 728 472)
 	(text "fifo0" (rect 77 0 104 16)(font "Arial" (font_size 10)))
@@ -488,10 +505,6 @@ applicable agreement for further details.
 	(pt 240 40)
 )
 (connector
-	(pt 448 40)
-	(pt 472 40)
-)
-(connector
 	(pt 448 56)
 	(pt 472 56)
 	(bus)
@@ -629,7 +642,24 @@ applicable agreement for further details.
 	(pt 200 152)
 	(pt 232 152)
 )
+(connector
+	(pt 496 144)
+	(pt 456 144)
+)
+(connector
+	(pt 456 144)
+	(pt 456 40)
+)
+(connector
+	(pt 448 40)
+	(pt 456 40)
+)
+(connector
+	(pt 456 40)
+	(pt 472 40)
+)
 (junction (pt 208 416))
 (junction (pt 208 368))
 (junction (pt 520 368))
 (junction (pt 200 152))
+(junction (pt 456 40))

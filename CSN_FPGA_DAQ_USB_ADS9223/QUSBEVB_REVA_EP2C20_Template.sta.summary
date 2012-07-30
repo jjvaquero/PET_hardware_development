@@ -3,39 +3,39 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'inst4|altpll_component|pll|clk[0]'
-Slack : -20.240
-TNS   : -20.240
+Slack : -19.937
+TNS   : -19.937
 
 Type  : Slow Model Setup 'inst4|altpll_component|pll|clk[1]'
-Slack : -19.777
-TNS   : -19.777
+Slack : -19.465
+TNS   : -19.465
 
 Type  : Slow Model Setup 'reloj_ADS9223:inst2|EA[0]'
-Slack : -15.136
-TNS   : -132.410
+Slack : -14.958
+TNS   : -132.242
 
 Type  : Slow Model Setup 'reloj_ADS9223:inst2|clkSig'
-Slack : -14.784
-TNS   : -128.354
+Slack : -14.911
+TNS   : -130.228
 
 Type  : Slow Model Setup 'Retrasar_entrada:inst3|q5_Entrada'
-Slack : -5.118
-TNS   : -2111.853
+Slack : -4.910
+TNS   : -2103.746
 
 Type  : Slow Model Setup 'ifclk'
-Slack : -2.640
-TNS   : -5.054
+Slack : -2.454
+TNS   : -4.683
 
 Type  : Slow Model Hold 'reloj_ADS9223:inst2|EA[0]'
-Slack : -13.784
-TNS   : -133.010
+Slack : -13.589
+TNS   : -127.167
 
 Type  : Slow Model Hold 'reloj_ADS9223:inst2|clkSig'
-Slack : -2.452
-TNS   : -20.343
+Slack : -2.337
+TNS   : -13.777
 
 Type  : Slow Model Hold 'inst4|altpll_component|pll|clk[0]'
-Slack : 0.101
+Slack : 0.092
 TNS   : 0.000
 
 Type  : Slow Model Hold 'Retrasar_entrada:inst3|q5_Entrada'
@@ -47,11 +47,11 @@ Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow Model Hold 'inst4|altpll_component|pll|clk[1]'
-Slack : 0.615
+Slack : 0.612
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'ifclk'
-Slack : 7.830
+Slack : 7.712
 TNS   : 0.000
 
 Type  : Slow Model Removal 'ifclk'
@@ -59,8 +59,8 @@ Slack : 11.586
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'reloj_ADS9223:inst2|EA[0]'
-Slack : -9.067
-TNS   : -490.638
+Slack : -8.358
+TNS   : -461.698
 
 Type  : Slow Model Minimum Pulse Width 'Retrasar_entrada:inst3|q5_Entrada'
 Slack : -2.064
@@ -83,39 +83,39 @@ Slack : 8.888
 TNS   : 0.000
 
 Type  : Fast Model Setup 'inst4|altpll_component|pll|clk[0]'
-Slack : -8.121
-TNS   : -8.121
+Slack : -7.962
+TNS   : -7.962
 
 Type  : Fast Model Setup 'inst4|altpll_component|pll|clk[1]'
-Slack : -7.961
-TNS   : -7.961
+Slack : -7.797
+TNS   : -7.797
 
 Type  : Fast Model Setup 'reloj_ADS9223:inst2|EA[0]'
-Slack : -5.012
-TNS   : -43.383
+Slack : -4.935
+TNS   : -43.124
 
 Type  : Fast Model Setup 'reloj_ADS9223:inst2|clkSig'
-Slack : -4.611
-TNS   : -39.774
+Slack : -4.620
+TNS   : -40.074
 
 Type  : Fast Model Setup 'Retrasar_entrada:inst3|q5_Entrada'
-Slack : -1.514
-TNS   : -583.002
+Slack : -1.457
+TNS   : -564.994
 
 Type  : Fast Model Setup 'ifclk'
-Slack : -0.885
-TNS   : -1.687
+Slack : -0.824
+TNS   : -1.578
 
 Type  : Fast Model Hold 'reloj_ADS9223:inst2|EA[0]'
-Slack : -5.441
-TNS   : -52.007
+Slack : -5.336
+TNS   : -49.577
 
 Type  : Fast Model Hold 'reloj_ADS9223:inst2|clkSig'
-Slack : -1.424
-TNS   : -12.060
+Slack : -1.367
+TNS   : -9.573
 
 Type  : Fast Model Hold 'ifclk'
-Slack : 0.129
+Slack : 0.161
 TNS   : 0.000
 
 Type  : Fast Model Hold 'Retrasar_entrada:inst3|q5_Entrada'
@@ -123,15 +123,15 @@ Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'inst4|altpll_component|pll|clk[1]'
-Slack : 0.238
+Slack : 0.236
 TNS   : 0.000
 
 Type  : Fast Model Hold 'inst4|altpll_component|pll|clk[0]'
-Slack : 0.375
+Slack : 0.367
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'ifclk'
-Slack : 9.269
+Slack : 9.207
 TNS   : 0.000
 
 Type  : Fast Model Removal 'ifclk'
@@ -139,8 +139,8 @@ Slack : 10.996
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'reloj_ADS9223:inst2|EA[0]'
-Slack : -2.860
-TNS   : -153.764
+Slack : -2.581
+TNS   : -142.896
 
 Type  : Fast Model Minimum Pulse Width 'Retrasar_entrada:inst3|q5_Entrada'
 Slack : -1.880
