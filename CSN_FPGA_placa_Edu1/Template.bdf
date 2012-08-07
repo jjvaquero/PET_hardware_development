@@ -323,7 +323,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 272 192 520 320)
+	(rect 288 192 536 320)
 	(text "control_disparo" (rect 5 0 79 12)(font "Arial" ))
 	(text "inst" (rect 8 112 25 124)(font "Arial" ))
 	(port
@@ -442,7 +442,7 @@ applicable agreement for further details.
 )
 (connector
 	(pt 568 256)
-	(pt 520 256)
+	(pt 536 256)
 )
 (connector
 	(pt 168 280)
@@ -455,7 +455,7 @@ applicable agreement for further details.
 )
 (connector
 	(pt 552 272)
-	(pt 520 272)
+	(pt 536 272)
 	(bus)
 )
 (connector
@@ -464,17 +464,12 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 224 224)
-	(pt 272 224)
+	(pt 544 224)
+	(pt 536 224)
 )
 (connector
-	(pt 216 240)
-	(pt 272 240)
-)
-(connector
-	(pt 168 272)
-	(pt 272 272)
-	(bus)
+	(pt 544 240)
+	(pt 536 240)
 )
 (connector
 	(pt 168 376)
@@ -493,16 +488,21 @@ applicable agreement for further details.
 	(pt 568 400)
 )
 (connector
-	(pt 520 240)
-	(pt 544 240)
+	(pt 224 224)
+	(pt 288 224)
 )
 (connector
-	(pt 520 224)
-	(pt 544 224)
+	(pt 216 240)
+	(pt 288 240)
 )
 (connector
-	(pt 272 256)
 	(pt -8 256)
+	(pt 288 256)
+)
+(connector
+	(pt 168 272)
+	(pt 288 272)
+	(bus)
 )
 (junction (pt 216 376))
 (junction (pt -104 376))
