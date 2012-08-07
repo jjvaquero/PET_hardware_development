@@ -22,7 +22,7 @@ function varargout = daq_gui_v1(varargin)
 
 % Edit the above text to modify the response to help daq_gui_v1
 
-% Last Modified by GUIDE v2.5 12-Jun-2012 10:49:44
+% Last Modified by GUIDE v2.5 21-Jun-2012 13:47:46
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -114,7 +114,7 @@ QUSB_init(quick);
 %configuro la FPGA
 QUSB_FpgaInit(quick);
 %programo la FPGA
-QUSB_FpgaProgram(quick,'CSN_detect_pico.rbf');%'CSN_edu2.rbf'); %'daq_fpga.rbf');
+QUSB_FpgaProgram(quick,'CSN_edu3.rbf'); %'CSN_detect_pico.rbf');%'CSN_edu2.rbf'); %'daq_fpga.rbf');
 
 %aqui debo primero configurar la fpga y toda esa pelicula y luego activar
 %el timer
@@ -313,40 +313,42 @@ title(handles.axes2,'Antes');
 %handles.aux_val = handles.aux_val+1;
 %guidata(handles, aux_v);
 %handles.aux_val
-handles.aux_val = handles.aux_val +1;
-if  handles.aux_val >= 200
-    hists_temp = handles.tmp_hists;
-    save('hist_temporales.mat','hists_temp');
-    handles.aux_val = 0;
-    %guardo el histograma corregido (rebineado a 512)
-    handles.aux_val2 = handles.aux_val2 +1;
-    if handles.aux_val2 < 31
-       handles.hist_save(:,handles.aux_val2) = handles.hist_corr(1:512);
-       handles.hist_comp = handles.hist_corr(1:512);
-       %lo pongo todo a cero
-       handles.hist = zeros(4096,1);
-       handles.hist_corr = zeros(512,1); %para meter ceros en un array
-       hist_save = handles.hist_save;
-       save('histograma_comp.mat','hist_save');
-       disp('guardado');
-    else
-        disp('todo almacenado');
-    end
-else
-    handles.tmp_hists(:,handles.aux_val)= dataConv;
-end
+
+%todo esto es para el clasificador...me lo pulo
+% handles.aux_val = handles.aux_val +1;
+% if  handles.aux_val >= 200
+%     hists_temp = handles.tmp_hists;
+%     save('hist_temporales.mat','hists_temp');
+%     handles.aux_val = 0;
+%     %guardo el histograma corregido (rebineado a 512)
+%     handles.aux_val2 = handles.aux_val2 +1;
+%     if handles.aux_val2 < 31
+%        handles.hist_save(:,handles.aux_val2) = handles.hist_corr(1:512);
+%        handles.hist_comp = handles.hist_corr(1:512);
+%        %lo pongo todo a cero
+%        handles.hist = zeros(4096,1);
+%        handles.hist_corr = zeros(512,1); %para meter ceros en un array
+%        hist_save = handles.hist_save;
+%        save('histograma_comp.mat','hist_save');
+%        disp('guardado');
+%     else
+%         disp('todo almacenado');
+%     end
+% else
+%     handles.tmp_hists(:,handles.aux_val)= dataConv;
+% end
  
  %genero ahora mi histograma
 %axes(handles.axes1);
 %plot(handles.axes1, dataConv);
-plot(handles.axes1,1:4096, handles.hist(1:4096),'*');
-xlim(handles.axes1,[50 4096]);
+plot(handles.axes3,1:4096, handles.hist(1:4096));
+xlim(handles.axes3,[50 4090]);
 %lo pongo en escala logaritmica
-%set(handles.axes1,'XScale','log');
-
-plot(handles.axes3,1:512, handles.hist_corr(1:512));
-xlim(handles.axes3,[5 450]);
 %set(handles.axes3,'XScale','log');
+
+plot(handles.axes1,1:512, handles.hist_corr(1:512));
+xlim(handles.axes1,[5 510]);
+set(handles.axes1,'YScale','log');
 title(handles.axes3,'Despues');
 
 %plot(handles.axes1,temp,'*');
@@ -405,6 +407,18 @@ function pushbutton6_Callback(hObject, eventdata, handles)
 % disp(str_tmp);
 str_tmp = clasifica_cutre(handles.hist_comp);
 set(handles.text3,'String',str_tmp);
+guidata(handles.guifig, handles);
+guidata(hObject, handles);
+
+
+% --- Executes on button press in pushbutton7.
+function pushbutton7_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton7 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+histog_corr = handles.hist_corr;
+histog_tot = handles.hist;
+save histrograma.mat histog_tot histog_corr
 guidata(handles.guifig, handles);
 guidata(hObject, handles);
 
