@@ -15488,7 +15488,7 @@ db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
 # case_insensitive
 # source_file
 template.bdf
-a21a24dc130eae3ef42d76b359a57f
+e109234c9ffa03b76a1a9c1756b208d
 26
 # internal_option {
 BLOCK_DESIGN_NAMING
@@ -15512,7 +15512,7 @@ ON
 # case_insensitive
 # source_file
 control_disparo.vhdl
-a29045a56c11def8aba51f62c3cd3f1
+bfa2fb2851654daa02a41a98eeb8274
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
