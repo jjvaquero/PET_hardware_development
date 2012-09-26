@@ -1,0 +1,93 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'ifclk'
+Slack : -5.855
+TNS   : -11.491
+
+Type  : Slow Model Setup 'IO_E1'
+Slack : -4.571
+TNS   : -1995.566
+
+Type  : Slow Model Setup 'inst1|altpll_component|pll|clk[0]'
+Slack : -3.053
+TNS   : -5.739
+
+Type  : Slow Model Hold 'IO_E1'
+Slack : -1.514
+TNS   : -2.933
+
+Type  : Slow Model Hold 'ifclk'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow Model Hold 'inst1|altpll_component|pll|clk[0]'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'ifclk'
+Slack : 7.785
+TNS   : 0.000
+
+Type  : Slow Model Removal 'ifclk'
+Slack : 11.588
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'IO_E1'
+Slack : -2.414
+TNS   : -2424.619
+
+Type  : Slow Model Minimum Pulse Width 'ifclk'
+Slack : 7.852
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'inst1|altpll_component|pll|clk[0]'
+Slack : 32.221
+TNS   : 0.000
+
+Type  : Fast Model Setup 'ifclk'
+Slack : -2.340
+TNS   : -4.596
+
+Type  : Fast Model Setup 'inst1|altpll_component|pll|clk[0]'
+Slack : -1.706
+TNS   : -3.258
+
+Type  : Fast Model Setup 'IO_E1'
+Slack : -1.574
+TNS   : -507.986
+
+Type  : Fast Model Hold 'IO_E1'
+Slack : -0.683
+TNS   : -1.319
+
+Type  : Fast Model Hold 'ifclk'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'inst1|altpll_component|pll|clk[0]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'ifclk'
+Slack : 9.265
+TNS   : 0.000
+
+Type  : Fast Model Removal 'ifclk'
+Slack : 10.998
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'IO_E1'
+Slack : -1.997
+TNS   : -1986.212
+
+Type  : Fast Model Minimum Pulse Width 'ifclk'
+Slack : 8.036
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'inst1|altpll_component|pll|clk[0]'
+Slack : 32.332
+TNS   : 0.000
+
+------------------------------------------------------------
