@@ -25,9 +25,9 @@ architecture disparador of control_disparo is
 
 --cosas para la maquina de estados
 
-type STATE_TYPE is (E0, E1, E2, E3); 
+type STATE_TYPE is (E0, E1, E2, E3, E4); 
 attribute ENUM_ENCODING: STRING; 
-attribute ENUM_ENCODING of STATE_TYPE:type is "0000 0001 0010 0011";
+attribute ENUM_ENCODING of STATE_TYPE:type is "0000 0001 0010 0011 0100";
 
 signal  EA, EP        : STATE_TYPE;  
  
@@ -105,7 +105,7 @@ begin
 					new_data<='0';
 					reset <='1';
 					--no coge bien lo de NBUSY = '0'...por ello espero un tiempo fijo
-				    if (NBUSY ='0') or (cuenta_180> 5) then 
+				    if (NBUSY ='0') or (cuenta_180> 15) then 
 						EP <= E3;
 					else
 						EP <= E2;
@@ -120,7 +120,7 @@ begin
 					new_data<='0';
 					if (NBUSY = '1') and (Comp='1')then
 					   desInt_sig<='0'; --cierro la puerta al terminar 
-						EP <= E0; 		
+						EP <= E4; 		
 						new_data<='1';
 						--if cuenta_180 > t_integracion then
 						--	EP<= E0; --hago esto para dar tiempo a la puerta
@@ -130,6 +130,18 @@ begin
 					else
 						EP<= E3; 
 					end if; 
+					
+			when E4 =>   --espera para acticar la puerta
+					conv_sig<='1';
+					integrando<='1';
+					desInt_sig<='0';
+					reset <='1';
+					new_data<='1';
+				    if  cuenta_180 > t_integracion then  -- espero el tiempo de integracion
+						EP <= E0;
+					else
+						 EP <= E4;
+					end if;
 							
        end case; 
 		 
