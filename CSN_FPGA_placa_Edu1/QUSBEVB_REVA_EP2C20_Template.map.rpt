@@ -1,5 +1,5 @@
 Analysis & Synthesis report for QUSBEVB_REVA_EP2C20_Template
-Tue Sep 25 11:13:28 2012
+Thu Nov 08 11:19:05 2012
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -65,15 +65,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Sep 25 11:13:28 2012    ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 08 11:19:05 2012    ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Web Edition ;
 ; Revision Name                      ; QUSBEVB_REVA_EP2C20_Template             ;
 ; Top-level Entity Name              ; Template                                 ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 218                                      ;
-;     Total combinational functions  ; 189                                      ;
-;     Dedicated logic registers      ; 112                                      ;
-; Total registers                    ; 112                                      ;
+; Total logic elements               ; 221                                      ;
+;     Total combinational functions  ; 192                                      ;
+;     Dedicated logic registers      ; 113                                      ;
+; Total registers                    ; 113                                      ;
 ; Total pins                         ; 35                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 131,072                                  ;
@@ -224,20 +224,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------------------+
 ; Resource                                    ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Estimated Total logic elements              ; 218                       ;
+; Estimated Total logic elements              ; 221                       ;
 ;                                             ;                           ;
-; Total combinational functions               ; 189                       ;
+; Total combinational functions               ; 192                       ;
 ; Logic element usage by number of LUT inputs ;                           ;
-;     -- 4 input functions                    ; 96                        ;
-;     -- 3 input functions                    ; 57                        ;
-;     -- <=2 input functions                  ; 36                        ;
+;     -- 4 input functions                    ; 97                        ;
+;     -- 3 input functions                    ; 58                        ;
+;     -- <=2 input functions                  ; 37                        ;
 ;                                             ;                           ;
 ; Logic elements by mode                      ;                           ;
-;     -- normal mode                          ; 181                       ;
+;     -- normal mode                          ; 184                       ;
 ;     -- arithmetic mode                      ; 8                         ;
 ;                                             ;                           ;
-; Total registers                             ; 112                       ;
-;     -- Dedicated logic registers            ; 112                       ;
+; Total registers                             ; 113                       ;
+;     -- Dedicated logic registers            ; 113                       ;
 ;     -- I/O registers                        ; 0                         ;
 ;                                             ;                           ;
 ; I/O pins                                    ; 35                        ;
@@ -247,8 +247,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;                           ;
 ; Maximum fan-out node                        ; control_disparo:inst|Mux3 ;
 ; Maximum fan-out                             ; 96                        ;
-; Total fan-out                               ; 1875                      ;
-; Average fan-out                             ; 5.08                      ;
+; Total fan-out                               ; 1886                      ;
+; Average fan-out                             ; 5.06                      ;
 +---------------------------------------------+---------------------------+
 
 
@@ -257,10 +257,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Library Name ;
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Template                                     ; 189 (1)           ; 112 (0)      ; 131072      ; 0            ; 0       ; 0         ; 35   ; 0            ; |Template                                                                                                                                         ;              ;
+; |Template                                     ; 192 (1)           ; 113 (0)      ; 131072      ; 0            ; 0       ; 0         ; 35   ; 0            ; |Template                                                                                                                                         ;              ;
 ;    |PLL_48M_in:inst1|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst1                                                                                                                        ;              ;
 ;       |altpll:altpll_component|               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst1|altpll:altpll_component                                                                                                ;              ;
-;    |control_disparo:inst|                     ; 35 (35)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_disparo:inst                                                                                                                    ;              ;
+;    |control_disparo:inst|                     ; 38 (38)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_disparo:inst                                                                                                                    ;              ;
 ;    |fifo0:inst3|                              ; 153 (0)           ; 101 (0)      ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3                                                                                                                             ;              ;
 ;       |dcfifo:dcfifo_component|               ; 153 (0)           ; 101 (0)      ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component                                                                                                     ;              ;
 ;          |dcfifo_hnj1:auto_generated|         ; 153 (5)           ; 101 (27)     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated                                                                          ;              ;
@@ -367,7 +367,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 112   ;
+; Total registers                              ; 113   ;
 ; Number of registers using Synchronous Clear  ; 9     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
@@ -1017,7 +1017,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -1027,8 +1027,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 173 11/01/2011 SJ Web Edition
-    Info: Processing started: Tue Sep 25 11:13:18 2012
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off QUSBEVB_REVA_EP2C20_Template -c QUSBEVB_REVA_EP2C20_Template
+    Info: Processing started: Thu Nov 08 11:18:54 2012
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CSN_fpga_edu1 -c QUSBEVB_REVA_EP2C20_Template
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file pll_48m_in.vhd
     Info (12022): Found design unit 1: pll_48m_in-SYN
@@ -1047,26 +1047,26 @@ Info (12021): Found 2 design units, including 1 entities, in source file retrasa
 Info (12127): Elaborating entity "Template" for the top level hierarchy
 Info (12128): Elaborating entity "control_disparo" for hierarchy "control_disparo:inst"
 Warning (10542): VHDL Variable Declaration warning at control_disparo.vhdl(38): used initial value expression for variable "t_integracion" because variable was never assigned a value
-Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(137): signal "conv_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(138): signal "desInt_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(153): signal "dataIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at control_disparo.vhdl(144): inferring latch(es) for signal or variable "dataOut", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "dataOut[0]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[1]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[2]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[3]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[4]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[5]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[6]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[7]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[8]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[9]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[10]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[11]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[12]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[13]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[14]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[15]" at control_disparo.vhdl(144)
+Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(149): signal "conv_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(150): signal "desInt_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(165): signal "dataIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at control_disparo.vhdl(156): inferring latch(es) for signal or variable "dataOut", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "dataOut[0]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[1]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[2]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[3]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[4]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[5]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[6]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[7]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[8]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[9]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[10]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[11]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[12]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[13]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[14]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[15]" at control_disparo.vhdl(156)
 Info (12128): Elaborating entity "PLL_48M_in" for hierarchy "PLL_48M_in:inst1"
 Info (12128): Elaborating entity "altpll" for hierarchy "PLL_48M_in:inst1|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "PLL_48M_in:inst1|altpll:altpll_component"
@@ -1196,10 +1196,10 @@ Warning (19016): Clock multiplexers are found and protected
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (13086): Performing gate-level register retiming
-Info (13093): Not allowed to move 35 registers
+Info (13093): Not allowed to move 36 registers
     Info (13098): Not allowed to move at least 4 registers because they are fed by registers in a different clock domain
     Info (13099): Not allowed to move at least 28 registers because they feed registers in a different clock domain
-    Info (13100): Not allowed to move at least 2 registers because they feed clock or asynchronous control signals of other registers
+    Info (13100): Not allowed to move at least 3 registers because they feed clock or asynchronous control signals of other registers
     Info (13101): Not allowed to move at least 1 registers due to user assignments
 Info (13089): The Quartus II software applied gate-level register retiming to 2 clock domains
     Info (13092): The Quartus II software applied gate-level register retiming to clock "ifclk": created 16 new registers, removed 7 registers, left 32 registers untouched
@@ -1233,16 +1233,16 @@ Info (17049): 26 registers lost all their fanouts during netlist optimizations. 
     Info (17050): Register "fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8" lost all its fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding node "PLL_48M_in:inst1|altpll:altpll_component|pll"
-Info (21057): Implemented 303 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 306 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 235 logic cells
+    Info (21061): Implemented 238 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 8 warnings
     Info: Peak virtual memory: 292 megabytes
-    Info: Processing ended: Tue Sep 25 11:13:28 2012
-    Info: Elapsed time: 00:00:10
+    Info: Processing ended: Thu Nov 08 11:19:05 2012
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:10
 
 

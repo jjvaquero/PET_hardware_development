@@ -89,7 +89,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 0 272 168 288)
+	(rect 0 264 168 280)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "data_in[11..0]" (rect 5 0 72 12)(font "Arial" ))
 	(pt 168 8)
@@ -102,11 +102,11 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 16 280 72 296))
+	(annotation_block (location)(rect 16 272 72 288))
 )
 (pin
 	(output)
-	(rect 544 232 720 248)
+	(rect 784 232 960 248)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "IO_D2" (rect 90 0 121 12)(font "Arial" ))
 	(pt 0 8)
@@ -119,11 +119,11 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 720 248 776 264))
+	(annotation_block (location)(rect 960 248 1016 264))
 )
 (pin
 	(output)
-	(rect 544 216 720 232)
+	(rect 784 216 960 232)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "IO_C1" (rect 90 0 121 12)(font "Arial" ))
 	(pt 0 8)
@@ -136,7 +136,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 720 232 776 248))
+	(annotation_block (location)(rect 960 232 1016 248))
 )
 (pin
 	(output)
@@ -445,11 +445,6 @@ applicable agreement for further details.
 	(pt 536 256)
 )
 (connector
-	(pt 168 280)
-	(pt 168 272)
-	(bus)
-)
-(connector
 	(pt 224 120)
 	(pt 224 224)
 )
@@ -462,14 +457,6 @@ applicable agreement for further details.
 	(pt 552 360)
 	(pt 552 272)
 	(bus)
-)
-(connector
-	(pt 544 224)
-	(pt 536 224)
-)
-(connector
-	(pt 544 240)
-	(pt 536 240)
 )
 (connector
 	(pt 168 376)
@@ -500,9 +487,17 @@ applicable agreement for further details.
 	(pt 288 256)
 )
 (connector
-	(pt 168 272)
 	(pt 288 272)
+	(pt 168 272)
 	(bus)
+)
+(connector
+	(pt 536 224)
+	(pt 784 224)
+)
+(connector
+	(pt 784 240)
+	(pt 536 240)
 )
 (junction (pt 216 376))
 (junction (pt -104 376))
