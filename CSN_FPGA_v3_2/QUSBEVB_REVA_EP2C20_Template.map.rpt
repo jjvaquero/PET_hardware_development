@@ -1,5 +1,5 @@
 Analysis & Synthesis report for QUSBEVB_REVA_EP2C20_Template
-Tue Sep 25 11:13:28 2012
+Tue Nov 13 18:07:33 2012
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -65,15 +65,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Sep 25 11:13:28 2012    ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 13 18:07:33 2012    ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Web Edition ;
 ; Revision Name                      ; QUSBEVB_REVA_EP2C20_Template             ;
 ; Top-level Entity Name              ; Template                                 ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 218                                      ;
-;     Total combinational functions  ; 189                                      ;
-;     Dedicated logic registers      ; 112                                      ;
-; Total registers                    ; 112                                      ;
+; Total logic elements               ; 226                                      ;
+;     Total combinational functions  ; 197                                      ;
+;     Dedicated logic registers      ; 118                                      ;
+; Total registers                    ; 118                                      ;
 ; Total pins                         ; 35                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 131,072                                  ;
@@ -176,47 +176,47 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                   ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------+
-; PLL_48M_in.vhd                   ; yes             ; User Wizard-Generated File         ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/PLL_48M_in.vhd            ;
-; Template.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/Template.bdf              ;
-; control_disparo.vhdl             ; yes             ; User VHDL File                     ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/control_disparo.vhdl      ;
-; fifo0.vhd                        ; yes             ; User Wizard-Generated File         ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/fifo0.vhd                 ;
-; altpll.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altpll.tdf                                                      ;
-; aglobal111.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/aglobal111.inc                                                  ;
-; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratix_pll.inc                                                 ;
-; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratixii_pll.inc                                               ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                               ;
-; dcfifo.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dcfifo.tdf                                                      ;
-; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_counter.inc                                                 ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                 ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altdpram.inc                                                    ;
-; a_graycounter.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_graycounter.inc                                               ;
-; a_fefifo.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_fefifo.inc                                                    ;
-; a_gray2bin.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_gray2bin.inc                                                  ;
-; dffpipe.inc                      ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dffpipe.inc                                                     ;
-; alt_sync_fifo.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/alt_sync_fifo.inc                                               ;
-; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_compare.inc                                                 ;
-; altsyncram_fifo.inc              ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altsyncram_fifo.inc                                             ;
-; db/dcfifo_hnj1.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/dcfifo_hnj1.tdf        ;
-; db/a_graycounter_s96.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/a_graycounter_s96.tdf  ;
-; db/a_graycounter_h2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/a_graycounter_h2c.tdf  ;
-; db/a_graycounter_g2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/a_graycounter_g2c.tdf  ;
-; db/altsyncram_1qu.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/altsyncram_1qu.tdf     ;
-; db/altsyncram_cec1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/altsyncram_cec1.tdf    ;
-; db/decode_o37.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/decode_o37.tdf         ;
-; db/mux_nv7.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/mux_nv7.tdf            ;
-; db/dffpipe_c2e.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/dffpipe_c2e.tdf        ;
-; db/alt_synch_pipe_2r7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/alt_synch_pipe_2r7.tdf ;
-; db/dffpipe_d09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/dffpipe_d09.tdf        ;
-; db/alt_synch_pipe_3r7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/alt_synch_pipe_3r7.tdf ;
-; db/dffpipe_e09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/dffpipe_e09.tdf        ;
-; db/cmpr_r16.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/cmpr_r16.tdf           ;
-; db/mux_1u7.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/db/mux_1u7.tdf            ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                             ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------+
+; PLL_48M_in.vhd                   ; yes             ; User Wizard-Generated File         ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/PLL_48M_in.vhd            ;
+; Template.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/Template.bdf              ;
+; control_disparo.vhdl             ; yes             ; User VHDL File                     ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/control_disparo.vhdl      ;
+; fifo0.vhd                        ; yes             ; User Wizard-Generated File         ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/fifo0.vhd                 ;
+; altpll.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altpll.tdf                                                ;
+; aglobal111.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/aglobal111.inc                                            ;
+; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratix_pll.inc                                           ;
+; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratixii_pll.inc                                         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                         ;
+; dcfifo.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dcfifo.tdf                                                ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_counter.inc                                           ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                           ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altdpram.inc                                              ;
+; a_graycounter.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_graycounter.inc                                         ;
+; a_fefifo.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_fefifo.inc                                              ;
+; a_gray2bin.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_gray2bin.inc                                            ;
+; dffpipe.inc                      ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dffpipe.inc                                               ;
+; alt_sync_fifo.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/alt_sync_fifo.inc                                         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_compare.inc                                           ;
+; altsyncram_fifo.inc              ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altsyncram_fifo.inc                                       ;
+; db/dcfifo_hnj1.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/dcfifo_hnj1.tdf        ;
+; db/a_graycounter_s96.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/a_graycounter_s96.tdf  ;
+; db/a_graycounter_h2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/a_graycounter_h2c.tdf  ;
+; db/a_graycounter_g2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/a_graycounter_g2c.tdf  ;
+; db/altsyncram_1qu.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/altsyncram_1qu.tdf     ;
+; db/altsyncram_cec1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/altsyncram_cec1.tdf    ;
+; db/decode_o37.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/decode_o37.tdf         ;
+; db/mux_nv7.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/mux_nv7.tdf            ;
+; db/dffpipe_c2e.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/dffpipe_c2e.tdf        ;
+; db/alt_synch_pipe_2r7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/alt_synch_pipe_2r7.tdf ;
+; db/dffpipe_d09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/dffpipe_d09.tdf        ;
+; db/alt_synch_pipe_3r7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/alt_synch_pipe_3r7.tdf ;
+; db/dffpipe_e09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/dffpipe_e09.tdf        ;
+; db/cmpr_r16.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/cmpr_r16.tdf           ;
+; db/mux_1u7.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/db/mux_1u7.tdf            ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -224,20 +224,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------------------+
 ; Resource                                    ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Estimated Total logic elements              ; 218                       ;
+; Estimated Total logic elements              ; 226                       ;
 ;                                             ;                           ;
-; Total combinational functions               ; 189                       ;
+; Total combinational functions               ; 197                       ;
 ; Logic element usage by number of LUT inputs ;                           ;
-;     -- 4 input functions                    ; 96                        ;
-;     -- 3 input functions                    ; 57                        ;
-;     -- <=2 input functions                  ; 36                        ;
+;     -- 4 input functions                    ; 103                       ;
+;     -- 3 input functions                    ; 52                        ;
+;     -- <=2 input functions                  ; 42                        ;
 ;                                             ;                           ;
 ; Logic elements by mode                      ;                           ;
-;     -- normal mode                          ; 181                       ;
+;     -- normal mode                          ; 189                       ;
 ;     -- arithmetic mode                      ; 8                         ;
 ;                                             ;                           ;
-; Total registers                             ; 112                       ;
-;     -- Dedicated logic registers            ; 112                       ;
+; Total registers                             ; 118                       ;
+;     -- Dedicated logic registers            ; 118                       ;
 ;     -- I/O registers                        ; 0                         ;
 ;                                             ;                           ;
 ; I/O pins                                    ; 35                        ;
@@ -246,9 +246,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1                         ;
 ;                                             ;                           ;
 ; Maximum fan-out node                        ; control_disparo:inst|Mux3 ;
-; Maximum fan-out                             ; 96                        ;
-; Total fan-out                               ; 1875                      ;
-; Average fan-out                             ; 5.08                      ;
+; Maximum fan-out                             ; 97                        ;
+; Total fan-out                               ; 1911                      ;
+; Average fan-out                             ; 4.99                      ;
 +---------------------------------------------+---------------------------+
 
 
@@ -257,26 +257,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Library Name ;
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Template                                     ; 189 (1)           ; 112 (0)      ; 131072      ; 0            ; 0       ; 0         ; 35   ; 0            ; |Template                                                                                                                                         ;              ;
+; |Template                                     ; 197 (1)           ; 118 (0)      ; 131072      ; 0            ; 0       ; 0         ; 35   ; 0            ; |Template                                                                                                                                         ;              ;
 ;    |PLL_48M_in:inst1|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst1                                                                                                                        ;              ;
 ;       |altpll:altpll_component|               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst1|altpll:altpll_component                                                                                                ;              ;
-;    |control_disparo:inst|                     ; 35 (35)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_disparo:inst                                                                                                                    ;              ;
-;    |fifo0:inst3|                              ; 153 (0)           ; 101 (0)      ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3                                                                                                                             ;              ;
-;       |dcfifo:dcfifo_component|               ; 153 (0)           ; 101 (0)      ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component                                                                                                     ;              ;
-;          |dcfifo_hnj1:auto_generated|         ; 153 (5)           ; 101 (27)     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated                                                                          ;              ;
+;    |control_disparo:inst|                     ; 44 (44)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_disparo:inst                                                                                                                    ;              ;
+;    |fifo0:inst3|                              ; 152 (0)           ; 101 (0)      ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3                                                                                                                             ;              ;
+;       |dcfifo:dcfifo_component|               ; 152 (0)           ; 101 (0)      ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component                                                                                                     ;              ;
+;          |dcfifo_hnj1:auto_generated|         ; 152 (5)           ; 101 (27)     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated                                                                          ;              ;
 ;             |a_graycounter_g2c:wrptr_gp|      ; 28 (28)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp                                               ;              ;
 ;             |a_graycounter_h2c:wrptr_g1p|     ; 26 (26)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p                                              ;              ;
-;             |a_graycounter_s96:rdptr_g1p|     ; 33 (33)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p                                              ;              ;
+;             |a_graycounter_s96:rdptr_g1p|     ; 32 (32)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p                                              ;              ;
 ;             |altsyncram_1qu:fifo_ram|         ; 19 (0)            ; 3 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram                                                  ;              ;
 ;                |altsyncram_cec1:altsyncram14| ; 19 (1)            ; 3 (3)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14                     ;              ;
 ;                   |decode_o37:decode_b|       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b ;              ;
 ;                   |mux_nv7:mux18|             ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|mux_nv7:mux18       ;              ;
+;             |cmpr_r16:rdempty_eq_comp1_msb|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:rdempty_eq_comp1_msb                                            ;              ;
 ;             |cmpr_r16:rdempty_eq_comp_msb|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:rdempty_eq_comp_msb                                             ;              ;
 ;             |cmpr_r16:wrfull_eq_comp1_msb|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:wrfull_eq_comp1_msb                                             ;              ;
 ;             |cmpr_r16:wrfull_eq_comp_msb|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:wrfull_eq_comp_msb                                              ;              ;
 ;             |dffpipe_c2e:rdaclr|              ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr                                                       ;              ;
 ;             |mux_1u7:rdemp_eq_comp_lsb_mux|   ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux                                            ;              ;
-;             |mux_1u7:rdemp_eq_comp_msb_mux|   ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux                                            ;              ;
+;             |mux_1u7:rdemp_eq_comp_msb_mux|   ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux                                            ;              ;
 ;             |mux_1u7:wrfull_eq_comp_lsb_mux|  ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux                                           ;              ;
 ;             |mux_1u7:wrfull_eq_comp_msb_mux|  ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux                                           ;              ;
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
@@ -292,14 +293,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                            ;
-+--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                                                                     ;
-+--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |Template|PLL_48M_in:inst1 ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/PLL_48M_in.vhd ;
-; Altera ; FIFO         ; 11.1    ; N/A          ; N/A          ; |Template|fifo0:inst3      ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_placa_Edu1/fifo0.vhd      ;
-+--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                      ;
++--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                                                               ;
++--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------------------------------+
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |Template|PLL_48M_in:inst1 ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/PLL_48M_in.vhd ;
+; Altera ; FIFO         ; 11.1    ; N/A          ; N/A          ; |Template|fifo0:inst3      ; C:/Documents and Settings/rchil/Escritorio/Software_desarrollado/CSN_FPGA_v3_2/fifo0.vhd      ;
++--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -339,6 +340,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Register name                                                                                                                          ; Reason for Removal ;
 +----------------------------------------------------------------------------------------------------------------------------------------+--------------------+
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|addrstall_reg_a[0] ; Lost fanout        ;
+; control_disparo:inst|EA[2]                                                                                                             ; Lost fanout        ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7..13]                            ; Lost fanout        ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8..13]                            ; Lost fanout        ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[8..13]                                                  ; Lost fanout        ;
@@ -348,7 +350,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a9                                  ; Lost fanout        ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a10                                 ; Lost fanout        ;
 ; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8                                  ; Lost fanout        ;
-; Total Number of Removed Registers = 26                                                                                                 ;                    ;
+; Total Number of Removed Registers = 27                                                                                                 ;                    ;
 +----------------------------------------------------------------------------------------------------------------------------------------+--------------------+
 
 
@@ -367,7 +369,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 112   ;
+; Total registers                              ; 118   ;
 ; Number of registers using Synchronous Clear  ; 9     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
@@ -392,69 +394,76 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Gate-level Retiming                                                                                                                                       ;
-+-------------------------------------------------------------------------------------------------------------+---------------------------+-----------------+
-; Register Name                                                                                               ; Clock Name                ; Created/Deleted ;
-+-------------------------------------------------------------------------------------------------------------+---------------------------+-----------------+
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]     ; ifclk                     ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]     ; ifclk                     ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]     ; ifclk                     ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[10]    ; ifclk                     ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]    ; ifclk                     ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]    ; ifclk                     ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]    ; ifclk                     ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]    ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]    ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8]     ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[9]     ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[10]    ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[11]    ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[13]                          ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[11]                          ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[12]                          ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[9]                           ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[10]                          ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[8]                           ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a13      ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a11      ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12      ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a9       ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a10      ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8       ; control_disparo:inst|Mux3 ; Deleted         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~0   ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~1   ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]~2   ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]~3   ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[10]~4  ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]~5  ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~6  ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~7  ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~8  ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~9  ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~10 ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~11 ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~12 ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~13 ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~14 ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~15 ; ifclk                     ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]~0  ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8]~1   ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~2  ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~3  ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4  ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~5  ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~6  ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~7  ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a13~0    ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8~0     ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~0    ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~1    ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~2    ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~3    ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~4    ; control_disparo:inst|Mux3 ; Created         ;
-; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~5    ; control_disparo:inst|Mux3 ; Created         ;
-+-------------------------------------------------------------------------------------------------------------+---------------------------+-----------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Gate-level Retiming                                                                                                                                                            ;
++-------------------------------------------------------------------------------------------------------------+------------------------------------------------+-----------------+
+; Register Name                                                                                               ; Clock Name                                     ; Created/Deleted ;
++-------------------------------------------------------------------------------------------------------------+------------------------------------------------+-----------------+
+; control_disparo:inst|EA[2]                                                                                  ; PLL_48M_in:inst1|altpll:altpll_component|_clk0 ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]     ; ifclk                                          ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]     ; ifclk                                          ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]     ; ifclk                                          ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[10]    ; ifclk                                          ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]    ; ifclk                                          ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]    ; ifclk                                          ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]    ; ifclk                                          ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]    ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]    ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8]     ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[9]     ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[10]    ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[11]    ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[13]                          ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[11]                          ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[12]                          ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[9]                           ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[10]                          ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[8]                           ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a13      ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a11      ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12      ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a9       ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a10      ; control_disparo:inst|Mux3                      ; Deleted         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8       ; control_disparo:inst|Mux3                      ; Deleted         ;
+; control_disparo:inst|EA[2]~0                                                                                ; PLL_48M_in:inst1|altpll:altpll_component|_clk0 ; Created         ;
+; control_disparo:inst|EA[2]~1                                                                                ; PLL_48M_in:inst1|altpll:altpll_component|_clk0 ; Created         ;
+; control_disparo:inst|EA[2]~2                                                                                ; PLL_48M_in:inst1|altpll:altpll_component|_clk0 ; Created         ;
+; control_disparo:inst|EA[2]~3                                                                                ; PLL_48M_in:inst1|altpll:altpll_component|_clk0 ; Created         ;
+; control_disparo:inst|EA[2]~4                                                                                ; PLL_48M_in:inst1|altpll:altpll_component|_clk0 ; Created         ;
+; control_disparo:inst|EA[2]~5                                                                                ; PLL_48M_in:inst1|altpll:altpll_component|_clk0 ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~0   ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~1   ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]~2   ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]~3   ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[10]~4  ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]~5  ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~6  ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~7  ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~8  ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~9  ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~10 ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~11 ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~12 ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~13 ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~14 ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~15 ; ifclk                                          ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]~0  ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8]~1   ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~2  ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~3  ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4  ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~5  ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~6  ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~7  ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a13~0    ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8~0     ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~0    ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~1    ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~2    ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~3    ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~4    ; control_disparo:inst|Mux3                      ; Created         ;
+; fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~5    ; control_disparo:inst|Mux3                      ; Created         ;
++-------------------------------------------------------------------------------------------------------------+------------------------------------------------+-----------------+
 
 
 +------------------------------------------------------------+
@@ -615,7 +624,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; CLK3_MULTIPLY_BY              ; 1                            ; Untyped                ;
 ; CLK2_MULTIPLY_BY              ; 5                            ; Signed Integer         ;
 ; CLK1_MULTIPLY_BY              ; 25                           ; Signed Integer         ;
-; CLK0_MULTIPLY_BY              ; 5                            ; Signed Integer         ;
+; CLK0_MULTIPLY_BY              ; 25                           ; Signed Integer         ;
 ; CLK9_DIVIDE_BY                ; 0                            ; Untyped                ;
 ; CLK8_DIVIDE_BY                ; 0                            ; Untyped                ;
 ; CLK7_DIVIDE_BY                ; 0                            ; Untyped                ;
@@ -625,7 +634,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; CLK3_DIVIDE_BY                ; 1                            ; Untyped                ;
 ; CLK2_DIVIDE_BY                ; 24                           ; Signed Integer         ;
 ; CLK1_DIVIDE_BY                ; 24                           ; Signed Integer         ;
-; CLK0_DIVIDE_BY                ; 16                           ; Signed Integer         ;
+; CLK0_DIVIDE_BY                ; 12                           ; Signed Integer         ;
 ; CLK9_PHASE_SHIFT              ; 0                            ; Untyped                ;
 ; CLK8_PHASE_SHIFT              ; 0                            ; Untyped                ;
 ; CLK7_PHASE_SHIFT              ; 0                            ; Untyped                ;
@@ -1027,8 +1036,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 173 11/01/2011 SJ Web Edition
-    Info: Processing started: Tue Sep 25 11:13:18 2012
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off QUSBEVB_REVA_EP2C20_Template -c QUSBEVB_REVA_EP2C20_Template
+    Info: Processing started: Tue Nov 13 18:07:23 2012
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CSN_fpga_v3_2 -c QUSBEVB_REVA_EP2C20_Template
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file pll_48m_in.vhd
     Info (12022): Found design unit 1: pll_48m_in-SYN
@@ -1047,33 +1056,33 @@ Info (12021): Found 2 design units, including 1 entities, in source file retrasa
 Info (12127): Elaborating entity "Template" for the top level hierarchy
 Info (12128): Elaborating entity "control_disparo" for hierarchy "control_disparo:inst"
 Warning (10542): VHDL Variable Declaration warning at control_disparo.vhdl(38): used initial value expression for variable "t_integracion" because variable was never assigned a value
-Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(137): signal "conv_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(138): signal "desInt_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(153): signal "dataIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at control_disparo.vhdl(144): inferring latch(es) for signal or variable "dataOut", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "dataOut[0]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[1]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[2]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[3]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[4]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[5]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[6]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[7]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[8]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[9]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[10]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[11]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[12]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[13]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[14]" at control_disparo.vhdl(144)
-Info (10041): Inferred latch for "dataOut[15]" at control_disparo.vhdl(144)
+Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(149): signal "conv_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(150): signal "ngate_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(165): signal "dataIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at control_disparo.vhdl(156): inferring latch(es) for signal or variable "dataOut", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "dataOut[0]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[1]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[2]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[3]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[4]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[5]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[6]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[7]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[8]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[9]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[10]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[11]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[12]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[13]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[14]" at control_disparo.vhdl(156)
+Info (10041): Inferred latch for "dataOut[15]" at control_disparo.vhdl(156)
 Info (12128): Elaborating entity "PLL_48M_in" for hierarchy "PLL_48M_in:inst1"
 Info (12128): Elaborating entity "altpll" for hierarchy "PLL_48M_in:inst1|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "PLL_48M_in:inst1|altpll:altpll_component"
 Info (12133): Instantiated megafunction "PLL_48M_in:inst1|altpll:altpll_component" with the following parameter:
-    Info (12134): Parameter "clk0_divide_by" = "16"
+    Info (12134): Parameter "clk0_divide_by" = "12"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-    Info (12134): Parameter "clk0_multiply_by" = "5"
+    Info (12134): Parameter "clk0_multiply_by" = "25"
     Info (12134): Parameter "clk0_phase_shift" = "0"
     Info (12134): Parameter "clk1_divide_by" = "24"
     Info (12134): Parameter "clk1_duty_cycle" = "50"
@@ -1201,11 +1210,13 @@ Info (13093): Not allowed to move 35 registers
     Info (13099): Not allowed to move at least 28 registers because they feed registers in a different clock domain
     Info (13100): Not allowed to move at least 2 registers because they feed clock or asynchronous control signals of other registers
     Info (13101): Not allowed to move at least 1 registers due to user assignments
-Info (13089): The Quartus II software applied gate-level register retiming to 2 clock domains
+Info (13089): The Quartus II software applied gate-level register retiming to 3 clock domains
+    Info (13092): The Quartus II software applied gate-level register retiming to clock "PLL_48M_in:inst1|altpll:altpll_component|_clk0": created 6 new registers, removed 1 registers, left 2 registers untouched
     Info (13092): The Quartus II software applied gate-level register retiming to clock "ifclk": created 16 new registers, removed 7 registers, left 32 registers untouched
     Info (13092): The Quartus II software applied gate-level register retiming to clock "control_disparo:inst|Mux3": created 16 new registers, removed 18 registers, left 36 registers untouched
-Info (17049): 26 registers lost all their fanouts during netlist optimizations. The first 26 are displayed below.
+Info (17049): 27 registers lost all their fanouts during netlist optimizations. The first 27 are displayed below.
     Info (17050): Register "fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|addrstall_reg_a[0]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "control_disparo:inst|EA[2]" lost all its fanouts during netlist optimizations.
     Info (17050): Register "fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]" lost all its fanouts during netlist optimizations.
     Info (17050): Register "fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]" lost all its fanouts during netlist optimizations.
     Info (17050): Register "fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]" lost all its fanouts during netlist optimizations.
@@ -1233,16 +1244,16 @@ Info (17049): 26 registers lost all their fanouts during netlist optimizations. 
     Info (17050): Register "fifo0:inst3|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8" lost all its fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding node "PLL_48M_in:inst1|altpll:altpll_component|pll"
-Info (21057): Implemented 303 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 311 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 235 logic cells
+    Info (21061): Implemented 243 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 8 warnings
     Info: Peak virtual memory: 292 megabytes
-    Info: Processing ended: Tue Sep 25 11:13:28 2012
+    Info: Processing ended: Tue Nov 13 18:07:33 2012
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Total CPU time (on all processors): 00:00:09
 
 
