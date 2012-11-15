@@ -14,7 +14,7 @@ port(
 	dataIn: in std_logic_vector(11 downto 0);
 	--salidas
 	--NGATE: out std_logic;
-	DesInt: out std_logic;
+	NGATE: out std_logic;
 	NCONVSTART: out std_logic;
 	NREAD : out std_logic;
 	dataOut: out std_logic_vector(15 downto 0)
@@ -25,9 +25,9 @@ architecture disparador of control_disparo is
 
 --cosas para la maquina de estados
 
-type STATE_TYPE is (E0, E1, E2, E3); 
+type STATE_TYPE is (E0, E1, E2, E3, E4); 
 attribute ENUM_ENCODING: STRING; 
-attribute ENUM_ENCODING of STATE_TYPE:type is "0000 0001 0010 0011";
+attribute ENUM_ENCODING of STATE_TYPE:type is "0000 0001 0010 0011 0100";
 
 signal  EA, EP        : STATE_TYPE;  
  
@@ -35,9 +35,9 @@ signal  EA, EP        : STATE_TYPE;
  signal integrando : std_logic:='0';
  
  shared variable cuenta_180 : integer range 0 to 511:=0; 
- shared variable t_integracion : integer range 0 to 511:=8; --tiempo de integracion dado al condensador, antes valia 10
+ shared variable t_integracion : integer range 0 to 511:=150; --tiempo de integracion dado al condensador, antes valia 10
 
- signal conv_sig, desInt_sig, new_data: std_logic;
+ signal conv_sig, ngate_sig, new_data: std_logic;
  
  
 begin
@@ -70,21 +70,20 @@ begin
 
        case EA is 
 			when E0 =>   
-					desInt_sig<='1';
+					ngate_sig<='1';
 					conv_sig<='1';
 					reset <='1';
 					integrando<='0';
 					new_data<='1';
 					if (Comp='0') then --if(LLD ='1') si se activa LLD, comienza la conversion
 							EP <= E1;  --todas las asignaciones eran a EP
-							new_data<='0';
 					else
 							EP <= E0;
 					end if;
 				
 			when E1 =>   --comienzo a integrar
 					--conv_sig<='1';
-					desInt_sig<='1';
+					ngate_sig<='0';
 					conv_sig<='1';
 					integrando<='1';
 					reset <='1';
@@ -92,20 +91,19 @@ begin
 					--conv_sig<='0';
 				    if  cuenta_180 > t_integracion then  -- espero el tiempo de integracion
 						EP <= E2;
-						conv_sig<='0';
 					else
 						 EP <= E1;
 					end if;
 		
            when E2 => --ahora ya aplico lo sennal de conversion, espero un poco 
 					--ngate_sig<='0';
-					desInt_sig<='1';
+					ngate_sig<='0';
 					conv_sig<='0';
 					integrando<='1';
 					new_data<='0';
 					reset <='1';
 					--no coge bien lo de NBUSY = '0'...por ello espero un tiempo fijo
-				    if (NBUSY ='0') or (cuenta_180> 5) then 
+				    if (NBUSY ='0') or (cuenta_180> 180) then 
 						EP <= E3;
 					else
 						EP <= E2;
@@ -115,13 +113,11 @@ begin
 					--ngate_sig<='0';
 					conv_sig<='1';
 					integrando<='0';
-					desInt_sig<='1';
+					ngate_sig<='0';
 					reset <='1';
 					new_data<='0';
 					if (NBUSY = '1') and (Comp='1')then
-					   desInt_sig<='0'; --cierro la puerta al terminar 
-						EP <= E0; 		
-						new_data<='1';
+						EP <= E4; 		
 						--if cuenta_180 > t_integracion then
 						--	EP<= E0; --hago esto para dar tiempo a la puerta
 						--	t_integracion:=0;
@@ -130,12 +126,28 @@ begin
 					else
 						EP<= E3; 
 					end if; 
+					
+			  --necesario annadir una etapa de espera de ...200 nanos
+			  --para evitar que se cuelen las oscilaciones por el cambio de sennal
+			  when E4 =>   --comienzo a integrar
+					ngate_sig<='1';
+					conv_sig<='1';
+					reset <='1';
+					new_data<='1';
+					integrando<='1';
+				    if  cuenta_180 > (t_integracion - 50) then  -- espero el tiempo de integracion
+						EP <= E0;
+					else
+						 EP <= E4;
+					end if;
+
+			  
 							
        end case; 
 		 
 --asigno las sennales a los pines correspondientes
 NCONVSTART<=conv_sig;
-DesInt<=desInt_sig;
+NGATE<=ngate_sig;
 --NREAD<=new_data;
 
 end process; 

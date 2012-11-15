@@ -54,8 +54,8 @@ applicable agreement for further details.
 	(port
 		(pt 248 32)
 		(output)
-		(text "DesInt" (rect 0 0 42 12)(font "Arial" ))
-		(text "DesInt" (rect 185 27 227 39)(font "Arial" ))
+		(text "NGATE" (rect 0 0 35 12)(font "Arial" ))
+		(text "NGATE" (rect 192 27 227 39)(font "Arial" ))
 		(line (pt 248 32)(pt 232 32)(line_width 1))
 	)
 	(port
