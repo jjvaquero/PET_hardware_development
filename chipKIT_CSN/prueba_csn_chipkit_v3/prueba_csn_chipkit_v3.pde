@@ -110,7 +110,7 @@ void lectDat(){ //NBusy = 1
  //desactivo la interrupcion del comparador
  //detachInterrupt(0);
  //desactivo la puerta del integrador
- digitalWrite(DesInt, LOW); 
+
  
  //calculo el valor
  evento = 0;
@@ -143,8 +143,8 @@ void lectDat(){ //NBusy = 1
     lecturas[indice+1]= highByte(evento);
     indice+=2;
  }
-  
-  
+   //desactivo la integracion
+   digitalWrite(DesInt, LOW); 
    digitalWrite(DesInt, HIGH);
   //aqui se puede meter una espera de las de ..
   // for...asm nop
