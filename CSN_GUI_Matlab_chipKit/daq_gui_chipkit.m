@@ -1,35 +1,35 @@
-function varargout = daq_gui_v1(varargin)
-% DAQ_GUI_V1 M-file for daq_gui_v1.fig
-%      DAQ_GUI_V1, by itself, creates a new DAQ_GUI_V1 or raises the existing
+function varargout = daq_gui_chipkit(varargin)
+% DAQ_GUI_CHIPKIT M-file for daq_gui_chipkit.fig
+%      DAQ_GUI_CHIPKIT, by itself, creates a new DAQ_GUI_CHIPKIT or raises the existing
 %      singleton*.
 %
-%      H = DAQ_GUI_V1 returns the handle to a new DAQ_GUI_V1 or the handle to
+%      H = DAQ_GUI_CHIPKIT returns the handle to a new DAQ_GUI_CHIPKIT or the handle to
 %      the existing singleton*.
 %
-%      DAQ_GUI_V1('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in DAQ_GUI_V1.M with the given input arguments.
+%      DAQ_GUI_CHIPKIT('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in DAQ_GUI_CHIPKIT.M with the given input arguments.
 %
-%      DAQ_GUI_V1('Property','Value',...) creates a new DAQ_GUI_V1 or raises the
+%      DAQ_GUI_CHIPKIT('Property','Value',...) creates a new DAQ_GUI_CHIPKIT or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before daq_gui_v1_OpeningFcn gets called.  An
+%      applied to the GUI before daq_gui_chipkit_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to daq_gui_v1_OpeningFcn via varargin.
+%      stop.  All inputs are passed to daq_gui_chipkit_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help daq_gui_v1
+% Edit the above text to modify the response to help daq_gui_chipkit
 
-% Last Modified by GUIDE v2.5 21-Jun-2012 13:47:46
+% Last Modified by GUIDE v2.5 28-Nov-2012 16:00:25
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @daq_gui_v1_OpeningFcn, ...
-                   'gui_OutputFcn',  @daq_gui_v1_OutputFcn, ...
+                   'gui_OpeningFcn', @daq_gui_chipkit_OpeningFcn, ...
+                   'gui_OutputFcn',  @daq_gui_chipkit_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -43,28 +43,25 @@ else
 end
 % End initialization code - DO NOT EDIT
 
-% --- Executes just before daq_gui_v1 is made visible.
-function daq_gui_v1_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before daq_gui_chipkit is made visible.
+function daq_gui_chipkit_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to daq_gui_v1 (see VARARGIN)
+% varargin   command line arguments to daq_gui_chipkit (see VARARGIN)
 
 
 
-% Choose default command line output for daq_gui_v1
+% Choose default command line output for daq_gui_chipkit
 handles.guifig = gcf;
 handles.hist = zeros(4096,1);
 handles.hist_corr = zeros(512,1); %para meter ceros en un array
 handles.hist_save = zeros(512,35);
 handles.hist_comp = zeros(512,1);
-handles.aux_val = 0;
-handles.aux_val2 = 0;
 handles.tmp_hists = zeros(2500,100);
 handles.output = hObject;
-handles.quick = Quick_USB('mi_quick'); %{@TmrFcn,handles.guifig},'BusyMode','Queue',...
- %   'ExecutionMode','FixedRate','Period',2);
+handles.puerto_serie = serial('COM5'); %poner algo para poder elegir el num de puerto
 handles.timer = timer('TimerFcn',{@lectPeriodica,handles.guifig}, 'BusyMode','Queue',...
      'ExecutionMode','FixedRate','Period', 1);
 
@@ -76,17 +73,17 @@ guidata(handles.guifig,handles);
 guidata(hObject, handles);
 
 % This sets up the initial plot - only do when we are invisible
-% so window can get raised using daq_gui_v1.
+% so window can get raised using daq_gui_chipkit.
 if strcmp(get(hObject,'Visible'),'off')
     plot(rand(5));
 end
 
-% UIWAIT makes daq_gui_v1 wait for user response (see UIRESUME)
+% UIWAIT makes daq_gui_chipkit wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = daq_gui_v1_OutputFcn(hObject, eventdata, handles)
+function varargout = daq_gui_chipkit_OutputFcn(hObject, eventdata, handles)
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -104,21 +101,15 @@ function pushbutton1_Callback(hObject, eventdata, handles)
  axes(handles.axes1);
  cla;
  
-
-quick = handles.quick;  %instancio el quick creado antes
+ puerto = handles.puerto_serie;  %instancio el quick creado antes
  timer = handles.timer; %timer para la lectura periodica
-%inicializo el quick y demas
-
-%lo configuro
-QUSB_init(quick);
-%configuro la FPGA
-QUSB_FpgaInit(quick);
-%programo la FPGA
-QUSB_FpgaProgram(quick,'CSN_edu3.rbf'); %'CSN_detect_pico.rbf');%'CSN_edu2.rbf'); %'daq_fpga.rbf');
-
-%aqui debo primero configurar la fpga y toda esa pelicula y luego activar
-%el timer
-
+ 
+ %configuro y abro el puerto serie
+ set(puerto,'BaudRate',115200);
+ set(puerto,'InputBufferSize',2500);
+ fopen(puerto);
+ 
+ 
  periodo = str2double(get(handles.edit2, 'string'));
  set(timer,'Period',periodo);
  %disp(periodo);
@@ -231,51 +222,35 @@ end
 function lectPeriodica(src,event,handles) %Timer function
 handles = guidata(handles);
 %cla;
-quick = handles.quick;  %instancio el quick creado antes
+puerto = handles.puerto_serie;  %instancio el puerto
 %hist = handles.hist; %esto no vale porque hist es temporal
 %sin visibilidad para fuera
   %tic
- [data,nRead] = QUSB_ReadFpgaData(quick,5000);
- %toc   ...me da tiempos de 0.001 es decir vuelve enseguida
- %los datos son leidos a un array de caracteres
- %por ello realizo ahora la conversion necesaria
- dataConv = typecast(data,'uint16');
+ nRead = 0;
+ data = zeros(1000,1);
+ while puerto.BytesAvailable <2000
+        pause(0.1);
+ end
+    %while b ~= 110 %'n'
+    %    x(i) = b;
+    %    b = fread(s,1,'uchar');
+    %end
+ %de momento leo solo 100 valores...luego cambiar esto
+ %para ello cambiarlo aqui y en el uC
+ data = fread(puerto,1000,'uint16');
+ 
  set(handles.text1,'String',num2str(nRead));
  
  %actualizo ahora los datos de mi histograma
  temp = zeros(4096,1);
  aux_error = 0;
  
- %esto lo hago para evitar el relleno que mete en el bufferla FPGA
- %la posibilidad de que tres valores seguidos tengan el mismo valor
- %es casi nula por lo tanto...
- for i = 1:2498
-     if dataConv(i) == dataConv(i+1) && dataConv(i)== dataConv(i+2)
-         dataConv(i) = 0;
-     end
- end 
- dataConv(2498:2500) = 0;
- 
- for i = 1 : 2500 %valores de mi histograma
-     if(dataConv(i)+1 < 4097) &&  (dataConv(i) ~= 0)
-         temp(dataConv(i)+1) =temp(dataConv(i)+1)+1;
-         %handles.hist(dataConv(i)+1) = handles.hist(dataConv(i)+1) +1;     
-
-     end
-      %if (temp(dataConv(i)+1) > nRead) %&&  (dataConv(i) ~= 0)
-      %  disp('Error ')
-      %  temp(dataConv(i)+1)
-      %  dataConv(i)
-      %  aux_error = 1;        
-      %end
-     
- end
- 
-%apanno temporal...pero debe ser algo malo con la fifo de la fpga
-%[val,pos] = max(temp);
-%if (pos>1)
-%    temp(pos) = (temp(pos+1) + temp(pos-1))/2;
-%end
+ %genero mi histograma temporal
+  for j = 1:1000
+        if (data(j) > 1  && data(j) < 4096 )
+            temp(data(j)) = temp(data(j))+1;
+        end
+  end
 
 plot(handles.axes2,1:4096, temp(1:4096),'*');
 xlim(handles.axes2,[1 4096]);
@@ -310,33 +285,7 @@ title(handles.axes2,'Antes');
      handles.hist_corr = handles.hist_corr + blkproc(temp,[8 1],'mean2');
  end
  
-%handles.aux_val = handles.aux_val+1;
-%guidata(handles, aux_v);
-%handles.aux_val
 
-%todo esto es para el clasificador...me lo pulo
-% handles.aux_val = handles.aux_val +1;
-% if  handles.aux_val >= 200
-%     hists_temp = handles.tmp_hists;
-%     save('hist_temporales.mat','hists_temp');
-%     handles.aux_val = 0;
-%     %guardo el histograma corregido (rebineado a 512)
-%     handles.aux_val2 = handles.aux_val2 +1;
-%     if handles.aux_val2 < 31
-%        handles.hist_save(:,handles.aux_val2) = handles.hist_corr(1:512);
-%        handles.hist_comp = handles.hist_corr(1:512);
-%        %lo pongo todo a cero
-%        handles.hist = zeros(4096,1);
-%        handles.hist_corr = zeros(512,1); %para meter ceros en un array
-%        hist_save = handles.hist_save;
-%        save('histograma_comp.mat','hist_save');
-%        disp('guardado');
-%     else
-%         disp('todo almacenado');
-%     end
-% else
-%     handles.tmp_hists(:,handles.aux_val)= dataConv;
-% end
  
  %genero ahora mi histograma
 %axes(handles.axes1);
@@ -364,7 +313,10 @@ function pushbutton4_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
  timer = handles.timer; %timer para la lectura periodica
-%inicializo el quick y demas
+
+%cierro el puerto y detengo el contador
+ puerto = handles.puerto_serie; 
+ fclose(puerto);
 
  stop(timer);
  guidata(handles.guifig, handles);
