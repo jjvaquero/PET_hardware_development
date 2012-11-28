@@ -114,7 +114,7 @@ QUSB_init(quick);
 %configuro la FPGA
 QUSB_FpgaInit(quick);
 %programo la FPGA
-QUSB_FpgaProgram(quick,'CSN_edu3.rbf'); %'CSN_detect_pico.rbf');%'CSN_edu2.rbf'); %'daq_fpga.rbf');
+QUSB_FpgaProgram(quick,'fpga_csn_v3_2.rbf'); %'CSN_edu3.rbf' %'CSN_detect_pico.rbf');%'CSN_edu2.rbf'); %'daq_fpga.rbf');
 
 %aqui debo primero configurar la fpga y toda esa pelicula y luego activar
 %el timer
@@ -342,13 +342,13 @@ title(handles.axes2,'Antes');
 %axes(handles.axes1);
 %plot(handles.axes1, dataConv);
 plot(handles.axes3,1:4096, handles.hist(1:4096));
-xlim(handles.axes3,[50 4090]);
+xlim(handles.axes3,[1 4096]);
 %lo pongo en escala logaritmica
 %set(handles.axes3,'XScale','log');
 
 plot(handles.axes1,1:512, handles.hist_corr(1:512));
 xlim(handles.axes1,[5 510]);
-set(handles.axes1,'YScale','log');
+%set(handles.axes1,'YScale','log');
 title(handles.axes3,'Despues');
 
 %plot(handles.axes1,temp,'*');
