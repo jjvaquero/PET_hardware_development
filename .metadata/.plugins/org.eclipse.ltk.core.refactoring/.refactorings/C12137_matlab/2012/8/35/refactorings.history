@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;C12137_matlab/C1213interface&apos; to &apos;C1213interface.cpp&apos;" description="Rename resource &apos;C1213interface&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="C1213interface" name="C1213interface.cpp" stamp="1346232992936" updateReferences="true"/>
+</session>

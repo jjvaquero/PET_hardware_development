@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;C12137_matlab/C1213interface.cpp&apos;" deleteContents="false" description="Delete resource &apos;C12137_matlab/C1213interface.cpp&apos;" element1="/C12137_matlab/C1213interface.cpp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1346233064695"/>
+</session>

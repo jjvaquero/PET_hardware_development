@@ -1,0 +1,6 @@
+16:41:19 **** Incremental Build of configuration Release for project usb_test_1 ****
+make all 
+make: Nothing to be done for `all'.
+
+16:41:19 Build Finished (took 137ms)
+

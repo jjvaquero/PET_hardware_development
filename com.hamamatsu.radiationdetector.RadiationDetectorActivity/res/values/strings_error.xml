@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ERROR_DEVICE_DIALOG_TITLE">エラー</string>
+    <string name="ERROR_DEVICE_DIALOG_MESSAGE">デバイスが見つかりません\nアプリケーションを終了します</string>
+    <string name="ERROR_DEVICE_DETACHED_DIALOG_TITLE">エラー</string>
+    <string name="ERROR_DEVICE_DETACHED_DIALOG_MESSAGE">デバイスが外されました\nアプリケーションを終了します</string>
+    <string name="ERROR_STORAGE_SIZE_DIALOG_MESSAGE">ストレージの残容量が1GB未満になりました\n計測を停止しました</string>
+    <string name="ERROR_STORAGE_SIZE_CANCEL_DIALOG_MESSAGE">ストレージの残容量が1GB未満です\nファイルを保存できません</string>
+</resources>

@@ -1,0 +1,82 @@
+12:17:15 **** Incremental Build of configuration Release for project C12137_matlab ****
+make all 
+Building file: ../C12137detector.cpp
+Invoking: GCC C++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"C12137detector.d" -MT"C12137detector.d" -o "C12137detector.o" "../C12137detector.cpp"
+../C12137detector.cpp: In member function ‘void C12137_detector::readEepromData()’:
+../C12137detector.cpp:152:39: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp:158:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp:163:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp:169:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp:175:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp:181:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+Finished building: ../C12137detector.cpp
+ 
+Building file: ../C12137interface.cpp
+Invoking: GCC C++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"C12137interface.d" -MT"C12137interface.d" -o "C12137interface.o" "../C12137interface.cpp"
+../C12137interface.cpp: In function ‘int C12137_read(int*)’:
+../C12137interface.cpp:36:17: warning: variable ‘adcInd’ set but not used [-Wunused-but-set-variable]
+Finished building: ../C12137interface.cpp
+ 
+Building target: libC12137_matlab.so
+Invoking: GCC C++ Linker
+g++ -shared -o "libC12137_matlab.so"  ./C12137detector.o ./C12137interface.o   -lusb-1.0
+Finished building target: libC12137_matlab.so
+ 
+12:38:15 **** Incremental Build of configuration Release for project C12137_matlab ****
+make all 
+make: Nothing to be done for `all'.
+12:38:16 **** Incremental Build of configuration Debug for project prueba_c++ ****
+make all 
+make: Nothing to be done for `all'.
+12:38:17 **** Build of configuration Debug for project usb_C12137_test ****
+make all 
+Building file: ../C12137detector.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"C12137detector.d" -MT"C12137detector.d" -o "C12137detector.o" "../C12137detector.cpp"
+../C12137detector.cpp: In constructor ‘C12137_detector::C12137_detector()’:
+../C12137detector.cpp:20:40: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp: In member function ‘int C12137_detector::openDevice()’:
+../C12137detector.cpp:37:72: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp: In member function ‘int C12137_detector::setInterface(int)’:
+../C12137detector.cpp:45:46: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp: In member function ‘void C12137_detector::readEepromData()’:
+../C12137detector.cpp:141:39: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp:147:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp:152:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp:158:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp:164:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../C12137detector.cpp:170:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+Finished building: ../C12137detector.cpp
+ 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+../main.cpp: In function ‘void analyze_data(short unsigned int*, unsigned int*, unsigned int*)’:
+../main.cpp:13:17: warning: variable ‘adcInd’ set but not used [-Wunused-but-set-variable]
+Finished building: ../main.cpp
+ 
+Building target: usb_C12137_test
+Invoking: GCC C++ Linker
+g++  -o "usb_C12137_test"  ./C12137detector.o ./main.o   -lusb-1.0
+Finished building target: usb_C12137_test
+ 
+12:38:20 **** Build of configuration Release for project usb_test_1 ****
+make all 
+make: Nothing to be done for `all'.
+16:41:18 **** Incremental Build of configuration Release for project C12137_matlab ****
+make all 
+make: Nothing to be done for `all'.
+16:41:18 **** Incremental Build of configuration Debug for project prueba_c++ ****
+make all 
+make: Nothing to be done for `all'.
+16:41:19 **** Incremental Build of configuration Debug for project usb_C12137_test ****
+make all 
+make: Nothing to be done for `all'.
+16:41:19 **** Incremental Build of configuration Release for project usb_test_1 ****
+make all 
+make: Nothing to be done for `all'.
+10:58:38 **** Incremental Build of configuration Release for project C12137_matlab ****
+make all 
+make: Nothing to be done for `all'.

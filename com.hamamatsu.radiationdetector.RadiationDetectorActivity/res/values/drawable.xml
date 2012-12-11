@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="translucent_background_black">#CC000000</drawable>
+    <drawable name="translucent_background_gray">#CC5E5E5E</drawable>    
+    <drawable name="translucent_background_white">#CCFFFFFF</drawable>    
+</resources>
