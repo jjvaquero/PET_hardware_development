@@ -1,0 +1,20 @@
+<resources>
+
+    <string name="app_name">C12137_android</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_c12137">C12137</string>
+    <string name="button_text">Boton</string>
+    <string name="button_guardar">Guardar</string>
+    <string name="start_string">Start</string>
+    <string name="map_string">Map</string>
+    <string name="value0">     0</string>
+    <string name="radiation">Rad(uSv/h) :</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_map_display">MapDisplay</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="directory_location">/mnt/sdcard/LIM</string>
+    <string name="update_time">Update</string>
+    
+
+</resources>

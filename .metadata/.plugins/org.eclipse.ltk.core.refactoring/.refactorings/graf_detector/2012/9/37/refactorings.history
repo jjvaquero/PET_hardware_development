@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 elements to &apos;usb_detect/src/hggm.lim.usb_detect&apos;&#x0A;- Original project: &apos;graf_detector&apos;&#x0A;- Destination element: &apos;usb_detect/src/hggm.lim.usb_detect&apos;&#x0A;- Original elements:&#x0A;     hggm.lim.graf_detector.histogram.java&#x0A;     hggm.lim.graf_detector.GraphicUtil.java&#x0A;     hggm.lim.graf_detector.MyRender.java&#x0A;     hggm.lim.graf_detector.Texture.java" description="Copy compilation units" destination="=usb_detect/src&lt;hggm.lim.usb_detect" element1="/src&lt;hggm.lim.graf_detector{histogram.java" element2="/src&lt;hggm.lim.graf_detector{GraphicUtil.java" element3="/src&lt;hggm.lim.graf_detector{MyRender.java" element4="/src&lt;hggm.lim.graf_detector{Texture.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1347288174310" units="4" version="1.0"/>
+</session>

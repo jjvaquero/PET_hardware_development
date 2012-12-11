@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RadiationDetector</string>
+    <string name="dialog_open_title">フォルダ参照</string><string name="dialog_save_title">名前をつけて保存</string><string name="storage_select_title">ストレージ選択</string><string name="storage_error_title">ストレージがありません</string><string name="BUTTON_TEXT_EX_OFF">拡張 &gt;&gt;</string>
+    <string name="BUTTON_TEXT_EX_ON">拡張 &lt;&lt;</string>
+    <string-array name="mSpinEnergyTime">
+        <item>10秒</item>
+        <item>30秒</item>
+        <item>1分</item>
+        <item>3分</item>
+    </string-array>
+    <string-array name="mSpinEnergySaveFreq">
+        <item>30秒</item>
+        <item>1分</item>
+        <item>10分</item>
+        <item>1時間</item>
+        <item>3時間</item>
+        <item>6時間</item>
+        <item>12時間</item>
+    </string-array>
+    <string name="INTENT_KEY_ACTIVITY_MODE">settingActivity_Mode</string>
+    <string name="INTENT_KEY_DATASIZE">settingAreaDataSize</string>
+    <string name="INTENT_KEY_INTERVAL">settingLogInterval</string>
+    <string name="INTENT_KEY_COMPARATOR">settingNumericUpDownComparator</string>
+    <string name="INTENT_KEY_LOWER_INDEX">settingLowerEnergyLimit</string>
+    <string name="INTENT_KEY_LOWER_LIMIT">settingAreaStart</string>
+    <string name="INTENT_KEY_UPPER_LIMIT">settingAreaEnd</string>
+    <string name="INTENT_KEY_CORRECTIVE_COEFFICIENT">settingBaseSievert</string>
+    <string name="INTENT_KEY_LOGLIST">settingLogListX</string>
+    <string name="INTENT_KEY_BASE_ENERGY">settingBaseEnergy</string>
+    <string name="INTENT_KEY_LISTX">settingListX</string>
+    <string name="INTENT_KEY_LISTX_FLG">settingListXFlg</string>
+    <string name="INTENT_KEY_INNER_PATH">settingInnerPath</string>
+    <string name="INTENT_KEY_OUTER_PATH">settingOuterPath</string>
+    
+    <string name="INTENT_KEY_INNER_PATH_DEFAULT">settingInnerPathDefault</string>
+    <string name="INTENT_KEY_OUTER_PATH_DEFAULT">settingOuterPathDefault</string><string name="INTENT_KEY_SAVE_PATH">settingSavePath</string>
+    <string name="tab_text_1">エネルギー</string>
+    <string name="tab_text_2">時間変化</string>
+    <string name="menu_title_text_start">Start</string>
+    <string name="menu_title_text_log">Log</string>
+    <string name="menu_title_text_pause">Pause</string>
+    <string name="menu_title_text_setting">Setting</string>
+    <string name="menu_title_text_save">Save</string><string name="EEPROM_PRODUCT_NAME_C12137">C12137(X)</string>
+    <string name="EEPROM_PRODUCT_NAME_C12137_01">C12137_01(X)</string>
+    
+    
+    
+    
+    
+</resources>
