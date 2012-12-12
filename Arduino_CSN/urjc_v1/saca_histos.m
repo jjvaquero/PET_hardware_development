@@ -13,4 +13,5 @@ end
 fclose(arxivo);
 plot(datos(25,:));
 suma = sum(datos);
+%comentario...para probar el svn
 figure; plot(suma);
