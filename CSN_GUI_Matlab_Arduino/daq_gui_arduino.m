@@ -106,7 +106,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
  
  %configuro y abro el puerto serie
  set(puerto,'BaudRate',115200);
- set(puerto,'InputBufferSize',5000);
+ set(puerto,'InputBufferSize',2050);
  fopen(puerto);
  
  
@@ -229,18 +229,25 @@ puerto = handles.puerto_serie;  %instancio el puerto
  nRead = 0;
 
  
- %leo la cadena con los datos
- str_aux = fgetl(puerto);
+while puerto.BytesAvailable <2040
+        pause(0.1);
+ end
+    %while b ~= 110 %'n'
+    %    x(i) = b;
+    %    b = fread(s,1,'uchar');
+    %end
+ %de momento leo solo 100 valores...luego cambiar esto
+ %para ello cambiarlo aqui y en el uC
+ tmp_aux = zeros(1,1024);
+ tmp_aux = double(fread(puerto,1024,'uint16'));
  
- set(handles.text1,'String',num2str(nRead));
+ %set(handles.text1,'String',num2str(nRead));
  %actualizo ahora los datos de mi histograma
  aux_error = 0;
  
 
-  %convierto los datos leidos a valores numericos
-  data = str2num(str_aux);
 
- plot(handles.axes2,1:1024, data(1:1024),'*');
+ plot(handles.axes2,1:1024, tmp_aux(1:1024),'*');
  xlim(handles.axes2,[1 1024]);
  title(handles.axes2,'Antes');
 
@@ -260,8 +267,8 @@ puerto = handles.puerto_serie;  %instancio el puerto
 %         end
 %     end
 % end
-
- n_events = sum(data)/2; %algo mejor seria
+ disp(sum(tmp_aux));
+ n_events = (sum(tmp_aux))/2.0; %algo mejor seria
  %sum(temp)/(str2num(get(handles.edit2,'String'))
  set(handles.text2,'String',num2str(n_events));
 
@@ -269,8 +276,8 @@ puerto = handles.puerto_serie;  %instancio el puerto
 
  %cutre solucion, si hay lecturas erroneas, descarto la lectura
  if (aux_error == 0) 
-     %handles.hist = handles.hist +data';
-     %handles.hist_corr = handles.hist_corr + blkproc(data',[2 1],'mean2');
+     handles.hist = handles.hist +tmp_aux;
+     handles.hist_corr = handles.hist_corr + blkproc(tmp_aux,[2 1],'mean2');
  end
  
 
