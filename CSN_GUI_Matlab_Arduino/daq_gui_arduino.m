@@ -1,35 +1,35 @@
-function varargout = daq_gui_chipkit(varargin)
-% DAQ_GUI_CHIPKIT M-file for daq_gui_chipkit.fig
-%      DAQ_GUI_CHIPKIT, by itself, creates a new DAQ_GUI_CHIPKIT or raises the existing
+function varargout = daq_gui_arduino(varargin)
+% DAQ_GUI_ARDUINO M-file for daq_gui_arduino.fig
+%      DAQ_GUI_ARDUINO, by itself, creates a new DAQ_GUI_ARDUINO or raises the existing
 %      singleton*.
 %
-%      H = DAQ_GUI_CHIPKIT returns the handle to a new DAQ_GUI_CHIPKIT or the handle to
+%      H = DAQ_GUI_ARDUINO returns the handle to a new DAQ_GUI_ARDUINO or the handle to
 %      the existing singleton*.
 %
-%      DAQ_GUI_CHIPKIT('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in DAQ_GUI_CHIPKIT.M with the given input arguments.
+%      DAQ_GUI_ARDUINO('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in DAQ_GUI_ARDUINO.M with the given input arguments.
 %
-%      DAQ_GUI_CHIPKIT('Property','Value',...) creates a new DAQ_GUI_CHIPKIT or raises the
+%      DAQ_GUI_ARDUINO('Property','Value',...) creates a new DAQ_GUI_ARDUINO or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before daq_gui_chipkit_OpeningFcn gets called.  An
+%      applied to the GUI before daq_gui_arduino_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to daq_gui_chipkit_OpeningFcn via varargin.
+%      stop.  All inputs are passed to daq_gui_arduino_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help daq_gui_chipkit
+% Edit the above text to modify the response to help daq_gui_arduino
 
-% Last Modified by GUIDE v2.5 28-Nov-2012 16:00:25
+% Last Modified by GUIDE v2.5 17-Dec-2012 13:33:44
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @daq_gui_chipkit_OpeningFcn, ...
-                   'gui_OutputFcn',  @daq_gui_chipkit_OutputFcn, ...
+                   'gui_OpeningFcn', @daq_gui_arduino_OpeningFcn, ...
+                   'gui_OutputFcn',  @daq_gui_arduino_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -43,17 +43,17 @@ else
 end
 % End initialization code - DO NOT EDIT
 
-% --- Executes just before daq_gui_chipkit is made visible.
-function daq_gui_chipkit_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before daq_gui_arduino is made visible.
+function daq_gui_arduino_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to daq_gui_chipkit (see VARARGIN)
+% varargin   command line arguments to daq_gui_arduino (see VARARGIN)
 
 
 
-% Choose default command line output for daq_gui_chipkit
+% Choose default command line output for daq_gui_arduino
 handles.guifig = gcf;
 handles.hist = zeros(1024,1);
 handles.hist_corr = zeros(512,1); %para meter ceros en un array
@@ -73,17 +73,17 @@ guidata(handles.guifig,handles);
 guidata(hObject, handles);
 
 % This sets up the initial plot - only do when we are invisible
-% so window can get raised using daq_gui_chipkit.
+% so window can get raised using daq_gui_arduino.
 if strcmp(get(hObject,'Visible'),'off')
     plot(rand(5));
 end
 
-% UIWAIT makes daq_gui_chipkit wait for user response (see UIRESUME)
+% UIWAIT makes daq_gui_arduino wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = daq_gui_chipkit_OutputFcn(hObject, eventdata, handles)
+function varargout = daq_gui_arduino_OutputFcn(hObject, eventdata, handles)
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
