@@ -55,7 +55,7 @@ function daq_gui_chipkit_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for daq_gui_chipkit
 handles.guifig = gcf;
-handles.hist = zeros(1024,1);
+handles.hist = zeros(4096,1);
 handles.hist_corr = zeros(512,1); %para meter ceros en un array
 handles.hist_save = zeros(512,35);
 handles.hist_comp = zeros(512,1);
@@ -234,11 +234,17 @@ puerto = handles.puerto_serie;  %instancio el puerto
  
  set(handles.text1,'String',num2str(nRead));
  %actualizo ahora los datos de mi histograma
+ temp = zeros(4096,1);
  aux_error = 0;
  
-
+ %genero mi histograma temporal
+  for j = 1:1000
+        if (data(j) > 1  && data(j) < 4096 )
+            temp(data(j)) = temp(data(j))+1;
+        end
+  end
   %convierto los datos leidos a valores numericos
-  data = str2num(str_aux);
+  data = str2num(cadena);
 
  plot(handles.axes2,1:1024, data(1:1024),'*');
  xlim(handles.axes2,[1 1024]);
@@ -261,7 +267,7 @@ puerto = handles.puerto_serie;  %instancio el puerto
 %     end
 % end
 
- n_events = sum(data)/2; %algo mejor seria
+ n_events = sum(temp)/0.5; %algo mejor seria
  %sum(temp)/(str2num(get(handles.edit2,'String'))
  set(handles.text2,'String',num2str(n_events));
 
@@ -269,8 +275,8 @@ puerto = handles.puerto_serie;  %instancio el puerto
 
  %cutre solucion, si hay lecturas erroneas, descarto la lectura
  if (aux_error == 0) 
-     %handles.hist = handles.hist +data';
-     %handles.hist_corr = handles.hist_corr + blkproc(data',[2 1],'mean2');
+     handles.hist = handles.hist +data;
+     handles.hist_corr = handles.hist_corr + blkproc(temp,[8 1],'mean2');
  end
  
 
@@ -278,14 +284,14 @@ puerto = handles.puerto_serie;  %instancio el puerto
  %genero ahora mi histograma
 %axes(handles.axes1);
 %plot(handles.axes1, dataConv);
-plot(handles.axes3,1:1024, handles.hist(1:1024));
-xlim(handles.axes3,[10 1024]);
+plot(handles.axes3,1:4096, handles.hist(1:4096));
+xlim(handles.axes3,[50 4090]);
 %lo pongo en escala logaritmica
 %set(handles.axes3,'XScale','log');
 
 plot(handles.axes1,1:512, handles.hist_corr(1:512));
 xlim(handles.axes1,[5 510]);
-%set(handles.axes1,'YScale','log');
+set(handles.axes1,'YScale','log');
 title(handles.axes3,'Despues');
 
 %plot(handles.axes1,temp,'*');
@@ -317,7 +323,7 @@ function pushbutton5_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-handles.hist = zeros(1024,1);
+handles.hist = zeros(4096,1);
 handles.hist_corr = zeros(512,1); %para meter ceros en un array
 
 guidata(handles.guifig, handles);
