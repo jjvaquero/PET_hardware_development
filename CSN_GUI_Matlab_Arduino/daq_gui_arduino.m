@@ -267,7 +267,6 @@ while puerto.BytesAvailable <2040
 %         end
 %     end
 % end
- disp(sum(tmp_aux));
  n_events = (sum(tmp_aux))/2.0; %algo mejor seria
  %sum(temp)/(str2num(get(handles.edit2,'String'))
  set(handles.text2,'String',num2str(n_events));
