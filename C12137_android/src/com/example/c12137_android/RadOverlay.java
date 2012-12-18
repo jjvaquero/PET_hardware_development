@@ -58,7 +58,7 @@ public class RadOverlay extends ItemizedOverlay{
 			  strIndex = radData.indexOf("\n", strIndex+1);
 			  lineCount++;
 		  }
-		  //decrement one for the las execution time
+		  //decrement one for the last execution time
 		  lineCount--;
 		  
 		  double[][] data = new double[lineCount][3];

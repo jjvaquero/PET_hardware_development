@@ -62,7 +62,7 @@ public class C12137USB {
     	//check that there is at least 1 endpoint
     	if (intf.getEndpointCount()<1) return; 
         
-    	//todo esto no es necesario puesto que el hardware ya es conocido
+    	//TODO esto no es necesario puesto que el hardware ya es conocido
     	// y por lo tanto los endpoints no varian...pero bueno...
     	for (int i = 0; i <intf.getEndpointCount(); i++){
     		UsbEndpoint ep = intf.getEndpoint(i);
@@ -165,6 +165,7 @@ public class C12137USB {
 								+ ((transferBuffer.get(i + 1) & 0xFF) << 8);
 					}
 				}
+				//first header value must be 0x5A5A
 				if (Data[0] == 0x5A5A) {
 					returnValue = 0;
 				} else {
