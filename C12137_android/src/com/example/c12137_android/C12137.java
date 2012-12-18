@@ -37,16 +37,14 @@ public class C12137 extends Activity {
 	 public final static String INIT_COORD = "hggm.lim.prueba_detect.MESSAGE";
 	 public final static String RAD_FILE = "hggm.lim.prueba_detect.RADMESSAGE";
 	 
-	 //TODO mejorar esto
+	 //TODO mejorar esto 
 	 private final String dirLocation = "/mnt/sdcard/LIM";
 	 private final String fileName = "/mnt/sdcard/LIM/pos_rad.csv";
 	 
+	 //Histograms used by the system 
      private float[] HistX = new float[4096];
      private float[] HistY = new float[4096];
-     private Location posActual;
-     private Location lastLocation; //updated every 5 meters
-     //tried using the listener with the distance option, but the onLocationChanged
-     //was called several times every time the position was updated
+ 
      
      //energy plot variable
     private MyRender mRenderer;
@@ -60,6 +58,10 @@ public class C12137 extends Activity {
     private LocationListener locationListener;
     //Dialog alerting users that GPS is not enabled
     private AlertDialog.Builder builder;
+    private Location posActual;
+    private Location lastLocation; //updated every 5 meters
+    //tried using the listener with the distance option, but the onLocationChanged
+    //was called several times every time the position was updated
     
     //used for the periodic reading
     private timerLectura hiloLectura;
@@ -72,16 +74,13 @@ public class C12137 extends Activity {
         
         //First Location = Hospital location
         posActual = new Location(LocationManager.GPS_PROVIDER);
+        //HGUGM coordinates
+        //TODO hacer que esto se lea de un archivo de texto
+        // de todas formas al lanzar el mapa se tomaran las ultimas coordenadas
+        //adquiridas
         posActual.setLatitude(40.41932);
         posActual.setLongitude(-3.670937);
         lastLocation = new Location(posActual);
-        
-        mRenderer = new MyRender();
-        mRenderer.setPlotMode(MyRender.PLOT_MODE_ENERGY);
-        mGlSurfaceView = new GLSurfaceView(this);
-        mGlSurfaceView.setRenderer(mRenderer);
-        mLayGL = (LinearLayout) findViewById(R.id.layout1);
-        mLayGL.addView(mGlSurfaceView);
         
         
         //in the HistX i would load the values from the calibration data
@@ -103,12 +102,20 @@ public class C12137 extends Activity {
 		}
          */
         
-        //histograms 
+        //calibration data
         for (int i = 0; i<4096; i ++)
         {
      	    HistX[i] = (float)Gf_C12137.KeV[i];
      	    HistY[i] = 0.1f;
      	}
+        
+        //data plot initialization
+        mRenderer = new MyRender();
+        mRenderer.setPlotMode(MyRender.PLOT_MODE_ENERGY);
+        mGlSurfaceView = new GLSurfaceView(this);
+        mGlSurfaceView.setRenderer(mRenderer);
+        mLayGL = (LinearLayout) findViewById(R.id.layout1);
+        mLayGL.addView(mGlSurfaceView);
         
        //graph initialization       
        mRenderer.setEnergyXVertices(HistX);
@@ -179,7 +186,7 @@ public class C12137 extends Activity {
            			System.out.println("Archivo no encontrado");
            			e.printStackTrace();
            		} catch (IOException e) {
-           			// BufferedWriterオブジェクトのクローズ時の例外捕捉
+           			// BufferedWriter
            			e.printStackTrace();
            		}
 
@@ -203,6 +210,9 @@ public class C12137 extends Activity {
      //TODO descomentar la siguiente linea en la version para movil
      //es necesario comentarla por un fallo del emulador
      //locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+     
+     //none of the above are used, the location listener will be started once the data reading begins
+       
 	
 
     }
@@ -217,10 +227,9 @@ public class C12137 extends Activity {
                
         Intent intent = new Intent(this, MapDisplay.class);
         double coords[] = new double[2];
-        //coords[0]= 40.41932; coords[1]= -3.670937;
         coords[0] = posActual.getLatitude();
         coords[1] = posActual.getLongitude();
-        //para asegurarme de que no este vacion
+        //Values used in the next intent
         intent.putExtra(INIT_COORD, coords);
         intent.putExtra(RAD_FILE, fileName);
         startActivity(intent);       
@@ -232,6 +241,7 @@ public class C12137 extends Activity {
     	hiloLectura = new timerLectura(1, this);
     	lectPeriodica = new Timer();
     	lectPeriodica.schedule(hiloLectura, 100,100);
+    	//allows me to get GPS updates
     	locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, locationListener);
     	EditText edit1 = (EditText)findViewById(R.id.editText1);
     	edit1.setText("1");
@@ -260,6 +270,8 @@ public class C12137 extends Activity {
     	return posActual;
     }
     
+    // Graph would be updated by the periodic task that handles the reading
+    // so it must be public
     public void energyPlotUpdate(int dataIn[]){
         for (int i = 0; i<4096; i ++)
         {
