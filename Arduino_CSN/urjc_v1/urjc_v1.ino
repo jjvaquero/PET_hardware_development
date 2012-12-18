@@ -68,9 +68,7 @@ void init_digitalIO(){
   
   pinMode(3, INPUT);
   pinMode(2, INPUT); 
-  //configuro los puertos A y C como entradas
- // DDRC = B00000000;
-  //DDRA = B00000000;
+
   //ahora configuro los pines de DesInt y ConvSt 
   //como salidas
   pinMode(34, OUTPUT);
@@ -113,6 +111,15 @@ void init_histograms(){
   hist_alm = hist1;
   hist_tx = hist2;
 
+}
+
+void init_histograms2(){
+   for(int i = 0; i < 1024; i++){
+    hist1[i] = 0;
+    hist2[i] = 0;
+    hist_data.data[i] = 0;
+    //hist3[i] = 0;
+  } 
 }
 
 void init_interrupt_P3(){ // Interrupcion externa a traves del pin 3
@@ -261,7 +268,9 @@ ISR(TIMER5_OVF_vect) {
   //fin de linea...porque...tampoco esta de mas
   //Serial.println();
   //Serial1.println();
-   enviando=false;
+  // Inicializamos los histogramas
+  init_histograms2();  
+  enviando=false;
 }
 
 void setup(){
