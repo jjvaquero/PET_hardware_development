@@ -61,16 +61,16 @@ int init_SD(){
 
 void init_digitalIO(){
   
-  /*
+  
   for(int i = 0; i < 16; i++){
     pinMode(i+22, INPUT);
   }
   
   pinMode(3, INPUT);
-  pinMode(2, INPUT); */
+  pinMode(2, INPUT); 
   //configuro los puertos A y C como entradas
-  DDRC = B00000000;
-  DDRA = B00000000;
+ // DDRC = B00000000;
+  //DDRA = B00000000;
   //ahora configuro los pines de DesInt y ConvSt 
   //como salidas
   pinMode(34, OUTPUT);
@@ -146,6 +146,11 @@ void init_interrupt_TIMER5(){
 
 ISR(INT5_vect) // Comp
 {
+  //espera el tiempo de integracion
+  //de lo contrario salta a 1us
+  for (int i = 0; i < 20; i++){
+    asm("NOP");
+  }
   PORTC &= ~(1 << 3);      
   PORTC |= (1 << 3);
 
@@ -164,12 +169,12 @@ ISR(INT4_vect) // NBusy
   byte LSB = 0;
   
   //lectura propiamente dicha
-  LSB = PINA; MSB_aux = PINC;
+  /*LSB = PINA; MSB_aux = PINC;
   MSB_aux = (MSB_aux >>4) & 0x0F;
   MSB = ((MSB_aux & 0x01)*8) | ((MSB_aux & 0x02)*4)| 
-  ((MSB_aux & 0x04)*2)|((MSB_aux & 0x08)*1);
+  ((MSB_aux & 0x04)*2)|((MSB_aux & 0x08)*1);*/
 
-  /*
+  
   m[0] = *portInputRegister(1); // PORTA
   m[1] = *portInputRegister(3); // PORTC
   
@@ -184,11 +189,11 @@ ISR(INT4_vect) // NBusy
   port_c |= (bitRead(m[1], 6) << 1);
   port_c |= (bitRead(m[1], 7) << 0);
   
-  m[1] = port_c;*/
+  m[1] = port_c;
   
   // Desplazamos bits
-  muestra_aux = word(MSB,LSB) >>2; 
-  //muestra_aux = muestra >> 2;
+  //muestra_aux = word(MSB,LSB) >>2; 
+  muestra_aux = muestra >> 2;
   
   //garantizo no salirme del indice maximo
   if(muestra_aux > 1023){
@@ -254,9 +259,9 @@ ISR(TIMER5_OVF_vect) {
   //sea necesario
   Serial.write(hist_data.data_buffer,2048);
   //fin de linea...porque...tampoco esta de mas
-  Serial.println();
+  //Serial.println();
   //Serial1.println();
-  enviando=false;
+   enviando=false;
 }
 
 void setup(){
