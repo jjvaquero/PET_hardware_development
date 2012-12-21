@@ -5,7 +5,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Arrays;
+import java.util.Properties;
 import java.util.TimerTask;
 
 import android.os.Handler;
@@ -13,6 +18,9 @@ import android.widget.TextView;
 
 
 public class timerLectura extends TimerTask {
+	
+	//para la base de datos
+	private static final String dbClassName = "com.mysql.jdbc.Driver";
 	
 	public static int HIST_SIZE = 4096;
 	
@@ -123,6 +131,10 @@ public class timerLectura extends TimerTask {
 			//check if it is time to save the data 
 			if (saveTimeCounter >= saveTime*60){ //saveTime in mins
 				this.saveData();
+				try{
+				this.saveDataDB();} catch (Exception ex){
+					System.out.println(ex.getMessage());
+				}
 				for (int i = 0; i< HIST_SIZE; i++){
 					intHist[i] = 0;
 				}
@@ -285,5 +297,70 @@ public class timerLectura extends TimerTask {
 	public float getRadiationLevel(){
 		return radLevel;
 	}
+	
+	private void saveDataDB() throws Exception{
+		//para escribir en la base de datos de URJC
+		
+		//primero convierto mi histograma a una cadena gigantesca....
+		String buffer_salida = "";
+		
+		
+		
+		for (int i = 0; i < HIST_SIZE; i++) {
+			buffer_salida=buffer_salida+String.valueOf(intHist[i])+",";
+		}
+		
+		try{
+			
+			
+		
+		//file writing 
+		//opens the file and appends the integrated histogram
+		String dbClassName = "com.mysql.jdbc.Driver";
+		String CONNECTION ="jdbc:mysql://192.168.1.128:3306/baseCSN";
+		
+		// creates a drivermanager class factory
+	    Class.forName(dbClassName);
 
+	    // Properties for user and password. Here the user and password are both 'paulr'
+	    Properties p = new Properties();
+	    p.put("user","CSN_droid");
+	    p.put("password","csn");
+
+	    // Now try to connect
+	    Connection con = DriverManager.getConnection(CONNECTION,p);
+			
+		 /*Connection con = DriverManager.getConnection(
+	                "jdbc:mysql://192.168.1.128:3306/baseCSN",
+	                "CSN_droid",
+	                "csn"); */
+
+		    Statement stmt = con.createStatement();
+		    //primero meto unos datos
+		    stmt.execute("INSERT INTO datos_leidos VALUES ('"+buffer_salida+"',1567)");
+		}
+		catch (Exception ex){
+		    //para poder ver el error
+			  String fileName = "/mnt/sdcard/LIM/error.csv";
+			   BufferedWriter bw = new BufferedWriter(new FileWriter(fileName, true)); 
+					    
+				//saving the integrated histogram
+				//for (int i = 0; i < HIST_SIZE; i++) {
+					bw.write(ex.getMessage()+"\n");
+				//}
+				bw.newLine();
+				bw.flush();
+				bw.close();
+			}
+		}
+		  /*  ResultSet rs = stmt.executeQuery("SELECT histograma, tiempoEvt FROM datos_leidos ");
+		    
+		 
+
+		    while (rs.next()) {
+		    	int x = rs.getInt("tiempoEvt"); System.out.print(x+" ");
+		    	String s = rs.getString("histograma"); System.out.println(s);
+		    	//float f = rs.getFloat("c");
+		    }*/
+		   
 }
