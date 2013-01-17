@@ -9,7 +9,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Properties;
 import java.util.TimerTask;
 
@@ -307,7 +309,7 @@ public class timerLectura extends TimerTask {
 		
 		
 		for (int i = 0; i < HIST_SIZE; i++) {
-			buffer_salida=buffer_salida+String.valueOf(intHist[i])+",";
+			buffer_salida=buffer_salida+String.valueOf(intHist[i])+" ";
 		}
 		
 		try{
@@ -316,6 +318,10 @@ public class timerLectura extends TimerTask {
 		
 		//file writing 
 		//opens the file and appends the integrated histogram
+		
+			
+		/*
+		//Configuracion usada para probar en el lab	
 		String dbClassName = "com.mysql.jdbc.Driver";
 		String CONNECTION ="jdbc:mysql://192.168.1.128:3306/baseCSN";
 		
@@ -326,18 +332,45 @@ public class timerLectura extends TimerTask {
 	    Properties p = new Properties();
 	    p.put("user","CSN_droid");
 	    p.put("password","csn");
+	    */
+	    
+	    //Configuracion de base de datos URJC
+	    /*
+		mysql
+		ip: 212.128.243.150
+		base de datos: bbddcsn
+		user: CSN
+		pw: csn
+	     */
+		String dbClassName = "com.mysql.jdbc.Driver";
+		String CONNECTION ="jdbc:mysql://212.128.243.150:3306/bbddcsn";
+			
+		// creates a drivermanager class factory
+		 Class.forName(dbClassName);
+
+		 // Properties for user and password. Here the user and password are both 'paulr'
+		Properties p = new Properties();
+		p.put("user","CSN");
+		p.put("password","csn");
 
 	    // Now try to connect
 	    Connection con = DriverManager.getConnection(CONNECTION,p);
 			
-		 /*Connection con = DriverManager.getConnection(
-	                "jdbc:mysql://192.168.1.128:3306/baseCSN",
-	                "CSN_droid",
-	                "csn"); */
 
 		    Statement stmt = con.createStatement();
+		    //modifico para escribir los datos en URJC
+		    /*
 		    //primero meto unos datos
 		    stmt.execute("INSERT INTO datos_leidos VALUES ('"+buffer_salida+"',1567)");
+		    */
+		    //"insert into mediciones " +
+		    //"(fecha, id_B, id_D, histograma, tipoHist) values ('2013-01-01 11:30:25', 1, 1, '25 0 5 6 6 ......230 250 200', 1)"
+		    //pongo fecha y hora ...no seguro de que funcione...
+		    SimpleDateFormat s = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss");
+		    String format = s.format(new Date());
+		    stmt.execute("INSERT INTO mediciones (fecha, id_B, id_D, histograma, tipoHist) VALUES  " +
+		    		"('"+format+"', 1, 1,'"+buffer_salida+"',1)");
+		    //sacar fecha y hora luego de forma decente 
 		}
 		catch (Exception ex){
 		    //para poder ver el error
