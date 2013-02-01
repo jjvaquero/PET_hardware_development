@@ -218,6 +218,11 @@ ISR(INT4_vect) // NBusy
     
   PORTC &= ~(1 << 2);   
   PORTC |= (1 << 2);
+  
+  //espero por oscilaciones...
+    for (int i = 0; i < 20; i++){
+    asm("NOP");
+  }
 
 }
 
