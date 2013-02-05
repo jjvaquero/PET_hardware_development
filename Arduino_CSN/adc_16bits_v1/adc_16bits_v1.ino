@@ -67,7 +67,7 @@ void init_digitalIO(){
   digitalWrite(28, HIGH);
   digitalWrite(34, HIGH);
   
-  
+  /*
   pinMode(8, INPUT); // Conexion BT
   pinMode(9, OUTPUT); // Reset BT 
   digitalWrite(9, LOW);
@@ -78,7 +78,7 @@ void init_digitalIO(){
   digitalWrite(12, LOW);
   digitalWrite(13, LOW);
   pinMode(20, INPUT); // Interrupcion dato disponible
-  
+  */
 
 }
 
@@ -144,8 +144,18 @@ ISR(INT5_vect) // Comp
   for (int i = 0; i < 20; i++){
     asm("NOP");
   }
-  PORTA &= ~(1 << 2);      
+  PORTA &= ~(1 << 2);   
+  //la matengo por un tiempo >40ns
+   for (int i = 0; i < 2; i++){
+    asm("NOP");
+  }  
   PORTA |= (1 << 2);
+  
+  //TODO ...quitar de aqui
+    //activo Ngate
+ /* PORTC &= ~(1 << 3);   
+  PORTC |= (1 << 3);*/
+
 
 }
 
@@ -157,16 +167,17 @@ ISR(INT4_vect) // NBusy
   uint8_t port_c = 0;
   muestra = 0;
   m = (uint8_t*)&muestra;
+  //TODO
+  //cargarme todos los datos no usados...
   
+  
+  //ToDo ..quito todo lo de cs
   //ahora a lo cutre y ruin
   PORTA &= ~(1 << 6);  //activo CS Low...debe estar asi hasta que lea
   
   //leo del puerto SPI
-  
-  
   //variables para la lectura
   byte MSB = 0;
-  byte MSB_aux = 0;
   byte LSB = 0;
   
   //lectura propiamente dicha
@@ -176,21 +187,21 @@ ISR(INT4_vect) // NBusy
   ((MSB_aux & 0x04)*2)|((MSB_aux & 0x08)*1);*/
 
   
-  m[0] = *portInputRegister(1); // PORTA
-  m[1] = *portInputRegister(3); // PORTC
+  //m[0] = *portInputRegister(1); // PORTA
+  //m[1] = *portInputRegister(3); // PORTC
   
   //no me convence mucho...
-  m[1] = SPI.transfer(0x00);
-  m[0] = SPI.transfer(0x00);
+  
+   MSB = SPI.transfer(0xD0);
+   LSB = SPI.transfer(0xD0); 
   //en teoria 0x00 no hace nada...el comando de lectura es 0xD000 
   
   //una vez termina la lectura desactivo CS
   PORTA |= (1 << 6);
   
-  
   // Desplazamos bits
-  //muestra_aux = word(MSB,LSB) >>2; 
-  muestra_aux = muestra >> 2;
+  muestra_aux = word(MSB,LSB); // >>2; 
+  muestra_aux = muestra_aux >> 6;
   
   //garantizo no salirme del indice maximo
   if(muestra_aux > 1023){
@@ -200,7 +211,7 @@ ISR(INT4_vect) // NBusy
   
   if(hist_alm[muestra_aux] != 65535)
     hist_alm[muestra_aux]++;
-    
+  
   //pongo mis datos en el histograma
   //esta comprobacion se puede quitar
   if (!enviando) 
@@ -278,8 +289,9 @@ void setup(){
     //initalize SPI
   SPI.begin(); 
   //SPI config --clock 32 Mhz, CPOL = 0, CPHA = 1
-  SPI.setClockDivider(SPI_CLOCK_DIV8); 
-  SPI.setDataMode(SPI_MODE1);  
+  SPI.setBitOrder(MSBFIRST);
+  //SPI.setClockDivider(SPI_CLOCK_DIV8); 
+  //SPI.setDataMode(SPI_MODE1);  
   
   
 
