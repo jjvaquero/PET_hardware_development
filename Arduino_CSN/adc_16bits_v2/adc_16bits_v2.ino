@@ -11,7 +11,7 @@
 
 #define INIT_TIMER_COUNT 34285
 #define RESET_TIMER5 TCNT5 = INIT_TIMER_COUNT
-#define BUFFER_LENGTH 5000
+#define BUFFER_LENGTH 2500
 
 
 int buff_index = 0;
@@ -119,7 +119,7 @@ ISR(INT4_vect) // NBusy
   //limita el tamanno maximo del buffer
   //TODO
   //probar si quitar lo de !enviando
-  if(buff_index < BUFFER_LENGTH  && !enviando){
+  if(buff_index < BUFFER_LENGTH  && !enviando && event_val>50){
     hist_data.data[buff_index] = event_val;
     buff_index++;
   }
@@ -158,6 +158,7 @@ ISR(TIMER5_OVF_vect) {
   // Inicializamos los histogramas
   clear_histograms();  
   enviando=false;
+  buff_index = 0;
 }
 
 void setup(){
