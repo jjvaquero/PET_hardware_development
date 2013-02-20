@@ -300,17 +300,25 @@ n_error= 0;
 menor = min([ind1,ind2,ind3,ind4]);
 for i = 1: menor-1
     
-    XA = canal3(i)/16; XB = canal4(i)/16;
-    YA = canal1(i)/16; YB = canal2(i)/16;
+    XA = canal4(i)/16; XB = canal3(i)/16;
+    YA = canal2(i)/16; YB = canal1(i)/16;
+   % cad = strcat(num2str(XA),'Xb = ',num2str(XB),'Ya =',num2str(YA),'Yb = ',num2str(YB));
+   % disp( cad);
     
     energia = (XA + XB +YA + YB) / 8; %hago un cutre escalado...
     
-    X = round((XA-XB) + 256);
-    Y = round((YA-YB) + 256);
+    %X = round((XA-XB)/energia*512 + 256);
+    %Y = round((YA-YB)/energia*512 + 256);
+    X = round((((XA-XB)/(XA+XB))+1)*256);
+    Y = round((((YA-YB)/(YA+YB))+1)*256);
     if (X>0 && X<513) && (Y>0 && Y<513)
-        img(X,Y) = img(X,Y) + energia;
+        img(X,Y) = img(X,Y) + 1; % energia;
+        %disp(X);
+        %disp(energia);
     else
         n_error = n_error+1;
+       disp(X); 
+       disp(Y);
     end
 end
 %imshow(mat2gray(img));
@@ -350,7 +358,7 @@ end
 %plot(handles.axes2,handles.histo1);
 plot(handles.axes2,hist_1);
 ylim(handles.axes2,[0 tope]);
-xlim(handles.axes2,[0 512]);
+xlim(handles.axes2,[0 1024]);
 %set(handles.axes2,'XScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes2,'Canal 1');
@@ -358,7 +366,7 @@ title(handles.axes2,'Canal 1');
 %plot(handles.axes3,handles.histo3);
 plot(handles.axes3,hist_3);
 ylim(handles.axes3,[0 tope]);
-xlim(handles.axes3,[0 512]);
+xlim(handles.axes3,[0 1024]);
 %set(handles.axes3,'XScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes3,'Canal 3');
@@ -366,7 +374,7 @@ title(handles.axes3,'Canal 3');
 %plot(handles.axes5,handles.histo2);
 plot(handles.axes5,hist_2);
 ylim(handles.axes5,[0 tope]);
-xlim(handles.axes5,[0 512]);
+xlim(handles.axes5,[0 1024]);
 %set(handles.axes5,'XScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes5,'Canal 2');
@@ -374,7 +382,7 @@ title(handles.axes5,'Canal 2');
 %plot(handles.axes6,handles.histo4);
 plot(handles.axes6,hist_4);
 ylim(handles.axes6,[0 tope]);
-xlim(handles.axes6,[0 512]);
+xlim(handles.axes6,[0 1024]);
 %set(handles.axes6,'XScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes6,'Canal 4');
