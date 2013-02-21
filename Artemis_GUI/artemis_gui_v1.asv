@@ -111,7 +111,7 @@ QUSB_init(quick);
 %configuro la FPGA
 QUSB_FpgaInit(quick);
 %programo la FPGA
-QUSB_FpgaProgram(quick,'daq_multi.rbf');
+QUSB_FpgaProgram(quick,'QUSBEVB_REVA.rbf'); %daq_multi.rbf
 
 %aqui debo primero configurar la fpga y toda esa pelicula y luego activar
 %el timer
@@ -259,49 +259,98 @@ canal2 = zeros(1,2500); histo2 = zeros(1,4096);
 canal3 = zeros(1,2500); histo3 = zeros(1,4096);
 canal4 = zeros(1,2500); histo4 = zeros(1,4096);
 
-for i = 1 : 2500
-    if (dataConv(i) ~=0 ) %me aseguro de que no es un valor repetido
-        if( dataConv(i) >= 32768) %se trata del cuarto canal
-            canal4(ind4) = dataConv(i)-32768;
-            if( canal4(ind4)> 0 && canal4(ind4) < 4096)
-                histo4(canal4(ind4)+1) = histo4(canal4(ind4)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
-            end
-            ind4 = ind4+1;
-        elseif (dataConv(i) >= 16384)
-            canal3(ind3) = dataConv(i)-16384;
-            if( canal3(ind3)> 0 && canal3(ind3) < 4096)
-                histo3(canal3(ind3)+1) = histo3(canal3(ind3)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
-            end
-            ind3 = ind3+1;
-        elseif (dataConv(i) >= 8192)
-            canal2(ind2) = dataConv(i)- 8192;
-            if( canal2(ind2)> 0 && canal2(ind2) < 4096)
-                histo2(canal2(ind2)+1) = histo2(canal2(ind2)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
-            end
-            ind2 = ind2+1;
-        elseif (dataConv(i) >= 4096)
-            canal1(ind1) = dataConv(i)- 4096;
-            if( canal1(ind1)> 0 && canal1(ind1) < 4096)
-                histo1(canal1(ind1)+1) = histo1(canal1(ind1)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
-            end
-            ind1 = ind1+1;
-        else
-            data(i)
-        end
+
+% for i = 1 : 2500
+%     if (dataConv(i) ~=0 ) %me aseguro de que no es un valor repetido
+%         if( dataConv(i) >= 32768) %se trata del cuarto canal
+%             canal4(ind4) = dataConv(i)-32768;
+%             if( canal4(ind4)> 0 && canal4(ind4) < 4096)
+%                 histo4(canal4(ind4)+1) = histo4(canal4(ind4)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
+%             end
+%             ind4 = ind4+1;
+%         elseif (dataConv(i) >= 16384)
+%             canal3(ind3) = dataConv(i)-16384;
+%             if( canal3(ind3)> 0 && canal3(ind3) < 4096)
+%                 histo3(canal3(ind3)+1) = histo3(canal3(ind3)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
+%             end
+%             ind3 = ind3+1;
+%         elseif (dataConv(i) >= 8192)
+%             canal2(ind2) = dataConv(i)- 8192;
+%             if( canal2(ind2)> 0 && canal2(ind2) < 4096)
+%                 histo2(canal2(ind2)+1) = histo2(canal2(ind2)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
+%             end
+%             ind2 = ind2+1;
+%         elseif (dataConv(i) >= 4096)
+%             canal1(ind1) = dataConv(i)- 4096;
+%             if( canal1(ind1)> 0 && canal1(ind1) < 4096)
+%                 histo1(canal1(ind1)+1) = histo1(canal1(ind1)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
+%             end
+%             ind1 = ind1+1;
+%         else
+%             data(i)
+%         end
+%     end
+% end
+
+%algoritmo para garantizar que los eventos van uno detras de otro
+indice = 1; %indice comun para todos los canales
+%cad = '';
+for i = 1 : 2496 %2500
+    if (dataConv(i) ~=0 && dataConv(i) <8192 && dataConv(i)>= 4096 ) %compruebo que tengo un elemento del primer canal
+        canal1(indice) = dataConv(i) - 4096; 
+        %cad = strcat(cad,num2str(canal1(indice)), '  aaa ');
+        %i = i+1; %esto a lo mejor no le gusta mucho a marla...
+        %anido los if para comprobar los siguientes canales
+         if (dataConv(i+1) <16384 && dataConv(i+1)>= 8192 ) %canal 2
+             canal2(indice) = dataConv(i+1) - 8192;  
+             %cad = strcat(cad,num2str(canal2(indice)), '  aaa ');
+              if ( dataConv(i+2) <32768 && dataConv(i+2)>= 16384 ) %canal3
+                canal3(indice) = dataConv(i+2) - 16384;
+                %cad = strcat(cad,num2str(canal3(indice)), '  aaa ');
+                 if (dataConv(i+3)>= 32768 ) %cana4
+                     canal4(indice) = dataConv(i+3) - 32768; 
+                    % cad = strcat(cad,num2str(canal4(indice)), '  aaa ');
+                     %ahora ya tengo claro que este dato es valido por lo
+                     %tanto incremento el indice
+                     %no incremento i porque lo hara el ejecutar el bucle
+                     %ahora tambien modifico los histogramas
+                     
+                     if( canal4(indice)> 0 && canal4(indice) < 4096)
+                         histo4(canal4(indice)+1) = histo4(canal4(indice)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
+                     end
+                     if( canal3(indice)> 0 && canal3(indice) < 4096)
+                         histo3(canal3(indice)+1) = histo3(canal3(indice)+ 1) + 1;
+                     end
+                     if( canal2(indice)> 0 && canal2(indice) < 4096)
+                         histo2(canal2(indice)+1) = histo2(canal2(indice)+ 1) + 1;
+                     end
+                     if( canal1(indice)> 0 && canal1(indice) < 4096)
+                         histo1(canal1(indice)+1) = histo1(canal1(indice)+ 1) + 1;
+                     end
+                     indice = indice + 1; 
+                     %disp(indice);
+                     
+                 end
+              end
+         end
     end
+   % disp(cad);
 end
 
-save dataconv.mat dataConv data
+
+%save dataconv.mat dataConv data  %histo1 histo2 histo3 histo4
 
 %ahora genero la imagen, para eso leo los datos de cada canal
 %para eso asigno los valores
 img = zeros (512,512);
 n_error= 0;
-menor = min([ind1,ind2,ind3,ind4]);
-for i = 1: menor-1
+  %menor = min([ind1,ind2,ind3,ind4]);
+  %cad = strcat(num2str(ind1),'Xb = ',num2str(ind2),'Ya =',num2str(ind3),'Yb = ',num2str(ind4));
+  %disp( cad); 
+for i = 1: indice-1  %menor
     
-    XA = canal4(i)/16; XB = canal3(i)/16;
-    YA = canal2(i)/16; YB = canal1(i)/16;
+    XA = canal2(i); XB = canal1(i);
+    YA = canal4(i); YB = canal3(i);
    % cad = strcat(num2str(XA),'Xb = ',num2str(XB),'Ya =',num2str(YA),'Yb = ',num2str(YB));
    % disp( cad);
     
@@ -309,8 +358,8 @@ for i = 1: menor-1
     
     %X = round((XA-XB)/energia*512 + 256);
     %Y = round((YA-YB)/energia*512 + 256);
-    X = round((((XA-XB)/(XA+XB))+1)*256);
-    Y = round((((YA-YB)/(YA+YB)))+1)*256);
+    X = round((((XA-XB)/((XA+XB)))+1)*256);
+    Y = round((((YA-YB)/((YA+YB)))+1)*256);
     if (X>0 && X<513) && (Y>0 && Y<513)
         img(X,Y) = img(X,Y) + 1; % energia;
         %disp(X);
@@ -323,7 +372,6 @@ for i = 1: menor-1
 end
 %imshow(mat2gray(img));
 %imagesc(img);
- 
  
 
 %hasta aqui toda la parte de lectura e interpretacion de datos
@@ -351,7 +399,7 @@ hist_3 = blkproc(handles.histo3(1:4096),[1 4],'mean2');
 hist_4 = blkproc(handles.histo4(1:4096),[1 4],'mean2');
 
 tope = max([hist_1, hist_2, hist_3, hist_4]);
-if  isnan(tope)
+if  (isnan(tope) || tope < 100)
     tope = 100;
 end
 
@@ -395,7 +443,7 @@ imagesc(handles.imagen,'Parent',handles.axes1);
 %set(aux,'Parent',handles.axes1);
 
 
- n_events = menor/0.5; %algo mejor seria
+ n_events = 1000; %menor/0.5; %algo mejor seria
  %sum(temp)/(str2num(get(handles.edit2,'String'))
  set(handles.text2,'String',num2str(n_events));
 
