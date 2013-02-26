@@ -325,16 +325,16 @@ for i = 1: indice-1  %menor
     
     %X = round((XA-XB)/energia*512 + 256);
     %Y = round((YA-YB)/energia*512 + 256);
-    X = round(((4*(XA-XB)/((XA+XB)))+1)*256);
-    Y = round(((4*(YA-YB)/((YA+YB)))+1)*256);
+    X = round(((2*(XA-XB)/((XA+XB+YA+YB)))+1)*256);
+    Y = round(((2*(YA-YB)/((YA+YB+XA+XB)))+1)*256);
     if (X>0 && X<513) && (Y>0 && Y<513)
         img(X,Y) = img(X,Y) + 1; % energia;
         %disp(X);
         %disp(energia);
     else
         n_error = n_error+1;
-       %disp(X); 
-       %disp(Y);
+       disp(X); 
+       disp(Y);
     end
 end
 %imshow(mat2gray(img));
