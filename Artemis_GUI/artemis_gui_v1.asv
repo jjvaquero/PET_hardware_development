@@ -236,7 +236,7 @@ quick = handles.quick;  %instancio el quick creado antes
 %hist = handles.hist; %esto no vale porque hist es temporal
 %sin visibilidad para fuera
   %tic
- [data,nRead] = QUSB_ReadFpgaData(quick,5000);
+ [data,nRead] = QUSB_ReadFpgaData(quick,10000); %paso a leer 5000 valores
  %toc   ...me da tiempos de 0.001 es decir vuelve enseguida
  %los datos son leidos a un array de caracteres
  %por ello realizo ahora la conversion necesaria
@@ -244,7 +244,7 @@ quick = handles.quick;  %instancio el quick creado antes
  set(handles.text1,'String',num2str(nRead));
  
 
- for i = 1: 2500 - 1 %10239
+ for i = 1: 5000 - 1 %10239
     %if (mean([data(i-1),data(i),data(i+1)])-data(i) == 0) 
     %no deberian haber nunca dos valores seguids por lo que...
     if (dataConv(i) == dataConv(i+1))
@@ -253,49 +253,16 @@ quick = handles.quick;  %instancio el quick creado antes
  end
 
 %ahora analizo los datos y los meto en el canal correspondiente
-ind1 = 1; ind2 = 1; ind3 = 1; ind4 = 1; 
-canal1 = zeros(1,2500); histo1 = zeros(1,4096);
-canal2 = zeros(1,2500); histo2 = zeros(1,4096);
-canal3 = zeros(1,2500); histo3 = zeros(1,4096);
-canal4 = zeros(1,2500); histo4 = zeros(1,4096);
+canal1 = zeros(1,5000); histo1 = zeros(1,4096);
+canal2 = zeros(1,5000); histo2 = zeros(1,4096);
+canal3 = zeros(1,5000); histo3 = zeros(1,4096);
+canal4 = zeros(1,5000); histo4 = zeros(1,4096);
 
-
-% for i = 1 : 2500
-%     if (dataConv(i) ~=0 ) %me aseguro de que no es un valor repetido
-%         if( dataConv(i) >= 32768) %se trata del cuarto canal
-%             canal4(ind4) = dataConv(i)-32768;
-%             if( canal4(ind4)> 0 && canal4(ind4) < 4096)
-%                 histo4(canal4(ind4)+1) = histo4(canal4(ind4)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
-%             end
-%             ind4 = ind4+1;
-%         elseif (dataConv(i) >= 16384)
-%             canal3(ind3) = dataConv(i)-16384;
-%             if( canal3(ind3)> 0 && canal3(ind3) < 4096)
-%                 histo3(canal3(ind3)+1) = histo3(canal3(ind3)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
-%             end
-%             ind3 = ind3+1;
-%         elseif (dataConv(i) >= 8192)
-%             canal2(ind2) = dataConv(i)- 8192;
-%             if( canal2(ind2)> 0 && canal2(ind2) < 4096)
-%                 histo2(canal2(ind2)+1) = histo2(canal2(ind2)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
-%             end
-%             ind2 = ind2+1;
-%         elseif (dataConv(i) >= 4096)
-%             canal1(ind1) = dataConv(i)- 4096;
-%             if( canal1(ind1)> 0 && canal1(ind1) < 4096)
-%                 histo1(canal1(ind1)+1) = histo1(canal1(ind1)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
-%             end
-%             ind1 = ind1+1;
-%         else
-%             data(i)
-%         end
-%     end
-% end
 
 %algoritmo para garantizar que los eventos van uno detras de otro
 indice = 1; %indice comun para todos los canales
 %cad = '';
-for i = 1 : 2496 %2500
+for i = 1 : 4996 %2500
     if (dataConv(i) ~=0 && dataConv(i) <8192 && dataConv(i)>= 4096 ) %compruebo que tengo un elemento del primer canal
         canal1(indice) = dataConv(i) - 4096; 
         %cad = strcat(cad,num2str(canal1(indice)), '  aaa ');
@@ -358,8 +325,8 @@ for i = 1: indice-1  %menor
     
     %X = round((XA-XB)/energia*512 + 256);
     %Y = round((YA-YB)/energia*512 + 256);
-    X = round((((XA-XB)/((XA+XB)))+1)*256);
-    Y = round((((YA-YB)/((YA+YB)))+1)*256);
+    X = round(((2*(XA-XB)/((XA+XB)))+1)*256);
+    Y = round(((2*(YA-YB)/((YA+YB)))+1)*256);
     if (X>0 && X<513) && (Y>0 && Y<513)
         img(X,Y) = img(X,Y) + 1; % energia;
         %disp(X);
@@ -443,7 +410,7 @@ imagesc(handles.imagen,'Parent',handles.axes1);
 %set(aux,'Parent',handles.axes1);
 
 
- n_events = 1000; %menor/0.5; %algo mejor seria
+ n_events = round(indice/0.3); %algo mejor seria
  %sum(temp)/(str2num(get(handles.edit2,'String'))
  set(handles.text2,'String',num2str(n_events));
 
