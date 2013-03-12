@@ -267,7 +267,7 @@ while puerto.BytesAvailable <2040
 %         end
 %     end
 % end
- n_events = (sum(tmp_aux))/2.0; %algo mejor seria
+ n_events = (sum(tmp_aux))/0.5; %algo mejor seria
  %sum(temp)/(str2num(get(handles.edit2,'String'))
  set(handles.text2,'String',num2str(n_events));
 
@@ -285,12 +285,12 @@ while puerto.BytesAvailable <2040
 %axes(handles.axes1);
 %plot(handles.axes1, dataConv);
 plot(handles.axes3,1:1024, handles.hist(1:1024));
-xlim(handles.axes3,[10 1024]);
+xlim(handles.axes3,[1 1024]);
 %lo pongo en escala logaritmica
 %set(handles.axes3,'XScale','log');
 
 plot(handles.axes1,1:512, handles.hist_corr(1:512));
-xlim(handles.axes1,[5 510]);
+xlim(handles.axes1,[1 510]);
 %set(handles.axes1,'YScale','log');
 title(handles.axes3,'Despues');
 
