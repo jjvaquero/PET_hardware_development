@@ -208,12 +208,16 @@ ISR(INT4_vect) // NBusy
   }  
   
   
-  if(hist_alm[muestra_aux] != 65535)
+  
+  //condiciones para que no desborde y para quitar de paso
+  //el ruido que aparece fuera del rango de interes
+  if(hist_alm[muestra_aux] != 65535 && muestra_aux > 10 
+      && muestra_aux < 900)
     hist_alm[muestra_aux]++;
     
   //pongo mis datos en el histograma
   //esta comprobacion se puede quitar
-  if (!enviando) 
+  if (!enviando && muestra_aux > 10 && muestra_aux < 900) 
     hist_data.data[muestra_aux]++;  
     
   PORTC &= ~(1 << 2);   
