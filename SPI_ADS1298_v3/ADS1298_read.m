@@ -29,11 +29,12 @@ for i=1 :nRead
     end
     %read the header first....TODO add a check
     header =0; nChan = 0; ind = 0;
-    while header ~= 192 && nChan ~=2
+    while header ~= 192 && nChan ~=8
         header = fread(s,1,'int16');
         nChan = fread(s,1,'int16');
     end
-    nData = fread(s,1,'int16');
+    nData = fread(s,1,'int16')
+    nChan
     tam = double(nData);
     
     %read the data
@@ -45,7 +46,7 @@ for i=1 :nRead
                 ecg_data(j+prev,k)= data1(ind);
             end
         end
-        prev = prev + nData/nChan;       
+        prev = prev + round(nData/nChan);       
     end
     
     
