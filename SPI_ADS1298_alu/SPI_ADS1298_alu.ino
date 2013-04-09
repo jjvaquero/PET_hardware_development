@@ -1,11 +1,11 @@
 /*
-Probando el inclinometro de Eu
+ADS1298 test program
 */
 // inslude the SPI library:
 #include <SPI.h>
 
 
-// set pin 10 as the slave select forthe digital pot:
+//Pin configuration
 const int SS_pin = 10;
 const int MOSI_pin = 11; 
 const int MISO_pin = 12; 
@@ -105,6 +105,7 @@ void  ADS1298_init_conf(){
 
 void Packet_init(){
   adsData.packet.header = 0xC0;
+  //TODO modify this value if only two values will be sent
   adsData.packet.nChan  = 0x08; 
   adsData.packet.nData = 0;
   for (int i = 0; i<dataSize; i++){
