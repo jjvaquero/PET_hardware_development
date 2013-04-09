@@ -1,4 +1,9 @@
-%function to read ECG data from the ADS1298
+%function to read ECG data from the ADS1298 EVM
+%function prototype is ecgData = ADS1298_read(portName, nRead)
+% portName --> string indicating the Arduino serial port name ex. 'COM3'
+% nRead --> number of times data would be read, 10 or more is recommended
+
+
 function ecgData = ADS1298_read(portName, nRead)
 
 if nargin < 1 
@@ -62,19 +67,5 @@ if tam < 1
     data = 0;
 end;
 ecgData = ecg_data;
-
-% %procesado de los datos
-% ind = 0; 
-% dataOut = zeros(250,2);
-% %dataOut(:,1)=datos(3,1:2:250);
-% %dataOut(:,2)=datos(3,2:2:250);
-% 
-% 
-%  for i = 1 : 250
-%      for j = 1: 2
-%          ind = ind+1;
-%          dataOut(i,j) = datos(4,ind);
-%      end
-%  end
  
          
