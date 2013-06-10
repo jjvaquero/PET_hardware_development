@@ -325,8 +325,8 @@ for i = 1: indice-1  %menor
     
     %X = round((XA-XB)/energia*512 + 256);
     %Y = round((YA-YB)/energia*512 + 256);
-    X = round(((2*(XA-XB)/((XA+XB+YA+YB)))+1)*256);
-    Y = round(((2*(YA-YB)/((YA+YB+XA+XB)))+1)*256);
+    X = round((((XA-XB)/((XA+XB)))+1)*256); %round(((2*(XA-XB)/((YA+YB+XA+XB)))+1)*256);
+    Y = round((((YA-YB)/((YA+YB)))+1)*256); %round(((2*(YA-YB)/((YA+YB+XA+XB)))+1)*256);
     if (X>0 && X<513) && (Y>0 && Y<513)
         img(X,Y) = img(X,Y) + 1; % energia;
         %disp(X);
@@ -364,6 +364,7 @@ hist_1 = blkproc(handles.histo1(1:4096),[1 4],'mean2');
 hist_2 = blkproc(handles.histo2(1:4096),[1 4],'mean2');
 hist_3 = blkproc(handles.histo3(1:4096),[1 4],'mean2');
 hist_4 = blkproc(handles.histo4(1:4096),[1 4],'mean2');
+
 
 tope = max([hist_1, hist_2, hist_3, hist_4]);
 if  (isnan(tope) || tope < 100)
