@@ -315,8 +315,8 @@ n_error= 0;
   %cad = strcat(num2str(ind1),'Xb = ',num2str(ind2),'Ya =',num2str(ind3),'Yb = ',num2str(ind4));
   %disp( cad); 
 for i = 1: indice-1  %menor
-    
-    XA = canal2(i); XB = canal1(i);
+
+    XA = canal2(i); XB = canal1(i); 
     YA = canal4(i); YB = canal3(i);
    % cad = strcat(num2str(XA),'Xb = ',num2str(XB),'Ya =',num2str(YA),'Yb = ',num2str(YB));
    % disp( cad);
@@ -327,14 +327,15 @@ for i = 1: indice-1  %menor
     %Y = round((YA-YB)/energia*512 + 256);
     X = round((((XA-XB)/((XA+XB)))+1)*256); %round(((2*(XA-XB)/((YA+YB+XA+XB)))+1)*256);
     Y = round((((YA-YB)/((YA+YB)))+1)*256); %round(((2*(YA-YB)/((YA+YB+XA+XB)))+1)*256);
+
     if (X>0 && X<513) && (Y>0 && Y<513)
         img(X,Y) = img(X,Y) + 1; % energia;
         %disp(X);
         %disp(energia);
     else
         n_error = n_error+1;
-       disp(X); 
-       disp(Y);
+       disp('X=');disp(X); 
+       disp('Y=');disp(Y);
     end
 end
 %imshow(mat2gray(img));
