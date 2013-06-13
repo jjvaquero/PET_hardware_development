@@ -61,7 +61,7 @@ handles.hist_save = zeros(512,35);
 handles.hist_comp = zeros(512,1);
 handles.tmp_hists = zeros(2500,100);
 handles.output = hObject;
-handles.puerto_serie = serial('COM4'); %poner algo para poder elegir el num de puerto
+handles.puerto_serie = serial('COM7'); %poner algo para poder elegir el num de puerto
 handles.timer = timer('TimerFcn',{@lectPeriodica,handles.guifig}, 'BusyMode','Queue',...
      'ExecutionMode','FixedRate','Period', 1);
 
