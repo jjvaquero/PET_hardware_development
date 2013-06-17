@@ -1,0 +1,9 @@
+<sld_project_info>
+  <file_info>
+    <file checksum="0x0020D03B" device="EP2C20F256C7" path="QUSBEVB_REVA_EP2C20_Template.sof" usercode="0xFFFFFFFF"/>
+    <file checksum="0x07160D8A" device="EPC4" path="QUSBEVB_REVA_EP2C20_Template.pof" usercode="0xFFFFFFFF"/>
+    <file path="QUSBEVB_REVA_EP2C20_Template.rbf"/>
+  </file_info>
+  <hub_info ir_width="0" node_count="0"/>
+  <node_info/>
+</sld_project_info>
