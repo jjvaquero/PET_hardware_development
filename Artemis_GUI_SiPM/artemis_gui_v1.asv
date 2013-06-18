@@ -283,16 +283,16 @@ for i = 1 : 4996 %2500
                      %ahora tambien modifico los histogramas
                      
                      if( canal4(indice)> 0 && canal4(indice) < 4096)
-                         histo4(canal4(round(indice*1.25))+1) = histo4(canal4(round(indice*1.25))+1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
+                         histo4(canal4(indice)+1) = histo4(canal4(indice)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
                      end
                      if( canal3(indice)> 0 && canal3(indice) < 4096)
-                         histo3(canal3(round(indice*1.1))+1) = histo3(canal3(round(indice*1.1))+1) + 1;
+                         histo3(canal3(indice)+1) = histo3(canal3(indice)+ 1) + 1;
                      end
                      if( canal2(indice)> 0 && canal2(indice) < 4096)
-                         histo2(canal2(round(indice*0.8))+1) = histo2(canal2(round(indice*0.8))+1) + 1;
+                         histo2(canal2(indice)+1) = histo2(canal2(indice)+ 1) + 1;
                      end
                      if( canal1(indice)> 0 && canal1(indice) < 4096)
-                         histo1(canal1(round(indice*0.7))+1) = histo1(canal1(round(indice*0.7))+1) + 1;
+                         histo1(canal1(indice)+1) = histo1(canal1(indice)+ 1) + 1;
                      end
                      indice = indice + 1; 
                      %disp(indice);
@@ -315,20 +315,30 @@ n_error= 0;
   %cad = strcat(num2str(ind1),'Xb = ',num2str(ind2),'Ya =',num2str(ind3),'Yb = ',num2str(ind4));
   %disp( cad); 
 for i = 1: indice-1  %menor
+    
+
                                     %conf de los otros detectores,esta es
                                     %para los nuevos sipm
-    A = canal3(i)*1.10; B = canal1(i)*0.7;  % XA = canal2(i); XB = canal1(i); 
-    C = canal4(i)*1.25; D = canal2(i)*0.8;%YA = canal4(i); YB = canal3(i);
-   % cad = strcat(num2str(XA),'Xb = ',num2str(XB),'Ya =',num2str(YA),'Yb = ',num2str(YB));
-   % disp( cad);
-    
-    energia = (A+B+C+D); %hago un cutre escalado...
-    
-    X = round( ((((A+C)-(B+D))/(A+B+C+D))+1)*256);
-    Y=  round( ((((A+B)-(C+D))/(A+B+C+D))+1)*256);
+     A = canal3(i); B = canal1(i);  % XA = canal2(i); XB = canal1(i); 
+     C = canal4(i); D = canal2(i);%YA = canal4(i); YB = canal3(i);
+%    % cad = strcat(num2str(XA),'Xb = ',num2str(XB),'Ya =',num2str(YA),'Yb = ',num2str(YB));
+%    % disp( cad);
+%     
+%    
+%     energia = (A+B+C+D) / 8; %hago un cutre escalado...
+%     
+%     X = round( ((((A+C)-(B+D))/(A+B+C+D))+1)*256);
+%     Y=  round( ((((A+B)-(C+D))/(A+B+C+D))+1)*256);
+ 
+   %hago un anger con los datos obtenidos
+   Xa = 0.75*(A+C)+0.25*(B+D); Xb = 0.75*(B+D)+0.25*(A+C);
+   Ya = 0.75*(A+B)+0.25*(C+D); Yb = 0.75*(C+D)+0.25*(A+B);
+   
+   X = round((((Xa-Xb)/(Xa+Xb))+1)*256);
+   Y = round((((Ya-Yb)/(Ya+Yb))+1)*256); 
+
     %if (X==0); X=255; end
     %if (Y==0); Y=255; end
-    if energia > 20 
     if (X>0 && X<513) && (Y>0 && Y<513)
         img(X,Y) = img(X,Y) + 1; % energia;
         %disp(X);
@@ -337,7 +347,6 @@ for i = 1: indice-1  %menor
         n_error = n_error+1;
        disp('X=');disp(X); 
        disp('Y=');disp(Y);
-    end
     end
 end
 %imshow(mat2gray(img));
@@ -373,12 +382,11 @@ tope = max([hist_1, hist_2, hist_3, hist_4]);
 if  (isnan(tope) || tope < 100)
     tope = 100;
 end
-tope =100;
 
 %plot(handles.axes2,handles.histo1);
 plot(handles.axes2,hist_1);
 ylim(handles.axes2,[0 tope]);
-xlim(handles.axes2,[10 1024]);
+xlim(handles.axes2,[0 1024]);
 %set(handles.axes2,'XScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes2,'Canal 1');
@@ -386,7 +394,7 @@ title(handles.axes2,'Canal 1');
 %plot(handles.axes3,handles.histo3);
 plot(handles.axes3,hist_3);
 ylim(handles.axes3,[0 tope]);
-xlim(handles.axes3,[10 1024]);
+xlim(handles.axes3,[0 1024]);
 %set(handles.axes3,'XScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes3,'Canal 3');
@@ -394,7 +402,7 @@ title(handles.axes3,'Canal 3');
 %plot(handles.axes5,handles.histo2);
 plot(handles.axes5,hist_2);
 ylim(handles.axes5,[0 tope]);
-xlim(handles.axes5,[10 1024]);
+xlim(handles.axes5,[0 1024]);
 %set(handles.axes5,'XScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes5,'Canal 2');
@@ -402,7 +410,7 @@ title(handles.axes5,'Canal 2');
 %plot(handles.axes6,handles.histo4);
 plot(handles.axes6,hist_4);
 ylim(handles.axes6,[0 tope]);
-xlim(handles.axes6,[10 1024]);
+xlim(handles.axes6,[0 1024]);
 %set(handles.axes6,'XScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes6,'Canal 4');

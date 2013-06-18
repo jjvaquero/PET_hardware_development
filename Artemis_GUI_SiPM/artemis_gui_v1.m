@@ -315,19 +315,30 @@ n_error= 0;
   %cad = strcat(num2str(ind1),'Xb = ',num2str(ind2),'Ya =',num2str(ind3),'Yb = ',num2str(ind4));
   %disp( cad); 
 for i = 1: indice-1  %menor
+    
+
                                     %conf de los otros detectores,esta es
                                     %para los nuevos sipm
-    A = canal3(i); B = canal1(i);  % XA = canal2(i); XB = canal1(i); 
-    C = canal4(i); D = canal2(i);%YA = canal4(i); YB = canal3(i);
-   % cad = strcat(num2str(XA),'Xb = ',num2str(XB),'Ya =',num2str(YA),'Yb = ',num2str(YB));
-   % disp( cad);
-    
-    energia = (A+B+C+D) / 8; %hago un cutre escalado...
-    
-    X = round( ((((A+C)-(B+D))/(A+B+C+D))+1)*256);
-    Y=  round( ((((A+B)-(C+D))/(A+B+C+D))+1)*256);
-    %if (X==0); X=255; end
-    %if (Y==0); Y=255; end
+     A = canal3(i); B = canal1(i);  % XA = canal2(i); XB = canal1(i); 
+     C = canal4(i); D = canal2(i);%YA = canal4(i); YB = canal3(i);
+%    % cad = strcat(num2str(XA),'Xb = ',num2str(XB),'Ya =',num2str(YA),'Yb = ',num2str(YB));
+%    % disp( cad);
+%     
+%    
+%     energia = (A+B+C+D) / 8; %hago un cutre escalado...
+%     
+     X = round( ((((A+C)-(B+D))/(A+B+C+D))+1)*256);
+     Y=  round( ((((A+B)-(C+D))/(A+B+C+D))+1)*256);
+ 
+   %hago un anger con los datos obtenidos
+   Xa = 0.75*(A+C)+0.25*(B+D); Xb = 0.75*(B+D)+0.25*(A+C);
+   Ya = 0.75*(A+B)+0.25*(C+D); Yb = 0.75*(C+D)+0.25*(A+B);
+   
+ %  X = round((((Xa-Xb)/(Xa+Xb))+1)*256);
+  % Y = round((((Ya-Yb)/(Ya+Yb))+1)*256); 
+
+    if (X==0); X=1; end
+    if (Y==0); Y=1; end
     if (X>0 && X<513) && (Y>0 && Y<513)
         img(X,Y) = img(X,Y) + 1; % energia;
         %disp(X);
@@ -335,7 +346,7 @@ for i = 1: indice-1  %menor
     else
         n_error = n_error+1;
        disp('X=');disp(X); 
-       disp('Y=');disp(Y);
+       disp('Y=');disp(Y); disp(A); disp(B); disp(C); disp(D);
     end
 end
 %imshow(mat2gray(img));
