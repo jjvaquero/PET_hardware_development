@@ -334,8 +334,8 @@ for i = 1: indice-1  %menor
         %disp(energia);
     else
         n_error = n_error+1;
-       disp('X=');disp(X); 
-       disp('Y=');disp(Y);
+       disp('X=');disp(strcat(num2str(X),'_XA_',num2str(XA),'_XB_',num2str(XB)));%disp(X); 
+       disp('Y=');disp(strcat(num2str(Y),'_YA_',num2str(YA),'_YB_',num2str(YB)));
     end
 end
 %imshow(mat2gray(img));
