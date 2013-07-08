@@ -334,7 +334,7 @@ for i = 1: indice-1  %menor
    Xa = 0.75*(A+C)+0.25*(B+D); Xb = 0.75*(B+D)+0.25*(A+C);
    Ya = 0.75*(A+B)+0.25*(C+D); Yb = 0.75*(C+D)+0.25*(A+B);
    
- %  X = round((((Xa-Xb)/(Xa+Xb))+1)*256);
+  % X = round((((Xa-Xb)/(Xa+Xb))+1)*256);
   % Y = round((((Ya-Yb)/(Ya+Yb))+1)*256); 
 
     if (X==0); X=1; end
