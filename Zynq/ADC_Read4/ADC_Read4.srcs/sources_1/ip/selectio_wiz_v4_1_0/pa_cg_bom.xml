@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<BillOfMaterials Version="1" Minor="2">
+  <IPInstance name="selectio_wiz_v4_1_0">
+    <FileSets>
+      <FileSet generator="apply_current_project_options_generator">
+        <File name="./apply_current_project_options_generator.xlog" type="ignore" timestamp="Fri Aug 09 08:39:58 GMT 2013" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="model_parameter_resolution_generator">
+        <File name="./model_parameter_resolution_generator.xlog" type="ignore" timestamp="Fri Aug 09 08:39:58 GMT 2013" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="ip_xco_generator">
+        <File name="./selectio_wiz_v4_1_0.xco" type="xco" timestamp="Fri Aug 09 08:39:48 GMT 2013" checksum="0xB63D1061"></File>
+      </FileSet>
+      <FileSet generator="tcl_flow_generator">
+        <File name="./selectio_wiz_v4_1_0/example_design/selectio_wiz_v4_1_0_exdes.ucf" type="ignore" timestamp="Fri Aug 09 08:39:54 GMT 2013" checksum="0xCBECB98C"></File>
+        <File name="./selectio_wiz_v4_1_0/example_design/selectio_wiz_v4_1_0_exdes.vhd" type="vhdl" timestamp="Fri Aug 09 08:39:49 GMT 2013" checksum="0x9E121649"></File>
+        <File name="./selectio_wiz_v4_1_0/example_design/selectio_wiz_v4_1_0_exdes.xdc" type="ignore" timestamp="Fri Aug 09 08:39:54 GMT 2013" checksum="0x90914C9C"></File>
+        <File name="./selectio_wiz_v4_1_0/implement/implement.bat" type="ignore" timestamp="Fri Aug 09 08:39:53 GMT 2013" checksum="0x77BAFFBF"></File>
+        <File name="./selectio_wiz_v4_1_0/implement/implement.sh" type="ignore" timestamp="Fri Aug 09 08:39:53 GMT 2013" checksum="0x4577F294"></File>
+        <File name="./selectio_wiz_v4_1_0/implement/planAhead_ise.bat" type="ignore" timestamp="Fri Aug 09 08:39:53 GMT 2013" checksum="0x64F0A231"></File>
+        <File name="./selectio_wiz_v4_1_0/implement/planAhead_ise.sh" type="ignore" timestamp="Fri Aug 09 08:39:53 GMT 2013" checksum="0x8C72B2D0"></File>
+        <File name="./selectio_wiz_v4_1_0/implement/planAhead_ise.tcl" type="ignore" timestamp="Fri Aug 09 08:39:53 GMT 2013" checksum="0xCC0B2F58"></File>
+        <File name="./selectio_wiz_v4_1_0/implement/planAhead_rdn.bat" type="ignore" timestamp="Fri Aug 09 08:39:53 GMT 2013" checksum="0x729EA4AD"></File>
+        <File name="./selectio_wiz_v4_1_0/implement/planAhead_rdn.sh" type="ignore" timestamp="Fri Aug 09 08:39:53 GMT 2013" checksum="0xCD6840B4"></File>
+        <File name="./selectio_wiz_v4_1_0/implement/planAhead_rdn.tcl" type="ignore" timestamp="Fri Aug 09 08:39:53 GMT 2013" checksum="0x83395756"></File>
+        <File name="./selectio_wiz_v4_1_0/implement/xst.prj" type="ignore" timestamp="Fri Aug 09 08:39:54 GMT 2013" checksum="0xD8C34D5A"></File>
+        <File name="./selectio_wiz_v4_1_0/implement/xst.scr" type="ignore" timestamp="Fri Aug 09 08:39:54 GMT 2013" checksum="0x7DC5F44E"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/functional/simcmds.tcl" type="ignore" timestamp="Fri Aug 09 08:39:52 GMT 2013" checksum="0x85FC2ED9"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/functional/simulate_isim.bat" type="ignore" timestamp="Fri Aug 09 08:39:52 GMT 2013" checksum="0x97632F95"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/functional/simulate_isim.sh" type="ignore" timestamp="Fri Aug 09 08:39:51 GMT 2013" checksum="0x2AA94B56"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/functional/simulate_mti.bat" type="ignore" timestamp="Fri Aug 09 08:39:50 GMT 2013" checksum="0x8691A78F"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/functional/simulate_mti.do" type="ignore" timestamp="Fri Aug 09 08:39:51 GMT 2013" checksum="0xD7B84EA8"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/functional/simulate_mti.sh" type="ignore" timestamp="Fri Aug 09 08:39:50 GMT 2013" checksum="0xAFC33472"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/functional/simulate_ncsim.sh" type="ignore" timestamp="Fri Aug 09 08:39:51 GMT 2013" checksum="0x238CC5C8"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/functional/simulate_vcs.sh" type="ignore" timestamp="Fri Aug 09 08:39:52 GMT 2013" checksum="0xC9CE835E"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/functional/ucli_commands.key" type="ignore" timestamp="Fri Aug 09 08:39:52 GMT 2013" checksum="0x37782F99"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/functional/vcs_session.tcl" type="ignore" timestamp="Fri Aug 09 08:39:52 GMT 2013" checksum="0x28340249"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/functional/wave.do" type="ignore" timestamp="Fri Aug 09 08:39:51 GMT 2013" checksum="0x89A79BB0"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/selectio_wiz_v4_1_0_tb.vhd" type="ignore" timestamp="Fri Aug 09 08:39:49 GMT 2013" checksum="0x8D85E9F9"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/sdf_cmd_file" type="ignore" timestamp="Fri Aug 09 08:39:51 GMT 2013" checksum="0xA481C77B"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/selectio_wiz_v4_1_0_tb.vhd" type="ignore" timestamp="Fri Aug 09 08:39:50 GMT 2013" checksum="0xC595522A"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/simcmds.tcl" type="ignore" timestamp="Fri Aug 09 08:39:52 GMT 2013" checksum="0x85FC2ED9"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/simulate_isim.sh" type="ignore" timestamp="Fri Aug 09 08:39:51 GMT 2013" checksum="0xD46CF335"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/simulate_mti.bat" type="ignore" timestamp="Fri Aug 09 08:39:50 GMT 2013" checksum="0x6CD47D4E"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/simulate_mti.do" type="ignore" timestamp="Fri Aug 09 08:39:51 GMT 2013" checksum="0x5EB1E681"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/simulate_mti.sh" type="ignore" timestamp="Fri Aug 09 08:39:50 GMT 2013" checksum="0xEB69BAAF"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/simulate_ncsim.sh" type="ignore" timestamp="Fri Aug 09 08:39:51 GMT 2013" checksum="0xED181F27"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/simulate_vcs.sh" type="ignore" timestamp="Fri Aug 09 08:39:52 GMT 2013" checksum="0x275E7378"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/ucli_commands.key" type="ignore" timestamp="Fri Aug 09 08:39:52 GMT 2013" checksum="0x37782F99"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/vcs_session.tcl" type="ignore" timestamp="Fri Aug 09 08:39:52 GMT 2013" checksum="0x28340249"></File>
+        <File name="./selectio_wiz_v4_1_0/simulation/timing/wave.do" type="ignore" timestamp="Fri Aug 09 08:39:51 GMT 2013" checksum="0x0DA5CFB0"></File>
+        <File name="./selectio_wiz_v4_1_0.ucf" type="ucf" timestamp="Fri Aug 09 08:39:53 GMT 2013" checksum="0x9F5069C5"></File>
+        <File name="./selectio_wiz_v4_1_0.vhd" type="vhdl" timestamp="Fri Aug 09 08:39:49 GMT 2013" checksum="0xEA9B4472"></File>
+        <File name="./selectio_wiz_v4_1_0.vho" type="vho" timestamp="Fri Aug 09 08:39:50 GMT 2013" checksum="0x27F80201"></File>
+        <File name="./selectio_wiz_v4_1_0.xdc" type="ignore" timestamp="Fri Aug 09 08:39:54 GMT 2013" checksum="0x37277108"></File>
+        <File name="./selectio_wiz_v4_1_0_xmdf.tcl" type="tcl" timestamp="Fri Aug 09 08:39:50 GMT 2013" checksum="0x3D667ACB"></File>
+      </FileSet>
+      <FileSet generator="associated_files_generator">
+        <File name="./selectio_wiz_v4_1_0/selectio_wiz_v4_1_readme.txt" type="ignore" timestamp="Wed Mar 27 03:15:12 GMT 2013" checksum="0xF1F727AF"></File>
+      </FileSet>
+      <FileSet generator="all_documents_generator">
+        <File name="./selectio_wiz_v4_1_0/doc/selectio_wiz_ds746.pdf" type="ignore" timestamp="Fri Aug 09 08:39:55 GMT 2013" checksum="0x6F95D3CB"></File>
+        <File name="./selectio_wiz_v4_1_0/doc/selectio_wiz_gsg700.pdf" type="ignore" timestamp="Fri Aug 09 08:39:55 GMT 2013" checksum="0x79527A12"></File>
+        <File name="./selectio_wiz_v4_1_0/doc/selectio_wiz_v4_1_readme.txt" type="ignore" timestamp="Fri Aug 09 08:39:55 GMT 2013" checksum="0xF1F727AF"></File>
+        <File name="./selectio_wiz_v4_1_0/doc/selectio_wiz_v4_1_vinfo.html" type="ignore" timestamp="Fri Aug 09 08:39:55 GMT 2013" checksum="0xEA5CC11F"></File>
+      </FileSet>
+      <FileSet generator="readme_documents_generator">
+        <File name="./readme_documents_generator.xlog" type="ignore" timestamp="Fri Aug 09 08:39:58 GMT 2013" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="asy_generator">
+        <File name="./selectio_wiz_v4_1_0.asy" type="asy" timestamp="Fri Aug 09 08:39:56 GMT 2013" checksum="0x4C1080B7"></File>
+      </FileSet>
+      <FileSet generator="ise_generator">
+        <File name="./selectio_wiz_v4_1_0.gise" type="ignore" timestamp="Fri Aug 09 08:39:58 GMT 2013" checksum="0xDEDE110C"></File>
+        <File name="./selectio_wiz_v4_1_0.xise" type="ignore" timestamp="Fri Aug 09 08:39:58 GMT 2013" checksum="0x6E1835C1"></File>
+      </FileSet>
+      <FileSet generator="deliver_readme_generator">
+        <File name="./deliver_readme_generator.xlog" type="ignore" timestamp="Fri Aug 09 08:39:58 GMT 2013" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="flist_generator">
+        <File name="./selectio_wiz_v4_1_0_flist.txt" type="ignore" timestamp="Fri Aug 09 08:39:58 GMT 2013" checksum="0x10D74B10"></File>
+      </FileSet>
+    </FileSets>
+  </IPInstance>
+</BillOfMaterials>
