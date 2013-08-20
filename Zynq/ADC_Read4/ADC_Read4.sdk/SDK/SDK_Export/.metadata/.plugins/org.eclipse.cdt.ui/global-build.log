@@ -1,11 +1,11 @@
-18:09:08 **** Clean-only build of configuration Debug for project ADC_test_leds ****
+17:52:20 **** Clean-only build of configuration Debug for project ADC_test_leds ****
 make clean 
 rm -rf  ./src/main.o  ./src/main.d  ADC_test_leds.elf.size  ADC_test_leds.elf
 ' '
-18:09:08 **** Clean-only build of project standalone_bsp_0 ****
+17:52:20 **** Clean-only build of project standalone_bsp_0 ****
 make -k clean 
 rm -rf ps7_cortexa9_0
-18:09:09 **** Build of project standalone_bsp_0 ****
+17:52:20 **** Build of project standalone_bsp_0 ****
 make -k all 
 libgen -hw ../module_1_hw_platform/system.xml\
 	       \
@@ -49,10 +49,10 @@ arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
 "Compiling cpu_cortexa9"
 Running execs_generate.
 'Finished building libraries'
-18:09:21 **** Auto Build of configuration Debug for project hello ****
+17:52:32 **** Auto Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
-18:09:21 **** Build of configuration Debug for project ADC_test_leds ****
+17:52:32 **** Build of configuration Debug for project ADC_test_leds ****
 make all 
 'Building file: ../src/main.c'
 'Invoking: ARM gcc compiler'
@@ -67,159 +67,297 @@ arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_co
 'Invoking: ARM Print Size'
 arm-xilinx-eabi-size ADC_test_leds.elf  |tee "ADC_test_leds.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  23916	   1120	  29812	  54848	   d640	ADC_test_leds.elf
+  24120	   1120	  29812	  55052	   d70c	ADC_test_leds.elf
 'Finished building: ADC_test_leds.elf.size'
 ' '
-18:09:45 **** Incremental Build of configuration Debug for project hello ****
+17:52:48 **** Incremental Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
-18:09:46 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+17:52:48 **** Incremental Build of configuration Debug for project ADC_test_leds ****
 make all 
 make: No se hace nada para `all'.
-18:10:26 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-18:10:27 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-18:11:05 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-18:11:05 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-18:19:15 **** Auto Build of project standalone_bsp_0 ****
+17:59:32 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'
-18:19:55 **** Incremental Build of configuration Debug for project hello ****
+18:00:07 **** Incremental Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
-18:19:55 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+18:00:07 **** Incremental Build of configuration Debug for project ADC_test_leds ****
 make all 
 make: No se hace nada para `all'.
-18:22:10 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-18:22:11 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-18:27:25 **** Auto Build of project standalone_bsp_0 ****
+11:03:15 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'
-18:28:00 **** Incremental Build of configuration Debug for project hello ****
+11:08:44 **** Incremental Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
-18:28:00 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+11:08:45 **** Incremental Build of configuration Debug for project ADC_test_leds ****
 make all 
 make: No se hace nada para `all'.
-18:28:31 **** Incremental Build of configuration Debug for project hello ****
+12:18:21 **** Incremental Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
-18:28:32 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+12:18:22 **** Incremental Build of configuration Debug for project ADC_test_leds ****
 make all 
 make: No se hace nada para `all'.
-18:29:38 **** Incremental Build of configuration Debug for project hello ****
+12:25:36 **** Incremental Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
-18:29:39 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+12:25:36 **** Incremental Build of configuration Debug for project ADC_test_leds ****
 make all 
 make: No se hace nada para `all'.
-18:34:00 **** Auto Build of project standalone_bsp_0 ****
+12:26:09 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: No se hace nada para `all'.
+12:26:09 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+make all 
+make: No se hace nada para `all'.
+12:35:47 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: No se hace nada para `all'.
+12:35:47 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+make all 
+make: No se hace nada para `all'.
+12:39:29 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'
-18:34:29 **** Incremental Build of configuration Debug for project hello ****
+12:39:33 **** Clean-only build of project standalone_bsp_0 ****
+make -k clean 
+rm -rf ps7_cortexa9_0
+12:39:38 **** Clean-only build of configuration Debug for project ADC_test_leds ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  ADC_test_leds.elf.size  ADC_test_leds.elf
+' '
+12:39:38 **** Clean-only build of configuration Debug for project hello ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  hello.elf.size  hello.elf
+' '
+12:39:39 **** Build of project standalone_bsp_0 ****
+make -k all 
+libgen -hw ../module_1_hw_platform/system.xml\
+	       \
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.5 Build EDK_P.58f
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../module_1_hw_platform/system.xml -pe ps7_cortexa9_0
+-log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+
+Running libs - 'make -s libs "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+"Compiling common"
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+"Compiling xadc"
+"Compiling standalone"
+"Compiling gpio"
+"Compiling devcfg"
+"Compiling dmaps"
+"Compiling emacps"
+"Compiling gpiops"
+"Compiling qspips"
+"Compiling scugic"
+"Compiling scutimer"
+"Compiling scuwdt"
+"Compiling uartps"
+"Compiling usbps"
+"Compiling cpu_cortexa9"
+Running execs_generate.
+'Finished building libraries'
+12:39:52 **** Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: hello.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "hello.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size hello.elf  |tee "hello.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22056	   1096	  29780	  52932	   cec4	hello.elf
+'Finished building: hello.elf.size'
+' '
+12:39:53 **** Build of configuration Debug for project ADC_test_leds ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: ADC_test_leds.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "ADC_test_leds.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: ADC_test_leds.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size ADC_test_leds.elf  |tee "ADC_test_leds.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24120	   1120	  29812	  55052	   d70c	ADC_test_leds.elf
+'Finished building: ADC_test_leds.elf.size'
+' '
+12:40:33 **** Incremental Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
-18:34:29 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+12:40:34 **** Incremental Build of configuration Debug for project ADC_test_leds ****
 make all 
 make: No se hace nada para `all'.
-18:38:15 **** Auto Build of project standalone_bsp_0 ****
+12:42:19 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: No se hace nada para `all'.
+12:42:19 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+make all 
+make: No se hace nada para `all'.
+12:54:32 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'
-18:39:08 **** Incremental Build of configuration Debug for project hello ****
+12:57:13 **** Incremental Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
-18:39:08 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+12:57:13 **** Incremental Build of configuration Debug for project ADC_test_leds ****
 make all 
 make: No se hace nada para `all'.
-10:53:18 **** Auto Build of project standalone_bsp_0 ****
+13:00:03 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'
-10:56:15 **** Incremental Build of configuration Debug for project hello ****
+13:00:07 **** Clean-only build of project standalone_bsp_0 ****
+make -k clean 
+rm -rf ps7_cortexa9_0
+13:00:07 **** Clean-only build of configuration Debug for project ADC_test_leds ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  ADC_test_leds.elf.size  ADC_test_leds.elf
+' '
+13:00:07 **** Clean-only build of configuration Debug for project hello ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  hello.elf.size  hello.elf
+' '
+13:00:07 **** Build of project standalone_bsp_0 ****
+make -k all 
+libgen -hw ../module_1_hw_platform/system.xml\
+	       \
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.5 Build EDK_P.58f
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../module_1_hw_platform/system.xml -pe ps7_cortexa9_0
+-log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+
+Running libs - 'make -s libs "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+"Compiling common"
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+"Compiling xadc"
+"Compiling standalone"
+"Compiling gpio"
+"Compiling devcfg"
+"Compiling dmaps"
+"Compiling emacps"
+"Compiling gpiops"
+"Compiling qspips"
+"Compiling scugic"
+"Compiling scutimer"
+"Compiling scuwdt"
+"Compiling uartps"
+"Compiling usbps"
+"Compiling cpu_cortexa9"
+Running execs_generate.
+'Finished building libraries'
+13:00:20 **** Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: hello.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "hello.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size hello.elf  |tee "hello.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22056	   1096	  29780	  52932	   cec4	hello.elf
+'Finished building: hello.elf.size'
+' '
+13:00:21 **** Build of configuration Debug for project ADC_test_leds ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: ADC_test_leds.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "ADC_test_leds.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: ADC_test_leds.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size ADC_test_leds.elf  |tee "ADC_test_leds.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24120	   1120	  29812	  55052	   d70c	ADC_test_leds.elf
+'Finished building: ADC_test_leds.elf.size'
+' '
+13:00:47 **** Incremental Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
-10:56:16 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+13:00:47 **** Incremental Build of configuration Debug for project ADC_test_leds ****
 make all 
 make: No se hace nada para `all'.
-10:57:01 **** Incremental Build of configuration Debug for project hello ****
+13:22:20 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+13:23:36 **** Incremental Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
-10:57:02 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+13:23:37 **** Incremental Build of configuration Debug for project ADC_test_leds ****
 make all 
 make: No se hace nada para `all'.
-10:57:36 **** Incremental Build of configuration Debug for project hello ****
+13:30:48 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+13:34:05 **** Incremental Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
-10:57:37 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-10:58:00 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-10:58:00 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-10:58:21 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-10:58:21 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-10:59:10 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-10:59:10 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-10:59:42 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-10:59:43 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-11:00:36 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-11:00:37 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-11:01:05 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-11:01:05 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-11:03:55 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-11:03:55 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-11:05:25 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-11:05:25 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-11:05:48 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-11:05:48 **** Incremental Build of configuration Debug for project ADC_test_leds ****
-make all 
-make: No se hace nada para `all'.
-11:20:50 **** Incremental Build of configuration Debug for project hello ****
-make all 
-make: No se hace nada para `all'.
-11:20:50 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+13:34:06 **** Incremental Build of configuration Debug for project ADC_test_leds ****
 make all 
 make: No se hace nada para `all'.

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.58f on Fri Aug 09 10:49:22 2013
+// Written by: Map P.58f on Tue Aug 20 13:27:44 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -135,8 +135,7 @@ COMP "processing_system7_0_DDR_DM[2]" LOCATE = SITE "P1" LEVEL 1;
 COMP "processing_system7_0_DDR_DM[1]" LOCATE = SITE "H3" LEVEL 1;
 COMP "processing_system7_0_DDR_DM[0]" LOCATE = SITE "B1" LEVEL 1;
 COMP "processing_system7_0_DDR_DM[3]" LOCATE = SITE "AA2" LEVEL 1;
-COMP "FCLKP2" LOCATE = SITE "AA9" LEVEL 1;
-COMP "FCLKP3" LOCATE = SITE "W8" LEVEL 1;
+COMP "FCLKP1" LOCATE = SITE "AA9" LEVEL 1;
 COMP "processing_system7_0_MIO[53]" LOCATE = SITE "C12" LEVEL 1;
 COMP "processing_system7_0_MIO[50]" LOCATE = SITE "D13" LEVEL 1;
 COMP "processing_system7_0_MIO[52]" LOCATE = SITE "D10" LEVEL 1;
@@ -146,7 +145,7 @@ COMP "processing_system7_0_DDR_DQS[2]" LOCATE = SITE "N2" LEVEL 1;
 COMP "processing_system7_0_DDR_DQS[1]" LOCATE = SITE "H2" LEVEL 1;
 COMP "processing_system7_0_DDR_DQS[0]" LOCATE = SITE "C2" LEVEL 1;
 COMP "processing_system7_0_DDR_DQS[3]" LOCATE = SITE "V2" LEVEL 1;
-PIN module_1_i/processing_system7_0/processing_system7_0/PS7_i_pins<358> = BEL
+PIN module_1_i/processing_system7_0/processing_system7_0/PS7_i_pins<359> = BEL
         "module_1_i/processing_system7_0/processing_system7_0/PS7_i" PINNAME
         MAXIGP0ACLK;
 TIMEGRP clk_fpga_0 = BEL
@@ -830,14 +829,16 @@ TIMEGRP clk_fpga_0 = BEL
         "PWM1/count_25" BEL "PWM1/count_26" BEL "PWM1/count_27" BEL
         "PWM1/count_28" BEL "PWM1/count_29" BEL "PWM1/count_30" BEL
         "PWM1/count_31" BEL "PWM1/count_0" PIN
-        "module_1_i/processing_system7_0/processing_system7_0/PS7_i_pins<358>";
+        "module_1_i/processing_system7_0/processing_system7_0/PS7_i_pins<359>";
 TIMEGRP axi_interconnect_1_reset_resync = BEL
         "module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0"
         BEL
         "module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1"
         BEL
         "module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2";
+TIMEGRP clk_fpga_1 = BEL "FCLKP1";
 TIMEGRP axi_interconnect_1_reset_source = FFS(*) PADS(*);
+TS_clk_fpga_1 = PERIOD TIMEGRP "clk_fpga_1" 5 MHz HIGH 50%;
 TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_0" 50 MHz HIGH 50%;
 PATH TS_axi_interconnect_1_reset_resync_path = FROM TIMEGRP
         "axi_interconnect_1_reset_source" TO TIMEGRP

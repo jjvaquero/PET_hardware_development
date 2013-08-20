@@ -14,24 +14,7 @@
 <msg type="info" file="NgdBuild" num="649" delta="new" >Removing redundant &apos;<arg fmt="%s" index="1">IBUF</arg>&apos; symbol &apos;<arg fmt="%s" index="2">processing_system7_0_PS_SRSTB_pin_IBUF</arg>&apos;.  All constraints associated with this symbol will be ignored.
 </msg>
 
-<msg type="warning" file="ConstraintSystem" num="137" delta="new" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;module_1_i/processing_system7_0/FCLK_CLK1&quot; TNM_NET = &quot;clk_fpga_1&quot;;&gt; [module_1_stub.ucf(31)]</arg>: No appropriate instances for the TNM constraint are driven by &quot;<arg fmt="%s" index="2">module_1_i/processing_system7_0_FCLK_CLK1_pin</arg>&quot;.
-</msg>
-
-<msg type="warning" file="ConstraintSystem" num="56" delta="new" >Constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_clk_fpga_1 = PERIOD &quot;clk_fpga_1&quot; 200000 KHz;&gt; [module_1_stub.ucf(32)]</arg>: Unable to find an active <arg fmt="%s" index="2">&apos;TNM&apos; or &apos;TimeGrp&apos;</arg> constraint named &apos;<arg fmt="%s" index="3">clk_fpga_1</arg>&apos;.
-</msg>
-
 <msg type="warning" file="ConstraintSystem" num="58" delta="new" >Constraint <arg fmt="%s" index="1">&lt;TIMEGRP axi_interconnect_1_reset_source =   FFS  PADS  CPUS;&gt; [module_1_stub.ucf(594)]</arg>: <arg fmt="%s" index="2">CPUS &quot;*&quot;</arg> does not match any design objects.
-</msg>
-
-<msg type="warning" file="ConstraintSystem" num="191" delta="new" >The <arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">clk_fpga_1</arg>&apos;, does not directly or indirectly drive any flip-flops, latches and/or RAMS and cannot be actively used by the referencing <arg fmt="%s" index="3">Period</arg> constraint &apos;<arg fmt="%s" index="4">TS_clk_fpga_1</arg>&apos;. If clock manager blocks are directly or indirectly driven, a new TNM constraint will not be derived even though the referencing constraint is a PERIOD constraint unless an output of the clock manager drives flip-flops, latches or RAMs. This TNM is used in the following user PERIOD specification:
-<arg fmt="%s" index="5">&lt;TIMESPEC TS_clk_fpga_1 = PERIOD &quot;clk_fpga_1&quot; 200000 KHz;&gt; [module_1_stub.ucf(32)]
-</arg></msg>
-
-<msg type="warning" file="ConstraintSystem" num="197" delta="new" >The following specification is invalid because the referenced TNM constraint was removed:
-<arg fmt="%s" index="1">&lt;TIMESPEC TS_clk_fpga_1 = PERIOD &quot;clk_fpga_1&quot; 200000 KHz;&gt; [module_1_stub.ucf(32)]</arg>
-</msg>
-
-<msg type="warning" file="NgdBuild" num="478" delta="new" >clock net <arg fmt="%s" index="1">module_1_i/processing_system7_0_FCLK_CLK1_pin</arg> with clock driver <arg fmt="%s" index="2">module_1_i/processing_system7_0/processing_system7_0/buffer_fclk_clk_1.FCLK_CLK_1_BUFG</arg> drives no clock pins
 </msg>
 
 </messages>

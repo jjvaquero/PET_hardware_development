@@ -29,7 +29,7 @@
 # Clock constraints                                                        #
 ############################################################################
 NET "module_1_i/processing_system7_0/FCLK_CLK1" TNM_NET = "clk_fpga_1";
-TIMESPEC TS_clk_fpga_1 = PERIOD "clk_fpga_1" 200000 KHz;
+TIMESPEC TS_clk_fpga_1 = PERIOD "clk_fpga_1" 5000 KHz;
 
 NET "module_1_i/processing_system7_0/FCLK_CLK0" TNM_NET = "clk_fpga_0";
 TIMESPEC TS_clk_fpga_0 = PERIOD "clk_fpga_0" 50000 KHz;
@@ -669,8 +669,8 @@ TIMESPEC TS_axi_interconnect_1_reset_resync = FROM "axi_interconnect_1_reset_sou
 # "JA2"
 # "JA3"
 # "JA4"
-NET "FCLKP2" LOC = AA9;
-NET "FCLKP2" IOSTANDARD = LVCMOS33;
+NET "FCLKP1" LOC = AA9;
+NET "FCLKP1" IOSTANDARD = LVCMOS33;
 # "JA7"
 # "JA8"
 # "JA9"
@@ -679,8 +679,6 @@ NET "FCLKP2" IOSTANDARD = LVCMOS33;
 # "JB2"
 # "JB3"
 # "JB4"
-NET "FCLKP3" LOC = W8;
-NET "FCLKP3" IOSTANDARD = LVCMOS33;
 # "JB7"
 # "JB8"
 # "JB9"
