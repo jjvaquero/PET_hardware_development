@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="19" version="2.0">
+<workbench progressCount="22" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="150" y="150">
 <fastViewData fastViewLocation="1024"/>
@@ -24,6 +24,8 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.browser.editor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -42,10 +44,11 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.sdk/SDK/SDK_Export/ADC_test_leds/src/main.c" title="main.c" tooltip="ADC_test_leds/src/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ADC_test_leds/src/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2194" selectionTopPixel="765"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1430" selectionTopPixel="585"/>
 </editor>
-<editor id="com.xilinx.sdk.sw.MSSEditor" name="system.mss" partName="system.mss" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.sdk/SDK/SDK_Export/standalone_bsp_0/system.mss" title="system.mss" tooltip="standalone_bsp_0/system.mss" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/standalone_bsp_0/system.mss"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ps7_init.c" partName="ps7_init.c" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.sdk/SDK/SDK_Export/module_1_hw_platform/ps7_init.c" title="ps7_init.c" tooltip="module_1_hw_platform/ps7_init.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/module_1_hw_platform/ps7_init.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="522586" selectionTopPixel="175543"/>
 </editor>
 </editors>
 <views>
@@ -57,6 +60,8 @@
 <expanded>
 <element path="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\ADC_Read4\ADC_Read4.sdk\SDK\SDK_Export\ADC_test_leds"/>
 <element path="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\ADC_Read4\ADC_Read4.sdk\SDK\SDK_Export\ADC_test_leds\src"/>
+<element path="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\ADC_Read4\ADC_Read4.sdk\SDK\SDK_Export\hello"/>
+<element path="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\ADC_Read4\ADC_Read4.sdk\SDK\SDK_Export\standalone_bsp_0"/>
 </expanded>
 <selection>
 <element path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.sdk/SDK/SDK_Export/ADC_test_leds"/>
@@ -81,6 +86,9 @@
 </customFilters>
 </viewState>
 </view>
+<view id="com.xilinx.sdk.targetmanager.ui.XmdConsoleView" partName="XMD Console">
+<viewState/>
+</view>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
 <viewState/>
 </view>
@@ -90,6 +98,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors (4 items)"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -123,7 +134,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.cdt.ui.CView" activePerspective="org.eclipse.cdt.ui.CPerspective">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.eclipse.cdt.ui.CPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -184,6 +195,7 @@
 <view id="org.eclipse.tm.terminal.view.TerminalView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.cdt.make.ui.views.MakeView"/>
+<view id="com.xilinx.sdk.targetmanager.ui.XmdConsoleView"/>
 <view id="org.eclipse.ui.internal.introview"/>
 <fastViewBars/>
 <layout>
@@ -202,11 +214,13 @@
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@670064a4" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="topLeft">
 <folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">
+<page content="com.xilinx.sdk.targetmanager.ui.XmdConsoleView" label="XMD Console"/>
 <page content="org.eclipse.ui.internal.introview" label="Welcome"/>
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -245,164 +259,152 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ADC_test_leds/src/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/cpu_cortexa9_v1_01_a/src/xcpu_cortexa9.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/smc.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/bspconfig.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/xil_assert.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/xil_io.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/xil_hal.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" path="/standalone_bsp_0/system.mss"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/standalone_bsp_0/system.mss"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ADC_test_leds/src/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/gpio_v3_00_a/src/xgpio_sinit.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/gpio_v3_00_a/src/xgpio_g.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/gpio_v3_00_a/src/xgpio.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/module_1_hw_platform/ps7_init.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" path="/module_1_hw_platform/system.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" path="/standalone_bsp_0/system.mss"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/module_1_hw_platform/ps7_init.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/module_1_hw_platform/ps7_init.tcl"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.lscript.editor" path="/ADC_test_leds/src/lscript.ld"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/ADC_test_leds/src/README.txt"/>
 </editors>
-<item historyLabel="xcpu_cortexa9.h" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="563" y="0"/>
-</item>
-<item historyLabel="smc.h" index="2">
-<position info="not_deleted" x="3038" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="563" y="0"/>
-</item>
-<item historyLabel="bspconfig.h" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="563" y="0"/>
-</item>
-<item historyLabel="xil_assert.h" index="4">
-<position info="not_deleted" x="82" y="0"/>
-</item>
-<item historyLabel="xil_io.h" index="5">
-<position info="not_deleted" x="82" y="0"/>
-</item>
-<item historyLabel="xil_hal.h" index="6">
-<position info="not_deleted" x="82" y="0"/>
-</item>
-<item historyLabel="xil_io.h" index="5">
-<position info="not_deleted" x="82" y="0"/>
-</item>
-<item historyLabel="xil_hal.h" index="6">
-<position info="not_deleted" x="82" y="0"/>
-</item>
-<item historyLabel="xil_assert.h" index="4">
-<position info="not_deleted" x="6619" y="271"/>
-</item>
-<item historyLabel="xil_hal.h" index="6">
-<position info="not_deleted" x="82" y="0"/>
-</item>
-<item historyLabel="xil_io.h" index="5">
-<position info="not_deleted" x="8704" y="9"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="563" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="174" y="0"/>
-</item>
-<item historyLabel="xil_hal.h" index="6">
-<position info="not_deleted" x="2863" y="22"/>
-</item>
-<item historyLabel="xil_io.h" index="5">
-<position info="not_deleted" x="8704" y="9"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1309" y="0"/>
-</item>
-<item historyLabel="xil_io.h" index="5">
-<position info="not_deleted" x="8704" y="9"/>
-</item>
-<item historyLabel="system.mss" index="7"/>
-<item historyLabel="xil_hal.h" index="6">
-<position info="not_deleted" x="2863" y="22"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1309" y="0"/>
-</item>
-<item historyLabel="xil_io.h" index="5">
-<position info="not_deleted" x="8602" y="23"/>
-</item>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="1148" y="0"/>
 </item>
-<item historyLabel="xil_io.h" index="5">
-<position info="not_deleted" x="8731" y="0"/>
-</item>
-<item historyLabel="system.mss" index="7"/>
-<item historyLabel="xil_hal.h" index="6">
-<position info="not_deleted" x="2863" y="22"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1148" y="0"/>
-</item>
-<item historyLabel="system.mss" index="8">
+<item historyLabel="system.mss" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="main.c" index="9">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="1227" y="15"/>
 </item>
-<item historyLabel="main.c" index="9">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="1252" y="0"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="10">
+<item historyLabel="xgpio_sinit.c" index="3">
 <position info="not_deleted" x="5271" y="16"/>
 </item>
-<item historyLabel="main.c" index="9">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="1612" y="0"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="10">
+<item historyLabel="xgpio_sinit.c" index="3">
 <position info="not_deleted" x="5509" y="0"/>
 </item>
-<item historyLabel="main.c" index="9">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="1631" y="0"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="10">
+<item historyLabel="xgpio_sinit.c" index="3">
 <position info="not_deleted" x="5509" y="0"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="10">
+<item historyLabel="xgpio_sinit.c" index="3">
 <position info="not_deleted" x="5595" y="1"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="10">
+<item historyLabel="xgpio_sinit.c" index="3">
 <position info="not_deleted" x="4232" y="0"/>
 </item>
-<item historyLabel="xgpio_g.c" index="11">
+<item historyLabel="xgpio_g.c" index="4">
 <position info="not_deleted" x="551" y="83"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="10">
+<item historyLabel="xgpio_sinit.c" index="3">
 <position info="not_deleted" x="5741" y="0"/>
 </item>
-<item historyLabel="xgpio.c" index="12">
+<item historyLabel="xgpio.c" index="5">
 <position info="not_deleted" x="5636" y="19"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="10">
+<item historyLabel="xgpio_sinit.c" index="3">
 <position info="not_deleted" x="5741" y="0"/>
 </item>
-<item historyLabel="xgpio.c" index="12">
+<item historyLabel="xgpio.c" index="5">
 <position info="not_deleted" x="6237" y="0"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="10">
+<item historyLabel="xgpio_sinit.c" index="3">
 <position info="not_deleted" x="5741" y="0"/>
 </item>
-<item historyLabel="main.c" index="9">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="2399" y="0"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="10">
+<item historyLabel="xgpio_sinit.c" index="3">
 <position info="not_deleted" x="5741" y="0"/>
 </item>
-<item historyLabel="main.c" index="9">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="2399" y="0"/>
 </item>
-<item historyLabel="xgpio.c" index="12">
+<item historyLabel="xgpio.c" index="5">
 <position info="not_deleted" x="6237" y="0"/>
 </item>
-<item active="true" historyLabel="main.c" index="9">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="2399" y="0"/>
+</item>
+<item historyLabel="ps7_init.c" index="6">
+<position info="not_deleted" x="7169" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="1894" y="0"/>
+</item>
+<item historyLabel="system.xml" index="7"/>
+<item historyLabel="system.mss" index="8"/>
+<item historyLabel="system.xml" index="7"/>
+<item historyLabel="system.mss" index="8"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="1894" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="1555" y="0"/>
+</item>
+<item historyLabel="ps7_init.c" index="6">
+<position info="not_deleted" x="1987" y="0"/>
+</item>
+<item historyLabel="ps7_init.h" index="9">
+<position info="not_deleted" x="4647" y="6"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="1555" y="0"/>
+</item>
+<item historyLabel="ps7_init.c" index="6">
+<position info="not_deleted" x="1987" y="0"/>
+</item>
+<item historyLabel="ps7_init.h" index="9">
+<position info="not_deleted" x="4758" y="0"/>
+</item>
+<item historyLabel="ps7_init.c" index="6">
+<position info="not_deleted" x="522586" y="11"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="1555" y="0"/>
+</item>
+<item historyLabel="ps7_init.c" index="6">
+<position info="not_deleted" x="522586" y="11"/>
+</item>
+<item historyLabel="ps7_init.h" index="9">
+<position info="not_deleted" x="4758" y="0"/>
+</item>
+<item historyLabel="ps7_init.c" index="6">
+<position info="not_deleted" x="522586" y="11"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="1555" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="148" y="0"/>
+</item>
+<item historyLabel="ps7_init.tcl" index="10">
+<position info="not_deleted" x="31275" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="954" y="0"/>
+</item>
+<item historyLabel="lscript.ld" index="11"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="954" y="0"/>
+</item>
+<item historyLabel="README.txt" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="2">
+<position info="not_deleted" x="954" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -421,6 +423,30 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="README.txt" tooltip="ADC_test_leds/src/README.txt">
+<persistable path="/ADC_test_leds/src/README.txt"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.lscript.editor" name="lscript.ld" tooltip="ADC_test_leds/src/lscript.ld">
+<persistable path="/ADC_test_leds/src/lscript.ld"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="ps7_init.tcl" tooltip="module_1_hw_platform/ps7_init.tcl">
+<persistable path="/module_1_hw_platform/ps7_init.tcl"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ps7_init.h" tooltip="module_1_hw_platform/ps7_init.h">
+<persistable path="/module_1_hw_platform/ps7_init.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ps7_init.c" tooltip="module_1_hw_platform/ps7_init.c">
+<persistable path="/module_1_hw_platform/ps7_init.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.browser.editorSupport" name="ps7_init.html" tooltip="module_1_hw_platform/ps7_init.html">
+<persistable path="/module_1_hw_platform/ps7_init.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" name="system.mss" tooltip="standalone_bsp_0/system.mss">
+<persistable path="/standalone_bsp_0/system.mss"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" name="system.xml" tooltip="module_1_hw_platform/system.xml">
+<persistable path="/module_1_hw_platform/system.xml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xgpio.c" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/gpio_v3_00_a/src/xgpio.c">
 <persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/gpio_v3_00_a/src/xgpio.c"/>
 </file>
@@ -429,39 +455,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xgpio_sinit.c" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/gpio_v3_00_a/src/xgpio_sinit.c">
 <persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/gpio_v3_00_a/src/xgpio_sinit.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xil_hal.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/xil_hal.h">
-<persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/xil_hal.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xil_io.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/xil_io.h">
-<persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/xil_io.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xil_assert.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/xil_assert.h">
-<persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/xil_assert.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="bspconfig.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/bspconfig.h">
-<persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/bspconfig.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="smc.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/smc.h">
-<persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/standalone_v3_09_a/src/smc.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xcpu_cortexa9.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/cpu_cortexa9_v1_01_a/src/xcpu_cortexa9.h">
-<persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/cpu_cortexa9_v1_01_a/src/xcpu_cortexa9.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xenv_standalone.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/common_v1_00_a/src/xenv_standalone.h">
-<persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/common_v1_00_a/src/xenv_standalone.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xutil.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/common_v1_00_a/src/xutil.h">
-<persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/common_v1_00_a/src/xutil.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" name="system.mss" tooltip="standalone_bsp_0/system.mss">
-<persistable path="/standalone_bsp_0/system.mss"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" name="system.xml" tooltip="module_1_hw_platform/system.xml">
-<persistable path="/module_1_hw_platform/system.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="ADC_test_leds/src/main.c">
-<persistable path="/ADC_test_leds/src/main.c"/>
 </file>
 </mruList>
 </workbench>

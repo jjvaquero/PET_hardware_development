@@ -34,8 +34,8 @@ entity module_1_stub is
     processing_system7_0_FCLK_CLK0_pin : out std_logic;
     ADC_DataIn : in std_logic_vector(31 downto 0);
     processing_system7_0_FCLK_RESET0_N_pin : out std_logic;
-    processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
-    processing_system7_0_FCLK_CLK1_pin : out std_logic
+    processing_system7_0_FCLK_CLK1_pin : out std_logic;
+    processing_system7_0_FCLK_RESET1_N_pin : out std_logic
   );
 end module_1_stub;
 
@@ -68,8 +68,8 @@ architecture STRUCTURE of module_1_stub is
       processing_system7_0_FCLK_CLK0_pin : out std_logic;
       ADC_DataIn : in std_logic_vector(31 downto 0);
       processing_system7_0_FCLK_RESET0_N_pin : out std_logic;
-      processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
-      processing_system7_0_FCLK_CLK1_pin : out std_logic
+      processing_system7_0_FCLK_CLK1_pin : out std_logic;
+      processing_system7_0_FCLK_RESET1_N_pin : out std_logic
     );
   end component;
 
@@ -105,8 +105,8 @@ begin
       processing_system7_0_FCLK_CLK0_pin => processing_system7_0_FCLK_CLK0_pin,
       ADC_DataIn => ADC_DataIn,
       processing_system7_0_FCLK_RESET0_N_pin => processing_system7_0_FCLK_RESET0_N_pin,
-      processing_system7_0_FCLK_RESET1_N_pin => processing_system7_0_FCLK_RESET1_N_pin,
-      processing_system7_0_FCLK_CLK1_pin => processing_system7_0_FCLK_CLK1_pin
+      processing_system7_0_FCLK_CLK1_pin => processing_system7_0_FCLK_CLK1_pin,
+      processing_system7_0_FCLK_RESET1_N_pin => processing_system7_0_FCLK_RESET1_N_pin
     );
 
 end architecture STRUCTURE;

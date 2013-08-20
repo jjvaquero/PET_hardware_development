@@ -60,9 +60,9 @@ unsigned long ps7_pll_init_data_1_0[] = {
     // .. FINISH: SLCR SETTINGS
     // .. START: PLL SLCR REGISTERS
     // .. .. START: ARM PLL INIT
-    // .. .. PLL_RES = 0x4
-    // .. .. ==> 0XF8000110[7:4] = 0x00000004U
-    // .. ..     ==> MASK : 0x000000F0U    VAL : 0x00000040U
+    // .. .. PLL_RES = 0x2
+    // .. .. ==> 0XF8000110[7:4] = 0x00000002U
+    // .. ..     ==> MASK : 0x000000F0U    VAL : 0x00000020U
     // .. .. PLL_CP = 0x2
     // .. .. ==> 0XF8000110[11:8] = 0x00000002U
     // .. ..     ==> MASK : 0x00000F00U    VAL : 0x00000200U
@@ -70,13 +70,13 @@ unsigned long ps7_pll_init_data_1_0[] = {
     // .. .. ==> 0XF8000110[21:12] = 0x000000FAU
     // .. ..     ==> MASK : 0x003FF000U    VAL : 0x000FA000U
     // .. .. 
-    EMIT_MASKWRITE(0XF8000110, 0x003FFFF0U ,0x000FA240U),
+    EMIT_MASKWRITE(0XF8000110, 0x003FFFF0U ,0x000FA220U),
     // .. .. .. START: UPDATE FB_DIV
-    // .. .. .. PLL_FDIV = 0x30
-    // .. .. .. ==> 0XF8000100[18:12] = 0x00000030U
-    // .. .. ..     ==> MASK : 0x0007F000U    VAL : 0x00030000U
+    // .. .. .. PLL_FDIV = 0x28
+    // .. .. .. ==> 0XF8000100[18:12] = 0x00000028U
+    // .. .. ..     ==> MASK : 0x0007F000U    VAL : 0x00028000U
     // .. .. .. 
-    EMIT_MASKWRITE(0XF8000100, 0x0007F000U ,0x00030000U),
+    EMIT_MASKWRITE(0XF8000100, 0x0007F000U ,0x00028000U),
     // .. .. .. FINISH: UPDATE FB_DIV
     // .. .. .. START: BY PASS PLL
     // .. .. .. PLL_BYPASS_FORCE = 1
@@ -116,9 +116,9 @@ unsigned long ps7_pll_init_data_1_0[] = {
     // .. .. .. SRCSEL = 0x0
     // .. .. .. ==> 0XF8000120[5:4] = 0x00000000U
     // .. .. ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
-    // .. .. .. DIVISOR = 0x3
-    // .. .. .. ==> 0XF8000120[13:8] = 0x00000003U
-    // .. .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000300U
+    // .. .. .. DIVISOR = 0x2
+    // .. .. .. ==> 0XF8000120[13:8] = 0x00000002U
+    // .. .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000200U
     // .. .. .. CPU_6OR4XCLKACT = 0x1
     // .. .. .. ==> 0XF8000120[24:24] = 0x00000001U
     // .. .. ..     ==> MASK : 0x01000000U    VAL : 0x01000000U
@@ -135,7 +135,7 @@ unsigned long ps7_pll_init_data_1_0[] = {
     // .. .. .. ==> 0XF8000120[28:28] = 0x00000001U
     // .. .. ..     ==> MASK : 0x10000000U    VAL : 0x10000000U
     // .. .. .. 
-    EMIT_MASKWRITE(0XF8000120, 0x1F003F30U ,0x1F000300U),
+    EMIT_MASKWRITE(0XF8000120, 0x1F003F30U ,0x1F000200U),
     // .. .. FINISH: ARM PLL INIT
     // .. .. START: DDR PLL INIT
     // .. .. PLL_RES = 0x2
@@ -383,14 +383,14 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000180[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
-    // .. DIVISOR0 = 0x5
-    // .. ==> 0XF8000180[13:8] = 0x00000005U
-    // ..     ==> MASK : 0x00003F00U    VAL : 0x00000500U
+    // .. DIVISOR0 = 0x28
+    // .. ==> 0XF8000180[13:8] = 0x00000028U
+    // ..     ==> MASK : 0x00003F00U    VAL : 0x00002800U
     // .. DIVISOR1 = 0x1
     // .. ==> 0XF8000180[25:20] = 0x00000001U
     // ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. 
-    EMIT_MASKWRITE(0XF8000180, 0x03F03F30U ,0x00100500U),
+    EMIT_MASKWRITE(0XF8000180, 0x03F03F30U ,0x00102800U),
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000190[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
@@ -3978,9 +3978,9 @@ unsigned long ps7_pll_init_data_2_0[] = {
     // .. FINISH: SLCR SETTINGS
     // .. START: PLL SLCR REGISTERS
     // .. .. START: ARM PLL INIT
-    // .. .. PLL_RES = 0x4
-    // .. .. ==> 0XF8000110[7:4] = 0x00000004U
-    // .. ..     ==> MASK : 0x000000F0U    VAL : 0x00000040U
+    // .. .. PLL_RES = 0x2
+    // .. .. ==> 0XF8000110[7:4] = 0x00000002U
+    // .. ..     ==> MASK : 0x000000F0U    VAL : 0x00000020U
     // .. .. PLL_CP = 0x2
     // .. .. ==> 0XF8000110[11:8] = 0x00000002U
     // .. ..     ==> MASK : 0x00000F00U    VAL : 0x00000200U
@@ -3988,13 +3988,13 @@ unsigned long ps7_pll_init_data_2_0[] = {
     // .. .. ==> 0XF8000110[21:12] = 0x000000FAU
     // .. ..     ==> MASK : 0x003FF000U    VAL : 0x000FA000U
     // .. .. 
-    EMIT_MASKWRITE(0XF8000110, 0x003FFFF0U ,0x000FA240U),
+    EMIT_MASKWRITE(0XF8000110, 0x003FFFF0U ,0x000FA220U),
     // .. .. .. START: UPDATE FB_DIV
-    // .. .. .. PLL_FDIV = 0x30
-    // .. .. .. ==> 0XF8000100[18:12] = 0x00000030U
-    // .. .. ..     ==> MASK : 0x0007F000U    VAL : 0x00030000U
+    // .. .. .. PLL_FDIV = 0x28
+    // .. .. .. ==> 0XF8000100[18:12] = 0x00000028U
+    // .. .. ..     ==> MASK : 0x0007F000U    VAL : 0x00028000U
     // .. .. .. 
-    EMIT_MASKWRITE(0XF8000100, 0x0007F000U ,0x00030000U),
+    EMIT_MASKWRITE(0XF8000100, 0x0007F000U ,0x00028000U),
     // .. .. .. FINISH: UPDATE FB_DIV
     // .. .. .. START: BY PASS PLL
     // .. .. .. PLL_BYPASS_FORCE = 1
@@ -4034,9 +4034,9 @@ unsigned long ps7_pll_init_data_2_0[] = {
     // .. .. .. SRCSEL = 0x0
     // .. .. .. ==> 0XF8000120[5:4] = 0x00000000U
     // .. .. ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
-    // .. .. .. DIVISOR = 0x3
-    // .. .. .. ==> 0XF8000120[13:8] = 0x00000003U
-    // .. .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000300U
+    // .. .. .. DIVISOR = 0x2
+    // .. .. .. ==> 0XF8000120[13:8] = 0x00000002U
+    // .. .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000200U
     // .. .. .. CPU_6OR4XCLKACT = 0x1
     // .. .. .. ==> 0XF8000120[24:24] = 0x00000001U
     // .. .. ..     ==> MASK : 0x01000000U    VAL : 0x01000000U
@@ -4053,7 +4053,7 @@ unsigned long ps7_pll_init_data_2_0[] = {
     // .. .. .. ==> 0XF8000120[28:28] = 0x00000001U
     // .. .. ..     ==> MASK : 0x10000000U    VAL : 0x10000000U
     // .. .. .. 
-    EMIT_MASKWRITE(0XF8000120, 0x1F003F30U ,0x1F000300U),
+    EMIT_MASKWRITE(0XF8000120, 0x1F003F30U ,0x1F000200U),
     // .. .. FINISH: ARM PLL INIT
     // .. .. START: DDR PLL INIT
     // .. .. PLL_RES = 0x2
@@ -4301,14 +4301,14 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000180[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
-    // .. DIVISOR0 = 0x5
-    // .. ==> 0XF8000180[13:8] = 0x00000005U
-    // ..     ==> MASK : 0x00003F00U    VAL : 0x00000500U
+    // .. DIVISOR0 = 0x28
+    // .. ==> 0XF8000180[13:8] = 0x00000028U
+    // ..     ==> MASK : 0x00003F00U    VAL : 0x00002800U
     // .. DIVISOR1 = 0x1
     // .. ==> 0XF8000180[25:20] = 0x00000001U
     // ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. 
-    EMIT_MASKWRITE(0XF8000180, 0x03F03F30U ,0x00100500U),
+    EMIT_MASKWRITE(0XF8000180, 0x03F03F30U ,0x00102800U),
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000190[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
@@ -7960,9 +7960,9 @@ unsigned long ps7_pll_init_data_3_0[] = {
     // .. FINISH: SLCR SETTINGS
     // .. START: PLL SLCR REGISTERS
     // .. .. START: ARM PLL INIT
-    // .. .. PLL_RES = 0x4
-    // .. .. ==> 0XF8000110[7:4] = 0x00000004U
-    // .. ..     ==> MASK : 0x000000F0U    VAL : 0x00000040U
+    // .. .. PLL_RES = 0x2
+    // .. .. ==> 0XF8000110[7:4] = 0x00000002U
+    // .. ..     ==> MASK : 0x000000F0U    VAL : 0x00000020U
     // .. .. PLL_CP = 0x2
     // .. .. ==> 0XF8000110[11:8] = 0x00000002U
     // .. ..     ==> MASK : 0x00000F00U    VAL : 0x00000200U
@@ -7970,13 +7970,13 @@ unsigned long ps7_pll_init_data_3_0[] = {
     // .. .. ==> 0XF8000110[21:12] = 0x000000FAU
     // .. ..     ==> MASK : 0x003FF000U    VAL : 0x000FA000U
     // .. .. 
-    EMIT_MASKWRITE(0XF8000110, 0x003FFFF0U ,0x000FA240U),
+    EMIT_MASKWRITE(0XF8000110, 0x003FFFF0U ,0x000FA220U),
     // .. .. .. START: UPDATE FB_DIV
-    // .. .. .. PLL_FDIV = 0x30
-    // .. .. .. ==> 0XF8000100[18:12] = 0x00000030U
-    // .. .. ..     ==> MASK : 0x0007F000U    VAL : 0x00030000U
+    // .. .. .. PLL_FDIV = 0x28
+    // .. .. .. ==> 0XF8000100[18:12] = 0x00000028U
+    // .. .. ..     ==> MASK : 0x0007F000U    VAL : 0x00028000U
     // .. .. .. 
-    EMIT_MASKWRITE(0XF8000100, 0x0007F000U ,0x00030000U),
+    EMIT_MASKWRITE(0XF8000100, 0x0007F000U ,0x00028000U),
     // .. .. .. FINISH: UPDATE FB_DIV
     // .. .. .. START: BY PASS PLL
     // .. .. .. PLL_BYPASS_FORCE = 1
@@ -8016,9 +8016,9 @@ unsigned long ps7_pll_init_data_3_0[] = {
     // .. .. .. SRCSEL = 0x0
     // .. .. .. ==> 0XF8000120[5:4] = 0x00000000U
     // .. .. ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
-    // .. .. .. DIVISOR = 0x3
-    // .. .. .. ==> 0XF8000120[13:8] = 0x00000003U
-    // .. .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000300U
+    // .. .. .. DIVISOR = 0x2
+    // .. .. .. ==> 0XF8000120[13:8] = 0x00000002U
+    // .. .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000200U
     // .. .. .. CPU_6OR4XCLKACT = 0x1
     // .. .. .. ==> 0XF8000120[24:24] = 0x00000001U
     // .. .. ..     ==> MASK : 0x01000000U    VAL : 0x01000000U
@@ -8035,7 +8035,7 @@ unsigned long ps7_pll_init_data_3_0[] = {
     // .. .. .. ==> 0XF8000120[28:28] = 0x00000001U
     // .. .. ..     ==> MASK : 0x10000000U    VAL : 0x10000000U
     // .. .. .. 
-    EMIT_MASKWRITE(0XF8000120, 0x1F003F30U ,0x1F000300U),
+    EMIT_MASKWRITE(0XF8000120, 0x1F003F30U ,0x1F000200U),
     // .. .. FINISH: ARM PLL INIT
     // .. .. START: DDR PLL INIT
     // .. .. PLL_RES = 0x2
@@ -8283,14 +8283,14 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000180[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
-    // .. DIVISOR0 = 0x5
-    // .. ==> 0XF8000180[13:8] = 0x00000005U
-    // ..     ==> MASK : 0x00003F00U    VAL : 0x00000500U
+    // .. DIVISOR0 = 0x28
+    // .. ==> 0XF8000180[13:8] = 0x00000028U
+    // ..     ==> MASK : 0x00003F00U    VAL : 0x00002800U
     // .. DIVISOR1 = 0x1
     // .. ==> 0XF8000180[25:20] = 0x00000001U
     // ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. 
-    EMIT_MASKWRITE(0XF8000180, 0x03F03F30U ,0x00100500U),
+    EMIT_MASKWRITE(0XF8000180, 0x03F03F30U ,0x00102800U),
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000190[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U

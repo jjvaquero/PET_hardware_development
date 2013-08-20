@@ -37,6 +37,8 @@ int main(void)
 	u32 leido = 0;
 	u32 dir, reg_val;
 
+
+
 	//pruebo aqui mismo la config
 	// Register (slcr) FPGA_RST_CTRL
 
@@ -55,6 +57,24 @@ int main(void)
 	dir = 0xF800000C;
 	reg_val = Xil_In32(dir);
 	xil_printf("Registro protegido desp = %d \n", reg_val);
+
+	//leo el PLL Status
+	dir= 0xF800010C;  //PLL_Status dir
+	reg_val = Xil_In32(dir);
+    xil_printf("Valor de PLL Status = %d \n", reg_val);
+
+    //read IP_PLL_CTRL
+    dir= 0xF8000108; //IO_PLL_CTRL
+	reg_val = Xil_In32(dir);
+    xil_printf("Valor de IO_PLL_CTRL = %d \n", reg_val);
+
+    //read IO_PLL_CFG
+    dir = 0xF8000118;
+	reg_val = Xil_In32(dir);
+    xil_printf("Valor de IO_PLL_CFG = %d \n", reg_val);
+
+    //Force PLL into bypass mode
+
 
 
 
@@ -77,7 +97,7 @@ int main(void)
     reg_val = Xil_In32(dir);
 
 
-	//pruebo ahora lo de los rest de la FPGA
+	//pruebo ahora lo de los reset de la FPGA
 	dir = 0xF8000240;
 	reg_val = 0x2; //reset para mi PL;
 	Xil_Out32(dir,reg_val);

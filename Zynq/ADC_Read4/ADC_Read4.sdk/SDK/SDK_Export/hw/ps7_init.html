@@ -227,10 +227,10 @@ td { min-width : 80px ; }
 <li><p>Register : ARM_PLL_CFG @ 0XF8000110</p>
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
-<tr><td >PLL_RES</td><td class="hex">7:4</td><td class="hex">f0</td><td class="hex">4</td><td class="hex">40</td></tr>
+<tr><td >PLL_RES</td><td class="hex">7:4</td><td class="hex">f0</td><td class="hex">2</td><td class="hex">20</td></tr>
 <tr><td >PLL_CP</td><td class="hex">11:8</td><td class="hex">f00</td><td class="hex">2</td><td class="hex">200</td></tr>
 <tr><td >LOCK_CNT</td><td class="hex">21:12</td><td class="hex">3ff000</td><td class="hex">fa</td><td class="hex">fa000</td></tr>
-<tr><td><b>ARM_PLL_CFG @ 0XF8000110</td><td></td><td class="hex"><b>3ffff0</b></td><td></td><td class="hex"><b>fa240</b></td></tr></table>
+<tr><td><b>ARM_PLL_CFG @ 0XF8000110</td><td></td><td class="hex"><b>3ffff0</b></td><td></td><td class="hex"><b>fa220</b></td></tr></table>
 </li>
 <h2>UPDATE FB_DIV</h2>
 <ul>
@@ -238,8 +238,8 @@ td { min-width : 80px ; }
 <li><p>Register : ARM_PLL_CTRL @ 0XF8000100</p>
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
-<tr><td >PLL_FDIV</td><td class="hex">18:12</td><td class="hex">7f000</td><td class="hex">30</td><td class="hex">30000</td></tr>
-<tr><td><b>ARM_PLL_CTRL @ 0XF8000100</td><td></td><td class="hex"><b>7f000</b></td><td></td><td class="hex"><b>30000</b></td></tr></table>
+<tr><td >PLL_FDIV</td><td class="hex">18:12</td><td class="hex">7f000</td><td class="hex">28</td><td class="hex">28000</td></tr>
+<tr><td><b>ARM_PLL_CTRL @ 0XF8000100</td><td></td><td class="hex"><b>7f000</b></td><td></td><td class="hex"><b>28000</b></td></tr></table>
 </li>
 </ul>
 <h2>BY PASS PLL</h2>
@@ -296,13 +296,13 @@ td { min-width : 80px ; }
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
 <tr><td >SRCSEL</td><td class="hex">5:4</td><td class="hex">30</td><td class="hex">0</td><td class="hex">0</td></tr>
-<tr><td >DIVISOR</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">3</td><td class="hex">300</td></tr>
+<tr><td >DIVISOR</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">2</td><td class="hex">200</td></tr>
 <tr><td >CPU_6OR4XCLKACT</td><td class="hex">24:24</td><td class="hex">1000000</td><td class="hex">1</td><td class="hex">1000000</td></tr>
 <tr><td >CPU_3OR2XCLKACT</td><td class="hex">25:25</td><td class="hex">2000000</td><td class="hex">1</td><td class="hex">2000000</td></tr>
 <tr><td >CPU_2XCLKACT</td><td class="hex">26:26</td><td class="hex">4000000</td><td class="hex">1</td><td class="hex">4000000</td></tr>
 <tr><td >CPU_1XCLKACT</td><td class="hex">27:27</td><td class="hex">8000000</td><td class="hex">1</td><td class="hex">8000000</td></tr>
 <tr><td >CPU_PERI_CLKACT</td><td class="hex">28:28</td><td class="hex">10000000</td><td class="hex">1</td><td class="hex">10000000</td></tr>
-<tr><td><b>ARM_CLK_CTRL @ 0XF8000120</td><td></td><td class="hex"><b>1f003f30</b></td><td></td><td class="hex"><b>1f000300</b></td></tr></table>
+<tr><td><b>ARM_CLK_CTRL @ 0XF8000120</td><td></td><td class="hex"><b>1f003f30</b></td><td></td><td class="hex"><b>1f000200</b></td></tr></table>
 </li>
 </ul>
 <h2>DDR PLL INIT</h2>
@@ -556,9 +556,9 @@ td { min-width : 80px ; }
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
 <tr><td >SRCSEL</td><td class="hex">5:4</td><td class="hex">30</td><td class="hex">0</td><td class="hex">0</td></tr>
-<tr><td >DIVISOR0</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">5</td><td class="hex">500</td></tr>
+<tr><td >DIVISOR0</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">28</td><td class="hex">2800</td></tr>
 <tr><td >DIVISOR1</td><td class="hex">25:20</td><td class="hex">3f00000</td><td class="hex">1</td><td class="hex">100000</td></tr>
-<tr><td><b>FPGA1_CLK_CTRL @ 0XF8000180</td><td></td><td class="hex"><b>3f03f30</b></td><td></td><td class="hex"><b>100500</b></td></tr></table>
+<tr><td><b>FPGA1_CLK_CTRL @ 0XF8000180</td><td></td><td class="hex"><b>3f03f30</b></td><td></td><td class="hex"><b>102800</b></td></tr></table>
 </li>
 <li><p>Register : FPGA2_CLK_CTRL @ 0XF8000190</p>
 <table border="1"> 
@@ -3013,10 +3013,10 @@ td { min-width : 80px ; }
 <li><p>Register : ARM_PLL_CFG @ 0XF8000110</p>
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
-<tr><td >PLL_RES</td><td class="hex">7:4</td><td class="hex">f0</td><td class="hex">4</td><td class="hex">40</td></tr>
+<tr><td >PLL_RES</td><td class="hex">7:4</td><td class="hex">f0</td><td class="hex">2</td><td class="hex">20</td></tr>
 <tr><td >PLL_CP</td><td class="hex">11:8</td><td class="hex">f00</td><td class="hex">2</td><td class="hex">200</td></tr>
 <tr><td >LOCK_CNT</td><td class="hex">21:12</td><td class="hex">3ff000</td><td class="hex">fa</td><td class="hex">fa000</td></tr>
-<tr><td><b>ARM_PLL_CFG @ 0XF8000110</td><td></td><td class="hex"><b>3ffff0</b></td><td></td><td class="hex"><b>fa240</b></td></tr></table>
+<tr><td><b>ARM_PLL_CFG @ 0XF8000110</td><td></td><td class="hex"><b>3ffff0</b></td><td></td><td class="hex"><b>fa220</b></td></tr></table>
 </li>
 <h2>UPDATE FB_DIV</h2>
 <ul>
@@ -3024,8 +3024,8 @@ td { min-width : 80px ; }
 <li><p>Register : ARM_PLL_CTRL @ 0XF8000100</p>
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
-<tr><td >PLL_FDIV</td><td class="hex">18:12</td><td class="hex">7f000</td><td class="hex">30</td><td class="hex">30000</td></tr>
-<tr><td><b>ARM_PLL_CTRL @ 0XF8000100</td><td></td><td class="hex"><b>7f000</b></td><td></td><td class="hex"><b>30000</b></td></tr></table>
+<tr><td >PLL_FDIV</td><td class="hex">18:12</td><td class="hex">7f000</td><td class="hex">28</td><td class="hex">28000</td></tr>
+<tr><td><b>ARM_PLL_CTRL @ 0XF8000100</td><td></td><td class="hex"><b>7f000</b></td><td></td><td class="hex"><b>28000</b></td></tr></table>
 </li>
 </ul>
 <h2>BY PASS PLL</h2>
@@ -3082,13 +3082,13 @@ td { min-width : 80px ; }
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
 <tr><td >SRCSEL</td><td class="hex">5:4</td><td class="hex">30</td><td class="hex">0</td><td class="hex">0</td></tr>
-<tr><td >DIVISOR</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">3</td><td class="hex">300</td></tr>
+<tr><td >DIVISOR</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">2</td><td class="hex">200</td></tr>
 <tr><td >CPU_6OR4XCLKACT</td><td class="hex">24:24</td><td class="hex">1000000</td><td class="hex">1</td><td class="hex">1000000</td></tr>
 <tr><td >CPU_3OR2XCLKACT</td><td class="hex">25:25</td><td class="hex">2000000</td><td class="hex">1</td><td class="hex">2000000</td></tr>
 <tr><td >CPU_2XCLKACT</td><td class="hex">26:26</td><td class="hex">4000000</td><td class="hex">1</td><td class="hex">4000000</td></tr>
 <tr><td >CPU_1XCLKACT</td><td class="hex">27:27</td><td class="hex">8000000</td><td class="hex">1</td><td class="hex">8000000</td></tr>
 <tr><td >CPU_PERI_CLKACT</td><td class="hex">28:28</td><td class="hex">10000000</td><td class="hex">1</td><td class="hex">10000000</td></tr>
-<tr><td><b>ARM_CLK_CTRL @ 0XF8000120</td><td></td><td class="hex"><b>1f003f30</b></td><td></td><td class="hex"><b>1f000300</b></td></tr></table>
+<tr><td><b>ARM_CLK_CTRL @ 0XF8000120</td><td></td><td class="hex"><b>1f003f30</b></td><td></td><td class="hex"><b>1f000200</b></td></tr></table>
 </li>
 </ul>
 <h2>DDR PLL INIT</h2>
@@ -3342,9 +3342,9 @@ td { min-width : 80px ; }
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
 <tr><td >SRCSEL</td><td class="hex">5:4</td><td class="hex">30</td><td class="hex">0</td><td class="hex">0</td></tr>
-<tr><td >DIVISOR0</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">5</td><td class="hex">500</td></tr>
+<tr><td >DIVISOR0</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">28</td><td class="hex">2800</td></tr>
 <tr><td >DIVISOR1</td><td class="hex">25:20</td><td class="hex">3f00000</td><td class="hex">1</td><td class="hex">100000</td></tr>
-<tr><td><b>FPGA1_CLK_CTRL @ 0XF8000180</td><td></td><td class="hex"><b>3f03f30</b></td><td></td><td class="hex"><b>100500</b></td></tr></table>
+<tr><td><b>FPGA1_CLK_CTRL @ 0XF8000180</td><td></td><td class="hex"><b>3f03f30</b></td><td></td><td class="hex"><b>102800</b></td></tr></table>
 </li>
 <li><p>Register : FPGA2_CLK_CTRL @ 0XF8000190</p>
 <table border="1"> 
@@ -5829,10 +5829,10 @@ td { min-width : 80px ; }
 <li><p>Register : ARM_PLL_CFG @ 0XF8000110</p>
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
-<tr><td >PLL_RES</td><td class="hex">7:4</td><td class="hex">f0</td><td class="hex">4</td><td class="hex">40</td></tr>
+<tr><td >PLL_RES</td><td class="hex">7:4</td><td class="hex">f0</td><td class="hex">2</td><td class="hex">20</td></tr>
 <tr><td >PLL_CP</td><td class="hex">11:8</td><td class="hex">f00</td><td class="hex">2</td><td class="hex">200</td></tr>
 <tr><td >LOCK_CNT</td><td class="hex">21:12</td><td class="hex">3ff000</td><td class="hex">fa</td><td class="hex">fa000</td></tr>
-<tr><td><b>ARM_PLL_CFG @ 0XF8000110</td><td></td><td class="hex"><b>3ffff0</b></td><td></td><td class="hex"><b>fa240</b></td></tr></table>
+<tr><td><b>ARM_PLL_CFG @ 0XF8000110</td><td></td><td class="hex"><b>3ffff0</b></td><td></td><td class="hex"><b>fa220</b></td></tr></table>
 </li>
 <h2>UPDATE FB_DIV</h2>
 <ul>
@@ -5840,8 +5840,8 @@ td { min-width : 80px ; }
 <li><p>Register : ARM_PLL_CTRL @ 0XF8000100</p>
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
-<tr><td >PLL_FDIV</td><td class="hex">18:12</td><td class="hex">7f000</td><td class="hex">30</td><td class="hex">30000</td></tr>
-<tr><td><b>ARM_PLL_CTRL @ 0XF8000100</td><td></td><td class="hex"><b>7f000</b></td><td></td><td class="hex"><b>30000</b></td></tr></table>
+<tr><td >PLL_FDIV</td><td class="hex">18:12</td><td class="hex">7f000</td><td class="hex">28</td><td class="hex">28000</td></tr>
+<tr><td><b>ARM_PLL_CTRL @ 0XF8000100</td><td></td><td class="hex"><b>7f000</b></td><td></td><td class="hex"><b>28000</b></td></tr></table>
 </li>
 </ul>
 <h2>BY PASS PLL</h2>
@@ -5898,13 +5898,13 @@ td { min-width : 80px ; }
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
 <tr><td >SRCSEL</td><td class="hex">5:4</td><td class="hex">30</td><td class="hex">0</td><td class="hex">0</td></tr>
-<tr><td >DIVISOR</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">3</td><td class="hex">300</td></tr>
+<tr><td >DIVISOR</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">2</td><td class="hex">200</td></tr>
 <tr><td >CPU_6OR4XCLKACT</td><td class="hex">24:24</td><td class="hex">1000000</td><td class="hex">1</td><td class="hex">1000000</td></tr>
 <tr><td >CPU_3OR2XCLKACT</td><td class="hex">25:25</td><td class="hex">2000000</td><td class="hex">1</td><td class="hex">2000000</td></tr>
 <tr><td >CPU_2XCLKACT</td><td class="hex">26:26</td><td class="hex">4000000</td><td class="hex">1</td><td class="hex">4000000</td></tr>
 <tr><td >CPU_1XCLKACT</td><td class="hex">27:27</td><td class="hex">8000000</td><td class="hex">1</td><td class="hex">8000000</td></tr>
 <tr><td >CPU_PERI_CLKACT</td><td class="hex">28:28</td><td class="hex">10000000</td><td class="hex">1</td><td class="hex">10000000</td></tr>
-<tr><td><b>ARM_CLK_CTRL @ 0XF8000120</td><td></td><td class="hex"><b>1f003f30</b></td><td></td><td class="hex"><b>1f000300</b></td></tr></table>
+<tr><td><b>ARM_CLK_CTRL @ 0XF8000120</td><td></td><td class="hex"><b>1f003f30</b></td><td></td><td class="hex"><b>1f000200</b></td></tr></table>
 </li>
 </ul>
 <h2>DDR PLL INIT</h2>
@@ -6158,9 +6158,9 @@ td { min-width : 80px ; }
 <table border="1"> 
 <tr><thead><th>Bitfield</th><th>Bits</th><th>Mask</th><th>Value</th><th>Shifted Value</th></thead></tr><tbody>
 <tr><td >SRCSEL</td><td class="hex">5:4</td><td class="hex">30</td><td class="hex">0</td><td class="hex">0</td></tr>
-<tr><td >DIVISOR0</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">5</td><td class="hex">500</td></tr>
+<tr><td >DIVISOR0</td><td class="hex">13:8</td><td class="hex">3f00</td><td class="hex">28</td><td class="hex">2800</td></tr>
 <tr><td >DIVISOR1</td><td class="hex">25:20</td><td class="hex">3f00000</td><td class="hex">1</td><td class="hex">100000</td></tr>
-<tr><td><b>FPGA1_CLK_CTRL @ 0XF8000180</td><td></td><td class="hex"><b>3f03f30</b></td><td></td><td class="hex"><b>100500</b></td></tr></table>
+<tr><td><b>FPGA1_CLK_CTRL @ 0XF8000180</td><td></td><td class="hex"><b>3f03f30</b></td><td></td><td class="hex"><b>102800</b></td></tr></table>
 </li>
 <li><p>Register : FPGA2_CLK_CTRL @ 0XF8000190</p>
 <table border="1"> 

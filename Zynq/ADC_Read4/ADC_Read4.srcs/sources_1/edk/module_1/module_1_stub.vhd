@@ -34,8 +34,9 @@ entity module_1_stub is
     --pongo ademas el pin para la salida del reloj
     FCLK :  in std_logic_vector(1 downto 0);
     --relojes auxiliares para que planaahead no se los cargue
-    FCLKP2: out std_logic;
-    FCLKP3: out std_logic;
+    FCLKP1: out std_logic;  --reloj usado para el conversor,sal por JA4
+    --FCLKP2: out std_logic;  --TODO borrar...sale por JB4
+    --FCLKP3: out std_logic;  --sale por JB2
     --pines para datos
     ADC_Data1: in std_logic_vector(1 downto 0);
     ADC_Data0: in std_logic_vector(1 downto 0);
@@ -57,10 +58,11 @@ architecture STRUCTURE of module_1_stub is
   signal clk_Feedback, clk_Bit, clk_Div : std_logic;
   signal sBitSlip: std_logic;
   signal sDelay: std_logic_vector(1 downto 0);
+  signal sClkExtIn, sClkExtOut : std_logic;
 
 
 
-
+  
 
   component module_1 is
     port (
@@ -87,6 +89,7 @@ architecture STRUCTURE of module_1_stub is
       processing_system7_0_DDR_VRP : inout std_logic;
       LED_DutyCycle : out std_logic_vector(31 downto 0); --sLED_DutyCycle,
       processing_system7_0_FCLK_CLK0_pin: out std_logic;  --PL clocks from the PS
+      processing_system7_0_FCLK_CLK1_pin: out std_logic; 
       processing_system7_0_FCLK_RESET0_N_pin : out std_logic;  --reset used in my PL
       processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
       ADC_DataIn: in std_logic_vector(31 downto 0) --lo conecto a sADC_DataIn     
@@ -228,6 +231,7 @@ begin
       --LEDS=>LEDS
       LED_DutyCycle => sLED_DutyCycle,
       processing_system7_0_FCLK_CLK0_pin => sprocessing_system7_0_FCLK_CLK0_pin,
+      processing_system7_0_FCLK_CLK1_pin => sClkExtIn,
       --processing_system7_0_FCLK_RESET0_N_pin => sprocessing_system7_0_FCLK_RESET0_N_pin,
       processing_system7_0_FCLK_RESET1_N_pin => PL_Rst,
       ADC_DataIn => sADC_DataIn
@@ -374,10 +378,14 @@ begin
 --            Data  => sADC_DataIn, --(11 downto 0),
 --            ClkOut =>dat_aux                  
 --            );
+
+    --BUFIO_inst : BUFIO port map ( I=> sClkExtIn, O=>sClkExtOut);
             
     sADC_DataIn(31 downto 12)<=(others => '0');
-    FCLKP2<=dat_aux; --sDCLK; --s_aux;
-    FCLKP3<=sDelay(0); --sFCLK;  --dat_aux;
+    FCLKP1<=sClkExtIn; --dat_aux; --sDCLK; --s_aux;
+    --FCLKP2<=sADC_Data1;
+    --FCLKP3<=sFCLK;
+    
 
 end architecture STRUCTURE;
 

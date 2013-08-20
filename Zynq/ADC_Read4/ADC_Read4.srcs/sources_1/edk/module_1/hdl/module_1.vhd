@@ -34,8 +34,8 @@ entity module_1 is
     processing_system7_0_FCLK_CLK0_pin : out std_logic;
     ADC_DataIn : in std_logic_vector(31 downto 0);
     processing_system7_0_FCLK_RESET0_N_pin : out std_logic;
-    processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
-    processing_system7_0_FCLK_CLK1_pin : out std_logic
+    processing_system7_0_FCLK_CLK1_pin : out std_logic;
+    processing_system7_0_FCLK_RESET1_N_pin : out std_logic
   );
 end module_1;
 
@@ -1034,7 +1034,7 @@ architecture STRUCTURE of module_1 is
   signal processing_system7_0_DDR_WEB : std_logic;
   signal processing_system7_0_FCLK_CLK0 : std_logic_vector(0 to 0);
   signal processing_system7_0_FCLK_CLK1 : std_logic;
-  signal processing_system7_0_FCLK_RESET0_N : std_logic;
+  signal processing_system7_0_FCLK_RESET0_N_0 : std_logic;
   signal processing_system7_0_FCLK_RESET1_N : std_logic;
   signal processing_system7_0_PS_CLK : std_logic;
   signal processing_system7_0_PS_PORB : std_logic;
@@ -1056,9 +1056,9 @@ begin
   LED_DutyCycle <= axi_gpio_0_GPIO_IO_O;
   processing_system7_0_FCLK_CLK0_pin <= processing_system7_0_FCLK_CLK0(0);
   axi_gpio_0_GPIO2_IO_I <= ADC_DataIn;
-  processing_system7_0_FCLK_RESET0_N_pin <= processing_system7_0_FCLK_RESET0_N;
-  processing_system7_0_FCLK_RESET1_N_pin <= processing_system7_0_FCLK_RESET1_N;
+  processing_system7_0_FCLK_RESET0_N_pin <= processing_system7_0_FCLK_RESET0_N_0;
   processing_system7_0_FCLK_CLK1_pin <= processing_system7_0_FCLK_CLK1;
+  processing_system7_0_FCLK_RESET1_N_pin <= processing_system7_0_FCLK_RESET1_N;
   net_gnd0 <= '0';
   net_gnd1(0 to 0) <= B"0";
   net_gnd12(11 downto 0) <= B"000000000000";
@@ -1684,7 +1684,7 @@ begin
       FCLK_RESET3_N => open,
       FCLK_RESET2_N => open,
       FCLK_RESET1_N => processing_system7_0_FCLK_RESET1_N,
-      FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
+      FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N_0,
       FPGA_IDLE_N => net_gnd0,
       DDR_ARB => net_gnd4,
       IRQ_F2P => net_gnd1(0 to 0),
@@ -1781,7 +1781,7 @@ begin
   axi_interconnect_1 : module_1_axi_interconnect_1_wrapper
     port map (
       INTERCONNECT_ACLK => processing_system7_0_FCLK_CLK0(0),
-      INTERCONNECT_ARESETN => processing_system7_0_FCLK_RESET0_N,
+      INTERCONNECT_ARESETN => processing_system7_0_FCLK_RESET0_N_0,
       S_AXI_ARESET_OUT_N => open,
       M_AXI_ARESET_OUT_N => axi_interconnect_1_M_ARESETN(0 to 0),
       IRQ => open,
