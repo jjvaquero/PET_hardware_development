@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DARoots Version="1" Minor="26">
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/ADCClk_v7.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Zynq_Intro/PWM_Controller.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ADC_Read4/ADC_Read4.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd"/>
+        <Attr Name="ImportTime" Val="1377015464"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/edk/module_1/module_1.xmp">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1.xmp"/>
+        <Attr Name="ImportTime" Val="1376996283"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/edk/module_1/module_1_stub.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/edk/module_1/module_1_stub.vhd"/>
+        <Attr Name="ImportTime" Val="1377075092"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Libraries/AdcClock_V5/AdcClk.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp866/Xapp866_cod/Projects/AdcToplevel/Libraries/AdcClock_V5/AdcClk.vhd"/>
+        <Attr Name="ImportTime" Val="1286779376"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Libraries/AdcFrame_V5/AdcFrm.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp866/Xapp866_cod/Projects/AdcToplevel/Libraries/AdcFrame_V5/AdcFrm.vhd"/>
+        <Attr Name="ImportTime" Val="1286779646"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Libraries/AdcData_V5/AdcDataChnl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp866/Xapp866_cod/Projects/AdcToplevel/Libraries/AdcData_V5/AdcDataChnl.vhd"/>
+        <Attr Name="ImportTime" Val="1286779366"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Libraries/AdcData_V5/AdcDataMultiChnl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp866/Xapp866_cod/Projects/AdcToplevel/Libraries/AdcData_V5/AdcDataMultiChnl.vhd"/>
+        <Attr Name="ImportTime" Val="1286779522"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Libraries/AdcMem_V5/AdcMem.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp866/Xapp866_cod/Projects/AdcToplevel/Libraries/AdcMem_V5/AdcMem.vhd"/>
+        <Attr Name="ImportTime" Val="1286780026"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/selectio_wiz_v4_1_0/selectio_wiz_v4_1_0.xci">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="module_1_stub"/>
+      <Option Name="TopLib" Val="work"/>
+      <Option Name="TopArchitecture" Val="STRUCTURE"/>
+      <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/edk/module_1/module_1_stub.vhd"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+</DARoots>
