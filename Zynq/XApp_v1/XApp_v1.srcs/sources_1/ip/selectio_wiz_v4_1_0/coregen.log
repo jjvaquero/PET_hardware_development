@@ -1,0 +1,58 @@
+INFO:sim:172 - Generating IP...
+Applying current project options...
+Finished applying current project options.
+Resolving generics for 'selectio_wiz_v4_1_0'...
+WARNING:sim - A core named 'selectio_wiz_v4_1_0' already exists in the project.
+   Output products for this core may be overwritten.
+Applying external generics to 'selectio_wiz_v4_1_0'...
+Delivering associated files for 'selectio_wiz_v4_1_0'...
+Delivered 4 files into directory
+C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/s
+ources_1/ip/selectio_wiz_v4_1_0/tmp/_cg/selectio_wiz_v4_1_0
+Delivered 1 file into directory
+C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/s
+ources_1/ip/selectio_wiz_v4_1_0/tmp/_cg/selectio_wiz_v4_1_0
+Generating ASY schematic symbol...
+INFO:sim:949 - Finished generation of ASY schematic symbol.
+Generating ISE project...
+XCO file found: selectio_wiz_v4_1_0.xco
+XMDF file found: selectio_wiz_v4_1_0_xmdf.tcl
+Adding
+C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/s
+ources_1/ip/selectio_wiz_v4_1_0/tmp/_cg/selectio_wiz_v4_1_0.ucf -view all
+-origin_type created
+Adding
+C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/s
+ources_1/ip/selectio_wiz_v4_1_0/tmp/_cg/selectio_wiz_v4_1_0/example_design/selec
+tio_wiz_v4_1_0_exdes.vhd -view all -origin_type created
+INFO:HDLCompiler:1061 - Parsing VHDL file
+   "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.sr
+   cs/sources_1/ip/selectio_wiz_v4_1_0/tmp/_cg/selectio_wiz_v4_1_0/example_desig
+   n/selectio_wiz_v4_1_0_exdes.vhd" into library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding
+C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/s
+ources_1/ip/selectio_wiz_v4_1_0/tmp/_cg/selectio_wiz_v4_1_0.asy -view all
+-origin_type imported
+Adding
+C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/s
+ources_1/ip/selectio_wiz_v4_1_0/tmp/_cg/selectio_wiz_v4_1_0.vhd -view all
+-origin_type created
+INFO:HDLCompiler:1061 - Parsing VHDL file
+   "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.sr
+   cs/sources_1/ip/selectio_wiz_v4_1_0/tmp/_cg/selectio_wiz_v4_1_0.vhd" into
+   library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding
+C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/s
+ources_1/ip/selectio_wiz_v4_1_0/tmp/_cg/selectio_wiz_v4_1_0.vho -view all
+-origin_type imported
+WARNING:coreutil - WARNING: This core does not have a top level called
+   "/selectio_wiz_v4_1_0"
+   WARNING: Top level has been set to "/selectio_wiz_v4_1_0_exdes"
+Generating README file...
+Generating FLIST file...
+INFO:sim:948 - Finished FLIST file generation.
+Moving files to output directory...
+Finished moving files to output directory
+Wrote CGP file for project 'coregen'.

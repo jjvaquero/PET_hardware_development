@@ -1,0 +1,1624 @@
+--------------------------------------------------------------------------------
+Release 14.5 Trace  (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.5\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -o
+module_1_stub.twr -v 30 -l 30 module_1_stub_routed.ncd module_1_stub.pcf
+
+Design file:              module_1_stub_routed.ncd
+Physical constraint file: module_1_stub.pcf
+Device,package,speed:     xc7z020,clg484,C,-1 (PRODUCTION 1.06 2013-03-26)
+Report level:             verbose report, limited to 30 items per constraint
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more 
+   information, see the TSI report.  Please consult the Xilinx Command Line 
+   Tools User Guide for information on generating a TSI report.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk_fpga_1 = PERIOD TIMEGRP "clk_fpga_1" 5 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_0" 50 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 5097 paths analyzed, 1892 endpoints analyzed, 0 failing endpoints
+ 1 timing error detected. (0 setup errors, 0 hold errors, 1 component switching limit error)
+ Minimum period is   5.987ns.
+--------------------------------------------------------------------------------
+Slack:                  14.013ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 (FF)
+  Destination:          module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.964ns (Levels of Logic = 6)
+  Clock Path Skew:      0.012ns (1.560 - 1.548)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 to module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y99.AQ      Tcko                  0.456   module_1_i/axi_gpio_0/axi_gpio_0/bus2ip_reset
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1
+    SLICE_X31Y104.D1     net (fanout=4)        1.037   module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1
+    SLICE_X31Y104.D      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/busy
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1
+    SLICE_X27Y104.D3     net (fanout=4)        0.678   module_1_i/axi_interconnect_1_M_AWREADY
+    SLICE_X27Y104.D      Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[31]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW1_F
+    SLICE_X26Y104.B2     net (fanout=1)        0.795   module_1_i/axi_interconnect_1/N31
+    SLICE_X26Y104.B      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot[0]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW11
+    SLICE_X26Y104.D6     net (fanout=2)        0.182   module_1_i/axi_interconnect_1/N15
+    SLICE_X26Y104.CMUX   Topdc                 0.539   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot[0]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1_F
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1
+    SLICE_X31Y107.D5     net (fanout=4)        0.902   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_awready_mux
+    SLICE_X31Y107.D      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/out1
+    SLICE_X30Y108.A1     net (fanout=2)        0.832   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/aa_awready
+    SLICE_X30Y108.CLK    Tas                   0.047   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+    -------------------------------------------------  ---------------------------
+    Total                                      5.964ns (1.538ns logic, 4.426ns route)
+                                                       (25.8% logic, 74.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.017ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 (FF)
+  Destination:          module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.960ns (Levels of Logic = 6)
+  Clock Path Skew:      0.012ns (1.560 - 1.548)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 to module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y99.AQ      Tcko                  0.456   module_1_i/axi_gpio_0/axi_gpio_0/bus2ip_reset
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1
+    SLICE_X31Y104.D1     net (fanout=4)        1.037   module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1
+    SLICE_X31Y104.D      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/busy
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1
+    SLICE_X27Y104.D3     net (fanout=4)        0.678   module_1_i/axi_interconnect_1_M_AWREADY
+    SLICE_X27Y104.D      Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[31]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW1_F
+    SLICE_X26Y104.B2     net (fanout=1)        0.795   module_1_i/axi_interconnect_1/N31
+    SLICE_X26Y104.B      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot[0]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW11
+    SLICE_X26Y104.C6     net (fanout=2)        0.172   module_1_i/axi_interconnect_1/N15
+    SLICE_X26Y104.CMUX   Tilo                  0.545   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot[0]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1_G
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1
+    SLICE_X31Y107.D5     net (fanout=4)        0.902   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_awready_mux
+    SLICE_X31Y107.D      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/out1
+    SLICE_X30Y108.A1     net (fanout=2)        0.832   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/aa_awready
+    SLICE_X30Y108.CLK    Tas                   0.047   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+    -------------------------------------------------  ---------------------------
+    Total                                      5.960ns (1.544ns logic, 4.416ns route)
+                                                       (25.9% logic, 74.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.152ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_21 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.461ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.352ns (1.382 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y92.SR      net (fanout=18)       1.259   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y92.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_22
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_21
+    -------------------------------------------------  ---------------------------
+    Total                                      5.461ns (1.393ns logic, 4.068ns route)
+                                                       (25.5% logic, 74.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.152ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_19 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.461ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.352ns (1.382 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_19
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y92.SR      net (fanout=18)       1.259   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y92.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_22
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_19
+    -------------------------------------------------  ---------------------------
+    Total                                      5.461ns (1.393ns logic, 4.068ns route)
+                                                       (25.5% logic, 74.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.152ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_22 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.461ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.352ns (1.382 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y92.SR      net (fanout=18)       1.259   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y92.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_22
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_22
+    -------------------------------------------------  ---------------------------
+    Total                                      5.461ns (1.393ns logic, 4.068ns route)
+                                                       (25.5% logic, 74.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.152ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_20 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.461ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.352ns (1.382 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y92.SR      net (fanout=18)       1.259   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y92.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_22
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_20
+    -------------------------------------------------  ---------------------------
+    Total                                      5.461ns (1.393ns logic, 4.068ns route)
+                                                       (25.5% logic, 74.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.252ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d_2 (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.367ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.346ns (1.388 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d_2 to module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.DQ     Tcko                  0.456   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d_2
+    SLICE_X29Y105.D1     net (fanout=9)        1.146   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+    SLICE_X29Y105.D      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_awvalid_reg_0
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_awvalid<0>1
+    SLICE_X29Y105.B1     net (fanout=1)        0.667   module_1_i/axi_interconnect_1/DEBUG_MC_MP_AWADDRCONTROL[0]
+    SLICE_X29Y105.B      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_awvalid_reg_0
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611
+    SLICE_X29Y105.C6     net (fanout=2)        0.161   module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n01161
+    SLICE_X29Y105.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_awvalid_reg_0
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/write_req1
+    SLICE_X32Y103.B1     net (fanout=1)        1.171   module_1_i/axi_interconnect_1_M_AWVALID
+    SLICE_X32Y103.BMUX   Tilo                  0.376   module_1_i/axi_interconnect_1_M_BVALID
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/Mmux_start11
+    SLICE_X30Y99.CE      net (fanout=4)        0.849   module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/start
+    SLICE_X30Y99.CLK     Tceck                 0.169   module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1
+    -------------------------------------------------  ---------------------------
+    Total                                      5.367ns (1.373ns logic, 3.994ns route)
+                                                       (25.6% logic, 74.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.294ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.320ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y93.SR      net (fanout=18)       1.118   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y93.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_26
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_24
+    -------------------------------------------------  ---------------------------
+    Total                                      5.320ns (1.393ns logic, 3.927ns route)
+                                                       (26.2% logic, 73.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.294ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_23 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.320ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y93.SR      net (fanout=18)       1.118   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y93.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_26
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_23
+    -------------------------------------------------  ---------------------------
+    Total                                      5.320ns (1.393ns logic, 3.927ns route)
+                                                       (26.2% logic, 73.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.294ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_26 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.320ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y93.SR      net (fanout=18)       1.118   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y93.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_26
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_26
+    -------------------------------------------------  ---------------------------
+    Total                                      5.320ns (1.393ns logic, 3.927ns route)
+                                                       (26.2% logic, 73.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.294ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_25 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.320ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y93.SR      net (fanout=18)       1.118   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y93.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_26
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_25
+    -------------------------------------------------  ---------------------------
+    Total                                      5.320ns (1.393ns logic, 3.927ns route)
+                                                       (26.2% logic, 73.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.367ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.252ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.346ns (1.388 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.BQ     Tcko                  0.456   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X29Y105.D2     net (fanout=7)        1.014   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X29Y105.DMUX   Tilo                  0.358   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_awvalid_reg_0
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_arvalid<0>1
+    SLICE_X29Y105.B4     net (fanout=2)        0.450   module_1_i/axi_interconnect_1/DEBUG_MC_MP_ARADDRCONTROL[0]
+    SLICE_X29Y105.B      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_awvalid_reg_0
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611
+    SLICE_X29Y105.C6     net (fanout=2)        0.161   module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n01161
+    SLICE_X29Y105.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_awvalid_reg_0
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/write_req1
+    SLICE_X32Y103.B1     net (fanout=1)        1.171   module_1_i/axi_interconnect_1_M_AWVALID
+    SLICE_X32Y103.BMUX   Tilo                  0.376   module_1_i/axi_interconnect_1_M_BVALID
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/Mmux_start11
+    SLICE_X30Y99.CE      net (fanout=4)        0.849   module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/start
+    SLICE_X30Y99.CLK     Tceck                 0.169   module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1
+    -------------------------------------------------  ---------------------------
+    Total                                      5.252ns (1.607ns logic, 3.645ns route)
+                                                       (30.6% logic, 69.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.418ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3 (FF)
+  Destination:          module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.533ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.014ns (0.816 - 0.830)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3 to module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y104.CQ     Tcko                  0.518   module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3
+    SLICE_X31Y104.D5     net (fanout=7)        0.544   module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt[3]
+    SLICE_X31Y104.D      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/busy
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1
+    SLICE_X27Y104.D3     net (fanout=4)        0.678   module_1_i/axi_interconnect_1_M_AWREADY
+    SLICE_X27Y104.D      Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[31]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW1_F
+    SLICE_X26Y104.B2     net (fanout=1)        0.795   module_1_i/axi_interconnect_1/N31
+    SLICE_X26Y104.B      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot[0]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW11
+    SLICE_X26Y104.D6     net (fanout=2)        0.182   module_1_i/axi_interconnect_1/N15
+    SLICE_X26Y104.CMUX   Topdc                 0.539   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot[0]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1_F
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1
+    SLICE_X31Y107.D5     net (fanout=4)        0.902   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_awready_mux
+    SLICE_X31Y107.D      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/out1
+    SLICE_X30Y108.A1     net (fanout=2)        0.832   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/aa_awready
+    SLICE_X30Y108.CLK    Tas                   0.047   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+    -------------------------------------------------  ---------------------------
+    Total                                      5.533ns (1.600ns logic, 3.933ns route)
+                                                       (28.9% logic, 71.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.422ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3 (FF)
+  Destination:          module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.529ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.014ns (0.816 - 0.830)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3 to module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y104.CQ     Tcko                  0.518   module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3
+    SLICE_X31Y104.D5     net (fanout=7)        0.544   module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt[3]
+    SLICE_X31Y104.D      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/busy
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1
+    SLICE_X27Y104.D3     net (fanout=4)        0.678   module_1_i/axi_interconnect_1_M_AWREADY
+    SLICE_X27Y104.D      Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[31]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW1_F
+    SLICE_X26Y104.B2     net (fanout=1)        0.795   module_1_i/axi_interconnect_1/N31
+    SLICE_X26Y104.B      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot[0]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW11
+    SLICE_X26Y104.C6     net (fanout=2)        0.172   module_1_i/axi_interconnect_1/N15
+    SLICE_X26Y104.CMUX   Tilo                  0.545   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot[0]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1_G
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1
+    SLICE_X31Y107.D5     net (fanout=4)        0.902   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_awready_mux
+    SLICE_X31Y107.D      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/out1
+    SLICE_X30Y108.A1     net (fanout=2)        0.832   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/aa_awready
+    SLICE_X30Y108.CLK    Tas                   0.047   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+    -------------------------------------------------  ---------------------------
+    Total                                      5.529ns (1.606ns logic, 3.923ns route)
+                                                       (29.0% logic, 71.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.441ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_28 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.173ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X26Y96.SR      net (fanout=18)       0.876   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X26Y96.CLK     Tsrck                 0.524   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_30
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_28
+    -------------------------------------------------  ---------------------------
+    Total                                      5.173ns (1.488ns logic, 3.685ns route)
+                                                       (28.8% logic, 71.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.441ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_27 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.173ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X26Y96.SR      net (fanout=18)       0.876   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X26Y96.CLK     Tsrck                 0.524   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_30
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_27
+    -------------------------------------------------  ---------------------------
+    Total                                      5.173ns (1.488ns logic, 3.685ns route)
+                                                       (28.8% logic, 71.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.441ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_29 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.173ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X26Y96.SR      net (fanout=18)       0.876   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X26Y96.CLK     Tsrck                 0.524   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_30
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_29
+    -------------------------------------------------  ---------------------------
+    Total                                      5.173ns (1.488ns logic, 3.685ns route)
+                                                       (28.8% logic, 71.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.441ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_30 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.173ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X26Y96.SR      net (fanout=18)       0.876   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X26Y96.CLK     Tsrck                 0.524   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_30
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_30
+    -------------------------------------------------  ---------------------------
+    Total                                      5.173ns (1.488ns logic, 3.685ns route)
+                                                       (28.8% logic, 71.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.443ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.176ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.346ns (1.388 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X32Y103.B2     net (fanout=131)      1.159   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X32Y103.BMUX   Tilo                  0.376   module_1_i/axi_interconnect_1_M_BVALID
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/Mmux_start11
+    SLICE_X30Y99.CE      net (fanout=4)        0.849   module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/start
+    SLICE_X30Y99.CLK     Tceck                 0.169   module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1
+    -------------------------------------------------  ---------------------------
+    Total                                      5.176ns (1.385ns logic, 3.791ns route)
+                                                       (26.8% logic, 73.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.459ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_13 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.155ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y95.SR      net (fanout=18)       0.953   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y95.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_14
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_13
+    -------------------------------------------------  ---------------------------
+    Total                                      5.155ns (1.393ns logic, 3.762ns route)
+                                                       (27.0% logic, 73.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.459ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_11 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.155ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y95.SR      net (fanout=18)       0.953   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y95.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_14
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_11
+    -------------------------------------------------  ---------------------------
+    Total                                      5.155ns (1.393ns logic, 3.762ns route)
+                                                       (27.0% logic, 73.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.459ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_14 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.155ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y95.SR      net (fanout=18)       0.953   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y95.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_14
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_14
+    -------------------------------------------------  ---------------------------
+    Total                                      5.155ns (1.393ns logic, 3.762ns route)
+                                                       (27.0% logic, 73.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.459ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_12 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.155ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.351ns (1.383 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X27Y95.SR      net (fanout=18)       0.953   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X27Y95.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_14
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_12
+    -------------------------------------------------  ---------------------------
+    Total                                      5.155ns (1.393ns logic, 3.762ns route)
+                                                       (27.0% logic, 73.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.467ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_27 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.151ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.347ns (1.387 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X29Y94.SR      net (fanout=18)       0.949   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X29Y94.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_29
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_27
+    -------------------------------------------------  ---------------------------
+    Total                                      5.151ns (1.393ns logic, 3.758ns route)
+                                                       (27.0% logic, 73.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.467ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_26 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.151ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.347ns (1.387 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X29Y94.SR      net (fanout=18)       0.949   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X29Y94.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_29
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_26
+    -------------------------------------------------  ---------------------------
+    Total                                      5.151ns (1.393ns logic, 3.758ns route)
+                                                       (27.0% logic, 73.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.467ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_28 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.151ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.347ns (1.387 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X29Y94.SR      net (fanout=18)       0.949   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X29Y94.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_29
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_28
+    -------------------------------------------------  ---------------------------
+    Total                                      5.151ns (1.393ns logic, 3.758ns route)
+                                                       (27.0% logic, 73.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.467ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_29 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.151ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.347ns (1.387 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X29Y94.SR      net (fanout=18)       0.949   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X29Y94.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_29
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_29
+    -------------------------------------------------  ---------------------------
+    Total                                      5.151ns (1.393ns logic, 3.758ns route)
+                                                       (27.0% logic, 73.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.470ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.148ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.347ns (1.387 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X29Y95.SR      net (fanout=18)       0.946   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X29Y95.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_18
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_16
+    -------------------------------------------------  ---------------------------
+    Total                                      5.148ns (1.393ns logic, 3.755ns route)
+                                                       (27.1% logic, 72.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.470ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.148ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.347ns (1.387 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X29Y95.SR      net (fanout=18)       0.946   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X29Y95.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_18
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_18
+    -------------------------------------------------  ---------------------------
+    Total                                      5.148ns (1.393ns logic, 3.755ns route)
+                                                       (27.1% logic, 72.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.470ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_17 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.148ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.347ns (1.387 - 1.734)
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y107.CMUX   Tshcko                0.592   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C2     net (fanout=23)       0.937   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X29Y107.C      Tilo                  0.124   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X31Y102.B3     net (fanout=2)        0.846   module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X31Y102.B      Tilo                  0.124   sLED_DutyCycle[26]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X29Y98.C5      net (fanout=131)      1.026   module_1_i/axi_interconnect_1_M_ARVALID
+    SLICE_X29Y98.C       Tilo                  0.124   module_1_i/axi_interconnect_1_M_RDATA[3]
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst1
+    SLICE_X29Y95.SR      net (fanout=18)       0.946   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Read_Reg_Rst
+    SLICE_X29Y95.CLK     Tsrck                 0.429   module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_18
+                                                       module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_17
+    -------------------------------------------------  ---------------------------
+    Total                                      5.148ns (1.393ns logic, 3.755ns route)
+                                                       (27.1% logic, 72.9% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_0" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: -14.736ns (max period limit - period)
+  Period: 20.000ns
+  Max period limit: 5.264ns (189.970MHz) (Tdlycper_REFCLK)
+  Physical resource: AdcToplevel_I_AdcClk_v7/AdcClk_delayctrl/REFCLK
+  Logical resource: AdcToplevel_I_AdcClk_v7/AdcClk_delayctrl/REFCLK
+  Location pin: IDELAYCTRL_X1Y2.REFCLK
+  Clock network: AdcToplevel_I_AdcClk_v7/REF_CLOCK
+--------------------------------------------------------------------------------
+Slack: 15.239ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 4.761ns (210.040MHz) (Tdlycper_REFCLK)
+  Physical resource: AdcToplevel_I_AdcClk_v7/AdcClk_delayctrl/REFCLK
+  Logical resource: AdcToplevel_I_AdcClk_v7/AdcClk_delayctrl/REFCLK
+  Location pin: IDELAYCTRL_X1Y2.REFCLK
+  Clock network: AdcToplevel_I_AdcClk_v7/REF_CLOCK
+--------------------------------------------------------------------------------
+Slack: 17.845ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.155ns (464.037MHz) (Tbcper_I(Fmax))
+  Physical resource: AdcToplevel_I_AdcClk_v7/BUFG_DlyCtrl/I0
+  Logical resource: AdcToplevel_I_AdcClk_v7/BUFG_DlyCtrl/I0
+  Location pin: BUFGCTRL_X0Y30.I0
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[27]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_24/CLK
+  Location pin: SLICE_X26Y89.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[27]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_24/CLK
+  Location pin: SLICE_X26Y89.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[27]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_25/CLK
+  Location pin: SLICE_X26Y89.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[27]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_25/CLK
+  Location pin: SLICE_X26Y89.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[27]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_26/CLK
+  Location pin: SLICE_X26Y89.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[27]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_26/CLK
+  Location pin: SLICE_X26Y89.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[27]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_27/CLK
+  Location pin: SLICE_X26Y89.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[27]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_27/CLK
+  Location pin: SLICE_X26Y89.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_20/CLK
+  Location pin: SLICE_X26Y90.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_20/CLK
+  Location pin: SLICE_X26Y90.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_21/CLK
+  Location pin: SLICE_X26Y90.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_21/CLK
+  Location pin: SLICE_X26Y90.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_22/CLK
+  Location pin: SLICE_X26Y90.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_22/CLK
+  Location pin: SLICE_X26Y90.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_23/CLK
+  Location pin: SLICE_X26Y90.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_23/CLK
+  Location pin: SLICE_X26Y90.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_20/CLK
+  Location pin: SLICE_X26Y91.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_20/CLK
+  Location pin: SLICE_X26Y91.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_21/CLK
+  Location pin: SLICE_X26Y91.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_21/CLK
+  Location pin: SLICE_X26Y91.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_22/CLK
+  Location pin: SLICE_X26Y91.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_22/CLK
+  Location pin: SLICE_X26Y91.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_23/CLK
+  Location pin: SLICE_X26Y91.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In[23]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_23/CLK
+  Location pin: SLICE_X26Y91.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In[27]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_24/CLK
+  Location pin: SLICE_X26Y93.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In[27]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_24/CLK
+  Location pin: SLICE_X26Y93.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In[27]/CLK
+  Logical resource: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_25/CLK
+  Location pin: SLICE_X26Y93.CLK
+  Clock network: sprocessing_system7_0_FCLK_CLK0_pin
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_axi_interconnect_1_reset_resync_path" TIG;
+
+ 2 paths analyzed, 2 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+Delay:                  1.092ns (data path - clock path skew + uncertainty)
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 (FF)
+  Destination:          module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
+  Data Path Delay:      1.057ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 to module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X37Y101.AQ     Tcko                  0.456   module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0
+    SLICE_X37Y101.BX     net (fanout=1)        0.520   module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[0]
+    SLICE_X37Y101.CLK    Tdick                 0.081   module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
+    -------------------------------------------------  ---------------------------
+    Total                                      1.057ns (0.537ns logic, 0.520ns route)
+                                                       (50.8% logic, 49.2% route)
+
+--------------------------------------------------------------------------------
+Delay:                  1.071ns (data path - clock path skew + uncertainty)
+  Source:               module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
+  Destination:          module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2 (FF)
+  Data Path Delay:      1.036ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         sprocessing_system7_0_FCLK_CLK0_pin rising at 0.000ns
+  Destination Clock:    sprocessing_system7_0_FCLK_CLK0_pin rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 to module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X37Y101.BQ     Tcko                  0.456   module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
+    SLICE_X37Y101.CX     net (fanout=1)        0.519   module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[1]
+    SLICE_X37Y101.CLK    Tdick                 0.061   module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[2]
+                                                       module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2
+    -------------------------------------------------  ---------------------------
+    Total                                      1.036ns (0.517ns logic, 0.519ns route)
+                                                       (49.9% logic, 50.1% route)
+
+--------------------------------------------------------------------------------
+
+
+1 constraint not met.
+
+
+Data Sheet report:
+-----------------
+No constraints were found to generate data for the Data Sheet Report section.
+Use the Advanced Analysis (-a) option or generate global constraints for each
+clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+
+Timing summary:
+---------------
+
+Timing errors: 1  Score: 14736  (Setup/Max: 0, Hold: 0, Component Switching Limit: 14736)
+
+Constraints cover 5099 paths, 0 nets, and 1999 connections
+
+Design statistics:
+   Minimum period:   5.987ns{1}   (Maximum frequency: 167.029MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed Aug 21 18:13:48 2013 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 627 MB
+
+
+

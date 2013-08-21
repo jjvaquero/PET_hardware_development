@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="LIT" num="702" delta="new" ><arg fmt="%s" index="1">PAD symbol &quot;processing_system7_0_PS_SRSTB_pin&quot;</arg> is not constrained (LOC) to a specific location.
+</msg>
+
+<msg type="info" file="LIT" num="243" delta="new" >Logical network <arg fmt="%s" index="1">module_1_i/axi_interconnect_1_M_WSTRB[3]</arg> has no load.
+</msg>
+
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">1269</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">module_1_i/axi_interconnect_1_M_WSTRB[2],
+module_1_i/axi_interconnect_1_M_WSTRB[1],
+module_1_i/axi_interconnect_1_M_WSTRB[0],
+module_1_i/axi_interconnect_1_M_ARADDR[7],
+module_1_i/axi_interconnect_1_M_ARADDR[6]</arg>
+To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
+</msg>
+
+<msg type="info" file="MapLib" num="1078" delta="new" ><arg fmt="%s" index="1">IDELAYCTRL symbol &quot;AdcToplevel_I_AdcClk_v7/AdcClk_delayctrl&quot; (output signal=&lt;none&gt;)</arg> does not have assigned IODELAY_GROUP. A default GROUP &quot;<arg fmt="%s" index="2">MapGeneratedIodelayGroup</arg>&quot; will be assigned.
+The following IODELAY Components are assigned to the same GROUP:
+<arg fmt="%s" index="3">IDELAYE2 symbol &quot;AdcToplevel_I_AdcClk_v7/AdcClk_idelaye2&quot; (output signal=AdcToplevel_I_AdcClk_v7/data_in_from_pins_delay)
+</arg>
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">ADC_Data1[0]</arg> connected to top level port <arg fmt="%s" index="2">ADC_Data1(0)</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">ADC_Data1[1]</arg> connected to top level port <arg fmt="%s" index="2">ADC_Data1(1)</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">ADC_Data0[0]</arg> connected to top level port <arg fmt="%s" index="2">ADC_Data0(0)</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">ADC_Data0[1]</arg> connected to top level port <arg fmt="%s" index="2">ADC_Data0(1)</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">FCLK[0]</arg> connected to top level port <arg fmt="%s" index="2">FCLK(0)</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">FCLK[1]</arg> connected to top level port <arg fmt="%s" index="2">FCLK(1)</arg> has been removed.
+</msg>
+
+<msg type="info" file="LIT" num="244" delta="new" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
+</msg>
+
+<msg type="warning" file="Pack" num="2912" delta="new" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0</arg>&quot; failed to join the &quot;<arg fmt="%s" index="2">OLOGICE2</arg>&quot; comp matched to output buffer &quot;<arg fmt="%s" index="3">LEDS_2_OBUF</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="4">The LUT-1 inverter PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0 drives multiple loads.</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2912" delta="new" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0</arg>&quot; failed to join the &quot;<arg fmt="%s" index="2">OLOGICE2</arg>&quot; comp matched to output buffer &quot;<arg fmt="%s" index="3">LEDS_1_OBUF</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="4">The LUT-1 inverter PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0 drives multiple loads.</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2912" delta="new" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0</arg>&quot; failed to join the &quot;<arg fmt="%s" index="2">OLOGICE2</arg>&quot; comp matched to output buffer &quot;<arg fmt="%s" index="3">LEDS_7_OBUF</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="4">The LUT-1 inverter PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0 drives multiple loads.</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2912" delta="new" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0</arg>&quot; failed to join the &quot;<arg fmt="%s" index="2">OLOGICE2</arg>&quot; comp matched to output buffer &quot;<arg fmt="%s" index="3">LEDS_4_OBUF</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="4">The LUT-1 inverter PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0 drives multiple loads.</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2912" delta="new" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0</arg>&quot; failed to join the &quot;<arg fmt="%s" index="2">OLOGICE2</arg>&quot; comp matched to output buffer &quot;<arg fmt="%s" index="3">LEDS_3_OBUF</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="4">The LUT-1 inverter PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0 drives multiple loads.</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2912" delta="new" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0</arg>&quot; failed to join the &quot;<arg fmt="%s" index="2">OLOGICE2</arg>&quot; comp matched to output buffer &quot;<arg fmt="%s" index="3">LEDS_6_OBUF</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="4">The LUT-1 inverter PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0 drives multiple loads.</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2912" delta="new" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0</arg>&quot; failed to join the &quot;<arg fmt="%s" index="2">OLOGICE2</arg>&quot; comp matched to output buffer &quot;<arg fmt="%s" index="3">LEDS_5_OBUF</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="4">The LUT-1 inverter PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy&lt;15&gt;_inv1_INV_0 drives multiple loads.</arg>
+</msg>
+
+<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">DCLK[0]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
+</msg>
+
+<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">DCLK[1]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
+</msg>
+
+<msg type="info" file="Pack" num="1716" delta="new" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
+</msg>
+
+<msg type="info" file="Pack" num="1720" delta="new" >Initializing voltage to <arg fmt="%0.3f" index="1">0.950</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">0.950</arg> to <arg fmt="%0.3f" index="3">1.050</arg> Volts)
+</msg>
+
+<msg type="info" file="Timing" num="3386" delta="new" >Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx Command Line Tools User Guide for information on generating a TSI report.</msg>
+
+<msg type="warning" file="Pack" num="2768" delta="new" >At least one timing constraint is impossible to meet because component switching limit violations have been detected for a constrained component. A timing constraint summary below shows the failing constraints (preceded with an Asterisk (*)). Please use the Timing Analyzer (GUI) or TRCE (command line) with the Mapped NCD and PCF files to evaluate the component switching limit violations in more detail. Evaluate the datasheet for alternative configurations for the component that could allow the frequencies requested in the constraint. Otherwise, the timing constraint covering this component might need to be modified to satisfy the component switching limits specified in the datasheet.
+</msg>
+
+<msg type="info" file="Timing" num="3284" delta="new" >This timing report was generated using estimated delay information.  For accurate numbers, please refer to the post Place and Route timing report.</msg>
+
+<msg type="info" file="Timing" num="2761" delta="new" >N/A entries in the Constraints List may indicate that the constraint is not analyzed due to the following: No paths covered by this constraint; Other constraints intersect with this constraint; or This constraint was disabled by a Path Tracing Control. Please run the Timespec Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.</msg>
+
+<msg type="info" file="Map" num="215" delta="new" >The Interim Design Summary has been generated in the MAP Report (.mrp).
+</msg>
+
+<msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
+</msg>
+
+</messages>
+

@@ -1,0 +1,338 @@
+Release 14.5 Map P.58f (nt64)
+Xilinx Map Application Log File for Design 'module_1_stub'
+
+Design Information
+------------------
+Command Line   : map -intstyle pa -w module_1_stub.ngd 
+Target Device  : xc7z020
+Target Package : clg484
+Target Speed   : -1
+Mapper Version : zynq -- $Revision: 1.55 $
+Mapped Date    : Wed Aug 21 18:12:52 2013
+
+WARNING:LIT:702 - PAD symbol "processing_system7_0_PS_SRSTB_pin" is not
+   constrained (LOC) to a specific location.
+Mapping design into LUTs...
+WARNING:MapLib:701 - Signal ADC_Data1[0] connected to top level port
+   ADC_Data1(0) has been removed.
+WARNING:MapLib:701 - Signal ADC_Data1[1] connected to top level port
+   ADC_Data1(1) has been removed.
+WARNING:MapLib:701 - Signal ADC_Data0[0] connected to top level port
+   ADC_Data0(0) has been removed.
+WARNING:MapLib:701 - Signal ADC_Data0[1] connected to top level port
+   ADC_Data0(1) has been removed.
+WARNING:MapLib:701 - Signal FCLK[0] connected to top level port FCLK(0) has been
+   removed.
+WARNING:MapLib:701 - Signal FCLK[1] connected to top level port FCLK(1) has been
+   removed.
+Running directed packing...
+WARNING:Pack:2912 - The LUT-1 inverter
+   "PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0" failed to
+   join the "OLOGICE2" comp matched to output buffer "LEDS_2_OBUF".  This may
+   result in suboptimal timing.  The LUT-1 inverter
+   PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0 drives multiple
+   loads.
+WARNING:Pack:2912 - The LUT-1 inverter
+   "PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0" failed to
+   join the "OLOGICE2" comp matched to output buffer "LEDS_1_OBUF".  This may
+   result in suboptimal timing.  The LUT-1 inverter
+   PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0 drives multiple
+   loads.
+WARNING:Pack:2912 - The LUT-1 inverter
+   "PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0" failed to
+   join the "OLOGICE2" comp matched to output buffer "LEDS_7_OBUF".  This may
+   result in suboptimal timing.  The LUT-1 inverter
+   PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0 drives multiple
+   loads.
+WARNING:Pack:2912 - The LUT-1 inverter
+   "PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0" failed to
+   join the "OLOGICE2" comp matched to output buffer "LEDS_4_OBUF".  This may
+   result in suboptimal timing.  The LUT-1 inverter
+   PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0 drives multiple
+   loads.
+WARNING:Pack:2912 - The LUT-1 inverter
+   "PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0" failed to
+   join the "OLOGICE2" comp matched to output buffer "LEDS_3_OBUF".  This may
+   result in suboptimal timing.  The LUT-1 inverter
+   PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0 drives multiple
+   loads.
+WARNING:Pack:2912 - The LUT-1 inverter
+   "PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0" failed to
+   join the "OLOGICE2" comp matched to output buffer "LEDS_6_OBUF".  This may
+   result in suboptimal timing.  The LUT-1 inverter
+   PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0 drives multiple
+   loads.
+WARNING:Pack:2912 - The LUT-1 inverter
+   "PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0" failed to
+   join the "OLOGICE2" comp matched to output buffer "LEDS_5_OBUF".  This may
+   result in suboptimal timing.  The LUT-1 inverter
+   PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0 drives multiple
+   loads.
+WARNING:Pack:2949 - The I/O component DCLK[0] uses an DQS_BIAS attribute with
+   I/O standard LVDS_25. The DQS_BIAS attribute will be ignored since the
+   selected I/O standard does not support DQS_BIAS usage.
+WARNING:Pack:2949 - The I/O component DCLK[1] uses an DQS_BIAS attribute with
+   I/O standard LVDS_25. The DQS_BIAS attribute will be ignored since the
+   selected I/O standard does not support DQS_BIAS usage.
+Running delay-based LUT packing...
+Updating timing models...
+WARNING:Pack:2768 - At least one timing constraint is impossible to meet because component switching limit violations have been detected for
+   a constrained component. A timing constraint summary below shows the failing constraints (preceded with an Asterisk (*)). Please use the
+   Timing Analyzer (GUI) or TRCE (command line) with the Mapped NCD and PCF files to evaluate the component switching limit violations in
+   more detail. Evaluate the datasheet for alternative configurations for the component that could allow the frequencies requested in the
+   constraint. Otherwise, the timing constraint covering this component might need to be modified to satisfy the component switching limits
+   specified in the datasheet.
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more 
+   information, see the TSI report.  Please consult the Xilinx Command Line 
+   Tools User Guide for information on generating a TSI report.
+INFO:Timing:3284 - This timing report was generated using estimated delay 
+   information.  For accurate numbers, please refer to the post Place and Route 
+   timing report.
+Number of Timing Constraints that were not applied: 1
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+* TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_ | SETUP       |    17.553ns|     2.447ns|       0|           0
+  0" 50 MHz HIGH 50%                        | HOLD        |     0.069ns|            |       0|           0
+                                            | MINPERIOD   |    15.239ns|     4.761ns|       0|           0
+                                            | MAXPERIOD   |   -14.736ns|            |       4|       58944
+----------------------------------------------------------------------------------------------------------
+  TS_clk_fpga_1 = PERIOD TIMEGRP "clk_fpga_ | N/A         |         N/A|         N/A|     N/A|         N/A
+  1" 5 MHz HIGH 50%                         |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_axi_interconnect_1_reset_resync_ | SETUP       |         N/A|     0.549ns|     N/A|           0
+  path" TIG                                 |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+
+
+1 constraint not met.
+INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
+   constraint is not analyzed due to the following: No paths covered by this 
+   constraint; Other constraints intersect with this constraint; or This 
+   constraint was disabled by a Path Tracing Control. Please run the Timespec 
+   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
+
+
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 17 secs 
+Total CPU  time at the beginning of Placer: 17 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:b6647025) REAL time: 18 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:b6647025) REAL time: 18 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:98bac99) REAL time: 18 secs 
+
+Phase 4.2  Initial Placement for Architecture Specific Features
+
+...........................
+
+
+There are 6 clock regions on the target FPGA device:
+|------------------------------------------|------------------------------------------|
+| CLOCKREGION_X0Y2:                        | CLOCKREGION_X1Y2:                        |
+|   0 BUFRs available, 0 in use            |   0 BUFRs available, 0 in use            |
+|   4 Regional Clock Spines, 0 in use      |   4 Regional Clock Spines, 0 in use      |
+|   0 edge BUFIOs available, 0 in use      |   4 edge BUFIOs available, 0 in use      |
+|   0 center BUFIOs available, 0 in use    |   0 center BUFIOs available, 0 in use    |
+|                                          |                                          |
+|------------------------------------------|------------------------------------------|
+| CLOCKREGION_X0Y1:                        | CLOCKREGION_X1Y1:                        |
+|   0 BUFRs available, 0 in use            |   0 BUFRs available, 0 in use            |
+|   4 Regional Clock Spines, 0 in use      |   4 Regional Clock Spines, 0 in use      |
+|   0 edge BUFIOs available, 0 in use      |   4 edge BUFIOs available, 0 in use      |
+|   0 center BUFIOs available, 0 in use    |   0 center BUFIOs available, 0 in use    |
+|                                          |                                          |
+|------------------------------------------|------------------------------------------|
+| CLOCKREGION_X0Y0:                        | CLOCKREGION_X1Y0:                        |
+|   0 BUFRs available, 0 in use            |   0 BUFRs available, 0 in use            |
+|   4 Regional Clock Spines, 0 in use      |   4 Regional Clock Spines, 0 in use      |
+|   4 edge BUFIOs available, 0 in use      |   4 edge BUFIOs available, 0 in use      |
+|   0 center BUFIOs available, 0 in use    |   0 center BUFIOs available, 0 in use    |
+|                                          |                                          |
+|------------------------------------------|------------------------------------------|
+
+
+Clock-Region: <CLOCKREGION_X1Y2>
+  key resource utilizations (used/available): edge-bufios - 1/4; bufrs - 0/0; regional-clock-spines - 0/4
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|       |    clock    | BRAM |     |    |        |        |       |       |       |      |      |     |      |
+|       |    region   | FIFO | DCM | GT | ILOGIC | OLOGIC |   FF  |  LUTM |  LUTL | MULT | EMAC | PPC | PCIe | <- (Types of Resources in Clock Region)
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+|       |CurrentRegion|  90  |  0  |  0 |   50   |   50   | 20800 |  6800 | 14000 |  40  |   0  |  0  |   0  | <- Available resources in the current region
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+|       | Lower Region|  90  |  0  |  0 |   50   |   50   | 20800 |  6800 | 14000 |  40  |   0  |  0  |   0  | <- Available resources in the lower region
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| clock |    region   |                                                                                      -----------------------------------------------
+|  type |  expansion  |                                                                                      | <IO/Regional clock Net Name>
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+
+
+
+
+######################################################################################
+# REGIONAL CLOCKING RESOURCE DISTRIBUTION UCF REPORT:
+#
+# Number of Regional Clocking Regions in the device: 6  (4 clock spines in each)
+# Number of Regional Clock Networks used in this design: 2 (each network can be
+# composed of up to 3 clock spines and cover up to 3 regional clock regions)
+# 
+######################################################################################
+
+# Regional-Clock "AdcToplevel_I_AdcClk_v7/BitClk_RefClkOut" driven by "BUFR_X1Y8"
+INST "AdcToplevel_I_AdcClk_v7/Gen_Bufr_Div_3.AdcClk_I_Bufr" LOC = "BUFR_X1Y8" ;
+NET "AdcToplevel_I_AdcClk_v7/BitClk_RefClkOut" TNM_NET = "TN_AdcToplevel_I_AdcClk_v7/BitClk_RefClkOut" ;
+TIMEGRP "TN_AdcToplevel_I_AdcClk_v7/BitClk_RefClkOut" AREA_GROUP = "CLKAG_AdcToplevel_I_AdcClk_v7/BitClk_RefClkOut" ;
+AREA_GROUP "CLKAG_AdcToplevel_I_AdcClk_v7/BitClk_RefClkOut" RANGE = CLOCKREGION_X1Y2;
+
+
+# IO-Clock "AdcToplevel_I_AdcClk_v7/IntBitClk_MonClkOut" driven by "BUFIO_X1Y9"
+INST "AdcToplevel_I_AdcClk_v7/AdcClk_I_Bufio" LOC = "BUFIO_X1Y9" ;
+NET "AdcToplevel_I_AdcClk_v7/IntBitClk_MonClkOut" TNM_NET = "TN_AdcToplevel_I_AdcClk_v7/IntBitClk_MonClkOut" ;
+TIMEGRP "TN_AdcToplevel_I_AdcClk_v7/IntBitClk_MonClkOut" AREA_GROUP =
+"CLKAG_AdcToplevel_I_AdcClk_v7/IntBitClk_MonClkOut" ;
+AREA_GROUP "CLKAG_AdcToplevel_I_AdcClk_v7/IntBitClk_MonClkOut" RANGE = CLOCKREGION_X1Y2;
+
+
+Phase 4.2  Initial Placement for Architecture Specific Features (Checksum:ad639dd5) REAL time: 21 secs 
+
+Phase 5.30  Global Clock Region Assignment
+Phase 5.30  Global Clock Region Assignment (Checksum:ad639dd5) REAL time: 21 secs 
+
+Phase 6.3  Local Placement Optimization
+Phase 6.3  Local Placement Optimization (Checksum:ad639dd5) REAL time: 21 secs 
+
+Phase 7.5  Local Placement Optimization
+Phase 7.5  Local Placement Optimization (Checksum:ad639dd5) REAL time: 21 secs 
+
+Phase 8.8  Global Placement
+..................
+...................
+............................................................................................................................................................................................
+Phase 8.8  Global Placement (Checksum:d92c8ef0) REAL time: 23 secs 
+
+Phase 9.5  Local Placement Optimization
+Phase 9.5  Local Placement Optimization (Checksum:d92c8ef0) REAL time: 23 secs 
+
+Phase 10.18  Placement Optimization
+Phase 10.18  Placement Optimization (Checksum:cdbcccf7) REAL time: 24 secs 
+
+Phase 11.5  Local Placement Optimization
+Phase 11.5  Local Placement Optimization (Checksum:cdbcccf7) REAL time: 24 secs 
+
+Phase 12.34  Placement Validation
+Phase 12.34  Placement Validation (Checksum:cdbcccf7) REAL time: 24 secs 
+
+Total REAL time to Placer completion: 24 secs 
+Total CPU  time to Placer completion: 24 secs 
+Running post-placement packing...
+Writing output files...
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:   17
+Slice Logic Utilization:
+  Number of Slice Registers:                   437 out of 106,400    1%
+    Number used as Flip Flops:                 437
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                        546 out of  53,200    1%
+    Number used as logic:                      473 out of  53,200    1%
+      Number using O6 output only:             362
+      Number using O5 output only:              37
+      Number using O5 and O6:                   74
+      Number used as ROM:                        0
+    Number used as Memory:                      64 out of  17,400    1%
+      Number used as Dual Port RAM:              0
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:            64
+        Number using O6 output only:            64
+        Number using O5 output only:             0
+        Number using O5 and O6:                  0
+    Number used exclusively as route-thrus:      9
+      Number with same-slice register load:      8
+      Number with same-slice carry load:         1
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   161 out of  13,300    1%
+  Number of LUT Flip Flop pairs used:          559
+    Number with an unused Flip Flop:           142 out of     559   25%
+    Number with an unused LUT:                  13 out of     559    2%
+    Number of fully used LUT-FF pairs:         404 out of     559   72%
+    Number of unique control sets:              26
+    Number of slice register sites lost
+      to control set restrictions:              91 out of 106,400    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        12 out of     200    6%
+    Number of LOCed IOBs:                       12 out of      12  100%
+  Number of bonded IOPAD:                      130 out of     130  100%
+
+Specific Feature Utilization:
+  Number of RAMB36E1/FIFO36E1s:                  0 out of     140    0%
+  Number of RAMB18E1/FIFO18E1s:                  0 out of     280    0%
+  Number of BUFG/BUFGCTRLs:                      3 out of      32    9%
+    Number used as BUFGs:                        3
+    Number used as BUFGCTRLs:                    0
+  Number of IDELAYE2/IDELAYE2_FINEDELAYs:        1 out of     200    1%
+    Number used as IDELAYE2s:                    1
+    Number used as IDELAYE2_FINEDELAYs:          0
+  Number of ILOGICE2/ILOGICE3/ISERDESE2s:        1 out of     200    1%
+    Number used as ILOGICE2s:                    0
+  Number used as  ILOGICE3s:                     0
+    Number used as ISERDESE2s:                   1
+  Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0
+  Number of OLOGICE2/OLOGICE3/OSERDESE2s:        0 out of     200    0%
+  Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      16    0%
+  Number of PHASER_OUT/PHASER_OUT_PHYs:          0 out of      16    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHCEs:                             0 out of      72    0%
+  Number of BUFRs:                               1 out of      16    6%
+  Number of CAPTUREs:                            0 out of       1    0%
+  Number of DNA_PORTs:                           0 out of       1    0%
+  Number of DSP48E1s:                            0 out of     220    0%
+  Number of EFUSE_USRs:                          0 out of       1    0%
+  Number of FRAME_ECCs:                          0 out of       1    0%
+  Number of ICAPs:                               0 out of       2    0%
+  Number of IDELAYCTRLs:                         1 out of       4   25%
+  Number of IN_FIFOs:                            0 out of      16    0%
+  Number of MMCME2_ADVs:                         0 out of       4    0%
+  Number of OUT_FIFOs:                           0 out of      16    0%
+  Number of PHASER_REFs:                         0 out of       4    0%
+  Number of PHY_CONTROLs:                        0 out of       4    0%
+  Number of PLLE2_ADVs:                          0 out of       4    0%
+  Number of PS7s:                                1 out of       1  100%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of XADCs:                               0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                3.07
+
+Peak Memory Usage:  798 MB
+Total REAL time to MAP completion:  25 secs 
+Total CPU time to MAP completion:   25 secs 
+
+Mapping completed.
+See MAP report file "module_1_stub.mrp" for details.
