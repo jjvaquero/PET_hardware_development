@@ -11,16 +11,43 @@
 <msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" Line 33: <arg fmt="%s" index="1">dutycycle</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 85: Net &lt;<arg fmt="%s" index="1">BitClkReSync</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 86: Net &lt;<arg fmt="%s" index="1">BitClkReSync</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">166</arg>: Output port &lt;<arg fmt="%s" index="3">processing_system7_0_FCLK_RESET0_N_pin</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">module_1_i</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">218</arg>: Output port &lt;<arg fmt="%s" index="3">processing_system7_0_FCLK_RESET0_N_pin</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">module_1_i</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">238</arg>: Output port &lt;<arg fmt="%s" index="3">BitClkAlignWarn</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcClk_v7</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">292</arg>: Output port &lt;<arg fmt="%s" index="3">BitClkAlignWarn</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcClk_v7</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">238</arg>: Output port &lt;<arg fmt="%s" index="3">BitClkInvrtd</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcClk_v7</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">292</arg>: Output port &lt;<arg fmt="%s" index="3">BitClkInvrtd</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcClk_v7</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">316</arg>: Output port &lt;<arg fmt="%s" index="3">FrmClkDat</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcFrm_v7</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">316</arg>: Output port &lt;<arg fmt="%s" index="3">FrmClkBitSlip_p</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcFrm_v7</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">316</arg>: Output port &lt;<arg fmt="%s" index="3">FrmClkBitSlip_n</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcFrm_v7</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">316</arg>: Output port &lt;<arg fmt="%s" index="3">FrmClkSwapMux</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcFrm_v7</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">316</arg>: Output port &lt;<arg fmt="%s" index="3">FrmClkMsbRegEna</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcFrm_v7</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">316</arg>: Output port &lt;<arg fmt="%s" index="3">FrmClkLsbRegEna</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcFrm_v7</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">316</arg>: Output port &lt;<arg fmt="%s" index="3">FrmClkOut</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcFrm_v7</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">316</arg>: Output port &lt;<arg fmt="%s" index="3">FrmClkRstOut</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcFrm_v7</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">316</arg>: Output port &lt;<arg fmt="%s" index="3">FrmClkSyncWarn</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcToplevel_I_AdcFrm_v7</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">BitClkReSync</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
@@ -29,10 +56,52 @@
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">DutyCycle&lt;31:31&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_n0193</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_n0194</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3217" delta="new" >HDL ADVISOR - Register &lt;<arg fmt="%s" index="1">fsmfake1</arg>&gt; currently described with an asynchronous reset, could be combined with distributed RAM &lt;<arg fmt="%s" index="2">Mram_IntFrmEqu_d_PWR_17_o_wide_mux_27_OUT</arg>&gt; for implementation on block RAM resources if you made this reset synchronous instead.
+</msg>
+
+<msg type="info" file="Xst" num="3217" delta="new" >HDL ADVISOR - Register &lt;<arg fmt="%s" index="1">IntFrmRegEna_d</arg>&gt; currently described with an asynchronous reset, could be combined with distributed RAM &lt;<arg fmt="%s" index="2">Mram_IntFrmEqu_d_GND_65_o_Mux_12_o</arg>&gt; for implementation on block RAM resources if you made this reset synchronous instead.
+</msg>
+
+<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram__n0201</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">fsmfake1_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">AdcFrm_v7</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">fsmfake1_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">AdcFrm_v7</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">fsmfake1_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">AdcFrm_v7</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">fsmfake1_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">AdcFrm_v7</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">fsmfake1_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">AdcFrm_v7</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">IntFrmSwapMux_d</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">AdcFrm_v7</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">IntFrmClkDat_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">AdcFrm_v7</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">IntFrmClkDat_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">AdcFrm_v7</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">IntFrmClkDat_14</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">AdcFrm_v7</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">IntFrmClkDat_15</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">AdcFrm_v7</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ReturnState_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">AdcClk_v7</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="1901" delta="new" >Instance <arg fmt="%s" index="1">BUFMR_inst</arg> in unit <arg fmt="%s" index="2">AdcClk_v7</arg> of type <arg fmt="%s" index="3">BUFMR</arg> has been replaced by <arg fmt="%s" index="4">BUFMRCE</arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ReturnState_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">AdcClk_v7</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;ReturnState_3&gt; </arg>
@@ -45,6 +114,105 @@
 </msg>
 
 <msg type="warning" file="Xst" num="528" delta="new" >Multi-source in Unit &lt;<arg fmt="%s" index="1">processing_system7_0</arg>&gt; on signal &lt;<arg fmt="%s" index="2">PS_PORB</arg>&gt;; this signal is connected to multiple drivers.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmWarnCnt_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmWarnCnt_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmWarnCnt_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmLsbRegEna_d</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmRegEna_d</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDat_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDat_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDat_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDat_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDat_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmDat_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmMsbRegEna_d</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmWarnCntTc_d</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmLsbMsb_d</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcFrm_v7/IntFrmMsbAllZero_d</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">AdcToplevel_I_AdcClk_v7/IntClkCtrlInvrtd</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.

@@ -1,8 +1,15 @@
 Release 14.5 Drc P.58f (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Wed Aug 21 18:14:07 2013
+Thu Aug 22 17:04:35 2013
 
 drc -z module_1_stub_routed.ncd module_1_stub.pcf
 
-DRC detected 0 errors and 0 warnings.
+WARNING:PhysDesignRules:367 - The signal
+   <AdcToplevel_I_AdcFrm_v7/IntFrmClkToIsrds_p> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <AdcToplevel_I_AdcFrm_v7/IntFrmClkToIsrds_n> is incomplete. The signal does
+   not drive any load pins in the design.
+DRC detected 0 errors and 2 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

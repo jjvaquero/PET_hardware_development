@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Wed Aug 21 18:13:29 2013">
+  <application stringID="par" timeStamp="Thu Aug 22 17:02:36 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -69,24 +69,24 @@
         <item AVAILABLE="200" dataType="int" label="Number of External IOBs" stringID="PAR_EXTERNAL_IOB" value="1">
           <item AVAILABLE="1" dataType="int" label="Number of LOCed IOBs" stringID="PAR_LOC_IOB" value="1"/>
         </item>
-        <item AVAILABLE="13300" dataType="int" stringID="PAR_SLICES" value="161"/>
+        <item AVAILABLE="13300" dataType="int" stringID="PAR_SLICES" value="168"/>
         <item AVAILABLE="106400" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="437">
           <item dataType="int" label="Number used as Flip Flops" stringID="PAR_FLIP_FLOPS" value="437"/>
           <item dataType="int" label="Number used as Latches" stringID="PAR_LATCHES" value="0"/>
           <item dataType="int" label="Number used as LatchThrus" stringID="PAR_LATCH_THRUS" value="0"/>
         </item>
-        <item AVAILABLE="53200" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="546"/>
-        <item AVAILABLE="53200" dataType="int" label="Number of Slice LUT-Flip Flop pairs" stringID="PAR_SLICE_LUT_FLIPFLOP_PAIRS" value="557"/>
+        <item AVAILABLE="53200" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="545"/>
+        <item AVAILABLE="53200" dataType="int" label="Number of Slice LUT-Flip Flop pairs" stringID="PAR_SLICE_LUT_FLIPFLOP_PAIRS" value="576"/>
       </section>
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="15 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="15 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="16 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="16 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="14736.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="16 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="16 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="17 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="17 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
@@ -114,9 +114,9 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGCTRL_X0Y31"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="119.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.323000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.974000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="121.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.325000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.975000"/>
           </row>
           <row stringID="row" value="3">
             <item label="Clock Net" stringID="CLOCK_NET" value="AdcToplevel_I_AdcClk_v7/REF_CLOCK"/>
@@ -135,6 +135,14 @@
             <item dataType="float" label="Fanout" stringID="FANOUT" value="2.000000"/>
             <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.000000"/>
             <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="0.320000"/>
+          </row>
+          <row stringID="row" value="5">
+            <item label="Clock Net" stringID="CLOCK_NET" value="AdcToplevel_I_AdcClk_v7/IntClkCtrl_OutClk"/>
+            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
+            <item label="Resource" stringID="RESOURCE" value="Local"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="1.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.000000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="0.656000"/>
           </row>
         </table>
       </section>
@@ -2284,17 +2292,29 @@
           </row>
           <row stringID="row" value="305">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="M19"/>
-            <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB33M"/>
+            <item label="Signal&#xA;Name" stringID="Signal_Name" value="FCLK[0]"/>
+            <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB33"/>
             <item label="Pin&#xA;Name" sort="smart" stringID="Pin_Name" value="IO_L13P_T2_MRCC_34"/>
-            <item stringID="Direction" value="UNUSED"/>
+            <item stringID="Direction" value="INPUT"/>
+            <item label="IO&#xA;Standard" sort="smart" stringID="IO_Standard" value="LVDS_25"/>
             <item label="IO Bank&#xA;Number" stringID="IO_Bank_Number" value="34"/>
+            <item label="IOB&#xA;Delay" stringID="IOB_Delay" value="NONE"/>
+            <item label="Constraint" stringID="Constraint" value="LOCATED"/>
+            <item label="IO&#xA;Register" stringID="IO_Register" value="NO"/>
+            <item label="Signal&#xA;Integrity" stringID="Signal_Integrity" value="NONE"/>
           </row>
           <row stringID="row" value="306">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="M20"/>
-            <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB33S"/>
+            <item label="Signal&#xA;Name" stringID="Signal_Name" value="FCLK[1]"/>
+            <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB33"/>
             <item label="Pin&#xA;Name" sort="smart" stringID="Pin_Name" value="IO_L13N_T2_MRCC_34"/>
-            <item stringID="Direction" value="UNUSED"/>
+            <item stringID="Direction" value="INPUT"/>
+            <item label="IO&#xA;Standard" sort="smart" stringID="IO_Standard" value="LVDS_25"/>
             <item label="IO Bank&#xA;Number" stringID="IO_Bank_Number" value="34"/>
+            <item label="IOB&#xA;Delay" stringID="IOB_Delay" value="NONE"/>
+            <item label="Constraint" stringID="Constraint" value="LOCATED"/>
+            <item label="IO&#xA;Register" stringID="IO_Register" value="NO"/>
+            <item label="Signal&#xA;Integrity" stringID="Signal_Integrity" value="NONE"/>
           </row>
           <row stringID="row" value="307">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="M21"/>
@@ -3517,7 +3537,7 @@
       <section stringID="PAR_UNROUTES_REPORT">
         <item dataType="int" stringID="PAR_UNROUTED_NETS" value="0"/>
         <item dataType="int" stringID="PAR_TOTAL_SOURCELESS_NETS" value="0"/>
-        <item dataType="int" stringID="PAR_TOTAL_LOADLESS_NETS" value="0"/>
+        <item dataType="int" stringID="PAR_TOTAL_LOADLESS_NETS" value="2"/>
       </section>
     </task>
   </application>

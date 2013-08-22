@@ -1,9 +1,14 @@
 Release 14.5 - par P.58f (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Wed Aug 21 18:13:36 2013
+Thu Aug 22 17:02:43 2013
 
 All signals are completely routed.
 
+WARNING:ParHelpers:361 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   AdcToplevel_I_AdcFrm_v7/IntFrmClkToIsrds_n
+   AdcToplevel_I_AdcFrm_v7/IntFrmClkToIsrds_p
 
 

@@ -2,7 +2,7 @@ Release 14.5 - xst P.58f (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: module_1_stub.prj
@@ -56,6 +56,9 @@ Cores Search Directories           : {..\..\XApp_v1.srcs\sources_1\edk\module_1\
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/new/AdcFrm_v7.vhd" into library work
+Parsing entity <AdcFrm_v7>.
+Parsing architecture <AdcFrm_struct_v7> of entity <adcfrm_v7>.
 Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/new/ADCClk_v7.vhd" into library work
 Parsing entity <AdcClk_v7>.
 Parsing architecture <AdcClk_struct> of entity <adcclk_v7>.
@@ -82,7 +85,12 @@ Elaborating entity <PWM_Controller> (architecture <behaviour>) from library <wor
 WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" Line 33: dutycycle should be on the sensitivity list of the process
 
 Elaborating entity <AdcClk_v7> (architecture <AdcClk_struct>) with generics from library <work>.
-WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 85: Net <BitClkReSync> does not have a driver.
+
+Elaborating entity <AdcFrm_v7> (architecture <AdcFrm_struct_v7>) with generics from library <work>.
+Note: " Pattern XORed/ORed = 000000"
+Note: " Pattern Shifted = 000000000000 Comparator Value A = 0000XXXXXXXX Comparator Value B = 00000000"
+Note: " Pattern Bit Swapped = 000000000000 Comparator Value C = 0000XXXXXXXX Comparator Value D = 00000000"
+WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 86: Net <BitClkReSync> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -91,9 +99,18 @@ WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/
 Synthesizing Unit <module_1_stub>.
     Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd".
     Set property "BOX_TYPE = user_black_box" for instance <module_1_i>.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 166: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 238: Output port <BitClkAlignWarn> of the instance <AdcToplevel_I_AdcClk_v7> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 238: Output port <BitClkInvrtd> of the instance <AdcToplevel_I_AdcClk_v7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 218: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 292: Output port <BitClkAlignWarn> of the instance <AdcToplevel_I_AdcClk_v7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 292: Output port <BitClkInvrtd> of the instance <AdcToplevel_I_AdcClk_v7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 316: Output port <FrmClkDat> of the instance <AdcToplevel_I_AdcFrm_v7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 316: Output port <FrmClkBitSlip_p> of the instance <AdcToplevel_I_AdcFrm_v7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 316: Output port <FrmClkBitSlip_n> of the instance <AdcToplevel_I_AdcFrm_v7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 316: Output port <FrmClkSwapMux> of the instance <AdcToplevel_I_AdcFrm_v7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 316: Output port <FrmClkMsbRegEna> of the instance <AdcToplevel_I_AdcFrm_v7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 316: Output port <FrmClkLsbRegEna> of the instance <AdcToplevel_I_AdcFrm_v7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 316: Output port <FrmClkOut> of the instance <AdcToplevel_I_AdcFrm_v7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 316: Output port <FrmClkRstOut> of the instance <AdcToplevel_I_AdcFrm_v7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 316: Output port <FrmClkSyncWarn> of the instance <AdcToplevel_I_AdcFrm_v7> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <BitClkReSync> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
@@ -136,12 +153,12 @@ Synthesizing Unit <AdcClk_v7>.
     Found 5-bit register for signal <IntNumIncDecIdly>.
     Found 5-bit register for signal <IntStepCnt>.
     Found 3-bit register for signal <IntProceedCnt>.
-    Found 3-bit adder for signal <IntProceedCnt[2]_GND_42_o_add_2_OUT> created at line 344.
-    Found 4-bit adder for signal <IntTimeOutCnt[3]_GND_42_o_add_11_OUT> created at line 426.
-    Found 5-bit adder for signal <IntStepCnt[4]_GND_42_o_add_41_OUT> created at line 488.
-    Found 5-bit subtractor for signal <GND_42_o_GND_42_o_sub_44_OUT<4:0>> created at line 515.
-    Found 32x4-bit Read Only RAM for signal <n0193>
-    Found 2-bit comparator equal for signal <n0052> created at line 450
+    Found 3-bit adder for signal <IntProceedCnt[2]_GND_42_o_add_2_OUT> created at line 355.
+    Found 4-bit adder for signal <IntTimeOutCnt[3]_GND_42_o_add_11_OUT> created at line 437.
+    Found 5-bit adder for signal <IntStepCnt[4]_GND_42_o_add_41_OUT> created at line 499.
+    Found 5-bit subtractor for signal <GND_42_o_GND_42_o_sub_44_OUT<4:0>> created at line 526.
+    Found 32x4-bit Read Only RAM for signal <n0194>
+    Found 2-bit comparator equal for signal <n0053> created at line 461
     Summary:
 	inferred   1 RAM(s).
 	inferred   4 Adder/Subtractor(s).
@@ -150,33 +167,97 @@ Synthesizing Unit <AdcClk_v7>.
 	inferred  34 Multiplexer(s).
 Unit <AdcClk_v7> synthesized.
 
+Synthesizing Unit <AdcFrm_v7>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/XApp_v1/XApp_v1.srcs/sources_1/new/AdcFrm_v7.vhd".
+        C_FAMILY = "7SERIES"
+        C_AdcBits = 12
+        C_AdcWireInt = 1
+        C_OnChipLvdsTerm = 0
+        C_FrmPattern = "000000000000"
+    Found 1-bit register for signal <IntFrmLsbRegEna_d>.
+    Found 1-bit register for signal <IntFrmMsbRegEna_d>.
+    Found 1-bit register for signal <IntFrmWarnCntTc_d>.
+    Found 1-bit register for signal <IntFrmRegEna_d>.
+    Found 3-bit register for signal <IntFrmWarnCnt>.
+    Found 6-bit register for signal <IntFrmDat>.
+    Found 16-bit register for signal <IntFrmClkDat>.
+    Found 1-bit register for signal <IntFrmMsbAllZero_d>.
+    Found 1-bit register for signal <IntFrmEqu_d>.
+    Found 1-bit register for signal <IntFrmSwapMux_d>.
+    Found 1-bit register for signal <IntFrmLsbMsb_d>.
+    Found 3-bit register for signal <IntFrmEvntCnt>.
+    Found 1-bit register for signal <IntFrmEvntCntTc_d>.
+    Found 4-bit register for signal <IntFrmSlipCnt>.
+    Found 1-bit register for signal <IntFrmSlipCntTc_d>.
+    Found 6-bit register for signal <IntFrmBitSlip>.
+    Found 1-bit register for signal <IntFrmClkDone>.
+    Found 1-bit register for signal <IntFrmDatSwp_5>.
+    Found 1-bit register for signal <IntFrmDatSwp_4>.
+    Found 1-bit register for signal <IntFrmDatSwp_3>.
+    Found 1-bit register for signal <IntFrmDatSwp_2>.
+    Found 1-bit register for signal <IntFrmDatSwp_1>.
+    Found 1-bit register for signal <IntFrmDatSwp_0>.
+    Found finite state machine <FSM_0> for signal <IntFrmBitSlip>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 32                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 5                                              |
+    | Clock              | FrmClkDiv (rising_edge)                        |
+    | Reset              | IntFrmRstOut (positive)                        |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000000                                         |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit adder for signal <IntFrmEvntCnt[2]_GND_65_o_add_15_OUT> created at line 708.
+    Found 4-bit adder for signal <IntFrmSlipCnt[3]_GND_65_o_add_19_OUT> created at line 724.
+    Found 3-bit adder for signal <IntFrmWarnCnt[2]_GND_65_o_add_23_OUT> created at line 763.
+    Found 16x1-bit Read Only RAM for signal <IntFrmEqu_d_GND_65_o_Mux_12_o>
+    Found 64x6-bit Read Only RAM for signal <IntFrmEqu_d_PWR_17_o_wide_mux_27_OUT>
+    Found 32x2-bit Read Only RAM for signal <_n0201>
+    Summary:
+	inferred   3 RAM(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  55 D-type flip-flop(s).
+	inferred  23 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <AdcFrm_v7> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 4
+ 16x1-bit single-port Read Only RAM                    : 1
+ 32x2-bit single-port Read Only RAM                    : 1
  32x4-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 5
- 3-bit adder                                           : 1
+ 64x6-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 8
+ 3-bit adder                                           : 3
  32-bit adder                                          : 1
- 4-bit adder                                           : 1
+ 4-bit adder                                           : 2
  5-bit adder                                           : 1
  5-bit subtractor                                      : 1
-# Registers                                            : 20
- 1-bit register                                        : 10
+# Registers                                            : 43
+ 1-bit register                                        : 27
+ 16-bit register                                       : 1
  2-bit register                                        : 3
- 3-bit register                                        : 1
+ 3-bit register                                        : 3
  32-bit register                                       : 1
- 4-bit register                                        : 3
+ 4-bit register                                        : 4
  5-bit register                                        : 2
+ 6-bit register                                        : 2
 # Comparators                                          : 3
  2-bit comparator equal                                : 1
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 34
- 1-bit 2-to-1 multiplexer                              : 6
+# Multiplexers                                         : 57
+ 1-bit 2-to-1 multiplexer                              : 28
  2-bit 2-to-1 multiplexer                              : 3
+ 3-bit 2-to-1 multiplexer                              : 1
  4-bit 2-to-1 multiplexer                              : 21
  5-bit 2-to-1 multiplexer                              : 4
+# FSMs                                                 : 1
 
 =========================================================================
 
@@ -196,7 +277,7 @@ Loading core <module_1> for timing and area information for instance <module_1_i
 Synthesizing (advanced) Unit <AdcClk_v7>.
 The following registers are absorbed into counter <IntStepCnt>: 1 register on signal <IntStepCnt>.
 The following registers are absorbed into counter <IntProceedCnt>: 1 register on signal <IntProceedCnt>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_n0193> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_n0194> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -209,41 +290,111 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_n0193> will be implemented on LUTs e
     -----------------------------------------------------------------------
 Unit <AdcClk_v7> synthesized (advanced).
 
+Synthesizing (advanced) Unit <AdcFrm_v7>.
+The following registers are absorbed into counter <IntFrmWarnCnt>: 1 register on signal <IntFrmWarnCnt>.
+The following registers are absorbed into counter <IntFrmEvntCnt>: 1 register on signal <IntFrmEvntCnt>.
+The following registers are absorbed into counter <IntFrmSlipCnt>: 1 register on signal <IntFrmSlipCnt>.
+INFO:Xst:3217 - HDL ADVISOR - Register <fsmfake1> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_IntFrmEqu_d_PWR_17_o_wide_mux_27_OUT> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 6-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(IntFrmEqu_d,IntFrmEvntCntTc_d,IntFrmBitSlip)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3217 - HDL ADVISOR - Register <IntFrmRegEna_d> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_IntFrmEqu_d_GND_65_o_Mux_12_o> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 1-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(IntFrmEqu_d,IntFrmRegEna_d,IntFrmMsbRegEna_d,IntFrmLsbRegEna_d)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0201> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 2-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(IntFrmLsbMsb_d,IntFrmEqu_d,IntFrmRegEna_d,IntFrmMsbRegEna_d,IntFrmLsbRegEna_d)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <AdcFrm_v7> synthesized (advanced).
+
 Synthesizing (advanced) Unit <PWM_Controller>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
 Unit <PWM_Controller> synthesized (advanced).
+WARNING:Xst:2677 - Node <fsmfake1_0> of sequential type is unconnected in block <AdcFrm_v7>.
+WARNING:Xst:2677 - Node <fsmfake1_1> of sequential type is unconnected in block <AdcFrm_v7>.
+WARNING:Xst:2677 - Node <fsmfake1_2> of sequential type is unconnected in block <AdcFrm_v7>.
+WARNING:Xst:2677 - Node <fsmfake1_3> of sequential type is unconnected in block <AdcFrm_v7>.
+WARNING:Xst:2677 - Node <fsmfake1_5> of sequential type is unconnected in block <AdcFrm_v7>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 4
+ 16x1-bit single-port distributed Read Only RAM        : 1
+ 32x2-bit single-port distributed Read Only RAM        : 1
  32x4-bit single-port distributed Read Only RAM        : 1
+ 64x6-bit single-port distributed Read Only RAM        : 1
 # Adders/Subtractors                                   : 3
  32-bit adder                                          : 1
  4-bit adder                                           : 1
  5-bit subtractor                                      : 1
-# Counters                                             : 3
- 3-bit up counter                                      : 1
+# Counters                                             : 6
+ 3-bit up counter                                      : 3
  32-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
  5-bit up counter                                      : 1
-# Registers                                            : 35
- Flip-Flops                                            : 35
+# Registers                                            : 80
+ Flip-Flops                                            : 80
 # Comparators                                          : 3
  2-bit comparator equal                                : 1
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 34
- 1-bit 2-to-1 multiplexer                              : 6
+# Multiplexers                                         : 57
+ 1-bit 2-to-1 multiplexer                              : 28
  2-bit 2-to-1 multiplexer                              : 3
+ 3-bit 2-to-1 multiplexer                              : 1
  4-bit 2-to-1 multiplexer                              : 21
  5-bit 2-to-1 multiplexer                              : 4
+# FSMs                                                 : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <AdcToplevel_I_AdcFrm_v7/FSM_0> on signal <IntFrmBitSlip[1:3]> with sequential encoding.
+--------------------
+ State  | Encoding
+--------------------
+ 000000 | 000
+ 000100 | 001
+ 001000 | 010
+ 110000 | 011
+ 000101 | 100
+ 001010 | 101
+ 100101 | 110
+ 101010 | 111
+--------------------
+WARNING:Xst:1710 - FF/Latch <IntFrmSwapMux_d> (without init value) has a constant value of 0 in block <AdcFrm_v7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <IntFrmClkDat_12> (without init value) has a constant value of 0 in block <AdcFrm_v7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <IntFrmClkDat_13> (without init value) has a constant value of 0 in block <AdcFrm_v7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <IntFrmClkDat_14> (without init value) has a constant value of 0 in block <AdcFrm_v7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <IntFrmClkDat_15> (without init value) has a constant value of 0 in block <AdcFrm_v7>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ReturnState_0> (without init value) has a constant value of 0 in block <AdcClk_v7>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance BUFMR_inst in unit AdcClk_v7 of type BUFMR has been replaced by BUFMRCE
 INFO:Xst:2261 - The FF/Latch <ReturnState_2> in Unit <AdcClk_v7> is equivalent to the following FF/Latch, which will be removed : <ReturnState_3> 
 
 WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_SRSTB>; this signal is connected to multiple drivers.
@@ -263,7 +414,42 @@ Drivers are:
 
 Optimizing unit <module_1_stub> ...
 
+Optimizing unit <AdcFrm_v7> ...
+
 Optimizing unit <AdcClk_v7> ...
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmWarnCnt_2> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmWarnCnt_1> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmWarnCnt_0> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_11> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_10> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_9> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_8> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_7> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_6> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_5> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_4> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_3> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_2> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_1> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmClkDat_0> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmLsbRegEna_d> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_0> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_1> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_2> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_3> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_4> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDatSwp_5> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmRegEna_d> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDat_5> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDat_4> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDat_3> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDat_2> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDat_1> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmDat_0> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmMsbRegEna_d> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmWarnCntTc_d> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmLsbMsb_d> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcToplevel_I_AdcFrm_v7/IntFrmMsbAllZero_d> of sequential type is unconnected in block <module_1_stub>.
 WARNING:Xst:2677 - Node <AdcToplevel_I_AdcClk_v7/IntClkCtrlInvrtd> of sequential type is unconnected in block <module_1_stub>.
 WARNING:Xst:2677 - Node <AdcToplevel_I_AdcClk_v7/IntClkCtrlAlgnWrn> of sequential type is unconnected in block <module_1_stub>.
 WARNING:Xst:1293 - FF/Latch <PWM/count_20> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
@@ -298,8 +484,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 59
- Flip-Flops                                            : 59
+# Registers                                            : 79
+ Flip-Flops                                            : 79
 
 =========================================================================
 
@@ -322,26 +508,26 @@ Top Level Output File Name         : module_1_stub.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 930
-#      GND                         : 7
-#      INV                         : 105
+# BELS                             : 967
+#      GND                         : 8
+#      INV                         : 109
 #      LUT1                        : 38
-#      LUT2                        : 72
-#      LUT3                        : 169
-#      LUT4                        : 234
-#      LUT5                        : 33
-#      LUT6                        : 176
+#      LUT2                        : 79
+#      LUT3                        : 179
+#      LUT4                        : 236
+#      LUT5                        : 35
+#      LUT6                        : 186
 #      MUXCY                       : 63
 #      MUXF7                       : 3
-#      VCC                         : 5
+#      VCC                         : 6
 #      XORCY                       : 25
-# FlipFlops/Latches                : 515
-#      FD                          : 27
-#      FDC                         : 14
-#      FDCE                        : 30
+# FlipFlops/Latches                : 535
+#      FD                          : 31
+#      FDC                         : 19
+#      FDCE                        : 40
 #      FDE                         : 125
 #      FDPE                        : 1
-#      FDR                         : 140
+#      FDR                         : 141
 #      FDRE                        : 114
 #      FDSE                        : 64
 # Shift Registers                  : 64
@@ -351,14 +537,15 @@ Primitive and Black Box Usage:
 # IO Buffers                       : 17
 #      IBUF                        : 3
 #      IBUFDS                      : 3
-#      IBUFGDS                     : 1
+#      IBUFDS_DIFF_OUT             : 1
 #      OBUF                        : 10
-# Others                           : 6
-#      BUFIO                       : 1
-#      BUFR                        : 1
+# Others                           : 13
+#      BUFIO                       : 3
+#      BUFMRCE                     : 1
+#      BUFR                        : 3
 #      IDELAYCTRL                  : 1
 #      IDELAYE2                    : 1
-#      ISERDESE2                   : 1
+#      ISERDESE2                   : 3
 #      PS7                         : 1
 
 Device utilization summary:
@@ -368,22 +555,22 @@ Selected Device : 7z020clg484-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             515  out of  106400     0%  
- Number of Slice LUTs:                  891  out of  53200     1%  
-    Number used as Logic:               827  out of  53200     1%  
+ Number of Slice Registers:             535  out of  106400     0%  
+ Number of Slice LUTs:                  926  out of  53200     1%  
+    Number used as Logic:               862  out of  53200     1%  
     Number used as Memory:               64  out of  17400     0%  
        Number used as SRL:               64
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    967
-   Number with an unused Flip Flop:     452  out of    967    46%  
-   Number with an unused LUT:            76  out of    967     7%  
-   Number of fully used LUT-FF pairs:   439  out of    967    45%  
-   Number of unique control sets:        30
+ Number of LUT Flip Flop pairs used:   1009
+   Number with an unused Flip Flop:     474  out of   1009    46%  
+   Number with an unused LUT:            83  out of   1009     8%  
+   Number of fully used LUT-FF pairs:   452  out of   1009    44%  
+   Number of unique control sets:        37
 
 IO Utilization: 
  Number of IOs:                         148
- Number of bonded IOBs:                  19  out of    200     9%  
+ Number of bonded IOBs:                  17  out of    200     8%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRL/BUFHCEs:         3  out of    104     2%  
@@ -406,20 +593,23 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
----------------------------------------------------------------------------+------------------------+-------+
-Clock Signal                                                               | Clock buffer(FF name)  | Load  |
----------------------------------------------------------------------------+------------------------+-------+
-module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                   | 542   |
-AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20>           | ISERDESE2+BUFR         | 38    |
----------------------------------------------------------------------------+------------------------+-------+
+---------------------------------------------------------------------------+--------------------------+-------+
+Clock Signal                                                               | Clock buffer(FF name)    | Load  |
+---------------------------------------------------------------------------+--------------------------+-------+
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                     | 542   |
+AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20>           | ISERDESE2+BUFMRCE+BUFR   | 60    |
+FCLK<0>                                                                    | IBUFDS_DIFF_OUT+ISERDESE2| 1     |
+---------------------------------------------------------------------------+--------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
 ---------------------------------------------------------------------------------------------------+-----------------------------------------------------------+-------+
 Control Signal                                                                                     | Buffer(FF name)                                           | Load  |
 ---------------------------------------------------------------------------------------------------+-----------------------------------------------------------+-------+
+AdcToplevel_I_AdcFrm_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20>(AdcToplevel_I_AdcFrm_v7/XST_GND:G)| NONE(AdcToplevel_I_AdcFrm_v7/Gen_Bufr_Div_3.AdcFrm_I_Bufr)| 3     |
 AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20>(AdcToplevel_I_AdcClk_v7/XST_GND:G)| NONE(AdcToplevel_I_AdcClk_v7/Gen_Bufr_Div_3.AdcClk_I_Bufr)| 1     |
 AdcToplevel_I_AdcClk_v7/SData_OBUF(AdcToplevel_I_AdcClk_v7/XST_VCC:P)                              | NONE(AdcToplevel_I_AdcClk_v7/Gen_Bufr_Div_3.AdcClk_I_Bufr)| 1     |
+AdcToplevel_I_AdcFrm_v7/SData_OBUF(AdcToplevel_I_AdcFrm_v7/XST_VCC:P)                              | NONE(AdcToplevel_I_AdcFrm_v7/Gen_Bufr_Div_3.AdcFrm_I_Bufr)| 1     |
 ---------------------------------------------------------------------------------------------------+-----------------------------------------------------------+-------+
 
 Timing Summary:
@@ -429,7 +619,7 @@ Speed Grade: -1
    Minimum period: 3.868ns (Maximum Frequency: 258.532MHz)
    Minimum input arrival time before clock: 2.172ns
    Maximum output required time after clock: 2.574ns
-   Maximum combinational path delay: 1.020ns
+   Maximum combinational path delay: 1.026ns
 
 Timing Details:
 ---------------
@@ -467,26 +657,26 @@ Delay:               3.868ns (Levels of Logic = 8)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20>'
-  Clock period: 2.717ns (frequency: 368.011MHz)
-  Total number of paths / destination ports: 747 / 66
+  Clock period: 2.721ns (frequency: 367.512MHz)
+  Total number of paths / destination ports: 867 / 112
 -------------------------------------------------------------------------
-Delay:               2.717ns (Levels of Logic = 3)
-  Source:            AdcToplevel_I_AdcClk_v7/State_0 (FF)
+Delay:               2.721ns (Levels of Logic = 3)
+  Source:            AdcToplevel_I_AdcClk_v7/IntClkCtrlDone (FF)
   Destination:       AdcToplevel_I_AdcClk_v7/IntProceedDone (FF)
   Source Clock:      AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20> rising
   Destination Clock: AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20> rising
 
-  Data Path: AdcToplevel_I_AdcClk_v7/State_0 to AdcToplevel_I_AdcClk_v7/IntProceedDone
+  Data Path: AdcToplevel_I_AdcClk_v7/IntClkCtrlDone to AdcToplevel_I_AdcClk_v7/IntProceedDone
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            31   0.282   0.787  State_0 (State_0)
-     LUT6:I2->O            3   0.053   0.739  _n0631_inv11 (_n0631_inv1)
-     LUT5:I0->O            1   0.053   0.739  _n0428_inv_SW1 (N149)
+     FDC:C->Q             11   0.282   0.791  IntClkCtrlDone (IntClkCtrlDone)
+     LUT6:I1->O            3   0.053   0.739  _n0632_inv11 (_n0632_inv1)
+     LUT5:I0->O            1   0.053   0.739  _n0429_inv_SW1 (N155)
      LUT6:I0->O            1   0.053   0.000  IntProceedDone_rstpot (IntProceedDone_rstpot)
      FDC:D                     0.011          IntProceedDone
     ----------------------------------------
-    Total                      2.717ns (0.452ns logic, 2.265ns route)
+    Total                      2.721ns (0.452ns logic, 2.269ns route)
                                        (16.6% logic, 83.4% route)
 
 =========================================================================
@@ -517,25 +707,25 @@ Offset:              2.172ns (Levels of Logic = 5)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20>'
-  Total number of paths / destination ports: 61 / 39
+  Total number of paths / destination ports: 68 / 41
 -------------------------------------------------------------------------
-Offset:              1.610ns (Levels of Logic = 3)
-  Source:            AdcToplevel_I_AdcClk_v7/AdcClk_I_Isrds:Q3 (PAD)
-  Destination:       AdcToplevel_I_AdcClk_v7/IntCalVal_0 (FF)
+Offset:              1.859ns (Levels of Logic = 3)
+  Source:            AdcToplevel_I_AdcFrm_v7/AdcFrm_I_Isrds_n7:Q2 (PAD)
+  Destination:       AdcToplevel_I_AdcFrm_v7/IntFrmEqu_d (FF)
   Destination Clock: AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20> rising
 
-  Data Path: AdcToplevel_I_AdcClk_v7/AdcClk_I_Isrds:Q3 to AdcToplevel_I_AdcClk_v7/IntCalVal_0
+  Data Path: AdcToplevel_I_AdcFrm_v7/AdcFrm_I_Isrds_n7:Q2 to AdcToplevel_I_AdcFrm_v7/IntFrmEqu_d
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-    ISERDESE2:Q3           2   0.000   0.608  AdcClk_I_Isrds (IntClkCtrlOut<2>)
-     LUT3:I0->O            1   0.053   0.413  IntVal1_SW0 (N19)
-     LUT6:I5->O            2   0.053   0.419  IntVal1 (IntCal)
-     LUT6:I5->O            1   0.053   0.000  IntVal (IntVal)
-     FDCE:D                    0.011          IntCalVal_0
+    ISERDESE2:Q2           1   0.000   0.602  AdcFrm_I_Isrds_n7 (IntFrmSrdsOut<5>)
+     LUT3:I0->O            1   0.053   0.485  IntFrmCmp[2]_IntFrmEna_AND_12_o_SW1 (N175)
+     LUT6:I4->O            1   0.053   0.602  IntFrmCmp[2]_IntFrmEna_AND_12_o (IntFrmCmp[2]_IntFrmEna_AND_12_o)
+     LUT3:I0->O            1   0.053   0.000  IntFrmEqu_d_rstpot (IntFrmEqu_d_rstpot)
+     FDC:D                     0.011          IntFrmEqu_d
     ----------------------------------------
-    Total                      1.610ns (0.170ns logic, 1.440ns route)
-                                       (10.6% logic, 89.4% route)
+    Total                      1.859ns (0.170ns logic, 1.689ns route)
+                                       (9.1% logic, 90.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
@@ -580,29 +770,29 @@ Offset:              2.574ns (Levels of Logic = 21)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20>'
-  Total number of paths / destination ports: 3 / 3
+  Total number of paths / destination ports: 15 / 11
 -------------------------------------------------------------------------
-Offset:              0.740ns (Levels of Logic = 2)
-  Source:            AdcToplevel_I_AdcClk_v7/IntClkCtrlDone (FF)
-  Destination:       LEDS<0> (PAD)
+Offset:              1.331ns (Levels of Logic = 1)
+  Source:            AdcToplevel_I_AdcFrm_v7/AdcFrm_RstShft_I_Fdce_Ff3 (FF)
+  Destination:       AdcToplevel_I_AdcFrm_v7/AdcFrm_I_Isrds_n7:RST (PAD)
   Source Clock:      AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20> rising
 
-  Data Path: AdcToplevel_I_AdcClk_v7/IntClkCtrlDone to LEDS<0>
+  Data Path: AdcToplevel_I_AdcFrm_v7/AdcFrm_RstShft_I_Fdce_Ff3 to AdcToplevel_I_AdcFrm_v7/AdcFrm_I_Isrds_n7:RST
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             10   0.282   0.458  IntClkCtrlDone (IntClkCtrlDone)
-     end scope: 'AdcToplevel_I_AdcClk_v7:BitClkDone'
-     OBUF:I->O                 0.000          LEDS_0_OBUF (LEDS<0>)
+     FD:C->Q               3   0.282   0.499  AdcFrm_RstShft_I_Fdce_Ff3 (IntFrmRstShft<3>)
+     LUT2:I0->O           16   0.053   0.497  IntFrmRstOut11 (IntFrmRstOut)
+    ISERDESE2:RST              0.000          AdcFrm_I_Isrds_p7
     ----------------------------------------
-    Total                      0.740ns (0.282ns logic, 0.458ns route)
-                                       (38.1% logic, 61.9% route)
+    Total                      1.331ns (0.335ns logic, 0.996ns route)
+                                       (25.2% logic, 74.8% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 136 / 135
+  Total number of paths / destination ports: 144 / 143
 -------------------------------------------------------------------------
-Delay:               1.020ns (Levels of Logic = 3)
+Delay:               1.026ns (Levels of Logic = 3)
   Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 (PAD)
   Destination:       AdcToplevel_I_AdcClk_v7/AdcClk_I_Isrds:RST (PAD)
 
@@ -610,15 +800,15 @@ Delay:               1.020ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-    PS7:FCLKRESETN1        1   0.000   0.000  processing_system7_0/PS7_i (FCLK_RESET1_N)
+    PS7:FCLKRESETN1        2   0.000   0.000  processing_system7_0/PS7_i (FCLK_RESET1_N)
      end scope: 'module_1_i/processing_system7_0:FCLK_RESET1_N'
      end scope: 'module_1_i:processing_system7_0_FCLK_RESET1_N_pin'
      INV:I->O             42   0.067   0.554  IntRst1_INV_0 (IntRst)
      begin scope: 'AdcToplevel_I_AdcClk_v7:BitClkRst'
     IDELAYE2:LD                0.000          AdcClk_idelaye2
     ----------------------------------------
-    Total                      1.020ns (0.466ns logic, 0.554ns route)
-                                       (45.7% logic, 54.3% route)
+    Total                      1.026ns (0.472ns logic, 0.554ns route)
+                                       (46.0% logic, 54.0% route)
 
 =========================================================================
 
@@ -630,8 +820,8 @@ Clock to Setup on destination clock AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_3
                                                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------------------------------------------------------------+---------+---------+---------+---------+
-AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20>           |    2.717|         |         |         |
-module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    2.735|         |         |         |
+AdcToplevel_I_AdcClk_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy<20>           |    2.721|         |         |         |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    2.767|         |         |         |
 ---------------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>
@@ -646,13 +836,13 @@ module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    
 
 
 Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 13.14 secs
+Total CPU time to Xst completion: 13.42 secs
  
 --> 
 
-Total memory usage is 445600 kilobytes
+Total memory usage is 456876 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   23 (   0 filtered)
-Number of infos    :   14 (   0 filtered)
+Number of warnings :   66 (   0 filtered)
+Number of infos    :   27 (   0 filtered)
 

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.58f on Wed Aug 21 18:13:17 2013
+// Written by: Map P.58f on Thu Aug 22 17:02:24 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -126,6 +126,8 @@ COMP "LEDS[4]" LOCATE = SITE "V22" LEVEL 1;
 COMP "LEDS[3]" LOCATE = SITE "U21" LEVEL 1;
 COMP "LEDS[6]" LOCATE = SITE "U19" LEVEL 1;
 COMP "LEDS[5]" LOCATE = SITE "W22" LEVEL 1;
+COMP "FCLK[0]" LOCATE = SITE "M19" LEVEL 1;
+COMP "FCLK[1]" LOCATE = SITE "M20" LEVEL 1;
 COMP "processing_system7_0_DDR_CS_n" LOCATE = SITE "P6" LEVEL 1;
 COMP "processing_system7_0_DDR_CKE" LOCATE = SITE "V3" LEVEL 1;
 COMP "processing_system7_0_DDR_DM[2]" LOCATE = SITE "P1" LEVEL 1;

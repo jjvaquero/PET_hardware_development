@@ -8,7 +8,7 @@ Target Device  : xc7z020
 Target Package : clg484
 Target Speed   : -1
 Mapper Version : zynq -- $Revision: 1.55 $
-Mapped Date    : Wed Aug 21 18:12:52 2013
+Mapped Date    : Thu Aug 22 17:01:57 2013
 
 Design Summary
 --------------
@@ -20,9 +20,9 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        546 out of  53,200    1%
-    Number used as logic:                      473 out of  53,200    1%
-      Number using O6 output only:             362
+  Number of Slice LUTs:                        545 out of  53,200    1%
+    Number used as logic:                      480 out of  53,200    1%
+      Number using O6 output only:             369
       Number using O5 output only:              37
       Number using O5 and O6:                   74
       Number used as ROM:                        0
@@ -33,20 +33,20 @@ Slice Logic Utilization:
         Number using O6 output only:            64
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:      9
-      Number with same-slice register load:      8
+    Number used exclusively as route-thrus:      1
+      Number with same-slice register load:      0
       Number with same-slice carry load:         1
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   161 out of  13,300    1%
-  Number of LUT Flip Flop pairs used:          559
-    Number with an unused Flip Flop:           142 out of     559   25%
-    Number with an unused LUT:                  13 out of     559    2%
-    Number of fully used LUT-FF pairs:         404 out of     559   72%
-    Number of unique control sets:              26
+  Number of occupied Slices:                   168 out of  13,300    1%
+  Number of LUT Flip Flop pairs used:          576
+    Number with an unused Flip Flop:           152 out of     576   26%
+    Number with an unused LUT:                  31 out of     576    5%
+    Number of fully used LUT-FF pairs:         393 out of     576   68%
+    Number of unique control sets:              27
     Number of slice register sites lost
-      to control set restrictions:              91 out of 106,400    1%
+      to control set restrictions:              99 out of 106,400    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -57,8 +57,8 @@ Slice Logic Distribution:
   over-mapped for a non-BRAM resource or if placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        12 out of     200    6%
-    Number of LOCed IOBs:                       12 out of      12  100%
+  Number of bonded IOBs:                        14 out of     200    7%
+    Number of LOCed IOBs:                       14 out of      14  100%
   Number of bonded IOPAD:                      130 out of     130  100%
 
 Specific Feature Utilization:
@@ -100,9 +100,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                3.07
 
-Peak Memory Usage:  798 MB
-Total REAL time to MAP completion:  25 secs 
-Total CPU time to MAP completion:   25 secs 
+Peak Memory Usage:  802 MB
+Total REAL time to MAP completion:  27 secs 
+Total CPU time to MAP completion:   27 secs 
 
 Table of Contents
 -----------------
@@ -135,10 +135,6 @@ WARNING:MapLib:701 - Signal ADC_Data0[0] connected to top level port
    ADC_Data0(0) has been removed.
 WARNING:MapLib:701 - Signal ADC_Data0[1] connected to top level port
    ADC_Data0(1) has been removed.
-WARNING:MapLib:701 - Signal FCLK[0] connected to top level port FCLK(0) has been
-   removed.
-WARNING:MapLib:701 - Signal FCLK[1] connected to top level port FCLK(1) has been
-   removed.
 WARNING:Pack:2912 - The LUT-1 inverter
    "PWM/Mcompar_GND_39_o_count[31]_LessThan_5_o_cy<15>_inv1_INV_0" failed to
    join the "OLOGICE2" comp matched to output buffer "LEDS_2_OBUF".  This may
@@ -193,6 +189,10 @@ WARNING:Pack:2768 - At least one timing constraint is impossible to meet because
    more detail. Evaluate the datasheet for alternative configurations for the component that could allow the frequencies requested in the
    constraint. Otherwise, the timing constraint covering this component might need to be modified to satisfy the component switching limits
    specified in the datasheet.
+WARNING:PhysDesignRules:367 - The signal <AdcToplevel_I_AdcFrm_v7/IntFrmClkToIsrds_p> is incomplete. The signal does not
+   drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AdcToplevel_I_AdcFrm_v7/IntFrmClkToIsrds_n> is incomplete. The signal does not
+   drive any load pins in the design.
 
 Section 3 - Informational
 -------------------------
@@ -228,9 +228,9 @@ INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
- 277 block(s) removed
+ 331 block(s) removed
   21 block(s) optimized away
-1547 signal(s) removed
+1606 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -245,6 +245,13 @@ To quickly locate the original cause for the removal of a chain of logic, look
 above the place where that logic is listed in the trimming report, then locate
 the lines that are least indented (begin at the leftmost edge).
 
+Loadless block "AdcToplevel_I_AdcFrm_v7/Gen_Bufr_V4.AdcFrm_I_Bufr" (BUFR)
+removed.
+ The signal "AdcToplevel_I_AdcFrm_v7/Madd_count[31]_GND_39_o_add_0_OUT_cy[20]" is
+loadless and has been removed.
+  Loadless block "AdcToplevel_I_AdcFrm_v7/XST_GND" (ZERO) removed.
+ The signal "AdcToplevel_I_AdcFrm_v7/IntFrmIdlyToBuf" is loadless and has been
+removed.
 Loadless block "ibuf0" (IBUFDS) removed.
  The signal "ADC_Data0[1]" is loadless and has been removed.
   Loadless block "ADC_Data0[1]" (PAD) removed.
@@ -255,11 +262,6 @@ Loadless block "ibuf1" (IBUFDS) removed.
   Loadless block "ADC_Data1[1]" (PAD) removed.
  The signal "ADC_Data1[0]" is loadless and has been removed.
   Loadless block "ADC_Data1[0]" (PAD) removed.
-Loadless block "ibuf3" (IBUFDS) removed.
- The signal "FCLK[1]" is loadless and has been removed.
-  Loadless block "FCLK[1]" (PAD) removed.
- The signal "FCLK[0]" is loadless and has been removed.
-  Loadless block "FCLK[0]" (PAD) removed.
 The signal "module_1_i/LED_DutyCycle[31]" is sourceless and has been removed.
  Sourceless block
 "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_0_dpot1" (ROM)
@@ -1293,8 +1295,8 @@ sourceless and has been removed.
      Sourceless block
 "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_31" (SFF)
 removed.
-The signal "module_1_i/axi_gpio_0/VCC_4" is sourceless and has been removed.
-The signal "module_1_i/axi_gpio_0/GND_1" is sourceless and has been removed.
+The signal "module_1_i/axi_gpio_0/VCC_5" is sourceless and has been removed.
+The signal "module_1_i/axi_gpio_0/GND_2" is sourceless and has been removed.
 The signal "module_1_i/processing_system7_0/SPI0_MOSI_O" is sourceless and has
 been removed.
 The signal "module_1_i/processing_system7_0/S_AXI_HP2_RLAST" is sourceless and
@@ -4281,7 +4283,7 @@ The signal "module_1_i/axi_interconnect_1/DEBUG_AW_ERROR[2]" is sourceless and
 has been removed.
 The signal "module_1_i/axi_interconnect_1/DEBUG_AW_ERROR[0]" is sourceless and
 has been removed.
-The signal "module_1_i/axi_interconnect_1/VCC_5" is sourceless and has been
+The signal "module_1_i/axi_interconnect_1/VCC_6" is sourceless and has been
 removed.
  Sourceless block
 "module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slo
@@ -4331,7 +4333,7 @@ t[0].clock_conv_inst/s_async_conv_reset" (FF) removed.
   The signal
 "module_1_i/axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slo
 t[0].clock_conv_inst/s_async_conv_reset" is sourceless and has been removed.
-The signal "module_1_i/axi_interconnect_1/GND_2" is sourceless and has been
+The signal "module_1_i/axi_interconnect_1/GND_3" is sourceless and has been
 removed.
 The signal
 "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossba
@@ -4397,6 +4399,188 @@ ocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_i
 nst/s_axid_11" (SFF) removed.
 The signal "PWM/VCC_2" is sourceless and has been removed.
 The signal "AdcToplevel_I_AdcClk_v7/VCC_3" is sourceless and has been removed.
+The signal "AdcToplevel_I_AdcFrm_v7/FrmClkDiv" is sourceless and has been
+removed.
+ Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmClkDone" (FF) removed.
+  The signal "AdcToplevel_I_AdcFrm_v7/IntFrmClkDone" is sourceless and has been
+removed.
+   Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmEna1" (ROM) removed.
+    The signal "AdcToplevel_I_AdcFrm_v7/IntFrmEna" is sourceless and has been
+removed.
+     Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd2-In" (ROM)
+removed.
+      The signal "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd2-In" is sourceless and
+has been removed.
+       Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd2" (FF) removed.
+        The signal "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd2" is sourceless and
+has been removed.
+         Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd1-In1" (ROM)
+removed.
+          The signal "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd1-In" is sourceless and
+has been removed.
+           Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd1" (FF) removed.
+            The signal "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd1" is sourceless and
+has been removed.
+             Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd3-In1" (ROM)
+removed.
+              The signal "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd3-In" is sourceless and
+has been removed.
+               Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd3" (FF) removed.
+                The signal "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FSM_FFd3" is sourceless and
+has been removed.
+                 Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_IntFrmBitSlip<5>1" (ROM)
+removed.
+                  The signal "IntFrmBitSlip[5]" is sourceless and has been removed.
+                   Sourceless block
+"AdcToplevel_I_AdcFrm_v7_Mram_IntFrmEqu_d_PWR_17_o_wide_mux_27_OUT11" (ROM)
+removed.
+                    The signal "IntFrmEqu_d_PWR_17_o_wide_mux_27_OUT[4]" is sourceless and has been
+removed.
+                     Sourceless block "AdcToplevel_I_AdcFrm_v7/fsmfake1_4" (FF) removed.
+                      The signal "fsmfake1_4" is sourceless and has been removed.
+                       Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmEquSet_d_IntFrmEna_AND_15_o1"
+(ROM) removed.
+                        The signal "AdcToplevel_I_AdcFrm_v7/IntFrmEquSet_d_IntFrmEna_AND_15_o" is
+sourceless and has been removed.
+                         Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmEvntCntTc_d" (FF) removed.
+                          The signal "AdcToplevel_I_AdcFrm_v7/IntFrmEvntCntTc_d" is sourceless and has
+been removed.
+                           Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCnt_0" (FF) removed.
+                            The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCnt[0]" is sourceless and has been
+removed.
+                             Sourceless block "AdcToplevel_I_AdcFrm_v7/Result<2>21" (ROM) removed.
+                              The signal "AdcToplevel_I_AdcFrm_v7/Result<2>2" is sourceless and has been
+removed.
+                               Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCnt_2" (FF) removed.
+                                The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCnt[2]" is sourceless and has been
+removed.
+                                 Sourceless block "AdcToplevel_I_AdcFrm_v7/Result<3>1" (ROM) removed.
+                                  The signal "AdcToplevel_I_AdcFrm_v7/Result[3]" is sourceless and has been
+removed.
+                                   Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCnt_3" (FF) removed.
+                                    The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCnt[3]" is sourceless and has been
+removed.
+                                     Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCntTc_d_rstpot_SW0" (ROM)
+removed.
+                                      The signal "AdcToplevel_I_AdcFrm_v7/N171" is sourceless and has been removed.
+                                       Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCntTc_d_rstpot" (ROM)
+removed.
+                                        The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCntTc_d_rstpot" is sourceless and
+has been removed.
+                                         Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCntTc_d" (FF) removed.
+                                          The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCntTc_d" is sourceless and has
+been removed.
+                                           Sourceless block "AdcToplevel_I_AdcFrm_v7/AdcFrm_RstShft_I_Fdce_Ff0_glue_set"
+(ROM) removed.
+                                            The signal "AdcToplevel_I_AdcFrm_v7/AdcFrm_RstShft_I_Fdce_Ff0_glue_set" is
+sourceless and has been removed.
+                                             Sourceless block "AdcToplevel_I_AdcFrm_v7/AdcFrm_RstShft_I_Fdce_Ff0" (SFF)
+removed.
+                                              The signal "AdcToplevel_I_AdcFrm_v7/IntFrmRstShft[0]" is sourceless and has been
+removed.
+                                               Sourceless block "AdcToplevel_I_AdcFrm_v7/AdcFrm_RstShft_I_Fdce_Ff1" (FF)
+removed.
+                                                The signal "AdcToplevel_I_AdcFrm_v7/IntFrmRstShft[1]" is sourceless and has been
+removed.
+                                               Sourceless block "AdcToplevel_I_AdcFrm_v7/AdcFrm_RstShft_I_Fdce_Ff2" (FF)
+removed.
+                                                The signal "AdcToplevel_I_AdcFrm_v7/IntFrmRstShft[2]" is sourceless and has been
+removed.
+                                                 Sourceless block "AdcToplevel_I_AdcFrm_v7/AdcFrm_RstShft_I_Fdce_Ff3" (FF)
+removed.
+*The signal "AdcToplevel_I_AdcFrm_v7/IntFrmRstShft[3]" is sourceless and has been
+removed.
+* Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmRstOut11" (ROM) removed.
+*  The signal "AdcToplevel_I_AdcFrm_v7/IntFrmRstOut" is sourceless and has been
+removed.
+*   Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmEvntCnt_0" (FF) removed.
+*    The signal "AdcToplevel_I_AdcFrm_v7/IntFrmEvntCnt[0]" is sourceless and has been
+removed.
+*     Sourceless block "AdcToplevel_I_AdcFrm_v7/Mcount_IntFrmEvntCnt_xor<2>11" (ROM)
+removed.
+*      The signal "AdcToplevel_I_AdcFrm_v7/Result<2>1" is sourceless and has been
+removed.
+*       Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmEvntCnt_2" (FF) removed.
+*        The signal "AdcToplevel_I_AdcFrm_v7/IntFrmEvntCnt[2]" is sourceless and has been
+removed.
+*         Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmEvntCntTc<2>1" (ROM) removed.
+*          The signal "AdcToplevel_I_AdcFrm_v7/IntFrmEvntCntTc" is sourceless and has been
+removed.
+*     Sourceless block "AdcToplevel_I_AdcFrm_v7/Mcount_IntFrmEvntCnt_xor<1>11" (ROM)
+removed.
+*      The signal "AdcToplevel_I_AdcFrm_v7/Result<1>1" is sourceless and has been
+removed.
+*       Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmEvntCnt_1" (FF) removed.
+*        The signal "AdcToplevel_I_AdcFrm_v7/IntFrmEvntCnt[1]" is sourceless and has been
+removed.
+*     Sourceless block "AdcToplevel_I_AdcFrm_v7/Mcount_IntFrmEvntCnt_xor<0>11_INV_0"
+(ROM) removed.
+*      The signal "AdcToplevel_I_AdcFrm_v7/Result<0>1" is sourceless and has been
+removed.
+*   Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCnt_1" (FF) removed.
+*    The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSlipCnt[1]" is sourceless and has been
+removed.
+*     Sourceless block "AdcToplevel_I_AdcFrm_v7/Mcount_IntFrmSlipCnt_xor<1>11" (ROM)
+removed.
+*      The signal "AdcToplevel_I_AdcFrm_v7/Result<1>2" is sourceless and has been
+removed.
+*   Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmEqu_d" (FF) removed.
+*    The signal "AdcToplevel_I_AdcFrm_v7/IntFrmEqu_d" is sourceless and has been
+removed.
+*     Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmEqu_d_rstpot" (ROM) removed.
+*      The signal "AdcToplevel_I_AdcFrm_v7/IntFrmEqu_d_rstpot" is sourceless and has
+been removed.
+* Sourceless block "AdcToplevel_I_AdcFrm_v7/AdcFrm_RstShft_I_Fdce_Ff4" (FF)
+removed.
+*  The signal "AdcToplevel_I_AdcFrm_v7/IntFrmRstShft[4]" is sourceless and has been
+removed.
+                                           Sourceless block "AdcToplevel_I_AdcFrm_v7/_n01501_INV_0" (ROM) removed.
+                                            The signal "AdcToplevel_I_AdcFrm_v7/_n0150" is sourceless and has been removed.
+                             Sourceless block "AdcToplevel_I_AdcFrm_v7/Mcount_IntFrmSlipCnt_xor<0>11_INV_0"
+(ROM) removed.
+                              The signal "AdcToplevel_I_AdcFrm_v7/Result<0>2" is sourceless and has been
+removed.
+                 Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FrmClkBitSlip_p1" (ROM)
+removed.
+                  The signal "AdcToplevel_I_AdcFrm_v7/FrmClkBitSlip_p" is sourceless and has been
+removed.
+                 Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_FrmClkBitSlip_n1" (ROM)
+removed.
+                  The signal "AdcToplevel_I_AdcFrm_v7/FrmClkBitSlip_n" is sourceless and has been
+removed.
+                 Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_IntFrmBitSlip<3>1" (ROM)
+removed.
+                  The signal "IntFrmBitSlip[3]" is sourceless and has been removed.
+                 Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmBitSlip_IntFrmBitSlip<2>1" (ROM)
+removed.
+                  The signal "IntFrmBitSlip[2]" is sourceless and has been removed.
+   Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmCmp[2]_IntFrmEna_AND_12_o" (ROM)
+removed.
+    The signal "AdcToplevel_I_AdcFrm_v7/IntFrmCmp[2]_IntFrmEna_AND_12_o" is
+sourceless and has been removed.
+The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSrdsOut[3]" is sourceless and has been
+removed.
+The signal "AdcToplevel_I_AdcFrm_v7/GND_1" is sourceless and has been removed.
+The signal "AdcToplevel_I_AdcFrm_v7/FrmClk" is sourceless and has been removed.
+ Sourceless block "AdcToplevel_I_AdcFrm_v7/FrmClk_inverter" (BUF) removed.
+  The signal "AdcToplevel_I_AdcFrm_v7/FrmClk_inv" is sourceless and has been
+removed.
+The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSrdsOut[5]" is sourceless and has been
+removed.
+ Sourceless block "AdcToplevel_I_AdcFrm_v7/IntFrmCmp[2]_IntFrmEna_AND_12_o_SW1"
+(ROM) removed.
+  The signal "AdcToplevel_I_AdcFrm_v7/N175" is sourceless and has been removed.
+The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSrdsOut[1]" is sourceless and has been
+removed.
+The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSrdsOut[2]" is sourceless and has been
+removed.
+The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSrdsOut[4]" is sourceless and has been
+removed.
+The signal "AdcToplevel_I_AdcFrm_v7/IntFrmSrdsOut[0]" is sourceless and has been
+removed.
+The signal "AdcToplevel_I_AdcFrm_v7/SData_OBUF" is sourceless and has been
+removed.
+The signal "AdcToplevel_I_AdcFrm_v7/VCC_4" is sourceless and has been removed.
 
 The trimmed logic reported below is either:
    1. part of a cycle
@@ -4404,6 +4588,14 @@ The trimmed logic reported below is either:
    3. a side-effect of other trimmed logic
 
 The signal "VCC_1" is unused and has been removed.
+Unused block "AdcToplevel_I_AdcFrm_v7/AdcFrm_I_Bufio" (CKBUF) removed.
+Unused block "AdcToplevel_I_AdcFrm_v7/AdcFrm_I_Isrds_n7" (ISERDESE2) removed.
+Unused block "AdcToplevel_I_AdcFrm_v7/AdcFrm_I_Isrds_p7" (ISERDESE2) removed.
+Unused block "AdcToplevel_I_AdcFrm_v7/GND" (ZERO) removed.
+Unused block "AdcToplevel_I_AdcFrm_v7/Gen_Bufr_Div_3.AdcFrm_I_Bufr" (BUFR)
+removed.
+Unused block "AdcToplevel_I_AdcFrm_v7/VCC" (ONE) removed.
+Unused block "AdcToplevel_I_AdcFrm_v7/XST_VCC" (ONE) removed.
 Unused block
 "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossba
 r_sasd_0/Mmux_n030811" (ROM) removed.
@@ -4523,6 +4715,8 @@ Section 6 - IOB Properties
 | DCLK[0]                            | IOB33            | INPUT     | LVDS_25              | FALSE |          |      |              |          |          |
 | DCLK[1]                            | IOB33            | INPUT     | LVDS_25              | FALSE |          |      |              |          |          |
 | FCLKP1                             | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FCLK[0]                            | IOB33            | INPUT     | LVDS_25              | FALSE |          |      |              |          |          |
+| FCLK[1]                            | IOB33            | INPUT     | LVDS_25              | FALSE |          |      |              |          |          |
 | LEDS[0]                            | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | LEDS[1]                            | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | LEDS[2]                            | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
