@@ -783,11 +783,11 @@ processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    3.868|     
 
 
 Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 11.89 secs
+Total CPU time to Xst completion: 12.77 secs
  
 --> 
 
-Total memory usage is 479520 kilobytes
+Total memory usage is 483628 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    7 (   0 filtered)

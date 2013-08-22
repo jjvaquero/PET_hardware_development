@@ -72,6 +72,7 @@ architecture STRUCTURE of module_1_stub is
     -----
     ----XApp 866  Signals
     ------
+
     signal AppsSysClk, AppsSysEna : std_logic;
     signal IntRst				: std_logic;
     signal IntEna_d				: std_logic;
@@ -85,6 +86,21 @@ architecture STRUCTURE of module_1_stub is
     signal BitClkReSync         : std_logic;
     signal BitClkAlignWarn      : std_logic;
     signal BitClkInvrtd         : std_logic;
+    
+    signal IntFrmClkBitSlip_p   : std_logic;
+    signal IntFrmClkBitSlip_n   : std_logic;
+    signal IntFrmClkSwapMux     : std_logic;
+    signal IntFrmClkMsbRegEna   : std_logic;
+    signal IntFrmClkLsbRegEna   : std_logic;
+    signal SysFrameOut          : std_logic_vector(15 downto 0);
+    signal FrmClkOut            : std_logic;		-- out	Frame clock pass-though to DCM.
+    signal IntFrmClkRstOut      : std_logic;
+    signal FrameSyncWarn        : std_logic;
+    
+    --signals to move between clock regions
+    signal PadToBufMR           :std_logic; 
+    signal BufMRToAdcClk        :std_logic;
+    
 
         
   component module_1 is
@@ -151,9 +167,45 @@ architecture STRUCTURE of module_1_stub is
          BitClkAlignWarn 	: out std_logic;
  		 BitClkInvrtd		: out std_logic;
          BitClkDone 			: out std_logic;
-         DelCtrlRefClk       : in std_logic
+         DelCtrlRefClk       : in std_logic;
+         BitClkMR            : out std_logic
      );
  end component;
+ 
+ 
+  component AdcFrm_v7 is
+ 	generic (
+ 		C_FAMILY			: string;
+ 		C_AdcBits			: integer;
+ 		C_AdcWireInt		: integer;
+ 		C_OnChipLvdsTerm	: integer;
+ 		C_FrmPattern		: string
+ 		);
+     port (
+         FrmClk_n		: in std_logic;
+         FrmClk_p		: in std_logic;
+         FrmClkRst		: in std_logic;
+         FrmClkEna		: in std_logic;
+         FrmClkMR       : in std_logic;
+         --FrmClk			: in std_logic;
+         --FrmClkDiv		: in std_logic;
+         FrmClkDone		: in std_logic;
+         FrmClkReSync	: in std_logic;
+         FrmClkBitSlip_p	: out std_logic;
+         FrmClkBitSlip_n	: out std_logic;
+         FrmClkSwapMux	: out std_logic;
+         FrmClkMsbRegEna	: out std_logic;
+         FrmClkLsbRegEna	: out std_logic;
+         FrmClkDat		: out std_logic_vector(15 downto 0); 
+         FrmClkOut		: out std_logic;
+ --        FrmClkDatVal	: out std_logic;
+         FrmClkRstOut	: out std_logic;
+         FrmClkSyncWarn	: out std_logic 
+         --FrmDlyCe		: in std_logic;
+        --FrmDlyRst		: in std_logic;
+        --FrmDlyInc		: in std_logic
+             );
+   end component;
 
 begin
 
@@ -161,7 +213,7 @@ begin
     ibuf0 : IBUFDS  port map (I=>ADC_Data0(0), IB=>ADC_Data0(1), O=>sADC_Data0); 
     ibuf1 : IBUFDS  port map (I=>ADC_Data1(0), IB=>ADC_Data1(1), O=>sADC_Data1);   
     --ibuf2 : IBUFGDS port map (I=>DCLK(0), IB=>DCLK(1), O=>sDCLK);
-    ibuf3 : IBUFGDS port map (I=>FCLK(0), IB=>FCLK(1), O=>sFCLK);
+    --ibuf3 : IBUFGDS port map (I=>FCLK(0), IB=>FCLK(1), O=>sFCLK);
 
   module_1_i : module_1
     port map (
@@ -234,7 +286,9 @@ begin
     AdcToplevel_I_Fdce_Ena_1 : FDCE
     	generic map (INIT => '0')
     	port map (C => AppsSysClk, CE =>'1', CLR => IntRst, D => IntEna_d, Q => IntEna);
-    
+    	
+   --clocks modification needed to use the zedboard with the ads6425evm
+        
     AdcToplevel_I_AdcClk_v7 : AdcClk_v7
     	generic map (
     		C_OnChipLvdsTerm	=> 0,	-- 1 = termination, 0 = no termination
@@ -254,8 +308,43 @@ begin
             BitClkAlignWarn 	=> BitClkAlignWarn,	-- out
     		BitClkInvrtd		=> BitClkInvrtd,	-- out
             BitClkDone			=> IntBitClkDone,	-- out	Clock adjustment DONE.
-            DelCtrlRefClk       =>  sprocessing_system7_0_FCLK_CLK0_pin
+            DelCtrlRefClk       =>  sprocessing_system7_0_FCLK_CLK0_pin,
+            BitClkMR            => BufMRToAdcClk
         );
+       
+      
+        AdcToplevel_I_AdcFrm_v7 : AdcFrm_v7
+        	generic map (
+        		C_FAMILY			=> "7SERIES",			-- "virtex4" or "virtex5"
+        		C_OnChipLvdsTerm	=> 0,	-- 1 = termination, 0 = no termination
+        		C_AdcBits			=> 12,			--
+        		C_AdcWireInt		=> 1,
+        		-- C_FrmPattern			-- Pattern to lock the frame to.
+                --						-- In 2-wire mode only the LSB byte is used (all_zero_Msb__Bit_Pattern)
+                --						-- In 1-wire mode both MSB and LSB are used.
+        		C_FrmPattern		=> "000000000000" --copied from Xapp866
+        	)
+            port map (
+                FrmClk_n		=> FCLK(1),			-- in	Frame input for FPGA pins
+                FrmClk_p		=> FCLK(0),			-- in
+                FrmClkRst		=> IntRst,			-- in	Reset
+                FrmClkEna		=> IntEna,			-- in	Enable
+                FrmClkMR        => BufMRToAdcClk,    --bufIO and bufR inside the Frm....I should probably change the FrmClk and FrmClkDiv to outputs
+                                                    --and use these clocks for that bank data input
+                --FrmClk			=> IntClk,			-- in   Adjusted Bit clock
+                --FrmClkDiv		=> IntClkDiv,		-- in	Adjusted word clock
+                FrmClkDone		=> IntBitClkDone,	-- in 	Adjustment of bit clock DONE from "AdcClk"
+                FrmClkReSync	=> '0', --FrameReSync,		-- in	Input from application toplevel.
+                FrmClkBitSlip_p	=> IntFrmClkBitSlip_p,	-- out
+                FrmClkBitSlip_n	=> IntFrmClkBitSlip_n,	-- out
+                FrmClkSwapMux	=> IntFrmClkSwapMux,	-- out
+                FrmClkMsbRegEna	=> IntFrmClkMsbRegEna,	-- out
+                FrmClkLsbRegEna	=> IntFrmClkLsbRegEna,	-- out
+                FrmClkDat		=> SysFrameOut,		-- out
+                FrmClkOut		=> FrmClkOut,		-- out	Frame clock pass-though to DCM.
+                FrmClkRstOut	=> IntFrmClkRstOut,	-- out
+                FrmClkSyncWarn	=> FrameSyncWarn	-- out
+        	);
     
     
     FCLKP1 <= sCLkExtIn;

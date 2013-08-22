@@ -67,7 +67,8 @@ entity AdcClk_v7 is
         BitClkAlignWarn 	: out std_logic;
 		BitClkInvrtd		: out std_logic;
         BitClkDone 			: out std_logic;
-        DelCtrlRefClk       : in std_logic
+        DelCtrlRefClk       : in std_logic; 
+        BitClkMR            : out std_logic   --to be used in other IO banks 
     );
 end AdcClk_v7;
 
@@ -139,6 +140,7 @@ signal IntStepCnt	 		: std_logic_vector (4 downto 0);
 signal data_in_from_pins_delay  :std_logic;
 signal clk_in_int_inv       :std_logic;
 signal REF_CLOCK            :std_logic;
+signal MRClk                : std_logic;
 ---------------------------------------------------------------------------------------------------
 -- Attributes
 ---------------------------------------------------------------------------------------------------
@@ -159,6 +161,8 @@ AdcClk_I_Ibufds : IBUFDS
 		IB	=> BitClk_n,
 		O	=> IntClkCtrl_InClk
 	);
+
+
 ---------------------------------------------------------------------------------------------------
 -- Bit clock capture ISERDES Master-Slave combination
 ---------------------------------------------------------------------------------------------------
@@ -280,13 +284,20 @@ AdcClk_I_Isrds : ISERDESE2
 
 --
 
-    
-    
+
+--clock modifications to use the Zedboard
+BUFMR_inst : BUFMR
+ port map (
+     O => MRClk, -- 1-bit output: Clock output (connect to BUFIOs/BUFRs)
+     I => IntClkCtrl_OutClk -- 1-bit input: Clock input (Connect to IBUF)
+ );    
+BitClkMR  <= MRClk;
 
 --
 --            Input from ISERDES.O	  -- Output and CLK for all ISERDES
 AdcClk_I_Bufio : BUFIO
-	port map (I => IntClkCtrl_OutClk, O => IntBitClk_MonClkOut);
+	port map (I => MRClk, --IntClkCtrl_OutClk,
+	   O => IntBitClk_MonClkOut);
 BitClk_MonClkOut <= IntBitClk_MonClkOut;
 IntClkCtrl_MonClk <= BitClk_MonClkIn;
 --
@@ -295,7 +306,7 @@ Gen_Bufr_Div_3 : if (C_AdcBits = 12) generate
 		generic map (BUFR_DIVIDE => "3", -- 12-bit = DIV by 3
 					SIM_DEVICE => "7SERIES") --"VIRTEX4")  --modified to make it compatible with 7-series FPGAs
 --                 ISERDES.CLK, from BUFIO.O -- ISERDES.CLKDIV, word clock for all ISERDES.
-		port map  (I => IntClkCtrl_OutClk, -- IntBitClk_MonClkOut, --modified to make it compatible with 7-series FPGAs
+		port map  (I => MRClk, --IntClkCtrl_OutClk, -- IntBitClk_MonClkOut, --modified to make it compatible with 7-series FPGAs
 		            O => BitClk_RefClkOut,
 					CE => High, CLR => Low);
 end generate;
@@ -305,7 +316,7 @@ Gen_Bufr_Div_4 : if (C_AdcBits /= 12) generate
 		generic map (BUFR_DIVIDE => "4", -- 14- and 16-bit = DIV by 4
 					SIM_DEVICE => "7SERIES") --"VIRTEX5") --modified to make it compatible with 7-series FPGAs
 --                 ISERDES.CLK, from BUFIO.O -- ISERDES.CLKDIV, word clock for all ISERDES.
-		port map  (I => IntClkCtrl_OutClk, -- IntBitClk_MonClkOut, --modified to make it compatible with 7-series FPGAs
+		port map  (I => MRClk, --IntClkCtrl_OutClk, -- IntBitClk_MonClkOut, --modified to make it compatible with 7-series FPGAs
 		            O => BitClk_RefClkOut,
 					CE	=> High, CLR => Low);
 end generate;
