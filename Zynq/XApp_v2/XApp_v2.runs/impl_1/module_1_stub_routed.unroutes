@@ -1,0 +1,24 @@
+Release 14.5 - par P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Mon Aug 26 16:55:03 2013
+
+All signals are completely routed.
+
+WARNING:ParHelpers:361 - There are 12 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   ADC1/n0010[16]
+   ADC1/n0010[17]
+   ADC1/n0010[18]
+   ADC1/n0010[19]
+   ADC1/n0010[20]
+   ADC1/n0010[21]
+   ADC1/n0010[22]
+   ADC1/n0010[23]
+   ADC1/n0010[24]
+   ADC1/n0010[25]
+   ADC1/n0010[26]
+   ADC1/n0010[27]
+
+

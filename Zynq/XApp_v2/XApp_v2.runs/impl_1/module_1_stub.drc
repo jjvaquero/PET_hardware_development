@@ -1,0 +1,70 @@
+Release 14.5 Drc P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Mon Aug 26 16:55:35 2013
+
+drc -z module_1_stub_routed.ncd module_1_stub.pcf
+
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on
+   block:<ADC1/AdcToplevel_I_AdcClock/AdcClock_I_Isrds_Master>:<ISERDESE2_ISERDE
+   SE2>.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being
+   ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on
+   block:<ADC1/AdcToplevel_I_AdcFrame/AdcFrame_I_Isrds_n>:<ISERDESE2_ISERDESE2>.
+    Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being
+   ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on
+   block:<ADC1/AdcToplevel_I_AdcFrame/AdcFrame_I_Isrds_p>:<ISERDESE2_ISERDESE2>.
+    Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being
+   ignored.
+WARNING:PhysDesignRules:367 - The signal
+   <ADC1/Gen_2[0].AdcToplevel_I_AdcMem/GLOBAL_LOGIC0> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <ADC1/Gen_2[1].AdcToplevel_I_AdcMem/GLOBAL_LOGIC0> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on
+   block:<ADC1/Gen_2[0].AdcToplevel_I_AdcData/AdcData_I_Isrds_D0_p>:<ISERDESE2_I
+   SERDESE2>.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is
+   being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on
+   block:<ADC1/Gen_2[0].AdcToplevel_I_AdcData/AdcData_I_Isrds_D0_n>:<ISERDESE2_I
+   SERDESE2>.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is
+   being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on
+   block:<ADC1/Gen_2[0].AdcToplevel_I_AdcData/AdcData_I_Isrds_D1_p>:<ISERDESE2_I
+   SERDESE2>.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is
+   being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on
+   block:<ADC1/Gen_2[0].AdcToplevel_I_AdcData/AdcData_I_Isrds_D1_n>:<ISERDESE2_I
+   SERDESE2>.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is
+   being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on
+   block:<ADC1/Gen_2[1].AdcToplevel_I_AdcData/AdcData_I_Isrds_D1_p>:<ISERDESE2_I
+   SERDESE2>.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is
+   being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on
+   block:<ADC1/Gen_2[1].AdcToplevel_I_AdcData/AdcData_I_Isrds_D1_n>:<ISERDESE2_I
+   SERDESE2>.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is
+   being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on
+   block:<ADC1/Gen_2[1].AdcToplevel_I_AdcData/AdcData_I_Isrds_D0_p>:<ISERDESE2_I
+   SERDESE2>.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is
+   being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on
+   block:<ADC1/Gen_2[1].AdcToplevel_I_AdcData/AdcData_I_Isrds_D0_n>:<ISERDESE2_I
+   SERDESE2>.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is
+   being ignored.
+DRC detected 0 errors and 13 warnings.  Please see the previously displayed
+individual error or warning messages for more details.
