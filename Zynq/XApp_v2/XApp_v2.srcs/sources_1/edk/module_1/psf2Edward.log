@@ -1,51 +1,51 @@
 WARNING:EDK:4092 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
    s\sources_1\edk\module_1\module_1.mhs line 34 
 WARNING:EDK:4092 - IPNAME: axi_gpio, INSTANCE: axi_gpio_0 - Pre-Production
    version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
-   s\sources_1\edk\module_1\module_1.mhs line 124 
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
+   s\sources_1\edk\module_1\module_1.mhs line 125 
 WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi_interconnect_1 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
-   s\sources_1\edk\module_1\module_1.mhs line 136 
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
+   s\sources_1\edk\module_1\module_1.mhs line 140 
 WARNING:EDK:4092 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
    s\sources_1\edk\module_1\module_1.mhs line 34 
 WARNING:EDK:4092 - IPNAME: axi_gpio, INSTANCE: axi_gpio_0 - Pre-Production
    version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
-   s\sources_1\edk\module_1\module_1.mhs line 124 
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
+   s\sources_1\edk\module_1\module_1.mhs line 125 
 WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi_interconnect_1 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
-   s\sources_1\edk\module_1\module_1.mhs line 136 
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
+   s\sources_1\edk\module_1\module_1.mhs line 140 
 WARNING:EDK:4092 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
    s\sources_1\edk\module_1\module_1.mhs line 34 
 WARNING:EDK:4092 - IPNAME: axi_gpio, INSTANCE: axi_gpio_0 - Pre-Production
    version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
-   s\sources_1\edk\module_1\module_1.mhs line 124 
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
+   s\sources_1\edk\module_1\module_1.mhs line 125 
 WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi_interconnect_1 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
-   s\sources_1\edk\module_1\module_1.mhs line 136 
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
+   s\sources_1\edk\module_1\module_1.mhs line 140 
 WARNING:EDK:4092 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
    s\sources_1\edk\module_1\module_1.mhs line 34 
 WARNING:EDK:4092 - IPNAME: axi_gpio, INSTANCE: axi_gpio_0 - Pre-Production
    version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
-   s\sources_1\edk\module_1\module_1.mhs line 124 
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
+   s\sources_1\edk\module_1\module_1.mhs line 125 
 WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi_interconnect_1 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
-   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.src
-   s\sources_1\edk\module_1\module_1.mhs line 136 
+   C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.src
+   s\sources_1\edk\module_1\module_1.mhs line 140 
 WARNING:EDK:2486 - The bitwidth 52 of new value 0xc00000000fe81 is greater than
    32
 WARNING:EDK:4131 - IPNAME: ps7_usb_0, PROPERTY: C_INTERCONNECT_M_AXI_BASE_ID -

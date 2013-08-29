@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.58f on Mon Aug 26 16:54:43 2013
+// Written by: Map P.58f on Thu Aug 29 10:11:42 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -208,6 +208,28 @@ TIMEGRP clk_fpga_0 = BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_12" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_11" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_10" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_9"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_8"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_7"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_6"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_5"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_4"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_3"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_2"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_1"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_0"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/ipif_glbl_irpt_enable_reg"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/ip2Bus_RdAck_intr_reg_hole" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_2"
@@ -216,25 +238,92 @@ TIMEGRP clk_fpga_0 = BEL
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_0"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_9"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_9"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_8"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_8"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_7"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_7"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_6"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_6"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_5"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_5"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_4"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_4"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_3"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_3"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_2"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_2"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_1"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_1"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_0"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_0"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_29"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_28"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_27"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_26"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_31"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_30"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_25"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_24"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_19"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_23"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_18"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_22"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_17"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_21"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_16"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_20"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_15"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_14"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_13"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_12"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_11"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_data_in_xor_reg_10"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/ip2Bus_RdAck_intr_reg_hole_d1"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_9"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_8"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_7"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_6"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/ip_irpt_enable_reg_1"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/ip_irpt_enable_reg_0"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/DO_IRPT_INPUT[1].GEN_POS_EDGE_DETECT.irpt_dly2"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/DO_IRPT_INPUT[1].GEN_POS_EDGE_DETECT.irpt_dly1"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_29"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_28"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_27"
@@ -244,8 +333,8 @@ TIMEGRP clk_fpga_0 = BEL
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_30"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_19"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_24"
-        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_23"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_18"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_23"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_17"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_22"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_16"
@@ -263,67 +352,24 @@ TIMEGRP clk_fpga_0 = BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_27" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_31" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_26" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_30" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_25" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_30" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_24" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_19" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_23" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_18" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_17" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_22" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_17" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_16" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_21" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_20" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_15" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_20" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_14" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_13" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_12" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_11" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_10" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_29"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_28"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_27"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_31"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_26"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_30"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_25"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_19"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_24"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_18"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_23"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_17"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_22"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_16"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_21"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_15"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_20"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_14"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_13"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_12"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_11"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_10"
-        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_9" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_9" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_8" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_7" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_6" BEL
@@ -351,14 +397,27 @@ TIMEGRP clk_fpga_0 = BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_1"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_0"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_9"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_8"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_7"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_9" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_8" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_7" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_6" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_5" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_4" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_3" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_2" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_6"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_8" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_5"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_7" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_4"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_6" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_3"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_5" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_2"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_4" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_1"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_3" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_0"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_2" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_1" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_0" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_29"
@@ -391,9 +450,9 @@ TIMEGRP clk_fpga_0 = BEL
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_16"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_20"
-        BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_15"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_20"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_14"
         BEL
@@ -404,17 +463,104 @@ TIMEGRP clk_fpga_0 = BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_11"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_10"
-        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_9" BEL
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_29" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_28" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_27" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_31" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_26" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_30" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_25" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_24" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_19" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_23" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_18" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_22" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_17" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_21" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_16" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_20" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_15" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_14" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_13" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_12" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_11" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_10" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_9" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_8" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_7" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_6" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_9" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_5" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_4" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_8" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_29"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_4" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_3" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_9"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_28"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_7" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_2" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_8"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_27"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_6" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_1" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_7"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_31"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_26"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_5" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_OE_0" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_29" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_6"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_30"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_25"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_4" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_5"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_24"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_19"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_3" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_4"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_23"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_18"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_2" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_3"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_22"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_17"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_1" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_2"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_21"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_16"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_io_i_d2_0" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_20"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_15"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_1"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_14"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_0"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_13"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_12"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_11"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_10"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/ip2Bus_WrAck_intr_reg_hole_d1"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_29" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_28" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_27" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_31" BEL
@@ -436,27 +582,53 @@ TIMEGRP clk_fpga_0 = BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_12" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_11" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_10" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_9"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_8"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_7"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_6"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_5"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_4"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_3"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_2"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_1"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_0"
-        BEL "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_rdack_i_D1" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO2_intr" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_rdack_i_D1" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/bus2ip_reset" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_29"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_28"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_27"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_31"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_26"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_30"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_25"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_24"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_19"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_23"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_18"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_22"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_17"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_21"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_16"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_20"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_15"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_14"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_13"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_12"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_11"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_data_in_xor_reg_10"
+        BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_29"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_28"
@@ -512,25 +684,25 @@ TIMEGRP clk_fpga_0 = BEL
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_26"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_30"
-        BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_25"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_24"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_30"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_19"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_23"
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_24"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_18"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_23"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_17"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_22"
         BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_16"
-        BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_21"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_16"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_15"
         BEL
@@ -545,50 +717,6 @@ TIMEGRP clk_fpga_0 = BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_11"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_10"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_29"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_28"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_27"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_31"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_26"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_25"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_30"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_19"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_24"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_23"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_18"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_22"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_17"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_21"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_16"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_20"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_15"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_14"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_13"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_12"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_11"
-        BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_Data_In_10"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_9"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_8"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_7"
@@ -596,31 +724,79 @@ TIMEGRP clk_fpga_0 = BEL
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_5"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_4"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_3"
-        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_2"
-        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_1"
-        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_0"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/ip2Bus_WrAck_intr_reg_hole" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_2" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_1" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_0" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly2"
         BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly1"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_intr" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rvalid_i"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_29"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_28"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_27"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_31"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_26"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_9"
         BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_30"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_25"
+        BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_8"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_24"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_19"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_7"
         BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_23"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_18"
+        BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_6"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_22"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_17"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_5"
         BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_21"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_16"
+        BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_4"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_20"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_15"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_3"
         BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_14"
+        BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_2"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_13"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_1"
         BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_12"
+        BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_0"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_11"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_io_i_d2_10"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_29" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_28" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_27" BEL
@@ -643,7 +819,52 @@ TIMEGRP clk_fpga_0 = BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_12" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_11" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_10" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_9" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_29"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_28"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_27"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_31"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_26"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_30"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_25"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_24"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_19"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_23"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_18"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_22"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_17"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_21"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_16"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_20"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_15"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_14"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_13"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_12"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_11"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_Dual.gpio2_io_i_d2_10"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/Intr2Bus_WrAck"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_9" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_8" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_7" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_6" BEL
@@ -653,15 +874,38 @@ TIMEGRP clk_fpga_0 = BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_2" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_1" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_0" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_9"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_8"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_7"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_6"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_5"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_4"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_3"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_2"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_1"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_io_i_d2_0"
+        BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2"
         BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/irpt_rdack_d1"
         BEL "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_9" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_8" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_7" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_6" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/Intr2Bus_RdAck"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_6" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_5" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_4" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_3" BEL
@@ -670,25 +914,52 @@ TIMEGRP clk_fpga_0 = BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_0" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1"
         BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/ip_irpt_status_reg_1"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/ip_irpt_status_reg_0"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/irpt_wrack_d1"
+        BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0"
-        BEL "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_29" BEL
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_19"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_18"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_17"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_16"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_15"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_14"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_13"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_12"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_11"
+        BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_10"
+        BEL "module_1_i/axi_gpio_0/axi_gpio_0/IP2INTC_Irpt" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_29" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_28" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/iGPIO_xferAck" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_27" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_31" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_26" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_30" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_31" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_25" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_24" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_30" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_19" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_23" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_24" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_18" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_22" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_23" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_17" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_21" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_22" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_16" BEL
-        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_20" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_21" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_15" BEL
+        "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_20" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_14" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_13" BEL
         "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_12" BEL
@@ -763,6 +1034,14 @@ TIMEGRP clk_fpga_0 = BEL
         "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_amesg_i_31"
         BEL
         "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_amesg_i_30"
+        BEL
+        "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_amesg_i_19"
+        BEL
+        "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_amesg_i_18"
+        BEL
+        "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_amesg_i_17"
+        BEL
+        "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_amesg_i_16"
         BEL
         "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_amesg_i_15"
         BEL

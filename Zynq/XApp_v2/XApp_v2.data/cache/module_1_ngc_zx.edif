@@ -4,7 +4,7 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timestamp 2013 8 26 13 31 18)
+      (timestamp 2013 8 29 10 10 45)
       (program "Xilinx ngc2edif" (version "P.58f"))
       (author "Xilinx. Inc ")
       (comment "This EDIF netlist is to be used within supported synthesis tools")
@@ -3520,6 +3520,12 @@
                 (portRef (member M_AXI_RVALID 0) (instanceRef axi_interconnect_1))
               )
             )
+            (net axi_gpio_0_IP2INTC_Irpt
+              (joined
+                (portRef IP2INTC_Irpt (instanceRef axi_gpio_0))
+                (portRef (member IRQ_F2P 0) (instanceRef processing_system7_0))
+              )
+            )
             (net (rename axi_interconnect_1_S_ARID_11_ "axi_interconnect_1_S_ARID<11>")
               (joined
                 (portRef (member M_AXI_GP0_ARID 0) (instanceRef processing_system7_0))
@@ -6186,7 +6192,6 @@
                 (portRef (member DDR_ARB 1) (instanceRef processing_system7_0))
                 (portRef (member DDR_ARB 2) (instanceRef processing_system7_0))
                 (portRef (member DDR_ARB 3) (instanceRef processing_system7_0))
-                (portRef (member IRQ_F2P 0) (instanceRef processing_system7_0))
                 (portRef CAN0_PHY_RX (instanceRef processing_system7_0))
                 (portRef CAN1_PHY_RX (instanceRef processing_system7_0))
                 (portRef ENET0_GMII_COL (instanceRef processing_system7_0))

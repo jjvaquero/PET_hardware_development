@@ -23,7 +23,7 @@
 </mapAttribute>
 <stringAttribute key="xilinx.data.files.list" value=""/>
 <booleanAttribute key="xilinx.elf.verify" value="false"/>
-<stringAttribute key="xilinx.init.tcl" value="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.sdk\SDK\SDK_Export\module_1_hw_platform\ps7_init.tcl"/>
+<stringAttribute key="xilinx.init.tcl" value="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.sdk\SDK\SDK_Export\hw\ps7_init.tcl"/>
 <booleanAttribute key="xilinx.no.download.program" value="false"/>
 <booleanAttribute key="xilinx.profile.enable" value="false"/>
 <intAttribute key="xilinx.reset.type" value="1"/>
@@ -31,7 +31,7 @@
 <stringAttribute key="xilinx.romem.size" value=""/>
 <stringAttribute key="xilinx.stdio.baud" value="9600"/>
 <booleanAttribute key="xilinx.stdio.connect" value="false"/>
-<stringAttribute key="xilinx.stdio.port" value="Detecting COM Ports.."/>
+<stringAttribute key="xilinx.stdio.port" value="COM1"/>
 <booleanAttribute key="xilinx.xmd.crosstrigger" value="false"/>
 <booleanAttribute key="xilinx.xmd.safe.mode" value="false"/>
 </launchConfiguration>

@@ -26,7 +26,7 @@
 #define XPAR_AXI_GPIO_0_BASEADDR 0x41200000
 #define XPAR_AXI_GPIO_0_HIGHADDR 0x4120FFFF
 #define XPAR_AXI_GPIO_0_DEVICE_ID 0
-#define XPAR_AXI_GPIO_0_INTERRUPT_PRESENT 0
+#define XPAR_AXI_GPIO_0_INTERRUPT_PRESENT 1
 #define XPAR_AXI_GPIO_0_IS_DUAL 1
 
 
@@ -242,10 +242,12 @@
 /******************************************************************/
 
 /* Definitions for Fabric interrupts connected to ps7_scugic_0 */
+#define XPAR_FABRIC_AXI_GPIO_0_IP2INTC_IRPT_INTR 91
 
 /******************************************************************/
 
 /* Canonical definitions for Fabric interrupts connected to ps7_scugic_0 */
+#define XPAR_FABRIC_GPIO_0_VEC_ID XPAR_FABRIC_AXI_GPIO_0_IP2INTC_IRPT_INTR
 
 /******************************************************************/
 

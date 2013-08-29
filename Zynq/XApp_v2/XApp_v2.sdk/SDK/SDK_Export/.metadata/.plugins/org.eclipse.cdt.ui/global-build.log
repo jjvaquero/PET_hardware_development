@@ -1,4 +1,11 @@
-12:02:55 **** Build of project standalone_bsp_0 ****
+10:15:58 **** Clean-only build of configuration Debug for project Test1 ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  Test1.elf.size  Test1.elf
+' '
+10:15:58 **** Clean-only build of project standalone_bsp_0 ****
+make -k clean 
+rm -rf ps7_cortexa9_0
+10:15:59 **** Build of project standalone_bsp_0 ****
 make -k all 
 libgen -hw ../module_1_hw_platform/system.xml\
 	       \
@@ -42,29 +49,15 @@ arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
 "Compiling cpu_cortexa9"
 Running execs_generate.
 'Finished building libraries'
-
-**** Build of configuration Debug for project Test1 ****
-
-Nothing to build for project Test1
-12:04:14 **** Auto Build of configuration Debug for project Test1 ****
+10:16:15 **** Build of configuration Debug for project Test1 ****
 make all 
 'Building file: ../src/main.c'
 'Invoking: ARM gcc compiler'
 arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building target: Test1.elf'
-'Invoking: ARM gcc linker'
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-../../standalone_bsp_0/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o): In function `_start':
-C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v1\XApp_v1.sdk\SDK\SDK_Export\standalone_bsp_0\ps7_cortexa9_0\libsrc\standalone_v3_09_a\src/xil-crt0.S:149: undefined reference to `main'
-collect2.exe: error: ld returned 1 exit status
-make: *** [Test1.elf] Error 1
-12:05:00 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:117:2: warning: implicit declaration of function 'SetupInterruptSystem' [-Wimplicit-function-declaration]
+../src/main.c: In function 'SetupInterruptSystem':
+../src/main.c:254:169: warning: extra tokens at end of #ifdef directive [enabled by default]
 'Finished building: ../src/main.c'
 ' '
 'Building target: Test1.elf'
@@ -75,82 +68,18 @@ arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_co
 'Invoking: ARM Print Size'
 arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  24120	   1120	  29812	  55052	   d70c	Test1.elf
+  29000	   1888	  30228	  61116	   eebc	Test1.elf
 'Finished building: Test1.elf.size'
 ' '
-12:05:20 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-12:06:24 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-13:29:28 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-13:32:36 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-13:41:36 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-13:42:00 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-18:30:33 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-18:32:05 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:30:11 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-libgen -hw ../module_1_hw_platform/system.xml\
-	       \
-	       -pe ps7_cortexa9_0 \
-	       -log libgen.log \
-	       system.mss
-libgen
-Xilinx EDK 14.5 Build EDK_P.58f
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: libgen -hw ../module_1_hw_platform/system.xml -pe ps7_cortexa9_0
--log libgen.log system.mss 
-
-
-Staging source files.
-Running DRCs.
-Running generate.
-Running post_generate.
-Running include - 'make -s include "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-
-Running libs - 'make -s libs "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-"Compiling common"
-arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
-"Compiling xadc"
-"Compiling standalone"
-"Compiling gpio"
-"Compiling devcfg"
-"Compiling dmaps"
-"Compiling emacps"
-"Compiling gpiops"
-"Compiling qspips"
-"Compiling scugic"
-"Compiling scutimer"
-"Compiling scuwdt"
-"Compiling uartps"
-"Compiling usbps"
-"Compiling cpu_cortexa9"
-Running execs_generate.
-'Finished building libraries'
-17:30:33 **** Auto Build of configuration Debug for project Test1 ****
+10:17:02 **** Auto Build of configuration Debug for project Test1 ****
 make all 
 'Building file: ../src/main.c'
 'Invoking: ARM gcc compiler'
 arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:117:2: warning: implicit declaration of function 'SetupInterruptSystem' [-Wimplicit-function-declaration]
+../src/main.c: In function 'SetupInterruptSystem':
+../src/main.c:254:169: warning: extra tokens at end of #ifdef directive [enabled by default]
 'Finished building: ../src/main.c'
 ' '
 'Building target: Test1.elf'
@@ -161,98 +90,9 @@ arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_co
 'Invoking: ARM Print Size'
 arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  24120	   1120	  29812	  55052	   d70c	Test1.elf
+  29000	   1888	  30228	  61116	   eebc	Test1.elf
 'Finished building: Test1.elf.size'
 ' '
-17:33:46 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:34:07 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:35:10 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:19:40 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:19:41 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:19:55 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:21:14 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:47:39 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:48:32 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:49:24 **** Build of project standalone_bsp_0 ****
-make -k all 
-libgen -hw ../module_1_hw_platform/system.xml\
-	       \
-	       -pe ps7_cortexa9_0 \
-	       -log libgen.log \
-	       system.mss
-libgen
-Xilinx EDK 14.5 Build EDK_P.58f
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: libgen -hw ../module_1_hw_platform/system.xml -pe ps7_cortexa9_0
--log libgen.log system.mss 
-
-
-Staging source files.
-Running DRCs.
-Running generate.
-Running post_generate.
-Running include - 'make -s include "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-
-Running libs - 'make -s libs "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-"Compiling common"
-arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
-"Compiling xadc"
-"Compiling standalone"
-"Compiling gpio"
-"Compiling devcfg"
-"Compiling dmaps"
-"Compiling emacps"
-"Compiling gpiops"
-"Compiling qspips"
-"Compiling scugic"
-"Compiling scutimer"
-"Compiling scuwdt"
-"Compiling uartps"
-"Compiling usbps"
-"Compiling cpu_cortexa9"
-Running execs_generate.
-'Finished building libraries'
-16:49:41 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:51:33 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:52:02 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:53:35 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:53:49 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:56:28 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:56:51 **** Incremental Build of configuration Debug for project Test1 ****
+10:25:56 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.

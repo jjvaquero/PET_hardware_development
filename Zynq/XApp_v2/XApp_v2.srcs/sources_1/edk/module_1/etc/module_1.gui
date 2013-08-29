@@ -15,13 +15,12 @@
     </HEADERS>
     <SPLITTERS COLLAPSIBLE="1" HANDLEWIDTH="4" MARKER="255" ORIENTATION="1" RESIZE="1" SIZES="62,630,200" VERSION="0"/>
     <SET ID="processing_system7_0" IS_EXPANDED="TRUE"/>
-    <SET ID="axi_gpio_0" IS_EXPANDED="TRUE"/>
     <STATUS>
       <SELECTIONS/>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="processing_system7_0" IS_EXPANDED="TRUE" ROW_INDEX="1"/>
-      <VARIABLE ID="axi_gpio_0" IS_EXPANDED="TRUE" ROW_INDEX="2"/>
+      <VARIABLE ID="axi_gpio_0" ROW_INDEX="2"/>
       <VARIABLE ID="axi_interconnect_1" ROW_INDEX="0"/>
     </SEQUENCES>
   </SET>
@@ -91,7 +90,9 @@
     </SET>
     <SET ID="axi_interconnect_1" IS_EXPANDED="TRUE"/>
     <STATUS>
-      <SELECTIONS/>
+      <SELECTIONS>
+        <VARIABLE ID="IP2INTC_Irpt" PARENT="axi_gpio_0"/>
+      </SELECTIONS>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="ExternalPorts" IS_EXPANDED="TRUE" ROW_INDEX="0"/>
