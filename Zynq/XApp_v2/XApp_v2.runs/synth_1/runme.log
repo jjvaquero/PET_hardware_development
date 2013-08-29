@@ -998,7 +998,7 @@ Clock Information:
 Clock Signal                                                               | Clock buffer(FF name)         | Load  |
 ---------------------------------------------------------------------------+-------------------------------+-------+
 DCLK<0>                                                                    | IBUFGDS+ISERDESE2+BUFMRCE+BUFR| 253   |
-module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                          | 592   |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                          | 757   |
 ---------------------------------------------------------------------------+-------------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1017,7 +1017,7 @@ Timing Summary:
 Speed Grade: -1
 
    Minimum period: 3.868ns (Maximum Frequency: 258.532MHz)
-   Minimum input arrival time before clock: 2.172ns
+   Minimum input arrival time before clock: 2.180ns
    Maximum output required time after clock: 2.574ns
    Maximum combinational path delay: 0.472ns
 

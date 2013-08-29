@@ -1045,28 +1045,29 @@ Top Level Output File Name         : module_1_stub.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1042
+# BELS                             : 1168
 #      GND                         : 11
 #      INV                         : 126
 #      LUT1                        : 38
-#      LUT2                        : 84
-#      LUT3                        : 206
-#      LUT4                        : 257
-#      LUT5                        : 47
-#      LUT6                        : 176
+#      LUT2                        : 153
+#      LUT3                        : 212
+#      LUT4                        : 263
+#      LUT5                        : 50
+#      LUT6                        : 218
 #      MUXCY                       : 63
 #      MUXF7                       : 1
 #      VCC                         : 8
 #      XORCY                       : 25
-# FlipFlops/Latches                : 746
-#      FD                          : 30
+# FlipFlops/Latches                : 911
+#      FD                          : 97
 #      FDC                         : 30
 #      FDCE                        : 215
 #      FDE                         : 125
 #      FDP                         : 3
 #      FDPE                        : 1
-#      FDR                         : 164
-#      FDRE                        : 114
+#      FDR                         : 240
+#      FDRE                        : 132
+#      FDS                         : 4
 #      FDSE                        : 64
 # RAMS                             : 32
 #      RAM32X1D                    : 32
@@ -1095,19 +1096,19 @@ Selected Device : 7z020clg484-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             746  out of  106400     0%  
- Number of Slice LUTs:                 1062  out of  53200     1%  
-    Number used as Logic:               934  out of  53200     1%  
+ Number of Slice Registers:             911  out of  106400     0%  
+ Number of Slice LUTs:                 1188  out of  53200     2%  
+    Number used as Logic:              1060  out of  53200     1%  
     Number used as Memory:              128  out of  17400     0%  
        Number used as RAM:               64
        Number used as SRL:               64
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1294
-   Number with an unused Flip Flop:     548  out of   1294    42%  
-   Number with an unused LUT:           232  out of   1294    17%  
-   Number of fully used LUT-FF pairs:   514  out of   1294    39%  
-   Number of unique control sets:        63
+ Number of LUT Flip Flop pairs used:   1490
+   Number with an unused Flip Flop:     579  out of   1490    38%  
+   Number with an unused LUT:           302  out of   1490    20%  
+   Number of fully used LUT-FF pairs:   609  out of   1490    40%  
+   Number of unique control sets:        64
 
 IO Utilization: 
  Number of IOs:                         152
@@ -1138,7 +1139,7 @@ Clock Information:
 Clock Signal                                                               | Clock buffer(FF name)         | Load  |
 ---------------------------------------------------------------------------+-------------------------------+-------+
 DCLK<0>                                                                    | IBUFGDS+ISERDESE2+BUFMRCE+BUFR| 253   |
-module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                          | 592   |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                          | 757   |
 ---------------------------------------------------------------------------+-------------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1157,7 +1158,7 @@ Timing Summary:
 Speed Grade: -1
 
    Minimum period: 3.868ns (Maximum Frequency: 258.532MHz)
-   Minimum input arrival time before clock: 2.172ns
+   Minimum input arrival time before clock: 2.180ns
    Maximum output required time after clock: 2.574ns
    Maximum combinational path delay: 0.472ns
 
@@ -1192,7 +1193,7 @@ Delay:               2.978ns (Levels of Logic = 3)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
   Clock period: 3.868ns (frequency: 258.532MHz)
-  Total number of paths / destination ports: 8308 / 1080
+  Total number of paths / destination ports: 10687 / 1359
 -------------------------------------------------------------------------
 Delay:               3.868ns (Levels of Logic = 8)
   Source:            module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 (FF)
@@ -1204,7 +1205,7 @@ Delay:               3.868ns (Levels of Logic = 8)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               4   0.282   0.505  axi_gpio_0/ip2bus_wrack_i_D1 (axi_gpio_0/ip2bus_wrack_i_D1)
+     FDR:C->Q              4   0.282   0.505  axi_gpio_0/ip2bus_wrack_i_D1 (axi_gpio_0/ip2bus_wrack_i_D1)
      LUT2:I0->O            5   0.053   0.662  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1 (S_AXI_WREADY)
      end scope: 'module_1_i/axi_gpio_0:S_AXI_AWREADY'
      begin scope: 'module_1_i/axi_interconnect_1:M_AXI_AWREADY<0>'
@@ -1242,9 +1243,9 @@ Offset:              1.793ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
-  Total number of paths / destination ports: 428 / 277
+  Total number of paths / destination ports: 466 / 315
 -------------------------------------------------------------------------
-Offset:              2.172ns (Levels of Logic = 5)
+Offset:              2.180ns (Levels of Logic = 5)
   Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID (PAD)
   Destination:       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1 (FF)
   Destination Clock: module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
@@ -1256,19 +1257,19 @@ Offset:              2.172ns (Levels of Logic = 5)
     PS7:MAXIGP0WVALID      4   0.000   0.000  processing_system7_0/PS7_i (M_AXI_GP0_WVALID)
      end scope: 'module_1_i/processing_system7_0:M_AXI_GP0_WVALID'
      begin scope: 'module_1_i/axi_interconnect_1:S_AXI_WVALID<0>'
-     LUT5:I1->O            2   0.053   0.608  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/M_AXI_WVALID1 (DEBUG_MP_MR_WDATACONTROL<0>)
+     LUT5:I1->O            3   0.053   0.616  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/M_AXI_WVALID1 (DEBUG_MP_MR_WDATACONTROL<0>)
      end scope: 'module_1_i/axi_interconnect_1:M_AXI_WVALID<0>'
      begin scope: 'module_1_i/axi_gpio_0:S_AXI_WVALID'
      LUT3:I0->O            1   0.053   0.739  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1 (axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1)
      LUT6:I0->O            1   0.053   0.000  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In3 (axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In)
      FDR:D                     0.011          axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
     ----------------------------------------
-    Total                      2.172ns (0.825ns logic, 1.347ns route)
-                                       (38.0% logic, 62.0% route)
+    Total                      2.180ns (0.825ns logic, 1.355ns route)
+                                       (37.8% logic, 62.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
-  Total number of paths / destination ports: 761 / 73
+  Total number of paths / destination ports: 762 / 74
 -------------------------------------------------------------------------
 Offset:              2.574ns (Levels of Logic = 21)
   Source:            module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_31 (FF)
@@ -1377,11 +1378,11 @@ module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    
 
 
 Total REAL time to Xst completion: 15.00 secs
-Total CPU time to Xst completion: 14.51 secs
+Total CPU time to Xst completion: 14.78 secs
  
 --> 
 
-Total memory usage is 489260 kilobytes
+Total memory usage is 490348 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  430 (   0 filtered)

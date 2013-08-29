@@ -964,6 +964,7 @@ architecture STRUCTURE of module_1 is
 
   signal axi_gpio_0_GPIO2_IO_I : std_logic_vector(31 downto 0);
   signal axi_gpio_0_GPIO_IO_O : std_logic_vector(31 downto 0);
+  signal axi_gpio_0_IP2INTC_Irpt : std_logic_vector(0 to 0);
   signal axi_interconnect_1_M_ARADDR : std_logic_vector(31 downto 0);
   signal axi_interconnect_1_M_ARESETN : std_logic_vector(0 to 0);
   signal axi_interconnect_1_M_ARREADY : std_logic_vector(0 to 0);
@@ -1687,7 +1688,7 @@ begin
       FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N_0,
       FPGA_IDLE_N => net_gnd0,
       DDR_ARB => net_gnd4,
-      IRQ_F2P => net_gnd1(0 to 0),
+      IRQ_F2P => axi_gpio_0_IP2INTC_Irpt(0 to 0),
       Core0_nFIQ => net_gnd0,
       Core0_nIRQ => net_gnd0,
       Core1_nFIQ => net_gnd0,
@@ -1769,7 +1770,7 @@ begin
       S_AXI_RRESP => axi_interconnect_1_M_RRESP,
       S_AXI_RVALID => axi_interconnect_1_M_RVALID(0),
       S_AXI_RREADY => axi_interconnect_1_M_RREADY(0),
-      IP2INTC_Irpt => open,
+      IP2INTC_Irpt => axi_gpio_0_IP2INTC_Irpt(0),
       GPIO_IO_I => net_gnd32,
       GPIO_IO_O => axi_gpio_0_GPIO_IO_O,
       GPIO_IO_T => open,
