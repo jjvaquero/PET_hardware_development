@@ -1,11 +1,4 @@
-10:15:58 **** Clean-only build of configuration Debug for project Test1 ****
-make clean 
-rm -rf  ./src/main.o  ./src/main.d  Test1.elf.size  Test1.elf
-' '
-10:15:58 **** Clean-only build of project standalone_bsp_0 ****
-make -k clean 
-rm -rf ps7_cortexa9_0
-10:15:59 **** Build of project standalone_bsp_0 ****
+16:05:50 **** Build of project standalone_bsp_0 ****
 make -k all 
 libgen -hw ../module_1_hw_platform/system.xml\
 	       \
@@ -49,7 +42,11 @@ arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
 "Compiling cpu_cortexa9"
 Running execs_generate.
 'Finished building libraries'
-10:16:15 **** Build of configuration Debug for project Test1 ****
+16:06:27 **** Clean-only build of configuration Debug for project Test1 ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  Test1.elf.size  Test1.elf
+' '
+16:06:27 **** Build of configuration Debug for project Test1 ****
 make all 
 'Building file: ../src/main.c'
 'Invoking: ARM gcc compiler'
@@ -71,7 +68,25 @@ arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
   29000	   1888	  30228	  61116	   eebc	Test1.elf
 'Finished building: Test1.elf.size'
 ' '
-10:17:02 **** Auto Build of configuration Debug for project Test1 ****
+16:09:23 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+16:09:38 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+16:15:02 **** Auto Build of configuration Debug for project Test1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:117:2: warning: implicit declaration of function 'SetupInterruptSystem' [-Wimplicit-function-declaration]
+../src/main.c: In function 'SetupInterruptSystem':
+../src/main.c:254:169: warning: extra tokens at end of #ifdef directive [enabled by default]
+../src/main.c:302:56: warning: statement with no effect [-Wunused-value]
+../src/main.c:304:2: error: expected ';' before '__asm__'
+make: *** [src/main.o] Error 1
+16:15:25 **** Auto Build of configuration Debug for project Test1 ****
 make all 
 'Building file: ../src/main.c'
 'Invoking: ARM gcc compiler'
@@ -90,9 +105,9 @@ arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_co
 'Invoking: ARM Print Size'
 arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  29000	   1888	  30228	  61116	   eebc	Test1.elf
+  29012	   1888	  33828	  64728	   fcd8	Test1.elf
 'Finished building: Test1.elf.size'
 ' '
-10:25:56 **** Incremental Build of configuration Debug for project Test1 ****
+16:16:05 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.

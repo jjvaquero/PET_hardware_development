@@ -41,7 +41,7 @@ XGpio Gpio; /* The Instance of the GPIO Driver */
 
 //interrupt variable
 static INTC Intc;
-int values[100];
+int values[1000];
 int curr_index;
 
 int main(void)
@@ -167,7 +167,7 @@ int main(void)
 			*/
 			XGpio_InterruptDisable(&Gpio, BUTTON_INTERRUPT);
 			xil_printf("Read Values \n\r");
-			for ( i = 0; i<100; i++){
+			for ( i = 0; i<1000; i++){
 				xil_printf(" %d, ",values[i]);
 			}
 
@@ -217,10 +217,10 @@ void GpioIsr(void *InstancePtr)
 	* for the next interrupt
 	*/
 	read_value = XGpio_DiscreteRead(&Gpio, BUTTON_CHANNEL);
-	if (curr_index < 99){
+	if (curr_index < 999){
 		values[curr_index] = read_value & 0x0000FFFF;
 		curr_index++;
-		if (curr_index >= 99) curr_index = 0;
+		if (curr_index >= 999) curr_index = 0;
 	}
 
 
