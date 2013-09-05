@@ -1,0 +1,876 @@
+Release 14.5 - xst P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> 
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> Reading design: module_1_stub.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "module_1_stub.prj"
+
+---- Target Parameters
+Target Device                      : xc7z020clg484-1
+Output File Name                   : "module_1_stub.ngc"
+
+---- Source Options
+Top Module Name                    : module_1_stub
+
+---- General Options
+Optimization Goal                  : speed
+Optimization Effort                : 1
+Netlist Hierarchy                  : rebuilt
+
+---- Other Options
+Cores Search Directories           : {..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation}
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" into library work
+Parsing entity <ADCReadFSM>.
+Parsing architecture <Behavioral> of entity <adcreadfsm>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" into library work
+Parsing entity <PWM_Controller>.
+Parsing architecture <behaviour> of entity <pwm_controller>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/imports/Adc_Interface/Libraries/AdcClock_Lib/Vhdl/AdcClock.vhd" into library work
+Parsing entity <AdcClock>.
+Parsing architecture <AdcClock_struct> of entity <adcclock>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/hdl/module_1.vhd" into library work
+Parsing entity <module_1>.
+Parsing architecture <STRUCTURE> of entity <module_1>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" into library work
+Parsing entity <module_1_stub>.
+Parsing architecture <STRUCTURE> of entity <module_1_stub>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <module_1_stub> (architecture <STRUCTURE>) with generics from library <work>.
+
+Elaborating entity <module_1> (architecture <>) from library <work>.
+
+Elaborating entity <PWM_Controller> (architecture <behaviour>) from library <work>.
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" Line 33: dutycycle should be on the sensitivity list of the process
+
+Elaborating entity <AdcClock> (architecture <AdcClock_struct>) with generics from library <work>.
+
+Elaborating entity <ADCReadFSM> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 63: nextstate should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 78: bit1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 81: bit1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 84: bit1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 87: bit1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 90: bit1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 93: bit1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 108: datbit1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 109: datbit0 should be on the sensitivity list of the process
+WARNING:HDLCompiler:1127 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 99: Assignment to intrst ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 74: Net <sADC_DataIn[31]> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <module_1_stub>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd".
+        C_AdcChnls = 2
+        C_AdcWireInt = 2
+    Set property "BOX_TYPE = user_black_box" for instance <module_1_i>.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 185: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 224: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 224: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
+WARNING:Xst:2935 - Signal 'sADC_DataIn<31:12>', unconnected in block 'module_1_stub', is tied to its initial value (00000000000000000000).
+    Summary:
+	no macro.
+Unit <module_1_stub> synthesized.
+
+Synthesizing Unit <PWM_Controller>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd".
+WARNING:Xst:647 - Input <DutyCycle<31:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_7_o_add_0_OUT> created at line 28.
+    Found 32-bit comparator greater for signal <count[31]_GND_7_o_LessThan_2_o> created at line 29
+    Found 32-bit comparator greater for signal <LED> created at line 33
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <PWM_Controller> synthesized.
+
+Synthesizing Unit <AdcClock>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/imports/Adc_Interface/Libraries/AdcClock_Lib/Vhdl/AdcClock.vhd".
+        C_AdcBits = 12
+        C_StatTaps = 16
+    Set property "KEEP_HIERARCHY = YES".
+    Found 1-bit register for signal <IntClkCtrlDlyInc>.
+    Found 1-bit register for signal <IntproceedCntTc_d>.
+    Found 1-bit register for signal <IntProceed>.
+    Found 1-bit register for signal <PassedSubState>.
+    Found 1-bit register for signal <IntClkCtrlDlyCe>.
+    Found 1-bit register for signal <IntClkCtrlDone>.
+    Found 1-bit register for signal <IntClkCtrlAlgnWrn>.
+    Found 1-bit register for signal <IntClkCtrlInvrtd>.
+    Found 1-bit register for signal <IntTurnAroundBit>.
+    Found 1-bit register for signal <IntProceedDone>.
+    Found 2-bit register for signal <IntCalVal>.
+    Found 2-bit register for signal <IntAction>.
+    Found 2-bit register for signal <IntCalValReg>.
+    Found 4-bit register for signal <State>.
+    Found 4-bit register for signal <ReturnState>.
+    Found 4-bit register for signal <IntNumIncDecIdly>.
+    Found 4-bit register for signal <IntTimeOutCnt>.
+    Found 4-bit register for signal <IntStepCnt>.
+    Found 3-bit register for signal <IntProceedCnt>.
+    Found 3-bit adder for signal <IntProceedCnt[2]_GND_10_o_add_2_OUT> created at line 309.
+    Found 4-bit adder for signal <IntTimeOutCnt[3]_GND_10_o_add_11_OUT> created at line 391.
+    Found 4-bit adder for signal <IntStepCnt[3]_GND_10_o_add_41_OUT> created at line 453.
+    Found 4-bit subtractor for signal <GND_10_o_GND_10_o_sub_44_OUT<3:0>> created at line 480.
+    Found 32x4-bit Read Only RAM for signal <n0189>
+    Found 2-bit comparator equal for signal <n0048> created at line 415
+    Summary:
+	inferred   1 RAM(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  39 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  34 Multiplexer(s).
+Unit <AdcClock> synthesized.
+
+Synthesizing Unit <ADCReadFSM>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd".
+WARNING:Xst:647 - Input <BitClk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8x12-bit Read Only RAM for signal <_n0109>
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  24 Latch(s).
+	inferred   3 Multiplexer(s).
+Unit <ADCReadFSM> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 32x4-bit single-port Read Only RAM                    : 1
+ 8x12-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 5
+ 3-bit adder                                           : 1
+ 32-bit adder                                          : 1
+ 4-bit adder                                           : 2
+ 4-bit subtractor                                      : 1
+# Registers                                            : 20
+ 1-bit register                                        : 10
+ 2-bit register                                        : 3
+ 3-bit register                                        : 1
+ 32-bit register                                       : 1
+ 4-bit register                                        : 5
+# Latches                                              : 24
+ 1-bit latch                                           : 24
+# Comparators                                          : 3
+ 2-bit comparator equal                                : 1
+ 32-bit comparator greater                             : 2
+# Multiplexers                                         : 37
+ 1-bit 2-to-1 multiplexer                              : 9
+ 2-bit 2-to-1 multiplexer                              : 3
+ 4-bit 2-to-1 multiplexer                              : 25
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1.ngc>.
+Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_axi_gpio_0_wrapper.ngc>.
+Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_processing_system7_0_wrapper.ngc>.
+Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_axi_interconnect_1_wrapper.ngc>.
+Loading core <module_1_axi_gpio_0_wrapper> for timing and area information for instance <axi_gpio_0>.
+Loading core <module_1_processing_system7_0_wrapper> for timing and area information for instance <processing_system7_0>.
+Loading core <module_1_axi_interconnect_1_wrapper> for timing and area information for instance <axi_interconnect_1>.
+Loading core <module_1> for timing and area information for instance <module_1_i>.
+
+Synthesizing (advanced) Unit <ADCReadFSM>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0109> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 12-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <currState>     |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <ADCReadFSM> synthesized (advanced).
+
+Synthesizing (advanced) Unit <AdcClock>.
+The following registers are absorbed into counter <IntStepCnt>: 1 register on signal <IntStepCnt>.
+The following registers are absorbed into counter <IntProceedCnt>: 1 register on signal <IntProceedCnt>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_n0189> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 4-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(IntAction,IntCalVal,IntProceed)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <AdcClock> synthesized (advanced).
+
+Synthesizing (advanced) Unit <PWM_Controller>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <PWM_Controller> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 32x4-bit single-port distributed Read Only RAM        : 1
+ 8x12-bit single-port distributed Read Only RAM        : 1
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 1
+ 4-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
+# Counters                                             : 3
+ 3-bit up counter                                      : 1
+ 32-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 32
+ Flip-Flops                                            : 32
+# Comparators                                          : 3
+ 2-bit comparator equal                                : 1
+ 32-bit comparator greater                             : 2
+# Multiplexers                                         : 37
+ 1-bit 2-to-1 multiplexer                              : 9
+ 2-bit 2-to-1 multiplexer                              : 3
+ 4-bit 2-to-1 multiplexer                              : 25
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <ReturnState_0> (without init value) has a constant value of 0 in block <AdcClock>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <ReturnState_2> in Unit <AdcClock> is equivalent to the following FF/Latch, which will be removed : <ReturnState_3> 
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_SRSTB>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_SRSTB_pin>
+   Output port PS7:PSSRSTB of instance <module_1_i/processing_system7_0/processing_system7_0/PS7_i>
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_CLK>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_CLK_pin>
+   Output port PS7:PSCLK of instance <module_1_i/processing_system7_0/processing_system7_0/PS7_i>
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_PORB>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_PORB_pin>
+   Output port PS7:PSPORB of instance <module_1_i/processing_system7_0/processing_system7_0/PS7_i>
+WARNING:Xst:2170 - Unit ADCReadFSM : the following signal(s) form a combinatorial loop: Mram__n0109, currState<0>, currState<1>, Mram__n010910, Mram__n01092.
+WARNING:Xst:2170 - Unit ADCReadFSM : the following signal(s) form a combinatorial loop: currState<2>, Mram__n01099, Mram__n01091.
+
+Optimizing unit <module_1_stub> ...
+
+Optimizing unit <ADCReadFSM> ...
+
+Optimizing unit <AdcClock> ...
+WARNING:Xst:2677 - Node <IntClkCtrlAlgnWrn> of sequential type is unconnected in block <AdcClk>.
+WARNING:Xst:2677 - Node <IntClkCtrlInvrtd> of sequential type is unconnected in block <AdcClk>.
+WARNING:Xst:1293 - FF/Latch <PWM/count_20> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PWM/count_21> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PWM/count_22> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PWM/count_23> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PWM/count_24> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PWM/count_25> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PWM/count_26> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PWM/count_27> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PWM/count_28> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PWM/count_29> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PWM/count_30> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PWM/count_31> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block module_1_stub, actual ratio is 0.
+INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 55
+ Flip-Flops                                            : 55
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : module_1_stub.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1071
+#      GND                         : 7
+#      INV                         : 106
+#      LUT1                        : 38
+#      LUT2                        : 145
+#      LUT3                        : 173
+#      LUT4                        : 252
+#      LUT5                        : 36
+#      LUT6                        : 219
+#      MUXCY                       : 63
+#      MUXF7                       : 2
+#      VCC                         : 5
+#      XORCY                       : 25
+# FlipFlops/Latches                : 700
+#      FD                          : 94
+#      FDC                         : 12
+#      FDCE                        : 28
+#      FDE                         : 125
+#      FDPE                        : 1
+#      FDR                         : 216
+#      FDRE                        : 132
+#      FDS                         : 4
+#      FDSE                        : 64
+#      LD                          : 24
+# Shift Registers                  : 64
+#      SRLC16E                     : 64
+# Clock Buffers                    : 3
+#      BUFG                        : 3
+# IO Buffers                       : 17
+#      IBUF                        : 3
+#      IBUFDS                      : 2
+#      IBUFGDS                     : 2
+#      OBUF                        : 10
+# Others                           : 6
+#      BUFIO                       : 1
+#      BUFR                        : 1
+#      IDELAYCTRL                  : 1
+#      IDELAYE2                    : 1
+#      ISERDESE2                   : 1
+#      PS7                         : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             700  out of  106400     0%  
+ Number of Slice LUTs:                 1033  out of  53200     1%  
+    Number used as Logic:               969  out of  53200     1%  
+    Number used as Memory:               64  out of  17400     0%  
+       Number used as SRL:               64
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1201
+   Number with an unused Flip Flop:     501  out of   1201    41%  
+   Number with an unused LUT:           168  out of   1201    13%  
+   Number of fully used LUT-FF pairs:   532  out of   1201    44%  
+   Number of unique control sets:        36
+
+IO Utilization: 
+ Number of IOs:                         148
+ Number of bonded IOBs:                  21  out of    200    10%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRL/BUFHCEs:         3  out of    104     2%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------------------------------------+-----------------------------+-------+
+Clock Signal                                                               | Clock buffer(FF name)       | Load  |
+---------------------------------------------------------------------------+-----------------------------+-------+
+DCLK<0>                                                                    | IBUFGDS+ISERDESE2+BUFR      | 36    |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                        | 705   |
+FCLK<0>                                                                    | IBUFGDS                     | 12    |
+ADCReader/Mram__n01098(ADCReader/Mram__n010981:O)                          | NONE(*)(ADCReader/datBit1_5)| 2     |
+ADCReader/Mram__n01097(ADCReader/Mram__n010971:O)                          | NONE(*)(ADCReader/datBit1_0)| 2     |
+ADCReader/Mram__n01096(ADCReader/Mram__n010961:O)                          | NONE(*)(ADCReader/datBit1_1)| 2     |
+ADCReader/Mram__n01094(ADCReader/Mram__n010941:O)                          | NONE(*)(ADCReader/datBit1_3)| 2     |
+ADCReader/Mram__n01093(ADCReader/Mram__n010931:O)                          | NONE(*)(ADCReader/datBit1_4)| 2     |
+ADCReader/Mram__n01095(ADCReader/Mram__n010951:O)                          | NONE(*)(ADCReader/datBit1_2)| 2     |
+---------------------------------------------------------------------------+-----------------------------+-------+
+(*) These 6 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+------------------------------------+--------------------------------------------+-------+
+Control Signal                      | Buffer(FF name)                            | Load  |
+------------------------------------+--------------------------------------------+-------+
+AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr)| 1     |
+AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr)| 1     |
+------------------------------------+--------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 3.868ns (Maximum Frequency: 258.532MHz)
+   Minimum input arrival time before clock: 2.180ns
+   Maximum output required time after clock: 2.534ns
+   Maximum combinational path delay: 2.917ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'DCLK<0>'
+  Clock period: 2.731ns (frequency: 366.166MHz)
+  Total number of paths / destination ports: 731 / 62
+-------------------------------------------------------------------------
+Delay:               2.731ns (Levels of Logic = 3)
+  Source:            AdcClk/IntCalVal_1 (FF)
+  Destination:       AdcClk/IntStepCnt_0 (FF)
+  Source Clock:      DCLK<0> rising
+  Destination Clock: DCLK<0> rising
+
+  Data Path: AdcClk/IntCalVal_1 to AdcClk/IntStepCnt_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             6   0.282   0.668  IntCalVal_1 (IntCalVal_1)
+     LUT4:I0->O            6   0.053   0.518  n004821 (n0048)
+     LUT4:I2->O            1   0.053   0.485  _n0240<1>1 (_n0240)
+     LUT6:I4->O            4   0.053   0.419  _n0701_inv1 (_n0701_inv)
+     FDCE:CE                   0.200          IntStepCnt_0
+    ----------------------------------------
+    Total                      2.731ns (0.641ns logic, 2.090ns route)
+                                       (23.5% logic, 76.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Clock period: 3.868ns (frequency: 258.532MHz)
+  Total number of paths / destination ports: 10471 / 1305
+-------------------------------------------------------------------------
+Delay:               3.868ns (Levels of Logic = 8)
+  Source:            module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 (FF)
+  Destination:       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0 (FF)
+  Source Clock:      module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+  Destination Clock: module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 to module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.282   0.505  axi_gpio_0/ip2bus_wrack_i_D1 (axi_gpio_0/ip2bus_wrack_i_D1)
+     LUT2:I0->O            5   0.053   0.662  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1 (S_AXI_WREADY)
+     end scope: 'module_1_i/axi_gpio_0:S_AXI_AWREADY'
+     begin scope: 'module_1_i/axi_interconnect_1:M_AXI_AWREADY<0>'
+     LUT5:I1->O            1   0.053   0.602  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW1_F (N31)
+     LUT3:I0->O            2   0.053   0.419  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW11 (N15)
+     LUT6:I5->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1_G (N40)
+     MUXF7:I1->O           4   0.217   0.433  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1 (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_awready_mux)
+     LUT6:I5->O            2   0.053   0.419  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/out1 (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/aa_awready)
+     LUT6:I5->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set)
+     FDR:D                     0.011          axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+    ----------------------------------------
+    Total                      3.868ns (0.828ns logic, 3.040ns route)
+                                       (21.4% logic, 78.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'DCLK<0>'
+  Total number of paths / destination ports: 59 / 37
+-------------------------------------------------------------------------
+Offset:              1.610ns (Levels of Logic = 3)
+  Source:            AdcClk/AdcClock_I_Isrds_Master:Q3 (PAD)
+  Destination:       AdcClk/IntCalVal_0 (FF)
+  Destination Clock: DCLK<0> rising
+
+  Data Path: AdcClk/AdcClock_I_Isrds_Master:Q3 to AdcClk/IntCalVal_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    ISERDESE2:Q3           2   0.000   0.608  AdcClock_I_Isrds_Master (IntClkCtrlOut<2>)
+     LUT3:I0->O            1   0.053   0.413  IntVal1_SW0 (N0)
+     LUT6:I5->O            2   0.053   0.419  IntVal1 (IntCal)
+     LUT6:I5->O            1   0.053   0.000  IntVal (IntVal)
+     FDCE:D                    0.011          IntCalVal_0
+    ----------------------------------------
+    Total                      1.610ns (0.170ns logic, 1.440ns route)
+                                       (10.6% logic, 89.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Total number of paths / destination ports: 416 / 265
+-------------------------------------------------------------------------
+Offset:              2.180ns (Levels of Logic = 5)
+  Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID (PAD)
+  Destination:       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1 (FF)
+  Destination Clock: module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID to module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    PS7:MAXIGP0WVALID      4   0.000   0.000  processing_system7_0/PS7_i (M_AXI_GP0_WVALID)
+     end scope: 'module_1_i/processing_system7_0:M_AXI_GP0_WVALID'
+     begin scope: 'module_1_i/axi_interconnect_1:S_AXI_WVALID<0>'
+     LUT5:I1->O            3   0.053   0.616  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/M_AXI_WVALID1 (DEBUG_MP_MR_WDATACONTROL<0>)
+     end scope: 'module_1_i/axi_interconnect_1:M_AXI_WVALID<0>'
+     begin scope: 'module_1_i/axi_gpio_0:S_AXI_WVALID'
+     LUT3:I0->O            1   0.053   0.739  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1 (axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1)
+     LUT6:I0->O            1   0.053   0.000  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In3 (axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In)
+     FDR:D                     0.011          axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+    ----------------------------------------
+    Total                      2.180ns (0.825ns logic, 1.355ns route)
+                                       (37.8% logic, 62.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01098'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              0.432ns (Levels of Logic = 2)
+  Source:            ADC_Data1<0> (PAD)
+  Destination:       ADCReader/datBit1_5 (LATCH)
+  Destination Clock: ADCReader/Mram__n01098 falling
+
+  Data Path: ADC_Data1<0> to ADCReader/datBit1_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
+     begin scope: 'ADCReader:bit1'
+     LD:D                     -0.021          datBit1_5
+    ----------------------------------------
+    Total                      0.432ns (0.000ns logic, 0.432ns route)
+                                       (0.0% logic, 100.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01097'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              0.432ns (Levels of Logic = 2)
+  Source:            ADC_Data1<0> (PAD)
+  Destination:       ADCReader/datBit1_0 (LATCH)
+  Destination Clock: ADCReader/Mram__n01097 falling
+
+  Data Path: ADC_Data1<0> to ADCReader/datBit1_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
+     begin scope: 'ADCReader:bit1'
+     LD:D                     -0.021          datBit1_0
+    ----------------------------------------
+    Total                      0.432ns (0.000ns logic, 0.432ns route)
+                                       (0.0% logic, 100.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01096'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              0.432ns (Levels of Logic = 2)
+  Source:            ADC_Data1<0> (PAD)
+  Destination:       ADCReader/datBit1_1 (LATCH)
+  Destination Clock: ADCReader/Mram__n01096 falling
+
+  Data Path: ADC_Data1<0> to ADCReader/datBit1_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
+     begin scope: 'ADCReader:bit1'
+     LD:D                     -0.021          datBit1_1
+    ----------------------------------------
+    Total                      0.432ns (0.000ns logic, 0.432ns route)
+                                       (0.0% logic, 100.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01094'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              0.432ns (Levels of Logic = 2)
+  Source:            ADC_Data1<0> (PAD)
+  Destination:       ADCReader/datBit1_3 (LATCH)
+  Destination Clock: ADCReader/Mram__n01094 falling
+
+  Data Path: ADC_Data1<0> to ADCReader/datBit1_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
+     begin scope: 'ADCReader:bit1'
+     LD:D                     -0.021          datBit1_3
+    ----------------------------------------
+    Total                      0.432ns (0.000ns logic, 0.432ns route)
+                                       (0.0% logic, 100.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01093'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              0.432ns (Levels of Logic = 2)
+  Source:            ADC_Data1<0> (PAD)
+  Destination:       ADCReader/datBit1_4 (LATCH)
+  Destination Clock: ADCReader/Mram__n01093 falling
+
+  Data Path: ADC_Data1<0> to ADCReader/datBit1_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
+     begin scope: 'ADCReader:bit1'
+     LD:D                     -0.021          datBit1_4
+    ----------------------------------------
+    Total                      0.432ns (0.000ns logic, 0.432ns route)
+                                       (0.0% logic, 100.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01095'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              0.432ns (Levels of Logic = 2)
+  Source:            ADC_Data1<0> (PAD)
+  Destination:       ADCReader/datBit1_2 (LATCH)
+  Destination Clock: ADCReader/Mram__n01095 falling
+
+  Data Path: ADC_Data1<0> to ADCReader/datBit1_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
+     begin scope: 'ADCReader:bit1'
+     LD:D                     -0.021          datBit1_2
+    ----------------------------------------
+    Total                      0.432ns (0.000ns logic, 0.432ns route)
+                                       (0.0% logic, 100.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Total number of paths / destination ports: 216 / 68
+-------------------------------------------------------------------------
+Offset:              2.534ns (Levels of Logic = 21)
+  Source:            module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_31 (FF)
+  Destination:       LEDS<7> (PAD)
+  Source Clock:      module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_31 to LEDS<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.282   0.655  axi_gpio_0/gpio_core_1/gpio_Data_Out_31 (GPIO_IO_O<0>)
+     end scope: 'module_1_i/axi_gpio_0:GPIO_IO_O<0>'
+     end scope: 'module_1_i:LED_DutyCycle<0>'
+     begin scope: 'PWM:DutyCycle<0>'
+     LUT4:I0->O            1   0.053   0.000  Mcompar_LED_lut<0> (Mcompar_LED_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  Mcompar_LED_cy<0> (Mcompar_LED_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<1> (Mcompar_LED_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<2> (Mcompar_LED_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<3> (Mcompar_LED_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<4> (Mcompar_LED_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<5> (Mcompar_LED_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<6> (Mcompar_LED_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<7> (Mcompar_LED_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<8> (Mcompar_LED_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<9> (Mcompar_LED_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<10> (Mcompar_LED_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<11> (Mcompar_LED_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<12> (Mcompar_LED_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<13> (Mcompar_LED_cy<13>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<14> (Mcompar_LED_cy<14>)
+     MUXCY:CI->O           1   0.178   0.399  Mcompar_LED_cy<15> (Mcompar_LED_cy<15>)
+     INV:I->O              1   0.067   0.399  Mcompar_LED_cy<15>_inv1_INV_0 (LED)
+     end scope: 'PWM:LED'
+     OBUF:I->O                 0.000          LEDS_7_OBUF (LEDS<7>)
+    ----------------------------------------
+    Total                      2.534ns (1.081ns logic, 1.453ns route)
+                                       (42.7% logic, 57.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'DCLK<0>'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              0.779ns (Levels of Logic = 2)
+  Source:            AdcClk/IntClkCtrlDone (FF)
+  Destination:       LEDS<0> (PAD)
+  Source Clock:      DCLK<0> rising
+
+  Data Path: AdcClk/IntClkCtrlDone to LEDS<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             16   0.282   0.497  IntClkCtrlDone (IntClkCtrlDone)
+     end scope: 'AdcClk:BitClkDone'
+     OBUF:I->O                 0.000          LEDS_0_OBUF (LEDS<0>)
+    ----------------------------------------
+    Total                      0.779ns (0.282ns logic, 0.497ns route)
+                                       (36.2% logic, 63.8% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 154 / 138
+-------------------------------------------------------------------------
+Delay:               2.917ns (Levels of Logic = 7)
+  Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 (PAD)
+  Destination:       LEDS<4> (PAD)
+
+  Data Path: module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 to LEDS<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    PS7:FCLKRESETN1       12   0.000   0.000  processing_system7_0/PS7_i (FCLK_RESET1_N)
+     end scope: 'module_1_i/processing_system7_0:FCLK_RESET1_N'
+     end scope: 'module_1_i:processing_system7_0_FCLK_RESET1_N_pin'
+     begin scope: 'ADCReader:PL_Rst'
+     LUT2:I1->O           12   0.053   0.485  Mmux_currState<0>11 (currState<0>)
+     LUT4:I3->O           10   0.053   0.694  Mmux_currState<2>11 (currState<2>)
+     LUT4:I0->O            7   0.053   0.642  Mmux_currState<1>11 (currState<1>)
+     LUT4:I1->O            1   0.053   0.399  Mram__n010921 (State<2>)
+     end scope: 'ADCReader:State<2>'
+     OBUF:I->O                 0.000          LEDS_4_OBUF (LEDS<4>)
+    ----------------------------------------
+    Total                      2.917ns (0.697ns logic, 2.220ns route)
+                                       (23.9% logic, 76.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock DCLK<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+DCLK<0>        |    2.731|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock FCLK<0>
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+ADCReader/Mram__n01093|         |         |    0.788|         |
+ADCReader/Mram__n01094|         |         |    0.788|         |
+ADCReader/Mram__n01095|         |         |    0.788|         |
+ADCReader/Mram__n01096|         |         |    0.788|         |
+ADCReader/Mram__n01097|         |         |    0.788|         |
+ADCReader/Mram__n01098|         |         |    0.788|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+FCLK<0>                                                                    |         |    0.795|         |         |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    3.868|         |         |         |
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 12.93 secs
+ 
+--> 
+
+Total memory usage is 487276 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   59 (   0 filtered)
+Number of infos    :   16 (   0 filtered)
+
