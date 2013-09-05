@@ -4,7 +4,7 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timestamp 2013 8 30 15 46 25)
+      (timestamp 2013 9 5 11 16 41)
       (program "Xilinx ngc2edif" (version "P.58f"))
       (author "Xilinx. Inc ")
       (comment "This EDIF netlist is to be used within supported synthesis tools")
@@ -14,12 +14,12 @@
   (external UNISIMS
     (edifLevel 0)
     (technology (numberDefinition))
-    (cell GND
+    (cell VCC
       (cellType GENERIC)
         (view view_1
           (viewType NETLIST)
           (interface
-            (port G
+            (port P
               (direction OUTPUT)
             )
           )
@@ -62,12 +62,12 @@
           )
       )
     )
-    (cell VCC
+    (cell GND
       (cellType GENERIC)
         (view view_1
           (viewType NETLIST)
           (interface
-            (port P
+            (port G
               (direction OUTPUT)
             )
           )
@@ -1929,10 +1929,9 @@
                 (portRef Q (instanceRef count_19))
               )
             )
-            (net (rename Madd_count_31__GND_7_o_add_0_OUT_cy_20__ "Madd_count[31]_GND_7_o_add_0_OUT_cy<20>")
+            (net DCLK_n
               (joined
                 (portRef G (instanceRef GND_113))
-                (portRef LI (instanceRef Madd_count_31__GND_7_o_add_0_OUT_xor_20__))
                 (portRef CI (instanceRef Mcount_count_cy_0___renamed_0))
                 (portRef CI (instanceRef Mcount_count_xor_0__))
                 (portRef DI (instanceRef Mcount_count_cy_1___renamed_1))
@@ -1973,6 +1972,7 @@
                 (portRef DI (instanceRef Madd_count_31__GND_7_o_add_0_OUT_cy_17___renamed_36))
                 (portRef DI (instanceRef Madd_count_31__GND_7_o_add_0_OUT_cy_18___renamed_37))
                 (portRef DI (instanceRef Madd_count_31__GND_7_o_add_0_OUT_cy_19___renamed_38))
+                (portRef LI (instanceRef Madd_count_31__GND_7_o_add_0_OUT_xor_20__))
                 (portRef DI (instanceRef Mcompar_GND_7_o_count_31__LessThan_5_o_cy_10___renamed_69))
                 (portRef DI (instanceRef Mcompar_GND_7_o_count_31__LessThan_5_o_cy_11___renamed_70))
                 (portRef DI (instanceRef Mcompar_GND_7_o_count_31__LessThan_5_o_cy_12___renamed_71))
@@ -1981,7 +1981,7 @@
                 (portRef DI (instanceRef Mcompar_GND_7_o_count_31__LessThan_5_o_cy_15___renamed_74))
               )
             )
-            (net AppsSysEna
+            (net SData_OBUF
               (joined
                 (portRef P (instanceRef VCC_114))
                 (portRef DI (instanceRef Mcount_count_cy_0___renamed_0))
@@ -13561,8 +13561,8 @@
             (property NLW_MACRO_ALIAS (string "module_1_stub_module_1_stub") (owner "Xilinx"))
           )
           (contents
-            (instance XST_GND
-              (viewRef view_1 (cellRef GND (libraryRef UNISIMS)))
+            (instance XST_VCC
+              (viewRef view_1 (cellRef VCC (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
             (instance AdcIo_I_Ibufds_Fclk_0
@@ -13673,7 +13673,7 @@
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
-            (instance SData_OBUF
+            (instance (rename SData_OBUF_renamed_190 "SData_OBUF")
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
@@ -13787,6 +13787,14 @@
               (joined
                 (portRef O (instanceRef processing_system7_0_PS_PORB_pin_IBUF_renamed_187))
                 (portRef processing_system7_0_PS_PORB_pin (instanceRef module_1_i))
+              )
+            )
+            (net SData_OBUF
+              (joined
+                (portRef P (instanceRef XST_VCC))
+                (portRef AdcIntrfcEna (instanceRef ADC1))
+                (portRef AdcMemEna (instanceRef ADC1))
+                (portRef I (instanceRef SData_OBUF_renamed_190))
               )
             )
             (net (rename processing_system7_0_MIO_53_ "processing_system7_0_MIO<53>")
@@ -15040,14 +15048,6 @@
                 (portRef O (instanceRef IntRst1_INV_0))
               )
             )
-            (net (rename Madd_count_31__GND_7_o_add_0_OUT_cy_20_ "Madd_count[31]_GND_7_o_add_0_OUT_cy<20>")
-              (joined
-                (portRef G (instanceRef XST_GND))
-                (portRef DCLK_n (instanceRef ADC1))
-                (portRef AdcReSync (instanceRef ADC1))
-                (portRef I (instanceRef SData_OBUF))
-              )
-            )
             (net processing_system7_0_PS_SRSTB_pin
               (joined
                 (portRef processing_system7_0_PS_SRSTB_pin)
@@ -15123,7 +15123,7 @@
             (net SData
               (joined
                 (portRef SData)
-                (portRef O (instanceRef SData_OBUF))
+                (portRef O (instanceRef SData_OBUF_renamed_190))
               )
             )
             (net N130

@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <DeviceUsageSummary rev="2">
-<DesignStatistics TimeStamp="Fri Aug 30 15:52:09 2013"><group name="NetStatistics">
+<DesignStatistics TimeStamp="Thu Sep 05 11:18:43 2013"><group name="NetStatistics">
 <item name="NumNets_Active" rev="2">
 <attrib name="value" value="1427"/></item>
 <item name="NumNets_Gnd" rev="2">
@@ -69,35 +69,35 @@
 <item name="NumNodesOfType_Active_VQUAD" rev="2">
 <attrib name="value" value="159"/></item>
 <item name="NumNodesOfType_Gnd_BOUNCEIN" rev="2">
-<attrib name="value" value="253"/></item>
+<attrib name="value" value="252"/></item>
 <item name="NumNodesOfType_Gnd_HVCCGNDOUT" rev="2">
-<attrib name="value" value="128"/></item>
+<attrib name="value" value="127"/></item>
 <item name="NumNodesOfType_Gnd_INPUT" rev="2">
 <attrib name="value" value="1764"/></item>
-<item name="NumNodesOfType_Gnd_IOBIN2OUT" rev="2">
-<attrib name="value" value="1"/></item>
 <item name="NumNodesOfType_Gnd_IOBINPUT" rev="2">
 <attrib name="value" value="29"/></item>
-<item name="NumNodesOfType_Gnd_IOBOUTPUT" rev="2">
-<attrib name="value" value="1"/></item>
 <item name="NumNodesOfType_Gnd_LUTINPUT" rev="2">
 <attrib name="value" value="256"/></item>
-<item name="NumNodesOfType_Gnd_PADINPUT" rev="2">
-<attrib name="value" value="1"/></item>
 <item name="NumNodesOfType_Gnd_PINBOUNCE" rev="2">
 <attrib name="value" value="67"/></item>
 <item name="NumNodesOfType_Gnd_PINFEED" rev="2">
-<attrib name="value" value="4408"/></item>
+<attrib name="value" value="4407"/></item>
 <item name="NumNodesOfType_Vcc_HVCCGNDOUT" rev="2">
-<attrib name="value" value="73"/></item>
+<attrib name="value" value="74"/></item>
 <item name="NumNodesOfType_Vcc_INPUT" rev="2">
 <attrib name="value" value="24"/></item>
+<item name="NumNodesOfType_Vcc_IOBIN2OUT" rev="2">
+<attrib name="value" value="1"/></item>
+<item name="NumNodesOfType_Vcc_IOBOUTPUT" rev="2">
+<attrib name="value" value="1"/></item>
 <item name="NumNodesOfType_Vcc_LUTINPUT" rev="2">
 <attrib name="value" value="275"/></item>
+<item name="NumNodesOfType_Vcc_PADINPUT" rev="2">
+<attrib name="value" value="1"/></item>
 <item name="NumNodesOfType_Vcc_PINBOUNCE" rev="2">
 <attrib name="value" value="23"/></item>
 <item name="NumNodesOfType_Vcc_PINFEED" rev="2">
-<attrib name="value" value="302"/></item>
+<attrib name="value" value="303"/></item>
 </group>
 <group name="SiteStatistics">
 <item name="BUFG-BUFGCTRL" rev="2">
@@ -204,7 +204,7 @@
 <attrib name="value" value="1"/></item>
 </group>
 </DesignStatistics>
-<DeviceUsage TimeStamp="Fri Aug 30 15:52:09 2013"><group name="SiteSummary">
+<DeviceUsage TimeStamp="Thu Sep 05 11:18:43 2013"><group name="SiteSummary">
 <item name="BUFG" rev="2">
 <attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
 <item name="BUFG_BUFG" rev="2">
@@ -281,7 +281,7 @@
 <attrib name="total" value="1000000"/><attrib name="used" value="16"/></item>
 </group>
 </DeviceUsage>
-<ReportConfigData TimeStamp="Fri Aug 30 15:52:09 2013"><group name="IDELAYE2">
+<ReportConfigData TimeStamp="Thu Sep 05 11:18:43 2013"><group name="IDELAYE2">
 <item name="C" rev="2">
 <attrib name="C" value="1"/><attrib name="C_INV" value="0"/></item>
 <item name="DATAIN" rev="2">
@@ -450,7 +450,7 @@
 <attrib name="ASYNC" value="34"/><attrib name="SYNC" value="16"/></item>
 </group>
 </ReportConfigData>
-<ReportPinData TimeStamp="Fri Aug 30 15:52:09 2013"><group name="IOB33_OUTBUF">
+<ReportPinData TimeStamp="Thu Sep 05 11:18:43 2013"><group name="IOB33_OUTBUF">
 <item name="IN" rev="2">
 <attrib name="value" value="9"/></item>
 <item name="OUT" rev="2">

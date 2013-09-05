@@ -167,7 +167,7 @@ int main(void)
 			*/
 			XGpio_InterruptDisable(&Gpio, BUTTON_INTERRUPT);
 			xil_printf("Read Values \n\r");
-			for ( i = 0; i<1000; i++){
+			for ( i = 0; i<100; i++){ //1000
 				xil_printf(" %d, ",values[i]);
 			}
 

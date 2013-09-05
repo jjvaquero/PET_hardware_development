@@ -324,7 +324,7 @@ begin
     
     
     FCLKP1 <= sCLkExtIn;
-    SData <='0';
+    SData <='1';
     LEDS(0)<= IntBitClkDone;
     
 

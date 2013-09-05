@@ -4,7 +4,7 @@
   (keywordmap (keywordlevel 0))
 (status
  (written
-  (timeStamp 2013 08 30 15 46 38)
+  (timeStamp 2013 09 05 11 16 46)
   (program "PlanAhead" (version "14.5"))
   (comment "Built on 'Mon Mar 25 17:13:07 MDT 2013'")
   (comment "Built by 'xbuild'")
@@ -13,10 +13,10 @@
   (Library hdi_primitives
     (edifLevel 0)
     (technology (numberDefinition ))
-   (cell GND (celltype GENERIC)
+   (cell VCC (celltype GENERIC)
      (view netlist (viewtype NETLIST)
        (interface 
-        (port G (direction OUTPUT))
+        (port P (direction OUTPUT))
        )
      )
    )
@@ -36,6 +36,13 @@
         (port OB (direction OUTPUT))
         (port I (direction INPUT))
         (port IB (direction INPUT))
+       )
+     )
+   )
+   (cell GND (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface 
+        (port G (direction OUTPUT))
        )
      )
    )
@@ -138,13 +145,6 @@
         (port CE (direction INPUT))
         (port CLK (direction INPUT))
         (port D (direction INPUT))
-       )
-     )
-   )
-   (cell VCC (celltype GENERIC)
-     (view netlist (viewtype NETLIST)
-       (interface 
-        (port P (direction OUTPUT))
        )
      )
    )
@@ -56100,9 +56100,8 @@
           (portref Q (instanceref count_19))
           )
          )
-         (net (rename Madd_count_31__GND_7_o_add_0_OUT_cy_20_ "Madd_count[31]_GND_7_o_add_0_OUT_cy[20]") (joined
+         (net DCLK_n (joined
           (portref G (instanceref GND))
-          (portref LI (instanceref Madd_count_31__GND_7_o_add_0_OUT_xor_20_))
           (portref CI (instanceref Mcount_count_cy_0_))
           (portref CI (instanceref Mcount_count_xor_0_))
           (portref DI (instanceref Mcount_count_cy_1_))
@@ -56143,6 +56142,7 @@
           (portref DI (instanceref Madd_count_31__GND_7_o_add_0_OUT_cy_17_))
           (portref DI (instanceref Madd_count_31__GND_7_o_add_0_OUT_cy_18_))
           (portref DI (instanceref Madd_count_31__GND_7_o_add_0_OUT_cy_19_))
+          (portref LI (instanceref Madd_count_31__GND_7_o_add_0_OUT_xor_20_))
           (portref DI (instanceref Mcompar_GND_7_o_count_31__LessThan_5_o_cy_10_))
           (portref DI (instanceref Mcompar_GND_7_o_count_31__LessThan_5_o_cy_11_))
           (portref DI (instanceref Mcompar_GND_7_o_count_31__LessThan_5_o_cy_12_))
@@ -56151,7 +56151,7 @@
           (portref DI (instanceref Mcompar_GND_7_o_count_31__LessThan_5_o_cy_15_))
           )
          )
-         (net AppsSysEna (joined
+         (net SData_OBUF (joined
           (portref P (instanceref VCC))
           (portref DI (instanceref Mcount_count_cy_0_))
           (portref DI (instanceref Madd_count_31__GND_7_o_add_0_OUT_cy_0_))
@@ -57042,7 +57042,7 @@
         (port (array (rename LEDS "LEDS[7:0]") 8) (direction OUTPUT))
        )
        (contents
-         (instance XST_GND (viewref netlist (cellref GND (libraryref hdi_primitives)))
+         (instance XST_VCC (viewref netlist (cellref VCC (libraryref hdi_primitives)))
            (property XSTLIB (boolean (true)))
          )
          (instance AdcIO_I_Ibufgds_Dclk_0 (viewref netlist (cellref IBUFDS (libraryref hdi_primitives)))
@@ -58099,6 +58099,13 @@
           (portref processing_system7_0_DDR_Clk)
           )
          )
+         (net SData_OBUF (joined
+          (portref P (instanceref XST_VCC))
+          (portref AdcIntrfcEna (instanceref ADC1))
+          (portref AdcMemEna (instanceref ADC1))
+          (portref I (instanceref SData_OBUF))
+          )
+         )
          (net (rename LEDS_7_ "LEDS[7]") (joined
           (portref O (instanceref LEDS_7_OBUF))
           (portref (member LEDS 0))
@@ -58142,13 +58149,6 @@
          (net (rename processing_system7_0_MIO_10_ "processing_system7_0_MIO[10]") (joined
           (portref (member processing_system7_0_MIO 43) (instanceref module_1_i))
           (portref (member processing_system7_0_MIO 43))
-          )
-         )
-         (net (rename Madd_count_31__GND_7_o_add_0_OUT_cy_20_ "Madd_count[31]_GND_7_o_add_0_OUT_cy[20]") (joined
-          (portref G (instanceref XST_GND))
-          (portref DCLK_n (instanceref ADC1))
-          (portref AdcReSync (instanceref ADC1))
-          (portref I (instanceref SData_OBUF))
           )
          )
          (net (rename processing_system7_0_MIO_11_ "processing_system7_0_MIO[11]") (joined
