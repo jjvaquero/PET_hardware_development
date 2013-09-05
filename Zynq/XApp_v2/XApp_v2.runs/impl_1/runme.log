@@ -42,7 +42,7 @@ NGDBUILD Design Results Summary:
   Number of warnings:   2
 
 Writing NGD file "module_1_stub.ngd" ...
-Total REAL time to NGDBUILD completion:  18 sec
+Total REAL time to NGDBUILD completion:  17 sec
 Total CPU time to NGDBUILD completion:   11 sec
 
 Writing NGDBUILD log file "module_1_stub.bld"...
@@ -152,17 +152,17 @@ INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 18 secs 
-Total CPU  time at the beginning of Placer: 18 secs 
+Total REAL time at the beginning of Placer: 17 secs 
+Total CPU  time at the beginning of Placer: 17 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:741efcd8) REAL time: 20 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:741efcd8) REAL time: 19 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:741efcd8) REAL time: 20 secs 
+Phase 2.7  Design Feasibility Check (Checksum:741efcd8) REAL time: 19 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:d5b978f6) REAL time: 20 secs 
+Phase 3.31  Local Placement Optimization (Checksum:d5b978f6) REAL time: 19 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
@@ -265,37 +265,37 @@ TIMEGRP "TN_ADC1/IntClk_34" AREA_GROUP = "CLKAG_ADC1/IntClk_34" ;
 AREA_GROUP "CLKAG_ADC1/IntClk_34" RANGE = CLOCKREGION_X1Y1;
 
 
-Phase 4.2  Initial Placement for Architecture Specific Features (Checksum:34cd4fd6) REAL time: 23 secs 
+Phase 4.2  Initial Placement for Architecture Specific Features (Checksum:34cd4fd6) REAL time: 22 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:34cd4fd6) REAL time: 23 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:34cd4fd6) REAL time: 22 secs 
 
 Phase 6.3  Local Placement Optimization
-Phase 6.3  Local Placement Optimization (Checksum:34cd4fd6) REAL time: 23 secs 
+Phase 6.3  Local Placement Optimization (Checksum:34cd4fd6) REAL time: 22 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:34cd4fd6) REAL time: 23 secs 
+Phase 7.5  Local Placement Optimization (Checksum:34cd4fd6) REAL time: 22 secs 
 
 Phase 8.8  Global Placement
 ..............
 .......................................................................................................
 ..................................................................................................................................................................................................
-Phase 8.8  Global Placement (Checksum:52b9fd3f) REAL time: 26 secs 
+Phase 8.8  Global Placement (Checksum:52b9fd3f) REAL time: 24 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:52b9fd3f) REAL time: 26 secs 
+Phase 9.5  Local Placement Optimization (Checksum:52b9fd3f) REAL time: 24 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:196e834f) REAL time: 28 secs 
+Phase 10.18  Placement Optimization (Checksum:196e834f) REAL time: 26 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:196e834f) REAL time: 28 secs 
+Phase 11.5  Local Placement Optimization (Checksum:196e834f) REAL time: 26 secs 
 
 Phase 12.34  Placement Validation
-Phase 12.34  Placement Validation (Checksum:196e834f) REAL time: 28 secs 
+Phase 12.34  Placement Validation (Checksum:196e834f) REAL time: 26 secs 
 
-Total REAL time to Placer completion: 28 secs 
-Total CPU  time to Placer completion: 28 secs 
+Total REAL time to Placer completion: 26 secs 
+Total CPU  time to Placer completion: 26 secs 
 Running post-placement packing...
 Writing output files...
 
@@ -389,8 +389,8 @@ Specific Feature Utilization:
 Average Fanout of Non-Clock Nets:                3.01
 
 Peak Memory Usage:  807 MB
-Total REAL time to MAP completion:  30 secs 
-Total CPU time to MAP completion:   30 secs 
+Total REAL time to MAP completion:  27 secs 
+Total CPU time to MAP completion:   27 secs 
 
 Mapping completed.
 See MAP report file "module_1_stub.mrp" for details.
@@ -447,7 +447,7 @@ Router effort level (-rl):    High
 
 INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx
    Command Line Tools User Guide for information on generating a TSI report.
-Starting initial Timing Analysis.  REAL time: 11 secs 
+Starting initial Timing Analysis.  REAL time: 10 secs 
 WARNING:Par:450 - At least one timing constraint is impossible to meet because component switching limit violations have been detected for a
    constrained component. A timing constraint summary below shows the failing constraints (preceded with an Asterisk (*)). Please use the
    Timing Analyzer (GUI) or TRCE (command line) with the Mapped NCD and PCF files to evaluate the component switching limit violations in
@@ -490,7 +490,7 @@ INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the
    Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
 
 
-Finished initial Timing Analysis.  REAL time: 11 secs 
+Finished initial Timing Analysis.  REAL time: 10 secs 
 
 WARNING:Par:288 - The signal ADC1/n0010[27] has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal ADC1/n0010[26] has no load.  PAR will not attempt to route this signal.
@@ -507,27 +507,27 @@ WARNING:Par:288 - The signal ADC1/n0010[16] has no load.  PAR will not attempt t
 Starting Router
 
 
-Phase  1  : 5805 unrouted;      REAL time: 12 secs 
+Phase  1  : 5805 unrouted;      REAL time: 11 secs 
 
 Phase  2  : 3213 unrouted;      REAL time: 12 secs 
 
-Phase  3  : 1035 unrouted;      REAL time: 13 secs 
+Phase  3  : 1035 unrouted;      REAL time: 12 secs 
 
-Phase  4  : 1035 unrouted; (Setup:0, Hold:8005, Component Switching Limit:14736)     REAL time: 16 secs 
+Phase  4  : 1035 unrouted; (Setup:0, Hold:8005, Component Switching Limit:14736)     REAL time: 15 secs 
 
 Updating file: module_1_stub_routed.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 17 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 16 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 17 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 16 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 17 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 16 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 17 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 16 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:14736)     REAL time: 17 secs 
-Total REAL time to Router completion: 17 secs 
-Total CPU time to Router completion: 17 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:14736)     REAL time: 16 secs 
+Total REAL time to Router completion: 16 secs 
+Total CPU time to Router completion: 16 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -623,8 +623,8 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 12 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 18 secs 
-Total CPU time to PAR completion: 18 secs 
+Total REAL time to PAR completion: 17 secs 
+Total CPU time to PAR completion: 17 secs 
 
 Peak Memory Usage:  669 MB
 
@@ -650,7 +650,7 @@ C:\Xilinx\14.5\ISE_DS\ISE\.
    "module_1_stub" is an NCD, version 3.2, device xc7z020, package clg484, speed
 -1
 
-Analysis completed Fri Aug 30 15:48:02 2013
+Analysis completed Thu Sep 05 11:18:05 2013
 --------------------------------------------------------------------------------
 
 Generating Report ...

@@ -1,7 +1,7 @@
 Release 14.5 par P.58f (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-MADHATTER::  Fri Aug 30 15:47:30 2013
+MADHATTER::  Thu Sep 05 11:17:35 2013
 
 par -intstyle pa -w module_1_stub.ncd module_1_stub_routed.ncd 
 
@@ -52,7 +52,7 @@ Router effort level (-rl):    High
 
 INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx
    Command Line Tools User Guide for information on generating a TSI report.
-Starting initial Timing Analysis.  REAL time: 11 secs 
+Starting initial Timing Analysis.  REAL time: 10 secs 
 WARNING:Par:450 - At least one timing constraint is impossible to meet because component switching limit violations have been detected for a
    constrained component. A timing constraint summary below shows the failing constraints (preceded with an Asterisk (*)). Please use the
    Timing Analyzer (GUI) or TRCE (command line) with the Mapped NCD and PCF files to evaluate the component switching limit violations in
@@ -95,7 +95,7 @@ INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the
    Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
 
 
-Finished initial Timing Analysis.  REAL time: 11 secs 
+Finished initial Timing Analysis.  REAL time: 10 secs 
 
 WARNING:Par:288 - The signal ADC1/n0010[27] has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal ADC1/n0010[26] has no load.  PAR will not attempt to route this signal.
@@ -112,27 +112,27 @@ WARNING:Par:288 - The signal ADC1/n0010[16] has no load.  PAR will not attempt t
 Starting Router
 
 
-Phase  1  : 5805 unrouted;      REAL time: 12 secs 
+Phase  1  : 5805 unrouted;      REAL time: 11 secs 
 
 Phase  2  : 3213 unrouted;      REAL time: 12 secs 
 
-Phase  3  : 1035 unrouted;      REAL time: 13 secs 
+Phase  3  : 1035 unrouted;      REAL time: 12 secs 
 
-Phase  4  : 1035 unrouted; (Setup:0, Hold:8005, Component Switching Limit:14736)     REAL time: 16 secs 
+Phase  4  : 1035 unrouted; (Setup:0, Hold:8005, Component Switching Limit:14736)     REAL time: 15 secs 
 
 Updating file: module_1_stub_routed.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 17 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 16 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 17 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 16 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 17 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 16 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 17 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:6482, Component Switching Limit:14736)     REAL time: 16 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:14736)     REAL time: 17 secs 
-Total REAL time to Router completion: 17 secs 
-Total CPU time to Router completion: 17 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:14736)     REAL time: 16 secs 
+Total REAL time to Router completion: 16 secs 
+Total CPU time to Router completion: 16 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -228,8 +228,8 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 12 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 18 secs 
-Total CPU time to PAR completion: 18 secs 
+Total REAL time to PAR completion: 17 secs 
+Total CPU time to PAR completion: 17 secs 
 
 Peak Memory Usage:  669 MB
 

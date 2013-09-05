@@ -111,3 +111,86 @@ arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
 16:16:05 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.
+18:13:22 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+10:33:57 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+10:52:06 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+10:52:44 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+10:53:07 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+10:59:32 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+10:59:43 **** Auto Build of configuration Debug for project Test1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:117:2: warning: implicit declaration of function 'SetupInterruptSystem' [-Wimplicit-function-declaration]
+../src/main.c: In function 'SetupInterruptSystem':
+../src/main.c:254:169: warning: extra tokens at end of #ifdef directive [enabled by default]
+'Finished building: ../src/main.c'
+' '
+'Building target: Test1.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Test1.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29008	   1888	  33828	  64724	   fcd4	Test1.elf
+'Finished building: Test1.elf.size'
+' '
+10:59:50 **** Auto Build of configuration Debug for project Test1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:117:2: warning: implicit declaration of function 'SetupInterruptSystem' [-Wimplicit-function-declaration]
+../src/main.c: In function 'SetupInterruptSystem':
+../src/main.c:254:169: warning: extra tokens at end of #ifdef directive [enabled by default]
+'Finished building: ../src/main.c'
+' '
+'Building target: Test1.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Test1.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29008	   1888	  33828	  64724	   fcd4	Test1.elf
+'Finished building: Test1.elf.size'
+' '
+11:00:29 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:07:11 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+11:07:31 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:14:11 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+11:15:01 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:19:12 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+11:19:29 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.

@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Fri Aug 30 15:46:57 2013">
+  <application stringID="NgdBuild" timeStamp="Thu Sep 05 11:17:05 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -83,7 +83,7 @@
         <item dataType="int" stringID="NGDBUILD_NUM_FDPE" value="4"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDRE" value="372"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDSE" value="68"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_GND" value="14"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_GND" value="13"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IBUFDS" value="11"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IDELAYCTRL" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IDELAYE2" value="1"/>
@@ -102,7 +102,7 @@
         <item dataType="int" stringID="NGDBUILD_NUM_PULLUP" value="47"/>
         <item dataType="int" stringID="NGDBUILD_NUM_SRL16E" value="64"/>
         <item dataType="int" stringID="NGDBUILD_NUM_TS_TIMESPEC" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_VCC" value="22"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_VCC" value="23"/>
         <item dataType="int" stringID="NGDBUILD_NUM_XORCY" value="25"/>
       </section>
       <section stringID="NGDBUILD_CORE_SUMMARY">

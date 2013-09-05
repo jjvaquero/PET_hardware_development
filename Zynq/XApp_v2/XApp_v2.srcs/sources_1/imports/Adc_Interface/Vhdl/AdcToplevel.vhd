@@ -138,7 +138,7 @@ entity AdcToplevel is
         C_StatTaps          : integer := 16;
 		C_AdcUseIdlyCtrl	: integer := 1;	     -- 0 = No, 1 = Yes
 		C_AdcIdlyCtrlLoc	: string  := "IDELAYCTRL_X0Y1";
-		C_FrmPattern        : string  := "0000000011110000"  -- Read above text!
+		C_FrmPattern        : string  := "000000111000" --"0000000011110000"  -- Read above text!
 	);
     port (
 		DCLK_p	           : in std_logic;
