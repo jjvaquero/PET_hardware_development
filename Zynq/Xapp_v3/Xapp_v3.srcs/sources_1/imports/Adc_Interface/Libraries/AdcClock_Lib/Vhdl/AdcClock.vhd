@@ -94,13 +94,17 @@ entity AdcClock is
         BitClkRst			: in std_logic;
         BitClkEna			: in std_logic;
         BitClkReSync		: in std_logic;
-        BitClk_MonClkOut	: out std_logic;   -- CLK output
+        --BitClk_MonClkOut	: out std_logic;   -- CLK output
         BitClk_MonClkIn		: in std_logic;    -- ISERDES.CLK input
-        BitClk_RefClkOut	: out std_logic;   -- CLKDIV & logic output
+        --BitClk_RefClkOut	: out std_logic;   -- CLKDIV & logic output
         BitClk_RefClkIn		: in std_logic;    -- CLKDIV & logic input
         BitClkAlignWarn 	: out std_logic;
 		BitClkInvrtd		: out std_logic;
-        BitClkDone 			: out std_logic 
+        BitClkDone 			: out std_logic;
+        BitClk34            : out std_logic;
+        DivClk34            : out std_logic;
+        BitClk35            : out std_logic;
+        DivClk35            : out std_logic
     );
 end AdcClock;
 -----------------------------------------------------------------------------------------------
@@ -161,8 +165,10 @@ signal IntBitClkIn          : std_logic;
 -- Attributes
 attribute KEEP_HIERARCHY : string;
     attribute KEEP_HIERARCHY of AdcClock_struct : architecture is "YES";
---attribute LOC : string;
 --    attribute LOC of AdcClock_I_Bufio : label is C_BufioLoc;
+attribute LOC : string;
+    attribute LOC of AdcClock_I_Bufio34 : label is "BUFIO_X1Y8";
+    attribute LOC of AdcClock_I_Bufio35 : label is "BUFIO_X1Y4";
 -- The BUFR is generated through a generate statement and therefore the LOC attribute
 -- must be place into the generate statement.
 -- See the BUFR generation down in the source code.
@@ -252,27 +258,45 @@ AdcClock_I_Isrds_Master : ISERDESE2
         SHIFTOUT1       => open, -- out
         SHIFTOUT2       => open -- out
     );
+    
+AdcClock_I_BufMR : BUFMR
+   port map( I=>IntBitClkOut, O=> IntBitClkIn);
+   
 -- Input from ISERDES.O	  -- Output and CLK for all ISERDES
-AdcClock_I_Bufio : BUFIO
-	port map (I => IntBitClkOut, O => BitClk_MonClkOut);
+AdcClock_I_Bufio34 : BUFIO
+	port map (I => IntBitClkIn, O => BitClk34); --BitClk_MonClkOut);
+--	BitClk34<=BitClk_MonClkIn;
+	
+AdcClock_I_Bufio35 : BUFIO
+    port map (I => IntBitClkIn, O => BitClk35);
 --
 Gen_Bufr_Div_3 : if (C_AdcBits = 12) generate
-    --attribute LOC of AdcClock_I_Bufr : label is C_BufrLoc;
+   -- attribute LOC of AdcClock_I_Bufr : label is C_BufrLoc;
+   attribute LOC of AdcClock_I_Bufr34 : label is "BUFR_X1Y8";
+   attribute LOC of AdcClock_I_Bufr35 : label is "BUFR_X1Y4";  
 begin
-	AdcClock_I_Bufr : BUFR
+	AdcClock_I_Bufr34 : BUFR
 		generic map (BUFR_DIVIDE => "3", SIM_DEVICE => "7SERIES") -- 12-bit = DIV by 3
 --      ISERDES.CLK, from BUFIO.O -- ISERDES.CLKDIV, word clock for all ISERDES.
-		port map  (I => IntBitClkOut, O => BitClk_RefClkOut,
+		port map  (I => IntBitClkIn, O =>DivClk34, -- BitClk_RefClkOut,
 					CE => High, CLR => Low);
+    AdcClock_I_Bufr35 : BUFR
+            generic map (BUFR_DIVIDE => "3", SIM_DEVICE => "7SERIES") -- 12-bit = DIV by 3
+    --      ISERDES.CLK, from BUFIO.O -- ISERDES.CLKDIV, word clock for all ISERDES.
+            port map  (I => IntBitClkIn, O => DivClk35,
+            CE => High, CLR => Low);
+                    					
 end generate;
 --
+--DivClk34<=BitClk_RefClkIn;
+
 Gen_Bufr_Div_4 : if (C_AdcBits /= 12) generate
     --attribute LOC of AdcClock_I_Bufr : label is C_BufrLoc;
 begin
 	AdcClock_I_Bufr : BUFR
 		generic map (BUFR_DIVIDE => "4", SIM_DEVICE => "7SERIES") -- 14- and 16-bit = DIV by 4
 --      ISERDES.CLK, from BUFIO.O -- ISERDES.CLKDIV, word clock for all ISERDES.
-		port map  (I => IntBitClkIn, O => BitClk_RefClkOut,
+		port map  (I => IntBitClkIn, O => DivClk34, --BitClk_RefClkOut,
 					CE	=> High, CLR => Low);
 end generate;
 -----------------------------------------------------------------------------------------------

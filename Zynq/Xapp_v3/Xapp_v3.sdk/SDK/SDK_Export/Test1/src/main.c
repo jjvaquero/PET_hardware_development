@@ -164,7 +164,17 @@ int main(void)
 		value = inbyte();
 		period = value - 0x30;
 		leido = XGpio_DiscreteRead(&Gpio, 2);
-		xil_printf("Brightness Level %d selected...valor leido %d led %d \n\r", period, leido, reg_val);
+//		u32 read_value, tmp_leido;
+//		read_value = leido;
+//		tmp_leido = ((read_value&0x00008000)*65536)+((read_value&0x00000080)*32768)+
+//				((read_value&0x00004000)*16384)+((read_value&0x00000040)*8192)+
+//				((read_value&0x00002000)*4096)+((read_value&0x00000020)*2048)+
+//				((read_value&0x00001000)*1024)+((read_value&0x00000010)*512)+
+//				((read_value&0x00000800)*256)+((read_value&0x00000008)*128)+
+//				((read_value&0x00000400)*64)+((read_value&0x00000004)*32)+
+//				((read_value&0x00000200)*16)+((read_value&0x00000002)*8)+
+//				((read_value&0x00000100)*4)+((read_value&0x00000001)*2);
+		xil_printf("Brightness Level %d selected...valor leido %d led %d \n\r", period,leido, leido);
 
 		//now I can send all the previous values...
 		//to make sure that there no race conditions I first i will disable all the interrupts
@@ -224,6 +234,14 @@ void GpioIsr(void *InstancePtr)
 	*/
 	read_value = XGpio_DiscreteRead(&Gpio, BUTTON_CHANNEL);
 	if (curr_index < 99){
+//		values[curr_index] = read_value&0x00008000*65536+read_value&0x00000080*32768+
+//				read_value&0x00004000*16384+read_value&0x00000040*8192+
+//				read_value&0x00002000*4096+read_value&0x00000020*2048+
+//				read_value&0x00001000*1024+read_value&0x00000010*512+
+//				read_value&0x00000800*256+read_value&0x00000008*128+
+//				read_value&0x00000400*64+read_value&0x00000004*32+
+//				read_value&0x00000200*16+read_value&0x00000002*8+
+//				read_value&0x00000100*4+read_value&0x00000001*2;
 		values[curr_index] = read_value; // & 0x0000FFFF;
 		curr_index++;
 	}

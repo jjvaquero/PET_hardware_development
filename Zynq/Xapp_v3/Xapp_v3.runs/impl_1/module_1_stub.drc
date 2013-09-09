@@ -1,30 +1,44 @@
 Release 14.5 Drc P.58f (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Thu Sep 05 18:35:21 2013
+Mon Sep 09 16:52:55 2013
 
 drc -z module_1_stub_routed.ncd module_1_stub.pcf
 
-WARNING:PhysDesignRules:372 - Gated clock. Clock net ADCReader/Mram__n01097 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net ADCReader/Mram__n01095 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net ADCReader/Mram__n01094 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net ADCReader/Mram__n01098 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net ADCReader/Mram__n01096 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net ADCReader/Mram__n01093 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   AdcReader2/BitSlipCtrlN/Mram__n01332 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   AdcReader1/BitSlipCtrlN/Mram__n01332 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   AdcReader1/BitSlipCtrlP/Mram__n01332 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   AdcReader2/BitSlipCtrlP/Mram__n01333 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   AdcReader1/BitSlipCtrlP/Mram__n01333 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   AdcReader1/BitSlipCtrlN/Mram__n01333 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   AdcReader2/BitSlipCtrlP/Mram__n01332 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   AdcReader2/BitSlipCtrlN/Mram__n01333 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
 WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
    on block:<AdcClk/AdcClock_I_Isrds_Master>:<ISERDESE2_ISERDESE2>.  Useless CE2
    input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
-DRC detected 0 errors and 7 warnings.  Please see the previously displayed
+DRC detected 0 errors and 9 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

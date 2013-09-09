@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.58f on Thu Sep 05 18:34:30 2013
+// Written by: Map P.58f on Mon Sep 09 16:52:03 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -130,8 +130,6 @@ COMP "LEDS[4]" LOCATE = SITE "V22" LEVEL 1;
 COMP "LEDS[3]" LOCATE = SITE "U21" LEVEL 1;
 COMP "LEDS[6]" LOCATE = SITE "U19" LEVEL 1;
 COMP "LEDS[5]" LOCATE = SITE "W22" LEVEL 1;
-COMP "FCLK[0]" LOCATE = SITE "M19" LEVEL 1;
-COMP "FCLK[1]" LOCATE = SITE "M20" LEVEL 1;
 COMP "processing_system7_0_DDR_CS_n" LOCATE = SITE "P6" LEVEL 1;
 COMP "processing_system7_0_DDR_CKE" LOCATE = SITE "V3" LEVEL 1;
 COMP "processing_system7_0_DDR_DM[2]" LOCATE = SITE "P1" LEVEL 1;
@@ -148,6 +146,9 @@ COMP "processing_system7_0_DDR_DQS[2]" LOCATE = SITE "N2" LEVEL 1;
 COMP "processing_system7_0_DDR_DQS[1]" LOCATE = SITE "H2" LEVEL 1;
 COMP "processing_system7_0_DDR_DQS[0]" LOCATE = SITE "C2" LEVEL 1;
 COMP "processing_system7_0_DDR_DQS[3]" LOCATE = SITE "V2" LEVEL 1;
+COMP "AdcClk/AdcClock_I_Bufio34" LOCATE = SITE "BUFIO_X1Y8" LEVEL 1;
+COMP "AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr34" LOCATE = SITE "BUFR_X1Y8" LEVEL
+        1;
 PIN AdcClk_delayctrl_MapLib_replicate2_pins<0> = BEL
         "AdcClk_delayctrl_MapLib_replicate2" PINNAME REFCLK;
 PIN module_1_i/processing_system7_0/processing_system7_0/PS7_i_pins<359> = BEL
@@ -1102,12 +1103,16 @@ TIMEGRP clk_fpga_0 = BEL "BUFG_DlyCtrl" BEL
         "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1"
         BEL
         "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/s_ready_i_0"
-        BEL "PWM/count_19" BEL "PWM/count_18" BEL "PWM/count_17" BEL
-        "PWM/count_16" BEL "PWM/count_15" BEL "PWM/count_14" BEL
-        "PWM/count_13" BEL "PWM/count_12" BEL "PWM/count_11" BEL
-        "PWM/count_10" BEL "PWM/count_9" BEL "PWM/count_8" BEL "PWM/count_7"
-        BEL "PWM/count_6" BEL "PWM/count_5" BEL "PWM/count_4" BEL
-        "PWM/count_3" BEL "PWM/count_2" BEL "PWM/count_1" BEL "PWM/count_0"
+        BEL "PWM/count_0" BEL "PWM/count_31" BEL "PWM/count_30" BEL
+        "PWM/count_29" BEL "PWM/count_28" BEL "PWM/count_27" BEL
+        "PWM/count_26" BEL "PWM/count_25" BEL "PWM/count_24" BEL
+        "PWM/count_23" BEL "PWM/count_22" BEL "PWM/count_21" BEL
+        "PWM/count_20" BEL "PWM/count_19" BEL "PWM/count_18" BEL
+        "PWM/count_17" BEL "PWM/count_16" BEL "PWM/count_15" BEL
+        "PWM/count_14" BEL "PWM/count_13" BEL "PWM/count_12" BEL
+        "PWM/count_11" BEL "PWM/count_10" BEL "PWM/count_9" BEL "PWM/count_8"
+        BEL "PWM/count_7" BEL "PWM/count_6" BEL "PWM/count_5" BEL
+        "PWM/count_4" BEL "PWM/count_3" BEL "PWM/count_2" BEL "PWM/count_1"
         PIN "AdcClk_delayctrl_MapLib_replicate2_pins<0>" PIN
         "module_1_i/processing_system7_0/processing_system7_0/PS7_i_pins<359>";
 TIMEGRP clk_fpga_1 = BEL "FCLKP1";

@@ -147,25 +147,42 @@ architecture STRUCTURE of module_1_stub is
          BitClkRst			: in std_logic;
          BitClkEna			: in std_logic;
          BitClkReSync		: in std_logic;
-         BitClk_MonClkOut	: out std_logic;   -- CLK output
+         --BitClk_MonClkOut	: out std_logic;   -- CLK output
          BitClk_MonClkIn		: in std_logic;    -- ISERDES.CLK input
-         BitClk_RefClkOut	: out std_logic;   -- CLKDIV & logic output
+         --BitClk_RefClkOut	: out std_logic;   -- CLKDIV & logic output
          BitClk_RefClkIn		: in std_logic;    -- CLKDIV & logic input
          BitClkAlignWarn 	: out std_logic;
- 		BitClkInvrtd		: out std_logic;
-         BitClkDone 			: out std_logic 
+ 		 BitClkInvrtd		: out std_logic;
+         BitClkDone 			: out std_logic;
+         BitClk34            : out std_logic;
+         DivClk34            : out std_logic;
+         BitClk35            : out std_logic;
+         DivClk35            : out std_logic
      );
  end component;
  
-  component ADCReadFSM is
-     Port ( DivClk : in STD_LOGIC;
-            BitClk : in STD_LOGIC;
-            bit0 : in STD_LOGIC;
-            bit1 : in STD_LOGIC;
-            Rst : in STD_LOGIC;
-            State : out std_logic_vector( 2 downto 0);
-            DataOut : out STD_LOGIC_VECTOR (11 downto 0));
- end component;
+--  component ADCReadFSM is
+--     Port ( DivClk : in STD_LOGIC;
+--            BitClk : in STD_LOGIC;
+--            bit0 : in STD_LOGIC;
+--            bit1 : in STD_LOGIC;
+--            Rst : in STD_LOGIC;
+--            State : out std_logic_vector( 2 downto 0);
+--            DataOut : out STD_LOGIC_VECTOR (11 downto 0));
+-- end component;
+
+    component AdcDataReader is
+    Port ( PinDataP : in STD_LOGIC;
+           PinDataN : in STD_LOGIC;
+           BitClk : in STD_LOGIC;
+           DivClk : in STD_LOGIC;
+           DataOut : out STD_LOGIC_VECTOR (5 downto 0);
+           SyncDone : out STD_LOGIC;
+           state : out STD_LOGIC_VECTOR (1 downto 0);
+           Rst  : in std_logic; 
+           BitClkDone   : in std_logic
+           );
+     end component;
  
  
 
@@ -173,8 +190,8 @@ architecture STRUCTURE of module_1_stub is
 begin
 
   --LVDS signal mapping
-    ibuf0 : IBUFDS  port map (I=>ADC_Data0(0), IB=>ADC_Data0(1), O=>sADC_Data0); 
-    ibuf1 : IBUFDS  port map (I=>ADC_Data1(0), IB=>ADC_Data1(1), O=>sADC_Data1);   
+   -- ibuf0 : IBUFDS  port map (I=>ADC_Data0(0), IB=>ADC_Data0(1), O=>sADC_Data0); 
+    --ibuf1 : IBUFDS  port map (I=>ADC_Data1(0), IB=>ADC_Data1(1), O=>sADC_Data1);   
     ibuf2 : IBUFGDS port map (I=>DCLK(0), IB=>DCLK(1), O=>sDCLK);
     ibuf3 : IBUFGDS port map (I=>FCLK(0), IB=>FCLK(1), O=>sFCLK);
     --ioClk : BUFIO   port map (I=> sDCLK, O => IntBitClk);
@@ -227,25 +244,57 @@ begin
             BitClkRst			=> IntRst,
             BitClkEna			=> '1',
             BitClkReSync		=> '0',
-            BitClk_MonClkOut	=> IntBitClk,   -- CLK output
+            --BitClk_MonClkOut	=> IntBitClk,   -- CLK output
             BitClk_MonClkIn		=> IntBitClk,    -- ISERDES.CLK input
-            BitClk_RefClkOut	=> IntDivClk,   -- CLKDIV & logic output
+            --BitClk_RefClkOut	=> IntDivClk,   -- CLKDIV & logic output
             BitClk_RefClkIn		=> IntDivClk,    -- CLKDIV & logic input
             BitClkAlignWarn 	=> open,
     		BitClkInvrtd		=> open,
-            BitClkDone 			=> IntBitClkDone 
+            BitClkDone 			=> IntBitClkDone, 
+            BitClk34            => IntBitClk,
+            DivClk34            => IntDivClk,
+            BitClk35            => open,
+            DivClk35            => open
         );
         
-     ADCReader : ADCReadFSM 
-         Port map ( 
-            DivClk      => sFCLK,
-            BitClk      => IntBitClk,
-            bit0        => sADC_Data0,
-            bit1        => sADC_Data1,
-            Rst         => IntRst,
-            State       => LEDS(4 downto 2),
-            DataOut     => datBuff --sADC_DataIn(11 downto 0)
-        );   
+--     ADCReader : ADCReadFSM 
+--         Port map ( 
+--            DivClk      => sFCLK,
+--            BitClk      => IntBitClk,
+--            bit0        => sADC_Data0,
+--            bit1        => sADC_Data1,
+--            Rst         => IntRst,
+--            State       => LEDS(4 downto 2),
+--            DataOut     => datBuff --sADC_DataIn(11 downto 0)
+--        );   
+
+    AdcReader1 : AdcDataReader
+    Port map (
+           PinDataP         =>ADC_Data0(0),
+           PinDataN         =>ADC_Data0(1),
+           BitClk           => IntBitClk,
+           DivClk           => IntDivClk,
+           DataOut          => sADC_DataIn(5 downto 0),
+           SyncDone         => LEDS(5),
+           state            => LEDS(3 downto 2),
+           Rst              =>IntRst,
+           BitClkDone       =>IntBitClkDone
+           );
+           
+   
+     AdcReader2 : AdcDataReader
+     Port map (
+                  PinDataP         =>ADC_Data1(0),
+                  PinDataN         =>ADC_Data1(1),
+                  BitClk           => IntBitClk,
+                  DivClk           => IntDivClk,
+                  DataOut          => sADC_DataIn(11 downto 6),
+                  SyncDone         => open, --LEDS(5),
+                  state            => open, --LEDS(3 downto 2),
+                  Rst              =>IntRst,
+                  BitClkDone       =>IntBitClkDone
+                  );
+
         
         -- IDELAYCTRL is needed for calibration
         BUFG_DlyCtrl : BUFG
@@ -272,7 +321,7 @@ begin
 
 
     --sADC_DataIn(31 downto 12) <= (others =>'0');
-    sADC_DataIn (11 downto 0) <= datBuff;
+    --sADC_DataIn (11 downto 0) <= datBuff;
    --sADC_DataIn(11)<= datBuff(11); sADC_DataIn(9)<= datBuff(10); sADC_DataIn(7)<= datBuff(9); 
    -- sADC_DataIn(5)<= datBuff(8); sADC_DataIn(3)<= datBuff(7); sADC_DataIn(1)<= datBuff(6); 
    -- sADC_DataIn(10)<= datBuff(5); sADC_DataIn(8)<= datBuff(4); sADC_DataIn(6)<= datBuff(3); 
@@ -281,7 +330,7 @@ begin
     FCLKP1 <= sCLkExtIn;
     SData <='1';
     LEDS (1)<='0';
-    LEDS(6)<='0'; LEDS(5) <= '0'; -- <= (others=>'0');
+    LEDS(6)<='0'; LEDS(4) <= '0'; -- <= (others=>'0');
     LEDS(0)<= IntBitClkDone;
     
 

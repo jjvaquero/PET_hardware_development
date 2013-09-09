@@ -7,9 +7,12 @@ Reading design: module_1_stub.prj
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" into library work
-Parsing entity <ADCReadFSM>.
-Parsing architecture <Behavioral> of entity <adcreadfsm>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" into library work
+Parsing entity <BitSlipCtrlFSM>.
+Parsing architecture <Behavioral> of entity <bitslipctrlfsm>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd" into library work
+Parsing entity <AdcDataReader>.
+Parsing architecture <Behavioral> of entity <adcdatareader>.
 Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" into library work
 Parsing entity <PWM_Controller>.
 Parsing architecture <behaviour> of entity <pwm_controller>.
@@ -36,17 +39,11 @@ WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Z
 
 Elaborating entity <AdcClock> (architecture <AdcClock_struct>) with generics from library <work>.
 
-Elaborating entity <ADCReadFSM> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 63: nextstate should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 78: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 81: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 84: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 87: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 90: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 93: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 108: datbit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 109: datbit0 should be on the sensitivity list of the process
-WARNING:HDLCompiler:1127 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 99: Assignment to intrst ignored, since the identifier is never used
+Elaborating entity <AdcDataReader> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <BitSlipCtrlFSM> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" Line 76: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" Line 99: datain should be on the sensitivity list of the process
 WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 74: Net <sADC_DataIn[31]> does not have a driver.
 
 =========================================================================
@@ -58,9 +55,13 @@ Synthesizing Unit <module_1_stub>.
         C_AdcChnls = 2
         C_AdcWireInt = 2
     Set property "BOX_TYPE = user_black_box" for instance <module_1_i>.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 185: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 224: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 224: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 202: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClk35> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <DivClk35> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 285: Output port <state> of the instance <AdcReader2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 285: Output port <SyncDone> of the instance <AdcReader2> is unconnected or connected to loadless signal.
 WARNING:Xst:2935 - Signal 'sADC_DataIn<31:12>', unconnected in block 'module_1_stub', is tied to its initial value (00000000000000000000).
     Summary:
 	no macro.
@@ -84,6 +85,10 @@ Synthesizing Unit <AdcClock>.
         C_AdcBits = 12
         C_StatTaps = 16
     Set property "KEEP_HIERARCHY = YES".
+    Set property "LOC = BUFIO_X1Y8" for instance <AdcClock_I_Bufio34>.
+    Set property "LOC = BUFIO_X1Y4" for instance <AdcClock_I_Bufio35>.
+    Set property "LOC = BUFR_X1Y8" for instance <Gen_Bufr_Div_3.AdcClock_I_Bufr34>.
+    Set property "LOC = BUFR_X1Y4" for instance <Gen_Bufr_Div_3.AdcClock_I_Bufr35>.
     Found 1-bit register for signal <IntClkCtrlDlyInc>.
     Found 1-bit register for signal <IntproceedCntTc_d>.
     Found 1-bit register for signal <IntProceed>.
@@ -103,12 +108,12 @@ Synthesizing Unit <AdcClock>.
     Found 4-bit register for signal <IntTimeOutCnt>.
     Found 4-bit register for signal <IntStepCnt>.
     Found 3-bit register for signal <IntProceedCnt>.
-    Found 3-bit adder for signal <IntProceedCnt[2]_GND_10_o_add_2_OUT> created at line 309.
-    Found 4-bit adder for signal <IntTimeOutCnt[3]_GND_10_o_add_11_OUT> created at line 391.
-    Found 4-bit adder for signal <IntStepCnt[3]_GND_10_o_add_41_OUT> created at line 453.
-    Found 4-bit subtractor for signal <GND_10_o_GND_10_o_sub_44_OUT<3:0>> created at line 480.
+    Found 3-bit adder for signal <IntProceedCnt[2]_GND_10_o_add_2_OUT> created at line 333.
+    Found 4-bit adder for signal <IntTimeOutCnt[3]_GND_10_o_add_11_OUT> created at line 415.
+    Found 4-bit adder for signal <IntStepCnt[3]_GND_10_o_add_41_OUT> created at line 477.
+    Found 4-bit subtractor for signal <GND_10_o_GND_10_o_sub_44_OUT<3:0>> created at line 504.
     Found 32x4-bit Read Only RAM for signal <n0189>
-    Found 2-bit comparator equal for signal <n0048> created at line 415
+    Found 2-bit comparator equal for signal <n0048> created at line 439
     Summary:
 	inferred   1 RAM(s).
 	inferred   4 Adder/Subtractor(s).
@@ -117,66 +122,133 @@ Synthesizing Unit <AdcClock>.
 	inferred  34 Multiplexer(s).
 Unit <AdcClock> synthesized.
 
-Synthesizing Unit <ADCReadFSM>.
-    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd".
-WARNING:Xst:647 - Input <BitClk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 8x12-bit Read Only RAM for signal <_n0109>
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+Synthesizing Unit <AdcDataReader>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd".
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd" line 195: Output port <State> of the instance <BitSlipCtrlN> is unconnected or connected to loadless signal.
+    Found 6-bit register for signal <IntDataTotal>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <AdcDataReader> synthesized.
+
+Synthesizing Unit <BitSlipCtrlFSM>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd".
+    Found 3-bit register for signal <currState>.
+    Found 32-bit adder for signal <counter[31]_GND_44_o_add_10_OUT> created at line 102.
+    Found 8x4-bit Read Only RAM for signal <_n0133>
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_37_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_61_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_73_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_29_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_53_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_69_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_33_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_39_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_47_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_71_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_41_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_23_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_79_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_57_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_51_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_75_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_45_o> created at line 68.
+    Found 1-bit 4-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_87_o> created at line 68.
+    Found 1-bit 4-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_89_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_21_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_25_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_27_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_31_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_35_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_49_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_55_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_59_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_63_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_65_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_67_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_77_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_81_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_83_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_43_o> created at line 68.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <BitSlip>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 3-bit comparator equal for signal <PatternIn[2]_DataIn[2]_equal_3_o> created at line 76
+    Found 32-bit comparator lessequal for signal <n0006> created at line 89
+    Found 32-bit comparator lessequal for signal <n0011> created at line 103
     Summary:
 	inferred   1 RAM(s).
-	inferred  24 Latch(s).
-	inferred   3 Multiplexer(s).
-Unit <ADCReadFSM> synthesized.
+	inferred   1 Adder/Subtractor(s).
+	inferred   3 D-type flip-flop(s).
+	inferred  36 Latch(s).
+	inferred   3 Comparator(s).
+	inferred  48 Multiplexer(s).
+Unit <BitSlipCtrlFSM> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
+# RAMs                                                 : 5
  32x4-bit single-port Read Only RAM                    : 1
- 8x12-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 5
+ 8x4-bit single-port Read Only RAM                     : 4
+# Adders/Subtractors                                   : 9
  3-bit adder                                           : 1
- 32-bit adder                                          : 1
+ 32-bit adder                                          : 5
  4-bit adder                                           : 2
  4-bit subtractor                                      : 1
-# Registers                                            : 20
+# Registers                                            : 26
  1-bit register                                        : 10
  2-bit register                                        : 3
- 3-bit register                                        : 1
+ 3-bit register                                        : 5
  32-bit register                                       : 1
  4-bit register                                        : 5
-# Latches                                              : 24
- 1-bit latch                                           : 24
-# Comparators                                          : 3
+ 6-bit register                                        : 2
+# Latches                                              : 144
+ 1-bit latch                                           : 144
+# Comparators                                          : 15
  2-bit comparator equal                                : 1
+ 3-bit comparator equal                                : 4
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 37
- 1-bit 2-to-1 multiplexer                              : 9
+ 32-bit comparator lessequal                           : 8
+# Multiplexers                                         : 226
+ 1-bit 2-to-1 multiplexer                              : 54
+ 1-bit 3-to-1 multiplexer                              : 128
+ 1-bit 4-to-1 multiplexer                              : 8
  2-bit 2-to-1 multiplexer                              : 3
+ 32-bit 2-to-1 multiplexer                             : 8
  4-bit 2-to-1 multiplexer                              : 25
 
 =========================================================================
@@ -194,20 +266,6 @@ Loading core <module_1_processing_system7_0_wrapper> for timing and area informa
 Loading core <module_1_axi_interconnect_1_wrapper> for timing and area information for instance <axi_interconnect_1>.
 Loading core <module_1> for timing and area information for instance <module_1_i>.
 
-Synthesizing (advanced) Unit <ADCReadFSM>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0109> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 8-word x 12-bit                     |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <currState>     |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-Unit <ADCReadFSM> synthesized (advanced).
-
 Synthesizing (advanced) Unit <AdcClock>.
 The following registers are absorbed into counter <IntStepCnt>: 1 register on signal <IntStepCnt>.
 The following registers are absorbed into counter <IntProceedCnt>: 1 register on signal <IntProceedCnt>.
@@ -224,6 +282,20 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_n0189> will be implemented on LUTs e
     -----------------------------------------------------------------------
 Unit <AdcClock> synthesized (advanced).
 
+Synthesizing (advanced) Unit <BitSlipCtrlFSM>.
+INFO:Xst:3231 - The small RAM <Mram__n0133> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 4-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <currState>     |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <BitSlipCtrlFSM> synthesized (advanced).
+
 Synthesizing (advanced) Unit <PWM_Controller>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
 Unit <PWM_Controller> synthesized (advanced).
@@ -232,25 +304,30 @@ Unit <PWM_Controller> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
+# RAMs                                                 : 5
  32x4-bit single-port distributed Read Only RAM        : 1
- 8x12-bit single-port distributed Read Only RAM        : 1
-# Adders/Subtractors                                   : 3
- 32-bit adder                                          : 1
+ 8x4-bit single-port distributed Read Only RAM         : 4
+# Adders/Subtractors                                   : 7
+ 32-bit adder                                          : 5
  4-bit adder                                           : 1
  4-bit subtractor                                      : 1
 # Counters                                             : 3
  3-bit up counter                                      : 1
  32-bit up counter                                     : 1
  4-bit up counter                                      : 1
-# Registers                                            : 32
- Flip-Flops                                            : 32
-# Comparators                                          : 3
+# Registers                                            : 56
+ Flip-Flops                                            : 56
+# Comparators                                          : 15
  2-bit comparator equal                                : 1
+ 3-bit comparator equal                                : 4
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 37
- 1-bit 2-to-1 multiplexer                              : 9
+ 32-bit comparator lessequal                           : 8
+# Multiplexers                                         : 226
+ 1-bit 2-to-1 multiplexer                              : 54
+ 1-bit 3-to-1 multiplexer                              : 128
+ 1-bit 4-to-1 multiplexer                              : 8
  2-bit 2-to-1 multiplexer                              : 3
+ 32-bit 2-to-1 multiplexer                             : 8
  4-bit 2-to-1 multiplexer                              : 25
 
 =========================================================================
@@ -259,6 +336,7 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 WARNING:Xst:1710 - FF/Latch <ReturnState_0> (without init value) has a constant value of 0 in block <AdcClock>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance AdcClock_I_BufMR in unit AdcClock of type BUFMR has been replaced by BUFMRCE
 INFO:Xst:2261 - The FF/Latch <ReturnState_2> in Unit <AdcClock> is equivalent to the following FF/Latch, which will be removed : <ReturnState_3> 
 
 WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_SRSTB>; this signal is connected to multiple drivers.
@@ -275,32 +353,20 @@ WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_PORB
 Drivers are: 
    Primary input port <processing_system7_0_PS_PORB_pin>
    Output port PS7:PSPORB of instance <module_1_i/processing_system7_0/processing_system7_0/PS7_i>
-WARNING:Xst:2170 - Unit ADCReadFSM : the following signal(s) form a combinatorial loop: Mram__n0109, currState<0>, currState<1>, Mram__n010910, Mram__n01092.
-WARNING:Xst:2170 - Unit ADCReadFSM : the following signal(s) form a combinatorial loop: currState<2>, Mram__n01099, Mram__n01091.
 
 Optimizing unit <module_1_stub> ...
 
-Optimizing unit <ADCReadFSM> ...
+Optimizing unit <AdcDataReader> ...
+
+Optimizing unit <BitSlipCtrlFSM> ...
 
 Optimizing unit <AdcClock> ...
 WARNING:Xst:2677 - Node <IntClkCtrlAlgnWrn> of sequential type is unconnected in block <AdcClk>.
 WARNING:Xst:2677 - Node <IntClkCtrlInvrtd> of sequential type is unconnected in block <AdcClk>.
-WARNING:Xst:1293 - FF/Latch <PWM/count_20> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_21> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_22> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_23> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_24> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_25> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_26> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_27> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_28> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_29> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_30> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_31> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block module_1_stub, actual ratio is 0.
+Found area constraint ratio of 100 (+ 0) on block module_1_stub, actual ratio is 1.
 INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
@@ -317,8 +383,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 55
- Flip-Flops                                            : 55
+# Registers                                            : 91
+ Flip-Flops                                            : 91
 
 =========================================================================
 
@@ -339,32 +405,37 @@ Partition Implementation Status
 
 Clock Information:
 ------------------
----------------------------------------------------------------------------+-----------------------------+-------+
-Clock Signal                                                               | Clock buffer(FF name)       | Load  |
----------------------------------------------------------------------------+-----------------------------+-------+
-DCLK<0>                                                                    | IBUFGDS+ISERDESE2+BUFR      | 36    |
-module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                        | 705   |
-FCLK<0>                                                                    | IBUFGDS                     | 12    |
-ADCReader/Mram__n01098(ADCReader/Mram__n010981:O)                          | NONE(*)(ADCReader/datBit1_5)| 2     |
-ADCReader/Mram__n01097(ADCReader/Mram__n010971:O)                          | NONE(*)(ADCReader/datBit1_0)| 2     |
-ADCReader/Mram__n01096(ADCReader/Mram__n010961:O)                          | NONE(*)(ADCReader/datBit1_1)| 2     |
-ADCReader/Mram__n01094(ADCReader/Mram__n010941:O)                          | NONE(*)(ADCReader/datBit1_3)| 2     |
-ADCReader/Mram__n01093(ADCReader/Mram__n010931:O)                          | NONE(*)(ADCReader/datBit1_4)| 2     |
-ADCReader/Mram__n01095(ADCReader/Mram__n010951:O)                          | NONE(*)(ADCReader/datBit1_2)| 2     |
----------------------------------------------------------------------------+-----------------------------+-------+
-(*) These 6 clock signal(s) are generated by combinatorial logic,
+-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
+Clock Signal                                                                                                           | Clock buffer(FF name)                       | Load  |
+-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
+DCLK<0>                                                                                                                | IBUFGDS+ISERDESE2+BUFMRCE+BUFR              | 62    |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>                                            | BUFG                                        | 717   |
+AdcReader1/BitSlipCtrlN/Mram__n01332(AdcReader1/BitSlipCtrlN/Mram__n013321:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlN/nextState_0)| 3     |
+AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o(AdcReader1/BitSlipCtrlN/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader1/BitSlipCtrlN/counter_31) | 32    |
+AdcReader1/BitSlipCtrlN/Mram__n01333(AdcReader1/BitSlipCtrlN/Mram__n013331:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlN/BitSlip)    | 1     |
+AdcReader1/BitSlipCtrlP/Mram__n01332(AdcReader1/BitSlipCtrlP/Mram__n013321:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlP/nextState_0)| 3     |
+AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o(AdcReader1/BitSlipCtrlP/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader1/BitSlipCtrlP/counter_31) | 32    |
+AdcReader1/BitSlipCtrlP/Mram__n01333(AdcReader1/BitSlipCtrlP/Mram__n013331:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlP/BitSlip)    | 1     |
+AdcReader2/BitSlipCtrlP/Mram__n01332(AdcReader2/BitSlipCtrlP/Mram__n013321:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlP/nextState_0)| 3     |
+AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o(AdcReader2/BitSlipCtrlP/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader2/BitSlipCtrlP/counter_31) | 32    |
+AdcReader2/BitSlipCtrlP/Mram__n01333(AdcReader2/BitSlipCtrlP/Mram__n013331:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlP/BitSlip)    | 1     |
+AdcReader2/BitSlipCtrlN/Mram__n01332(AdcReader2/BitSlipCtrlN/Mram__n013321:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlN/nextState_0)| 3     |
+AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o(AdcReader2/BitSlipCtrlN/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader2/BitSlipCtrlN/counter_31) | 32    |
+AdcReader2/BitSlipCtrlN/Mram__n01333(AdcReader2/BitSlipCtrlN/Mram__n013331:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlN/BitSlip)    | 1     |
+-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
+(*) These 12 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-------------------------------------+--------------------------------------------+-------+
-Control Signal                      | Buffer(FF name)                            | Load  |
-------------------------------------+--------------------------------------------+-------+
-AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr)| 1     |
-AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr)| 1     |
-------------------------------------+--------------------------------------------+-------+
+------------------------------------+----------------------------------------------+-------+
+Control Signal                      | Buffer(FF name)                              | Load  |
+------------------------------------+----------------------------------------------+-------+
+AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
+AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
+------------------------------------+----------------------------------------------+-------+
 
 Timing Summary:
 ---------------
@@ -372,7 +443,7 @@ Speed Grade: -1
 
    Minimum period: 3.868ns (Maximum Frequency: 258.532MHz)
    Minimum input arrival time before clock: 2.180ns
-   Maximum output required time after clock: 2.534ns
-   Maximum combinational path delay: 2.917ns
+   Maximum output required time after clock: 2.591ns
+   Maximum combinational path delay: 1.865ns
 
 =========================================================================
