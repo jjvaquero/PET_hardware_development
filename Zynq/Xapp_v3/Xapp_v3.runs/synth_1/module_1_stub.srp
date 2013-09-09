@@ -56,9 +56,12 @@ Cores Search Directories           : {..\..\Xapp_v3.srcs\sources_1\edk\module_1\
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" into library work
-Parsing entity <ADCReadFSM>.
-Parsing architecture <Behavioral> of entity <adcreadfsm>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" into library work
+Parsing entity <BitSlipCtrlFSM>.
+Parsing architecture <Behavioral> of entity <bitslipctrlfsm>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd" into library work
+Parsing entity <AdcDataReader>.
+Parsing architecture <Behavioral> of entity <adcdatareader>.
 Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" into library work
 Parsing entity <PWM_Controller>.
 Parsing architecture <behaviour> of entity <pwm_controller>.
@@ -85,17 +88,11 @@ WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Z
 
 Elaborating entity <AdcClock> (architecture <AdcClock_struct>) with generics from library <work>.
 
-Elaborating entity <ADCReadFSM> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 63: nextstate should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 78: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 81: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 84: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 87: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 90: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 93: bit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 108: datbit1 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 109: datbit0 should be on the sensitivity list of the process
-WARNING:HDLCompiler:1127 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd" Line 99: Assignment to intrst ignored, since the identifier is never used
+Elaborating entity <AdcDataReader> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <BitSlipCtrlFSM> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" Line 76: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" Line 99: datain should be on the sensitivity list of the process
 WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 74: Net <sADC_DataIn[31]> does not have a driver.
 
 =========================================================================
@@ -107,9 +104,13 @@ Synthesizing Unit <module_1_stub>.
         C_AdcChnls = 2
         C_AdcWireInt = 2
     Set property "BOX_TYPE = user_black_box" for instance <module_1_i>.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 185: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 224: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 224: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 202: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClk35> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <DivClk35> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 285: Output port <state> of the instance <AdcReader2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 285: Output port <SyncDone> of the instance <AdcReader2> is unconnected or connected to loadless signal.
 WARNING:Xst:2935 - Signal 'sADC_DataIn<31:12>', unconnected in block 'module_1_stub', is tied to its initial value (00000000000000000000).
     Summary:
 	no macro.
@@ -133,6 +134,10 @@ Synthesizing Unit <AdcClock>.
         C_AdcBits = 12
         C_StatTaps = 16
     Set property "KEEP_HIERARCHY = YES".
+    Set property "LOC = BUFIO_X1Y8" for instance <AdcClock_I_Bufio34>.
+    Set property "LOC = BUFIO_X1Y4" for instance <AdcClock_I_Bufio35>.
+    Set property "LOC = BUFR_X1Y8" for instance <Gen_Bufr_Div_3.AdcClock_I_Bufr34>.
+    Set property "LOC = BUFR_X1Y4" for instance <Gen_Bufr_Div_3.AdcClock_I_Bufr35>.
     Found 1-bit register for signal <IntClkCtrlDlyInc>.
     Found 1-bit register for signal <IntproceedCntTc_d>.
     Found 1-bit register for signal <IntProceed>.
@@ -152,12 +157,12 @@ Synthesizing Unit <AdcClock>.
     Found 4-bit register for signal <IntTimeOutCnt>.
     Found 4-bit register for signal <IntStepCnt>.
     Found 3-bit register for signal <IntProceedCnt>.
-    Found 3-bit adder for signal <IntProceedCnt[2]_GND_10_o_add_2_OUT> created at line 309.
-    Found 4-bit adder for signal <IntTimeOutCnt[3]_GND_10_o_add_11_OUT> created at line 391.
-    Found 4-bit adder for signal <IntStepCnt[3]_GND_10_o_add_41_OUT> created at line 453.
-    Found 4-bit subtractor for signal <GND_10_o_GND_10_o_sub_44_OUT<3:0>> created at line 480.
+    Found 3-bit adder for signal <IntProceedCnt[2]_GND_10_o_add_2_OUT> created at line 333.
+    Found 4-bit adder for signal <IntTimeOutCnt[3]_GND_10_o_add_11_OUT> created at line 415.
+    Found 4-bit adder for signal <IntStepCnt[3]_GND_10_o_add_41_OUT> created at line 477.
+    Found 4-bit subtractor for signal <GND_10_o_GND_10_o_sub_44_OUT<3:0>> created at line 504.
     Found 32x4-bit Read Only RAM for signal <n0189>
-    Found 2-bit comparator equal for signal <n0048> created at line 415
+    Found 2-bit comparator equal for signal <n0048> created at line 439
     Summary:
 	inferred   1 RAM(s).
 	inferred   4 Adder/Subtractor(s).
@@ -166,66 +171,133 @@ Synthesizing Unit <AdcClock>.
 	inferred  34 Multiplexer(s).
 Unit <AdcClock> synthesized.
 
-Synthesizing Unit <ADCReadFSM>.
-    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd".
-WARNING:Xst:647 - Input <BitClk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 8x12-bit Read Only RAM for signal <_n0109>
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit0<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <DataOut<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <datBit1<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+Synthesizing Unit <AdcDataReader>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd".
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd" line 195: Output port <State> of the instance <BitSlipCtrlN> is unconnected or connected to loadless signal.
+    Found 6-bit register for signal <IntDataTotal>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <AdcDataReader> synthesized.
+
+Synthesizing Unit <BitSlipCtrlFSM>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd".
+    Found 3-bit register for signal <currState>.
+    Found 32-bit adder for signal <counter[31]_GND_44_o_add_10_OUT> created at line 102.
+    Found 8x4-bit Read Only RAM for signal <_n0133>
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_37_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_61_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_73_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_29_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_53_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_69_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_33_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_39_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_47_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_71_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_41_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_23_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_79_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_57_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_51_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_75_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_45_o> created at line 68.
+    Found 1-bit 4-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_87_o> created at line 68.
+    Found 1-bit 4-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_89_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_21_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_25_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_27_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_31_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_35_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_49_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_55_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_59_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_63_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_65_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_67_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_77_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_81_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_83_o> created at line 68.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_43_o> created at line 68.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <counter<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <BitSlip>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 3-bit comparator equal for signal <PatternIn[2]_DataIn[2]_equal_3_o> created at line 76
+    Found 32-bit comparator lessequal for signal <n0006> created at line 89
+    Found 32-bit comparator lessequal for signal <n0011> created at line 103
     Summary:
 	inferred   1 RAM(s).
-	inferred  24 Latch(s).
-	inferred   3 Multiplexer(s).
-Unit <ADCReadFSM> synthesized.
+	inferred   1 Adder/Subtractor(s).
+	inferred   3 D-type flip-flop(s).
+	inferred  36 Latch(s).
+	inferred   3 Comparator(s).
+	inferred  48 Multiplexer(s).
+Unit <BitSlipCtrlFSM> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
+# RAMs                                                 : 5
  32x4-bit single-port Read Only RAM                    : 1
- 8x12-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 5
+ 8x4-bit single-port Read Only RAM                     : 4
+# Adders/Subtractors                                   : 9
  3-bit adder                                           : 1
- 32-bit adder                                          : 1
+ 32-bit adder                                          : 5
  4-bit adder                                           : 2
  4-bit subtractor                                      : 1
-# Registers                                            : 20
+# Registers                                            : 26
  1-bit register                                        : 10
  2-bit register                                        : 3
- 3-bit register                                        : 1
+ 3-bit register                                        : 5
  32-bit register                                       : 1
  4-bit register                                        : 5
-# Latches                                              : 24
- 1-bit latch                                           : 24
-# Comparators                                          : 3
+ 6-bit register                                        : 2
+# Latches                                              : 144
+ 1-bit latch                                           : 144
+# Comparators                                          : 15
  2-bit comparator equal                                : 1
+ 3-bit comparator equal                                : 4
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 37
- 1-bit 2-to-1 multiplexer                              : 9
+ 32-bit comparator lessequal                           : 8
+# Multiplexers                                         : 226
+ 1-bit 2-to-1 multiplexer                              : 54
+ 1-bit 3-to-1 multiplexer                              : 128
+ 1-bit 4-to-1 multiplexer                              : 8
  2-bit 2-to-1 multiplexer                              : 3
+ 32-bit 2-to-1 multiplexer                             : 8
  4-bit 2-to-1 multiplexer                              : 25
 
 =========================================================================
@@ -243,20 +315,6 @@ Loading core <module_1_processing_system7_0_wrapper> for timing and area informa
 Loading core <module_1_axi_interconnect_1_wrapper> for timing and area information for instance <axi_interconnect_1>.
 Loading core <module_1> for timing and area information for instance <module_1_i>.
 
-Synthesizing (advanced) Unit <ADCReadFSM>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0109> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 8-word x 12-bit                     |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <currState>     |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-Unit <ADCReadFSM> synthesized (advanced).
-
 Synthesizing (advanced) Unit <AdcClock>.
 The following registers are absorbed into counter <IntStepCnt>: 1 register on signal <IntStepCnt>.
 The following registers are absorbed into counter <IntProceedCnt>: 1 register on signal <IntProceedCnt>.
@@ -273,6 +331,20 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_n0189> will be implemented on LUTs e
     -----------------------------------------------------------------------
 Unit <AdcClock> synthesized (advanced).
 
+Synthesizing (advanced) Unit <BitSlipCtrlFSM>.
+INFO:Xst:3231 - The small RAM <Mram__n0133> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 4-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <currState>     |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <BitSlipCtrlFSM> synthesized (advanced).
+
 Synthesizing (advanced) Unit <PWM_Controller>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
 Unit <PWM_Controller> synthesized (advanced).
@@ -281,25 +353,30 @@ Unit <PWM_Controller> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
+# RAMs                                                 : 5
  32x4-bit single-port distributed Read Only RAM        : 1
- 8x12-bit single-port distributed Read Only RAM        : 1
-# Adders/Subtractors                                   : 3
- 32-bit adder                                          : 1
+ 8x4-bit single-port distributed Read Only RAM         : 4
+# Adders/Subtractors                                   : 7
+ 32-bit adder                                          : 5
  4-bit adder                                           : 1
  4-bit subtractor                                      : 1
 # Counters                                             : 3
  3-bit up counter                                      : 1
  32-bit up counter                                     : 1
  4-bit up counter                                      : 1
-# Registers                                            : 32
- Flip-Flops                                            : 32
-# Comparators                                          : 3
+# Registers                                            : 56
+ Flip-Flops                                            : 56
+# Comparators                                          : 15
  2-bit comparator equal                                : 1
+ 3-bit comparator equal                                : 4
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 37
- 1-bit 2-to-1 multiplexer                              : 9
+ 32-bit comparator lessequal                           : 8
+# Multiplexers                                         : 226
+ 1-bit 2-to-1 multiplexer                              : 54
+ 1-bit 3-to-1 multiplexer                              : 128
+ 1-bit 4-to-1 multiplexer                              : 8
  2-bit 2-to-1 multiplexer                              : 3
+ 32-bit 2-to-1 multiplexer                             : 8
  4-bit 2-to-1 multiplexer                              : 25
 
 =========================================================================
@@ -308,6 +385,7 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 WARNING:Xst:1710 - FF/Latch <ReturnState_0> (without init value) has a constant value of 0 in block <AdcClock>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance AdcClock_I_BufMR in unit AdcClock of type BUFMR has been replaced by BUFMRCE
 INFO:Xst:2261 - The FF/Latch <ReturnState_2> in Unit <AdcClock> is equivalent to the following FF/Latch, which will be removed : <ReturnState_3> 
 
 WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_SRSTB>; this signal is connected to multiple drivers.
@@ -324,32 +402,20 @@ WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_PORB
 Drivers are: 
    Primary input port <processing_system7_0_PS_PORB_pin>
    Output port PS7:PSPORB of instance <module_1_i/processing_system7_0/processing_system7_0/PS7_i>
-WARNING:Xst:2170 - Unit ADCReadFSM : the following signal(s) form a combinatorial loop: Mram__n0109, currState<0>, currState<1>, Mram__n010910, Mram__n01092.
-WARNING:Xst:2170 - Unit ADCReadFSM : the following signal(s) form a combinatorial loop: currState<2>, Mram__n01099, Mram__n01091.
 
 Optimizing unit <module_1_stub> ...
 
-Optimizing unit <ADCReadFSM> ...
+Optimizing unit <AdcDataReader> ...
+
+Optimizing unit <BitSlipCtrlFSM> ...
 
 Optimizing unit <AdcClock> ...
 WARNING:Xst:2677 - Node <IntClkCtrlAlgnWrn> of sequential type is unconnected in block <AdcClk>.
 WARNING:Xst:2677 - Node <IntClkCtrlInvrtd> of sequential type is unconnected in block <AdcClk>.
-WARNING:Xst:1293 - FF/Latch <PWM/count_20> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_21> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_22> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_23> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_24> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_25> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_26> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_27> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_28> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_29> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_30> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PWM/count_31> has a constant value of 0 in block <module_1_stub>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block module_1_stub, actual ratio is 0.
+Found area constraint ratio of 100 (+ 0) on block module_1_stub, actual ratio is 1.
 INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
@@ -366,8 +432,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 55
- Flip-Flops                                            : 55
+# Registers                                            : 91
+ Flip-Flops                                            : 91
 
 =========================================================================
 
@@ -390,45 +456,46 @@ Top Level Output File Name         : module_1_stub.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1071
-#      GND                         : 7
-#      INV                         : 106
-#      LUT1                        : 38
-#      LUT2                        : 145
-#      LUT3                        : 173
-#      LUT4                        : 252
-#      LUT5                        : 36
-#      LUT6                        : 219
-#      MUXCY                       : 63
-#      MUXF7                       : 2
-#      VCC                         : 5
-#      XORCY                       : 25
-# FlipFlops/Latches                : 700
-#      FD                          : 94
+# BELS                             : 1880
+#      GND                         : 13
+#      INV                         : 117
+#      LUT1                        : 186
+#      LUT2                        : 173
+#      LUT3                        : 181
+#      LUT4                        : 268
+#      LUT5                        : 257
+#      LUT6                        : 226
+#      MUXCY                       : 273
+#      MUXF7                       : 1
+#      VCC                         : 9
+#      XORCY                       : 176
+# FlipFlops/Latches                : 856
+#      FD                          : 138
 #      FDC                         : 12
 #      FDCE                        : 28
 #      FDE                         : 125
-#      FDPE                        : 1
-#      FDR                         : 216
+#      FDP                         : 1
+#      FDR                         : 208
 #      FDRE                        : 132
 #      FDS                         : 4
 #      FDSE                        : 64
-#      LD                          : 24
+#      LD                          : 144
 # Shift Registers                  : 64
 #      SRLC16E                     : 64
-# Clock Buffers                    : 3
-#      BUFG                        : 3
+# Clock Buffers                    : 7
+#      BUFG                        : 7
 # IO Buffers                       : 17
 #      IBUF                        : 3
-#      IBUFDS                      : 2
+#      IBUFDS_DIFF_OUT             : 2
 #      IBUFGDS                     : 2
 #      OBUF                        : 10
-# Others                           : 6
-#      BUFIO                       : 1
-#      BUFR                        : 1
+# Others                           : 13
+#      BUFIO                       : 2
+#      BUFMRCE                     : 1
+#      BUFR                        : 2
 #      IDELAYCTRL                  : 1
 #      IDELAYE2                    : 1
-#      ISERDESE2                   : 1
+#      ISERDESE2                   : 5
 #      PS7                         : 1
 
 Device utilization summary:
@@ -438,25 +505,25 @@ Selected Device : 7z020clg484-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             700  out of  106400     0%  
- Number of Slice LUTs:                 1033  out of  53200     1%  
-    Number used as Logic:               969  out of  53200     1%  
+ Number of Slice Registers:             856  out of  106400     0%  
+ Number of Slice LUTs:                 1472  out of  53200     2%  
+    Number used as Logic:              1408  out of  53200     2%  
     Number used as Memory:               64  out of  17400     0%  
        Number used as SRL:               64
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1201
-   Number with an unused Flip Flop:     501  out of   1201    41%  
-   Number with an unused LUT:           168  out of   1201    13%  
-   Number of fully used LUT-FF pairs:   532  out of   1201    44%  
-   Number of unique control sets:        36
+ Number of LUT Flip Flop pairs used:   1644
+   Number with an unused Flip Flop:     788  out of   1644    47%  
+   Number with an unused LUT:           172  out of   1644    10%  
+   Number of fully used LUT-FF pairs:   684  out of   1644    41%  
+   Number of unique control sets:        49
 
 IO Utilization: 
  Number of IOs:                         148
- Number of bonded IOBs:                  21  out of    200    10%  
+ Number of bonded IOBs:                  17  out of    200     8%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRL/BUFHCEs:         3  out of    104     2%  
+ Number of BUFG/BUFGCTRL/BUFHCEs:         7  out of    104     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -476,32 +543,37 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
----------------------------------------------------------------------------+-----------------------------+-------+
-Clock Signal                                                               | Clock buffer(FF name)       | Load  |
----------------------------------------------------------------------------+-----------------------------+-------+
-DCLK<0>                                                                    | IBUFGDS+ISERDESE2+BUFR      | 36    |
-module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                        | 705   |
-FCLK<0>                                                                    | IBUFGDS                     | 12    |
-ADCReader/Mram__n01098(ADCReader/Mram__n010981:O)                          | NONE(*)(ADCReader/datBit1_5)| 2     |
-ADCReader/Mram__n01097(ADCReader/Mram__n010971:O)                          | NONE(*)(ADCReader/datBit1_0)| 2     |
-ADCReader/Mram__n01096(ADCReader/Mram__n010961:O)                          | NONE(*)(ADCReader/datBit1_1)| 2     |
-ADCReader/Mram__n01094(ADCReader/Mram__n010941:O)                          | NONE(*)(ADCReader/datBit1_3)| 2     |
-ADCReader/Mram__n01093(ADCReader/Mram__n010931:O)                          | NONE(*)(ADCReader/datBit1_4)| 2     |
-ADCReader/Mram__n01095(ADCReader/Mram__n010951:O)                          | NONE(*)(ADCReader/datBit1_2)| 2     |
----------------------------------------------------------------------------+-----------------------------+-------+
-(*) These 6 clock signal(s) are generated by combinatorial logic,
+-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
+Clock Signal                                                                                                           | Clock buffer(FF name)                       | Load  |
+-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
+DCLK<0>                                                                                                                | IBUFGDS+ISERDESE2+BUFMRCE+BUFR              | 62    |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>                                            | BUFG                                        | 717   |
+AdcReader1/BitSlipCtrlN/Mram__n01332(AdcReader1/BitSlipCtrlN/Mram__n013321:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlN/nextState_0)| 3     |
+AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o(AdcReader1/BitSlipCtrlN/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader1/BitSlipCtrlN/counter_31) | 32    |
+AdcReader1/BitSlipCtrlN/Mram__n01333(AdcReader1/BitSlipCtrlN/Mram__n013331:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlN/BitSlip)    | 1     |
+AdcReader1/BitSlipCtrlP/Mram__n01332(AdcReader1/BitSlipCtrlP/Mram__n013321:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlP/nextState_0)| 3     |
+AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o(AdcReader1/BitSlipCtrlP/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader1/BitSlipCtrlP/counter_31) | 32    |
+AdcReader1/BitSlipCtrlP/Mram__n01333(AdcReader1/BitSlipCtrlP/Mram__n013331:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlP/BitSlip)    | 1     |
+AdcReader2/BitSlipCtrlP/Mram__n01332(AdcReader2/BitSlipCtrlP/Mram__n013321:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlP/nextState_0)| 3     |
+AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o(AdcReader2/BitSlipCtrlP/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader2/BitSlipCtrlP/counter_31) | 32    |
+AdcReader2/BitSlipCtrlP/Mram__n01333(AdcReader2/BitSlipCtrlP/Mram__n013331:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlP/BitSlip)    | 1     |
+AdcReader2/BitSlipCtrlN/Mram__n01332(AdcReader2/BitSlipCtrlN/Mram__n013321:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlN/nextState_0)| 3     |
+AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o(AdcReader2/BitSlipCtrlN/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader2/BitSlipCtrlN/counter_31) | 32    |
+AdcReader2/BitSlipCtrlN/Mram__n01333(AdcReader2/BitSlipCtrlN/Mram__n013331:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlN/BitSlip)    | 1     |
+-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
+(*) These 12 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-------------------------------------+--------------------------------------------+-------+
-Control Signal                      | Buffer(FF name)                            | Load  |
-------------------------------------+--------------------------------------------+-------+
-AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr)| 1     |
-AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr)| 1     |
-------------------------------------+--------------------------------------------+-------+
+------------------------------------+----------------------------------------------+-------+
+Control Signal                      | Buffer(FF name)                              | Load  |
+------------------------------------+----------------------------------------------+-------+
+AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
+AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
+------------------------------------+----------------------------------------------+-------+
 
 Timing Summary:
 ---------------
@@ -509,8 +581,8 @@ Speed Grade: -1
 
    Minimum period: 3.868ns (Maximum Frequency: 258.532MHz)
    Minimum input arrival time before clock: 2.180ns
-   Maximum output required time after clock: 2.534ns
-   Maximum combinational path delay: 2.917ns
+   Maximum output required time after clock: 2.591ns
+   Maximum combinational path delay: 1.865ns
 
 Timing Details:
 ---------------
@@ -518,32 +590,33 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'DCLK<0>'
-  Clock period: 2.731ns (frequency: 366.166MHz)
-  Total number of paths / destination ports: 731 / 62
+  Clock period: 3.215ns (frequency: 311.042MHz)
+  Total number of paths / destination ports: 652 / 73
 -------------------------------------------------------------------------
-Delay:               2.731ns (Levels of Logic = 3)
-  Source:            AdcClk/IntCalVal_1 (FF)
-  Destination:       AdcClk/IntStepCnt_0 (FF)
+Delay:               3.215ns (Levels of Logic = 4)
+  Source:            AdcClk/IntStepCnt_3 (FF)
+  Destination:       AdcClk/IntNumIncDecIdly_0 (FF)
   Source Clock:      DCLK<0> rising
   Destination Clock: DCLK<0> rising
 
-  Data Path: AdcClk/IntCalVal_1 to AdcClk/IntStepCnt_0
+  Data Path: AdcClk/IntStepCnt_3 to AdcClk/IntNumIncDecIdly_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             6   0.282   0.668  IntCalVal_1 (IntCalVal_1)
-     LUT4:I0->O            6   0.053   0.518  n004821 (n0048)
-     LUT4:I2->O            1   0.053   0.485  _n0240<1>1 (_n0240)
-     LUT6:I4->O            4   0.053   0.419  _n0701_inv1 (_n0701_inv)
-     FDCE:CE                   0.200          IntStepCnt_0
+     FDCE:C->Q             2   0.282   0.641  IntStepCnt_3 (IntStepCnt_3)
+     LUT4:I0->O            5   0.053   0.629  IntStepCnt[3]_PWR_10_o_equal_24_o<3>1 (IntStepCnt[3]_PWR_10_o_equal_24_o)
+     LUT6:I3->O            2   0.053   0.419  _n0576<3>2 (_n0576<3>1)
+     LUT2:I1->O            1   0.053   0.413  _n0576<3>3 (_n0576)
+     LUT6:I5->O            4   0.053   0.419  _n0638_inv1 (_n0638_inv)
+     FDCE:CE                   0.200          IntNumIncDecIdly_0
     ----------------------------------------
-    Total                      2.731ns (0.641ns logic, 2.090ns route)
-                                       (23.5% logic, 76.5% route)
+    Total                      3.215ns (0.694ns logic, 2.521ns route)
+                                       (21.6% logic, 78.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
   Clock period: 3.868ns (frequency: 258.532MHz)
-  Total number of paths / destination ports: 10471 / 1305
+  Total number of paths / destination ports: 20565 / 1297
 -------------------------------------------------------------------------
 Delay:               3.868ns (Levels of Logic = 8)
   Source:            module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 (FF)
@@ -571,8 +644,236 @@ Delay:               3.868ns (Levels of Logic = 8)
                                        (21.4% logic, 78.6% route)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o'
+  Clock period: 3.605ns (frequency: 277.378MHz)
+  Total number of paths / destination ports: 35088 / 32
+-------------------------------------------------------------------------
+Delay:               3.605ns (Levels of Logic = 36)
+  Source:            AdcReader1/BitSlipCtrlN/counter_0 (LATCH)
+  Destination:       AdcReader1/BitSlipCtrlN/counter_31 (LATCH)
+  Source Clock:      AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o falling
+  Destination Clock: AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o falling
+
+  Data Path: AdcReader1/BitSlipCtrlN/counter_0 to AdcReader1/BitSlipCtrlN/counter_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.389   0.399  counter_0 (counter_0)
+     INV:I->O              1   0.067   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>_INV_0 (Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<0> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<1> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<2> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<3> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<4> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<5> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<6> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<7> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<8> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<9> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<10> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<11> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<12> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<13> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<13>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<14> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<14>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<15> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<15>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<16> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<16>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<17> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<17>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<18> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<18>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<19> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<19>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<20> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<20>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<21> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<21>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<22> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<22>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<23> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<23>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<24> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<24>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<25> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<25>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<26> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<26>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<27> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<27>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<28> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<28>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<29> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<29>)
+     XORCY:CI->O           3   0.320   0.739  Madd_counter[31]_GND_44_o_add_10_OUT_xor<30> (counter[31]_GND_44_o_add_10_OUT<30>)
+     LUT5:I0->O            0   0.053   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5 (Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5)
+     MUXCY:DI->O           1   0.278   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5> (Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5>)
+     MUXCY:CI->O          35   0.015   0.566  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<6> (GND_44_o_PWR_16_o_mux_13_OUT[2])
+     LUT5:I4->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_21_o1301 (currState[2]_X_12_o_Mux_81_o)
+     LD:D                     -0.021          counter_1
+    ----------------------------------------
+    Total                      3.605ns (1.901ns logic, 1.704ns route)
+                                       (52.7% logic, 47.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o'
+  Clock period: 3.605ns (frequency: 277.378MHz)
+  Total number of paths / destination ports: 35088 / 32
+-------------------------------------------------------------------------
+Delay:               3.605ns (Levels of Logic = 36)
+  Source:            AdcReader1/BitSlipCtrlP/counter_0 (LATCH)
+  Destination:       AdcReader1/BitSlipCtrlP/counter_31 (LATCH)
+  Source Clock:      AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o falling
+  Destination Clock: AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o falling
+
+  Data Path: AdcReader1/BitSlipCtrlP/counter_0 to AdcReader1/BitSlipCtrlP/counter_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.389   0.399  counter_0 (counter_0)
+     INV:I->O              1   0.067   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>_INV_0 (Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<0> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<1> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<2> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<3> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<4> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<5> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<6> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<7> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<8> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<9> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<10> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<11> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<12> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<13> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<13>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<14> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<14>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<15> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<15>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<16> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<16>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<17> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<17>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<18> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<18>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<19> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<19>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<20> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<20>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<21> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<21>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<22> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<22>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<23> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<23>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<24> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<24>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<25> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<25>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<26> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<26>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<27> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<27>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<28> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<28>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<29> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<29>)
+     XORCY:CI->O           3   0.320   0.739  Madd_counter[31]_GND_44_o_add_10_OUT_xor<30> (counter[31]_GND_44_o_add_10_OUT<30>)
+     LUT5:I0->O            0   0.053   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5 (Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5)
+     MUXCY:DI->O           1   0.278   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5> (Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5>)
+     MUXCY:CI->O          35   0.015   0.566  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<6> (GND_44_o_PWR_16_o_mux_13_OUT[2])
+     LUT5:I4->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_21_o1301 (currState[2]_X_12_o_Mux_81_o)
+     LD:D                     -0.021          counter_1
+    ----------------------------------------
+    Total                      3.605ns (1.901ns logic, 1.704ns route)
+                                       (52.7% logic, 47.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o'
+  Clock period: 3.605ns (frequency: 277.378MHz)
+  Total number of paths / destination ports: 35088 / 32
+-------------------------------------------------------------------------
+Delay:               3.605ns (Levels of Logic = 36)
+  Source:            AdcReader2/BitSlipCtrlP/counter_0 (LATCH)
+  Destination:       AdcReader2/BitSlipCtrlP/counter_31 (LATCH)
+  Source Clock:      AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o falling
+  Destination Clock: AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o falling
+
+  Data Path: AdcReader2/BitSlipCtrlP/counter_0 to AdcReader2/BitSlipCtrlP/counter_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.389   0.399  counter_0 (counter_0)
+     INV:I->O              1   0.067   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>_INV_0 (Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<0> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<1> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<2> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<3> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<4> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<5> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<6> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<7> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<8> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<9> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<10> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<11> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<12> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<13> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<13>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<14> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<14>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<15> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<15>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<16> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<16>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<17> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<17>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<18> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<18>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<19> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<19>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<20> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<20>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<21> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<21>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<22> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<22>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<23> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<23>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<24> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<24>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<25> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<25>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<26> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<26>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<27> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<27>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<28> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<28>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<29> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<29>)
+     XORCY:CI->O           3   0.320   0.739  Madd_counter[31]_GND_44_o_add_10_OUT_xor<30> (counter[31]_GND_44_o_add_10_OUT<30>)
+     LUT5:I0->O            0   0.053   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5 (Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5)
+     MUXCY:DI->O           1   0.278   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5> (Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5>)
+     MUXCY:CI->O          35   0.015   0.566  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<6> (GND_44_o_PWR_16_o_mux_13_OUT[2])
+     LUT5:I4->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_21_o1301 (currState[2]_X_12_o_Mux_81_o)
+     LD:D                     -0.021          counter_1
+    ----------------------------------------
+    Total                      3.605ns (1.901ns logic, 1.704ns route)
+                                       (52.7% logic, 47.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o'
+  Clock period: 3.605ns (frequency: 277.378MHz)
+  Total number of paths / destination ports: 35088 / 32
+-------------------------------------------------------------------------
+Delay:               3.605ns (Levels of Logic = 36)
+  Source:            AdcReader2/BitSlipCtrlN/counter_0 (LATCH)
+  Destination:       AdcReader2/BitSlipCtrlN/counter_31 (LATCH)
+  Source Clock:      AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o falling
+  Destination Clock: AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o falling
+
+  Data Path: AdcReader2/BitSlipCtrlN/counter_0 to AdcReader2/BitSlipCtrlN/counter_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.389   0.399  counter_0 (counter_0)
+     INV:I->O              1   0.067   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>_INV_0 (Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<0> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<1> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<2> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<3> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<4> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<5> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<6> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<7> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<8> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<9> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<10> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<11> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<12> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<13> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<13>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<14> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<14>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<15> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<15>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<16> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<16>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<17> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<17>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<18> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<18>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<19> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<19>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<20> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<20>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<21> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<21>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<22> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<22>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<23> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<23>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<24> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<24>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<25> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<25>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<26> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<26>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<27> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<27>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<28> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<28>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<29> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<29>)
+     XORCY:CI->O           3   0.320   0.739  Madd_counter[31]_GND_44_o_add_10_OUT_xor<30> (counter[31]_GND_44_o_add_10_OUT<30>)
+     LUT5:I0->O            0   0.053   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5 (Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5)
+     MUXCY:DI->O           1   0.278   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5> (Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5>)
+     MUXCY:CI->O          35   0.015   0.566  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<6> (GND_44_o_PWR_16_o_mux_13_OUT[2])
+     LUT5:I4->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_21_o1301 (currState[2]_X_12_o_Mux_81_o)
+     LD:D                     -0.021          counter_1
+    ----------------------------------------
+    Total                      3.605ns (1.901ns logic, 1.704ns route)
+                                       (52.7% logic, 47.3% route)
+
+=========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'DCLK<0>'
-  Total number of paths / destination ports: 59 / 37
+  Total number of paths / destination ports: 71 / 49
 -------------------------------------------------------------------------
 Offset:              1.610ns (Levels of Logic = 3)
   Source:            AdcClk/AdcClock_I_Isrds_Master:Q3 (PAD)
@@ -619,130 +920,182 @@ Offset:              2.180ns (Levels of Logic = 5)
                                        (37.8% logic, 62.2% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01098'
-  Total number of paths / destination ports: 4 / 2
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader1/BitSlipCtrlN/Mram__n01332'
+  Total number of paths / destination ports: 9 / 3
 -------------------------------------------------------------------------
-Offset:              0.432ns (Levels of Logic = 2)
-  Source:            ADC_Data1<0> (PAD)
-  Destination:       ADCReader/datBit1_5 (LATCH)
-  Destination Clock: ADCReader/Mram__n01098 falling
+Offset:              1.349ns (Levels of Logic = 3)
+  Source:            AdcReader1/AdcDataISerdes_N:Q3 (PAD)
+  Destination:       AdcReader1/BitSlipCtrlN/nextState_1 (LATCH)
+  Destination Clock: AdcReader1/BitSlipCtrlN/Mram__n01332 falling
 
-  Data Path: ADC_Data1<0> to ADCReader/datBit1_5
+  Data Path: AdcReader1/AdcDataISerdes_N:Q3 to AdcReader1/BitSlipCtrlN/nextState_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
-     begin scope: 'ADCReader:bit1'
-     LD:D                     -0.021          datBit1_5
+    ISERDESE2:Q3           6   0.000   0.000  AdcDataISerdes_N (IntDataN<0>)
+     begin scope: 'AdcReader1/BitSlipCtrlN:DataIn<0>'
+     LUT3:I0->O            2   0.053   0.608  GND_44_o_GND_44_o_mux_3_OUT<0>31 (GND_44_o_GND_44_o_mux_3_OUT<0>)
+     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_87_o12 (currState[2]_X_12_o_Mux_87_o)
+     LD:D                     -0.021          nextState_1
     ----------------------------------------
-    Total                      0.432ns (0.000ns logic, 0.432ns route)
-                                       (0.0% logic, 100.0% route)
+    Total                      1.349ns (0.741ns logic, 0.608ns route)
+                                       (54.9% logic, 45.1% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01097'
-  Total number of paths / destination ports: 4 / 2
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader1/BitSlipCtrlN/Mram__n01333'
+  Total number of paths / destination ports: 3 / 1
 -------------------------------------------------------------------------
-Offset:              0.432ns (Levels of Logic = 2)
-  Source:            ADC_Data1<0> (PAD)
-  Destination:       ADCReader/datBit1_0 (LATCH)
-  Destination Clock: ADCReader/Mram__n01097 falling
+Offset:              0.688ns (Levels of Logic = 2)
+  Source:            AdcReader1/AdcDataISerdes_N:Q1 (PAD)
+  Destination:       AdcReader1/BitSlipCtrlN/BitSlip (LATCH)
+  Destination Clock: AdcReader1/BitSlipCtrlN/Mram__n01333 falling
 
-  Data Path: ADC_Data1<0> to ADCReader/datBit1_0
+  Data Path: AdcReader1/AdcDataISerdes_N:Q1 to AdcReader1/BitSlipCtrlN/BitSlip
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
-     begin scope: 'ADCReader:bit1'
-     LD:D                     -0.021          datBit1_0
+    ISERDESE2:Q1           6   0.000   0.000  AdcDataISerdes_N (IntDataN<2>)
+     begin scope: 'AdcReader1/BitSlipCtrlN:DataIn<2>'
+     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_91_o11 (currState[2]_X_12_o_Mux_91_o)
+     LD:D                     -0.021          BitSlip
     ----------------------------------------
-    Total                      0.432ns (0.000ns logic, 0.432ns route)
-                                       (0.0% logic, 100.0% route)
+    Total                      0.688ns (0.688ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01096'
-  Total number of paths / destination ports: 4 / 2
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader1/BitSlipCtrlP/Mram__n01332'
+  Total number of paths / destination ports: 9 / 3
 -------------------------------------------------------------------------
-Offset:              0.432ns (Levels of Logic = 2)
-  Source:            ADC_Data1<0> (PAD)
-  Destination:       ADCReader/datBit1_1 (LATCH)
-  Destination Clock: ADCReader/Mram__n01096 falling
+Offset:              1.351ns (Levels of Logic = 3)
+  Source:            AdcReader1/AdcDataISerdes_P:Q2 (PAD)
+  Destination:       AdcReader1/BitSlipCtrlP/nextState_1 (LATCH)
+  Destination Clock: AdcReader1/BitSlipCtrlP/Mram__n01332 falling
 
-  Data Path: ADC_Data1<0> to ADCReader/datBit1_1
+  Data Path: AdcReader1/AdcDataISerdes_P:Q2 to AdcReader1/BitSlipCtrlP/nextState_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
-     begin scope: 'ADCReader:bit1'
-     LD:D                     -0.021          datBit1_1
+    ISERDESE2:Q2           5   0.000   0.000  AdcDataISerdes_P (IntDataP<1>)
+     begin scope: 'AdcReader1/BitSlipCtrlP:DataIn<1>'
+     LUT3:I0->O            3   0.053   0.616  GND_44_o_GND_44_o_mux_3_OUT<0>31 (GND_44_o_GND_44_o_mux_3_OUT<0>)
+     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_87_o12 (currState[2]_X_12_o_Mux_87_o)
+     LD:D                     -0.021          nextState_1
     ----------------------------------------
-    Total                      0.432ns (0.000ns logic, 0.432ns route)
-                                       (0.0% logic, 100.0% route)
+    Total                      1.351ns (0.735ns logic, 0.616ns route)
+                                       (54.4% logic, 45.6% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01094'
-  Total number of paths / destination ports: 4 / 2
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader1/BitSlipCtrlP/Mram__n01333'
+  Total number of paths / destination ports: 3 / 1
 -------------------------------------------------------------------------
-Offset:              0.432ns (Levels of Logic = 2)
-  Source:            ADC_Data1<0> (PAD)
-  Destination:       ADCReader/datBit1_3 (LATCH)
-  Destination Clock: ADCReader/Mram__n01094 falling
+Offset:              0.682ns (Levels of Logic = 2)
+  Source:            AdcReader1/AdcDataISerdes_P:Q2 (PAD)
+  Destination:       AdcReader1/BitSlipCtrlP/BitSlip (LATCH)
+  Destination Clock: AdcReader1/BitSlipCtrlP/Mram__n01333 falling
 
-  Data Path: ADC_Data1<0> to ADCReader/datBit1_3
+  Data Path: AdcReader1/AdcDataISerdes_P:Q2 to AdcReader1/BitSlipCtrlP/BitSlip
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
-     begin scope: 'ADCReader:bit1'
-     LD:D                     -0.021          datBit1_3
+    ISERDESE2:Q2           5   0.000   0.000  AdcDataISerdes_P (IntDataP<1>)
+     begin scope: 'AdcReader1/BitSlipCtrlP:DataIn<1>'
+     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_91_o11 (currState[2]_X_12_o_Mux_91_o)
+     LD:D                     -0.021          BitSlip
     ----------------------------------------
-    Total                      0.432ns (0.000ns logic, 0.432ns route)
-                                       (0.0% logic, 100.0% route)
+    Total                      0.682ns (0.682ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01093'
-  Total number of paths / destination ports: 4 / 2
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader2/BitSlipCtrlP/Mram__n01332'
+  Total number of paths / destination ports: 9 / 3
 -------------------------------------------------------------------------
-Offset:              0.432ns (Levels of Logic = 2)
-  Source:            ADC_Data1<0> (PAD)
-  Destination:       ADCReader/datBit1_4 (LATCH)
-  Destination Clock: ADCReader/Mram__n01093 falling
+Offset:              1.343ns (Levels of Logic = 3)
+  Source:            AdcReader2/AdcDataISerdes_P:Q2 (PAD)
+  Destination:       AdcReader2/BitSlipCtrlP/nextState_1 (LATCH)
+  Destination Clock: AdcReader2/BitSlipCtrlP/Mram__n01332 falling
 
-  Data Path: ADC_Data1<0> to ADCReader/datBit1_4
+  Data Path: AdcReader2/AdcDataISerdes_P:Q2 to AdcReader2/BitSlipCtrlP/nextState_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
-     begin scope: 'ADCReader:bit1'
-     LD:D                     -0.021          datBit1_4
+    ISERDESE2:Q2           5   0.000   0.000  AdcDataISerdes_P (IntDataP<1>)
+     begin scope: 'AdcReader2/BitSlipCtrlP:DataIn<1>'
+     LUT3:I0->O            2   0.053   0.608  GND_44_o_GND_44_o_mux_3_OUT<0>31 (GND_44_o_GND_44_o_mux_3_OUT<0>)
+     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_87_o12 (currState[2]_X_12_o_Mux_87_o)
+     LD:D                     -0.021          nextState_1
     ----------------------------------------
-    Total                      0.432ns (0.000ns logic, 0.432ns route)
-                                       (0.0% logic, 100.0% route)
+    Total                      1.343ns (0.735ns logic, 0.608ns route)
+                                       (54.7% logic, 45.3% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'ADCReader/Mram__n01095'
-  Total number of paths / destination ports: 4 / 2
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader2/BitSlipCtrlP/Mram__n01333'
+  Total number of paths / destination ports: 3 / 1
 -------------------------------------------------------------------------
-Offset:              0.432ns (Levels of Logic = 2)
-  Source:            ADC_Data1<0> (PAD)
-  Destination:       ADCReader/datBit1_2 (LATCH)
-  Destination Clock: ADCReader/Mram__n01095 falling
+Offset:              0.682ns (Levels of Logic = 2)
+  Source:            AdcReader2/AdcDataISerdes_P:Q2 (PAD)
+  Destination:       AdcReader2/BitSlipCtrlP/BitSlip (LATCH)
+  Destination Clock: AdcReader2/BitSlipCtrlP/Mram__n01333 falling
 
-  Data Path: ADC_Data1<0> to ADCReader/datBit1_2
+  Data Path: AdcReader2/AdcDataISerdes_P:Q2 to AdcReader2/BitSlipCtrlP/BitSlip
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUFDS:I->O           6   0.000   0.432  ibuf1 (sADC_Data1)
-     begin scope: 'ADCReader:bit1'
-     LD:D                     -0.021          datBit1_2
+    ISERDESE2:Q2           5   0.000   0.000  AdcDataISerdes_P (IntDataP<1>)
+     begin scope: 'AdcReader2/BitSlipCtrlP:DataIn<1>'
+     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_91_o11 (currState[2]_X_12_o_Mux_91_o)
+     LD:D                     -0.021          BitSlip
     ----------------------------------------
-    Total                      0.432ns (0.000ns logic, 0.432ns route)
-                                       (0.0% logic, 100.0% route)
+    Total                      0.682ns (0.682ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader2/BitSlipCtrlN/Mram__n01332'
+  Total number of paths / destination ports: 9 / 3
+-------------------------------------------------------------------------
+Offset:              1.343ns (Levels of Logic = 3)
+  Source:            AdcReader2/AdcDataISerdes_N:Q3 (PAD)
+  Destination:       AdcReader2/BitSlipCtrlN/nextState_1 (LATCH)
+  Destination Clock: AdcReader2/BitSlipCtrlN/Mram__n01332 falling
+
+  Data Path: AdcReader2/AdcDataISerdes_N:Q3 to AdcReader2/BitSlipCtrlN/nextState_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    ISERDESE2:Q3           5   0.000   0.000  AdcDataISerdes_N (IntDataN<0>)
+     begin scope: 'AdcReader2/BitSlipCtrlN:DataIn<0>'
+     LUT3:I0->O            2   0.053   0.608  GND_44_o_GND_44_o_mux_3_OUT<0>31 (GND_44_o_GND_44_o_mux_3_OUT<0>)
+     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_87_o12 (currState[2]_X_12_o_Mux_87_o)
+     LD:D                     -0.021          nextState_1
+    ----------------------------------------
+    Total                      1.343ns (0.735ns logic, 0.608ns route)
+                                       (54.7% logic, 45.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader2/BitSlipCtrlN/Mram__n01333'
+  Total number of paths / destination ports: 3 / 1
+-------------------------------------------------------------------------
+Offset:              0.682ns (Levels of Logic = 2)
+  Source:            AdcReader2/AdcDataISerdes_N:Q1 (PAD)
+  Destination:       AdcReader2/BitSlipCtrlN/BitSlip (LATCH)
+  Destination Clock: AdcReader2/BitSlipCtrlN/Mram__n01333 falling
+
+  Data Path: AdcReader2/AdcDataISerdes_N:Q1 to AdcReader2/BitSlipCtrlN/BitSlip
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    ISERDESE2:Q1           5   0.000   0.000  AdcDataISerdes_N (IntDataN<2>)
+     begin scope: 'AdcReader2/BitSlipCtrlN:DataIn<2>'
+     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_91_o11 (currState[2]_X_12_o_Mux_91_o)
+     LD:D                     -0.021          BitSlip
+    ----------------------------------------
+    Total                      0.682ns (0.682ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
-  Total number of paths / destination ports: 216 / 68
+  Total number of paths / destination ports: 248 / 68
 -------------------------------------------------------------------------
-Offset:              2.534ns (Levels of Logic = 21)
+Offset:              2.591ns (Levels of Logic = 20)
   Source:            module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_31 (FF)
   Destination:       LEDS<7> (PAD)
   Source Clock:      module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
@@ -770,107 +1123,279 @@ Offset:              2.534ns (Levels of Logic = 21)
      MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<11> (Mcompar_LED_cy<11>)
      MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<12> (Mcompar_LED_cy<12>)
      MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<13> (Mcompar_LED_cy<13>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<14> (Mcompar_LED_cy<14>)
-     MUXCY:CI->O           1   0.178   0.399  Mcompar_LED_cy<15> (Mcompar_LED_cy<15>)
-     INV:I->O              1   0.067   0.399  Mcompar_LED_cy<15>_inv1_INV_0 (LED)
+     MUXCY:CI->O           1   0.178   0.485  Mcompar_LED_cy<14> (Mcompar_LED_cy<14>)
+     LUT4:I2->O            1   0.053   0.399  Mcompar_LED_cy<15>_inv1 (LED)
      end scope: 'PWM:LED'
      OBUF:I->O                 0.000          LEDS_7_OBUF (LEDS<7>)
     ----------------------------------------
-    Total                      2.534ns (1.081ns logic, 1.453ns route)
-                                       (42.7% logic, 57.3% route)
+    Total                      2.591ns (1.052ns logic, 1.539ns route)
+                                       (40.6% logic, 59.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'DCLK<0>'
-  Total number of paths / destination ports: 3 / 3
+  Total number of paths / destination ports: 23 / 14
 -------------------------------------------------------------------------
-Offset:              0.779ns (Levels of Logic = 2)
-  Source:            AdcClk/IntClkCtrlDone (FF)
-  Destination:       LEDS<0> (PAD)
+Offset:              2.178ns (Levels of Logic = 4)
+  Source:            AdcReader1/BitSlipCtrlN/currState_0 (FF)
+  Destination:       LEDS<5> (PAD)
   Source Clock:      DCLK<0> rising
 
-  Data Path: AdcClk/IntClkCtrlDone to LEDS<0>
+  Data Path: AdcReader1/BitSlipCtrlN/currState_0 to LEDS<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             16   0.282   0.497  IntClkCtrlDone (IntClkCtrlDone)
-     end scope: 'AdcClk:BitClkDone'
-     OBUF:I->O                 0.000          LEDS_0_OBUF (LEDS<0>)
+     FDR:C->Q             40   0.282   0.789  currState_0 (currState_0)
+     end scope: 'AdcReader1/BitSlipCtrlN:currState_0'
+     LUT5:I1->O            1   0.053   0.602  SyncDone_SW0 (N4)
+     LUT6:I3->O            1   0.053   0.399  SyncDone (SyncDone)
+     end scope: 'AdcReader1:SyncDone'
+     OBUF:I->O                 0.000          LEDS_5_OBUF (LEDS<5>)
     ----------------------------------------
-    Total                      0.779ns (0.282ns logic, 0.497ns route)
-                                       (36.2% logic, 63.8% route)
+    Total                      2.178ns (0.388ns logic, 1.790ns route)
+                                       (17.8% logic, 82.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'AdcReader1/BitSlipCtrlN/Mram__n01333'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.788ns (Levels of Logic = 1)
+  Source:            AdcReader1/BitSlipCtrlN/BitSlip (LATCH)
+  Destination:       AdcReader1/AdcDataISerdes_N:BITSLIP (PAD)
+  Source Clock:      AdcReader1/BitSlipCtrlN/Mram__n01333 falling
+
+  Data Path: AdcReader1/BitSlipCtrlN/BitSlip to AdcReader1/AdcDataISerdes_N:BITSLIP
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.389   0.399  BitSlip (BitSlip)
+     end scope: 'AdcReader1/BitSlipCtrlN:BitSlip'
+    ISERDESE2:BITSLIP          0.000          AdcDataISerdes_N
+    ----------------------------------------
+    Total                      0.788ns (0.389ns logic, 0.399ns route)
+                                       (49.4% logic, 50.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'AdcReader1/BitSlipCtrlP/Mram__n01333'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.788ns (Levels of Logic = 1)
+  Source:            AdcReader1/BitSlipCtrlP/BitSlip (LATCH)
+  Destination:       AdcReader1/AdcDataISerdes_P:BITSLIP (PAD)
+  Source Clock:      AdcReader1/BitSlipCtrlP/Mram__n01333 falling
+
+  Data Path: AdcReader1/BitSlipCtrlP/BitSlip to AdcReader1/AdcDataISerdes_P:BITSLIP
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.389   0.399  BitSlip (BitSlip)
+     end scope: 'AdcReader1/BitSlipCtrlP:BitSlip'
+    ISERDESE2:BITSLIP          0.000          AdcDataISerdes_P
+    ----------------------------------------
+    Total                      0.788ns (0.389ns logic, 0.399ns route)
+                                       (49.4% logic, 50.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'AdcReader2/BitSlipCtrlN/Mram__n01333'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.788ns (Levels of Logic = 1)
+  Source:            AdcReader2/BitSlipCtrlN/BitSlip (LATCH)
+  Destination:       AdcReader2/AdcDataISerdes_N:BITSLIP (PAD)
+  Source Clock:      AdcReader2/BitSlipCtrlN/Mram__n01333 falling
+
+  Data Path: AdcReader2/BitSlipCtrlN/BitSlip to AdcReader2/AdcDataISerdes_N:BITSLIP
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.389   0.399  BitSlip (BitSlip)
+     end scope: 'AdcReader2/BitSlipCtrlN:BitSlip'
+    ISERDESE2:BITSLIP          0.000          AdcDataISerdes_N
+    ----------------------------------------
+    Total                      0.788ns (0.389ns logic, 0.399ns route)
+                                       (49.4% logic, 50.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'AdcReader2/BitSlipCtrlP/Mram__n01333'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.788ns (Levels of Logic = 1)
+  Source:            AdcReader2/BitSlipCtrlP/BitSlip (LATCH)
+  Destination:       AdcReader2/AdcDataISerdes_P:BITSLIP (PAD)
+  Source Clock:      AdcReader2/BitSlipCtrlP/Mram__n01333 falling
+
+  Data Path: AdcReader2/BitSlipCtrlP/BitSlip to AdcReader2/AdcDataISerdes_P:BITSLIP
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.389   0.399  BitSlip (BitSlip)
+     end scope: 'AdcReader2/BitSlipCtrlP:BitSlip'
+    ISERDESE2:BITSLIP          0.000          AdcDataISerdes_P
+    ----------------------------------------
+    Total                      0.788ns (0.389ns logic, 0.399ns route)
+                                       (49.4% logic, 50.6% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 154 / 138
+  Total number of paths / destination ports: 162 / 155
 -------------------------------------------------------------------------
-Delay:               2.917ns (Levels of Logic = 7)
-  Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 (PAD)
-  Destination:       LEDS<4> (PAD)
+Delay:               1.865ns (Levels of Logic = 4)
+  Source:            AdcReader1/AdcDataISerdes_N:Q3 (PAD)
+  Destination:       LEDS<5> (PAD)
 
-  Data Path: module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 to LEDS<4>
+  Data Path: AdcReader1/AdcDataISerdes_N:Q3 to LEDS<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-    PS7:FCLKRESETN1       12   0.000   0.000  processing_system7_0/PS7_i (FCLK_RESET1_N)
-     end scope: 'module_1_i/processing_system7_0:FCLK_RESET1_N'
-     end scope: 'module_1_i:processing_system7_0_FCLK_RESET1_N_pin'
-     begin scope: 'ADCReader:PL_Rst'
-     LUT2:I1->O           12   0.053   0.485  Mmux_currState<0>11 (currState<0>)
-     LUT4:I3->O           10   0.053   0.694  Mmux_currState<2>11 (currState<2>)
-     LUT4:I0->O            7   0.053   0.642  Mmux_currState<1>11 (currState<1>)
-     LUT4:I1->O            1   0.053   0.399  Mram__n010921 (State<2>)
-     end scope: 'ADCReader:State<2>'
-     OBUF:I->O                 0.000          LEDS_4_OBUF (LEDS<4>)
+    ISERDESE2:Q3           6   0.000   0.758  AdcDataISerdes_N (IntDataN<0>)
+     LUT5:I0->O            1   0.053   0.602  SyncDone_SW0 (N4)
+     LUT6:I3->O            1   0.053   0.399  SyncDone (SyncDone)
+     end scope: 'AdcReader1:SyncDone'
+     OBUF:I->O                 0.000          LEDS_5_OBUF (LEDS<5>)
     ----------------------------------------
-    Total                      2.917ns (0.697ns logic, 2.220ns route)
-                                       (23.9% logic, 76.1% route)
+    Total                      1.865ns (0.106ns logic, 1.759ns route)
+                                       (5.7% logic, 94.3% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock DCLK<0>
+Clock to Setup on destination clock AdcReader1/BitSlipCtrlN/Mram__n01332
+------------------------------------------------------+---------+---------+---------+---------+
+                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------+---------+---------+---------+---------+
+AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.917|         |
+DCLK<0>                                               |         |         |    1.229|         |
+------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AdcReader1/BitSlipCtrlN/Mram__n01333
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-DCLK<0>        |    2.731|         |         |         |
+DCLK<0>        |         |         |    1.125|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock FCLK<0>
-----------------------+---------+---------+---------+---------+
-                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-----------------------+---------+---------+---------+---------+
-ADCReader/Mram__n01093|         |         |    0.788|         |
-ADCReader/Mram__n01094|         |         |    0.788|         |
-ADCReader/Mram__n01095|         |         |    0.788|         |
-ADCReader/Mram__n01096|         |         |    0.788|         |
-ADCReader/Mram__n01097|         |         |    0.788|         |
-ADCReader/Mram__n01098|         |         |    0.788|         |
-----------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o
+------------------------------------------------------+---------+---------+---------+---------+
+                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------+---------+---------+---------+---------+
+AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.605|         |
+DCLK<0>                                               |         |         |    1.605|         |
+------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AdcReader1/BitSlipCtrlP/Mram__n01332
+------------------------------------------------------+---------+---------+---------+---------+
+                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------+---------+---------+---------+---------+
+AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.931|         |
+DCLK<0>                                               |         |         |    1.215|         |
+------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AdcReader1/BitSlipCtrlP/Mram__n01333
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+DCLK<0>        |         |         |    1.125|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o
+------------------------------------------------------+---------+---------+---------+---------+
+                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------+---------+---------+---------+---------+
+AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.605|         |
+DCLK<0>                                               |         |         |    1.605|         |
+------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AdcReader2/BitSlipCtrlN/Mram__n01332
+------------------------------------------------------+---------+---------+---------+---------+
+                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------+---------+---------+---------+---------+
+AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.917|         |
+DCLK<0>                                               |         |         |    1.228|         |
+------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AdcReader2/BitSlipCtrlN/Mram__n01333
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+DCLK<0>        |         |         |    1.124|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o
+------------------------------------------------------+---------+---------+---------+---------+
+                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------+---------+---------+---------+---------+
+AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.605|         |
+DCLK<0>                                               |         |         |    1.604|         |
+------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AdcReader2/BitSlipCtrlP/Mram__n01332
+------------------------------------------------------+---------+---------+---------+---------+
+                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------+---------+---------+---------+---------+
+AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.931|         |
+DCLK<0>                                               |         |         |    1.214|         |
+------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AdcReader2/BitSlipCtrlP/Mram__n01333
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+DCLK<0>        |         |         |    1.124|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o
+------------------------------------------------------+---------+---------+---------+---------+
+                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------+---------+---------+---------+---------+
+AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.605|         |
+DCLK<0>                                               |         |         |    1.604|         |
+------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock DCLK<0>
+------------------------------------+---------+---------+---------+---------+
+                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------+---------+---------+---------+---------+
+AdcReader1/BitSlipCtrlN/Mram__n01332|         |    0.799|         |         |
+AdcReader1/BitSlipCtrlP/Mram__n01332|         |    0.799|         |         |
+AdcReader2/BitSlipCtrlN/Mram__n01332|         |    0.799|         |         |
+AdcReader2/BitSlipCtrlP/Mram__n01332|         |    0.799|         |         |
+DCLK<0>                             |    3.215|         |         |         |
+------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>
 ---------------------------------------------------------------------------+---------+---------+---------+---------+
                                                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------------------------------------------------------------+---------+---------+---------+---------+
-FCLK<0>                                                                    |         |    0.795|         |         |
+DCLK<0>                                                                    |    0.688|         |         |         |
 module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    3.868|         |         |         |
 ---------------------------------------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.93 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.15 secs
  
 --> 
 
-Total memory usage is 487276 kilobytes
+Total memory usage is 453804 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   59 (   0 filtered)
-Number of infos    :   16 (   0 filtered)
+Number of warnings :   48 (   0 filtered)
+Number of infos    :   22 (   0 filtered)
 

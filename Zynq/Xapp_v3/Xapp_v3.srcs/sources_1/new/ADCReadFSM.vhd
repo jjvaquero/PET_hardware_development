@@ -99,11 +99,7 @@ begin
    process(DivClk)  
    begin 
       if (DivClk='1') then
-         --DataOut(11) <=datBit1(5); DataOut(9) <= datBit1(4); DataOut(7)<=datBit1(3);
-         --DataOut(5)<=datBit1(2); DataOut(3) <=datBit1(1); DataOut(1) <= datBit1(0);
-         
-          --DataOut(10) <=datBit0(5); DataOut(8) <= datBit0(4); DataOut(6)<=datBit0(3);
-          --DataOut(4)<=datBit0(2); DataOut(2) <=datBit0(1); DataOut(0) <= datBit0(0);
+          --DataOut(11 downto 0)<=(datBit1(5),datBit0(5),datBit1(4),datBit0(4),datBit1(3),datBit0(3),datBit1(2),datBit0(2),datBit1(1),datBit0(1),datBit1(0),datBit0(0));
          
          DataOut(11 downto 6) <= datBit1;
          DataOut (5 downto 0) <= datBit0;

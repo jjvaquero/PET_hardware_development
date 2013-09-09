@@ -43,7 +43,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.sdk/SDK/SDK_Export/Test1/src/main.c" title="main.c" tooltip="Test1/src/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test1/src/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4876" selectionTopPixel="2580"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4638" selectionTopPixel="4071"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="xparameters.h" partName="xparameters.h" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.sdk/SDK/SDK_Export/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h" title="xparameters.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
@@ -81,7 +81,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Errors (23 items)"/>
+<category IMemento.internal.id="Errors (1 item)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -326,15 +326,6 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" path="/standalone_bsp_0/system.mss"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
 </editors>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="488" y="0"/>
-</item>
-<item historyLabel="xparameters.h" index="2">
-<position info="not_deleted" x="1023" y="25"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="488" y="0"/>
-</item>
 <item historyLabel="xparameters.h" index="2">
 <position info="not_deleted" x="1023" y="25"/>
 </item>
@@ -461,8 +452,17 @@
 <item historyLabel="xparameters.h" index="12">
 <position info="not_deleted" x="767" y="25"/>
 </item>
-<item active="true" historyLabel="main.c" index="0">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="6229" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="6400" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="0">
+<position info="not_deleted" x="6815" y="48"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

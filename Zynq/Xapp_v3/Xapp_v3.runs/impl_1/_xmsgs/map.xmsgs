@@ -11,7 +11,7 @@
 <msg type="info" file="LIT" num="243" delta="new" >Logical network <arg fmt="%s" index="1">module_1_i/axi_interconnect_1_M_WSTRB[3]</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">1265</arg> more times for the following (max. 5 shown):
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">1267</arg> more times for the following (max. 5 shown):
 <arg fmt="%s" index="3">module_1_i/axi_interconnect_1_M_WSTRB[2],
 module_1_i/axi_interconnect_1_M_WSTRB[1],
 module_1_i/axi_interconnect_1_M_WSTRB[0],
@@ -20,31 +20,19 @@ module_1_i/axi_interconnect_1_M_ARADDR[0]</arg>
 To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
 </msg>
 
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">FCLK[0]</arg> connected to top level port <arg fmt="%s" index="2">FCLK(0)</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">FCLK[1]</arg> connected to top level port <arg fmt="%s" index="2">FCLK(1)</arg> has been removed.
+</msg>
+
 <msg type="info" file="LIT" num="244" delta="new" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
-</msg>
-
-<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">ADC_Data0[1]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
-</msg>
-
-<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">ADC_Data0[0]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
-</msg>
-
-<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">ADC_Data1[1]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
-</msg>
-
-<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">ADC_Data1[0]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
 </msg>
 
 <msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">DCLK[0]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
 </msg>
 
 <msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">DCLK[1]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
-</msg>
-
-<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">FCLK[0]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
-</msg>
-
-<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">FCLK[1]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
 </msg>
 
 <msg type="info" file="Pack" num="1716" delta="new" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
@@ -68,22 +56,28 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">ADCReader/Mram__n01097</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcReader2/BitSlipCtrlN/Mram__n01332</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">ADCReader/Mram__n01095</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcReader1/BitSlipCtrlN/Mram__n01332</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">ADCReader/Mram__n01094</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcReader1/BitSlipCtrlP/Mram__n01332</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">ADCReader/Mram__n01098</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcReader2/BitSlipCtrlP/Mram__n01333</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">ADCReader/Mram__n01096</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcReader1/BitSlipCtrlP/Mram__n01333</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">ADCReader/Mram__n01093</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcReader1/BitSlipCtrlN/Mram__n01333</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcReader2/BitSlipCtrlP/Mram__n01332</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcReader2/BitSlipCtrlN/Mram__n01333</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcClk/AdcClock_I_Isrds_Master</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
