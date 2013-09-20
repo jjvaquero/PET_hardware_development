@@ -62,6 +62,12 @@ Parsing architecture <Behavioral> of entity <bitslipctrlfsm>.
 Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd" into library work
 Parsing entity <AdcDataReader>.
 Parsing architecture <Behavioral> of entity <adcdatareader>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcFrameSync.vhd" into library work
+Parsing entity <AdcFrameSync>.
+Parsing architecture <Behavioral> of entity <adcframesync>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcChanReader.vhd" into library work
+Parsing entity <AdcChanReader>.
+Parsing architecture <Behavioral> of entity <adcchanreader>.
 Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" into library work
 Parsing entity <PWM_Controller>.
 Parsing architecture <behaviour> of entity <pwm_controller>.
@@ -88,12 +94,18 @@ WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Z
 
 Elaborating entity <AdcClock> (architecture <AdcClock_struct>) with generics from library <work>.
 
-Elaborating entity <AdcDataReader> (architecture <Behavioral>) from library <work>.
+Elaborating entity <AdcFrameSync> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <BitSlipCtrlFSM> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" Line 76: datain should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" Line 99: datain should be on the sensitivity list of the process
-WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 74: Net <sADC_DataIn[31]> does not have a driver.
+
+Elaborating entity <AdcChanReader> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <AdcDataReader> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcChanReader.vhd" Line 138: intdataout should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcChanReader.vhd" Line 143: intdataout should be on the sensitivity list of the process
+WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 95: Net <fifoDataIn[31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -104,14 +116,16 @@ Synthesizing Unit <module_1_stub>.
         C_AdcChnls = 2
         C_AdcWireInt = 2
     Set property "BOX_TYPE = user_black_box" for instance <module_1_i>.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 202: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClk35> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <DivClk35> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 285: Output port <state> of the instance <AdcReader2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 285: Output port <SyncDone> of the instance <AdcReader2> is unconnected or connected to loadless signal.
-WARNING:Xst:2935 - Signal 'sADC_DataIn<31:12>', unconnected in block 'module_1_stub', is tied to its initial value (00000000000000000000).
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 238: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 280: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 280: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 327: Output port <DataOut> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 327: Output port <state> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 327: Output port <NDataInt> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 344: Output port <SyncDone> of the instance <AdcReader_C> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 362: Output port <SyncDone> of the instance <AdcReader_D> is unconnected or connected to loadless signal.
+WARNING:Xst:2935 - Signal 'fifoDataIn<31:28>', unconnected in block 'module_1_stub', is tied to its initial value (0000).
+WARNING:Xst:2935 - Signal 'fifoDataIn<15:12>', unconnected in block 'module_1_stub', is tied to its initial value (0000).
     Summary:
 	no macro.
 Unit <module_1_stub> synthesized.
@@ -171,13 +185,15 @@ Synthesizing Unit <AdcClock>.
 	inferred  34 Multiplexer(s).
 Unit <AdcClock> synthesized.
 
-Synthesizing Unit <AdcDataReader>.
-    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd".
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd" line 195: Output port <State> of the instance <BitSlipCtrlN> is unconnected or connected to loadless signal.
+Synthesizing Unit <AdcFrameSync>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcFrameSync.vhd".
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcFrameSync.vhd" line 143: Output port <State> of the instance <BitSlipCtrlP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcFrameSync.vhd" line 200: Output port <State> of the instance <BitSlipCtrlN> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <state> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 6-bit register for signal <IntDataTotal>.
     Summary:
 	inferred   6 D-type flip-flop(s).
-Unit <AdcDataReader> synthesized.
+Unit <AdcFrameSync> synthesized.
 
 Synthesizing Unit <BitSlipCtrlFSM>.
     Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd".
@@ -195,6 +211,7 @@ Synthesizing Unit <BitSlipCtrlFSM>.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_47_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_71_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_41_o> created at line 68.
+    Found 1-bit 4-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_89_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_23_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_79_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_57_o> created at line 68.
@@ -202,7 +219,6 @@ Synthesizing Unit <BitSlipCtrlFSM>.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_75_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_45_o> created at line 68.
     Found 1-bit 4-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_87_o> created at line 68.
-    Found 1-bit 4-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_89_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_21_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_25_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_27_o> created at line 68.
@@ -266,39 +282,55 @@ WARNING:Xst:737 - Found 1-bit latch for signal <BitSlip>. Latches may be generat
 	inferred  48 Multiplexer(s).
 Unit <BitSlipCtrlFSM> synthesized.
 
+Synthesizing Unit <AdcChanReader>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcChanReader.vhd".
+WARNING:Xst:653 - Signal <SyncDone> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+Unit <AdcChanReader> synthesized.
+
+Synthesizing Unit <AdcDataReader>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd".
+    Found 6-bit register for signal <IntDataTotal>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <AdcDataReader> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
+# RAMs                                                 : 3
  32x4-bit single-port Read Only RAM                    : 1
- 8x4-bit single-port Read Only RAM                     : 4
-# Adders/Subtractors                                   : 9
+ 8x4-bit single-port Read Only RAM                     : 2
+# Adders/Subtractors                                   : 7
  3-bit adder                                           : 1
- 32-bit adder                                          : 5
+ 32-bit adder                                          : 3
  4-bit adder                                           : 2
  4-bit subtractor                                      : 1
-# Registers                                            : 26
+# Registers                                            : 27
  1-bit register                                        : 10
  2-bit register                                        : 3
- 3-bit register                                        : 5
+ 3-bit register                                        : 3
  32-bit register                                       : 1
  4-bit register                                        : 5
- 6-bit register                                        : 2
-# Latches                                              : 144
- 1-bit latch                                           : 144
-# Comparators                                          : 15
+ 6-bit register                                        : 5
+# Latches                                              : 72
+ 1-bit latch                                           : 72
+# Comparators                                          : 9
  2-bit comparator equal                                : 1
- 3-bit comparator equal                                : 4
+ 3-bit comparator equal                                : 2
  32-bit comparator greater                             : 2
- 32-bit comparator lessequal                           : 8
-# Multiplexers                                         : 226
- 1-bit 2-to-1 multiplexer                              : 54
- 1-bit 3-to-1 multiplexer                              : 128
- 1-bit 4-to-1 multiplexer                              : 8
+ 32-bit comparator lessequal                           : 4
+# Multiplexers                                         : 130
+ 1-bit 2-to-1 multiplexer                              : 30
+ 1-bit 3-to-1 multiplexer                              : 64
+ 1-bit 4-to-1 multiplexer                              : 4
  2-bit 2-to-1 multiplexer                              : 3
- 32-bit 2-to-1 multiplexer                             : 8
+ 32-bit 2-to-1 multiplexer                             : 4
  4-bit 2-to-1 multiplexer                              : 25
+# Xors                                                 : 4
+ 1-bit xor4                                            : 2
+ 1-bit xor8                                            : 2
 
 =========================================================================
 
@@ -307,12 +339,14 @@ Macro Statistics
 =========================================================================
 
 Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1.ngc>.
-Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_axi_gpio_0_wrapper.ngc>.
+Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_axi_gpio_1_wrapper.ngc>.
 Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_processing_system7_0_wrapper.ngc>.
 Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_axi_interconnect_1_wrapper.ngc>.
-Loading core <module_1_axi_gpio_0_wrapper> for timing and area information for instance <axi_gpio_0>.
+Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_axi_gpio_0_wrapper.ngc>.
+Loading core <module_1_axi_gpio_1_wrapper> for timing and area information for instance <axi_gpio_1>.
 Loading core <module_1_processing_system7_0_wrapper> for timing and area information for instance <processing_system7_0>.
 Loading core <module_1_axi_interconnect_1_wrapper> for timing and area information for instance <axi_interconnect_1>.
+Loading core <module_1_axi_gpio_0_wrapper> for timing and area information for instance <axi_gpio_0>.
 Loading core <module_1> for timing and area information for instance <module_1_i>.
 
 Synthesizing (advanced) Unit <AdcClock>.
@@ -353,31 +387,34 @@ Unit <PWM_Controller> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
+# RAMs                                                 : 3
  32x4-bit single-port distributed Read Only RAM        : 1
- 8x4-bit single-port distributed Read Only RAM         : 4
-# Adders/Subtractors                                   : 7
- 32-bit adder                                          : 5
+ 8x4-bit single-port distributed Read Only RAM         : 2
+# Adders/Subtractors                                   : 5
+ 32-bit adder                                          : 3
  4-bit adder                                           : 1
  4-bit subtractor                                      : 1
 # Counters                                             : 3
  3-bit up counter                                      : 1
  32-bit up counter                                     : 1
  4-bit up counter                                      : 1
-# Registers                                            : 56
- Flip-Flops                                            : 56
-# Comparators                                          : 15
+# Registers                                            : 68
+ Flip-Flops                                            : 68
+# Comparators                                          : 9
  2-bit comparator equal                                : 1
- 3-bit comparator equal                                : 4
+ 3-bit comparator equal                                : 2
  32-bit comparator greater                             : 2
- 32-bit comparator lessequal                           : 8
-# Multiplexers                                         : 226
- 1-bit 2-to-1 multiplexer                              : 54
- 1-bit 3-to-1 multiplexer                              : 128
- 1-bit 4-to-1 multiplexer                              : 8
+ 32-bit comparator lessequal                           : 4
+# Multiplexers                                         : 130
+ 1-bit 2-to-1 multiplexer                              : 30
+ 1-bit 3-to-1 multiplexer                              : 64
+ 1-bit 4-to-1 multiplexer                              : 4
  2-bit 2-to-1 multiplexer                              : 3
- 32-bit 2-to-1 multiplexer                             : 8
+ 32-bit 2-to-1 multiplexer                             : 4
  4-bit 2-to-1 multiplexer                              : 25
+# Xors                                                 : 4
+ 1-bit xor4                                            : 2
+ 1-bit xor8                                            : 2
 
 =========================================================================
 
@@ -405,26 +442,34 @@ Drivers are:
 
 Optimizing unit <module_1_stub> ...
 
-Optimizing unit <AdcDataReader> ...
+Optimizing unit <AdcFrameSync> ...
 
 Optimizing unit <BitSlipCtrlFSM> ...
 
+Optimizing unit <AdcDataReader> ...
+
 Optimizing unit <AdcClock> ...
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_5> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_4> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_3> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_2> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_1> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_0> of sequential type is unconnected in block <module_1_stub>.
 WARNING:Xst:2677 - Node <IntClkCtrlAlgnWrn> of sequential type is unconnected in block <AdcClk>.
 WARNING:Xst:2677 - Node <IntClkCtrlInvrtd> of sequential type is unconnected in block <AdcClk>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block module_1_stub, actual ratio is 1.
-INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
 INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
 INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
+INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
 
 Final Macro Processing ...
 
@@ -432,8 +477,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 91
- Flip-Flops                                            : 91
+# Registers                                            : 97
+ Flip-Flops                                            : 97
 
 =========================================================================
 
@@ -456,46 +501,46 @@ Top Level Output File Name         : module_1_stub.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1880
-#      GND                         : 13
-#      INV                         : 117
-#      LUT1                        : 186
-#      LUT2                        : 173
-#      LUT3                        : 181
-#      LUT4                        : 268
-#      LUT5                        : 257
-#      LUT6                        : 226
-#      MUXCY                       : 273
-#      MUXF7                       : 1
-#      VCC                         : 9
-#      XORCY                       : 176
-# FlipFlops/Latches                : 856
-#      FD                          : 138
-#      FDC                         : 12
+# BELS                             : 1442
+#      GND                         : 15
+#      INV                         : 114
+#      LUT1                        : 124
+#      LUT2                        : 73
+#      LUT3                        : 146
+#      LUT4                        : 209
+#      LUT5                        : 216
+#      LUT6                        : 243
+#      MUXCY                       : 182
+#      VCC                         : 8
+#      XORCY                       : 112
+# FlipFlops/Latches                : 724
+#      FD                          : 97
+#      FDC                         : 15
 #      FDCE                        : 28
-#      FDE                         : 125
+#      FDE                         : 127
 #      FDP                         : 1
-#      FDR                         : 208
-#      FDRE                        : 132
-#      FDS                         : 4
-#      FDSE                        : 64
-#      LD                          : 144
-# Shift Registers                  : 64
-#      SRLC16E                     : 64
-# Clock Buffers                    : 7
-#      BUFG                        : 7
-# IO Buffers                       : 17
+#      FDR                         : 169
+#      FDRE                        : 149
+#      FDSE                        : 66
+#      LD                          : 72
+# RAMS                             : 1
+#      FIFO18E1                    : 1
+# Shift Registers                  : 66
+#      SRLC16E                     : 66
+# Clock Buffers                    : 5
+#      BUFG                        : 5
+# IO Buffers                       : 19
 #      IBUF                        : 3
-#      IBUFDS_DIFF_OUT             : 2
-#      IBUFGDS                     : 2
+#      IBUFDS_DIFF_OUT             : 5
+#      IBUFGDS                     : 1
 #      OBUF                        : 10
-# Others                           : 13
+# Others                           : 19
 #      BUFIO                       : 2
 #      BUFMRCE                     : 1
 #      BUFR                        : 2
 #      IDELAYCTRL                  : 1
 #      IDELAYE2                    : 1
-#      ISERDESE2                   : 5
+#      ISERDESE2                   : 11
 #      PS7                         : 1
 
 Device utilization summary:
@@ -505,25 +550,27 @@ Selected Device : 7z020clg484-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             856  out of  106400     0%  
- Number of Slice LUTs:                 1472  out of  53200     2%  
-    Number used as Logic:              1408  out of  53200     2%  
-    Number used as Memory:               64  out of  17400     0%  
-       Number used as SRL:               64
+ Number of Slice Registers:             724  out of  106400     0%  
+ Number of Slice LUTs:                 1191  out of  53200     2%  
+    Number used as Logic:              1125  out of  53200     2%  
+    Number used as Memory:               66  out of  17400     0%  
+       Number used as SRL:               66
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1644
-   Number with an unused Flip Flop:     788  out of   1644    47%  
-   Number with an unused LUT:           172  out of   1644    10%  
-   Number of fully used LUT-FF pairs:   684  out of   1644    41%  
-   Number of unique control sets:        49
+ Number of LUT Flip Flop pairs used:   1373
+   Number with an unused Flip Flop:     649  out of   1373    47%  
+   Number with an unused LUT:           182  out of   1373    13%  
+   Number of fully used LUT-FF pairs:   542  out of   1373    39%  
+   Number of unique control sets:        53
 
 IO Utilization: 
- Number of IOs:                         148
- Number of bonded IOBs:                  17  out of    200     8%  
+ Number of IOs:                         152
+ Number of bonded IOBs:                  15  out of    200     7%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRL/BUFHCEs:         7  out of    104     6%  
+ Number of Block RAM/FIFO:                1  out of    140     0%  
+    Number using FIFO only:               1
+ Number of BUFG/BUFGCTRL/BUFHCEs:         5  out of    104     4%  
 
 ---------------------------
 Partition Resource Summary:
@@ -543,25 +590,20 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
-Clock Signal                                                                                                           | Clock buffer(FF name)                       | Load  |
------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
-DCLK<0>                                                                                                                | IBUFGDS+ISERDESE2+BUFMRCE+BUFR              | 62    |
-module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>                                            | BUFG                                        | 717   |
-AdcReader1/BitSlipCtrlN/Mram__n01332(AdcReader1/BitSlipCtrlN/Mram__n013321:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlN/nextState_0)| 3     |
-AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o(AdcReader1/BitSlipCtrlN/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader1/BitSlipCtrlN/counter_31) | 32    |
-AdcReader1/BitSlipCtrlN/Mram__n01333(AdcReader1/BitSlipCtrlN/Mram__n013331:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlN/BitSlip)    | 1     |
-AdcReader1/BitSlipCtrlP/Mram__n01332(AdcReader1/BitSlipCtrlP/Mram__n013321:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlP/nextState_0)| 3     |
-AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o(AdcReader1/BitSlipCtrlP/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader1/BitSlipCtrlP/counter_31) | 32    |
-AdcReader1/BitSlipCtrlP/Mram__n01333(AdcReader1/BitSlipCtrlP/Mram__n013331:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlP/BitSlip)    | 1     |
-AdcReader2/BitSlipCtrlP/Mram__n01332(AdcReader2/BitSlipCtrlP/Mram__n013321:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlP/nextState_0)| 3     |
-AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o(AdcReader2/BitSlipCtrlP/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader2/BitSlipCtrlP/counter_31) | 32    |
-AdcReader2/BitSlipCtrlP/Mram__n01333(AdcReader2/BitSlipCtrlP/Mram__n013331:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlP/BitSlip)    | 1     |
-AdcReader2/BitSlipCtrlN/Mram__n01332(AdcReader2/BitSlipCtrlN/Mram__n013321:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlN/nextState_0)| 3     |
-AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o(AdcReader2/BitSlipCtrlN/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader2/BitSlipCtrlN/counter_31) | 32    |
-AdcReader2/BitSlipCtrlN/Mram__n01333(AdcReader2/BitSlipCtrlN/Mram__n013331:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlN/BitSlip)    | 1     |
------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
-(*) These 12 clock signal(s) are generated by combinatorial logic,
+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------+-------+
+Clock Signal                                                                                                         | Clock buffer(FF name)                      | Load  |
+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------+-------+
+module_1_i/axi_gpio_1/GPIO_IO_O<1>                                                                                   | NONE(FIFO18E1_inst)                        | 1     |
+DCLK<0>                                                                                                              | IBUFGDS+ISERDESE2+BUFMRCE+BUFR             | 69    |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>                                          | BUFG                                       | 653   |
+AdcFrame1/BitSlipCtrlN/Mram__n01332(AdcFrame1/BitSlipCtrlN/Mram__n013321:O)                                          | NONE(*)(AdcFrame1/BitSlipCtrlN/nextState_0)| 3     |
+AdcFrame1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o(AdcFrame1/BitSlipCtrlN/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcFrame1/BitSlipCtrlN/counter_31) | 32    |
+AdcFrame1/BitSlipCtrlN/Mram__n01333(AdcFrame1/BitSlipCtrlN/Mram__n013331:O)                                          | NONE(*)(AdcFrame1/BitSlipCtrlN/BitSlip)    | 1     |
+AdcFrame1/BitSlipCtrlP/Mram__n01332(AdcFrame1/BitSlipCtrlP/Mram__n013321:O)                                          | NONE(*)(AdcFrame1/BitSlipCtrlP/nextState_0)| 3     |
+AdcFrame1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o(AdcFrame1/BitSlipCtrlP/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcFrame1/BitSlipCtrlP/counter_31) | 32    |
+AdcFrame1/BitSlipCtrlP/Mram__n01333(AdcFrame1/BitSlipCtrlP/Mram__n013331:O)                                          | NONE(*)(AdcFrame1/BitSlipCtrlP/BitSlip)    | 1     |
+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------+-------+
+(*) These 6 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -579,10 +621,10 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 3.868ns (Maximum Frequency: 258.532MHz)
-   Minimum input arrival time before clock: 2.180ns
-   Maximum output required time after clock: 2.591ns
-   Maximum combinational path delay: 1.865ns
+   Minimum period: 3.935ns (Maximum Frequency: 254.140MHz)
+   Minimum input arrival time before clock: 2.296ns
+   Maximum output required time after clock: 3.082ns
+   Maximum combinational path delay: 1.859ns
 
 Timing Details:
 ---------------
@@ -591,7 +633,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'DCLK<0>'
   Clock period: 3.215ns (frequency: 311.042MHz)
-  Total number of paths / destination ports: 652 / 73
+  Total number of paths / destination ports: 646 / 67
 -------------------------------------------------------------------------
 Delay:               3.215ns (Levels of Logic = 4)
   Source:            AdcClk/IntStepCnt_3 (FF)
@@ -615,46 +657,44 @@ Delay:               3.215ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
-  Clock period: 3.868ns (frequency: 258.532MHz)
-  Total number of paths / destination ports: 20565 / 1297
+  Clock period: 3.935ns (frequency: 254.140MHz)
+  Total number of paths / destination ports: 19229 / 1231
 -------------------------------------------------------------------------
-Delay:               3.868ns (Levels of Logic = 8)
-  Source:            module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 (FF)
-  Destination:       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0 (FF)
+Delay:               3.935ns (Levels of Logic = 6)
+  Source:            module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:       module_1_i/axi_gpio_1/axi_gpio_1/gpio_core_1/GPIO_DBus_i_31 (FF)
   Source Clock:      module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
   Destination Clock: module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
 
-  Data Path: module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 to module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+  Data Path: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to module_1_i/axi_gpio_1/axi_gpio_1/gpio_core_1/GPIO_DBus_i_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              4   0.282   0.505  axi_gpio_0/ip2bus_wrack_i_D1 (axi_gpio_0/ip2bus_wrack_i_D1)
-     LUT2:I0->O            5   0.053   0.662  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1 (S_AXI_WREADY)
-     end scope: 'module_1_i/axi_gpio_0:S_AXI_AWREADY'
-     begin scope: 'module_1_i/axi_interconnect_1:M_AXI_AWREADY<0>'
-     LUT5:I1->O            1   0.053   0.602  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW1_F (N31)
-     LUT3:I0->O            2   0.053   0.419  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW11 (N15)
-     LUT6:I5->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1_G (N40)
-     MUXF7:I1->O           4   0.217   0.433  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1 (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_awready_mux)
-     LUT6:I5->O            2   0.053   0.419  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/out1 (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/aa_awready)
-     LUT6:I5->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set)
-     FDR:D                     0.011          axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+     FD:C->Q               9   0.282   0.688  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d<1>)
+     LUT4:I0->O            5   0.053   0.752  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_arvalid<1>1 (axi_interconnect_1/cb_mf_arvalid<1>)
+     LUT5:I0->O          143   0.053   0.779  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[1].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1 (M_AXI_ARVALID<1>)
+     end scope: 'module_1_i/axi_interconnect_1:M_AXI_ARVALID<1>'
+     begin scope: 'module_1_i/axi_gpio_1:S_AXI_ARVALID'
+     LUT3:I0->O            2   0.053   0.745  axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/Mmux_bus2ip_addr_i31 (axi_gpio_1/bus2ip_addr<6>)
+     LUT6:I0->O            1   0.053   0.413  axi_gpio_1/gpio_core_1/Mmux_Dual.Read_Reg2_In<0>1331 (axi_gpio_1/gpio_core_1/Read_Reg_In<1>)
+     LUT5:I4->O            1   0.053   0.000  axi_gpio_1/gpio_core_1/GPIO_DBus_i_31_rstpot (axi_gpio_1/gpio_core_1/GPIO_DBus_i_31_rstpot)
+     FD:D                      0.011          axi_gpio_1/gpio_core_1/GPIO_DBus_i_31
     ----------------------------------------
-    Total                      3.868ns (0.828ns logic, 3.040ns route)
-                                       (21.4% logic, 78.6% route)
+    Total                      3.935ns (0.558ns logic, 3.377ns route)
+                                       (14.2% logic, 85.8% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o'
+Timing constraint: Default period analysis for Clock 'AdcFrame1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o'
   Clock period: 3.605ns (frequency: 277.378MHz)
   Total number of paths / destination ports: 35088 / 32
 -------------------------------------------------------------------------
 Delay:               3.605ns (Levels of Logic = 36)
-  Source:            AdcReader1/BitSlipCtrlN/counter_0 (LATCH)
-  Destination:       AdcReader1/BitSlipCtrlN/counter_31 (LATCH)
-  Source Clock:      AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o falling
-  Destination Clock: AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o falling
+  Source:            AdcFrame1/BitSlipCtrlN/counter_0 (LATCH)
+  Destination:       AdcFrame1/BitSlipCtrlN/counter_31 (LATCH)
+  Source Clock:      AdcFrame1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o falling
+  Destination Clock: AdcFrame1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o falling
 
-  Data Path: AdcReader1/BitSlipCtrlN/counter_0 to AdcReader1/BitSlipCtrlN/counter_31
+  Data Path: AdcFrame1/BitSlipCtrlN/counter_0 to AdcFrame1/BitSlipCtrlN/counter_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -701,17 +741,17 @@ Delay:               3.605ns (Levels of Logic = 36)
                                        (52.7% logic, 47.3% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o'
+Timing constraint: Default period analysis for Clock 'AdcFrame1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o'
   Clock period: 3.605ns (frequency: 277.378MHz)
   Total number of paths / destination ports: 35088 / 32
 -------------------------------------------------------------------------
 Delay:               3.605ns (Levels of Logic = 36)
-  Source:            AdcReader1/BitSlipCtrlP/counter_0 (LATCH)
-  Destination:       AdcReader1/BitSlipCtrlP/counter_31 (LATCH)
-  Source Clock:      AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o falling
-  Destination Clock: AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o falling
+  Source:            AdcFrame1/BitSlipCtrlP/counter_0 (LATCH)
+  Destination:       AdcFrame1/BitSlipCtrlP/counter_31 (LATCH)
+  Source Clock:      AdcFrame1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o falling
+  Destination Clock: AdcFrame1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o falling
 
-  Data Path: AdcReader1/BitSlipCtrlP/counter_0 to AdcReader1/BitSlipCtrlP/counter_31
+  Data Path: AdcFrame1/BitSlipCtrlP/counter_0 to AdcFrame1/BitSlipCtrlP/counter_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -758,122 +798,30 @@ Delay:               3.605ns (Levels of Logic = 36)
                                        (52.7% logic, 47.3% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o'
-  Clock period: 3.605ns (frequency: 277.378MHz)
-  Total number of paths / destination ports: 35088 / 32
+Timing constraint: Default OFFSET IN BEFORE for Clock 'module_1_i/axi_gpio_1/GPIO_IO_O<1>'
+  Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Delay:               3.605ns (Levels of Logic = 36)
-  Source:            AdcReader2/BitSlipCtrlP/counter_0 (LATCH)
-  Destination:       AdcReader2/BitSlipCtrlP/counter_31 (LATCH)
-  Source Clock:      AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o falling
-  Destination Clock: AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o falling
+Offset:              1.363ns (Levels of Logic = 2)
+  Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 (PAD)
+  Destination:       FIFO18E1_inst (UNKNOWN)
+  Destination Clock: module_1_i/axi_gpio_1/GPIO_IO_O<1> rising
 
-  Data Path: AdcReader2/BitSlipCtrlP/counter_0 to AdcReader2/BitSlipCtrlP/counter_31
+  Data Path: module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 to FIFO18E1_inst
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               1   0.389   0.399  counter_0 (counter_0)
-     INV:I->O              1   0.067   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>_INV_0 (Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>)
-     MUXCY:S->O            1   0.291   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<0> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<0>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<1> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<1>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<2> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<2>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<3> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<3>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<4> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<4>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<5> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<5>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<6> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<6>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<7> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<7>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<8> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<8>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<9> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<9>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<10> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<10>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<11> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<11>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<12> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<12>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<13> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<13>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<14> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<14>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<15> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<15>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<16> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<16>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<17> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<17>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<18> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<18>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<19> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<19>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<20> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<20>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<21> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<21>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<22> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<22>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<23> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<23>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<24> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<24>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<25> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<25>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<26> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<26>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<27> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<27>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<28> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<28>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<29> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<29>)
-     XORCY:CI->O           3   0.320   0.739  Madd_counter[31]_GND_44_o_add_10_OUT_xor<30> (counter[31]_GND_44_o_add_10_OUT<30>)
-     LUT5:I0->O            0   0.053   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5 (Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5)
-     MUXCY:DI->O           1   0.278   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5> (Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5>)
-     MUXCY:CI->O          35   0.015   0.566  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<6> (GND_44_o_PWR_16_o_mux_13_OUT[2])
-     LUT5:I4->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_21_o1301 (currState[2]_X_12_o_Mux_81_o)
-     LD:D                     -0.021          counter_1
+    PS7:FCLKRESETN1        1   0.000   0.000  processing_system7_0/PS7_i (FCLK_RESET1_N)
+     end scope: 'module_1_i/processing_system7_0:FCLK_RESET1_N'
+     end scope: 'module_1_i:processing_system7_0_FCLK_RESET1_N_pin'
+     INV:I->O             50   0.067   0.555  IntRst1_INV_0 (IntRst)
+     FIFO18E1:RSTREG           0.342          FIFO18E1_inst
     ----------------------------------------
-    Total                      3.605ns (1.901ns logic, 1.704ns route)
-                                       (52.7% logic, 47.3% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o'
-  Clock period: 3.605ns (frequency: 277.378MHz)
-  Total number of paths / destination ports: 35088 / 32
--------------------------------------------------------------------------
-Delay:               3.605ns (Levels of Logic = 36)
-  Source:            AdcReader2/BitSlipCtrlN/counter_0 (LATCH)
-  Destination:       AdcReader2/BitSlipCtrlN/counter_31 (LATCH)
-  Source Clock:      AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o falling
-  Destination Clock: AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o falling
-
-  Data Path: AdcReader2/BitSlipCtrlN/counter_0 to AdcReader2/BitSlipCtrlN/counter_31
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               1   0.389   0.399  counter_0 (counter_0)
-     INV:I->O              1   0.067   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>_INV_0 (Madd_counter[31]_GND_44_o_add_10_OUT_lut<0>)
-     MUXCY:S->O            1   0.291   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<0> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<0>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<1> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<1>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<2> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<2>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<3> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<3>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<4> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<4>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<5> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<5>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<6> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<6>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<7> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<7>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<8> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<8>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<9> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<9>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<10> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<10>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<11> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<11>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<12> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<12>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<13> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<13>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<14> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<14>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<15> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<15>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<16> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<16>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<17> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<17>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<18> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<18>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<19> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<19>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<20> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<20>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<21> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<21>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<22> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<22>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<23> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<23>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<24> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<24>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<25> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<25>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<26> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<26>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<27> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<27>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<28> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<28>)
-     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<29> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<29>)
-     XORCY:CI->O           3   0.320   0.739  Madd_counter[31]_GND_44_o_add_10_OUT_xor<30> (counter[31]_GND_44_o_add_10_OUT<30>)
-     LUT5:I0->O            0   0.053   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5 (Mcompar_counter[31]_GND_44_o_LessThan_12_o_lutdi5)
-     MUXCY:DI->O           1   0.278   0.000  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5> (Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<5>)
-     MUXCY:CI->O          35   0.015   0.566  Mcompar_counter[31]_GND_44_o_LessThan_12_o_cy<6> (GND_44_o_PWR_16_o_mux_13_OUT[2])
-     LUT5:I4->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_21_o1301 (currState[2]_X_12_o_Mux_81_o)
-     LD:D                     -0.021          counter_1
-    ----------------------------------------
-    Total                      3.605ns (1.901ns logic, 1.704ns route)
-                                       (52.7% logic, 47.3% route)
+    Total                      1.363ns (0.808ns logic, 0.555ns route)
+                                       (59.3% logic, 40.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'DCLK<0>'
-  Total number of paths / destination ports: 71 / 49
+  Total number of paths / destination ports: 83 / 61
 -------------------------------------------------------------------------
 Offset:              1.610ns (Levels of Logic = 3)
   Source:            AdcClk/AdcClock_I_Isrds_Master:Q3 (PAD)
@@ -895,174 +843,45 @@ Offset:              1.610ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
-  Total number of paths / destination ports: 416 / 265
+  Total number of paths / destination ports: 412 / 244
 -------------------------------------------------------------------------
-Offset:              2.180ns (Levels of Logic = 5)
+Offset:              2.296ns (Levels of Logic = 5)
   Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID (PAD)
-  Destination:       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1 (FF)
+  Destination:       module_1_i/axi_gpio_1/axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1 (FF)
   Destination Clock: module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
 
-  Data Path: module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID to module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+  Data Path: module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID to module_1_i/axi_gpio_1/axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-    PS7:MAXIGP0WVALID      4   0.000   0.000  processing_system7_0/PS7_i (M_AXI_GP0_WVALID)
+    PS7:MAXIGP0WVALID      7   0.000   0.000  processing_system7_0/PS7_i (M_AXI_GP0_WVALID)
      end scope: 'module_1_i/processing_system7_0:M_AXI_GP0_WVALID'
      begin scope: 'module_1_i/axi_interconnect_1:S_AXI_WVALID<0>'
-     LUT5:I1->O            3   0.053   0.616  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/M_AXI_WVALID1 (DEBUG_MP_MR_WDATACONTROL<0>)
-     end scope: 'module_1_i/axi_interconnect_1:M_AXI_WVALID<0>'
-     begin scope: 'module_1_i/axi_gpio_0:S_AXI_WVALID'
-     LUT3:I0->O            1   0.053   0.739  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1 (axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1)
-     LUT6:I0->O            1   0.053   0.000  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In3 (axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In)
-     FDR:D                     0.011          axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+     LUT6:I0->O            2   0.053   0.608  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[1].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/M_AXI_WVALID1 (M_AXI_WVALID<1>)
+     end scope: 'module_1_i/axi_interconnect_1:M_AXI_WVALID<1>'
+     begin scope: 'module_1_i/axi_gpio_1:S_AXI_WVALID'
+     LUT3:I0->O            1   0.053   0.739  axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1 (axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1)
+     LUT6:I0->O            1   0.053   0.000  axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In3 (axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In)
+     FDR:D                     0.011          axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
     ----------------------------------------
-    Total                      2.180ns (0.825ns logic, 1.355ns route)
-                                       (37.8% logic, 62.2% route)
+    Total                      2.296ns (0.949ns logic, 1.347ns route)
+                                       (41.3% logic, 58.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader1/BitSlipCtrlN/Mram__n01332'
-  Total number of paths / destination ports: 9 / 3
--------------------------------------------------------------------------
-Offset:              1.349ns (Levels of Logic = 3)
-  Source:            AdcReader1/AdcDataISerdes_N:Q3 (PAD)
-  Destination:       AdcReader1/BitSlipCtrlN/nextState_1 (LATCH)
-  Destination Clock: AdcReader1/BitSlipCtrlN/Mram__n01332 falling
-
-  Data Path: AdcReader1/AdcDataISerdes_N:Q3 to AdcReader1/BitSlipCtrlN/nextState_1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    ISERDESE2:Q3           6   0.000   0.000  AdcDataISerdes_N (IntDataN<0>)
-     begin scope: 'AdcReader1/BitSlipCtrlN:DataIn<0>'
-     LUT3:I0->O            2   0.053   0.608  GND_44_o_GND_44_o_mux_3_OUT<0>31 (GND_44_o_GND_44_o_mux_3_OUT<0>)
-     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_87_o12 (currState[2]_X_12_o_Mux_87_o)
-     LD:D                     -0.021          nextState_1
-    ----------------------------------------
-    Total                      1.349ns (0.741ns logic, 0.608ns route)
-                                       (54.9% logic, 45.1% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader1/BitSlipCtrlN/Mram__n01333'
-  Total number of paths / destination ports: 3 / 1
--------------------------------------------------------------------------
-Offset:              0.688ns (Levels of Logic = 2)
-  Source:            AdcReader1/AdcDataISerdes_N:Q1 (PAD)
-  Destination:       AdcReader1/BitSlipCtrlN/BitSlip (LATCH)
-  Destination Clock: AdcReader1/BitSlipCtrlN/Mram__n01333 falling
-
-  Data Path: AdcReader1/AdcDataISerdes_N:Q1 to AdcReader1/BitSlipCtrlN/BitSlip
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    ISERDESE2:Q1           6   0.000   0.000  AdcDataISerdes_N (IntDataN<2>)
-     begin scope: 'AdcReader1/BitSlipCtrlN:DataIn<2>'
-     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_91_o11 (currState[2]_X_12_o_Mux_91_o)
-     LD:D                     -0.021          BitSlip
-    ----------------------------------------
-    Total                      0.688ns (0.688ns logic, 0.000ns route)
-                                       (100.0% logic, 0.0% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader1/BitSlipCtrlP/Mram__n01332'
-  Total number of paths / destination ports: 9 / 3
--------------------------------------------------------------------------
-Offset:              1.351ns (Levels of Logic = 3)
-  Source:            AdcReader1/AdcDataISerdes_P:Q2 (PAD)
-  Destination:       AdcReader1/BitSlipCtrlP/nextState_1 (LATCH)
-  Destination Clock: AdcReader1/BitSlipCtrlP/Mram__n01332 falling
-
-  Data Path: AdcReader1/AdcDataISerdes_P:Q2 to AdcReader1/BitSlipCtrlP/nextState_1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    ISERDESE2:Q2           5   0.000   0.000  AdcDataISerdes_P (IntDataP<1>)
-     begin scope: 'AdcReader1/BitSlipCtrlP:DataIn<1>'
-     LUT3:I0->O            3   0.053   0.616  GND_44_o_GND_44_o_mux_3_OUT<0>31 (GND_44_o_GND_44_o_mux_3_OUT<0>)
-     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_87_o12 (currState[2]_X_12_o_Mux_87_o)
-     LD:D                     -0.021          nextState_1
-    ----------------------------------------
-    Total                      1.351ns (0.735ns logic, 0.616ns route)
-                                       (54.4% logic, 45.6% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader1/BitSlipCtrlP/Mram__n01333'
-  Total number of paths / destination ports: 3 / 1
--------------------------------------------------------------------------
-Offset:              0.682ns (Levels of Logic = 2)
-  Source:            AdcReader1/AdcDataISerdes_P:Q2 (PAD)
-  Destination:       AdcReader1/BitSlipCtrlP/BitSlip (LATCH)
-  Destination Clock: AdcReader1/BitSlipCtrlP/Mram__n01333 falling
-
-  Data Path: AdcReader1/AdcDataISerdes_P:Q2 to AdcReader1/BitSlipCtrlP/BitSlip
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    ISERDESE2:Q2           5   0.000   0.000  AdcDataISerdes_P (IntDataP<1>)
-     begin scope: 'AdcReader1/BitSlipCtrlP:DataIn<1>'
-     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_91_o11 (currState[2]_X_12_o_Mux_91_o)
-     LD:D                     -0.021          BitSlip
-    ----------------------------------------
-    Total                      0.682ns (0.682ns logic, 0.000ns route)
-                                       (100.0% logic, 0.0% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader2/BitSlipCtrlP/Mram__n01332'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcFrame1/BitSlipCtrlN/Mram__n01332'
   Total number of paths / destination ports: 9 / 3
 -------------------------------------------------------------------------
 Offset:              1.343ns (Levels of Logic = 3)
-  Source:            AdcReader2/AdcDataISerdes_P:Q2 (PAD)
-  Destination:       AdcReader2/BitSlipCtrlP/nextState_1 (LATCH)
-  Destination Clock: AdcReader2/BitSlipCtrlP/Mram__n01332 falling
+  Source:            AdcFrame1/AdcDataISerdes_N:Q3 (PAD)
+  Destination:       AdcFrame1/BitSlipCtrlN/nextState_1 (LATCH)
+  Destination Clock: AdcFrame1/BitSlipCtrlN/Mram__n01332 falling
 
-  Data Path: AdcReader2/AdcDataISerdes_P:Q2 to AdcReader2/BitSlipCtrlP/nextState_1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    ISERDESE2:Q2           5   0.000   0.000  AdcDataISerdes_P (IntDataP<1>)
-     begin scope: 'AdcReader2/BitSlipCtrlP:DataIn<1>'
-     LUT3:I0->O            2   0.053   0.608  GND_44_o_GND_44_o_mux_3_OUT<0>31 (GND_44_o_GND_44_o_mux_3_OUT<0>)
-     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_87_o12 (currState[2]_X_12_o_Mux_87_o)
-     LD:D                     -0.021          nextState_1
-    ----------------------------------------
-    Total                      1.343ns (0.735ns logic, 0.608ns route)
-                                       (54.7% logic, 45.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader2/BitSlipCtrlP/Mram__n01333'
-  Total number of paths / destination ports: 3 / 1
--------------------------------------------------------------------------
-Offset:              0.682ns (Levels of Logic = 2)
-  Source:            AdcReader2/AdcDataISerdes_P:Q2 (PAD)
-  Destination:       AdcReader2/BitSlipCtrlP/BitSlip (LATCH)
-  Destination Clock: AdcReader2/BitSlipCtrlP/Mram__n01333 falling
-
-  Data Path: AdcReader2/AdcDataISerdes_P:Q2 to AdcReader2/BitSlipCtrlP/BitSlip
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    ISERDESE2:Q2           5   0.000   0.000  AdcDataISerdes_P (IntDataP<1>)
-     begin scope: 'AdcReader2/BitSlipCtrlP:DataIn<1>'
-     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_91_o11 (currState[2]_X_12_o_Mux_91_o)
-     LD:D                     -0.021          BitSlip
-    ----------------------------------------
-    Total                      0.682ns (0.682ns logic, 0.000ns route)
-                                       (100.0% logic, 0.0% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader2/BitSlipCtrlN/Mram__n01332'
-  Total number of paths / destination ports: 9 / 3
--------------------------------------------------------------------------
-Offset:              1.343ns (Levels of Logic = 3)
-  Source:            AdcReader2/AdcDataISerdes_N:Q3 (PAD)
-  Destination:       AdcReader2/BitSlipCtrlN/nextState_1 (LATCH)
-  Destination Clock: AdcReader2/BitSlipCtrlN/Mram__n01332 falling
-
-  Data Path: AdcReader2/AdcDataISerdes_N:Q3 to AdcReader2/BitSlipCtrlN/nextState_1
+  Data Path: AdcFrame1/AdcDataISerdes_N:Q3 to AdcFrame1/BitSlipCtrlN/nextState_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
     ISERDESE2:Q3           5   0.000   0.000  AdcDataISerdes_N (IntDataN<0>)
-     begin scope: 'AdcReader2/BitSlipCtrlN:DataIn<0>'
+     begin scope: 'AdcFrame1/BitSlipCtrlN:DataIn<0>'
      LUT3:I0->O            2   0.053   0.608  GND_44_o_GND_44_o_mux_3_OUT<0>31 (GND_44_o_GND_44_o_mux_3_OUT<0>)
      LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_87_o12 (currState[2]_X_12_o_Mux_87_o)
      LD:D                     -0.021          nextState_1
@@ -1071,20 +890,20 @@ Offset:              1.343ns (Levels of Logic = 3)
                                        (54.7% logic, 45.3% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcReader2/BitSlipCtrlN/Mram__n01333'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcFrame1/BitSlipCtrlN/Mram__n01333'
   Total number of paths / destination ports: 3 / 1
 -------------------------------------------------------------------------
 Offset:              0.682ns (Levels of Logic = 2)
-  Source:            AdcReader2/AdcDataISerdes_N:Q1 (PAD)
-  Destination:       AdcReader2/BitSlipCtrlN/BitSlip (LATCH)
-  Destination Clock: AdcReader2/BitSlipCtrlN/Mram__n01333 falling
+  Source:            AdcFrame1/AdcDataISerdes_N:Q1 (PAD)
+  Destination:       AdcFrame1/BitSlipCtrlN/BitSlip (LATCH)
+  Destination Clock: AdcFrame1/BitSlipCtrlN/Mram__n01333 falling
 
-  Data Path: AdcReader2/AdcDataISerdes_N:Q1 to AdcReader2/BitSlipCtrlN/BitSlip
+  Data Path: AdcFrame1/AdcDataISerdes_N:Q1 to AdcFrame1/BitSlipCtrlN/BitSlip
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
     ISERDESE2:Q1           5   0.000   0.000  AdcDataISerdes_N (IntDataN<2>)
-     begin scope: 'AdcReader2/BitSlipCtrlN:DataIn<2>'
+     begin scope: 'AdcFrame1/BitSlipCtrlN:DataIn<2>'
      LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_91_o11 (currState[2]_X_12_o_Mux_91_o)
      LD:D                     -0.021          BitSlip
     ----------------------------------------
@@ -1092,167 +911,163 @@ Offset:              0.682ns (Levels of Logic = 2)
                                        (100.0% logic, 0.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
-  Total number of paths / destination ports: 248 / 68
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcFrame1/BitSlipCtrlP/Mram__n01332'
+  Total number of paths / destination ports: 9 / 3
 -------------------------------------------------------------------------
-Offset:              2.591ns (Levels of Logic = 20)
-  Source:            module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_31 (FF)
-  Destination:       LEDS<7> (PAD)
-  Source Clock:      module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+Offset:              1.344ns (Levels of Logic = 3)
+  Source:            AdcFrame1/AdcDataISerdes_P:Q2 (PAD)
+  Destination:       AdcFrame1/BitSlipCtrlP/nextState_1 (LATCH)
+  Destination Clock: AdcFrame1/BitSlipCtrlP/Mram__n01332 falling
 
-  Data Path: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_31 to LEDS<7>
+  Data Path: AdcFrame1/AdcDataISerdes_P:Q2 to AdcFrame1/BitSlipCtrlP/nextState_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             4   0.282   0.655  axi_gpio_0/gpio_core_1/gpio_Data_Out_31 (GPIO_IO_O<0>)
-     end scope: 'module_1_i/axi_gpio_0:GPIO_IO_O<0>'
-     end scope: 'module_1_i:LED_DutyCycle<0>'
-     begin scope: 'PWM:DutyCycle<0>'
-     LUT4:I0->O            1   0.053   0.000  Mcompar_LED_lut<0> (Mcompar_LED_lut<0>)
-     MUXCY:S->O            1   0.291   0.000  Mcompar_LED_cy<0> (Mcompar_LED_cy<0>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<1> (Mcompar_LED_cy<1>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<2> (Mcompar_LED_cy<2>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<3> (Mcompar_LED_cy<3>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<4> (Mcompar_LED_cy<4>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<5> (Mcompar_LED_cy<5>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<6> (Mcompar_LED_cy<6>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<7> (Mcompar_LED_cy<7>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<8> (Mcompar_LED_cy<8>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<9> (Mcompar_LED_cy<9>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<10> (Mcompar_LED_cy<10>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<11> (Mcompar_LED_cy<11>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<12> (Mcompar_LED_cy<12>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_LED_cy<13> (Mcompar_LED_cy<13>)
-     MUXCY:CI->O           1   0.178   0.485  Mcompar_LED_cy<14> (Mcompar_LED_cy<14>)
-     LUT4:I2->O            1   0.053   0.399  Mcompar_LED_cy<15>_inv1 (LED)
-     end scope: 'PWM:LED'
-     OBUF:I->O                 0.000          LEDS_7_OBUF (LEDS<7>)
+    ISERDESE2:Q2           4   0.000   0.000  AdcDataISerdes_P (IntDataP<1>)
+     begin scope: 'AdcFrame1/BitSlipCtrlP:DataIn<1>'
+     LUT3:I0->O            3   0.053   0.616  GND_44_o_GND_44_o_mux_3_OUT<0>31 (GND_44_o_GND_44_o_mux_3_OUT<0>)
+     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_87_o12 (currState[2]_X_12_o_Mux_87_o)
+     LD:D                     -0.021          nextState_1
     ----------------------------------------
-    Total                      2.591ns (1.052ns logic, 1.539ns route)
-                                       (40.6% logic, 59.4% route)
+    Total                      1.344ns (0.728ns logic, 0.616ns route)
+                                       (54.2% logic, 45.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AdcFrame1/BitSlipCtrlP/Mram__n01333'
+  Total number of paths / destination ports: 3 / 1
+-------------------------------------------------------------------------
+Offset:              0.675ns (Levels of Logic = 2)
+  Source:            AdcFrame1/AdcDataISerdes_P:Q2 (PAD)
+  Destination:       AdcFrame1/BitSlipCtrlP/BitSlip (LATCH)
+  Destination Clock: AdcFrame1/BitSlipCtrlP/Mram__n01333 falling
+
+  Data Path: AdcFrame1/AdcDataISerdes_P:Q2 to AdcFrame1/BitSlipCtrlP/BitSlip
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    ISERDESE2:Q2           4   0.000   0.000  AdcDataISerdes_P (IntDataP<1>)
+     begin scope: 'AdcFrame1/BitSlipCtrlP:DataIn<1>'
+     LUT5:I2->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_91_o11 (currState[2]_X_12_o_Mux_91_o)
+     LD:D                     -0.021          BitSlip
+    ----------------------------------------
+    Total                      0.675ns (0.675ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Total number of paths / destination ports: 328 / 67
+-------------------------------------------------------------------------
+Offset:              3.082ns (Levels of Logic = 6)
+  Source:            module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 (FF)
+  Destination:       module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WREADY (PAD)
+  Source Clock:      module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 to module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WREADY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.282   0.505  axi_gpio_0/ip2bus_wrack_i_D1 (axi_gpio_0/ip2bus_wrack_i_D1)
+     LUT2:I0->O            3   0.053   0.616  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1 (S_AXI_WREADY)
+     end scope: 'module_1_i/axi_gpio_0:S_AXI_WREADY'
+     begin scope: 'module_1_i/axi_interconnect_1:M_AXI_WREADY<0>'
+     LUT3:I0->O            1   0.053   0.635  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/S_AXI_WREADY1 (DEBUG_MC_MP_WDATACONTROL<1>)
+     LUT6:I2->O            4   0.053   0.433  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_wready_mux_inst/o_i (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_wready_mux_inst/o_i)
+     LUT5:I4->O            1   0.053   0.399  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/si_wready1 (DEBUG_SF_CB_WDATACONTROL<1>)
+     end scope: 'module_1_i/axi_interconnect_1:S_AXI_WREADY<0>'
+     begin scope: 'module_1_i/processing_system7_0:M_AXI_GP0_WREADY'
+    PS7:MAXIGP0WREADY          0.000          processing_system7_0/PS7_i
+    ----------------------------------------
+    Total                      3.082ns (0.494ns logic, 2.588ns route)
+                                       (16.0% logic, 84.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'DCLK<0>'
-  Total number of paths / destination ports: 23 / 14
+  Total number of paths / destination ports: 29 / 24
 -------------------------------------------------------------------------
-Offset:              2.178ns (Levels of Logic = 4)
-  Source:            AdcReader1/BitSlipCtrlN/currState_0 (FF)
+Offset:              2.028ns (Levels of Logic = 4)
+  Source:            AdcFrame1/BitSlipCtrlN/currState_0 (FF)
   Destination:       LEDS<5> (PAD)
   Source Clock:      DCLK<0> rising
 
-  Data Path: AdcReader1/BitSlipCtrlN/currState_0 to LEDS<5>
+  Data Path: AdcFrame1/BitSlipCtrlN/currState_0 to LEDS<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             40   0.282   0.789  currState_0 (currState_0)
-     end scope: 'AdcReader1/BitSlipCtrlN:currState_0'
-     LUT5:I1->O            1   0.053   0.602  SyncDone_SW0 (N4)
+     FDR:C->Q             40   0.282   0.639  currState_0 (currState_0)
+     end scope: 'AdcFrame1/BitSlipCtrlN:currState_0'
+     LUT5:I3->O            1   0.053   0.602  SyncDone_SW0 (N8)
      LUT6:I3->O            1   0.053   0.399  SyncDone (SyncDone)
-     end scope: 'AdcReader1:SyncDone'
+     end scope: 'AdcFrame1:SyncDone'
      OBUF:I->O                 0.000          LEDS_5_OBUF (LEDS<5>)
     ----------------------------------------
-    Total                      2.178ns (0.388ns logic, 1.790ns route)
-                                       (17.8% logic, 82.2% route)
+    Total                      2.028ns (0.388ns logic, 1.640ns route)
+                                       (19.1% logic, 80.9% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'AdcReader1/BitSlipCtrlN/Mram__n01333'
-  Total number of paths / destination ports: 1 / 1
+Timing constraint: Default OFFSET OUT AFTER for Clock 'AdcFrame1/BitSlipCtrlN/Mram__n01333'
+  Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
-Offset:              0.788ns (Levels of Logic = 1)
-  Source:            AdcReader1/BitSlipCtrlN/BitSlip (LATCH)
-  Destination:       AdcReader1/AdcDataISerdes_N:BITSLIP (PAD)
-  Source Clock:      AdcReader1/BitSlipCtrlN/Mram__n01333 falling
+Offset:              0.815ns (Levels of Logic = 2)
+  Source:            AdcFrame1/BitSlipCtrlN/BitSlip (LATCH)
+  Destination:       AdcReader_C/AdcReader0/AdcDataISerdes_N:BITSLIP (PAD)
+  Source Clock:      AdcFrame1/BitSlipCtrlN/Mram__n01333 falling
 
-  Data Path: AdcReader1/BitSlipCtrlN/BitSlip to AdcReader1/AdcDataISerdes_N:BITSLIP
+  Data Path: AdcFrame1/BitSlipCtrlN/BitSlip to AdcReader_C/AdcReader0/AdcDataISerdes_N:BITSLIP
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               1   0.389   0.399  BitSlip (BitSlip)
-     end scope: 'AdcReader1/BitSlipCtrlN:BitSlip'
+     LD:G->Q               5   0.389   0.426  BitSlip (BitSlip)
+     end scope: 'AdcFrame1/BitSlipCtrlN:BitSlip'
+     end scope: 'AdcFrame1:BitSlipN'
+     begin scope: 'AdcReader_C:BitSlipN'
+     begin scope: 'AdcReader_C/AdcReader0:BitSlipN'
     ISERDESE2:BITSLIP          0.000          AdcDataISerdes_N
     ----------------------------------------
-    Total                      0.788ns (0.389ns logic, 0.399ns route)
-                                       (49.4% logic, 50.6% route)
+    Total                      0.815ns (0.389ns logic, 0.426ns route)
+                                       (47.7% logic, 52.3% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'AdcReader1/BitSlipCtrlP/Mram__n01333'
-  Total number of paths / destination ports: 1 / 1
+Timing constraint: Default OFFSET OUT AFTER for Clock 'AdcFrame1/BitSlipCtrlP/Mram__n01333'
+  Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
-Offset:              0.788ns (Levels of Logic = 1)
-  Source:            AdcReader1/BitSlipCtrlP/BitSlip (LATCH)
-  Destination:       AdcReader1/AdcDataISerdes_P:BITSLIP (PAD)
-  Source Clock:      AdcReader1/BitSlipCtrlP/Mram__n01333 falling
+Offset:              0.815ns (Levels of Logic = 2)
+  Source:            AdcFrame1/BitSlipCtrlP/BitSlip (LATCH)
+  Destination:       AdcReader_C/AdcReader0/AdcDataISerdes_P:BITSLIP (PAD)
+  Source Clock:      AdcFrame1/BitSlipCtrlP/Mram__n01333 falling
 
-  Data Path: AdcReader1/BitSlipCtrlP/BitSlip to AdcReader1/AdcDataISerdes_P:BITSLIP
+  Data Path: AdcFrame1/BitSlipCtrlP/BitSlip to AdcReader_C/AdcReader0/AdcDataISerdes_P:BITSLIP
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               1   0.389   0.399  BitSlip (BitSlip)
-     end scope: 'AdcReader1/BitSlipCtrlP:BitSlip'
+     LD:G->Q               5   0.389   0.426  BitSlip (BitSlip)
+     end scope: 'AdcFrame1/BitSlipCtrlP:BitSlip'
+     end scope: 'AdcFrame1:BitSlipP'
+     begin scope: 'AdcReader_C:BitSlipP'
+     begin scope: 'AdcReader_C/AdcReader0:BitSlipP'
     ISERDESE2:BITSLIP          0.000          AdcDataISerdes_P
     ----------------------------------------
-    Total                      0.788ns (0.389ns logic, 0.399ns route)
-                                       (49.4% logic, 50.6% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'AdcReader2/BitSlipCtrlN/Mram__n01333'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              0.788ns (Levels of Logic = 1)
-  Source:            AdcReader2/BitSlipCtrlN/BitSlip (LATCH)
-  Destination:       AdcReader2/AdcDataISerdes_N:BITSLIP (PAD)
-  Source Clock:      AdcReader2/BitSlipCtrlN/Mram__n01333 falling
-
-  Data Path: AdcReader2/BitSlipCtrlN/BitSlip to AdcReader2/AdcDataISerdes_N:BITSLIP
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               1   0.389   0.399  BitSlip (BitSlip)
-     end scope: 'AdcReader2/BitSlipCtrlN:BitSlip'
-    ISERDESE2:BITSLIP          0.000          AdcDataISerdes_N
-    ----------------------------------------
-    Total                      0.788ns (0.389ns logic, 0.399ns route)
-                                       (49.4% logic, 50.6% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'AdcReader2/BitSlipCtrlP/Mram__n01333'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              0.788ns (Levels of Logic = 1)
-  Source:            AdcReader2/BitSlipCtrlP/BitSlip (LATCH)
-  Destination:       AdcReader2/AdcDataISerdes_P:BITSLIP (PAD)
-  Source Clock:      AdcReader2/BitSlipCtrlP/Mram__n01333 falling
-
-  Data Path: AdcReader2/BitSlipCtrlP/BitSlip to AdcReader2/AdcDataISerdes_P:BITSLIP
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               1   0.389   0.399  BitSlip (BitSlip)
-     end scope: 'AdcReader2/BitSlipCtrlP:BitSlip'
-    ISERDESE2:BITSLIP          0.000          AdcDataISerdes_P
-    ----------------------------------------
-    Total                      0.788ns (0.389ns logic, 0.399ns route)
-                                       (49.4% logic, 50.6% route)
+    Total                      0.815ns (0.389ns logic, 0.426ns route)
+                                       (47.7% logic, 52.3% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 162 / 155
+  Total number of paths / destination ports: 192 / 185
 -------------------------------------------------------------------------
-Delay:               1.865ns (Levels of Logic = 4)
-  Source:            AdcReader1/AdcDataISerdes_N:Q3 (PAD)
+Delay:               1.859ns (Levels of Logic = 4)
+  Source:            AdcFrame1/AdcDataISerdes_N:Q3 (PAD)
   Destination:       LEDS<5> (PAD)
 
-  Data Path: AdcReader1/AdcDataISerdes_N:Q3 to LEDS<5>
+  Data Path: AdcFrame1/AdcDataISerdes_N:Q3 to LEDS<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-    ISERDESE2:Q3           6   0.000   0.758  AdcDataISerdes_N (IntDataN<0>)
-     LUT5:I0->O            1   0.053   0.602  SyncDone_SW0 (N4)
+    ISERDESE2:Q3           5   0.000   0.752  AdcDataISerdes_N (IntDataN<0>)
+     LUT5:I0->O            1   0.053   0.602  SyncDone_SW0 (N8)
      LUT6:I3->O            1   0.053   0.399  SyncDone (SyncDone)
-     end scope: 'AdcReader1:SyncDone'
+     end scope: 'AdcFrame1:SyncDone'
      OBUF:I->O                 0.000          LEDS_5_OBUF (LEDS<5>)
     ----------------------------------------
-    Total                      1.865ns (0.106ns logic, 1.759ns route)
+    Total                      1.859ns (0.106ns logic, 1.753ns route)
                                        (5.7% logic, 94.3% route)
 
 =========================================================================
@@ -1260,16 +1075,16 @@ Delay:               1.865ns (Levels of Logic = 4)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock AdcReader1/BitSlipCtrlN/Mram__n01332
-------------------------------------------------------+---------+---------+---------+---------+
-                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------------------------+---------+---------+---------+---------+
-AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.917|         |
-DCLK<0>                                               |         |         |    1.229|         |
-------------------------------------------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock AdcFrame1/BitSlipCtrlN/Mram__n01332
+-----------------------------------------------------+---------+---------+---------+---------+
+                                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------------------------+---------+---------+---------+---------+
+AdcFrame1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.917|         |
+DCLK<0>                                              |         |         |    1.229|         |
+-----------------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock AdcReader1/BitSlipCtrlN/Mram__n01333
+Clock to Setup on destination clock AdcFrame1/BitSlipCtrlN/Mram__n01333
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -1277,25 +1092,25 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 DCLK<0>        |         |         |    1.125|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o
-------------------------------------------------------+---------+---------+---------+---------+
-                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------------------------+---------+---------+---------+---------+
-AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.605|         |
-DCLK<0>                                               |         |         |    1.605|         |
-------------------------------------------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock AdcFrame1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o
+-----------------------------------------------------+---------+---------+---------+---------+
+                                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------------------------+---------+---------+---------+---------+
+AdcFrame1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.605|         |
+DCLK<0>                                              |         |         |    1.605|         |
+-----------------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock AdcReader1/BitSlipCtrlP/Mram__n01332
-------------------------------------------------------+---------+---------+---------+---------+
-                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------------------------+---------+---------+---------+---------+
-AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.931|         |
-DCLK<0>                                               |         |         |    1.215|         |
-------------------------------------------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock AdcFrame1/BitSlipCtrlP/Mram__n01332
+-----------------------------------------------------+---------+---------+---------+---------+
+                                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------------------------+---------+---------+---------+---------+
+AdcFrame1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.931|         |
+DCLK<0>                                              |         |         |    1.214|         |
+-----------------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock AdcReader1/BitSlipCtrlP/Mram__n01333
+Clock to Setup on destination clock AdcFrame1/BitSlipCtrlP/Mram__n01333
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -1303,99 +1118,53 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 DCLK<0>        |         |         |    1.125|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o
-------------------------------------------------------+---------+---------+---------+---------+
-                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------------------------+---------+---------+---------+---------+
-AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.605|         |
-DCLK<0>                                               |         |         |    1.605|         |
-------------------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock AdcReader2/BitSlipCtrlN/Mram__n01332
-------------------------------------------------------+---------+---------+---------+---------+
-                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------------------------+---------+---------+---------+---------+
-AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.917|         |
-DCLK<0>                                               |         |         |    1.228|         |
-------------------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock AdcReader2/BitSlipCtrlN/Mram__n01333
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-DCLK<0>        |         |         |    1.124|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o
-------------------------------------------------------+---------+---------+---------+---------+
-                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------------------------+---------+---------+---------+---------+
-AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.605|         |
-DCLK<0>                                               |         |         |    1.604|         |
-------------------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock AdcReader2/BitSlipCtrlP/Mram__n01332
-------------------------------------------------------+---------+---------+---------+---------+
-                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------------------------+---------+---------+---------+---------+
-AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.931|         |
-DCLK<0>                                               |         |         |    1.214|         |
-------------------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock AdcReader2/BitSlipCtrlP/Mram__n01333
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-DCLK<0>        |         |         |    1.124|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o
-------------------------------------------------------+---------+---------+---------+---------+
-                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------------------------+---------+---------+---------+---------+
-AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.605|         |
-DCLK<0>                                               |         |         |    1.604|         |
-------------------------------------------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock AdcFrame1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o
+-----------------------------------------------------+---------+---------+---------+---------+
+                                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------------------------+---------+---------+---------+---------+
+AdcFrame1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o|         |         |    3.605|         |
+DCLK<0>                                              |         |         |    1.605|         |
+-----------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock DCLK<0>
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-AdcReader1/BitSlipCtrlN/Mram__n01332|         |    0.799|         |         |
-AdcReader1/BitSlipCtrlP/Mram__n01332|         |    0.799|         |         |
-AdcReader2/BitSlipCtrlN/Mram__n01332|         |    0.799|         |         |
-AdcReader2/BitSlipCtrlP/Mram__n01332|         |    0.799|         |         |
-DCLK<0>                             |    3.215|         |         |         |
-------------------------------------+---------+---------+---------+---------+
+-----------------------------------+---------+---------+---------+---------+
+                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------+---------+---------+---------+---------+
+AdcFrame1/BitSlipCtrlN/Mram__n01332|         |    0.799|         |         |
+AdcFrame1/BitSlipCtrlP/Mram__n01332|         |    0.799|         |         |
+DCLK<0>                            |    3.215|         |         |         |
+-----------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock module_1_i/axi_gpio_1/GPIO_IO_O<1>
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    1.108|         |         |         |
+---------------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>
 ---------------------------------------------------------------------------+---------+---------+---------+---------+
                                                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------------------------------------------------------------+---------+---------+---------+---------+
-DCLK<0>                                                                    |    0.688|         |         |         |
-module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    3.868|         |         |         |
+module_1_i/axi_gpio_1/GPIO_IO_O<1>                                         |    1.288|         |         |         |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    3.935|         |         |         |
 ---------------------------------------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.15 secs
+Total CPU time to Xst completion: 14.17 secs
  
 --> 
 
-Total memory usage is 453804 kilobytes
+Total memory usage is 488292 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   48 (   0 filtered)
-Number of infos    :   22 (   0 filtered)
+Number of warnings :   59 (   0 filtered)
+Number of infos    :   24 (   0 filtered)
 

@@ -58,8 +58,8 @@ entity module_1_stub is
        --pines para datos
        ADC_Data1: in std_logic_vector(1 downto 0);
        ADC_Data0: in std_logic_vector(1 downto 0);
-      -- ADC_Data2: in std_logic_vector(1 downto 0);
-       --ADC_Data3: in std_logic_vector(1 downto 0);
+       ADC_Data2: in std_logic_vector(1 downto 0);
+       ADC_Data3: in std_logic_vector(1 downto 0);
        DCLK: in std_logic_vector(1 downto 0)
        --BTNC : in std_logic 
        --BTNU : in std_logic
@@ -85,6 +85,15 @@ architecture STRUCTURE of module_1_stub is
     signal IntBitClk    : std_logic;
     signal IntDivClk    : std_logic;
     signal delayRefClk  : std_logic;
+    signal IntSyncDone  : std_logic;
+    signal IntBitSlip_P  : std_logic;
+    signal IntBitSlip_N  : std_logic;
+    signal IntBitClk35  : std_logic;
+    signal IntDivClk35  : std_logic;
+    signal IntDataIn    : std_logic;
+    signal fifoParIn    : std_logic_vector ( 3 downto 0);
+    signal fifoDataIn   : std_logic_vector (31 downto 0):=(others => '0');
+    signal sfifoControlPins : std_logic_vector ( 1 downto 0); 
 
     
 
@@ -116,7 +125,10 @@ architecture STRUCTURE of module_1_stub is
       processing_system7_0_DDR_VRP : inout std_logic; 
       LED_DutyCycle : out std_logic_vector(31 downto 0);
       processing_system7_0_FCLK_CLK0_pin : out std_logic;
-      ADC_DataIn : in std_logic_vector(31 downto 0);
+      --ADC_DataIn : in std_logic_vector(31 downto 0);
+      fifoControlPins : out std_logic_vector (1 downto 0);
+      fifoDataOut : in std_logic_vector (31 downto 0);
+      --data_Int : in std_logic;
       processing_system7_0_FCLK_RESET0_N_pin : out std_logic;
       processing_system7_0_FCLK_CLK1_pin : out std_logic;
       processing_system7_0_FCLK_RESET1_N_pin : out std_logic
@@ -161,31 +173,55 @@ architecture STRUCTURE of module_1_stub is
      );
  end component;
  
---  component ADCReadFSM is
---     Port ( DivClk : in STD_LOGIC;
---            BitClk : in STD_LOGIC;
---            bit0 : in STD_LOGIC;
---            bit1 : in STD_LOGIC;
---            Rst : in STD_LOGIC;
---            State : out std_logic_vector( 2 downto 0);
---            DataOut : out STD_LOGIC_VECTOR (11 downto 0));
--- end component;
 
-    component AdcDataReader is
-    Port ( PinDataP : in STD_LOGIC;
-           PinDataN : in STD_LOGIC;
-           BitClk : in STD_LOGIC;
-           DivClk : in STD_LOGIC;
-           DataOut : out STD_LOGIC_VECTOR (5 downto 0);
-           SyncDone : out STD_LOGIC;
-           state : out STD_LOGIC_VECTOR (1 downto 0);
-           Rst  : in std_logic; 
-           BitClkDone   : in std_logic
-           );
-     end component;
- 
- 
 
+--    component AdcDataReader is
+--    Port ( PinDataP : in STD_LOGIC;
+--           PinDataN : in STD_LOGIC;
+--           BitClk : in STD_LOGIC;
+--           DivClk : in STD_LOGIC;
+--           DataOut : out STD_LOGIC_VECTOR (5 downto 0);
+--           SyncDone : out STD_LOGIC;
+--           state : out STD_LOGIC_VECTOR (1 downto 0);
+--           Rst  : in std_logic; 
+--           BitClkDone   : in std_logic
+--           );
+--     end component;
+ 
+    component AdcChanReader is
+    Port (
+       PinData0_P : in STD_LOGIC;
+       PinData0_N : in STD_LOGIC;
+       PinData1_P : in STD_LOGIC;
+       PinData1_N : in STD_LOGIC;
+       BitClk : in STD_LOGIC;
+       DivClk : in STD_LOGIC;
+       DataOut : out STD_LOGIC_VECTOR (11 downto 0);
+       DataParOut : out std_logic_vector ( 1 downto 0 );
+       --SyncDone : out STD_LOGIC;
+       --state : out STD_LOGIC_VECTOR (1 downto 0);
+       Rst  : in std_logic; 
+       BitClkDone   : in std_logic;
+       BitSlipP : in std_logic;
+       BitSlipN : in std_logic
+         );
+    end component;
+    
+    component AdcFrameSync is
+        Port ( PinDataP : in STD_LOGIC;
+               PinDataN : in STD_LOGIC;
+               BitClk : in STD_LOGIC;
+               DivClk : in STD_LOGIC;
+               DataOut : out STD_LOGIC_VECTOR (5 downto 0);
+               SyncDone : out STD_LOGIC;
+               state : out STD_LOGIC_VECTOR (1 downto 0);
+               Rst  : in std_logic; 
+               BitClkDone   : in std_logic;
+               BitSlipP : out std_logic;
+               BitSlipN : out std_logic;
+               NDataInt  : out std_logic
+               );
+    end component;
 
 begin
 
@@ -193,7 +229,7 @@ begin
    -- ibuf0 : IBUFDS  port map (I=>ADC_Data0(0), IB=>ADC_Data0(1), O=>sADC_Data0); 
     --ibuf1 : IBUFDS  port map (I=>ADC_Data1(0), IB=>ADC_Data1(1), O=>sADC_Data1);   
     ibuf2 : IBUFGDS port map (I=>DCLK(0), IB=>DCLK(1), O=>sDCLK);
-    ibuf3 : IBUFGDS port map (I=>FCLK(0), IB=>FCLK(1), O=>sFCLK);
+    --ibuf3 : IBUFGDS port map (I=>FCLK(0), IB=>FCLK(1), O=>sFCLK);
     --ioClk : BUFIO   port map (I=> sDCLK, O => IntBitClk);
     --IntDivClk <= sFCLK;
     --ibuf1 : IBUF port map (I => BTNU, O=> botones(0));
@@ -224,7 +260,10 @@ begin
       processing_system7_0_DDR_VRP => processing_system7_0_DDR_VRP,
       LED_DutyCycle => sLED_DutyCycle,
       processing_system7_0_FCLK_CLK0_pin => sprocessing_system7_0_FCLK_CLK0_pin,
-      ADC_DataIn => sADC_DataIn,
+      --ADC_DataIn => sADC_DataIn,
+      --data_Int => IntDataIn,
+      fifoControlPins => sfifoControlPins,
+      fifoDataOut => sADC_DataIn,
       --processing_system7_0_FCLK_RESET0_N_pin => processing_system7_0_FCLK_RESET0_N_pin,
       processing_system7_0_FCLK_CLK1_pin => sClkExtIn,
       processing_system7_0_FCLK_RESET1_N_pin => PL_Rst
@@ -253,47 +292,92 @@ begin
             BitClkDone 			=> IntBitClkDone, 
             BitClk34            => IntBitClk,
             DivClk34            => IntDivClk,
-            BitClk35            => open,
-            DivClk35            => open
+            BitClk35            => IntBitClk35,
+            DivClk35            => IntDivClk35
         );
         
---     ADCReader : ADCReadFSM 
---         Port map ( 
---            DivClk      => sFCLK,
---            BitClk      => IntBitClk,
---            bit0        => sADC_Data0,
---            bit1        => sADC_Data1,
---            Rst         => IntRst,
---            State       => LEDS(4 downto 2),
---            DataOut     => datBuff --sADC_DataIn(11 downto 0)
---        );   
 
-    AdcReader1 : AdcDataReader
-    Port map (
-           PinDataP         =>ADC_Data0(0),
-           PinDataN         =>ADC_Data0(1),
-           BitClk           => IntBitClk,
-           DivClk           => IntDivClk,
-           DataOut          => sADC_DataIn(5 downto 0),
-           SyncDone         => LEDS(5),
-           state            => LEDS(3 downto 2),
-           Rst              =>IntRst,
-           BitClkDone       =>IntBitClkDone
-           );
+
+--    AdcReader1 : AdcDataReader
+--    Port map (
+--           PinDataP         =>ADC_Data0(0),
+--           PinDataN         =>ADC_Data0(1),
+--           BitClk           => IntBitClk,
+--           DivClk           => IntDivClk,
+--           DataOut          => sADC_DataIn(5 downto 0),
+--           SyncDone         => LEDS(5),
+--           state            => LEDS(3 downto 2),
+--           Rst              =>IntRst,
+--           BitClkDone       =>IntBitClkDone
+--           );
            
    
-     AdcReader2 : AdcDataReader
-     Port map (
-                  PinDataP         =>ADC_Data1(0),
-                  PinDataN         =>ADC_Data1(1),
-                  BitClk           => IntBitClk,
-                  DivClk           => IntDivClk,
-                  DataOut          => sADC_DataIn(11 downto 6),
-                  SyncDone         => open, --LEDS(5),
-                  state            => open, --LEDS(3 downto 2),
-                  Rst              =>IntRst,
-                  BitClkDone       =>IntBitClkDone
-                  );
+--     AdcReader2 : AdcDataReader
+--     Port map (
+--                  PinDataP         =>ADC_Data1(0),
+--                  PinDataN         =>ADC_Data1(1),
+--                  BitClk           => IntBitClk,
+--                  DivClk           => IntDivClk,
+--                  DataOut          => sADC_DataIn(11 downto 6),
+--                  SyncDone         => open, --LEDS(5),
+--                  state            => open, --LEDS(3 downto 2),
+--                  Rst              =>IntRst,
+--                  BitClkDone       =>IntBitClkDone
+--                  );
+        AdcFrame1 : AdcFrameSync 
+        Port map (
+           PinDataP     => FCLK(0),
+           PinDataN     => FCLK(1),
+           BitClk       => IntBitClk35,
+           DivClk       => IntDivClk35,
+           DataOut      =>open,
+           SyncDone     => IntSyncDone,
+           state        => open,
+           Rst          => IntRst,
+           BitClkDone   => IntBitClkDone,
+           BitSlipP     => IntBitSlip_P,
+           BitSlipN     => IntBitSlip_N,
+           NDataInt      => IntDataIn
+           );
+
+
+       AdcReader_C: AdcChanReader 
+        Port map (
+           PinData0_P       => ADC_Data0(0),
+           PinData0_N       => ADC_Data0(1),
+           PinData1_P       => ADC_Data1(0),
+           PinData1_N       => ADC_Data1(1),
+           BitClk           => IntBitClk,
+           DivClk           => IntDivClk,
+           DataOut          => fifoDataIn(11 downto 0),
+           DataParOut       =>fifoParIn ( 1 downto 0),
+           --SyncDone         => open, --IntSyncDone, --LEDS(5),
+           --state : out STD_LOGIC_VECTOR (1 downto 0);
+           Rst              => IntRst,
+           BitClkDone       => IntBitClkDone,
+           BitSlipP         => IntBitSlip_P,
+           BitSlipN         => IntBitSlip_N
+             );
+             
+         AdcReader_D: AdcChanReader 
+         Port map (
+            PinData0_P       => ADC_Data2(0),
+            PinData0_N       => ADC_Data2(1),
+            PinData1_P       => ADC_Data3(0),
+            PinData1_N       => ADC_Data3(1),
+            BitClk           => IntBitClk,
+            DivClk           => IntDivClk,
+            DataOut          => fifoDataIn(27 downto 16),
+            DataParOut       =>fifoParIn ( 3 downto 2),
+            --SyncDone         => open, --IntSyncDone, --LEDS(5),
+            --state : out STD_LOGIC_VECTOR (1 downto 0);
+            Rst              => IntRst,
+            BitClkDone       => IntBitClkDone,
+            BitSlipP         => IntBitSlip_P,
+            BitSlipN         => IntBitSlip_N
+              );
+
+      -- fifoParIn(3 downto 2)<= b"00";
 
         
         -- IDELAYCTRL is needed for calibration
@@ -309,6 +393,51 @@ begin
              REFCLK => delayRefClk,
              RST    => IntRst
              );
+             
+     
+            -- FIFO18E1: 18Kb FIFO (First-In-First-Out) Block RAM Memory
+    -- 7 Series
+    -- Xilinx HDL Libraries Guide, version 14.5
+        FIFO18E1_inst : FIFO18E1
+        generic map (
+            ALMOST_EMPTY_OFFSET => X"0080", -- Sets the almost empty threshold
+            ALMOST_FULL_OFFSET => X"0080", -- Sets almost full threshold
+            DATA_WIDTH => 36, -- Sets data width to 4-36 --18
+            DO_REG => 1, -- Enable output register (1-0) Must be 1 if EN_SYN = FALSE
+            EN_SYN => FALSE, -- Specifies FIFO as dual-clock (FALSE) or Synchronous (TRUE)
+            FIFO_MODE => "FIFO18_36", -- Sets mode to FIFO18 or FIFO18_36
+            FIRST_WORD_FALL_THROUGH => FALSE, -- Sets the FIFO FWFT to FALSE, TRUE
+            INIT => X"00000000", -- Initial values on output port
+            SIM_DEVICE => "7SERIES", -- Must be set to "7SERIES" for simulation behavior
+            SRVAL => X"00000000" -- Set/Reset value for output port
+        )
+        port map (
+            -- Read Data: 32-bit (each) output: Read output data
+            DO => sADC_DataIn, -- 32-bit output: Data output
+            DOP => open, -- 4-bit output: Parity data output
+            -- Status: 1-bit (each) output: Flags and other FIFO status outputs
+            ALMOSTEMPTY => open, -- 1-bit output: Almost empty flag
+            ALMOSTFULL => open, -- 1-bit output: Almost full flag
+            EMPTY => open, -- 1-bit output: Empty flag
+            FULL => open, -- 1-bit output: Full flag
+            RDCOUNT => open, -- 12-bit output: Read count
+            RDERR => open, -- 1-bit output: Read error
+            WRCOUNT => open, -- 12-bit output: Write count
+            WRERR => open, -- 1-bit output: Write error
+            -- Read Control Signals: 1-bit (each) input: Read clock, enable and reset input signals
+            RDCLK => sfifoControlPins(1), -- 1-bit input: Read clock
+            RDEN => sfifoControlPins(0), -- 1-bit input: Read enable
+            REGCE => '1', -- 1-bit input: Clock enable
+            RST => IntRst, -- 1-bit input: Asynchronous Reset
+            RSTREG => IntRst, -- 1-bit input: Output register set/reset
+            -- Write Control Signals: 1-bit (each) input: Write clock and enable input signals
+            WRCLK => IntDivClk, -- 1-bit input: Write clock
+            WREN => '1', -- 1-bit input: Write enable
+            -- Write Data: 32-bit (each) input: Write input data
+            DI => fifoDataIn, -- 32-bit input: Data input
+            DIP => fifoParIn -- 4-bit input: Parity input
+        );
+                -- End of FIFO18E1_inst instantiation
     
  
     
@@ -328,9 +457,11 @@ begin
     --sADC_DataIn(4)<= datBuff(2); sADC_DataIn(2)<= datBuff(1); sADC_DataIn(0)<= datBuff(0); 
     
     FCLKP1 <= sCLkExtIn;
-    SData <='1';
-    LEDS (1)<='0';
-    LEDS(6)<='0'; LEDS(4) <= '0'; -- <= (others=>'0');
+    SData <='0'; -- not(IntSyncDone); --'1';
+    --LEDS (1)<='0';
+    LEDS(6)<='0'; 
+    LEDS(5) <= IntSyncDone;
+    LEDS(4 downto 1) <= (others=>'0');
     LEDS(0)<= IntBitClkDone;
     
 

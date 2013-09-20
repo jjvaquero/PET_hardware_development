@@ -1,7 +1,7 @@
 Release 14.5 par P.58f (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-MADHATTER::  Mon Sep 09 16:52:05 2013
+MADHATTER::  Fri Sep 20 17:44:27 2013
 
 par -intstyle pa -w module_1_stub.ncd module_1_stub_routed.ncd 
 
@@ -20,35 +20,36 @@ Device speed data version:  "PRODUCTION 1.06 2013-03-26".
 
 Device Utilization Summary:
 
-   Number of BUFGs                           7 out of 32     21%
-   Number of BUFIOs                          1 out of 16      6%
-      Number of LOCed BUFIOs                 1 out of 1     100%
+   Number of BUFGs                           5 out of 32     15%
+   Number of BUFIOs                          2 out of 16     12%
+      Number of LOCed BUFIOs                 2 out of 2     100%
 
    Number of BUFMRCEs                        1 out of 8      12%
-   Number of BUFRs                           1 out of 16      6%
-      Number of LOCed BUFRs                  1 out of 1     100%
+   Number of BUFRs                           2 out of 16     12%
+      Number of LOCed BUFRs                  2 out of 2     100%
 
+   Number of FIFO18E1s                       1 out of 140     1%
    Number of IDELAYCTRLs                     1 out of 4      25%
    Number of IDELAYE2s                       1 out of 200     1%
    Number of External IOBs                   1 out of 200     1%
       Number of LOCed IOBs                   1 out of 1     100%
 
-   Number of External IOB33s                15 out of 200     7%
-      Number of LOCed IOB33s                15 out of 15    100%
+   Number of External IOB33s                21 out of 200    10%
+      Number of LOCed IOB33s                21 out of 21    100%
 
    Number of External IOPADs               130 out of 130   100%
       Number of LOCed IOPADs               127 out of 130    97%
 
-   Number of ISERDESE2s                      5 out of 200     2%
+   Number of ISERDESE2s                     11 out of 200     5%
    Number of PS7s                            1 out of 1     100%
-   Number of Slices                        338 out of 13300   2%
-   Number of Slice Registers               782 out of 106400  1%
-      Number used as Flip Flops            638
-      Number used as Latches               144
+   Number of Slices                        289 out of 13300   2%
+   Number of Slice Registers               641 out of 106400  1%
+      Number used as Flip Flops            569
+      Number used as Latches                72
       Number used as LatchThrus              0
 
-   Number of Slice LUTS                   1053 out of 53200   1%
-   Number of Slice LUT-Flip Flop pairs    1161 out of 53200   2%
+   Number of Slice LUTS                    848 out of 53200   1%
+   Number of Slice LUT-Flip Flop pairs     950 out of 53200   1%
 
 
 Overall effort level (-ol):   Standard 
@@ -56,7 +57,7 @@ Router effort level (-rl):    High
 
 INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx
    Command Line Tools User Guide for information on generating a TSI report.
-Starting initial Timing Analysis.  REAL time: 11 secs 
+Starting initial Timing Analysis.  REAL time: 10 secs 
 WARNING:Par:450 - At least one timing constraint is impossible to meet because component switching limit violations have been detected for a
    constrained component. A timing constraint summary below shows the failing constraints (preceded with an Asterisk (*)). Please use the
    Timing Analyzer (GUI) or TRCE (command line) with the Mapped NCD and PCF files to evaluate the component switching limit violations in
@@ -79,14 +80,14 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-* TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_ | SETUP       |    14.569ns|     5.431ns|       0|           0
-  0" 50 MHz HIGH 50%                        | HOLD        |     0.232ns|            |       0|           0
-                                            | MAXPERIOD   |   -14.736ns|            |       1|       14736
+* TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_ | SETUP       |     3.957ns|     6.043ns|       0|           0
+  0" 100 MHz HIGH 50%                       | HOLD        |     0.227ns|            |       0|           0
+                                            | MAXPERIOD   |    -4.736ns|            |       1|        4736
 ----------------------------------------------------------------------------------------------------------
   TS_clk_fpga_1 = PERIOD TIMEGRP "clk_fpga_ | N/A         |         N/A|         N/A|     N/A|         N/A
-  1" 25 MHz HIGH 50%                        |             |            |            |        |            
+  1" 30.303 MHz HIGH 50%                    |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_axi_interconnect_1_reset_resync_ | SETUP       |         N/A|     0.907ns|     N/A|           0
+  PATH "TS_axi_interconnect_1_reset_resync_ | SETUP       |         N/A|     0.933ns|     N/A|           0
   path" TIG                                 |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
 
@@ -104,27 +105,27 @@ Finished initial Timing Analysis.  REAL time: 11 secs
 Starting Router
 
 
-Phase  1  : 6964 unrouted;      REAL time: 11 secs 
+Phase  1  : 6291 unrouted;      REAL time: 11 secs 
 
-Phase  2  : 4199 unrouted;      REAL time: 12 secs 
+Phase  2  : 3717 unrouted;      REAL time: 12 secs 
 
-Phase  3  : 1427 unrouted;      REAL time: 13 secs 
+Phase  3  : 1195 unrouted;      REAL time: 13 secs 
 
-Phase  4  : 1427 unrouted; (Setup:0, Hold:9287, Component Switching Limit:14736)     REAL time: 15 secs 
+Phase  4  : 1195 unrouted; (Setup:0, Hold:5447, Component Switching Limit:4736)     REAL time: 15 secs 
 
 Updating file: module_1_stub_routed.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:7793, Component Switching Limit:14736)     REAL time: 16 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:4143, Component Switching Limit:4736)     REAL time: 16 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:7793, Component Switching Limit:14736)     REAL time: 16 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:4143, Component Switching Limit:4736)     REAL time: 16 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:7793, Component Switching Limit:14736)     REAL time: 16 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:4143, Component Switching Limit:4736)     REAL time: 16 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:7793, Component Switching Limit:14736)     REAL time: 16 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:4143, Component Switching Limit:4736)     REAL time: 16 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:14736)     REAL time: 17 secs 
-Total REAL time to Router completion: 17 secs 
-Total CPU time to Router completion: 17 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:4736)     REAL time: 16 secs 
+Total REAL time to Router completion: 16 secs 
+Total CPU time to Router completion: 16 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -142,54 +143,40 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           IntDivClk |  Regional Clk|Yes   |   32 |  0.097     |  0.892      |
+|           IntDivClk |  Regional Clk|Yes   |   32 |  0.160     |  0.955      |
 +---------------------+--------------+------+------+------------+-------------+
-|            BitClk_N |        IO Clk|Yes   |    9 |  0.021     |  0.341      |
+|            BitClk_N |        IO Clk|Yes   |   17 |  0.021     |  0.341      |
++---------------------+--------------+------+------+------------+-------------+
+|         IntBitClk35 |        IO Clk|Yes   |    4 |  0.000     |  0.320      |
++---------------------+--------------+------+------+------------+-------------+
+|         IntDivClk35 |  Regional Clk|Yes   |    5 |  0.079     |  0.874      |
 +---------------------+--------------+------+------+------------+-------------+
 |sprocessing_system7_ |              |      |      |            |             |
-|     0_FCLK_CLK0_pin |BUFGCTRL_X0Y31| No   |  175 |  0.272     |  1.913      |
+|     0_FCLK_CLK0_pin |BUFGCTRL_X0Y31| No   |  161 |  0.270     |  1.913      |
 +---------------------+--------------+------+------+------------+-------------+
-|AdcReader1/BitSlipCt |              |      |      |            |             |
-|rlN/currState[2]_PWR |              |      |      |            |             |
-| _17_o_Mux_22_o_BUFG | BUFGCTRL_X0Y0| No   |    9 |  0.007     |  1.896      |
+|AdcFrame1/BitSlipCtr |              |      |      |            |             |
+|lP/currState[2]_PWR_ |              |      |      |            |             |
+|  17_o_Mux_22_o_BUFG | BUFGCTRL_X0Y0| No   |    9 |  0.012     |  1.779      |
 +---------------------+--------------+------+------+------------+-------------+
-|AdcReader2/BitSlipCt |              |      |      |            |             |
-|rlN/currState[2]_PWR |              |      |      |            |             |
-| _17_o_Mux_22_o_BUFG | BUFGCTRL_X0Y3| No   |    9 |  0.006     |  2.058      |
-+---------------------+--------------+------+------+------------+-------------+
-|AdcReader2/BitSlipCt |              |      |      |            |             |
-|rlP/currState[2]_PWR |              |      |      |            |             |
-| _17_o_Mux_22_o_BUFG | BUFGCTRL_X0Y2| No   |    9 |  0.003     |  1.917      |
-+---------------------+--------------+------+------+------------+-------------+
-|AdcReader1/BitSlipCt |              |      |      |            |             |
-|rlP/currState[2]_PWR |              |      |      |            |             |
-| _17_o_Mux_22_o_BUFG | BUFGCTRL_X0Y1| No   |    9 |  0.004     |  1.787      |
+|AdcFrame1/BitSlipCtr |              |      |      |            |             |
+|lN/currState[2]_PWR_ |              |      |      |            |             |
+|  17_o_Mux_22_o_BUFG | BUFGCTRL_X0Y1| No   |    9 |  0.008     |  1.650      |
 +---------------------+--------------+------+------+------------+-------------+
 |         delayRefClk |BUFGCTRL_X0Y30| No   |    1 |  0.000     |  1.740      |
 +---------------------+--------------+------+------+------------+-------------+
-|AdcReader2/BitSlipCt |              |      |      |            |             |
-|    rlN/Mram__n01332 |         Local|      |    1 |  0.000     |  0.473      |
+|AdcFrame1/BitSlipCtr |              |      |      |            |             |
+|     lP/Mram__n01332 |         Local|      |    1 |  0.000     |  0.528      |
 +---------------------+--------------+------+------+------------+-------------+
-|AdcReader1/BitSlipCt |              |      |      |            |             |
-|    rlN/Mram__n01332 |         Local|      |    1 |  0.000     |  0.615      |
+|AdcFrame1/BitSlipCtr |              |      |      |            |             |
+|     lN/Mram__n01333 |         Local|      |    1 |  0.000     |  0.783      |
 +---------------------+--------------+------+------+------------+-------------+
-|AdcReader1/BitSlipCt |              |      |      |            |             |
-|    rlP/Mram__n01332 |         Local|      |    1 |  0.000     |  0.621      |
+| sfifoControlPins[1] |         Local|      |    2 |  0.234     |  1.556      |
 +---------------------+--------------+------+------+------------+-------------+
-|AdcReader2/BitSlipCt |              |      |      |            |             |
-|    rlP/Mram__n01333 |         Local|      |    1 |  0.000     |  0.390      |
+|AdcFrame1/BitSlipCtr |              |      |      |            |             |
+|     lN/Mram__n01332 |         Local|      |    1 |  0.000     |  0.668      |
 +---------------------+--------------+------+------+------------+-------------+
-|AdcReader1/BitSlipCt |              |      |      |            |             |
-|    rlP/Mram__n01333 |         Local|      |    1 |  0.000     |  0.809      |
-+---------------------+--------------+------+------+------------+-------------+
-|AdcReader1/BitSlipCt |              |      |      |            |             |
-|    rlN/Mram__n01333 |         Local|      |    1 |  0.000     |  0.784      |
-+---------------------+--------------+------+------+------------+-------------+
-|AdcReader2/BitSlipCt |              |      |      |            |             |
-|    rlP/Mram__n01332 |         Local|      |    1 |  0.000     |  0.614      |
-+---------------------+--------------+------+------+------------+-------------+
-|AdcReader2/BitSlipCt |              |      |      |            |             |
-|    rlN/Mram__n01333 |         Local|      |    1 |  0.000     |  0.784      |
+|AdcFrame1/BitSlipCtr |              |      |      |            |             |
+|     lP/Mram__n01333 |         Local|      |    1 |  0.000     |  0.531      |
 +---------------------+--------------+------+------+------------+-------------+
 | AdcClk/IntBitClkOut |         Local|      |    1 |  0.000     |  0.656      |
 +---------------------+--------------+------+------+------------+-------------+
@@ -202,7 +189,7 @@ the minimum and maximum path delays which includes logic delays.
 * The fanout is the number of component pins not the individual BEL loads,
 for example SLICE loads not FF loads.
 
-Timing Score: 14736 (Setup: 0, Hold: 0, Component Switching Limit: 14736)
+Timing Score: 4736 (Setup: 0, Hold: 0, Component Switching Limit: 4736)
 
 WARNING:Par:468 - Your design did not meet timing.  The following are some suggestions to assist you to meet timing in
    your design.
@@ -232,14 +219,14 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-* TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_ | SETUP       |    13.724ns|     6.276ns|       0|           0
-  0" 50 MHz HIGH 50%                        | HOLD        |     0.027ns|            |       0|           0
-                                            | MAXPERIOD   |   -14.736ns|            |       1|       14736
+* TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_ | SETUP       |     2.915ns|     7.085ns|       0|           0
+  0" 100 MHz HIGH 50%                       | HOLD        |     0.009ns|            |       0|           0
+                                            | MAXPERIOD   |    -4.736ns|            |       1|        4736
 ----------------------------------------------------------------------------------------------------------
   TS_clk_fpga_1 = PERIOD TIMEGRP "clk_fpga_ | N/A         |         N/A|         N/A|     N/A|         N/A
-  1" 25 MHz HIGH 50%                        |             |            |            |        |            
+  1" 30.303 MHz HIGH 50%                    |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_axi_interconnect_1_reset_resync_ | SETUP       |         N/A|     1.096ns|     N/A|           0
+  PATH "TS_axi_interconnect_1_reset_resync_ | SETUP       |         N/A|     1.081ns|     N/A|           0
   path" TIG                                 |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
 
@@ -256,10 +243,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 18 secs 
-Total CPU time to PAR completion: 18 secs 
+Total REAL time to PAR completion: 17 secs 
+Total CPU time to PAR completion: 17 secs 
 
-Peak Memory Usage:  668 MB
+Peak Memory Usage:  667 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

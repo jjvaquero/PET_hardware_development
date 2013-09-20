@@ -104,10 +104,10 @@ begin
       C_GPIO2_WIDTH => 32,
       C_ALL_INPUTS => 0,
       C_ALL_INPUTS_2 => 1,
-      C_INTERRUPT_PRESENT => 1,
+      C_INTERRUPT_PRESENT => 0,
       C_DOUT_DEFAULT => X"00000000",
       C_TRI_DEFAULT => X"ffffffff",
-      C_IS_DUAL => 1,
+      C_IS_DUAL => 0,
       C_DOUT_DEFAULT_2 => X"00000000",
       C_TRI_DEFAULT_2 => X"ffffffff"
     )

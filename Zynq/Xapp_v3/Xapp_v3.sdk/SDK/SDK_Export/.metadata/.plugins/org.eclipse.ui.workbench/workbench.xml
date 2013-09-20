@@ -34,26 +34,13 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.sdk/SDK/SDK_Export/Test1/src/main.c" title="main.c" tooltip="Test1/src/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test1/src/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4638" selectionTopPixel="4071"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="xparameters.h" partName="xparameters.h" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.sdk/SDK/SDK_Export/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h" title="xparameters.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="25" selectionOffset="767" selectionTopPixel="0"/>
-</editor>
-<editor id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" name="system.xml" partName="system.xml" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.sdk/SDK/SDK_Export/module_1_hw_platform/system.xml" title="system.xml" tooltip="module_1_hw_platform/system.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/module_1_hw_platform/system.xml"/>
-</editor>
-<editor id="com.xilinx.sdk.sw.MSSEditor" name="system.mss" partName="system.mss" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.sdk/SDK/SDK_Export/standalone_bsp_0/system.mss" title="system.mss" tooltip="standalone_bsp_0/system.mss" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/standalone_bsp_0/system.mss"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4097" selectionTopPixel="2250"/>
 </editor>
 </editors>
 <views>
@@ -73,16 +60,15 @@
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.cdt.ui.cview.groupincludes="false" org.eclipse.cdt.ui.cview.groupmacros="false" org.eclipse.cdt.ui.editor.CUChildren="true" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
-<view id="com.xilinx.sdk.targetmanager.ui.XmdConsoleView" partName="XMD Console"/>
+<view id="com.xilinx.sdk.targetmanager.ui.XmdConsoleView" partName="XMD Console">
+<viewState/>
+</view>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
 <viewState/>
 </view>
 <view id="org.eclipse.cdt.make.ui.views.MakeView" partName="Make Target"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Errors (1 item)"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -95,7 +81,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.eclipse.cdt.ui.CPerspective">
+<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="org.eclipse.cdt.ui.CPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -153,6 +139,7 @@
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.PropertySheet"/>
 <view id="org.eclipse.tm.terminal.view.TerminalView"/>
+<view id="com.xilinx.sdk.targetmanager.ui.XmdConsoleView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.cdt.make.ui.views.MakeView"/>
 <fastViewBars/>
@@ -185,12 +172,14 @@
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
 <page content="org.eclipse.tm.terminal.view.TerminalView" label="Terminal"/>
+<page content="com.xilinx.sdk.targetmanager.ui.XmdConsoleView" label="XMD Console"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
+<part id="5"/>
 </presentation>
 </folder>
 </info>
@@ -315,9 +304,6 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Test1/src/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" path="/standalone_bsp_0/system.mss"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" path="/standalone_bsp_0/system.mss"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/common_v1_00_a/src/xparameters.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/common_v1_00_a/src/xparameters.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" path="/standalone_bsp_0/system.mss"/>
@@ -325,86 +311,30 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" path="/module_1_hw_platform/system.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" path="/standalone_bsp_0/system.mss"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" path="/standalone_bsp_0/system.mss"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" path="/module_1_hw_platform/system.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/common_v1_00_a/src/xparameters.h"/>
 </editors>
-<item historyLabel="xparameters.h" index="2">
-<position info="not_deleted" x="1023" y="25"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="488" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1049" y="0"/>
-</item>
-<item historyLabel="xparameters.h" index="2">
-<position info="not_deleted" x="8333" y="0"/>
-</item>
-<item historyLabel="system.mss" index="1"/>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="484" y="0"/>
-</item>
-<item historyLabel="xparameters.h" index="2">
-<position info="not_deleted" x="9088" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="484" y="0"/>
-</item>
-<item historyLabel="system.mss" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="system.mss" index="3"/>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="436" y="0"/>
-</item>
-<item historyLabel="xparameters.h" index="4">
-<position info="not_deleted" x="1050" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="7806" y="0"/>
-</item>
-<item historyLabel="xparameters.h" index="5">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="7806" y="0"/>
-</item>
-<item historyLabel="xparameters.h" index="4">
-<position info="not_deleted" x="1050" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="7806" y="0"/>
-</item>
-<item historyLabel="xparameters.h" index="5">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="7806" y="0"/>
-</item>
-<item historyLabel="xparameters.h" index="5">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="9508" y="0"/>
-</item>
-<item historyLabel="xparameters.h" index="5">
-<position info="not_deleted" x="6399" y="21"/>
-</item>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="859" y="0"/>
 </item>
-<item historyLabel="xparameters.h" index="4">
+<item historyLabel="xparameters.h" index="2">
 <position info="not_deleted" x="9125" y="25"/>
 </item>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="478" y="0"/>
 </item>
-<item historyLabel="xparameters.h" index="4">
+<item historyLabel="xparameters.h" index="2">
 <position info="not_deleted" x="1023" y="25"/>
 </item>
-<item historyLabel="system.mss" index="3"/>
+<item historyLabel="system.mss" index="1"/>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="478" y="0"/>
 </item>
-<item historyLabel="xparameters.h" index="6">
+<item historyLabel="xparameters.h" index="3">
 <position info="not_deleted" x="1023" y="25"/>
 </item>
 <item historyLabel="main.c" index="0">
@@ -413,10 +343,10 @@
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="7883" y="0"/>
 </item>
-<item historyLabel="xparameters.h" index="7">
+<item historyLabel="xparameters.h" index="4">
 <position info="not_deleted" x="5060" y="21"/>
 </item>
-<item historyLabel="system.mss" index="8"/>
+<item historyLabel="system.mss" index="5"/>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="7883" y="0"/>
 </item>
@@ -432,24 +362,24 @@
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="xparameters.h" index="9">
+<item historyLabel="xparameters.h" index="6">
 <position info="not_deleted" x="8816" y="25"/>
 </item>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="422" y="25"/>
 </item>
-<item historyLabel="xparameters.h" index="9">
+<item historyLabel="xparameters.h" index="6">
 <position info="not_deleted" x="767" y="25"/>
 </item>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="422" y="25"/>
 </item>
-<item historyLabel="system.xml" index="10"/>
-<item historyLabel="system.mss" index="11"/>
+<item historyLabel="system.xml" index="7"/>
+<item historyLabel="system.mss" index="8"/>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="11536" y="0"/>
 </item>
-<item historyLabel="xparameters.h" index="12">
+<item historyLabel="xparameters.h" index="9">
 <position info="not_deleted" x="767" y="25"/>
 </item>
 <item historyLabel="main.c" index="0">
@@ -461,8 +391,70 @@
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="6400" y="0"/>
 </item>
-<item active="true" historyLabel="main.c" index="0">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="6815" y="48"/>
+</item>
+<item historyLabel="xparameters.h" index="10">
+<position info="not_deleted" x="767" y="25"/>
+</item>
+<item historyLabel="xparameters.h" index="10">
+<position info="not_deleted" x="8816" y="25"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="863" y="0"/>
+</item>
+<item historyLabel="xparameters.h" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="system.mss" index="12"/>
+<item historyLabel="xparameters.h" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="system.xml" index="13"/>
+<item historyLabel="xparameters.h" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="863" y="0"/>
+</item>
+<item historyLabel="xparameters.h" index="11">
+<position info="not_deleted" x="8816" y="25"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="434" y="0"/>
+</item>
+<item historyLabel="xparameters.h" index="14">
+<position info="not_deleted" x="876" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="931" y="0"/>
+</item>
+<item historyLabel="xparameters.h" index="14">
+<position info="not_deleted" x="9201" y="25"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="10990" y="0"/>
+</item>
+<item historyLabel="xparameters.h" index="15">
+<position info="not_deleted" x="6399" y="21"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="10990" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4415" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4170" y="29"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4785" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="6709" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="0">
+<position info="not_deleted" x="7601" y="46"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -481,17 +473,17 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xparameters.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/common_v1_00_a/src/xparameters.h">
+<persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/common_v1_00_a/src/xparameters.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xparameters.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h">
+<persistable path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" name="system.mss" tooltip="standalone_bsp_0/system.mss">
 <persistable path="/standalone_bsp_0/system.mss"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" name="system.xml" tooltip="module_1_hw_platform/system.xml">
 <persistable path="/module_1_hw_platform/system.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xparameters.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h">
-<persistable path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xparameters.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/libsrc/common_v1_00_a/src/xparameters.h">
-<persistable path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/common_v1_00_a/src/xparameters.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xgpio_l.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/include/xgpio_l.h">
 <persistable path="/standalone_bsp_0/ps7_cortexa9_0/include/xgpio_l.h"/>

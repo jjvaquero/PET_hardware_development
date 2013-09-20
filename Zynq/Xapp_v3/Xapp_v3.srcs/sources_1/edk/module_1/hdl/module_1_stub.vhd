@@ -31,11 +31,12 @@ entity module_1_stub is
     processing_system7_0_DDR_VRN : inout std_logic;
     processing_system7_0_DDR_VRP : inout std_logic;
     LED_DutyCycle : out std_logic_vector(31 downto 0);
-    processing_system7_0_FCLK_CLK0_pin : out std_logic;
-    ADC_DataIn : in std_logic_vector(31 downto 0);
     processing_system7_0_FCLK_RESET0_N_pin : out std_logic;
     processing_system7_0_FCLK_CLK1_pin : out std_logic;
-    processing_system7_0_FCLK_RESET1_N_pin : out std_logic
+    processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
+    processing_system7_0_FCLK_CLK0_pin : out std_logic;
+    fifoControlPins : out std_logic_vector(1 downto 0);
+    fifoDataOut : in std_logic_vector(31 downto 0)
   );
 end module_1_stub;
 
@@ -65,11 +66,12 @@ architecture STRUCTURE of module_1_stub is
       processing_system7_0_DDR_VRN : inout std_logic;
       processing_system7_0_DDR_VRP : inout std_logic;
       LED_DutyCycle : out std_logic_vector(31 downto 0);
-      processing_system7_0_FCLK_CLK0_pin : out std_logic;
-      ADC_DataIn : in std_logic_vector(31 downto 0);
       processing_system7_0_FCLK_RESET0_N_pin : out std_logic;
       processing_system7_0_FCLK_CLK1_pin : out std_logic;
-      processing_system7_0_FCLK_RESET1_N_pin : out std_logic
+      processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
+      processing_system7_0_FCLK_CLK0_pin : out std_logic;
+      fifoControlPins : out std_logic_vector(1 downto 0);
+      fifoDataOut : in std_logic_vector(31 downto 0)
     );
   end component;
 
@@ -102,11 +104,12 @@ begin
       processing_system7_0_DDR_VRN => processing_system7_0_DDR_VRN,
       processing_system7_0_DDR_VRP => processing_system7_0_DDR_VRP,
       LED_DutyCycle => LED_DutyCycle,
-      processing_system7_0_FCLK_CLK0_pin => processing_system7_0_FCLK_CLK0_pin,
-      ADC_DataIn => ADC_DataIn,
       processing_system7_0_FCLK_RESET0_N_pin => processing_system7_0_FCLK_RESET0_N_pin,
       processing_system7_0_FCLK_CLK1_pin => processing_system7_0_FCLK_CLK1_pin,
-      processing_system7_0_FCLK_RESET1_N_pin => processing_system7_0_FCLK_RESET1_N_pin
+      processing_system7_0_FCLK_RESET1_N_pin => processing_system7_0_FCLK_RESET1_N_pin,
+      processing_system7_0_FCLK_CLK0_pin => processing_system7_0_FCLK_CLK0_pin,
+      fifoControlPins => fifoControlPins,
+      fifoDataOut => fifoDataOut
     );
 
 end architecture STRUCTURE;

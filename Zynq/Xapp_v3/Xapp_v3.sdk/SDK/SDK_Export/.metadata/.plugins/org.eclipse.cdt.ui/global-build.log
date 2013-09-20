@@ -1,11 +1,11 @@
-17:26:49 **** Clean-only build of configuration Debug for project Test1 ****
+17:31:01 **** Clean-only build of configuration Debug for project Test1 ****
 make clean 
 rm -rf  ./src/main.o  ./src/main.d  Test1.elf.size  Test1.elf
 ' '
-17:26:49 **** Clean-only build of project standalone_bsp_0 ****
+17:31:01 **** Clean-only build of project standalone_bsp_0 ****
 make -k clean 
 rm -rf ps7_cortexa9_0
-17:26:50 **** Build of project standalone_bsp_0 ****
+17:31:02 **** Build of project standalone_bsp_0 ****
 make -k all 
 libgen -hw ../module_1_hw_platform/system.xml\
 	       \
@@ -49,7 +49,7 @@ arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
 "Compiling cpu_cortexa9"
 Running execs_generate.
 'Finished building libraries'
-17:27:01 **** Build of configuration Debug for project Test1 ****
+17:31:12 **** Build of configuration Debug for project Test1 ****
 make all 
 'Building file: ../src/main.c'
 'Invoking: ARM gcc compiler'
@@ -64,508 +64,49 @@ arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_co
 'Invoking: ARM Print Size'
 arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  29124	   1888	  30228	  61240	   ef38	Test1.elf
+  29504	   1904	  37844	  69252	  10e84	Test1.elf
 'Finished building: Test1.elf.size'
 ' '
-17:27:33 **** Incremental Build of configuration Debug for project Test1 ****
+17:32:58 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.
-17:32:04 **** Auto Build of project standalone_bsp_0 ****
+17:40:07 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+17:40:54 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+17:41:05 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+17:41:31 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+17:46:44 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+17:48:54 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'
-17:32:38 **** Incremental Build of configuration Debug for project Test1 ****
+17:49:16 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.
-17:33:00 **** Incremental Build of configuration Debug for project Test1 ****
+17:49:43 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.
-17:33:33 **** Incremental Build of configuration Debug for project Test1 ****
+17:51:41 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.
-17:37:45 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:55:53 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:56:10 **** Incremental Build of configuration Debug for project Test1 ****
+17:53:00 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.
-17:59:48 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-18:00:49 **** Incremental Build of configuration Debug for project Test1 ****
+17:53:14 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.
-18:05:20 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-18:06:22 **** Incremental Build of configuration Debug for project Test1 ****
+17:53:47 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.
-18:17:26 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-18:22:40 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-18:23:34 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-18:25:25 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-18:30:05 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-18:30:34 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-18:32:01 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-18:32:28 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-18:36:41 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-18:37:09 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-09:44:07 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-libgen -hw ../module_1_hw_platform/system.xml\
-	       \
-	       -pe ps7_cortexa9_0 \
-	       -log libgen.log \
-	       system.mss
-libgen
-Xilinx EDK 14.5 Build EDK_P.58f
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: libgen -hw ../module_1_hw_platform/system.xml -pe ps7_cortexa9_0
--log libgen.log system.mss 
-
-
-Staging source files.
-Running DRCs.
-Running generate.
-Running post_generate.
-Running include - 'make -s include "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-
-Running libs - 'make -s libs "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-"Compiling common"
-arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
-"Compiling xadc"
-"Compiling standalone"
-"Compiling gpio"
-"Compiling devcfg"
-"Compiling dmaps"
-"Compiling emacps"
-"Compiling gpiops"
-"Compiling qspips"
-"Compiling scugic"
-"Compiling scutimer"
-"Compiling scuwdt"
-"Compiling uartps"
-"Compiling usbps"
-"Compiling cpu_cortexa9"
-Running execs_generate.
-'Finished building libraries'
-09:44:40 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-09:50:07 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-libgen -hw ../module_1_hw_platform/system.xml\
-	       \
-	       -pe ps7_cortexa9_0 \
-	       -log libgen.log \
-	       system.mss
-libgen
-Xilinx EDK 14.5 Build EDK_P.58f
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: libgen -hw ../module_1_hw_platform/system.xml -pe ps7_cortexa9_0
--log libgen.log system.mss 
-
-
-Staging source files.
-Running DRCs.
-Running generate.
-Running post_generate.
-Running include - 'make -s include "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-
-Running libs - 'make -s libs "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-"Compiling common"
-arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
-"Compiling xadc"
-"Compiling standalone"
-"Compiling gpio"
-"Compiling devcfg"
-"Compiling dmaps"
-"Compiling emacps"
-"Compiling gpiops"
-"Compiling qspips"
-"Compiling scugic"
-"Compiling scutimer"
-"Compiling scuwdt"
-"Compiling uartps"
-"Compiling usbps"
-"Compiling cpu_cortexa9"
-Running execs_generate.
-'Finished building libraries'
-09:50:26 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-10:25:30 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-10:27:03 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-10:46:55 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-10:47:23 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-10:51:13 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-10:51:33 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-11:02:08 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'GpioIsr':
-../src/main.c:227:45: warning: integer overflow in expression [-Woverflow]
-../src/main.c:227:3: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:228:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:228:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:229:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:229:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:230:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:230:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:231:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:231:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:232:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:232:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:233:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:233:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:234:5: error: expected ';' before 'read_value'
-make: *** [src/main.o] Error 1
-11:02:21 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'GpioIsr':
-../src/main.c:227:45: warning: integer overflow in expression [-Woverflow]
-../src/main.c:227:3: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:228:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:228:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:229:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:229:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:230:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:230:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:231:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:231:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:232:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:232:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:233:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:233:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:234:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:234:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-'Finished building: ../src/main.c'
-' '
-'Building target: Test1.elf'
-'Invoking: ARM gcc linker'
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: Test1.elf'
-' '
-'Invoking: ARM Print Size'
-arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29336	   1888	  30228	  61452	   f00c	Test1.elf
-'Finished building: Test1.elf.size'
-' '
-11:02:46 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-11:03:12 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'GpioIsr':
-../src/main.c:227:45: warning: integer overflow in expression [-Woverflow]
-../src/main.c:227:3: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:228:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:228:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:229:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:229:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:230:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:230:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:231:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:231:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:232:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:232:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:233:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:233:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:234:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:234:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-'Finished building: ../src/main.c'
-' '
-'Building target: Test1.elf'
-'Invoking: ARM gcc linker'
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: Test1.elf'
-' '
-'Invoking: ARM Print Size'
-arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29308	   1888	  30228	  61424	   eff0	Test1.elf
-'Finished building: Test1.elf.size'
-' '
-11:03:18 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-11:03:31 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-11:05:47 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:169:36: warning: integer overflow in expression [-Woverflow]
-../src/main.c:169:3: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:170:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:170:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:171:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:171:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:172:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:172:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:173:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:173:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:174:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:174:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:175:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:175:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:176:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:176:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c: In function 'GpioIsr':
-../src/main.c:237:45: warning: integer overflow in expression [-Woverflow]
-../src/main.c:237:3: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:238:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:238:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:239:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:239:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:240:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:240:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:241:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:241:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:242:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:242:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:243:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:243:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:244:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:244:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-'Finished building: ../src/main.c'
-' '
-'Building target: Test1.elf'
-'Invoking: ARM gcc linker'
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: Test1.elf'
-' '
-'Invoking: ARM Print Size'
-arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29508	   1888	  30228	  61624	   f0b8	Test1.elf
-'Finished building: Test1.elf.size'
-' '
-11:05:54 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-11:06:27 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:169:36: warning: integer overflow in expression [-Woverflow]
-../src/main.c:169:3: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:170:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:170:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:171:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:171:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:172:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:172:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:173:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:173:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:174:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:174:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:175:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:175:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:176:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:176:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c: In function 'GpioIsr':
-../src/main.c:237:45: warning: integer overflow in expression [-Woverflow]
-../src/main.c:237:3: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:238:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:238:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:239:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:239:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:240:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:240:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:241:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:241:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:242:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:242:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:243:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:243:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:244:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:244:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-'Finished building: ../src/main.c'
-' '
-'Building target: Test1.elf'
-'Invoking: ARM gcc linker'
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: Test1.elf'
-' '
-'Invoking: ARM Print Size'
-arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29508	   1888	  30228	  61624	   f0b8	Test1.elf
-'Finished building: Test1.elf.size'
-' '
-11:06:35 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-11:09:28 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'GpioIsr':
-../src/main.c:237:45: warning: integer overflow in expression [-Woverflow]
-../src/main.c:237:3: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:238:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:238:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:239:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:239:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:240:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:240:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:241:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:241:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:242:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:242:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:243:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:243:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:244:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:244:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-'Finished building: ../src/main.c'
-' '
-'Building target: Test1.elf'
-'Invoking: ARM gcc linker'
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: Test1.elf'
-' '
-'Invoking: ARM Print Size'
-arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29572	   1888	  30228	  61688	   f0f8	Test1.elf
-'Finished building: Test1.elf.size'
-' '
-11:09:48 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-11:10:36 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'GpioIsr':
-../src/main.c:237:45: warning: integer overflow in expression [-Woverflow]
-../src/main.c:237:3: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:238:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:238:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:239:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:239:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:240:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:240:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:241:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:241:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:242:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:242:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:243:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:243:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:244:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-../src/main.c:244:5: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
-'Finished building: ../src/main.c'
-' '
-'Building target: Test1.elf'
-'Invoking: ARM gcc linker'
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: Test1.elf'
-' '
-'Invoking: ARM Print Size'
-arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29572	   1888	  30228	  61688	   f0f8	Test1.elf
-'Finished building: Test1.elf.size'
-' '
-11:10:43 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-12:34:58 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-12:42:40 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-14:55:16 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-15:30:25 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:26:21 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:33:52 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:34:34 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:46:47 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:47:03 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-16:56:25 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:57:03 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:20:07 **** Auto Build of configuration Debug for project Test1 ****
+17:54:20 **** Auto Build of configuration Debug for project Test1 ****
 make all 
 'Building file: ../src/main.c'
 'Invoking: ARM gcc compiler'
@@ -580,12 +121,9 @@ arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_co
 'Invoking: ARM Print Size'
 arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  29124	   1888	  30228	  61240	   ef38	Test1.elf
+  29372	   1904	  37844	  69120	  10e00	Test1.elf
 'Finished building: Test1.elf.size'
 ' '
-17:20:44 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:21:13 **** Incremental Build of configuration Debug for project Test1 ****
+17:55:13 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.

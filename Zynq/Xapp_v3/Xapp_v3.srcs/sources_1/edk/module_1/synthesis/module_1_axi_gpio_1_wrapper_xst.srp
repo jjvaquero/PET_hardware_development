@@ -1,6 +1,6 @@
 Release 14.5 - xst P.58f (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.srcs\sources_1\edk\module_1\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.srcs\sources_1\edk\module_1\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "module_1_axi_gpio_1_wrapper_xst.prj"
-Verilog Include Directory          : {"C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.srcs\sources_1\edk\module_1\pcores\" "C:\Xilinx\14.5\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.5\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.srcs\sources_1\edk\module_1\pcores\" "C:\Xilinx\14.5\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.5\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc7z020clg484-1
@@ -614,7 +614,7 @@ Parsing architecture <IMP> of entity <gpio_core>.
 Parsing VHDL file "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" into library axi_gpio_v1_01_b
 Parsing entity <axi_gpio>.
 Parsing architecture <imp> of entity <axi_gpio>.
-Parsing VHDL file "C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.srcs\sources_1\edk\module_1\hdl\module_1_axi_gpio_1_wrapper.vhd" into library work
+Parsing VHDL file "C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.srcs\sources_1\edk\module_1\hdl\module_1_axi_gpio_1_wrapper.vhd" into library work
 Parsing entity <module_1_axi_gpio_1_wrapper>.
 Parsing architecture <STRUCTURE> of entity <module_1_axi_gpio_1_wrapper>.
 
@@ -640,49 +640,10 @@ Elaborating entity <pselect_f> (architecture <imp>) with generics from library <
 Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
 
 Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
 INFO:HDLCompiler:679 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd" Line 417. Case statement is complete. others clause is never selected
 
-Elaborating entity <interrupt_control> (architecture <implementation>) with generics from library <interrupt_control_v2_01_a>.
-WARNING:HDLCompiler:1127 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/interrupt_control_v2_01_a/hdl/vhdl/interrupt_control.vhd" Line 1086: Assignment to ipif_pri_encode_present ignored, since the identifier is never used
-
 Elaborating entity <GPIO_Core> (architecture <IMP>) with generics from library <axi_gpio_v1_01_b>.
-INFO:HDLCompiler:679 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/gpio_core.vhd" Line 339. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/gpio_core.vhd" Line 554. Case statement is complete. others clause is never selected
 WARNING:HDLCompiler:634 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" Line 504: Net <Bus2IP1_Data_i[2]> does not have a driver.
 
 =========================================================================
@@ -690,7 +651,7 @@ WARNING:HDLCompiler:634 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pco
 =========================================================================
 
 Synthesizing Unit <module_1_axi_gpio_1_wrapper>.
-    Related source file is "C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\XApp_v2\XApp_v2.srcs\sources_1\edk\module_1\hdl\module_1_axi_gpio_1_wrapper.vhd".
+    Related source file is "C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.srcs\sources_1\edk\module_1\hdl\module_1_axi_gpio_1_wrapper.vhd".
     Summary:
 	no macro.
 Unit <module_1_axi_gpio_1_wrapper> synthesized.
@@ -706,12 +667,12 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
         C_S_AXI_DATA_WIDTH = 32
         C_GPIO_WIDTH = 2
         C_GPIO2_WIDTH = 32
-        C_ALL_INPUTS = 1
-        C_ALL_INPUTS_2 = 0
-        C_INTERRUPT_PRESENT = 1
+        C_ALL_INPUTS = 0
+        C_ALL_INPUTS_2 = 1
+        C_INTERRUPT_PRESENT = 0
         C_DOUT_DEFAULT = "00000000000000000000000000000000"
         C_TRI_DEFAULT = "11111111111111111111111111111111"
-        C_IS_DUAL = 0
+        C_IS_DUAL = 1
         C_DOUT_DEFAULT_2 = "00000000000000000000000000000000"
         C_TRI_DEFAULT_2 = "11111111111111111111111111111111"
 WARNING:Xst:37 - Detected unknown constraint/property "IP_GROUP". This constraint/property is not supported by the current software release and will be ignored.
@@ -720,21 +681,17 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
     Set property "MAX_FANOUT = 10000" for signal <S_AXI_ARESETN>.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
-INFO:Xst:3210 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" line 712: Output port <Intr2Bus_Retry> of the instance <INTR_CTRLR_GEN.INTERRUPT_CONTROL_I> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" line 712: Output port <Intr2Bus_ToutSup> of the instance <INTR_CTRLR_GEN.INTERRUPT_CONTROL_I> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" line 554: Output port <Bus2IP_RdCE> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" line 554: Output port <Bus2IP_WrCE> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" line 783: Output port <GPIO_intr> of the instance <gpio_core_1> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" line 783: Output port <GPIO2_intr> of the instance <gpio_core_1> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <Bus2IP1_Data_i<2:31>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 1-bit register for signal <ip2bus_rdack_i_D1>.
     Found 32-bit register for signal <ip2bus_data_i_D1>.
     Found 1-bit register for signal <bus2ip_reset>.
-    Found 1-bit register for signal <ip2Bus_RdAck_intr_reg_hole>.
-    Found 1-bit register for signal <ip2Bus_RdAck_intr_reg_hole_d1>.
-    Found 1-bit register for signal <ip2Bus_WrAck_intr_reg_hole>.
-    Found 1-bit register for signal <ip2Bus_WrAck_intr_reg_hole_d1>.
-    Found 1-bit register for signal <IP2INTC_Irpt>.
     Found 1-bit register for signal <ip2bus_wrack_i_D1>.
     Summary:
-	inferred  40 D-type flip-flop(s).
+	inferred  35 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
 Unit <axi_gpio> synthesized.
 
@@ -745,8 +702,8 @@ Synthesizing Unit <axi_lite_ipif>.
         C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
         C_USE_WSTRB = 0
         C_DPHASE_TIMEOUT = 8
-        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000000000000000000000000000000000000","0000000000000000000000000000000000000000000000000000000000001111","0000000000000000000000000000000000000000000000000000000100000000","0000000000000000000000000000000000000000000000000000000111111111")
-        C_ARD_NUM_CE_ARRAY = (16,4)
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000000000000000000000000000000000000","0000000000000000000000000000000000000000000000000000000000001111")
+        C_ARD_NUM_CE_ARRAY = (4)
         C_FAMILY = "zynq"
     Summary:
 	no macro.
@@ -754,8 +711,8 @@ Unit <axi_lite_ipif> synthesized.
 
 Synthesizing Unit <slave_attachment>.
     Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd".
-        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000000000000000000000000000000000000","0000000000000000000000000000000000000000000000000000000000001111","0000000000000000000000000000000000000000000000000000000100000000","0000000000000000000000000000000000000000000000000000000111111111")
-        C_ARD_NUM_CE_ARRAY = (16,4)
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000000000000000000000000000000000000","0000000000000000000000000000000000000000000000000000000000001111")
+        C_ARD_NUM_CE_ARRAY = (4)
         C_IPIF_ABUS_WIDTH = 9
         C_IPIF_DBUS_WIDTH = 32
         C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
@@ -798,44 +755,27 @@ Synthesizing Unit <address_decoder>.
     Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd".
         C_BUS_AWIDTH = 9
         C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
-        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000000000000000000000000000000000000","0000000000000000000000000000000000000000000000000000000000001111","0000000000000000000000000000000000000000000000000000000100000000","0000000000000000000000000000000000000000000000000000000111111111")
-        C_ARD_NUM_CE_ARRAY = (16,4)
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000000000000000000000000000000000000","0000000000000000000000000000000000000000000000000000000000001111")
+        C_ARD_NUM_CE_ARRAY = (4)
         C_FAMILY = "nofamily"
+WARNING:Xst:647 - Input <Address_In_Erly<0:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Bus_RNW> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit register for signal <cs_out_i<1>>.
     Found 1-bit register for signal <Bus_RNW_reg>.
     Found 1-bit register for signal <ce_out_i<0>>.
     Found 1-bit register for signal <ce_out_i<1>>.
     Found 1-bit register for signal <ce_out_i<2>>.
     Found 1-bit register for signal <ce_out_i<3>>.
-    Found 1-bit register for signal <ce_out_i<4>>.
-    Found 1-bit register for signal <ce_out_i<5>>.
-    Found 1-bit register for signal <ce_out_i<6>>.
-    Found 1-bit register for signal <ce_out_i<7>>.
-    Found 1-bit register for signal <ce_out_i<8>>.
-    Found 1-bit register for signal <ce_out_i<9>>.
-    Found 1-bit register for signal <ce_out_i<10>>.
-    Found 1-bit register for signal <ce_out_i<11>>.
-    Found 1-bit register for signal <ce_out_i<12>>.
-    Found 1-bit register for signal <ce_out_i<13>>.
-    Found 1-bit register for signal <ce_out_i<14>>.
-    Found 1-bit register for signal <ce_out_i<15>>.
-    Found 1-bit register for signal <ce_out_i<16>>.
-    Found 1-bit register for signal <ce_out_i<17>>.
-    Found 1-bit register for signal <ce_out_i<18>>.
-    Found 1-bit register for signal <ce_out_i<19>>.
-    Found 1-bit register for signal <cs_out_i<0>>.
+    Found 1-bit register for signal <cs_out_i>.
     Summary:
-	inferred  23 D-type flip-flop(s).
+	inferred   6 D-type flip-flop(s).
 Unit <address_decoder> synthesized.
 
 Synthesizing Unit <pselect_f_1>.
     Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 5
-        C_AW = 9
-        C_BAR = "000000000"
+        C_AB = 2
+        C_AW = 2
+        C_BAR = "00"
         C_FAMILY = "nofamily"
-WARNING:Xst:647 - Input <A<5:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <pselect_f_1> synthesized.
@@ -844,7 +784,7 @@ Synthesizing Unit <pselect_f_2>.
     Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
         C_AB = 2
         C_AW = 2
-        C_BAR = "00"
+        C_BAR = "01"
         C_FAMILY = "nofamily"
     Summary:
 	inferred   1 Multiplexer(s).
@@ -854,7 +794,7 @@ Synthesizing Unit <pselect_f_3>.
     Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
         C_AB = 2
         C_AW = 2
-        C_BAR = "01"
+        C_BAR = "10"
         C_FAMILY = "nofamily"
     Summary:
 	inferred   1 Multiplexer(s).
@@ -864,224 +804,11 @@ Synthesizing Unit <pselect_f_4>.
     Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
         C_AB = 2
         C_AW = 2
-        C_BAR = "10"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_4> synthesized.
-
-Synthesizing Unit <pselect_f_5>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 2
-        C_AW = 2
         C_BAR = "11"
         C_FAMILY = "nofamily"
     Summary:
 	inferred   1 Multiplexer(s).
-Unit <pselect_f_5> synthesized.
-
-Synthesizing Unit <pselect_f_6>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 1
-        C_AW = 9
-        C_BAR = "100000000"
-        C_FAMILY = "nofamily"
-WARNING:Xst:647 - Input <A<1:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_6> synthesized.
-
-Synthesizing Unit <pselect_f_7>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "0000"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_7> synthesized.
-
-Synthesizing Unit <pselect_f_8>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "0001"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_8> synthesized.
-
-Synthesizing Unit <pselect_f_9>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "0010"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_9> synthesized.
-
-Synthesizing Unit <pselect_f_10>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "0011"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_10> synthesized.
-
-Synthesizing Unit <pselect_f_11>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "0100"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_11> synthesized.
-
-Synthesizing Unit <pselect_f_12>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "0101"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_12> synthesized.
-
-Synthesizing Unit <pselect_f_13>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "0110"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_13> synthesized.
-
-Synthesizing Unit <pselect_f_14>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "0111"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_14> synthesized.
-
-Synthesizing Unit <pselect_f_15>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "1000"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_15> synthesized.
-
-Synthesizing Unit <pselect_f_16>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "1001"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_16> synthesized.
-
-Synthesizing Unit <pselect_f_17>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "1010"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_17> synthesized.
-
-Synthesizing Unit <pselect_f_18>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "1011"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_18> synthesized.
-
-Synthesizing Unit <pselect_f_19>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "1100"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_19> synthesized.
-
-Synthesizing Unit <pselect_f_20>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "1101"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_20> synthesized.
-
-Synthesizing Unit <pselect_f_21>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "1110"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_21> synthesized.
-
-Synthesizing Unit <pselect_f_22>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 4
-        C_AW = 4
-        C_BAR = "1111"
-        C_FAMILY = "nofamily"
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_22> synthesized.
-
-Synthesizing Unit <interrupt_control>.
-    Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/interrupt_control_v2_01_a/hdl/vhdl/interrupt_control.vhd".
-        C_NUM_CE = 16
-        C_NUM_IPIF_IRPT_SRC = 1
-        C_IP_INTR_MODE_ARRAY = (5)
-        C_INCLUDE_DEV_PENCODER = false
-        C_INCLUDE_DEV_ISC = false
-        C_IPIF_DWIDTH = 32
-WARNING:Xst:647 - Input <Bus2IP_Data<1:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Bus2IP_BE<1:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Interrupt_RdCE<0:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Interrupt_RdCE<9:9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Interrupt_RdCE<11:15>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Interrupt_WrCE<0:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Interrupt_WrCE<9:9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Interrupt_WrCE<11:15>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <IPIF_Reg_Interrupts> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <IPIF_Lvl_Interrupts> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit register for signal <Intr2Bus_WrAck>.
-    Found 1-bit register for signal <irpt_rdack_d1>.
-    Found 1-bit register for signal <Intr2Bus_RdAck>.
-    Found 1-bit register for signal <DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly1>.
-    Found 1-bit register for signal <DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly2>.
-    Found 1-bit register for signal <ip_irpt_status_reg>.
-    Found 1-bit register for signal <ip_irpt_enable_reg>.
-    Found 1-bit register for signal <ipif_glbl_irpt_enable_reg>.
-    Found 1-bit register for signal <irpt_wrack_d1>.
-    Summary:
-	inferred   9 D-type flip-flop(s).
-	inferred   6 Multiplexer(s).
-Unit <interrupt_control> synthesized.
+Unit <pselect_f_4> synthesized.
 
 Synthesizing Unit <GPIO_Core>.
     Related source file is "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/gpio_core.vhd".
@@ -1089,32 +816,66 @@ Synthesizing Unit <GPIO_Core>.
         C_AW = 9
         C_GPIO_WIDTH = 2
         C_GPIO2_WIDTH = 32
-        C_MAX_GPIO_WIDTH = 2
-        C_INTERRUPT_PRESENT = 1
+        C_MAX_GPIO_WIDTH = 32
+        C_INTERRUPT_PRESENT = 0
         C_DOUT_DEFAULT = "00000000000000000000000000000000"
         C_TRI_DEFAULT = "11111111111111111111111111111111"
-        C_IS_DUAL = 0
+        C_IS_DUAL = 1
         C_DOUT_DEFAULT_2 = "00000000000000000000000000000000"
         C_TRI_DEFAULT_2 = "11111111111111111111111111111111"
         C_FAMILY = "zynq"
 WARNING:Xst:647 - Input <ABus_Reg<1:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <ABus_Reg<7:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <BE_Reg> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <GPIO2_IO_I> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <gpio_xferAck_Reg>.
     Found 1-bit register for signal <GPIO_DBus_i<30>>.
     Found 1-bit register for signal <GPIO_DBus_i<31>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<0>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<1>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<2>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<3>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<4>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<5>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<6>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<7>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<8>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<9>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<10>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<11>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<12>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<13>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<14>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<15>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<16>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<17>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<18>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<19>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<20>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<21>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<22>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<23>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<24>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<25>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<26>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<27>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<28>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<29>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<30>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<31>>.
     Found 2-bit register for signal <gpio_io_i_d1>.
     Found 2-bit register for signal <gpio_io_i_d2>.
     Found 2-bit register for signal <gpio_Data_In>.
+    Found 32-bit register for signal <Dual.gpio2_io_i_d1>.
+    Found 32-bit register for signal <Dual.gpio2_io_i_d2>.
+    Found 32-bit register for signal <Dual.gpio2_Data_In>.
     Found 2-bit register for signal <gpio_Data_Out>.
     Found 2-bit register for signal <gpio_OE>.
-    Found 2-bit register for signal <gpio_data_in_xor_reg>.
-    Found 1-bit register for signal <GPIO_intr>.
+    Found 32-bit register for signal <Dual.gpio2_Data_Out>.
+    Found 32-bit register for signal <Dual.gpio2_OE>.
     Found 1-bit register for signal <iGPIO_xferAck>.
     Summary:
-	inferred  17 D-type flip-flop(s).
-	inferred  10 Multiplexer(s).
+	inferred 206 D-type flip-flop(s).
+	inferred 139 Multiplexer(s).
 Unit <GPIO_Core> synthesized.
 
 =========================================================================
@@ -1123,19 +884,16 @@ HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  4-bit adder                                           : 1
-# Registers                                            : 57
- 1-bit register                                        : 46
+# Registers                                            : 32
+ 1-bit register                                        : 16
  2-bit register                                        : 7
- 32-bit register                                       : 2
- 4-bit register                                        : 2
-# Multiplexers                                         : 41
- 1-bit 2-to-1 multiplexer                              : 36
- 32-bit 2-to-1 multiplexer                             : 4
+ 32-bit register                                       : 8
+ 4-bit register                                        : 1
+# Multiplexers                                         : 146
+ 1-bit 2-to-1 multiplexer                              : 143
+ 32-bit 2-to-1 multiplexer                             : 2
  9-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
-# Xors                                                 : 2
- 1-bit xor2                                            : 1
- 2-bit xor2                                            : 1
 
 =========================================================================
 
@@ -1154,16 +912,13 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Counters                                             : 1
  4-bit up counter                                      : 1
-# Registers                                            : 128
- Flip-Flops                                            : 128
-# Multiplexers                                         : 18
- 1-bit 2-to-1 multiplexer                              : 13
- 32-bit 2-to-1 multiplexer                             : 4
+# Registers                                            : 286
+ Flip-Flops                                            : 286
+# Multiplexers                                         : 142
+ 1-bit 2-to-1 multiplexer                              : 139
+ 32-bit 2-to-1 multiplexer                             : 2
  9-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
-# Xors                                                 : 2
- 1-bit xor2                                            : 1
- 2-bit xor2                                            : 1
 
 =========================================================================
 
@@ -1172,6 +927,8 @@ Macro Statistics
 =========================================================================
 WARNING:Xst:1293 - FF/Latch <s_axi_bresp_i_0> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_axi_rresp_i_0> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <s_axi_bresp_i_1> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_axi_rresp_i_1> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/FSM_0> on signal <state[1:2]> with user encoding.
 ----------------------
@@ -1192,73 +949,11 @@ Optimizing unit <slave_attachment> ...
 Optimizing unit <address_decoder> ...
 
 Optimizing unit <GPIO_Core> ...
-
-Optimizing unit <interrupt_control> ...
-WARNING:Xst:1293 - FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_1> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_1> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_29> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_28> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_27> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_26> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_25> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_24> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_23> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_22> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_21> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_20> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_19> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_18> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_17> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_1> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_2> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_3> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_4> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_5> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_6> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_7> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_8> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_9> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_10> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_11> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_12> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_13> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_14> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_15> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/ip2bus_data_i_D1_16> (without init value) has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_15> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_14> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_13> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_12> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_11> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_10> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_9> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_8> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_7> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_6> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_3> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_2> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_16> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_17> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_18> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_19> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_20> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_21> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_22> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_23> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_24> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_25> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_26> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_27> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_28> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_29> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_30> has a constant value of 0 in block <module_1_axi_gpio_1_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3> of sequential type is unconnected in block <module_1_axi_gpio_1_wrapper>.
-WARNING:Xst:2677 - Node <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1> of sequential type is unconnected in block <module_1_axi_gpio_1_wrapper>.
-WARNING:Xst:2677 - Node <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0> of sequential type is unconnected in block <module_1_axi_gpio_1_wrapper>.
 WARNING:Xst:2677 - Node <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2> of sequential type is unconnected in block <module_1_axi_gpio_1_wrapper>.
-WARNING:Xst:2677 - Node <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1> of sequential type is unconnected in block <module_1_axi_gpio_1_wrapper>.
+WARNING:Xst:2677 - Node <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0> of sequential type is unconnected in block <module_1_axi_gpio_1_wrapper>.
+WARNING:Xst:2677 - Node <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1> of sequential type is unconnected in block <module_1_axi_gpio_1_wrapper>.
+WARNING:Xst:2677 - Node <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> of sequential type is unconnected in block <module_1_axi_gpio_1_wrapper>.
 INFO:Xst:2261 - The FF/Latch <axi_gpio_1/bus2ip_reset> in Unit <module_1_axi_gpio_1_wrapper> is equivalent to the following FF/Latch, which will be removed : <axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst> 
 
 Mapping all equations...
@@ -1268,18 +963,50 @@ Found area constraint ratio of 100 (+ 0) on block module_1_axi_gpio_1_wrapper, a
 Final Macro Processing ...
 
 Processing Unit <module_1_axi_gpio_1_wrapper> :
-	Found 2-bit shift register for signal <axi_gpio_1/gpio_core_1/gpio_io_i_d2_0>.
-	Found 2-bit shift register for signal <axi_gpio_1/gpio_core_1/gpio_io_i_d2_1>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_0>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_1>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_2>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_3>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_4>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_5>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_6>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_7>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_8>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_9>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_10>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_11>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_12>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_13>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_14>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_15>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_16>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_17>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_18>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_19>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_20>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_21>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_22>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_23>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_24>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_25>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_26>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_27>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_28>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_29>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_30>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/Dual.gpio2_Data_In_31>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/gpio_Data_In_0>.
+	Found 3-bit shift register for signal <axi_gpio_1/gpio_core_1/gpio_Data_In_1>.
 Unit <module_1_axi_gpio_1_wrapper> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 62
- Flip-Flops                                            : 62
-# Shift Registers                                      : 2
- 2-bit shift register                                  : 2
+# Registers                                            : 180
+ Flip-Flops                                            : 180
+# Shift Registers                                      : 34
+ 3-bit shift register                                  : 34
 
 =========================================================================
 
@@ -1302,24 +1029,23 @@ Top Level Output File Name         : module_1_axi_gpio_1_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 76
+# BELS                             : 230
 #      GND                         : 1
 #      INV                         : 1
-#      LUT2                        : 7
-#      LUT3                        : 10
-#      LUT4                        : 11
-#      LUT5                        : 7
-#      LUT6                        : 38
+#      LUT2                        : 5
+#      LUT3                        : 72
+#      LUT4                        : 5
+#      LUT5                        : 37
+#      LUT6                        : 108
 #      VCC                         : 1
-# FlipFlops/Latches                : 64
-#      FD                          : 12
-#      FDE                         : 2
-#      FDR                         : 24
-#      FDRE                        : 22
-#      FDS                         : 2
-#      FDSE                        : 2
-# Shift Registers                  : 2
-#      SRLC16E                     : 2
+# FlipFlops/Latches                : 214
+#      FD                          : 9
+#      FDE                         : 34
+#      FDR                         : 70
+#      FDRE                        : 67
+#      FDSE                        : 34
+# Shift Registers                  : 34
+#      SRLC16E                     : 34
 
 Device utilization summary:
 ---------------------------
@@ -1328,18 +1054,18 @@ Selected Device : 7z020clg484-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              64  out of  106400     0%  
- Number of Slice LUTs:                   76  out of  53200     0%  
-    Number used as Logic:                74  out of  53200     0%  
-    Number used as Memory:                2  out of  17400     0%  
-       Number used as SRL:                2
+ Number of Slice Registers:             214  out of  106400     0%  
+ Number of Slice LUTs:                  262  out of  53200     0%  
+    Number used as Logic:               228  out of  53200     0%  
+    Number used as Memory:               34  out of  17400     0%  
+       Number used as SRL:               34
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     83
-   Number with an unused Flip Flop:      19  out of     83    22%  
-   Number with an unused LUT:             7  out of     83     8%  
-   Number of fully used LUT-FF pairs:    57  out of     83    68%  
-   Number of unique control sets:         8
+ Number of LUT Flip Flop pairs used:    290
+   Number with an unused Flip Flop:      76  out of    290    26%  
+   Number with an unused LUT:            28  out of    290     9%  
+   Number of fully used LUT-FF pairs:   186  out of    290    64%  
+   Number of unique control sets:         9
 
 IO Utilization: 
  Number of IOs:                         205
@@ -1365,11 +1091,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)        | Load  |
------------------------------------+------------------------------+-------+
-S_AXI_ACLK                         | NONE(axi_gpio_1/IP2INTC_Irpt)| 66    |
------------------------------------+------------------------------+-------+
+-----------------------------------+------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)              | Load  |
+-----------------------------------+------------------------------------+-------+
+S_AXI_ACLK                         | NONE(axi_gpio_1/ip2bus_data_i_D1_0)| 248   |
+-----------------------------------+------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -1380,8 +1106,8 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 1.787ns (Maximum Frequency: 559.597MHz)
-   Minimum input arrival time before clock: 1.764ns
+   Minimum period: 1.834ns (Maximum Frequency: 545.395MHz)
+   Minimum input arrival time before clock: 1.531ns
    Maximum output required time after clock: 0.840ns
    Maximum combinational path delay: No path found
 
@@ -1391,49 +1117,50 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
-  Clock period: 1.787ns (frequency: 559.597MHz)
-  Total number of paths / destination ports: 359 / 137
+  Clock period: 1.834ns (frequency: 545.395MHz)
+  Total number of paths / destination ports: 857 / 485
 -------------------------------------------------------------------------
-Delay:               1.787ns (Levels of Logic = 1)
-  Source:            axi_gpio_1/ip2bus_rdack_i_D1 (FF)
-  Destination:       axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_19 (FF)
+Delay:               1.834ns (Levels of Logic = 1)
+  Source:            axi_gpio_1/gpio_core_1/gpio_xferAck_Reg (FF)
+  Destination:       axi_gpio_1/gpio_core_1/Dual.GPIO2_DBus_i_0 (FF)
   Source Clock:      S_AXI_ACLK rising
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: axi_gpio_1/ip2bus_rdack_i_D1 to axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_19
+  Data Path: axi_gpio_1/gpio_core_1/gpio_xferAck_Reg to axi_gpio_1/gpio_core_1/Dual.GPIO2_DBus_i_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              4   0.282   0.622  axi_gpio_1/ip2bus_rdack_i_D1 (axi_gpio_1/ip2bus_rdack_i_D1)
-     LUT4:I1->O           17   0.053   0.505  axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_ce_clr1 (axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_ce_clr)
-     FDRE:R                    0.325          axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0
+     FDR:C->Q              4   0.282   0.622  axi_gpio_1/gpio_core_1/gpio_xferAck_Reg (axi_gpio_1/gpio_core_1/gpio_xferAck_Reg)
+     LUT4:I1->O           32   0.053   0.552  axi_gpio_1/gpio_core_1/Read_Reg_Rst1 (axi_gpio_1/gpio_core_1/Read_Reg_Rst)
+     FDR:R                     0.325          axi_gpio_1/gpio_core_1/Dual.GPIO2_DBus_i_31
     ----------------------------------------
-    Total                      1.787ns (0.660ns logic, 1.127ns route)
-                                       (36.9% logic, 63.1% route)
+    Total                      1.834ns (0.660ns logic, 1.174ns route)
+                                       (36.0% logic, 64.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 462 / 76
+  Total number of paths / destination ports: 1074 / 214
 -------------------------------------------------------------------------
-Offset:              1.764ns (Levels of Logic = 2)
+Offset:              1.531ns (Levels of Logic = 3)
   Source:            S_AXI_ARVALID (PAD)
-  Destination:       axi_gpio_1/gpio_core_1/gpio_Data_Out_0 (FF)
+  Destination:       axi_gpio_1/gpio_core_1/GPIO_DBus_i_31 (FF)
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: S_AXI_ARVALID to axi_gpio_1/gpio_core_1/gpio_Data_Out_0
+  Data Path: S_AXI_ARVALID to axi_gpio_1/gpio_core_1/GPIO_DBus_i_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT3:I0->O           20   0.053   0.850  axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/Mmux_bus2ip_addr_i91 (axi_gpio_1/bus2ip_addr<0>)
-     LUT5:I0->O            2   0.053   0.405  axi_gpio_1/gpio_core_1/gpio_Data_Select[0]_RNW_Reg_AND_68_o1 (axi_gpio_1/gpio_core_1/gpio_Data_Select[0]_RNW_Reg_AND_68_o)
-     FDRE:CE                   0.200          axi_gpio_1/gpio_core_1/gpio_Data_Out_1
+     LUT3:I0->O            2   0.053   0.745  axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/Mmux_bus2ip_addr_i31 (axi_gpio_1/bus2ip_addr<6>)
+     LUT6:I0->O            1   0.053   0.413  axi_gpio_1/gpio_core_1/Mmux_Dual.Read_Reg2_In<0>1331 (axi_gpio_1/gpio_core_1/Read_Reg_In<1>)
+     LUT5:I4->O            1   0.053   0.000  axi_gpio_1/gpio_core_1/GPIO_DBus_i_31_rstpot (axi_gpio_1/gpio_core_1/GPIO_DBus_i_31_rstpot)
+     FD:D                      0.011          axi_gpio_1/gpio_core_1/GPIO_DBus_i_31
     ----------------------------------------
-    Total                      1.764ns (0.509ns logic, 1.255ns route)
-                                       (28.9% logic, 71.1% route)
+    Total                      1.531ns (0.373ns logic, 1.158ns route)
+                                       (24.4% logic, 75.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 16 / 13
+  Total number of paths / destination ports: 108 / 105
 -------------------------------------------------------------------------
 Offset:              0.840ns (Levels of Logic = 1)
   Source:            axi_gpio_1/ip2bus_wrack_i_D1 (FF)
@@ -1444,7 +1171,7 @@ Offset:              0.840ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              4   0.282   0.505  axi_gpio_1/ip2bus_wrack_i_D1 (axi_gpio_1/ip2bus_wrack_i_D1)
+     FD:C->Q               4   0.282   0.505  axi_gpio_1/ip2bus_wrack_i_D1 (axi_gpio_1/ip2bus_wrack_i_D1)
      LUT2:I0->O            0   0.053   0.000  axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1 (S_AXI_WREADY)
     ----------------------------------------
     Total                      0.840ns (0.335ns logic, 0.505ns route)
@@ -1460,20 +1187,20 @@ Clock to Setup on destination clock S_AXI_ACLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-S_AXI_ACLK     |    1.787|         |         |         |
+S_AXI_ACLK     |    1.834|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
+Total REAL time to Xst completion: 9.00 secs
 Total CPU time to Xst completion: 9.47 secs
  
 --> 
 
-Total memory usage is 487084 kilobytes
+Total memory usage is 399012 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   96 (   0 filtered)
-Number of infos    :    6 (   0 filtered)
+Number of warnings :   25 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
 
