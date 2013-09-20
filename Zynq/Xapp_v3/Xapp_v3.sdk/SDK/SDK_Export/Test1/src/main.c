@@ -14,7 +14,7 @@
  */
 #define GPIO_EXAMPLE_DEVICE_ID  XPAR_AXI_GPIO_0_DEVICE_ID
 
-//#define GPIO_1_ID			1 //XPAR_AXI_GPIO_1_DEVICE_ID
+#define GPIO_1_ID			1 //XPAR_AXI_GPIO_1_DEVICE_ID
 //XPAR_LEDS_POSITIONS_DEVICE_ID
 
 
@@ -27,11 +27,12 @@
 //definitions to use with the interrupts
 #define BUTTON_CHANNEL 2
 #define INTC_DEVICE_ID XPAR_PS7_SCUGIC_0_DEVICE_ID
-#define INTC_GPIO_INTERRUPT_ID  91 //XPAR_FABRIC_GPIO_0_VEC_ID
-//#define INTC_GPIO_INTERRUPT_ID1 90// XPAR_FABRIC_GPIO_1_VEC_ID
+#define INTC_GPIO_INTERRUPT_ID  91// XPAR_FABRIC_GPIO_0_VEC_ID
+#define INTC_GPIO_INTERRUPT_ID1  90 //XPAR_FABRIC_GPIO_1_VEC_ID
 #define INTC XScuGic
 #define INTC_HANDLER XScuGic_InterruptHandler
 #define BUTTON_INTERRUPT XGPIO_IR_CH2_MASK
+#define DATAN 1000
 
 /************************** Variable Definitions *****************************/
 
@@ -41,11 +42,12 @@
  */
 
 XGpio Gpio; /* The Instance of the GPIO Driver */
-// XGpio Gpio1;   //second IO driver
+XGpio Gpio1;   //second IO driver
 
 //interrupt variable
 static INTC Intc;
-int values[100];
+int valuesC[DATAN];
+int valuesD[DATAN];
 int curr_index;
 
 int SetupInterruptSystem();
@@ -115,16 +117,23 @@ int main(void)
 	if (Status != XST_SUCCESS) {
 	return XST_FAILURE;
 	}
+	Status = XGpio_Initialize(&Gpio1, GPIO_1_ID);
+	if (Status != XST_SUCCESS) {
+	return XST_FAILURE;
+	}
 
 
 	/*
 	* Setup the interrupts such that interrupt processing can occur.
 	* If an error occurs then exit
 	*/
-	Status = SetupInterruptSystem();
-	if (Status != XST_SUCCESS) {
-	return XST_FAILURE;
-	}
+//	Status = SetupInterruptSystem();
+//	if (Status != XST_SUCCESS) {
+//	return XST_FAILURE;
+//	}
+
+
+
 
 	// Clear LEDs
 	dir = 0xF8000240;
@@ -141,7 +150,6 @@ int main(void)
 	print("Select a Brightness between 0 and 9\n\r");
 	value = inbyte();
 	period = value - 0x30;
-	leido = XGpio_DiscreteRead(&Gpio, 2);
 	xil_printf("Brightness Level %d selected...valor leido %d led %d \n\r", period, leido, reg_val);
 
 
@@ -159,41 +167,43 @@ int main(void)
 	// Clear LEDs
 	XGpio_DiscreteWrite(&Gpio, LED_CHANNEL, 0);
 
+
+
 	while (1) {
 		print("Select a Brightness between 0 and 9\n\r");
 		value = inbyte();
 		period = value - 0x30;
-		leido = XGpio_DiscreteRead(&Gpio, 2);
-//		u32 read_value, tmp_leido;
-//		read_value = leido;
-//		tmp_leido = ((read_value&0x00008000)*65536)+((read_value&0x00000080)*32768)+
-//				((read_value&0x00004000)*16384)+((read_value&0x00000040)*8192)+
-//				((read_value&0x00002000)*4096)+((read_value&0x00000020)*2048)+
-//				((read_value&0x00001000)*1024)+((read_value&0x00000010)*512)+
-//				((read_value&0x00000800)*256)+((read_value&0x00000008)*128)+
-//				((read_value&0x00000400)*64)+((read_value&0x00000004)*32)+
-//				((read_value&0x00000200)*16)+((read_value&0x00000002)*8)+
-//				((read_value&0x00000100)*4)+((read_value&0x00000001)*2);
+
+		//comienzo ahora el bucle de lectura....
+		XGpio_DiscreteWrite(&Gpio1, 1, 0);  //me aseguro de que el reloj comienza en 0
+		for (i = 0; i<DATAN; i++){
+			XGpio_DiscreteWrite(&Gpio1, 1, 1); // rdE = 1, rdClk = 0
+			XGpio_DiscreteWrite(&Gpio1, 1, 3); // rdE = 1, rdClk = 1
+			leido =  XGpio_DiscreteRead(&Gpio1, 2);
+			valuesC[i] = leido&0x0000FFFF;;
+			//valuesD[i] = (leido&0xFFFF0000)>>16;
+		}
+
 		xil_printf("Brightness Level %d selected...valor leido %d led %d \n\r", period,leido, leido);
 
-		//now I can send all the previous values...
-		//to make sure that there no race conditions I first i will disable all the interrupts
-		/*
-			* Disable the interrupt
-			*/
-			XGpio_InterruptDisable(&Gpio, BUTTON_INTERRUPT);
-			xil_printf("Read Values \n\r");
-			for ( i = 0; i<100; i++){
-				xil_printf(" %d, ",values[i]);
+	     xil_printf("Read Values C\n\r");
+			for ( i = 0; i<DATAN; i++){
+				xil_printf(" %d, ",valuesC[i]);
 			}
+
+//			  xil_printf("Read Values D \n\r");
+//						for ( i = 0; i<DATAN; i++){
+//							xil_printf(" %d, ",valuesD[i]);
+//						}
+
 
 
 			/* Clear the interrupt such that it is no longer pending in the GPIO */
-				(void)XGpio_InterruptClear(&Gpio, BUTTON_INTERRUPT);
+			//	(void)XGpio_InterruptClear(&Gpio1,1); // BUTTON_INTERRUPT);
 				/*
 				* Enable the interrupt
 				*/
-				XGpio_InterruptEnable(&Gpio, BUTTON_INTERRUPT);
+			//	XGpio_InterruptEnable(&Gpio1,1); // BUTTON_INTERRUPT);
 
 
 
@@ -233,7 +243,7 @@ void GpioIsr(void *InstancePtr)
 	* for the next interrupt
 	*/
 	read_value = XGpio_DiscreteRead(&Gpio, BUTTON_CHANNEL);
-	if (curr_index < 99){
+	if (curr_index < DATAN-1){
 //		values[curr_index] = read_value&0x00008000*65536+read_value&0x00000080*32768+
 //				read_value&0x00004000*16384+read_value&0x00000040*8192+
 //				read_value&0x00002000*4096+read_value&0x00000020*2048+
@@ -242,10 +252,10 @@ void GpioIsr(void *InstancePtr)
 //				read_value&0x00000400*64+read_value&0x00000004*32+
 //				read_value&0x00000200*16+read_value&0x00000002*8+
 //				read_value&0x00000100*4+read_value&0x00000001*2;
-		values[curr_index] = read_value; // & 0x0000FFFF;
+		valuesC[curr_index] = read_value; // & 0x0000FFFF;
 		curr_index++;
 	}
-	if (curr_index >= 99) curr_index = 0;
+	if (curr_index >= DATAN-1) curr_index = 0;
 
     //print("Button Pressed \n\r");
 
@@ -262,7 +272,7 @@ void GpioIsr(void *InstancePtr)
 
 void ButtonIsr( void *InstancePtr){
 
-	// u32 read_value;
+	u32 read_value;
 	XGpio *GpioPtr = (XGpio *)InstancePtr;
 	/*
 	* Disable the interrupt
@@ -277,19 +287,19 @@ void ButtonIsr( void *InstancePtr){
 		return;
 		}
 
-//		read_value = XGpio_DiscreteRead(&Gpio, BUTTON_CHANNEL);
-//			if (curr_index < 99){
-//				values[curr_index] = read_value & 0x0000FFFF;
-//				curr_index++;
-//				if (curr_index >= 99) curr_index = 0;
-//			}
+		read_value = XGpio_DiscreteRead(&Gpio, BUTTON_CHANNEL);
+			if (curr_index < DATAN-1){
+				valuesC[curr_index] = read_value & 0x0000FFFF;
+				curr_index++;
+				 if (curr_index >= DATAN-1) curr_index = 0;
+			}
 
 		/*
 		* Read state of push buttons and determine which ones changed
 		* states from the previous interrupt. Save a copy of the buttons
 		* for the next interrupt*/
 
-	   print("Button Pressed \n\r");
+	   // print("Button Pressed \n\r");
 
 		/* Clear the interrupt such that it is no longer pending in the GPIO */
 		(void)XGpio_InterruptClear(GpioPtr, 1);
@@ -316,89 +326,89 @@ int SetupInterruptSystem()
 {
 	int Result;
 	INTC *IntcInstancePtr = &Intc;
-	#ifdef XPAR_INTC_0_DEVICE_ID /* * Initialize the interrupt controller driver so that it's ready to use. * specify the device ID that was generated in xparameters.h */
-
-	Result = XIntc_Initialize(IntcInstancePtr, INTC_DEVICE_ID); if (Result != XST_SUCCESS) { return Result; }
-	/* Hook up interrupt service routine */
-	XIntc_Connect(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID, (Xil_ExceptionHandler)GpioIsr, &Gpio);
-	/* Enable the interrupt vector at the interrupt controller */
-	XIntc_Enable(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID);
-	/* * Start the interrupt controller such that interrupts are recognized * and handled by the processor */
-	Result = XIntc_Start(IntcInstancePtr, XIN_REAL_MODE); if (Result != XST_SUCCESS) { return Result; }
-	#else
-	XScuGic_Config *IntcConfig;
-	/*
-	* Initialize the interrupt controller driver so that it is ready to
-	* use.
-	*/
-	IntcConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
-	if (NULL == IntcConfig) {
-		return XST_FAILURE;
-	}
-	Result = XScuGic_CfgInitialize(IntcInstancePtr, IntcConfig,
-			IntcConfig->CpuBaseAddress);
-	if (Result != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-	XScuGic_SetPriorityTriggerType(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID,
-		0xA0, 0x3);
-	/*
-	* Connect the interrupt handler that will be called when an
-	* interrupt occurs for the device.
-	*/
-	Result = XScuGic_Connect(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID,
-		(Xil_ExceptionHandler)GpioIsr, &Gpio);
-	if (Result != XST_SUCCESS) {
-		return Result;
-	}
-	/*
-	* Enable the interrupt for the GPIO device.
-	*/
-	XScuGic_Enable(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID);
-	#endif
-
-
-//	#ifdef XPAR_INTC_1_DEVICE_ID  /* * Initialize the interrupt controller driver so that it's ready to use. * specify the device ID that was generated in xparameters.h */
+//	#ifdef XPAR_INTC_0_DEVICE_ID /* * Initialize the interrupt controller driver so that it's ready to use. * specify the device ID that was generated in xparameters.h */
 //
 //	Result = XIntc_Initialize(IntcInstancePtr, INTC_DEVICE_ID); if (Result != XST_SUCCESS) { return Result; }
 //	/* Hook up interrupt service routine */
-//	XIntc_Connect(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID1, (Xil_ExceptionHandler)ButtonIsr, &Gpio1);
-//
+//	XIntc_Connect(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID, (Xil_ExceptionHandler)GpioIsr, &Gpio);
 //	/* Enable the interrupt vector at the interrupt controller */
-//	XIntc_Enable(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID1);
+//	XIntc_Enable(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID);
 //	/* * Start the interrupt controller such that interrupts are recognized * and handled by the processor */
 //	Result = XIntc_Start(IntcInstancePtr, XIN_REAL_MODE); if (Result != XST_SUCCESS) { return Result; }
 //	#else
-//	XScuGic_Config *IntcConfig1;
+//	XScuGic_Config *IntcConfig;
 //	/*
 //	* Initialize the interrupt controller driver so that it is ready to
 //	* use.
 //	*/
-//	IntcConfig1 = XScuGic_LookupConfig(INTC_DEVICE_ID);
-//	if (NULL == IntcConfig1) {
+//	IntcConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+//	if (NULL == IntcConfig) {
 //		return XST_FAILURE;
 //	}
-//	Result = XScuGic_CfgInitialize(IntcInstancePtr, IntcConfig1,
-//			IntcConfig1->CpuBaseAddress);
+//	Result = XScuGic_CfgInitialize(IntcInstancePtr, IntcConfig,
+//			IntcConfig->CpuBaseAddress);
 //	if (Result != XST_SUCCESS) {
 //		return XST_FAILURE;
 //	}
-//	XScuGic_SetPriorityTriggerType(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID1,
-//			0xA0, 0x3);
+//	XScuGic_SetPriorityTriggerType(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID,
+//		0xA0, 0x3);
 //	/*
 //	* Connect the interrupt handler that will be called when an
 //	* interrupt occurs for the device.
 //	*/
-//	Result = XScuGic_Connect(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID1,
-//		(Xil_ExceptionHandler)ButtonIsr, &Gpio1);
+//	Result = XScuGic_Connect(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID,
+//		(Xil_ExceptionHandler)GpioIsr, &Gpio);
 //	if (Result != XST_SUCCESS) {
 //		return Result;
 //	}
 //	/*
 //	* Enable the interrupt for the GPIO device.
 //	*/
-//	XScuGic_Enable(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID1);
+//	XScuGic_Enable(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID);
 //	#endif
+
+
+	#ifdef XPAR_INTC_1_DEVICE_ID  /* * Initialize the interrupt controller driver so that it's ready to use. * specify the device ID that was generated in xparameters.h */
+
+	Result = XIntc_Initialize(IntcInstancePtr, INTC_DEVICE_ID); if (Result != XST_SUCCESS) { return Result; }
+	/* Hook up interrupt service routine */
+	XIntc_Connect(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID1, (Xil_ExceptionHandler)ButtonIsr, &Gpio1);
+
+	/* Enable the interrupt vector at the interrupt controller */
+	XIntc_Enable(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID1);
+	/* * Start the interrupt controller such that interrupts are recognized * and handled by the processor */
+	Result = XIntc_Start(IntcInstancePtr, XIN_REAL_MODE); if (Result != XST_SUCCESS) { return Result; }
+	#else
+	XScuGic_Config *IntcConfig1;
+	/*
+	* Initialize the interrupt controller driver so that it is ready to
+	* use.
+	*/
+	IntcConfig1 = XScuGic_LookupConfig(INTC_DEVICE_ID);
+	if (NULL == IntcConfig1) {
+		return XST_FAILURE;
+	}
+	Result = XScuGic_CfgInitialize(IntcInstancePtr, IntcConfig1,
+			IntcConfig1->CpuBaseAddress);
+	if (Result != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+	XScuGic_SetPriorityTriggerType(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID1,
+			0xA0, 0x3);
+	/*
+	* Connect the interrupt handler that will be called when an
+	* interrupt occurs for the device.
+	*/
+	Result = XScuGic_Connect(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID1,
+		(Xil_ExceptionHandler)ButtonIsr, &Gpio1);
+	if (Result != XST_SUCCESS) {
+		return Result;
+	}
+	/*
+	* Enable the interrupt for the GPIO device.
+	*/
+	XScuGic_Enable(IntcInstancePtr, INTC_GPIO_INTERRUPT_ID1);
+	#endif
 
 
 
@@ -407,10 +417,10 @@ int SetupInterruptSystem()
 	* Enable the GPIO channel interrupts so that push button can be
 	* detected and enable interrupts for the GPIO device
 	*/
-	XGpio_InterruptEnable(&Gpio, BUTTON_INTERRUPT);
-//	XGpio_InterruptEnable(&Gpio1, 1);
-	XGpio_InterruptGlobalEnable(&Gpio);
-//	XGpio_InterruptGlobalEnable(&Gpio1);
+//	XGpio_InterruptEnable(&Gpio, BUTTON_INTERRUPT);
+	XGpio_InterruptEnable(&Gpio1, 1);
+//	XGpio_InterruptGlobalEnable(&Gpio);
+	XGpio_InterruptGlobalEnable(&Gpio1);
 	/*
 	* Initialize the exception table and register the interrupt
 	* controller handler with the exception table

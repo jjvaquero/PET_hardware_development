@@ -89,19 +89,23 @@
     <SET ID="ExternalPorts" IS_EXPANDED="TRUE"/>
     <SET ID="processing_system7_0" IS_EXPANDED="TRUE"/>
     <SET ID="axi_gpio_0" IS_EXPANDED="TRUE">
+      <SET ID="S_AXI" IS_EXPANDED="TRUE"/>
       <SET ID="gpio_0" IS_EXPANDED="TRUE"/>
     </SET>
     <SET ID="axi_interconnect_1" IS_EXPANDED="TRUE"/>
+    <SET ID="axi_gpio_1" IS_EXPANDED="TRUE">
+      <SET ID="S_AXI" IS_EXPANDED="TRUE"/>
+      <SET ID="gpio_0" IS_EXPANDED="TRUE"/>
+    </SET>
     <STATUS>
-      <SELECTIONS>
-        <VARIABLE ID="FCLK_CLK0" PARENT="processing_system7_0"/>
-      </SELECTIONS>
+      <SELECTIONS/>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="ExternalPorts" IS_EXPANDED="TRUE" ROW_INDEX="0"/>
       <VARIABLE ID="processing_system7_0" IS_EXPANDED="TRUE" ROW_INDEX="2"/>
       <VARIABLE ID="axi_gpio_0" IS_EXPANDED="TRUE" ROW_INDEX="3"/>
       <VARIABLE ID="axi_interconnect_1" IS_EXPANDED="TRUE" ROW_INDEX="1"/>
+      <VARIABLE ID="axi_gpio_1" IS_EXPANDED="TRUE" ROW_INDEX="4"/>
     </SEQUENCES>
   </SET>
 

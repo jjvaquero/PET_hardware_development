@@ -13,6 +13,12 @@ Parsing architecture <Behavioral> of entity <bitslipctrlfsm>.
 Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd" into library work
 Parsing entity <AdcDataReader>.
 Parsing architecture <Behavioral> of entity <adcdatareader>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcFrameSync.vhd" into library work
+Parsing entity <AdcFrameSync>.
+Parsing architecture <Behavioral> of entity <adcframesync>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcChanReader.vhd" into library work
+Parsing entity <AdcChanReader>.
+Parsing architecture <Behavioral> of entity <adcchanreader>.
 Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" into library work
 Parsing entity <PWM_Controller>.
 Parsing architecture <behaviour> of entity <pwm_controller>.
@@ -39,12 +45,18 @@ WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Z
 
 Elaborating entity <AdcClock> (architecture <AdcClock_struct>) with generics from library <work>.
 
-Elaborating entity <AdcDataReader> (architecture <Behavioral>) from library <work>.
+Elaborating entity <AdcFrameSync> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <BitSlipCtrlFSM> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" Line 76: datain should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" Line 99: datain should be on the sensitivity list of the process
-WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 74: Net <sADC_DataIn[31]> does not have a driver.
+
+Elaborating entity <AdcChanReader> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <AdcDataReader> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcChanReader.vhd" Line 138: intdataout should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcChanReader.vhd" Line 143: intdataout should be on the sensitivity list of the process
+WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 95: Net <fifoDataIn[31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -55,14 +67,16 @@ Synthesizing Unit <module_1_stub>.
         C_AdcChnls = 2
         C_AdcWireInt = 2
     Set property "BOX_TYPE = user_black_box" for instance <module_1_i>.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 202: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <BitClk35> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 241: Output port <DivClk35> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 285: Output port <state> of the instance <AdcReader2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 285: Output port <SyncDone> of the instance <AdcReader2> is unconnected or connected to loadless signal.
-WARNING:Xst:2935 - Signal 'sADC_DataIn<31:12>', unconnected in block 'module_1_stub', is tied to its initial value (00000000000000000000).
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 238: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 280: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 280: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 327: Output port <DataOut> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 327: Output port <state> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 327: Output port <NDataInt> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 344: Output port <SyncDone> of the instance <AdcReader_C> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 362: Output port <SyncDone> of the instance <AdcReader_D> is unconnected or connected to loadless signal.
+WARNING:Xst:2935 - Signal 'fifoDataIn<31:28>', unconnected in block 'module_1_stub', is tied to its initial value (0000).
+WARNING:Xst:2935 - Signal 'fifoDataIn<15:12>', unconnected in block 'module_1_stub', is tied to its initial value (0000).
     Summary:
 	no macro.
 Unit <module_1_stub> synthesized.
@@ -122,13 +136,15 @@ Synthesizing Unit <AdcClock>.
 	inferred  34 Multiplexer(s).
 Unit <AdcClock> synthesized.
 
-Synthesizing Unit <AdcDataReader>.
-    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd".
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd" line 195: Output port <State> of the instance <BitSlipCtrlN> is unconnected or connected to loadless signal.
+Synthesizing Unit <AdcFrameSync>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcFrameSync.vhd".
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcFrameSync.vhd" line 143: Output port <State> of the instance <BitSlipCtrlP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcFrameSync.vhd" line 200: Output port <State> of the instance <BitSlipCtrlN> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <state> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 6-bit register for signal <IntDataTotal>.
     Summary:
 	inferred   6 D-type flip-flop(s).
-Unit <AdcDataReader> synthesized.
+Unit <AdcFrameSync> synthesized.
 
 Synthesizing Unit <BitSlipCtrlFSM>.
     Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd".
@@ -146,6 +162,7 @@ Synthesizing Unit <BitSlipCtrlFSM>.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_47_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_71_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_41_o> created at line 68.
+    Found 1-bit 4-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_89_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_23_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_79_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_57_o> created at line 68.
@@ -153,7 +170,6 @@ Synthesizing Unit <BitSlipCtrlFSM>.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_75_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_45_o> created at line 68.
     Found 1-bit 4-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_87_o> created at line 68.
-    Found 1-bit 4-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_89_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_21_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_25_o> created at line 68.
     Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_12_o_Mux_27_o> created at line 68.
@@ -217,39 +233,55 @@ WARNING:Xst:737 - Found 1-bit latch for signal <BitSlip>. Latches may be generat
 	inferred  48 Multiplexer(s).
 Unit <BitSlipCtrlFSM> synthesized.
 
+Synthesizing Unit <AdcChanReader>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcChanReader.vhd".
+WARNING:Xst:653 - Signal <SyncDone> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+Unit <AdcChanReader> synthesized.
+
+Synthesizing Unit <AdcDataReader>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd".
+    Found 6-bit register for signal <IntDataTotal>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <AdcDataReader> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
+# RAMs                                                 : 3
  32x4-bit single-port Read Only RAM                    : 1
- 8x4-bit single-port Read Only RAM                     : 4
-# Adders/Subtractors                                   : 9
+ 8x4-bit single-port Read Only RAM                     : 2
+# Adders/Subtractors                                   : 7
  3-bit adder                                           : 1
- 32-bit adder                                          : 5
+ 32-bit adder                                          : 3
  4-bit adder                                           : 2
  4-bit subtractor                                      : 1
-# Registers                                            : 26
+# Registers                                            : 27
  1-bit register                                        : 10
  2-bit register                                        : 3
- 3-bit register                                        : 5
+ 3-bit register                                        : 3
  32-bit register                                       : 1
  4-bit register                                        : 5
- 6-bit register                                        : 2
-# Latches                                              : 144
- 1-bit latch                                           : 144
-# Comparators                                          : 15
+ 6-bit register                                        : 5
+# Latches                                              : 72
+ 1-bit latch                                           : 72
+# Comparators                                          : 9
  2-bit comparator equal                                : 1
- 3-bit comparator equal                                : 4
+ 3-bit comparator equal                                : 2
  32-bit comparator greater                             : 2
- 32-bit comparator lessequal                           : 8
-# Multiplexers                                         : 226
- 1-bit 2-to-1 multiplexer                              : 54
- 1-bit 3-to-1 multiplexer                              : 128
- 1-bit 4-to-1 multiplexer                              : 8
+ 32-bit comparator lessequal                           : 4
+# Multiplexers                                         : 130
+ 1-bit 2-to-1 multiplexer                              : 30
+ 1-bit 3-to-1 multiplexer                              : 64
+ 1-bit 4-to-1 multiplexer                              : 4
  2-bit 2-to-1 multiplexer                              : 3
- 32-bit 2-to-1 multiplexer                             : 8
+ 32-bit 2-to-1 multiplexer                             : 4
  4-bit 2-to-1 multiplexer                              : 25
+# Xors                                                 : 4
+ 1-bit xor4                                            : 2
+ 1-bit xor8                                            : 2
 
 =========================================================================
 
@@ -258,12 +290,14 @@ Macro Statistics
 =========================================================================
 
 Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1.ngc>.
-Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_axi_gpio_0_wrapper.ngc>.
+Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_axi_gpio_1_wrapper.ngc>.
 Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_processing_system7_0_wrapper.ngc>.
 Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_axi_interconnect_1_wrapper.ngc>.
-Loading core <module_1_axi_gpio_0_wrapper> for timing and area information for instance <axi_gpio_0>.
+Reading core <..\..\Xapp_v3.srcs\sources_1\edk\module_1\implementation/module_1_axi_gpio_0_wrapper.ngc>.
+Loading core <module_1_axi_gpio_1_wrapper> for timing and area information for instance <axi_gpio_1>.
 Loading core <module_1_processing_system7_0_wrapper> for timing and area information for instance <processing_system7_0>.
 Loading core <module_1_axi_interconnect_1_wrapper> for timing and area information for instance <axi_interconnect_1>.
+Loading core <module_1_axi_gpio_0_wrapper> for timing and area information for instance <axi_gpio_0>.
 Loading core <module_1> for timing and area information for instance <module_1_i>.
 
 Synthesizing (advanced) Unit <AdcClock>.
@@ -304,31 +338,34 @@ Unit <PWM_Controller> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
+# RAMs                                                 : 3
  32x4-bit single-port distributed Read Only RAM        : 1
- 8x4-bit single-port distributed Read Only RAM         : 4
-# Adders/Subtractors                                   : 7
- 32-bit adder                                          : 5
+ 8x4-bit single-port distributed Read Only RAM         : 2
+# Adders/Subtractors                                   : 5
+ 32-bit adder                                          : 3
  4-bit adder                                           : 1
  4-bit subtractor                                      : 1
 # Counters                                             : 3
  3-bit up counter                                      : 1
  32-bit up counter                                     : 1
  4-bit up counter                                      : 1
-# Registers                                            : 56
- Flip-Flops                                            : 56
-# Comparators                                          : 15
+# Registers                                            : 68
+ Flip-Flops                                            : 68
+# Comparators                                          : 9
  2-bit comparator equal                                : 1
- 3-bit comparator equal                                : 4
+ 3-bit comparator equal                                : 2
  32-bit comparator greater                             : 2
- 32-bit comparator lessequal                           : 8
-# Multiplexers                                         : 226
- 1-bit 2-to-1 multiplexer                              : 54
- 1-bit 3-to-1 multiplexer                              : 128
- 1-bit 4-to-1 multiplexer                              : 8
+ 32-bit comparator lessequal                           : 4
+# Multiplexers                                         : 130
+ 1-bit 2-to-1 multiplexer                              : 30
+ 1-bit 3-to-1 multiplexer                              : 64
+ 1-bit 4-to-1 multiplexer                              : 4
  2-bit 2-to-1 multiplexer                              : 3
- 32-bit 2-to-1 multiplexer                             : 8
+ 32-bit 2-to-1 multiplexer                             : 4
  4-bit 2-to-1 multiplexer                              : 25
+# Xors                                                 : 4
+ 1-bit xor4                                            : 2
+ 1-bit xor8                                            : 2
 
 =========================================================================
 
@@ -356,26 +393,34 @@ Drivers are:
 
 Optimizing unit <module_1_stub> ...
 
-Optimizing unit <AdcDataReader> ...
+Optimizing unit <AdcFrameSync> ...
 
 Optimizing unit <BitSlipCtrlFSM> ...
 
+Optimizing unit <AdcDataReader> ...
+
 Optimizing unit <AdcClock> ...
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_5> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_4> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_3> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_2> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_1> of sequential type is unconnected in block <module_1_stub>.
+WARNING:Xst:2677 - Node <AdcFrame1/IntDataTotal_0> of sequential type is unconnected in block <module_1_stub>.
 WARNING:Xst:2677 - Node <IntClkCtrlAlgnWrn> of sequential type is unconnected in block <AdcClk>.
 WARNING:Xst:2677 - Node <IntClkCtrlInvrtd> of sequential type is unconnected in block <AdcClk>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block module_1_stub, actual ratio is 1.
-INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
 INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
 INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
+INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
 
 Final Macro Processing ...
 
@@ -383,8 +428,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 91
- Flip-Flops                                            : 91
+# Registers                                            : 97
+ Flip-Flops                                            : 97
 
 =========================================================================
 
@@ -405,25 +450,20 @@ Partition Implementation Status
 
 Clock Information:
 ------------------
------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
-Clock Signal                                                                                                           | Clock buffer(FF name)                       | Load  |
------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
-DCLK<0>                                                                                                                | IBUFGDS+ISERDESE2+BUFMRCE+BUFR              | 62    |
-module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>                                            | BUFG                                        | 717   |
-AdcReader1/BitSlipCtrlN/Mram__n01332(AdcReader1/BitSlipCtrlN/Mram__n013321:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlN/nextState_0)| 3     |
-AdcReader1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o(AdcReader1/BitSlipCtrlN/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader1/BitSlipCtrlN/counter_31) | 32    |
-AdcReader1/BitSlipCtrlN/Mram__n01333(AdcReader1/BitSlipCtrlN/Mram__n013331:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlN/BitSlip)    | 1     |
-AdcReader1/BitSlipCtrlP/Mram__n01332(AdcReader1/BitSlipCtrlP/Mram__n013321:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlP/nextState_0)| 3     |
-AdcReader1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o(AdcReader1/BitSlipCtrlP/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader1/BitSlipCtrlP/counter_31) | 32    |
-AdcReader1/BitSlipCtrlP/Mram__n01333(AdcReader1/BitSlipCtrlP/Mram__n013331:O)                                          | NONE(*)(AdcReader1/BitSlipCtrlP/BitSlip)    | 1     |
-AdcReader2/BitSlipCtrlP/Mram__n01332(AdcReader2/BitSlipCtrlP/Mram__n013321:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlP/nextState_0)| 3     |
-AdcReader2/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o(AdcReader2/BitSlipCtrlP/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader2/BitSlipCtrlP/counter_31) | 32    |
-AdcReader2/BitSlipCtrlP/Mram__n01333(AdcReader2/BitSlipCtrlP/Mram__n013331:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlP/BitSlip)    | 1     |
-AdcReader2/BitSlipCtrlN/Mram__n01332(AdcReader2/BitSlipCtrlN/Mram__n013321:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlN/nextState_0)| 3     |
-AdcReader2/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o(AdcReader2/BitSlipCtrlN/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcReader2/BitSlipCtrlN/counter_31) | 32    |
-AdcReader2/BitSlipCtrlN/Mram__n01333(AdcReader2/BitSlipCtrlN/Mram__n013331:O)                                          | NONE(*)(AdcReader2/BitSlipCtrlN/BitSlip)    | 1     |
------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
-(*) These 12 clock signal(s) are generated by combinatorial logic,
+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------+-------+
+Clock Signal                                                                                                         | Clock buffer(FF name)                      | Load  |
+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------+-------+
+module_1_i/axi_gpio_1/GPIO_IO_O<1>                                                                                   | NONE(FIFO18E1_inst)                        | 1     |
+DCLK<0>                                                                                                              | IBUFGDS+ISERDESE2+BUFMRCE+BUFR             | 69    |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>                                          | BUFG                                       | 653   |
+AdcFrame1/BitSlipCtrlN/Mram__n01332(AdcFrame1/BitSlipCtrlN/Mram__n013321:O)                                          | NONE(*)(AdcFrame1/BitSlipCtrlN/nextState_0)| 3     |
+AdcFrame1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_22_o(AdcFrame1/BitSlipCtrlN/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcFrame1/BitSlipCtrlN/counter_31) | 32    |
+AdcFrame1/BitSlipCtrlN/Mram__n01333(AdcFrame1/BitSlipCtrlN/Mram__n013331:O)                                          | NONE(*)(AdcFrame1/BitSlipCtrlN/BitSlip)    | 1     |
+AdcFrame1/BitSlipCtrlP/Mram__n01332(AdcFrame1/BitSlipCtrlP/Mram__n013321:O)                                          | NONE(*)(AdcFrame1/BitSlipCtrlP/nextState_0)| 3     |
+AdcFrame1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_22_o(AdcFrame1/BitSlipCtrlP/Mmux_currState[2]_PWR_17_o_Mux_22_o11:O)| BUFG(*)(AdcFrame1/BitSlipCtrlP/counter_31) | 32    |
+AdcFrame1/BitSlipCtrlP/Mram__n01333(AdcFrame1/BitSlipCtrlP/Mram__n013331:O)                                          | NONE(*)(AdcFrame1/BitSlipCtrlP/BitSlip)    | 1     |
+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------+-------+
+(*) These 6 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -441,9 +481,9 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 3.868ns (Maximum Frequency: 258.532MHz)
-   Minimum input arrival time before clock: 2.180ns
-   Maximum output required time after clock: 2.591ns
-   Maximum combinational path delay: 1.865ns
+   Minimum period: 3.935ns (Maximum Frequency: 254.140MHz)
+   Minimum input arrival time before clock: 2.296ns
+   Maximum output required time after clock: 3.082ns
+   Maximum combinational path delay: 1.859ns
 
 =========================================================================
