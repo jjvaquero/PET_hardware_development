@@ -14,6 +14,9 @@
 <msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" Line 99: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
 </msg>
 
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd" Line 115: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
+</msg>
+
 <msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcChanReader.vhd" Line 138: <arg fmt="%s" index="1">intdataout</arg> should be on the sensitivity list of the process
 </msg>
 
@@ -161,15 +164,6 @@
 <msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">counter&lt;0&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">nextState&lt;2&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">nextState&lt;1&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">nextState&lt;0&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
 <msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">BitSlip</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
@@ -177,9 +171,6 @@
 </msg>
 
 <msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_n0189</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-</msg>
-
-<msg type="info" file="Xst" num="3231" delta="new" >The small RAM &lt;<arg fmt="%s" index="1">Mram__n0133</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ReturnState_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">AdcClock</arg>&gt;. This FF/Latch will be trimmed during the optimization process.

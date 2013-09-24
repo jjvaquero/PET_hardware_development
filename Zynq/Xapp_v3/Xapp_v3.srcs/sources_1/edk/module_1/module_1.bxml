@@ -70,7 +70,7 @@
       </File>
       <File Name="data/module_1.ncf" Type="NCF">
         <Description>This is NCF file</Description>
-        <Properties IsDisabled="false" IsEditable="false" IsTrackable="true" IsUserDisableable="false" IsVisible="false" Timestamp="1379691776"/>
+        <Properties IsDisabled="false" IsEditable="false" IsTrackable="true" IsUserDisableable="false" IsVisible="false" Timestamp="1379954330"/>
         <UsedIn Val="IMPLEMENTATION"/>
       </File>
     </FileCollection>

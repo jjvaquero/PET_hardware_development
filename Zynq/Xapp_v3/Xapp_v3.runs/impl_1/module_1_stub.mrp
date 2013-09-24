@@ -8,23 +8,23 @@ Target Device  : xc7z020
 Target Package : clg484
 Target Speed   : -1
 Mapper Version : zynq -- $Revision: 1.55 $
-Mapped Date    : Fri Sep 20 17:43:43 2013
+Mapped Date    : Mon Sep 23 18:39:37 2013
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    9
+Number of warnings:    7
 Slice Logic Utilization:
-  Number of Slice Registers:                   641 out of 106,400    1%
+  Number of Slice Registers:                   635 out of 106,400    1%
     Number used as Flip Flops:                 569
-    Number used as Latches:                     72
+    Number used as Latches:                     66
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        848 out of  53,200    1%
-    Number used as logic:                      786 out of  53,200    1%
-      Number using O6 output only:             543
+  Number of Slice LUTs:                        850 out of  53,200    1%
+    Number used as logic:                      788 out of  53,200    1%
+      Number using O6 output only:             549
       Number using O5 output only:             120
-      Number using O5 and O6:                  123
+      Number using O5 and O6:                  119
       Number used as ROM:                        0
     Number used as Memory:                      50 out of  17,400    1%
       Number used as Dual Port RAM:              0
@@ -39,14 +39,14 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   289 out of  13,300    2%
-  Number of LUT Flip Flop pairs used:          954
-    Number with an unused Flip Flop:           366 out of     954   38%
-    Number with an unused LUT:                 106 out of     954   11%
-    Number of fully used LUT-FF pairs:         482 out of     954   50%
-    Number of unique control sets:              41
+  Number of occupied Slices:                   288 out of  13,300    2%
+  Number of LUT Flip Flop pairs used:          949
+    Number with an unused Flip Flop:           369 out of     949   38%
+    Number with an unused LUT:                  99 out of     949   10%
+    Number of fully used LUT-FF pairs:         481 out of     949   50%
+    Number of unique control sets:              40
     Number of slice register sites lost
-      to control set restrictions:             157 out of 106,400    1%
+      to control set restrictions:             155 out of 106,400    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -101,11 +101,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                2.96
+Average Fanout of Non-Clock Nets:                2.98
 
 Peak Memory Usage:  827 MB
-Total REAL time to MAP completion:  43 secs 
-Total CPU time to MAP completion:   43 secs 
+Total REAL time to MAP completion:  42 secs 
+Total CPU time to MAP completion:   42 secs 
 
 Table of Contents
 -----------------
@@ -142,14 +142,12 @@ WARNING:Pack:2768 - At least one timing constraint is impossible to meet because
    more detail. Evaluate the datasheet for alternative configurations for the component that could allow the frequencies requested in the
    constraint. Otherwise, the timing constraint covering this component might need to be modified to satisfy the component switching limits
    specified in the datasheet.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net AdcFrame1/BitSlipCtrlP/Mram__n01332 is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net AdcFrame1/BitSlipCtrlN/Mram__n01333 is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net AdcFrame1/BitSlipCtrlN/Mram__n01332 is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net AdcFrame1/BitSlipCtrlP/Mram__n01333 is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net AdcFrame1/BitSlipCtrlN/currState[2]_PWR_49_o_Mux_88_o is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the
+   flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net AdcFrame1/BitSlipCtrlP/currState[2]_PWR_49_o_Mux_88_o is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the
+   flip-flop.
 WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration on
    block:<AdcClk/AdcClock_I_Isrds_Master>:<ISERDESE2_ISERDESE2>.  Useless CE2 input pin. With NUM_CE set 1, the CE2
    input pin is being ignored.
