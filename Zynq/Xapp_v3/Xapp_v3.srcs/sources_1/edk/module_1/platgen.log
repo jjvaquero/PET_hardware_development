@@ -13,35 +13,35 @@ Read MPD definitions ...
 WARNING:EDK:4092 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
    C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.src
-   s\sources_1\edk\module_1\module_1.mhs line 35 
+   s\sources_1\edk\module_1\module_1.mhs line 36 
 WARNING:EDK:4092 - IPNAME: axi_gpio, INSTANCE: axi_gpio_0 - Pre-Production
    version not verified on hardware for architecture 'zynq' -
    C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.src
-   s\sources_1\edk\module_1\module_1.mhs line 125 
+   s\sources_1\edk\module_1\module_1.mhs line 126 
 WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi_interconnect_1 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
    C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.src
-   s\sources_1\edk\module_1\module_1.mhs line 138 
+   s\sources_1\edk\module_1\module_1.mhs line 140 
 WARNING:EDK:4092 - IPNAME: axi_gpio, INSTANCE: axi_gpio_1 - Pre-Production
    version not verified on hardware for architecture 'zynq' -
    C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.src
-   s\sources_1\edk\module_1\module_1.mhs line 146 
+   s\sources_1\edk\module_1\module_1.mhs line 148 
 WARNING:EDK:4092 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
    C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.src
-   s\sources_1\edk\module_1\module_1.mhs line 35 
+   s\sources_1\edk\module_1\module_1.mhs line 36 
 WARNING:EDK:4092 - IPNAME: axi_gpio, INSTANCE: axi_gpio_0 - Pre-Production
    version not verified on hardware for architecture 'zynq' -
    C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.src
-   s\sources_1\edk\module_1\module_1.mhs line 125 
+   s\sources_1\edk\module_1\module_1.mhs line 126 
 WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi_interconnect_1 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
    C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.src
-   s\sources_1\edk\module_1\module_1.mhs line 138 
+   s\sources_1\edk\module_1\module_1.mhs line 140 
 WARNING:EDK:4092 - IPNAME: axi_gpio, INSTANCE: axi_gpio_1 - Pre-Production
    version not verified on hardware for architecture 'zynq' -
    C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.src
-   s\sources_1\edk\module_1\module_1.mhs line 146 
+   s\sources_1\edk\module_1\module_1.mhs line 148 
 
 Overriding IP level properties ...
 INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl
@@ -144,9 +144,17 @@ Creating hardware output directories ...
 Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
+IPNAME:processing_system7 INSTANCE:processing_system7_0 -
+C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.srcs\s
+ources_1\edk\module_1\module_1.mhs line 36 - Copying cache implementation
+netlist
 IPNAME:axi_interconnect INSTANCE:axi_interconnect_1 -
 C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.srcs\s
-ources_1\edk\module_1\module_1.mhs line 138 - Copying cache implementation
+ources_1\edk\module_1\module_1.mhs line 140 - Copying cache implementation
+netlist
+IPNAME:axi_gpio INSTANCE:axi_gpio_1 -
+C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.srcs\s
+ources_1\edk\module_1\module_1.mhs line 148 - Copying cache implementation
 netlist
 
 Elaborating instances ...
@@ -154,10 +162,10 @@ Elaborating instances ...
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 1.00 seconds
+Completion time: 0.00 seconds
 
 Constructing platform-level connectivity ...
-Completion time: 0.00 seconds
+Completion time: 1.00 seconds
 
 Writing (top-level) BMM ...
 
@@ -170,15 +178,9 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
-INSTANCE:processing_system7_0 -
-C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.srcs\s
-ources_1\edk\module_1\module_1.mhs line 35 - Running XST synthesis
 INSTANCE:axi_gpio_0 -
 C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.srcs\s
-ources_1\edk\module_1\module_1.mhs line 125 - Running XST synthesis
-INSTANCE:axi_gpio_1 -
-C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.srcs\s
-ources_1\edk\module_1\module_1.mhs line 146 - Running XST synthesis
+ources_1\edk\module_1\module_1.mhs line 126 - Running XST synthesis
 
 Running NGCBUILD ...
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
@@ -187,4 +189,4 @@ INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
 
 Rebuilding cache ...
 
-Total run time: 48.00 seconds
+Total run time: 25.00 seconds

@@ -643,7 +643,7 @@ Elaborating entity <pselect_f> (architecture <imp>) with generics from library <
 INFO:HDLCompiler:679 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd" Line 417. Case statement is complete. others clause is never selected
 
 Elaborating entity <GPIO_Core> (architecture <IMP>) with generics from library <axi_gpio_v1_01_b>.
-INFO:HDLCompiler:679 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/gpio_core.vhd" Line 339. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:/Xilinx/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/gpio_core.vhd" Line 554. Case statement is complete. others clause is never selected
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -671,7 +671,7 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
         C_INTERRUPT_PRESENT = 0
         C_DOUT_DEFAULT = "00000000000000000000000000000000"
         C_TRI_DEFAULT = "11111111111111111111111111111111"
-        C_IS_DUAL = 0
+        C_IS_DUAL = 1
         C_DOUT_DEFAULT_2 = "00000000000000000000000000000000"
         C_TRI_DEFAULT_2 = "11111111111111111111111111111111"
 WARNING:Xst:37 - Detected unknown constraint/property "IP_GROUP". This constraint/property is not supported by the current software release and will be ignored.
@@ -817,14 +817,13 @@ Synthesizing Unit <GPIO_Core>.
         C_INTERRUPT_PRESENT = 0
         C_DOUT_DEFAULT = "00000000000000000000000000000000"
         C_TRI_DEFAULT = "11111111111111111111111111111111"
-        C_IS_DUAL = 0
+        C_IS_DUAL = 1
         C_DOUT_DEFAULT_2 = "00000000000000000000000000000000"
         C_TRI_DEFAULT_2 = "11111111111111111111111111111111"
         C_FAMILY = "zynq"
 WARNING:Xst:647 - Input <ABus_Reg<1:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <ABus_Reg<7:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <BE_Reg> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <GPIO2_IO_I> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <gpio_xferAck_Reg>.
     Found 1-bit register for signal <GPIO_DBus_i<0>>.
     Found 1-bit register for signal <GPIO_DBus_i<1>>.
@@ -858,15 +857,52 @@ WARNING:Xst:647 - Input <GPIO2_IO_I> is never used. This port will be preserved 
     Found 1-bit register for signal <GPIO_DBus_i<29>>.
     Found 1-bit register for signal <GPIO_DBus_i<30>>.
     Found 1-bit register for signal <GPIO_DBus_i<31>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<0>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<1>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<2>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<3>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<4>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<5>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<6>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<7>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<8>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<9>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<10>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<11>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<12>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<13>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<14>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<15>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<16>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<17>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<18>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<19>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<20>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<21>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<22>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<23>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<24>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<25>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<26>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<27>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<28>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<29>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<30>>.
+    Found 1-bit register for signal <Dual.GPIO2_DBus_i<31>>.
     Found 32-bit register for signal <gpio_io_i_d1>.
     Found 32-bit register for signal <gpio_io_i_d2>.
     Found 32-bit register for signal <gpio_Data_In>.
+    Found 32-bit register for signal <Dual.gpio2_io_i_d1>.
+    Found 32-bit register for signal <Dual.gpio2_io_i_d2>.
+    Found 32-bit register for signal <Dual.gpio2_Data_In>.
     Found 32-bit register for signal <gpio_Data_Out>.
     Found 32-bit register for signal <gpio_OE>.
+    Found 32-bit register for signal <Dual.gpio2_Data_Out>.
+    Found 32-bit register for signal <Dual.gpio2_OE>.
     Found 1-bit register for signal <iGPIO_xferAck>.
     Summary:
-	inferred 194 D-type flip-flop(s).
-	inferred  70 Multiplexer(s).
+	inferred 386 D-type flip-flop(s).
+	inferred 199 Multiplexer(s).
 Unit <GPIO_Core> synthesized.
 
 =========================================================================
@@ -875,13 +911,14 @@ HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  4-bit adder                                           : 1
-# Registers                                            : 25
+# Registers                                            : 31
  1-bit register                                        : 14
  2-bit register                                        : 2
- 32-bit register                                       : 8
+ 32-bit register                                       : 14
  4-bit register                                        : 1
-# Multiplexers                                         : 76
- 1-bit 2-to-1 multiplexer                              : 75
+# Multiplexers                                         : 205
+ 1-bit 2-to-1 multiplexer                              : 203
+ 32-bit 2-to-1 multiplexer                             : 1
  9-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
 
@@ -902,10 +939,11 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Counters                                             : 1
  4-bit up counter                                      : 1
-# Registers                                            : 274
- Flip-Flops                                            : 274
-# Multiplexers                                         : 72
- 1-bit 2-to-1 multiplexer                              : 71
+# Registers                                            : 466
+ Flip-Flops                                            : 466
+# Multiplexers                                         : 201
+ 1-bit 2-to-1 multiplexer                              : 199
+ 32-bit 2-to-1 multiplexer                             : 1
  9-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
 
@@ -947,12 +985,44 @@ INFO:Xst:2261 - The FF/Latch <axi_gpio_0/bus2ip_reset> in Unit <module_1_axi_gpi
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block module_1_axi_gpio_0_wrapper, actual ratio is 0.
+Found area constraint ratio of 100 (+ 0) on block module_1_axi_gpio_0_wrapper, actual ratio is 1.
 FlipFlop axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
 Processing Unit <module_1_axi_gpio_0_wrapper> :
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_0>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_1>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_2>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_3>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_4>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_5>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_6>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_7>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_8>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_9>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_10>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_11>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_12>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_13>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_14>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_15>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_16>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_17>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_18>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_19>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_20>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_21>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_22>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_23>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_24>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_25>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_26>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_27>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_28>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_29>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_30>.
+	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/Dual.gpio2_Data_In_31>.
 	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/gpio_Data_In_0>.
 	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/gpio_Data_In_1>.
 	Found 3-bit shift register for signal <axi_gpio_0/gpio_core_1/gpio_Data_In_2>.
@@ -991,10 +1061,10 @@ Unit <module_1_axi_gpio_0_wrapper> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 175
- Flip-Flops                                            : 175
-# Shift Registers                                      : 32
- 3-bit shift register                                  : 32
+# Registers                                            : 271
+ Flip-Flops                                            : 271
+# Shift Registers                                      : 64
+ 3-bit shift register                                  : 64
 
 =========================================================================
 
@@ -1017,23 +1087,23 @@ Top Level Output File Name         : module_1_axi_gpio_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 153
+# BELS                             : 379
 #      GND                         : 1
 #      INV                         : 1
 #      LUT2                        : 3
-#      LUT3                        : 37
-#      LUT4                        : 37
-#      LUT5                        : 35
-#      LUT6                        : 38
+#      LUT3                        : 133
+#      LUT4                        : 133
+#      LUT5                        : 4
+#      LUT6                        : 103
 #      VCC                         : 1
-# FlipFlops/Latches                : 207
+# FlipFlops/Latches                : 335
 #      FD                          : 7
-#      FDE                         : 32
-#      FDR                         : 70
-#      FDRE                        : 66
-#      FDSE                        : 32
-# Shift Registers                  : 32
-#      SRLC16E                     : 32
+#      FDE                         : 64
+#      FDR                         : 102
+#      FDRE                        : 98
+#      FDSE                        : 64
+# Shift Registers                  : 64
+#      SRLC16E                     : 64
 
 Device utilization summary:
 ---------------------------
@@ -1042,17 +1112,17 @@ Selected Device : 7z020clg484-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             207  out of  106400     0%  
- Number of Slice LUTs:                  183  out of  53200     0%  
-    Number used as Logic:               151  out of  53200     0%  
-    Number used as Memory:               32  out of  17400     0%  
-       Number used as SRL:               32
+ Number of Slice Registers:             335  out of  106400     0%  
+ Number of Slice LUTs:                  441  out of  53200     0%  
+    Number used as Logic:               377  out of  53200     0%  
+    Number used as Memory:               64  out of  17400     0%  
+       Number used as SRL:               64
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    245
-   Number with an unused Flip Flop:      38  out of    245    15%  
-   Number with an unused LUT:            62  out of    245    25%  
-   Number of fully used LUT-FF pairs:   145  out of    245    59%  
+ Number of LUT Flip Flop pairs used:    471
+   Number with an unused Flip Flop:     136  out of    471    28%  
+   Number with an unused LUT:            30  out of    471     6%  
+   Number of fully used LUT-FF pairs:   305  out of    471    64%  
    Number of unique control sets:         7
 
 IO Utilization: 
@@ -1082,7 +1152,7 @@ Clock Information:
 -----------------------------------+------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)              | Load  |
 -----------------------------------+------------------------------------+-------+
-S_AXI_ACLK                         | NONE(axi_gpio_0/ip2bus_data_i_D1_0)| 239   |
+S_AXI_ACLK                         | NONE(axi_gpio_0/ip2bus_data_i_D1_0)| 399   |
 -----------------------------------+------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -1094,7 +1164,7 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 1.820ns (Maximum Frequency: 549.592MHz)
+   Minimum period: 1.827ns (Maximum Frequency: 547.484MHz)
    Minimum input arrival time before clock: 1.205ns
    Maximum output required time after clock: 0.840ns
    Maximum combinational path delay: No path found
@@ -1105,49 +1175,49 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
-  Clock period: 1.820ns (frequency: 549.592MHz)
-  Total number of paths / destination ports: 708 / 472
+  Clock period: 1.827ns (frequency: 547.484MHz)
+  Total number of paths / destination ports: 1284 / 760
 -------------------------------------------------------------------------
-Delay:               1.820ns (Levels of Logic = 1)
+Delay:               1.827ns (Levels of Logic = 1)
   Source:            axi_gpio_0/gpio_core_1/gpio_xferAck_Reg (FF)
-  Destination:       axi_gpio_0/gpio_core_1/GPIO_DBus_i_0 (FF)
+  Destination:       axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_0 (FF)
   Source Clock:      S_AXI_ACLK rising
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: axi_gpio_0/gpio_core_1/gpio_xferAck_Reg to axi_gpio_0/gpio_core_1/GPIO_DBus_i_0
+  Data Path: axi_gpio_0/gpio_core_1/gpio_xferAck_Reg to axi_gpio_0/gpio_core_1/Dual.GPIO2_DBus_i_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDR:C->Q              2   0.282   0.608  axi_gpio_0/gpio_core_1/gpio_xferAck_Reg (axi_gpio_0/gpio_core_1/gpio_xferAck_Reg)
-     LUT4:I1->O           32   0.053   0.552  axi_gpio_0/gpio_core_1/Read_Reg_Rst1 (axi_gpio_0/gpio_core_1/Read_Reg_Rst)
+     LUT4:I1->O           64   0.053   0.559  axi_gpio_0/gpio_core_1/Read_Reg_Rst1 (axi_gpio_0/gpio_core_1/Read_Reg_Rst)
      FDR:R                     0.325          axi_gpio_0/gpio_core_1/GPIO_DBus_i_31
     ----------------------------------------
-    Total                      1.820ns (0.660ns logic, 1.160ns route)
-                                       (36.3% logic, 63.7% route)
+    Total                      1.827ns (0.660ns logic, 1.167ns route)
+                                       (36.1% logic, 63.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 859 / 173
+  Total number of paths / destination ports: 1787 / 365
 -------------------------------------------------------------------------
 Offset:              1.205ns (Levels of Logic = 2)
   Source:            S_AXI_ARVALID (PAD)
-  Destination:       axi_gpio_0/gpio_core_1/gpio_Data_Out_0 (FF)
+  Destination:       axi_gpio_0/gpio_core_1/Dual.gpio2_OE_0 (FF)
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: S_AXI_ARVALID to axi_gpio_0/gpio_core_1/gpio_Data_Out_0
+  Data Path: S_AXI_ARVALID to axi_gpio_0/gpio_core_1/Dual.gpio2_OE_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT5:I0->O           64   0.053   0.762  axi_gpio_0/gpio_core_1/Mmux_Read_Reg_In<0>13211_rstpot (axi_gpio_0/gpio_core_1/Mmux_Read_Reg_In<0>13211_rstpot)
-     LUT3:I0->O            1   0.053   0.000  axi_gpio_0/gpio_core_1/gpio_Data_Out_31_dpot1 (axi_gpio_0/gpio_core_1/gpio_Data_Out_31_dpot1)
-     FDRE:D                    0.011          axi_gpio_0/gpio_core_1/gpio_Data_Out_31
+     LUT5:I0->O           64   0.053   0.762  axi_gpio_0/gpio_core_1/Mmux_Dual.Read_Reg2_In<0>16411_rstpot (axi_gpio_0/gpio_core_1/Mmux_Dual.Read_Reg2_In<0>16411_rstpot)
+     LUT3:I0->O            1   0.053   0.000  axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_31_dpot1 (axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_31_dpot1)
+     FDRE:D                    0.011          axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_31
     ----------------------------------------
     Total                      1.205ns (0.443ns logic, 0.762ns route)
                                        (36.8% logic, 63.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 104 / 101
+  Total number of paths / destination ports: 168 / 165
 -------------------------------------------------------------------------
 Offset:              0.840ns (Levels of Logic = 1)
   Source:            axi_gpio_0/ip2bus_wrack_i_D1 (FF)
@@ -1174,20 +1244,20 @@ Clock to Setup on destination clock S_AXI_ACLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-S_AXI_ACLK     |    1.820|         |         |         |
+S_AXI_ACLK     |    1.827|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.84 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.04 secs
  
 --> 
 
-Total memory usage is 486052 kilobytes
+Total memory usage is 454500 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   24 (   0 filtered)
+Number of warnings :   23 (   0 filtered)
 Number of infos    :    7 (   0 filtered)
 

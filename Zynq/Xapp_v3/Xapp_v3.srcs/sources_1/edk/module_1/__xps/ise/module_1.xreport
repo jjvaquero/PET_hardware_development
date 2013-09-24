@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2013-09-23T16:54:24</DateModified>
+  <DateModified>2013-09-24T11:24:12</DateModified>
   <ModuleName>module_1</ModuleName>
-  <SummaryTimeStamp>2013-09-23T16:54:24</SummaryTimeStamp>
+  <SummaryTimeStamp>2013-09-24T11:24:11</SummaryTimeStamp>
   <SavedFilePath>C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/__xps/ise/module_1.xreport</SavedFilePath>
   <FilterFile>filter.filter</FilterFile>
   <SavedFilterFilePath>C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/__xps/ise</SavedFilterFilePath>

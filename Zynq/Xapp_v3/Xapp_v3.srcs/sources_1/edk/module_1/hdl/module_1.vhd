@@ -36,7 +36,8 @@ entity module_1 is
     processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
     processing_system7_0_FCLK_CLK0_pin : out std_logic;
     fifoControlPins : out std_logic_vector(1 downto 0);
-    fifoDataOut : in std_logic_vector(31 downto 0)
+    fifoDataOutCD : in std_logic_vector(31 downto 0);
+    fifoDataOutAB : in std_logic_vector(31 downto 0)
   );
 end module_1;
 
@@ -1053,6 +1054,7 @@ architecture STRUCTURE of module_1 is
   signal axi_interconnect_1_S_WSTRB : std_logic_vector(3 downto 0);
   signal axi_interconnect_1_S_WVALID : std_logic_vector(0 to 0);
   signal net_fifoDataOut : std_logic_vector(31 downto 0);
+  signal net_fifoDataOutAB : std_logic_vector(31 downto 0);
   signal net_gnd0 : std_logic;
   signal net_gnd1 : std_logic_vector(0 to 0);
   signal net_gnd2 : std_logic_vector(1 downto 0);
@@ -1095,7 +1097,8 @@ begin
   processing_system7_0_FCLK_RESET1_N_pin <= processing_system7_0_FCLK_RESET1_N;
   processing_system7_0_FCLK_CLK0_pin <= processing_system7_0_FCLK_CLK0(0);
   fifoControlPins <= axi_gpio_1_GPIO_IO_O;
-  net_fifoDataOut <= fifoDataOut;
+  net_fifoDataOut <= fifoDataOutCD;
+  net_fifoDataOutAB <= fifoDataOutAB;
   pgassign1(1 downto 1) <= processing_system7_0_FCLK_CLK0(0 to 0);
   pgassign1(0 downto 0) <= processing_system7_0_FCLK_CLK0(0 to 0);
   net_gnd0 <= '0';
@@ -1813,7 +1816,7 @@ begin
       GPIO_IO_I => net_gnd32,
       GPIO_IO_O => axi_gpio_0_GPIO_IO_O,
       GPIO_IO_T => open,
-      GPIO2_IO_I => net_gnd32,
+      GPIO2_IO_I => net_fifoDataOutAB,
       GPIO2_IO_O => open,
       GPIO2_IO_T => open
     );

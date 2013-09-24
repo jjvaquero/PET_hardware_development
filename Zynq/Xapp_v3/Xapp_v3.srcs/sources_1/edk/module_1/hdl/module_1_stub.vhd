@@ -36,7 +36,8 @@ entity module_1_stub is
     processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
     processing_system7_0_FCLK_CLK0_pin : out std_logic;
     fifoControlPins : out std_logic_vector(1 downto 0);
-    fifoDataOut : in std_logic_vector(31 downto 0)
+    fifoDataOutCD : in std_logic_vector(31 downto 0);
+    fifoDataOutAB : in std_logic_vector(31 downto 0)
   );
 end module_1_stub;
 
@@ -71,7 +72,8 @@ architecture STRUCTURE of module_1_stub is
       processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
       processing_system7_0_FCLK_CLK0_pin : out std_logic;
       fifoControlPins : out std_logic_vector(1 downto 0);
-      fifoDataOut : in std_logic_vector(31 downto 0)
+      fifoDataOutCD : in std_logic_vector(31 downto 0);
+      fifoDataOutAB : in std_logic_vector(31 downto 0)
     );
   end component;
 
@@ -109,7 +111,8 @@ begin
       processing_system7_0_FCLK_RESET1_N_pin => processing_system7_0_FCLK_RESET1_N_pin,
       processing_system7_0_FCLK_CLK0_pin => processing_system7_0_FCLK_CLK0_pin,
       fifoControlPins => fifoControlPins,
-      fifoDataOut => fifoDataOut
+      fifoDataOutCD => fifoDataOutCD,
+      fifoDataOutAB => fifoDataOutAB
     );
 
 end architecture STRUCTURE;
