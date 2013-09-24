@@ -181,7 +181,7 @@ int main(void)
 			XGpio_DiscreteWrite(&Gpio1, 1, 3); // rdE = 1, rdClk = 1
 			leido =  XGpio_DiscreteRead(&Gpio1, 2);
 			valuesC[i] = leido&0x0000FFFF;;
-			//valuesD[i] = (leido&0xFFFF0000)>>16;
+			valuesD[i] = (leido&0xFFFF0000)>>16;
 		}
 
 		xil_printf("Brightness Level %d selected...valor leido %d led %d \n\r", period,leido, leido);
@@ -191,10 +191,10 @@ int main(void)
 				xil_printf(" %d, ",valuesC[i]);
 			}
 
-//			  xil_printf("Read Values D \n\r");
-//						for ( i = 0; i<DATAN; i++){
-//							xil_printf(" %d, ",valuesD[i]);
-//						}
+			  xil_printf("Read Values D \n\r");
+						for ( i = 0; i<DATAN; i++){
+							xil_printf(" %d, ",valuesD[i]);
+						}
 
 
 

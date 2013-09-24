@@ -1,11 +1,11 @@
-17:31:01 **** Clean-only build of configuration Debug for project Test1 ****
+18:42:36 **** Clean-only build of configuration Debug for project Test1 ****
 make clean 
 rm -rf  ./src/main.o  ./src/main.d  Test1.elf.size  Test1.elf
 ' '
-17:31:01 **** Clean-only build of project standalone_bsp_0 ****
+18:42:36 **** Clean-only build of project standalone_bsp_0 ****
 make -k clean 
 rm -rf ps7_cortexa9_0
-17:31:02 **** Build of project standalone_bsp_0 ****
+18:42:36 **** Build of project standalone_bsp_0 ****
 make -k all 
 libgen -hw ../module_1_hw_platform/system.xml\
 	       \
@@ -49,7 +49,7 @@ arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
 "Compiling cpu_cortexa9"
 Running execs_generate.
 'Finished building libraries'
-17:31:12 **** Build of configuration Debug for project Test1 ****
+18:42:49 **** Build of configuration Debug for project Test1 ****
 make all 
 'Building file: ../src/main.c'
 'Invoking: ARM gcc compiler'
@@ -67,63 +67,9 @@ arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
   29504	   1904	  37844	  69252	  10e84	Test1.elf
 'Finished building: Test1.elf.size'
 ' '
-17:32:58 **** Incremental Build of configuration Debug for project Test1 ****
+18:43:05 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.
-17:40:07 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:40:54 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:41:05 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:41:31 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:46:44 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:48:54 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:49:16 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:49:43 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:51:41 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:53:00 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:53:14 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:53:47 **** Incremental Build of configuration Debug for project Test1 ****
-make all 
-make: No se hace nada para `all'.
-17:54:20 **** Auto Build of configuration Debug for project Test1 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building target: Test1.elf'
-'Invoking: ARM gcc linker'
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: Test1.elf'
-' '
-'Invoking: ARM Print Size'
-arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29372	   1904	  37844	  69120	  10e00	Test1.elf
-'Finished building: Test1.elf.size'
-' '
-17:55:13 **** Incremental Build of configuration Debug for project Test1 ****
+18:43:33 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.

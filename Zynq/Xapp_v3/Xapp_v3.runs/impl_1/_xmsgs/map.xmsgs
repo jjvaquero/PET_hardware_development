@@ -50,16 +50,10 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcFrame1/BitSlipCtrlP/Mram__n01332</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcFrame1/BitSlipCtrlN/currState[2]_PWR_49_o_Mux_88_o</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcFrame1/BitSlipCtrlN/Mram__n01333</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcFrame1/BitSlipCtrlN/Mram__n01332</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcFrame1/BitSlipCtrlP/Mram__n01333</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AdcFrame1/BitSlipCtrlP/currState[2]_PWR_49_o_Mux_88_o</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcClk/AdcClock_I_Isrds_Master</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.

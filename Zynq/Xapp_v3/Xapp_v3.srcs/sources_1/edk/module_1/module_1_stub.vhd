@@ -377,7 +377,7 @@ begin
             BitSlipN         => IntBitSlip_N
               );
 
-      -- fifoParIn(3 downto 2)<= b"00";
+     -- fifoParIn(3 downto 2)<= b"00";
 
         
         -- IDELAYCTRL is needed for calibration
@@ -402,10 +402,10 @@ begin
         generic map (
             ALMOST_EMPTY_OFFSET => X"0080", -- Sets the almost empty threshold
             ALMOST_FULL_OFFSET => X"0080", -- Sets almost full threshold
-            DATA_WIDTH => 36, -- Sets data width to 4-36 --18
+            DATA_WIDTH => 36,--18   -- Sets data width to 4-36 --18
             DO_REG => 1, -- Enable output register (1-0) Must be 1 if EN_SYN = FALSE
             EN_SYN => FALSE, -- Specifies FIFO as dual-clock (FALSE) or Synchronous (TRUE)
-            FIFO_MODE => "FIFO18_36", -- Sets mode to FIFO18 or FIFO18_36
+            FIFO_MODE => "FIFO18_36", --FIFO18", -- Sets mode to FIFO18 or FIFO18_36
             FIRST_WORD_FALL_THROUGH => FALSE, -- Sets the FIFO FWFT to FALSE, TRUE
             INIT => X"00000000", -- Initial values on output port
             SIM_DEVICE => "7SERIES", -- Must be set to "7SERIES" for simulation behavior
