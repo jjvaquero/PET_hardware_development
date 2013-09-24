@@ -14,6 +14,12 @@
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/ADC_ChanReaderMultiBank.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/AdcFrameSync.vhd">
       <FileInfo>
         <Attr Name="UsedInSynthesis" Val="1"/>

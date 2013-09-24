@@ -8,42 +8,42 @@ Target Device  : xc7z020
 Target Package : clg484
 Target Speed   : -1
 Mapper Version : zynq -- $Revision: 1.55 $
-Mapped Date    : Mon Sep 23 18:39:37 2013
+Mapped Date    : Tue Sep 24 12:01:39 2013
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    7
 Slice Logic Utilization:
-  Number of Slice Registers:                   635 out of 106,400    1%
-    Number used as Flip Flops:                 569
+  Number of Slice Registers:                   755 out of 106,400    1%
+    Number used as Flip Flops:                 689
     Number used as Latches:                     66
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        850 out of  53,200    1%
-    Number used as logic:                      788 out of  53,200    1%
-      Number using O6 output only:             549
+  Number of Slice LUTs:                        981 out of  53,200    1%
+    Number used as logic:                      891 out of  53,200    1%
+      Number using O6 output only:             651
       Number using O5 output only:             120
-      Number using O5 and O6:                  119
+      Number using O5 and O6:                  120
       Number used as ROM:                        0
-    Number used as Memory:                      50 out of  17,400    1%
+    Number used as Memory:                      66 out of  17,400    1%
       Number used as Dual Port RAM:              0
       Number used as Single Port RAM:            0
-      Number used as Shift Register:            50
+      Number used as Shift Register:            66
         Number using O6 output only:            34
         Number using O5 output only:             0
-        Number using O5 and O6:                 16
-    Number used exclusively as route-thrus:     12
-      Number with same-slice register load:      8
+        Number using O5 and O6:                 32
+    Number used exclusively as route-thrus:     24
+      Number with same-slice register load:     20
       Number with same-slice carry load:         4
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   288 out of  13,300    2%
-  Number of LUT Flip Flop pairs used:          949
-    Number with an unused Flip Flop:           369 out of     949   38%
-    Number with an unused LUT:                  99 out of     949   10%
-    Number of fully used LUT-FF pairs:         481 out of     949   50%
+  Number of occupied Slices:                   303 out of  13,300    2%
+  Number of LUT Flip Flop pairs used:        1,046
+    Number with an unused Flip Flop:           376 out of   1,046   35%
+    Number with an unused LUT:                  65 out of   1,046    6%
+    Number of fully used LUT-FF pairs:         605 out of   1,046   57%
     Number of unique control sets:              40
     Number of slice register sites lost
       to control set restrictions:             155 out of 106,400    1%
@@ -57,25 +57,25 @@ Slice Logic Distribution:
   over-mapped for a non-BRAM resource or if placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        22 out of     200   11%
-    Number of LOCed IOBs:                       22 out of      22  100%
+  Number of bonded IOBs:                        30 out of     200   15%
+    Number of LOCed IOBs:                       28 out of      30   93%
   Number of bonded IOPAD:                      130 out of     130  100%
 
 Specific Feature Utilization:
   Number of RAMB36E1/FIFO36E1s:                  0 out of     140    0%
-  Number of RAMB18E1/FIFO18E1s:                  1 out of     280    1%
+  Number of RAMB18E1/FIFO18E1s:                  2 out of     280    1%
     Number using RAMB18E1 only:                  0
-    Number using FIFO18E1 only:                  1
+    Number using FIFO18E1 only:                  2
   Number of BUFG/BUFGCTRLs:                      5 out of      32   15%
     Number used as BUFGs:                        5
     Number used as BUFGCTRLs:                    0
   Number of IDELAYE2/IDELAYE2_FINEDELAYs:        1 out of     200    1%
     Number used as IDELAYE2s:                    1
     Number used as IDELAYE2_FINEDELAYs:          0
-  Number of ILOGICE2/ILOGICE3/ISERDESE2s:       11 out of     200    5%
+  Number of ILOGICE2/ILOGICE3/ISERDESE2s:       19 out of     200    9%
     Number used as ILOGICE2s:                    0
   Number used as  ILOGICE3s:                     0
-    Number used as ISERDESE2s:                  11
+    Number used as ISERDESE2s:                  19
   Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0
   Number of OLOGICE2/OLOGICE3/OSERDESE2s:        0 out of     200    0%
   Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      16    0%
@@ -101,11 +101,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                2.98
+Average Fanout of Non-Clock Nets:                3.05
 
-Peak Memory Usage:  827 MB
-Total REAL time to MAP completion:  42 secs 
-Total CPU time to MAP completion:   42 secs 
+Peak Memory Usage:  829 MB
+Total REAL time to MAP completion:  48 secs 
+Total CPU time to MAP completion:   45 secs 
 
 Table of Contents
 -----------------
@@ -179,9 +179,9 @@ INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
- 274 block(s) removed
-  46 block(s) optimized away
-1561 signal(s) removed
+ 370 block(s) removed
+  58 block(s) optimized away
+1665 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -220,7 +220,7 @@ r_sasd_0/gen_crossbar.addr_arbiter_inst/Mmux_s_amesg111" (ROM) removed.
 removed.
     The signal "module_1_i/axi_interconnect_1_S_ARADDR[7]" is loadless and has been
 removed.
-  The signal "module_1_i/axi_interconnect_1/GND_10" is loadless and has been
+  The signal "module_1_i/axi_interconnect_1/GND_15" is loadless and has been
 removed.
 The signal "module_1_i/axi_interconnect_1_M_ARADDR[38]" is loadless and has been
 removed.
@@ -3720,7 +3720,7 @@ t[1].clock_conv_inst/m_async_conv_reset" is loadless and has been removed.
  Loadless block
 "module_1_i/axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slo
 t[1].clock_conv_inst/m_async_conv_reset" (FF) removed.
-  The signal "module_1_i/axi_interconnect_1/VCC_10" is loadless and has been
+  The signal "module_1_i/axi_interconnect_1/VCC_15" is loadless and has been
 removed.
 The signal
 "module_1_i/axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slo
@@ -4401,28 +4401,602 @@ unused and has been removed.
      Unused block
 "module_1_i/axi_gpio_1/axi_gpio_1/gpio_core_1/Dual.gpio2_Data_Out_31_dpot" (ROM)
 removed.
-The signal "module_1_i/axi_gpio_1/VCC_9" is unused and has been removed.
-The signal "module_1_i/axi_gpio_1/GND_9" is unused and has been removed.
+The signal "module_1_i/axi_gpio_1/VCC_13" is unused and has been removed.
+The signal "module_1_i/axi_gpio_1/GND_13" is unused and has been removed.
+The signal "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[0]"
+is unused and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_0" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_0_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_0_dpot1" (ROM)
+removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_0_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_0_dpot" (ROM)
+removed.
+The signal "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[1]"
+is unused and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_1" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_1_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_1_dpot1" (ROM)
+removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_1_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_1_dpot" (ROM)
+removed.
+The signal "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[2]"
+is unused and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_2" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_2_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_2_dpot1" (ROM)
+removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_2_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_2_dpot" (ROM)
+removed.
+The signal "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[3]"
+is unused and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_3" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_3_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_3_dpot1" (ROM)
+removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_3_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_3_dpot" (ROM)
+removed.
+The signal "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[4]"
+is unused and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_4" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_4_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_4_dpot1" (ROM)
+removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_4_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_4_dpot" (ROM)
+removed.
+The signal "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[5]"
+is unused and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_5" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_5_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_5_dpot1" (ROM)
+removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_5_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_5_dpot" (ROM)
+removed.
+The signal "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[6]"
+is unused and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_6" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_6_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_6_dpot1" (ROM)
+removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_6_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_6_dpot" (ROM)
+removed.
+The signal "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[7]"
+is unused and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_7" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_7_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_7_dpot1" (ROM)
+removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_7_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_7_dpot" (ROM)
+removed.
+The signal "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[8]"
+is unused and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_8" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_8_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_8_dpot1" (ROM)
+removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_8_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_8_dpot" (ROM)
+removed.
+The signal "module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[9]"
+is unused and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_9" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_9_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_9_dpot1" (ROM)
+removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_9_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_9_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[10]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_10" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_10_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_10_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_10_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_10_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[11]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_11" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_11_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_11_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_11_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_11_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[12]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_12" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_12_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_12_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_12_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_12_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[13]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_13" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_13_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_13_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_13_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_13_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[14]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_14" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_14_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_14_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_14_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_14_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[15]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_15" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_15_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_15_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_15_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_15_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[16]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_16" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_16_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_16_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_16_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_16_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[17]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_17" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_17_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_17_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_17_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_17_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[18]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_18" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_18_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_18_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_18_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_18_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[19]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_19" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_19_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_19_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_19_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_19_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[20]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_20" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_20_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_20_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_20_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_20_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[21]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_21" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_21_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_21_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_21_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_21_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[22]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_22" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_22_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_22_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_22_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_22_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[23]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_23" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_23_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_23_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_23_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_23_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[24]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_24" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_24_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_24_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_24_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_24_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[25]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_25" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_25_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_25_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_25_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_25_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[26]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_26" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_26_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_26_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_26_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_26_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[27]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_27" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_27_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_27_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_27_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_27_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[28]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_28" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_28_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_28_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_28_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_28_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[29]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_29" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_29_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_29_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_29_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_29_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[30]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_30" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_30_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_30_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_30_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_30_dpot" (ROM)
+removed.
+The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out[31]" is unused
+and has been removed.
+ Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_31" (SFF)
+removed.
+  The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_31_dpot1" is
+unused and has been removed.
+   Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_31_dpot1"
+(ROM) removed.
+    The signal
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_31_dpot" is
+unused and has been removed.
+     Unused block
+"module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/Dual.gpio2_Data_Out_31_dpot" (ROM)
+removed.
+The signal "module_1_i/axi_gpio_0/VCC_14" is unused and has been removed.
+The signal "module_1_i/axi_gpio_0/GND_14" is unused and has been removed.
 The signal
 "module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossba
 r_sasd_0/gen_crossbar.addr_arbiter_inst/s_amesg[54]" is unused and has been
 removed.
-The signal "module_1_i/axi_gpio_0/VCC_11" is unused and has been removed.
-The signal "module_1_i/axi_gpio_0/GND_11" is unused and has been removed.
 The signal "PWM/VCC_2" is unused and has been removed.
 The signal "PWM/GND_2" is unused and has been removed.
-The signal "AdcReader_C/AdcReader0/VCC_3" is unused and has been removed.
-The signal "AdcReader_C/AdcReader0/GND_3" is unused and has been removed.
-The signal "AdcReader_C/AdcReader1/GND_4" is unused and has been removed.
-The signal "AdcReader_C/AdcReader1/VCC_4" is unused and has been removed.
-The signal "AdcReader_D/AdcReader0/VCC_5" is unused and has been removed.
-The signal "AdcReader_D/AdcReader0/GND_5" is unused and has been removed.
-The signal "AdcReader_D/AdcReader1/VCC_6" is unused and has been removed.
-The signal "AdcReader_D/AdcReader1/GND_6" is unused and has been removed.
-The signal "AdcFrame1/BitSlipCtrlN/VCC_7" is unused and has been removed.
-The signal "AdcFrame1/BitSlipCtrlN/GND_7" is unused and has been removed.
-The signal "AdcFrame1/BitSlipCtrlP/VCC_8" is unused and has been removed.
-The signal "AdcFrame1/BitSlipCtrlP/GND_8" is unused and has been removed.
+The signal "AdcReader_A/AdcReader0/VCC_3" is unused and has been removed.
+The signal "AdcReader_A/AdcReader0/GND_3" is unused and has been removed.
+The signal "AdcReader_A/AdcReader1/VCC_4" is unused and has been removed.
+The signal "AdcReader_A/AdcReader1/GND_4" is unused and has been removed.
+The signal "AdcReader_B/AdcReader0/VCC_5" is unused and has been removed.
+The signal "AdcReader_B/AdcReader0/GND_5" is unused and has been removed.
+The signal "AdcReader_B/AdcReader1/GND_6" is unused and has been removed.
+The signal "AdcReader_B/AdcReader1/VCC_6" is unused and has been removed.
+The signal "AdcReader_C/AdcReader0/VCC_7" is unused and has been removed.
+The signal "AdcReader_C/AdcReader0/GND_7" is unused and has been removed.
+The signal "AdcReader_C/AdcReader1/VCC_8" is unused and has been removed.
+The signal "AdcReader_C/AdcReader1/GND_8" is unused and has been removed.
+The signal "AdcReader_D/AdcReader0/VCC_9" is unused and has been removed.
+The signal "AdcReader_D/AdcReader0/GND_9" is unused and has been removed.
+The signal "AdcReader_D/AdcReader1/VCC_10" is unused and has been removed.
+The signal "AdcReader_D/AdcReader1/GND_10" is unused and has been removed.
+The signal "AdcFrame1/BitSlipCtrlN/VCC_11" is unused and has been removed.
+The signal "AdcFrame1/BitSlipCtrlN/GND_11" is unused and has been removed.
+The signal "AdcFrame1/BitSlipCtrlP/VCC_12" is unused and has been removed.
+The signal "AdcFrame1/BitSlipCtrlP/GND_12" is unused and has been removed.
 
 Optimized Block(s):
 TYPE 		BLOCK
@@ -4435,6 +5009,18 @@ VCC 		AdcFrame1/BitSlipCtrlP/VCC
 GND 		AdcFrame1/BitSlipCtrlP/XST_GND
 VCC 		AdcFrame1/BitSlipCtrlP/XST_VCC
 GND 		AdcFrame1/XST_GND
+GND 		AdcReader_A/AdcReader0/GND
+VCC 		AdcReader_A/AdcReader0/VCC
+GND 		AdcReader_A/AdcReader0/XST_GND
+GND 		AdcReader_A/AdcReader1/GND
+VCC 		AdcReader_A/AdcReader1/VCC
+GND 		AdcReader_A/AdcReader1/XST_GND
+GND 		AdcReader_B/AdcReader0/GND
+VCC 		AdcReader_B/AdcReader0/VCC
+GND 		AdcReader_B/AdcReader0/XST_GND
+GND 		AdcReader_B/AdcReader1/GND
+VCC 		AdcReader_B/AdcReader1/VCC
+GND 		AdcReader_B/AdcReader1/XST_GND
 GND 		AdcReader_C/AdcReader0/GND
 VCC 		AdcReader_C/AdcReader0/VCC
 GND 		AdcReader_C/AdcReader0/XST_GND
@@ -4528,14 +5114,22 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ADC_Data0[0]                       | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_Data0[1]                       | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_Data1[0]                       | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_Data1[1]                       | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_Data2[0]                       | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_Data2[1]                       | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_Data3[0]                       | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_Data3[1]                       | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataA0[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataA0[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataA1[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataA1[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataB0[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataB0[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataB1[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataB1[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataC0[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataC0[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataC1[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataC1[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataD0[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataD0[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataD1[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| ADC_DataD1[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
 | DCLK[0]                            | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
 | DCLK[1]                            | IOB33            | INPUT     | LVDS_25              | FALSE |          |      |              |          |          |
 | FCLKP1                             | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |

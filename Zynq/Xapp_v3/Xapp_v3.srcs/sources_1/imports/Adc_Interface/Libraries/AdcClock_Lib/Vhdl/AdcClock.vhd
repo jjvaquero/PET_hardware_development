@@ -167,8 +167,8 @@ attribute KEEP_HIERARCHY : string;
     attribute KEEP_HIERARCHY of AdcClock_struct : architecture is "YES";
 --    attribute LOC of AdcClock_I_Bufio : label is C_BufioLoc;
 attribute LOC : string;
-    attribute LOC of AdcClock_I_Bufio34 : label is "BUFIO_X1Y8";
-    attribute LOC of AdcClock_I_Bufio35 : label is "BUFIO_X1Y4";
+    attribute LOC of AdcClock_I_Bufio35 : label is "BUFIO_X1Y8";
+    attribute LOC of AdcClock_I_Bufio34 : label is "BUFIO_X1Y4";
 -- The BUFR is generated through a generate statement and therefore the LOC attribute
 -- must be place into the generate statement.
 -- See the BUFR generation down in the source code.
@@ -272,8 +272,8 @@ AdcClock_I_Bufio35 : BUFIO
 --
 Gen_Bufr_Div_3 : if (C_AdcBits = 12) generate
    -- attribute LOC of AdcClock_I_Bufr : label is C_BufrLoc;
-   attribute LOC of AdcClock_I_Bufr34 : label is "BUFR_X1Y8";
-   attribute LOC of AdcClock_I_Bufr35 : label is "BUFR_X1Y4";  
+   attribute LOC of AdcClock_I_Bufr35 : label is "BUFR_X1Y8";
+   attribute LOC of AdcClock_I_Bufr34 : label is "BUFR_X1Y4";  
 begin
 	AdcClock_I_Bufr34 : BUFR
 		generic map (BUFR_DIVIDE => "3", SIM_DEVICE => "7SERIES") -- 12-bit = DIV by 3

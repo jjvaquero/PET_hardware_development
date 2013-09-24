@@ -46,6 +46,8 @@ XGpio Gpio1;   //second IO driver
 
 //interrupt variable
 static INTC Intc;
+int valuesA[DATAN];
+int valuesB[DATAN];
 int valuesC[DATAN];
 int valuesD[DATAN];
 int curr_index;
@@ -182,18 +184,21 @@ int main(void)
 			leido =  XGpio_DiscreteRead(&Gpio1, 2);
 			valuesC[i] = leido&0x0000FFFF;;
 			valuesD[i] = (leido&0xFFFF0000)>>16;
+			leido =  XGpio_DiscreteRead(&Gpio, 2);
+			valuesA[i] = leido&0x0000FFFF;;
+	        valuesB[i] = (leido&0xFFFF0000)>>16;
 		}
 
 		xil_printf("Brightness Level %d selected...valor leido %d led %d \n\r", period,leido, leido);
 
 	     xil_printf("Read Values C\n\r");
 			for ( i = 0; i<DATAN; i++){
-				xil_printf(" %d, ",valuesC[i]);
+				xil_printf(" %d, ",valuesA[i]);  //valuesC[i]);
 			}
 
 			  xil_printf("Read Values D \n\r");
 						for ( i = 0; i<DATAN; i++){
-							xil_printf(" %d, ",valuesD[i]);
+							xil_printf(" %d, ",valuesB[i]);   //valuesD[i]);
 						}
 
 

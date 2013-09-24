@@ -107,7 +107,7 @@ begin
       C_INTERRUPT_PRESENT => 0,
       C_DOUT_DEFAULT => X"00000000",
       C_TRI_DEFAULT => X"ffffffff",
-      C_IS_DUAL => 0,
+      C_IS_DUAL => 1,
       C_DOUT_DEFAULT_2 => X"00000000",
       C_TRI_DEFAULT_2 => X"ffffffff"
     )
