@@ -32,7 +32,7 @@
 #define INTC XScuGic
 #define INTC_HANDLER XScuGic_InterruptHandler
 #define BUTTON_INTERRUPT XGPIO_IR_CH2_MASK
-#define DATAN 1000
+#define DATAN 100
 
 /************************** Variable Definitions *****************************/
 
@@ -44,7 +44,7 @@
 XGpio Gpio; /* The Instance of the GPIO Driver */
 XGpio Gpio1;   //second IO driver
 
-//interrupt variable
+//interrupt variable2
 static INTC Intc;
 int valuesA[DATAN];
 int valuesB[DATAN];
@@ -182,10 +182,10 @@ int main(void)
 			XGpio_DiscreteWrite(&Gpio1, 1, 1); // rdE = 1, rdClk = 0
 			XGpio_DiscreteWrite(&Gpio1, 1, 3); // rdE = 1, rdClk = 1
 			leido =  XGpio_DiscreteRead(&Gpio1, 2);
-			valuesC[i] = leido&0x0000FFFF;;
+			valuesC[i] = leido&0x0000FFFF;
 			valuesD[i] = (leido&0xFFFF0000)>>16;
 			leido =  XGpio_DiscreteRead(&Gpio, 2);
-			valuesA[i] = leido&0x0000FFFF;;
+			valuesA[i] = leido&0x0000FFFF;
 	        valuesB[i] = (leido&0xFFFF0000)>>16;
 		}
 
@@ -198,7 +198,7 @@ int main(void)
 
 			  xil_printf("Read Values D \n\r");
 						for ( i = 0; i<DATAN; i++){
-							xil_printf(" %d, ",valuesB[i]);   //valuesD[i]);
+							xil_printf(" %d, ",valuesC[i]);   //valuesD[i]);
 						}
 
 

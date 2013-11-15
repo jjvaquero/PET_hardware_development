@@ -29,40 +29,40 @@
 <msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADC_ChanReaderMultiBank.vhd" Line 149: <arg fmt="%s" index="1">intdataout</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 104: Net &lt;<arg fmt="%s" index="1">fifoDataInAB[31]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 130: Net &lt;<arg fmt="%s" index="1">fifoDataInAB[31]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 106: Net &lt;<arg fmt="%s" index="1">fifoDataInCD[31]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 132: Net &lt;<arg fmt="%s" index="1">fifoDataInCD[31]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">271</arg>: Output port &lt;<arg fmt="%s" index="3">processing_system7_0_FCLK_RESET0_N_pin</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">module_1_i</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">297</arg>: Output port &lt;<arg fmt="%s" index="3">processing_system7_0_FCLK_RESET0_N_pin</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">module_1_i</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">314</arg>: Output port &lt;<arg fmt="%s" index="3">BitClkAlignWarn</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcClk</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">340</arg>: Output port &lt;<arg fmt="%s" index="3">BitClkAlignWarn</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcClk</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">314</arg>: Output port &lt;<arg fmt="%s" index="3">BitClkInvrtd</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcClk</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">340</arg>: Output port &lt;<arg fmt="%s" index="3">BitClkInvrtd</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcClk</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">361</arg>: Output port &lt;<arg fmt="%s" index="3">DataOut</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcFrame1</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">387</arg>: Output port &lt;<arg fmt="%s" index="3">DataOut</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcFrame1</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">361</arg>: Output port &lt;<arg fmt="%s" index="3">state</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcFrame1</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">387</arg>: Output port &lt;<arg fmt="%s" index="3">state</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcFrame1</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">361</arg>: Output port &lt;<arg fmt="%s" index="3">NDataInt</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcFrame1</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">387</arg>: Output port &lt;<arg fmt="%s" index="3">NDataInt</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcFrame1</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">378</arg>: Output port &lt;<arg fmt="%s" index="3">SyncDone</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcReader_C</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">404</arg>: Output port &lt;<arg fmt="%s" index="3">SyncDone</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcReader_C</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">396</arg>: Output port &lt;<arg fmt="%s" index="3">SyncDone</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcReader_D</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">422</arg>: Output port &lt;<arg fmt="%s" index="3">SyncDone</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcReader_D</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">477</arg>: Output port &lt;<arg fmt="%s" index="3">SyncDone</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcReader_A</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">503</arg>: Output port &lt;<arg fmt="%s" index="3">SyncDone</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcReader_A</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">495</arg>: Output port &lt;<arg fmt="%s" index="3">SyncDone</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcReader_B</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">521</arg>: Output port &lt;<arg fmt="%s" index="3">SyncDone</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AdcReader_B</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="2935" delta="new" >Signal &apos;<arg fmt="%s" index="1">fifoDataInAB&lt;31:28&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">module_1_stub</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0000</arg>).
