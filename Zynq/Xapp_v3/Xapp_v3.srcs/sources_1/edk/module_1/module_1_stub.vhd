@@ -68,10 +68,36 @@ entity module_1_stub is
        ADC_DataD0: in std_logic_vector(1 downto 0);     --IO bank 35 
        ADC_DataD1: in std_logic_vector(1 downto 0);     --IO bank 35
      
-       DCLK: in std_logic_vector(1 downto 0)
+       DCLK: in std_logic_vector(1 downto 0);
        --BTNC : in std_logic 
        --BTNU : in std_logic
-    
+       
+       --Pins that are tied to GND in the ADS6425 EVM
+       FMC_LA02_P: out std_logic;
+       FMC_LA02_N: out std_logic;
+       FMC_LA04_P: out std_logic;
+       FMC_LA04_N: out std_logic;
+       FMC_LA05_P: out std_logic;
+       FMC_LA05_N: out std_logic;    
+       FMC_LA06_P: out std_logic;
+       FMC_LA06_N: out std_logic;
+       FMC_LA10_P: out std_logic;
+       FMC_LA10_N: out std_logic;
+       FMC_LA23_P: out std_logic;
+       FMC_LA23_N: out std_logic;
+       FMC_LA27_P: out std_logic;
+       FMC_LA27_N: out std_logic;
+       FMC_LA29_P: out std_logic;
+       FMC_LA29_N: out std_logic;    
+       FMC_LA30_P: out std_logic;
+       FMC_LA30_N: out std_logic;
+       FMC_LA31_P: out std_logic;
+       FMC_LA31_N: out std_logic;    
+       FMC_LA32_P: out std_logic;
+       FMC_LA32_N: out std_logic;
+       FMC_LA33_P: out std_logic;
+       FMC_LA33_N: out std_logic
+                  
     
   );
 end module_1_stub;
@@ -576,6 +602,33 @@ begin
     LEDS(5) <= IntSyncDone;
     LEDS(4 downto 1) <= (others=>'0');
     LEDS(0)<= IntBitClkDone;
+    
+    
+        --Pins that are tied to GND in the ADS6425 EVM
+    FMC_LA02_P<='0';
+    FMC_LA02_N<='0';
+    FMC_LA04_P<='0';
+    FMC_LA04_N<='0';
+    FMC_LA05_P<='0';
+    FMC_LA05_N<='0';
+    FMC_LA06_P<='0';
+    FMC_LA06_N<='0';
+    FMC_LA10_P<='0';
+    FMC_LA10_N<='0';
+    FMC_LA23_P<='0';
+    FMC_LA23_N<='0';
+    FMC_LA27_P<='0';
+    FMC_LA27_N<='0';
+    FMC_LA29_P<='0';
+    FMC_LA29_N<='0';
+    FMC_LA30_P<='0';
+    FMC_LA30_N<='0';
+    FMC_LA31_P<='0';
+    FMC_LA31_N<='0';
+    FMC_LA32_P<='0';
+    FMC_LA32_N<='0';
+    FMC_LA33_P<='0';
+    FMC_LA33_N<='0';
     
 
 end architecture STRUCTURE;

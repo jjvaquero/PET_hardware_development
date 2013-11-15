@@ -8,7 +8,7 @@ Target Device  : xc7z020
 Target Package : clg484
 Target Speed   : -1
 Mapper Version : zynq -- $Revision: 1.55 $
-Mapped Date    : Tue Sep 24 12:01:39 2013
+Mapped Date    : Fri Nov 15 11:47:04 2013
 
 Design Summary
 --------------
@@ -20,11 +20,11 @@ Slice Logic Utilization:
     Number used as Latches:                     66
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        981 out of  53,200    1%
-    Number used as logic:                      891 out of  53,200    1%
+  Number of Slice LUTs:                        970 out of  53,200    1%
+    Number used as logic:                      889 out of  53,200    1%
       Number using O6 output only:             651
       Number using O5 output only:             120
-      Number using O5 and O6:                  120
+      Number using O5 and O6:                  118
       Number used as ROM:                        0
     Number used as Memory:                      66 out of  17,400    1%
       Number used as Dual Port RAM:              0
@@ -33,17 +33,17 @@ Slice Logic Utilization:
         Number using O6 output only:            34
         Number using O5 output only:             0
         Number using O5 and O6:                 32
-    Number used exclusively as route-thrus:     24
-      Number with same-slice register load:     20
+    Number used exclusively as route-thrus:     15
+      Number with same-slice register load:     11
       Number with same-slice carry load:         4
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   303 out of  13,300    2%
-  Number of LUT Flip Flop pairs used:        1,046
-    Number with an unused Flip Flop:           376 out of   1,046   35%
-    Number with an unused LUT:                  65 out of   1,046    6%
-    Number of fully used LUT-FF pairs:         605 out of   1,046   57%
+  Number of occupied Slices:                   355 out of  13,300    2%
+  Number of LUT Flip Flop pairs used:        1,077
+    Number with an unused Flip Flop:           392 out of   1,077   36%
+    Number with an unused LUT:                 107 out of   1,077    9%
+    Number of fully used LUT-FF pairs:         578 out of   1,077   53%
     Number of unique control sets:              40
     Number of slice register sites lost
       to control set restrictions:             155 out of 106,400    1%
@@ -57,8 +57,8 @@ Slice Logic Distribution:
   over-mapped for a non-BRAM resource or if placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        30 out of     200   15%
-    Number of LOCed IOBs:                       28 out of      30   93%
+  Number of bonded IOBs:                        54 out of     200   27%
+    Number of LOCed IOBs:                       54 out of      54  100%
   Number of bonded IOPAD:                      130 out of     130  100%
 
 Specific Feature Utilization:
@@ -103,9 +103,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                3.05
 
-Peak Memory Usage:  829 MB
-Total REAL time to MAP completion:  48 secs 
-Total CPU time to MAP completion:   45 secs 
+Peak Memory Usage:  838 MB
+Total REAL time to MAP completion:  50 secs 
+Total CPU time to MAP completion:   50 secs 
 
 Table of Contents
 -----------------
@@ -131,10 +131,10 @@ Section 2 - Warnings
 WARNING:LIT:702 - PAD symbol "processing_system7_0_PS_SRSTB_pin" is not
    constrained (LOC) to a specific location.
 WARNING:Pack:2949 - The I/O component DCLK[0] uses an DQS_BIAS attribute with
-   I/O standard LVDS_25. The DQS_BIAS attribute will be ignored since the
+   I/O standard TMDS_33. The DQS_BIAS attribute will be ignored since the
    selected I/O standard does not support DQS_BIAS usage.
 WARNING:Pack:2949 - The I/O component DCLK[1] uses an DQS_BIAS attribute with
-   I/O standard LVDS_25. The DQS_BIAS attribute will be ignored since the
+   I/O standard TMDS_33. The DQS_BIAS attribute will be ignored since the
    selected I/O standard does not support DQS_BIAS usage.
 WARNING:Pack:2768 - At least one timing constraint is impossible to meet because component switching limit violations have been detected for
    a constrained component. A timing constraint summary below shows the failing constraints (preceded with an Asterisk (*)). Please use the
@@ -5090,6 +5090,22 @@ Asterisk (*) preceding a constraint indicates it was not met.
                                             | MINPERIOD   |     5.239ns|     4.761ns|       0|           0
                                             | MAXPERIOD   |    -4.736ns|            |       4|       18944
 ----------------------------------------------------------------------------------------------------------
+* TS_ClkDiv = PERIOD TIMEGRP "BitClkRefClk" | SETUP       |     3.359ns|     1.641ns|       0|           0
+   5 ns HIGH 50%                            | HOLD        |    -0.448ns|            |      84|       22882
+                                            | MINPERIOD   |     2.424ns|     2.576ns|       0|           0
+----------------------------------------------------------------------------------------------------------
+  NET "BitClk_N_0" MAXSKEW = 0.1 ns         | NETSKEW     |     0.100ns|     0.000ns|       0|           0
+----------------------------------------------------------------------------------------------------------
+  NET "BitClk_N" MAXSKEW = 0.1 ns           | NETSKEW     |     0.100ns|     0.000ns|       0|           0
+----------------------------------------------------------------------------------------------------------
+  NET "IntDivClk35" MAXSKEW = 0.3 ns        | NETSKEW     |     0.300ns|     0.000ns|       0|           0
+----------------------------------------------------------------------------------------------------------
+  NET "IntDivClk34" MAXSKEW = 0.3 ns        | NETSKEW     |     0.300ns|     0.000ns|       0|           0
+----------------------------------------------------------------------------------------------------------
+  TS_ClkIsrds_ClkFfs = MAXDELAY FROM TIMEGR | MAXDELAY    |     2.788ns|     1.712ns|       0|           0
+  P "AdcClk_Isrds" TO TIMEGRP "AdcClk_Ffs"  | HOLD        |     0.130ns|            |       0|           0
+  4.5 ns                                    |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
   TS_clk_fpga_1 = PERIOD TIMEGRP "clk_fpga_ | N/A         |         N/A|         N/A|     N/A|         N/A
   1" 30.303 MHz HIGH 50%                    |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
@@ -5098,7 +5114,7 @@ Asterisk (*) preceding a constraint indicates it was not met.
 ----------------------------------------------------------------------------------------------------------
 
 
-1 constraint not met.
+2 constraints not met.
 INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
    constraint is not analyzed due to the following: No paths covered by this 
    constraint; Other constraints intersect with this constraint; or This 
@@ -5114,27 +5130,51 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ADC_DataA0[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataA0[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataA1[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataA1[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataB0[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataB0[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataB1[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataB1[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataC0[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataC0[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataC1[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataC1[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataD0[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataD0[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataD1[0]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| ADC_DataD1[1]                      | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| DCLK[0]                            | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| DCLK[1]                            | IOB33            | INPUT     | LVDS_25              | FALSE |          |      |              |          |          |
+| ADC_DataA0[0]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataA0[1]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataA1[0]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataA1[1]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataB0[0]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataB0[1]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataB1[0]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataB1[1]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataC0[0]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataC0[1]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataC1[0]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataC1[1]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataD0[0]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataD0[1]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataD1[0]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| ADC_DataD1[1]                      | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| DCLK[0]                            | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| DCLK[1]                            | IOB33            | INPUT     | TMDS_33              |       |          |      |              |          |          |
 | FCLKP1                             | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
-| FCLK[0]                            | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
-| FCLK[1]                            | IOB33            | INPUT     | LVDS_25              | FALSE |          |      | ISERDESE2    |          |          |
+| FCLK[0]                            | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| FCLK[1]                            | IOB33            | INPUT     | TMDS_33              |       |          |      | ISERDESE2    |          |          |
+| FMC_LA02_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA02_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA04_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA04_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA05_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA05_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA06_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA06_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA10_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA10_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA23_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA23_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA27_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA27_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA29_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA29_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA30_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA30_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA31_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA31_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA32_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA32_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA33_N                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMC_LA33_P                         | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | LEDS[0]                            | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | LEDS[1]                            | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | LEDS[2]                            | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
@@ -5143,7 +5183,7 @@ Section 6 - IOB Properties
 | LEDS[5]                            | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | LEDS[6]                            | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | LEDS[7]                            | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
-| SData                              | IOB              | OUTPUT    | LVCMOS18             |       | 12       | SLOW |              |          |          |
+| SData                              | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | processing_system7_0_DDR_Addr[0]   | IOPAD            | OUTPUT    | SSTL15               |       |          | SLOW |              |          |          |
 | processing_system7_0_DDR_Addr[1]   | IOPAD            | OUTPUT    | SSTL15               |       |          | SLOW |              |          |          |
 | processing_system7_0_DDR_Addr[2]   | IOPAD            | OUTPUT    | SSTL15               |       |          | SLOW |              |          |          |

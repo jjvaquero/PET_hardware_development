@@ -1,76 +1,16 @@
 #-----------------------------------------------------------
 # PlanAhead v14.5 (64-bit)
 # Build 247527 by xbuild on Mon Mar 25 17:13:07 MDT 2013
-# Start of session at: Thu Sep 05 11:29:46 2013
-# Process ID: 3312
+# Start of session at: Fri Nov 15 10:29:47 2013
+# Process ID: 928
 # Log file: C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/planAhead.log
 # Journal file: C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3\planAhead.jou
 #-----------------------------------------------------------
 start_gui
 open_project {C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Xapp_v3\Xapp_v3.ppr}
 update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-file delete -force C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/imports/Adc_Interface/Vhdl/AdcToplevel.vhd
-remove_files C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/imports/Adc_Interface/Vhdl/AdcToplevel.vhd
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-close [ open C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd w ]
-add_files C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-launch_runs impl_1
-wait_on_run impl_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-launch_runs impl_1
-wait_on_run impl_1
 open_run impl_1
-export_hardware [get_files C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1.xmp]
+export_hardware [get_files C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1.xmp] [get_runs impl_1] -bitstream
 reset_run impl_1
 reset_run synth_1
 launch_runs synth_1
@@ -80,15 +20,25 @@ wait_on_run impl_1
 launch_runs impl_1 -to_step Bitgen
 wait_on_run impl_1
 export_hardware [get_files C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1.xmp] [get_runs impl_1] -bitstream
-export_hardware [get_files C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1.xmp] [get_runs impl_1] -bitstream
-close_design
-open_run synth_1 -name netlist_1
 reset_run impl_1
 reset_run synth_1
 launch_runs synth_1
 wait_on_run synth_1
 launch_runs impl_1
 wait_on_run impl_1
+launch_runs impl_1 -to_step Bitgen
+wait_on_run impl_1
+export_hardware [get_files C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1.xmp] [get_runs impl_1] -bitstream
+reset_run impl_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+launch_runs impl_1 -to_step Bitgen
+wait_on_run impl_1
+export_hardware [get_files C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1.xmp] [get_runs impl_1] -bitstream
+reset_run impl_1 -prev_step 
 launch_runs impl_1 -to_step Bitgen
 wait_on_run impl_1
 close_design
@@ -103,16 +53,6 @@ wait_on_run impl_1
 launch_runs impl_1 -to_step Bitgen
 wait_on_run impl_1
 export_hardware [get_files C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1.xmp] [get_runs impl_1] -bitstream
-update_compile_order -fileset sources_1
-reset_run impl_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run impl_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-update_compile_order -fileset sources_1
 reset_run impl_1
 reset_run synth_1
 launch_runs synth_1
@@ -121,40 +61,5 @@ launch_runs impl_1
 wait_on_run impl_1
 launch_runs impl_1 -to_step Bitgen
 wait_on_run impl_1
+refresh_design
 export_hardware [get_files C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1.xmp] [get_runs impl_1] -bitstream
-reset_run impl_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run impl_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run impl_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run impl_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-reset_run impl_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-launch_runs impl_1
-wait_on_run impl_1
-launch_runs impl_1 -to_step Bitgen
-wait_on_run impl_1
-export_hardware [get_files C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1.xmp] [get_runs impl_1] -bitstream
-reset_run impl_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-launch_runs impl_1
-wait_on_run impl_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
-launch_runs impl_1
-wait_on_run impl_1

@@ -23,10 +23,10 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="info" file="LIT" num="244" delta="new" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
 </msg>
 
-<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">DCLK[0]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
+<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">DCLK[0]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">TMDS_33</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
 </msg>
 
-<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">DCLK[1]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">LVDS_25</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
+<msg type="warning" file="Pack" num="2949" delta="new" >The I/O component <arg fmt="%s" index="1">DCLK[1]</arg> uses an DQS_BIAS attribute with I/O standard <arg fmt="%s" index="2">TMDS_33</arg>. The DQS_BIAS attribute will be ignored since the selected I/O standard does not support DQS_BIAS usage.
 </msg>
 
 <msg type="info" file="Pack" num="1716" delta="new" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)

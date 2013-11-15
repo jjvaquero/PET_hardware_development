@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.58f on Tue Sep 24 12:02:26 2013
+// Written by: Map P.58f on Fri Nov 15 11:47:52 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -14,6 +14,7 @@ COMP "ADC_DataA0[0]" LOCATE = SITE "N17" LEVEL 1;
 COMP "ADC_DataA0[1]" LOCATE = SITE "N18" LEVEL 1;
 COMP "processing_system7_0_DDR_WEB_pin" LOCATE = SITE "R4" LEVEL 1;
 COMP "ADC_DataB1[0]" LOCATE = SITE "G15" LEVEL 1;
+COMP "ADC_DataB1[1]" LOCATE = SITE "G16" LEVEL 1;
 COMP "processing_system7_0_MIO[24]" LOCATE = SITE "B7" LEVEL 1;
 COMP "processing_system7_0_MIO[23]" LOCATE = SITE "E11" LEVEL 1;
 COMP "processing_system7_0_MIO[26]" LOCATE = SITE "A13" LEVEL 1;
@@ -24,9 +25,11 @@ COMP "processing_system7_0_MIO[29]" LOCATE = SITE "E8" LEVEL 1;
 COMP "processing_system7_0_MIO[20]" LOCATE = SITE "A8" LEVEL 1;
 COMP "processing_system7_0_MIO[22]" LOCATE = SITE "A14" LEVEL 1;
 COMP "processing_system7_0_MIO[21]" LOCATE = SITE "F11" LEVEL 1;
+COMP "FMC_LA23_N" LOCATE = SITE "D15" LEVEL 1;
 COMP "processing_system7_0_MIO[14]" LOCATE = SITE "B6" LEVEL 1;
 COMP "processing_system7_0_MIO[13]" LOCATE = SITE "A6" LEVEL 1;
 COMP "processing_system7_0_MIO[16]" LOCATE = SITE "D6" LEVEL 1;
+COMP "FMC_LA23_P" LOCATE = SITE "E15" LEVEL 1;
 COMP "processing_system7_0_MIO[15]" LOCATE = SITE "E6" LEVEL 1;
 COMP "processing_system7_0_MIO[18]" LOCATE = SITE "A7" LEVEL 1;
 COMP "processing_system7_0_MIO[17]" LOCATE = SITE "E9" LEVEL 1;
@@ -63,6 +66,8 @@ COMP "ADC_DataD1[1]" LOCATE = SITE "A19" LEVEL 1;
 COMP "processing_system7_0_MIO[32]" LOCATE = SITE "C7" LEVEL 1;
 COMP "processing_system7_0_MIO[31]" LOCATE = SITE "F9" LEVEL 1;
 COMP "processing_system7_0_DDR_RAS_n" LOCATE = SITE "R5" LEVEL 1;
+COMP "FMC_LA27_N" LOCATE = SITE "D21" LEVEL 1;
+COMP "FMC_LA27_P" LOCATE = SITE "E21" LEVEL 1;
 COMP "processing_system7_0_DDR_DQS_n[0]" LOCATE = SITE "D2" LEVEL 1;
 COMP "processing_system7_0_DDR_DQS_n[1]" LOCATE = SITE "J2" LEVEL 1;
 COMP "processing_system7_0_DDR_DQS_n[2]" LOCATE = SITE "P2" LEVEL 1;
@@ -73,12 +78,14 @@ COMP "processing_system7_0_DDR_DQ[22]" LOCATE = SITE "M2" LEVEL 1;
 COMP "processing_system7_0_DDR_DQ[21]" LOCATE = SITE "T2" LEVEL 1;
 COMP "processing_system7_0_DDR_DQ[20]" LOCATE = SITE "R3" LEVEL 1;
 COMP "processing_system7_0_DDR_DQ[26]" LOCATE = SITE "AA1" LEVEL 1;
+COMP "FMC_LA29_N" LOCATE = SITE "C18" LEVEL 1;
 COMP "processing_system7_0_DDR_DQ[25]" LOCATE = SITE "U1" LEVEL 1;
 COMP "processing_system7_0_DDR_DQ[2]" LOCATE = SITE "B2" LEVEL 1;
 COMP "processing_system7_0_DDR_Addr[9]" LOCATE = SITE "H5" LEVEL 1;
 COMP "processing_system7_0_DDR_DQ[24]" LOCATE = SITE "AA3" LEVEL 1;
 COMP "processing_system7_0_DDR_DQ[1]" LOCATE = SITE "C3" LEVEL 1;
 COMP "processing_system7_0_DDR_Addr[8]" LOCATE = SITE "J5" LEVEL 1;
+COMP "FMC_LA29_P" LOCATE = SITE "C17" LEVEL 1;
 COMP "processing_system7_0_DDR_DQ[23]" LOCATE = SITE "R1" LEVEL 1;
 COMP "processing_system7_0_DDR_DQ[0]" LOCATE = SITE "D1" LEVEL 1;
 COMP "processing_system7_0_DDR_Addr[7]" LOCATE = SITE "J6" LEVEL 1;
@@ -110,6 +117,8 @@ COMP "processing_system7_0_DDR_DQ[19]" LOCATE = SITE "T1" LEVEL 1;
 COMP "processing_system7_0_DDR_DQ[18]" LOCATE = SITE "N3" LEVEL 1;
 COMP "processing_system7_0_DDR_DQ[17]" LOCATE = SITE "T3" LEVEL 1;
 COMP "processing_system7_0_DDR_Clk" LOCATE = SITE "N4" LEVEL 1;
+COMP "FMC_LA10_N" LOCATE = SITE "T19" LEVEL 1;
+COMP "FMC_LA10_P" LOCATE = SITE "R19" LEVEL 1;
 COMP "processing_system7_0_MIO[4]" LOCATE = SITE "E4" LEVEL 1;
 COMP "processing_system7_0_MIO[3]" LOCATE = SITE "F6" LEVEL 1;
 COMP "processing_system7_0_MIO[6]" LOCATE = SITE "A4" LEVEL 1;
@@ -135,12 +144,29 @@ COMP "LEDS[4]" LOCATE = SITE "V22" LEVEL 1;
 COMP "LEDS[3]" LOCATE = SITE "U21" LEVEL 1;
 COMP "LEDS[6]" LOCATE = SITE "U19" LEVEL 1;
 COMP "LEDS[5]" LOCATE = SITE "W22" LEVEL 1;
+COMP "FMC_LA30_N" LOCATE = SITE "B15" LEVEL 1;
+COMP "FMC_LA30_P" LOCATE = SITE "C15" LEVEL 1;
+COMP "FMC_LA02_N" LOCATE = SITE "P18" LEVEL 1;
 COMP "FCLK[0]" LOCATE = SITE "M19" LEVEL 1;
 COMP "FCLK[1]" LOCATE = SITE "M20" LEVEL 1;
+COMP "FMC_LA02_P" LOCATE = SITE "P17" LEVEL 1;
 COMP "processing_system7_0_DDR_CS_n" LOCATE = SITE "P6" LEVEL 1;
 COMP "ADC_DataD0[0]" LOCATE = SITE "E19" LEVEL 1;
 COMP "ADC_DataD0[1]" LOCATE = SITE "E20" LEVEL 1;
+COMP "FMC_LA32_N" LOCATE = SITE "A22" LEVEL 1;
+COMP "FMC_LA32_P" LOCATE = SITE "A21" LEVEL 1;
+COMP "FMC_LA04_N" LOCATE = SITE "M22" LEVEL 1;
+COMP "ADC_DataA1[0]" LOCATE = SITE "J20" LEVEL 1;
+COMP "FMC_LA04_P" LOCATE = SITE "M21" LEVEL 1;
 COMP "ADC_DataA1[1]" LOCATE = SITE "K21" LEVEL 1;
+COMP "FMC_LA31_N" LOCATE = SITE "B17" LEVEL 1;
+COMP "FMC_LA31_P" LOCATE = SITE "B16" LEVEL 1;
+COMP "FMC_LA06_N" LOCATE = SITE "L22" LEVEL 1;
+COMP "FMC_LA06_P" LOCATE = SITE "L21" LEVEL 1;
+COMP "FMC_LA33_N" LOCATE = SITE "B22" LEVEL 1;
+COMP "FMC_LA33_P" LOCATE = SITE "B21" LEVEL 1;
+COMP "FMC_LA05_N" LOCATE = SITE "K18" LEVEL 1;
+COMP "FMC_LA05_P" LOCATE = SITE "J18" LEVEL 1;
 COMP "processing_system7_0_DDR_CKE" LOCATE = SITE "V3" LEVEL 1;
 COMP "processing_system7_0_DDR_DM[2]" LOCATE = SITE "P1" LEVEL 1;
 COMP "processing_system7_0_DDR_DM[1]" LOCATE = SITE "H3" LEVEL 1;
@@ -1205,6 +1231,154 @@ TIMEGRP clk_fpga_0 = BEL "BUFG_DlyCtrl" BEL
         "PWM/count_4" BEL "PWM/count_3" BEL "PWM/count_2" BEL "PWM/count_1"
         PIN "AdcClk_delayctrl_MapLib_replicate2_pins<0>" PIN
         "module_1_i/processing_system7_0/processing_system7_0/PS7_i_pins<359>";
+PIN AdcClk/AdcClock_I_Isrds_Master_pins<4> = BEL
+        "AdcClk/AdcClock_I_Isrds_Master" PINNAME CLKDIV;
+PIN AdcReader_A/AdcReader0/AdcDataISerdes_P_pins<5> = BEL
+        "AdcReader_A/AdcReader0/AdcDataISerdes_P" PINNAME CLKDIV;
+PIN AdcReader_A/AdcReader0/AdcDataISerdes_N_pins<5> = BEL
+        "AdcReader_A/AdcReader0/AdcDataISerdes_N" PINNAME CLKDIV;
+PIN AdcReader_A/AdcReader1/AdcDataISerdes_P_pins<5> = BEL
+        "AdcReader_A/AdcReader1/AdcDataISerdes_P" PINNAME CLKDIV;
+PIN AdcReader_A/AdcReader1/AdcDataISerdes_N_pins<5> = BEL
+        "AdcReader_A/AdcReader1/AdcDataISerdes_N" PINNAME CLKDIV;
+PIN AdcReader_B/AdcReader0/AdcDataISerdes_P_pins<5> = BEL
+        "AdcReader_B/AdcReader0/AdcDataISerdes_P" PINNAME CLKDIV;
+PIN AdcReader_B/AdcReader0/AdcDataISerdes_N_pins<5> = BEL
+        "AdcReader_B/AdcReader0/AdcDataISerdes_N" PINNAME CLKDIV;
+PIN AdcReader_B/AdcReader1/AdcDataISerdes_P_pins<5> = BEL
+        "AdcReader_B/AdcReader1/AdcDataISerdes_P" PINNAME CLKDIV;
+PIN AdcReader_B/AdcReader1/AdcDataISerdes_N_pins<5> = BEL
+        "AdcReader_B/AdcReader1/AdcDataISerdes_N" PINNAME CLKDIV;
+PIN AdcReader_C/AdcReader0/AdcDataISerdes_P_pins<5> = BEL
+        "AdcReader_C/AdcReader0/AdcDataISerdes_P" PINNAME CLKDIV;
+PIN AdcReader_C/AdcReader0/AdcDataISerdes_N_pins<5> = BEL
+        "AdcReader_C/AdcReader0/AdcDataISerdes_N" PINNAME CLKDIV;
+PIN AdcReader_C/AdcReader1/AdcDataISerdes_P_pins<5> = BEL
+        "AdcReader_C/AdcReader1/AdcDataISerdes_P" PINNAME CLKDIV;
+PIN AdcReader_C/AdcReader1/AdcDataISerdes_N_pins<5> = BEL
+        "AdcReader_C/AdcReader1/AdcDataISerdes_N" PINNAME CLKDIV;
+PIN AdcReader_D/AdcReader0/AdcDataISerdes_P_pins<5> = BEL
+        "AdcReader_D/AdcReader0/AdcDataISerdes_P" PINNAME CLKDIV;
+PIN AdcReader_D/AdcReader0/AdcDataISerdes_N_pins<5> = BEL
+        "AdcReader_D/AdcReader0/AdcDataISerdes_N" PINNAME CLKDIV;
+PIN AdcReader_D/AdcReader1/AdcDataISerdes_P_pins<5> = BEL
+        "AdcReader_D/AdcReader1/AdcDataISerdes_P" PINNAME CLKDIV;
+PIN AdcReader_D/AdcReader1/AdcDataISerdes_N_pins<5> = BEL
+        "AdcReader_D/AdcReader1/AdcDataISerdes_N" PINNAME CLKDIV;
+PIN AdcFrame1/AdcDataISerdes_P_pins<5> = BEL "AdcFrame1/AdcDataISerdes_P"
+        PINNAME CLKDIV;
+PIN AdcFrame1/AdcDataISerdes_N_pins<5> = BEL "AdcFrame1/AdcDataISerdes_N"
+        PINNAME CLKDIV;
+PIN FIFO18E1_AB_pins<74> = BEL "FIFO18E1_AB" PINNAME WRCLK;
+PIN FIFO18E1_CD_pins<74> = BEL "FIFO18E1_CD" PINNAME WRCLK;
+TIMEGRP BitClkRefClk = BEL "AdcClk/IntCalVal_0" BEL "AdcClk/IntCalVal_1" BEL
+        "AdcClk/IntproceedCntTc_d" BEL "AdcClk/IntAction_0" BEL
+        "AdcClk/IntAction_1" BEL "AdcClk/ReturnState_1" BEL
+        "AdcClk/ReturnState_2" BEL "AdcClk/State_0" BEL "AdcClk/State_1" BEL
+        "AdcClk/State_2" BEL "AdcClk/State_3" BEL "AdcClk/IntCalValReg_0" BEL
+        "AdcClk/IntCalValReg_1" BEL "AdcClk/IntTimeOutCnt_0" BEL
+        "AdcClk/IntTimeOutCnt_1" BEL "AdcClk/IntTimeOutCnt_2" BEL
+        "AdcClk/IntTimeOutCnt_3" BEL "AdcClk/IntNumIncDecIdly_0" BEL
+        "AdcClk/IntNumIncDecIdly_1" BEL "AdcClk/IntNumIncDecIdly_2" BEL
+        "AdcClk/IntNumIncDecIdly_3" BEL "AdcClk/IntProceedCnt_0" BEL
+        "AdcClk/IntProceedCnt_1" BEL "AdcClk/IntProceedCnt_2" BEL
+        "AdcClk/IntStepCnt_0" BEL "AdcClk/IntStepCnt_1" BEL
+        "AdcClk/IntStepCnt_2" BEL "AdcClk/IntStepCnt_3" BEL
+        "AdcClk/AdcClock_I_Iodly" PIN "AdcClk/AdcClock_I_Isrds_Master_pins<4>"
+        BEL "AdcClk/IntClkCtrlDlyInc" BEL "AdcClk/PassedSubState" BEL
+        "AdcClk/IntClkCtrlDlyCe" BEL "AdcClk/IntClkCtrlDone" BEL
+        "AdcClk/IntTurnAroundBit" BEL "AdcClk/IntProceed" BEL
+        "AdcClk/IntProceedDone" BEL "AdcReader_A/AdcReader0/IntDataTotal_5"
+        BEL "AdcReader_A/AdcReader0/IntDataTotal_1" BEL
+        "AdcReader_A/AdcReader0/IntDataTotal_2" BEL
+        "AdcReader_A/AdcReader0/IntDataTotal_3" BEL
+        "AdcReader_A/AdcReader0/IntDataTotal_4" BEL
+        "AdcReader_A/AdcReader0/IntDataTotal_0" PIN
+        "AdcReader_A/AdcReader0/AdcDataISerdes_P_pins<5>" PIN
+        "AdcReader_A/AdcReader0/AdcDataISerdes_N_pins<5>" BEL
+        "AdcReader_A/AdcReader1/IntDataTotal_5" BEL
+        "AdcReader_A/AdcReader1/IntDataTotal_1" BEL
+        "AdcReader_A/AdcReader1/IntDataTotal_2" BEL
+        "AdcReader_A/AdcReader1/IntDataTotal_3" BEL
+        "AdcReader_A/AdcReader1/IntDataTotal_4" BEL
+        "AdcReader_A/AdcReader1/IntDataTotal_0" PIN
+        "AdcReader_A/AdcReader1/AdcDataISerdes_P_pins<5>" PIN
+        "AdcReader_A/AdcReader1/AdcDataISerdes_N_pins<5>" BEL
+        "AdcReader_B/AdcReader0/IntDataTotal_5" BEL
+        "AdcReader_B/AdcReader0/IntDataTotal_1" BEL
+        "AdcReader_B/AdcReader0/IntDataTotal_2" BEL
+        "AdcReader_B/AdcReader0/IntDataTotal_3" BEL
+        "AdcReader_B/AdcReader0/IntDataTotal_4" BEL
+        "AdcReader_B/AdcReader0/IntDataTotal_0" PIN
+        "AdcReader_B/AdcReader0/AdcDataISerdes_P_pins<5>" PIN
+        "AdcReader_B/AdcReader0/AdcDataISerdes_N_pins<5>" BEL
+        "AdcReader_B/AdcReader1/IntDataTotal_5" BEL
+        "AdcReader_B/AdcReader1/IntDataTotal_1" BEL
+        "AdcReader_B/AdcReader1/IntDataTotal_2" BEL
+        "AdcReader_B/AdcReader1/IntDataTotal_3" BEL
+        "AdcReader_B/AdcReader1/IntDataTotal_4" BEL
+        "AdcReader_B/AdcReader1/IntDataTotal_0" PIN
+        "AdcReader_B/AdcReader1/AdcDataISerdes_P_pins<5>" PIN
+        "AdcReader_B/AdcReader1/AdcDataISerdes_N_pins<5>" BEL
+        "AdcReader_C/AdcReader0/IntDataTotal_5" BEL
+        "AdcReader_C/AdcReader0/IntDataTotal_1" BEL
+        "AdcReader_C/AdcReader0/IntDataTotal_2" BEL
+        "AdcReader_C/AdcReader0/IntDataTotal_3" BEL
+        "AdcReader_C/AdcReader0/IntDataTotal_4" BEL
+        "AdcReader_C/AdcReader0/IntDataTotal_0" PIN
+        "AdcReader_C/AdcReader0/AdcDataISerdes_P_pins<5>" PIN
+        "AdcReader_C/AdcReader0/AdcDataISerdes_N_pins<5>" BEL
+        "AdcReader_C/AdcReader1/IntDataTotal_5" BEL
+        "AdcReader_C/AdcReader1/IntDataTotal_1" BEL
+        "AdcReader_C/AdcReader1/IntDataTotal_2" BEL
+        "AdcReader_C/AdcReader1/IntDataTotal_3" BEL
+        "AdcReader_C/AdcReader1/IntDataTotal_4" BEL
+        "AdcReader_C/AdcReader1/IntDataTotal_0" PIN
+        "AdcReader_C/AdcReader1/AdcDataISerdes_P_pins<5>" PIN
+        "AdcReader_C/AdcReader1/AdcDataISerdes_N_pins<5>" BEL
+        "AdcReader_D/AdcReader0/IntDataTotal_5" BEL
+        "AdcReader_D/AdcReader0/IntDataTotal_1" BEL
+        "AdcReader_D/AdcReader0/IntDataTotal_2" BEL
+        "AdcReader_D/AdcReader0/IntDataTotal_3" BEL
+        "AdcReader_D/AdcReader0/IntDataTotal_4" BEL
+        "AdcReader_D/AdcReader0/IntDataTotal_0" PIN
+        "AdcReader_D/AdcReader0/AdcDataISerdes_P_pins<5>" PIN
+        "AdcReader_D/AdcReader0/AdcDataISerdes_N_pins<5>" BEL
+        "AdcReader_D/AdcReader1/IntDataTotal_5" BEL
+        "AdcReader_D/AdcReader1/IntDataTotal_1" BEL
+        "AdcReader_D/AdcReader1/IntDataTotal_2" BEL
+        "AdcReader_D/AdcReader1/IntDataTotal_3" BEL
+        "AdcReader_D/AdcReader1/IntDataTotal_4" BEL
+        "AdcReader_D/AdcReader1/IntDataTotal_0" PIN
+        "AdcReader_D/AdcReader1/AdcDataISerdes_P_pins<5>" PIN
+        "AdcReader_D/AdcReader1/AdcDataISerdes_N_pins<5>" PIN
+        "AdcFrame1/AdcDataISerdes_P_pins<5>" PIN
+        "AdcFrame1/AdcDataISerdes_N_pins<5>" BEL
+        "AdcFrame1/BitSlipCtrlN/currState_FSM_FFd1" BEL
+        "AdcFrame1/BitSlipCtrlN/currState_FSM_FFd3" BEL
+        "AdcFrame1/BitSlipCtrlN/currState_FSM_FFd2" BEL
+        "AdcFrame1/BitSlipCtrlP/currState_FSM_FFd1" BEL
+        "AdcFrame1/BitSlipCtrlP/currState_FSM_FFd3" BEL
+        "AdcFrame1/BitSlipCtrlP/currState_FSM_FFd2" PIN "FIFO18E1_AB_pins<74>"
+        PIN "FIFO18E1_CD_pins<74>";
+TIMEGRP AdcClk_Ffs = BEL "AdcClk/IntCalVal_0" BEL "AdcClk/IntCalVal_1" BEL
+        "AdcClk/IntproceedCntTc_d" BEL "AdcClk/IntAction_0" BEL
+        "AdcClk/IntAction_1" BEL "AdcClk/ReturnState_1" BEL
+        "AdcClk/ReturnState_2" BEL "AdcClk/State_0" BEL "AdcClk/State_1" BEL
+        "AdcClk/State_2" BEL "AdcClk/State_3" BEL "AdcClk/IntCalValReg_0" BEL
+        "AdcClk/IntCalValReg_1" BEL "AdcClk/IntTimeOutCnt_0" BEL
+        "AdcClk/IntTimeOutCnt_1" BEL "AdcClk/IntTimeOutCnt_2" BEL
+        "AdcClk/IntTimeOutCnt_3" BEL "AdcClk/IntNumIncDecIdly_0" BEL
+        "AdcClk/IntNumIncDecIdly_1" BEL "AdcClk/IntNumIncDecIdly_2" BEL
+        "AdcClk/IntNumIncDecIdly_3" BEL "AdcClk/IntProceedCnt_0" BEL
+        "AdcClk/IntProceedCnt_1" BEL "AdcClk/IntProceedCnt_2" BEL
+        "AdcClk/IntStepCnt_0" BEL "AdcClk/IntStepCnt_1" BEL
+        "AdcClk/IntStepCnt_2" BEL "AdcClk/IntStepCnt_3" BEL
+        "AdcClk/AdcClock_I_Isrds_Master" BEL "AdcClk/IntClkCtrlDlyInc" BEL
+        "AdcClk/PassedSubState" BEL "AdcClk/IntClkCtrlDlyCe" BEL
+        "AdcClk/IntClkCtrlDone" BEL "AdcClk/IntTurnAroundBit" BEL
+        "AdcClk/IntProceed" BEL "AdcClk/IntProceedDone";
+TIMEGRP AdcClk_Isrds = BEL "AdcClk/AdcClock_I_Isrds_Master";
 TIMEGRP clk_fpga_1 = BEL "FCLKP1";
 TIMEGRP axi_interconnect_1_reset_resync = BEL
         "module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2"
@@ -1213,11 +1387,18 @@ TIMEGRP axi_interconnect_1_reset_resync = BEL
         BEL
         "module_1_i/axi_interconnect_1/axi_interconnect_1/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0";
 TIMEGRP axi_interconnect_1_reset_source = FFS(*) PADS(*);
+NET "IntDivClk35" MAXSKEW = 0.3 ns;
+NET "BitClk_N_0" MAXSKEW = 0.1 ns;
+NET "BitClk_N" MAXSKEW = 0.1 ns;
+NET "IntDivClk34" MAXSKEW = 0.3 ns;
 TS_clk_fpga_1 = PERIOD TIMEGRP "clk_fpga_1" 30.303 MHz HIGH 50%;
 TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_0" 100 MHz HIGH 50%;
 PATH TS_axi_interconnect_1_reset_resync_path = FROM TIMEGRP
         "axi_interconnect_1_reset_source" TO TIMEGRP
         "axi_interconnect_1_reset_resync";
 PATH "TS_axi_interconnect_1_reset_resync_path" TIG;
+TS_ClkDiv = PERIOD TIMEGRP "BitClkRefClk" 5 ns HIGH 50%;
+TS_ClkIsrds_ClkFfs = MAXDELAY FROM TIMEGRP "AdcClk_Isrds" TO TIMEGRP
+        "AdcClk_Ffs" 4.5 ns;
 SCHEMATIC END;
 

@@ -1,11 +1,11 @@
-12:58:33 **** Clean-only build of configuration Debug for project Test1 ****
+11:33:53 **** Clean-only build of configuration Debug for project Test1 ****
 make clean 
 rm -rf  ./src/main.o  ./src/main.d  Test1.elf.size  Test1.elf
 ' '
-12:58:33 **** Clean-only build of project standalone_bsp_0 ****
+11:33:53 **** Clean-only build of project standalone_bsp_0 ****
 make -k clean 
 rm -rf ps7_cortexa9_0
-12:58:34 **** Build of project standalone_bsp_0 ****
+11:33:54 **** Build of project standalone_bsp_0 ****
 make -k all 
 libgen -hw ../module_1_hw_platform/system.xml\
 	       \
@@ -49,7 +49,7 @@ arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
 "Compiling cpu_cortexa9"
 Running execs_generate.
 'Finished building libraries'
-12:58:45 **** Build of configuration Debug for project Test1 ****
+11:34:05 **** Build of configuration Debug for project Test1 ****
 make all 
 'Building file: ../src/main.c'
 'Invoking: ARM gcc compiler'
@@ -64,9 +64,312 @@ arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_co
 'Invoking: ARM Print Size'
 arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  29580	   1904	  45844	  77328	  12e10	Test1.elf
+  29552	   1904	  31444	  62900	   f5b4	Test1.elf
 'Finished building: Test1.elf.size'
 ' '
-13:58:38 **** Incremental Build of configuration Debug for project Test1 ****
+11:34:26 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:43:38 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+11:43:41 **** Clean-only build of project standalone_bsp_0 ****
+make -k clean 
+rm -rf ps7_cortexa9_0
+11:43:41 **** Clean-only build of configuration Debug for project Test1 ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  Test1.elf.size  Test1.elf
+' '
+11:43:42 **** Build of project standalone_bsp_0 ****
+make -k all 
+libgen -hw ../module_1_hw_platform/system.xml\
+	       \
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.5 Build EDK_P.58f
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../module_1_hw_platform/system.xml -pe ps7_cortexa9_0
+-log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+
+Running libs - 'make -s libs "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+"Compiling common"
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+"Compiling xadc"
+"Compiling standalone"
+"Compiling gpio"
+"Compiling devcfg"
+"Compiling dmaps"
+"Compiling emacps"
+"Compiling gpiops"
+"Compiling qspips"
+"Compiling scugic"
+"Compiling scutimer"
+"Compiling scuwdt"
+"Compiling uartps"
+"Compiling usbps"
+"Compiling cpu_cortexa9"
+Running execs_generate.
+'Finished building libraries'
+11:43:53 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+11:43:53 **** Build of configuration Debug for project Test1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: Test1.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Test1.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29552	   1904	  31444	  62900	   f5b4	Test1.elf
+'Finished building: Test1.elf.size'
+' '
+11:44:14 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:45:46 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:46:56 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:47:52 **** Auto Build of configuration Debug for project Test1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: Test1.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Test1.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29552	   1904	  31444	  62900	   f5b4	Test1.elf
+'Finished building: Test1.elf.size'
+' '
+11:47:58 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:50:00 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:50:37 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:51:01 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:51:38 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:53:34 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+11:53:37 **** Clean-only build of project standalone_bsp_0 ****
+make -k clean 
+rm -rf ps7_cortexa9_0
+11:53:37 **** Clean-only build of configuration Debug for project Test1 ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  Test1.elf.size  Test1.elf
+' '
+11:53:37 **** Build of project standalone_bsp_0 ****
+make -k all 
+libgen -hw ../module_1_hw_platform/system.xml\
+	       \
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.5 Build EDK_P.58f
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../module_1_hw_platform/system.xml -pe ps7_cortexa9_0
+-log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+
+Running libs - 'make -s libs "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+"Compiling common"
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+"Compiling xadc"
+"Compiling standalone"
+"Compiling gpio"
+"Compiling devcfg"
+"Compiling dmaps"
+"Compiling emacps"
+"Compiling gpiops"
+"Compiling qspips"
+"Compiling scugic"
+"Compiling scutimer"
+"Compiling scuwdt"
+"Compiling uartps"
+"Compiling usbps"
+"Compiling cpu_cortexa9"
+Running execs_generate.
+'Finished building libraries'
+11:53:48 **** Build of configuration Debug for project Test1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: Test1.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Test1.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29552	   1904	  31444	  62900	   f5b4	Test1.elf
+'Finished building: Test1.elf.size'
+' '
+11:54:26 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:58:21 **** Auto Build of configuration Debug for project Test1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: Test1.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Test1.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29552	   1904	  31444	  62900	   f5b4	Test1.elf
+'Finished building: Test1.elf.size'
+' '
+11:58:30 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+11:59:09 **** Auto Build of configuration Debug for project Test1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: Test1.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Test1.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29552	   1904	  31444	  62900	   f5b4	Test1.elf
+'Finished building: Test1.elf.size'
+' '
+11:59:37 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+12:00:24 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+12:01:21 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+12:11:14 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+12:11:42 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+12:14:20 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+12:16:16 **** Auto Build of configuration Debug for project Test1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: Test1.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Test1.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29552	   1904	  31444	  62900	   f5b4	Test1.elf
+'Finished building: Test1.elf.size'
+' '
+12:16:38 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+12:18:19 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+12:18:49 **** Auto Build of configuration Debug for project Test1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: Test1.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Test1.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Test1.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size Test1.elf  |tee "Test1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29552	   1904	  31444	  62900	   f5b4	Test1.elf
+'Finished building: Test1.elf.size'
+' '
+12:18:54 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+12:22:28 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+12:23:00 **** Incremental Build of configuration Debug for project Test1 ****
+make all 
+make: No se hace nada para `all'.
+12:23:25 **** Incremental Build of configuration Debug for project Test1 ****
 make all 
 make: No se hace nada para `all'.

@@ -19,7 +19,7 @@
 # Clock constraints                                                        #
 ############################################################################
 create_clock -name clk_fpga_1 -period "33" [get_nets "FCLK_CLK1"]
-create_clock -name clk_fpga_0 -period "10" [get_nets "FCLK_CLK0"]
+create_clock -name clk_fpga_0 -period "5" [get_nets "FCLK_CLK0"]
 
 
 ############################################################################

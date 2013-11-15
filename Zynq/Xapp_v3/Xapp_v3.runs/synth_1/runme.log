@@ -64,8 +64,8 @@ WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Z
 Elaborating entity <AdcChanReaderMultiBank> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADC_ChanReaderMultiBank.vhd" Line 144: intdataout should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADC_ChanReaderMultiBank.vhd" Line 149: intdataout should be on the sensitivity list of the process
-WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 104: Net <fifoDataInAB[31]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 106: Net <fifoDataInCD[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 130: Net <fifoDataInAB[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 132: Net <fifoDataInCD[31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -76,16 +76,16 @@ Synthesizing Unit <module_1_stub>.
         C_AdcChnls = 2
         C_AdcWireInt = 2
     Set property "BOX_TYPE = user_black_box" for instance <module_1_i>.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 271: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 314: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 314: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 361: Output port <DataOut> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 361: Output port <state> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 361: Output port <NDataInt> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 378: Output port <SyncDone> of the instance <AdcReader_C> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 396: Output port <SyncDone> of the instance <AdcReader_D> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 477: Output port <SyncDone> of the instance <AdcReader_A> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 495: Output port <SyncDone> of the instance <AdcReader_B> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 297: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 340: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 340: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 387: Output port <DataOut> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 387: Output port <state> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 387: Output port <NDataInt> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 404: Output port <SyncDone> of the instance <AdcReader_C> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 422: Output port <SyncDone> of the instance <AdcReader_D> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 503: Output port <SyncDone> of the instance <AdcReader_A> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 521: Output port <SyncDone> of the instance <AdcReader_B> is unconnected or connected to loadless signal.
 WARNING:Xst:2935 - Signal 'fifoDataInAB<31:28>', unconnected in block 'module_1_stub', is tied to its initial value (0000).
 WARNING:Xst:2935 - Signal 'fifoDataInAB<15:12>', unconnected in block 'module_1_stub', is tied to its initial value (0000).
 WARNING:Xst:2935 - Signal 'fifoDataInCD<31:28>', unconnected in block 'module_1_stub', is tied to its initial value (0000).
@@ -491,8 +491,8 @@ Asynchronous Control Signals Information:
 ------------------------------------+----------------------------------------------+-------+
 Control Signal                      | Buffer(FF name)                              | Load  |
 ------------------------------------+----------------------------------------------+-------+
-AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
-AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
+AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr34)| 2     |
+AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr34)| 2     |
 ------------------------------------+----------------------------------------------+-------+
 
 Timing Summary:

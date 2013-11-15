@@ -113,8 +113,8 @@ WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Z
 Elaborating entity <AdcChanReaderMultiBank> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADC_ChanReaderMultiBank.vhd" Line 144: intdataout should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/new/ADC_ChanReaderMultiBank.vhd" Line 149: intdataout should be on the sensitivity list of the process
-WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 104: Net <fifoDataInAB[31]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 106: Net <fifoDataInCD[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 130: Net <fifoDataInAB[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 132: Net <fifoDataInCD[31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -125,16 +125,16 @@ Synthesizing Unit <module_1_stub>.
         C_AdcChnls = 2
         C_AdcWireInt = 2
     Set property "BOX_TYPE = user_black_box" for instance <module_1_i>.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 271: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 314: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 314: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 361: Output port <DataOut> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 361: Output port <state> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 361: Output port <NDataInt> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 378: Output port <SyncDone> of the instance <AdcReader_C> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 396: Output port <SyncDone> of the instance <AdcReader_D> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 477: Output port <SyncDone> of the instance <AdcReader_A> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 495: Output port <SyncDone> of the instance <AdcReader_B> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 297: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 340: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 340: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 387: Output port <DataOut> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 387: Output port <state> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 387: Output port <NDataInt> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 404: Output port <SyncDone> of the instance <AdcReader_C> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 422: Output port <SyncDone> of the instance <AdcReader_D> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 503: Output port <SyncDone> of the instance <AdcReader_A> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Xapp_v3/Xapp_v3.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 521: Output port <SyncDone> of the instance <AdcReader_B> is unconnected or connected to loadless signal.
 WARNING:Xst:2935 - Signal 'fifoDataInAB<31:28>', unconnected in block 'module_1_stub', is tied to its initial value (0000).
 WARNING:Xst:2935 - Signal 'fifoDataInAB<15:12>', unconnected in block 'module_1_stub', is tied to its initial value (0000).
 WARNING:Xst:2935 - Signal 'fifoDataInCD<31:28>', unconnected in block 'module_1_stub', is tied to its initial value (0000).
@@ -521,16 +521,16 @@ Top Level Output File Name         : module_1_stub.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1676
+# BELS                             : 1672
 #      GND                         : 19
-#      INV                         : 114
+#      INV                         : 112
 #      LUT1                        : 124
 #      LUT2                        : 73
 #      LUT3                        : 242
 #      LUT4                        : 307
 #      LUT5                        : 183
 #      LUT6                        : 312
-#      MUXCY                       : 182
+#      MUXCY                       : 180
 #      VCC                         : 8
 #      XORCY                       : 112
 # FlipFlops/Latches                : 870
@@ -549,11 +549,11 @@ Primitive and Black Box Usage:
 #      SRLC16E                     : 98
 # Clock Buffers                    : 5
 #      BUFG                        : 5
-# IO Buffers                       : 23
+# IO Buffers                       : 47
 #      IBUF                        : 3
 #      IBUFDS_DIFF_OUT             : 9
 #      IBUFGDS                     : 1
-#      OBUF                        : 10
+#      OBUF                        : 34
 # Others                           : 27
 #      BUFIO                       : 2
 #      BUFMRCE                     : 1
@@ -571,21 +571,21 @@ Selected Device : 7z020clg484-1
 
 Slice Logic Utilization: 
  Number of Slice Registers:             870  out of  106400     0%  
- Number of Slice LUTs:                 1453  out of  53200     2%  
-    Number used as Logic:              1355  out of  53200     2%  
+ Number of Slice LUTs:                 1451  out of  53200     2%  
+    Number used as Logic:              1353  out of  53200     2%  
     Number used as Memory:               98  out of  17400     0%  
        Number used as SRL:               98
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1621
-   Number with an unused Flip Flop:     751  out of   1621    46%  
-   Number with an unused LUT:           168  out of   1621    10%  
-   Number of fully used LUT-FF pairs:   702  out of   1621    43%  
+ Number of LUT Flip Flop pairs used:   1619
+   Number with an unused Flip Flop:     749  out of   1619    46%  
+   Number with an unused LUT:           168  out of   1619    10%  
+   Number of fully used LUT-FF pairs:   702  out of   1619    43%  
    Number of unique control sets:        57
 
 IO Utilization: 
- Number of IOs:                         160
- Number of bonded IOBs:                  15  out of    200     7%  
+ Number of IOs:                         184
+ Number of bonded IOBs:                  39  out of    200    19%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                2  out of    140     1%  
@@ -631,8 +631,8 @@ Asynchronous Control Signals Information:
 ------------------------------------+----------------------------------------------+-------+
 Control Signal                      | Buffer(FF name)                              | Load  |
 ------------------------------------+----------------------------------------------+-------+
-AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
-AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
+AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr34)| 2     |
+AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr34)| 2     |
 ------------------------------------+----------------------------------------------+-------+
 
 Timing Summary:
@@ -704,7 +704,7 @@ Delay:               3.935ns (Levels of Logic = 6)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'AdcFrame1/BitSlipCtrlN/currState[2]_PWR_17_o_Mux_24_o'
   Clock period: 3.605ns (frequency: 277.378MHz)
-  Total number of paths / destination ports: 35088 / 32
+  Total number of paths / destination ports: 35952 / 32
 -------------------------------------------------------------------------
 Delay:               3.605ns (Levels of Logic = 36)
   Source:            AdcFrame1/BitSlipCtrlN/counter_0 (LATCH)
@@ -748,12 +748,12 @@ Delay:               3.605ns (Levels of Logic = 36)
      MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<27> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<27>)
      MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<28> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<28>)
      MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<29> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<29>)
-     XORCY:CI->O           3   0.320   0.739  Madd_counter[31]_GND_44_o_add_10_OUT_xor<30> (counter[31]_GND_44_o_add_10_OUT<30>)
+     MUXCY:CI->O           0   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<30> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<30>)
+     XORCY:CI->O           3   0.320   0.739  Madd_counter[31]_GND_44_o_add_10_OUT_xor<31> (counter[31]_GND_44_o_add_10_OUT<31>)
      LUT5:I0->O            0   0.053   0.000  Mcompar_n0011_lutdi5 (Mcompar_n0011_lutdi5)
-     MUXCY:DI->O           1   0.278   0.000  Mcompar_n0011_cy<5> (Mcompar_n0011_cy<5>)
-     MUXCY:CI->O          35   0.015   0.566  Mcompar_n0011_cy<6> (Mcompar_n0011_cy<6>)
-     LUT5:I4->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_23_o1301 (currState[2]_X_12_o_Mux_83_o)
-     LD:D                     -0.021          counter_1
+     MUXCY:DI->O          35   0.278   0.566  Mcompar_n0011_cy<5> (Mcompar_n0011_cy<5>)
+     LUT5:I4->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_23_o1291 (currState[2]_X_12_o_Mux_81_o)
+     LD:D                     -0.021          counter_2
     ----------------------------------------
     Total                      3.605ns (1.901ns logic, 1.704ns route)
                                        (52.7% logic, 47.3% route)
@@ -761,7 +761,7 @@ Delay:               3.605ns (Levels of Logic = 36)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'AdcFrame1/BitSlipCtrlP/currState[2]_PWR_17_o_Mux_24_o'
   Clock period: 3.605ns (frequency: 277.378MHz)
-  Total number of paths / destination ports: 35088 / 32
+  Total number of paths / destination ports: 35952 / 32
 -------------------------------------------------------------------------
 Delay:               3.605ns (Levels of Logic = 36)
   Source:            AdcFrame1/BitSlipCtrlP/counter_0 (LATCH)
@@ -805,12 +805,12 @@ Delay:               3.605ns (Levels of Logic = 36)
      MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<27> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<27>)
      MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<28> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<28>)
      MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<29> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<29>)
-     XORCY:CI->O           3   0.320   0.739  Madd_counter[31]_GND_44_o_add_10_OUT_xor<30> (counter[31]_GND_44_o_add_10_OUT<30>)
+     MUXCY:CI->O           0   0.015   0.000  Madd_counter[31]_GND_44_o_add_10_OUT_cy<30> (Madd_counter[31]_GND_44_o_add_10_OUT_cy<30>)
+     XORCY:CI->O           3   0.320   0.739  Madd_counter[31]_GND_44_o_add_10_OUT_xor<31> (counter[31]_GND_44_o_add_10_OUT<31>)
      LUT5:I0->O            0   0.053   0.000  Mcompar_n0011_lutdi5 (Mcompar_n0011_lutdi5)
-     MUXCY:DI->O           1   0.278   0.000  Mcompar_n0011_cy<5> (Mcompar_n0011_cy<5>)
-     MUXCY:CI->O          35   0.015   0.566  Mcompar_n0011_cy<6> (Mcompar_n0011_cy<6>)
-     LUT5:I4->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_23_o1301 (currState[2]_X_12_o_Mux_83_o)
-     LD:D                     -0.021          counter_1
+     MUXCY:DI->O          35   0.278   0.566  Mcompar_n0011_cy<5> (Mcompar_n0011_cy<5>)
+     LUT5:I4->O            1   0.053   0.000  Mmux_currState[2]_X_12_o_Mux_23_o1291 (currState[2]_X_12_o_Mux_81_o)
+     LD:D                     -0.021          counter_2
     ----------------------------------------
     Total                      3.605ns (1.901ns logic, 1.704ns route)
                                        (52.7% logic, 47.3% route)
@@ -1114,11 +1114,11 @@ module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    
 
 
 Total REAL time to Xst completion: 15.00 secs
-Total CPU time to Xst completion: 14.33 secs
+Total CPU time to Xst completion: 14.74 secs
  
 --> 
 
-Total memory usage is 456868 kilobytes
+Total memory usage is 489264 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   63 (   0 filtered)

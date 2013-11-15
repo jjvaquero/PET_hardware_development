@@ -18,7 +18,9 @@
     <SET ID="axi_gpio_0" IS_EXPANDED="TRUE"/>
     <SET ID="axi_gpio_1" IS_EXPANDED="TRUE"/>
     <STATUS>
-      <SELECTIONS/>
+      <SELECTIONS>
+        <VARIABLE ID="S_AXI" PARENT="axi_gpio_1"/>
+      </SELECTIONS>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="processing_system7_0" IS_EXPANDED="TRUE" ROW_INDEX="1"/>
