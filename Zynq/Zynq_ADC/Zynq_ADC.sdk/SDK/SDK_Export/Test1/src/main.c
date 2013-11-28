@@ -194,7 +194,7 @@ int main(void)
 
 	     xil_printf("Read Values C\n\n\r");
 			for ( i = 0; i<DATAN; i++){
-				xil_printf(" %d, ",valuesA[i]);  //valuesC[i]);
+				xil_printf(" %d, ",valuesD[i]);  //valuesC[i]);
 			}
 
 //			  xil_printf("Read Values D \n\n\r");

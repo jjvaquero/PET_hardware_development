@@ -19,7 +19,7 @@
 # Clock constraints                                                        #
 ############################################################################
 NET FCLK_CLK1 TNM_NET = clk_fpga_1;
-TIMESPEC TS_clk_fpga_1 = PERIOD clk_fpga_1 30303 kHz;
+TIMESPEC TS_clk_fpga_1 = PERIOD clk_fpga_1 33333.3 kHz;
 
 NET FCLK_CLK2 TNM_NET = clk_fpga_2;
 TIMESPEC TS_clk_fpga_2 = PERIOD clk_fpga_2 142857 kHz;
