@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcClk/AdcClock_I_Isrds_Master</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_D/AdcReader1/AdcDataISerdes_P</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_D/AdcReader1/AdcDataISerdes_N</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_A/AdcReader0/AdcDataISerdes_P</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_A/AdcReader0/AdcDataISerdes_N</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_A/AdcReader1/AdcDataISerdes_P</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_A/AdcReader1/AdcDataISerdes_N</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_C/AdcReader0/AdcDataISerdes_P</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_C/AdcReader0/AdcDataISerdes_N</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcFrame1/AdcDataISerdes_N</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcFrame1/AdcDataISerdes_P</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_C/AdcReader1/AdcDataISerdes_P</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_C/AdcReader1/AdcDataISerdes_N</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_B/AdcReader1/AdcDataISerdes_P</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_B/AdcReader1/AdcDataISerdes_N</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_D/AdcReader0/AdcDataISerdes_P</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_D/AdcReader0/AdcDataISerdes_N</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_B/AdcReader0/AdcDataISerdes_P</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2165" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">AdcReader_B/AdcReader0/AdcDataISerdes_N</arg>&gt;:&lt;<arg fmt="%s" index="2">ISERDESE2_ISERDESE2</arg>&gt;.  Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+</msg>
+
+</messages>
+

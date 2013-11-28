@@ -1,0 +1,126 @@
+Release 14.5 - ngc2edif P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design module_1_stub.ngc ...
+WARNING:NetListWriters:298 - No output is written to module_1_stub.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus fifoDataInAB[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus fifoDataInCD[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file module_1_stub.edif ...
+ngc2edif: Total memory usage is 80044 kilobytes
+
+Release 14.5 - ngc2edif P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design module_1_stub.ngc ...
+WARNING:NetListWriters:298 - No output is written to module_1_stub.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus fifoDataInAB[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus fifoDataInCD[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file module_1_stub.edif ...
+ngc2edif: Total memory usage is 79980 kilobytes
+
+Release 14.5 - ngc2edif P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design module_1_stub.ngc ...
+WARNING:NetListWriters:298 - No output is written to module_1_stub.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus fifoDataInAB[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus fifoDataInCD[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file module_1_stub.edif ...
+ngc2edif: Total memory usage is 80492 kilobytes
+
+Release 14.5 - ngc2edif P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design module_1_stub.ngc ...
+WARNING:NetListWriters:298 - No output is written to module_1_stub.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus fifoDataInAB[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus fifoDataInCD[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file module_1_stub.edif ...
+ngc2edif: Total memory usage is 80108 kilobytes
+
+Release 14.5 - ngc2edif P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design module_1_stub.ngc ...
+WARNING:NetListWriters:298 - No output is written to module_1_stub.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus fifoDataInAB[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus fifoDataInCD[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file module_1_stub.edif ...
+ngc2edif: Total memory usage is 80364 kilobytes
+
+Release 14.5 - ngc2edif P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design module_1_stub.ngc ...
+WARNING:NetListWriters:298 - No output is written to module_1_stub.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus fifoDataInAB[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus fifoDataInCD[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file module_1_stub.edif ...
+ngc2edif: Total memory usage is 80492 kilobytes
+
+Release 14.5 - ngc2edif P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design module_1_stub.ngc ...
+WARNING:NetListWriters:298 - No output is written to module_1_stub.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus fifoDataInAB[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus fifoDataInCD[27 : 0] on block
+   module_1_stub is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file module_1_stub.edif ...
+ngc2edif: Total memory usage is 80236 kilobytes
+

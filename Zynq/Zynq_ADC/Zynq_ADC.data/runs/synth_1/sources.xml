@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DARoots Version="1" Minor="26">
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/BitSlipCtrlFSM_v2.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/AdcDataReader.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcDataReader.vhd"/>
+        <Attr Name="ImportTime" Val="1379415121"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ADC_ChanReaderMultiBank.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Xapp_v3/Xapp_v3.srcs/sources_1/new/ADC_ChanReaderMultiBank.vhd"/>
+        <Attr Name="ImportTime" Val="1380012082"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/AdcFrameSync.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcFrameSync.vhd"/>
+        <Attr Name="ImportTime" Val="1384509145"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/AdcChanReader.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Xapp_v3/Xapp_v3.srcs/sources_1/new/AdcChanReader.vhd"/>
+        <Attr Name="ImportTime" Val="1384770311"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Adc_Interface/Libraries/AdcClock_Lib/Vhdl/AdcClock.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp524/LvdsSerialAdc/Projects/Adc_Interface/Libraries/AdcClock_Lib/Vhdl/AdcClock.vhd"/>
+        <Attr Name="ImportTime" Val="1343221944"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/edk/module_1/module_1.xmp">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1.xmp"/>
+        <Attr Name="ImportTime" Val="1376996283"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/edk/module_1/module_1_stub.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../XApp_v1/XApp_v1.srcs/sources_1/edk/module_1/module_1_stub.vhd"/>
+        <Attr Name="ImportTime" Val="1377075092"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Zynq_Intro/PWM_Controller.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ADC_Read4/ADC_Read4.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd"/>
+        <Attr Name="ImportTime" Val="1377015464"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/BitSlipCtrlFSM.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Xapp_v3/Xapp_v3.srcs/sources_1/new/BitSlipCtrlFSM.vhd"/>
+        <Attr Name="ImportTime" Val="1384873518"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ADCReadFSM.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Xapp_v3/Xapp_v3.srcs/sources_1/new/ADCReadFSM.vhd"/>
+        <Attr Name="ImportTime" Val="1378453674"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Vhdl/Fdcr.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp524/LvdsSerialAdc/Libraries/Common/Vhdl/Fdcr.vhd"/>
+        <Attr Name="ImportTime" Val="1343293740"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Vhdl/GenPulse.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp524/LvdsSerialAdc/Libraries/Common/Vhdl/GenPulse.vhd"/>
+        <Attr Name="ImportTime" Val="1323965610"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Vhdl/Cnt_5b_Bin.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp524/LvdsSerialAdc/Libraries/Common/Vhdl/Cnt_5b_Bin.vhd"/>
+        <Attr Name="ImportTime" Val="1276105704"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Adc_Interface/Libraries/AdcFrame_Lib/Vhdl/DoubleNibbleDetect.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp524/LvdsSerialAdc/Projects/Adc_Interface/Libraries/AdcFrame_Lib/Vhdl/DoubleNibbleDetect.vhd"/>
+        <Attr Name="ImportTime" Val="1343388326"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/BufRClkAlign.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../XApp_v2/XApp_v2.srcs/sources_1/new/BufRClkAlign.vhd"/>
+        <Attr Name="ImportTime" Val="1377860267"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/AdcFrm_v7.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../XApp_v1/XApp_v1.srcs/sources_1/new/AdcFrm_v7.vhd"/>
+        <Attr Name="ImportTime" Val="1377182285"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ADCClk_v7.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../XApp_v1/XApp_v1.srcs/sources_1/new/ADCClk_v7.vhd"/>
+        <Attr Name="ImportTime" Val="1377181038"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Adc_Interface/Libraries/AdcMem_Lib/Vhdl/AdcMem.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp524/LvdsSerialAdc/Projects/Adc_Interface/Libraries/AdcMem_Lib/Vhdl/AdcMem.vhd"/>
+        <Attr Name="ImportTime" Val="1343308240"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Adc_Interface/Libraries/AdcFrame_Lib/Vhdl/AdcFrame.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp524/LvdsSerialAdc/Projects/Adc_Interface/Libraries/AdcFrame_Lib/Vhdl/AdcFrame.vhd"/>
+        <Attr Name="ImportTime" Val="1343392340"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Adc_Interface/Libraries/AdcData_Lib/Vhdl/AdcData.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../XillixApp/Xapp524/LvdsSerialAdc/Projects/Adc_Interface/Libraries/AdcData_Lib/Vhdl/AdcData.vhd"/>
+        <Attr Name="ImportTime" Val="1343240142"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="module_1_stub"/>
+    </Config>
+  </FileSet>
+</DARoots>
