@@ -1,0 +1,396 @@
+
+*** Running xst
+    with args -ifn "module_1_stub.xst" -ofn "module_1_stub.srp" -intstyle ise
+
+Reading design: module_1_stub.prj
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/BitSlipCtrlFSM_v2.vhd" into library work
+Parsing entity <BitSlipCtrlFSM_v2>.
+Parsing architecture <Behavioral> of entity <bitslipctrlfsm_v2>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/AdcDataReader.vhd" into library work
+Parsing entity <AdcDataReader>.
+Parsing architecture <Behavioral> of entity <adcdatareader>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/ADC_ChanReaderMultiBank.vhd" into library work
+Parsing entity <AdcChanReaderMultiBank>.
+Parsing architecture <Behavioral> of entity <adcchanreadermultibank>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/AdcFrameSync.vhd" into library work
+Parsing entity <AdcFrameSync>.
+Parsing architecture <Behavioral> of entity <adcframesync>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/AdcChanReader.vhd" into library work
+Parsing entity <AdcChanReader>.
+Parsing architecture <Behavioral> of entity <adcchanreader>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/imports/Adc_Interface/Libraries/AdcClock_Lib/Vhdl/AdcClock.vhd" into library work
+Parsing entity <AdcClock>.
+Parsing architecture <AdcClock_struct> of entity <adcclock>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/hdl/module_1.vhd" into library work
+Parsing entity <module_1>.
+Parsing architecture <STRUCTURE> of entity <module_1>.
+Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd" into library work
+Parsing entity <module_1_stub>.
+Parsing architecture <STRUCTURE> of entity <module_1_stub>.
+WARNING:HDLCompiler:946 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 505: Actual for formal port wren is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 590: Actual for formal port wren is neither a static name nor a globally static expression
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <module_1_stub> (architecture <STRUCTURE>) with generics from library <work>.
+
+Elaborating entity <module_1> (architecture <>) from library <work>.
+
+Elaborating entity <AdcClock> (architecture <AdcClock_struct>) with generics from library <work>.
+
+Elaborating entity <AdcFrameSync> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <BitSlipCtrlFSM_v2> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/BitSlipCtrlFSM_v2.vhd" Line 93: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/BitSlipCtrlFSM_v2.vhd" Line 117: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/BitSlipCtrlFSM_v2.vhd" Line 139: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/BitSlipCtrlFSM_v2.vhd" Line 156: datain should be on the sensitivity list of the process
+
+Elaborating entity <AdcChanReader> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <AdcDataReader> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/AdcChanReader.vhd" Line 142: intdataout should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/AdcChanReader.vhd" Line 147: intdataout should be on the sensitivity list of the process
+
+Elaborating entity <AdcChanReaderMultiBank> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/ADC_ChanReaderMultiBank.vhd" Line 149: intdataout should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/ADC_ChanReaderMultiBank.vhd" Line 154: intdataout should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <module_1_stub>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd".
+        C_AdcChnls = 2
+        C_AdcWireInt = 2
+    Set property "BOX_TYPE = user_black_box" for instance <module_1_i>.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 299: Output port <LED_DutyCycle> of the instance <module_1_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 299: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 343: Output port <BitClkAlignWarn> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 343: Output port <BitClkInvrtd> of the instance <AdcClk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 390: Output port <DataOut> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 390: Output port <state> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 390: Output port <NDataInt> of the instance <AdcFrame1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 531: Output port <SyncDone> of the instance <AdcReader_B> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <IntSinycOut>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <module_1_stub> synthesized.
+
+Synthesizing Unit <AdcClock>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/imports/Adc_Interface/Libraries/AdcClock_Lib/Vhdl/AdcClock.vhd".
+        C_AdcBits = 12
+        C_StatTaps = 7
+    Set property "KEEP_HIERARCHY = YES".
+    Set property "LOC = BUFIO_X1Y4" for instance <AdcClock_I_Bufio34>.
+    Set property "LOC = BUFIO_X1Y8" for instance <AdcClock_I_Bufio35>.
+    Set property "LOC = BUFR_X1Y4" for instance <Gen_Bufr_Div_3.AdcClock_I_Bufr34>.
+    Set property "LOC = BUFR_X1Y8" for instance <Gen_Bufr_Div_3.AdcClock_I_Bufr35>.
+    Found 1-bit register for signal <IntClkCtrlDlyInc>.
+    Found 1-bit register for signal <IntproceedCntTc_d>.
+    Found 1-bit register for signal <IntProceed>.
+    Found 1-bit register for signal <PassedSubState>.
+    Found 1-bit register for signal <IntClkCtrlDlyCe>.
+    Found 1-bit register for signal <IntClkCtrlDone>.
+    Found 1-bit register for signal <IntClkCtrlAlgnWrn>.
+    Found 1-bit register for signal <IntClkCtrlInvrtd>.
+    Found 1-bit register for signal <IntTurnAroundBit>.
+    Found 1-bit register for signal <IntProceedDone>.
+    Found 2-bit register for signal <IntCalVal>.
+    Found 2-bit register for signal <IntAction>.
+    Found 2-bit register for signal <IntCalValReg>.
+    Found 4-bit register for signal <State>.
+    Found 4-bit register for signal <ReturnState>.
+    Found 4-bit register for signal <IntNumIncDecIdly>.
+    Found 4-bit register for signal <IntTimeOutCnt>.
+    Found 4-bit register for signal <IntStepCnt>.
+    Found 3-bit register for signal <IntProceedCnt>.
+    Found 3-bit adder for signal <IntProceedCnt[2]_GND_8_o_add_2_OUT> created at line 333.
+    Found 4-bit adder for signal <IntTimeOutCnt[3]_GND_8_o_add_11_OUT> created at line 415.
+    Found 4-bit adder for signal <IntStepCnt[3]_GND_8_o_add_41_OUT> created at line 477.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_44_OUT<3:0>> created at line 504.
+    Found 32x4-bit Read Only RAM for signal <n0189>
+    Found 2-bit comparator equal for signal <n0048> created at line 439
+    Summary:
+	inferred   1 RAM(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  39 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  34 Multiplexer(s).
+Unit <AdcClock> synthesized.
+
+Synthesizing Unit <AdcFrameSync>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/AdcFrameSync.vhd".
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/AdcFrameSync.vhd" line 233: Output port <State> of the instance <BitSlipCtrl> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <state> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 6-bit register for signal <IntDataTotal>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <AdcFrameSync> synthesized.
+
+Synthesizing Unit <BitSlipCtrlFSM_v2>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/BitSlipCtrlFSM_v2.vhd".
+    Set property "clock_signal = yes" for signal <currState>.
+    Found 1-bit register for signal <BitSlipP>.
+    Found 1-bit register for signal <BitSlipN>.
+    Found 3-bit register for signal <currState>.
+    Found finite state machine <FSM_0> for signal <currState>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 14                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 6                                              |
+    | Clock              | Clk (rising_edge)                              |
+    | Reset              | Rst_INV_20_o (positive)                        |
+    | Reset type         | synchronous                                    |
+    | Reset State        | s0                                             |
+    | Power Up State     | s0                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit adder for signal <counter[7]_GND_55_o_add_11_OUT> created at line 132.
+    Found 8-bit comparator greater for signal <n0010> created at line 128
+    Found 8-bit comparator greater for signal <n0015> created at line 143
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   8 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <BitSlipCtrlFSM_v2> synthesized.
+
+Synthesizing Unit <AdcChanReader>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/AdcChanReader.vhd".
+    Summary:
+Unit <AdcChanReader> synthesized.
+
+Synthesizing Unit <AdcDataReader>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/AdcDataReader.vhd".
+    Found 6-bit register for signal <IntDataTotal>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <AdcDataReader> synthesized.
+
+Synthesizing Unit <AdcChanReaderMultiBank>.
+    Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/Zynq_ADC/Zynq_ADC.srcs/sources_1/new/ADC_ChanReaderMultiBank.vhd".
+WARNING:Xst:653 - Signal <SyncDone> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+Unit <AdcChanReaderMultiBank> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x4-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 5
+ 3-bit adder                                           : 1
+ 4-bit adder                                           : 2
+ 4-bit subtractor                                      : 1
+ 8-bit adder                                           : 1
+# Registers                                            : 31
+ 1-bit register                                        : 13
+ 2-bit register                                        : 3
+ 3-bit register                                        : 1
+ 4-bit register                                        : 5
+ 6-bit register                                        : 9
+# Comparators                                          : 3
+ 2-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 2
+# Multiplexers                                         : 42
+ 1-bit 2-to-1 multiplexer                              : 7
+ 2-bit 2-to-1 multiplexer                              : 3
+ 4-bit 2-to-1 multiplexer                              : 25
+ 8-bit 2-to-1 multiplexer                              : 7
+# FSMs                                                 : 1
+# Xors                                                 : 8
+ 1-bit xor4                                            : 4
+ 1-bit xor8                                            : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <..\..\Zynq_ADC.srcs\sources_1\edk\module_1\implementation/module_1.ngc>.
+Reading core <..\..\Zynq_ADC.srcs\sources_1\edk\module_1\implementation/module_1_axi_gpio_1_wrapper.ngc>.
+Reading core <..\..\Zynq_ADC.srcs\sources_1\edk\module_1\implementation/module_1_axi_gpio_0_wrapper.ngc>.
+Reading core <..\..\Zynq_ADC.srcs\sources_1\edk\module_1\implementation/module_1_processing_system7_0_wrapper.ngc>.
+Reading core <..\..\Zynq_ADC.srcs\sources_1\edk\module_1\implementation/module_1_axi_interconnect_1_wrapper.ngc>.
+Loading core <module_1_axi_gpio_1_wrapper> for timing and area information for instance <axi_gpio_1>.
+Loading core <module_1_axi_gpio_0_wrapper> for timing and area information for instance <axi_gpio_0>.
+Loading core <module_1_processing_system7_0_wrapper> for timing and area information for instance <processing_system7_0>.
+Loading core <module_1_axi_interconnect_1_wrapper> for timing and area information for instance <axi_interconnect_1>.
+Loading core <module_1> for timing and area information for instance <module_1_i>.
+
+Synthesizing (advanced) Unit <AdcClock>.
+The following registers are absorbed into counter <IntStepCnt>: 1 register on signal <IntStepCnt>.
+The following registers are absorbed into counter <IntProceedCnt>: 1 register on signal <IntProceedCnt>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_n0189> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 4-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(IntAction,IntCalVal,IntProceed)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <AdcClock> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x4-bit single-port distributed Read Only RAM        : 1
+# Adders/Subtractors                                   : 3
+ 4-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 2
+ 3-bit up counter                                      : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 89
+ Flip-Flops                                            : 89
+# Comparators                                          : 3
+ 2-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 2
+# Multiplexers                                         : 42
+ 1-bit 2-to-1 multiplexer                              : 7
+ 2-bit 2-to-1 multiplexer                              : 3
+ 4-bit 2-to-1 multiplexer                              : 25
+ 8-bit 2-to-1 multiplexer                              : 7
+# FSMs                                                 : 1
+# Xors                                                 : 8
+ 1-bit xor4                                            : 4
+ 1-bit xor8                                            : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <AdcFrame1/BitSlipCtrl/FSM_0> on signal <currState[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ s0    | 000
+ s1    | 001
+ s2    | 010
+ s3    | 011
+ s4    | 100
+ s5    | 101
+ s6    | 110
+-------------------
+WARNING:Xst:1710 - FF/Latch <ReturnState_0> (without init value) has a constant value of 0 in block <AdcClock>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <ReturnState_2> in Unit <AdcClock> is equivalent to the following FF/Latch, which will be removed : <ReturnState_3> 
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_SRSTB>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_SRSTB_pin>
+   Output port PS7:PSSRSTB of instance <module_1_i/processing_system7_0/processing_system7_0/PS7_i>
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_CLK>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_CLK_pin>
+   Output port PS7:PSCLK of instance <module_1_i/processing_system7_0/processing_system7_0/PS7_i>
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_PORB>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_PORB_pin>
+   Output port PS7:PSPORB of instance <module_1_i/processing_system7_0/processing_system7_0/PS7_i>
+WARNING:Xst:2170 - Unit BitSlipCtrlFSM_v2 : the following signal(s) form a combinatorial loop: n0010, counter[7]_GND_55_o_add_11_OUT<7>, Madd_counter[7]_GND_55_o_add_11_OUT_lut<7>, currState_FSM_FFd1-In1, currState_FSM_FFd1-In.
+WARNING:Xst:2170 - Unit BitSlipCtrlFSM_v2 : the following signal(s) form a combinatorial loop: n0015, Madd_counter[7]_GND_55_o_add_11_OUT_lut<6>, counter[7]_GND_55_o_add_11_OUT<6>, currState_FSM_FFd3-In2, currState_FSM_FFd3-In.
+
+Optimizing unit <module_1_stub> ...
+
+Optimizing unit <AdcFrameSync> ...
+
+Optimizing unit <BitSlipCtrlFSM_v2> ...
+
+Optimizing unit <AdcDataReader> ...
+
+Optimizing unit <AdcClock> ...
+WARNING:Xst:2677 - Node <IntClkCtrlAlgnWrn> of sequential type is unconnected in block <AdcClk>.
+WARNING:Xst:2677 - Node <IntClkCtrlInvrtd> of sequential type is unconnected in block <AdcClk>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block module_1_stub, actual ratio is 0.
+INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
+INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
+INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 95
+ Flip-Flops                                            : 95
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Clock Information:
+------------------
+---------------------------------------------------------------------------+-------------------------------+-------+
+Clock Signal                                                               | Clock buffer(FF name)         | Load  |
+---------------------------------------------------------------------------+-------------------------------+-------+
+DCLK<0>                                                                    | IBUFGDS+ISERDESE2+BUFMRCE+BUFR| 100   |
+module_1_i/axi_gpio_1/GPIO_IO_O<1>                                         | NONE(FIFO18E1_CD)             | 2     |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                          | 781   |
+---------------------------------------------------------------------------+-------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+------------------------------------+----------------------------------------------+-------+
+Control Signal                      | Buffer(FF name)                              | Load  |
+------------------------------------+----------------------------------------------+-------+
+AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
+AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
+------------------------------------+----------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 10.160ns (Maximum Frequency: 98.425MHz)
+   Minimum input arrival time before clock: 2.296ns
+   Maximum output required time after clock: 3.082ns
+   Maximum combinational path delay: 1.024ns
+
+=========================================================================

@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Zynq_ADC\Zynq_ADC.runs\impl_1\module_1_stub_routed.ncd
+OUTFILE=C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Zynq_ADC\Zynq_ADC.runs\impl_1\module_1_stub.bit
+FAMILY=Zynq
+PART=xc7z020-1clg484
+WORKINGDIR=C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\Zynq_ADC\Zynq_ADC.runs\impl_1
+LICENSE=WebPack
+USER_INFO=210635299_1777490618_210555872_266

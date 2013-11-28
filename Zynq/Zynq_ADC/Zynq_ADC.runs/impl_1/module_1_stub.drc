@@ -1,0 +1,66 @@
+Release 14.5 Drc P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Thu Nov 28 14:02:24 2013
+
+drc -z module_1_stub_routed.ncd module_1_stub.pcf
+
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcClk/AdcClock_I_Isrds_Master>:<ISERDESE2_ISERDESE2>.  Useless CE2
+   input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_D/AdcReader1/AdcDataISerdes_P>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_D/AdcReader1/AdcDataISerdes_N>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_A/AdcReader0/AdcDataISerdes_P>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_A/AdcReader0/AdcDataISerdes_N>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_A/AdcReader1/AdcDataISerdes_P>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_A/AdcReader1/AdcDataISerdes_N>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_C/AdcReader0/AdcDataISerdes_P>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_C/AdcReader0/AdcDataISerdes_N>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcFrame1/AdcDataISerdes_N>:<ISERDESE2_ISERDESE2>.  Useless CE2
+   input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcFrame1/AdcDataISerdes_P>:<ISERDESE2_ISERDESE2>.  Useless CE2
+   input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_C/AdcReader1/AdcDataISerdes_P>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_C/AdcReader1/AdcDataISerdes_N>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_B/AdcReader1/AdcDataISerdes_P>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_B/AdcReader1/AdcDataISerdes_N>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_D/AdcReader0/AdcDataISerdes_P>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_D/AdcReader0/AdcDataISerdes_N>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_B/AdcReader0/AdcDataISerdes_P>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+WARNING:PhysDesignRules:2165 - Issue with pin connections and/or configuration
+   on block:<AdcReader_B/AdcReader0/AdcDataISerdes_N>:<ISERDESE2_ISERDESE2>. 
+   Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+DRC detected 0 errors and 19 warnings.  Please see the previously displayed
+individual error or warning messages for more details.
