@@ -1,7 +1,7 @@
 Release 14.5 par P.58f (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-MADHATTER::  Thu Nov 28 14:01:27 2013
+MADHATTER::  Thu Nov 28 17:03:29 2013
 
 par -intstyle pa -w module_1_stub.ncd module_1_stub_routed.ncd 
 
@@ -55,29 +55,29 @@ Router effort level (-rl):    High
 
 INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx
    Command Line Tools User Guide for information on generating a TSI report.
-Starting initial Timing Analysis.  REAL time: 11 secs 
-Finished initial Timing Analysis.  REAL time: 11 secs 
+Starting initial Timing Analysis.  REAL time: 12 secs 
+Finished initial Timing Analysis.  REAL time: 12 secs 
 
 Starting Router
 
 
 Phase  1  : 6065 unrouted;      REAL time: 12 secs 
 
-Phase  2  : 3470 unrouted;      REAL time: 12 secs 
+Phase  2  : 3470 unrouted;      REAL time: 13 secs 
 
-Phase  3  : 878 unrouted;      REAL time: 13 secs 
+Phase  3  : 878 unrouted;      REAL time: 14 secs 
 
-Phase  4  : 874 unrouted; (Setup:31310, Hold:3251, Component Switching Limit:0)     REAL time: 17 secs 
+Phase  4  : 874 unrouted; (Setup:31310, Hold:3251, Component Switching Limit:0)     REAL time: 18 secs 
 
 Updating file: module_1_stub_routed.ncd with current fully routed design.
 
 Phase  5  : 0 unrouted; (Setup:38570, Hold:2402, Component Switching Limit:0)     REAL time: 19 secs 
 
-Phase  6  : 0 unrouted; (Setup:37741, Hold:2402, Component Switching Limit:0)     REAL time: 19 secs 
+Phase  6  : 0 unrouted; (Setup:37741, Hold:2402, Component Switching Limit:0)     REAL time: 20 secs 
 
-Phase  7  : 0 unrouted; (Setup:37741, Hold:2402, Component Switching Limit:0)     REAL time: 19 secs 
+Phase  7  : 0 unrouted; (Setup:37741, Hold:2402, Component Switching Limit:0)     REAL time: 20 secs 
 
-Phase  8  : 0 unrouted; (Setup:37741, Hold:2402, Component Switching Limit:0)     REAL time: 19 secs 
+Phase  8  : 0 unrouted; (Setup:37741, Hold:2402, Component Switching Limit:0)     REAL time: 20 secs 
 
 Phase  9  : 0 unrouted; (Setup:36126, Hold:0, Component Switching Limit:0)     REAL time: 20 secs 
 Total REAL time to Router completion: 20 secs 

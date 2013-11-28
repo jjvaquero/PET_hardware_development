@@ -3,7 +3,7 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: module_1_stub.prj
 
@@ -359,8 +359,8 @@ WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_PORB
 Drivers are: 
    Primary input port <processing_system7_0_PS_PORB_pin>
    Output port PS7:PSPORB of instance <module_1_i/processing_system7_0/processing_system7_0/PS7_i>
-WARNING:Xst:2170 - Unit BitSlipCtrlFSM_v2 : the following signal(s) form a combinatorial loop: n0010, counter[7]_GND_55_o_add_11_OUT<7>, Madd_counter[7]_GND_55_o_add_11_OUT_lut<7>, currState_FSM_FFd1-In1, currState_FSM_FFd1-In.
-WARNING:Xst:2170 - Unit BitSlipCtrlFSM_v2 : the following signal(s) form a combinatorial loop: n0015, Madd_counter[7]_GND_55_o_add_11_OUT_lut<6>, counter[7]_GND_55_o_add_11_OUT<6>, currState_FSM_FFd3-In2, currState_FSM_FFd3-In.
+WARNING:Xst:2170 - Unit BitSlipCtrlFSM_v2 : the following signal(s) form a combinatorial loop: n0010, Madd_counter[7]_GND_55_o_add_11_OUT_lut<7>, currState_FSM_FFd1-In1, currState_FSM_FFd1-In, counter[7]_GND_55_o_add_11_OUT<7>.
+WARNING:Xst:2170 - Unit BitSlipCtrlFSM_v2 : the following signal(s) form a combinatorial loop: Madd_counter[7]_GND_55_o_add_11_OUT_lut<6>, n0015, counter[7]_GND_55_o_add_11_OUT<6>, currState_FSM_FFd3-In2, currState_FSM_FFd3-In.
 
 Optimizing unit <module_1_stub> ...
 
@@ -518,8 +518,8 @@ Asynchronous Control Signals Information:
 ------------------------------------+----------------------------------------------+-------+
 Control Signal                      | Buffer(FF name)                              | Load  |
 ------------------------------------+----------------------------------------------+-------+
-AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
-AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr35)| 2     |
+AdcClk/BitClkEna(AdcClk/XST_VCC:P)  | NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr34)| 2     |
+AdcClk/Mram_n01893(AdcClk/XST_GND:G)| NONE(AdcClk/Gen_Bufr_Div_3.AdcClock_I_Bufr34)| 2     |
 ------------------------------------+----------------------------------------------+-------+
 
 Timing Summary:
@@ -773,8 +773,8 @@ module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    
 =========================================================================
 
 
-Total REAL time to Xst completion: 17.00 secs
-Total CPU time to Xst completion: 16.64 secs
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.21 secs
  
 --> 
 
