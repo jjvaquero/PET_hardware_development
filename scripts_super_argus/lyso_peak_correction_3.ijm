@@ -1,6 +1,10 @@
 // Detector measurements macro.
 // Run with image already open.
 
+
+FWHMminimap = "FWHM_mini";
+photoMinimap = "photo_mini";
+
 // FUNCTIONS
 
 
@@ -209,8 +213,6 @@ for (i = 0; i< width; i++){
 
 //fisrt of all I will create the minimap images
 
-FWHMminimap = "FWHM_mini";
-photoMinimap = "photo_mini";
 //newImage(FWHMminimap,"8-bit white",13,13,288);
 //newImage(photoMinimap,"8-bit white",13,13,288);
 newImage(FWHMminimap,"8-bit white",336,168,1);
