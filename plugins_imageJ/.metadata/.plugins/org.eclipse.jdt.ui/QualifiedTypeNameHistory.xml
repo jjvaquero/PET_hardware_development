@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="ij.IJ"/>
+<fullyQualifiedTypeName name="ij.ImagePlus"/>
+<fullyQualifiedTypeName name="ij.io.ImportDialog"/>
+<fullyQualifiedTypeName name="ij.process.ShortProcessor"/>
+<fullyQualifiedTypeName name="ij.process.ImageStatistics"/>
+<fullyQualifiedTypeName name="ij.measure.Calibration"/>
+<fullyQualifiedTypeName name="ij.measure.Measurements"/>
+<fullyQualifiedTypeName name="ij.gui.Roi"/>
+<fullyQualifiedTypeName name="ij.plugin.frame.RoiManager"/>
+<fullyQualifiedTypeName name="ij.util.ArrayUtil"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="ij.measure.CurveFitter"/>
+<fullyQualifiedTypeName name="ij.plugin.RGBStackMerge"/>
+</qualifiedTypeNameHistroy>

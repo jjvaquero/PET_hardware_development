@@ -1,0 +1,77 @@
+import ij.IJ;
+import ij.ImagePlus;
+import ij.process.ImageProcessor;
+import ij.io.*;
+import ij.plugin.*;
+import ij.process.ImageStatistics;
+import ij.measure.Calibration;
+
+
+public class nimiMapa_1 implements PlugIn {
+	ImagePlus img;
+	ImageProcessor myProc;
+
+	//public int setup(String arg, ImagePlus imp) {
+		
+    public void run(String arg) {
+		//first I will try to open the new miniMap image
+		ImportDialog impDiag = new ImportDialog("minimap.raw","C:/Users/rchil/Desktop/Detect_SuperArgus/datos_16_12_13");
+		FileInfo fInf = impDiag.getFileInfo();
+		OpenDialog myDiag= new OpenDialog("Dialogo 1");
+		fInf.fileName = myDiag.getFileName();		
+		fInf.directory = myDiag.getDirectory();
+		FileOpener fOpen = new FileOpener(fInf);
+		
+		img = fOpen.open(true);
+		myProc = img.getProcessor();
+
+		//myProc = img.getProcessor();
+
+		//this.imp = imp;
+		//modify later to use only 16 bits images
+	//}
+	
+	//public void run(ImageProcessor ip) {
+		int sizeX = 24; 
+		int sizeY = 12;
+		ImageProcessor tmpProc; 
+		ImageStatistics nStats = new ImageStatistics();
+		Calibration nCal = new Calibration();
+		double[]  means = new double[sizeX*sizeY];
+		double[] stdDevs = new double[sizeX*sizeY];
+		int index = 0;
+		
+		
+		for (int x = 0; x <sizeX; x++){
+			for ( int y = 0; y < sizeY; y++){
+				myProc.setRoi(x*13,y*13,12,12);
+				tmpProc = myProc.crop();
+				nStats = ImageStatistics.getStatistics(tmpProc, 6,nCal); //6 = MEAN + STD_DEV
+				means[index] = nStats.mean;
+				stdDevs[index] = nStats.stdDev;
+				index++;		
+				IJ.log("Cristal "+ String.valueOf(index-1)+ " media "+ String.valueOf(means[index-1]));
+				}			
+
+		}
+		
+		IJ.showStatus("Start processing...");
+		IJ.wait(200);
+		int height = myProc.getHeight();
+		int width = myProc.getWidth();
+		for (int x = 0; x < width; x++) {
+			for(int y = 0; y < height; y++) {
+				if (x ==y){
+					myProc.putPixel(x, y, 0);
+				}
+				//if ((x == width/2) && (y == height/2)){
+				//   int val = myProc.getPixel(x, y);
+				   
+				//}
+
+			}
+		}
+		img.updateAndDraw();
+	}
+    
+}
