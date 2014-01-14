@@ -1,17 +1,3 @@
 INDEX VERSION 1.126+C:\Users\rchil\Desktop\Detect_SuperArgus\plugins_imageJ\.metadata\.plugins\org.eclipse.jdt.core
-3563579007.index
-3831923523.index
-1840407994.index
-20454345.index
-3357822389.index
-3942747217.index
+2961296666.index
 616036404.index
-1334250594.index
-2959744029.index
-3453010601.index
-845661756.index
-4274890902.index
-2990805955.index
-2407343740.index
-710365281.index
-3891995667.index

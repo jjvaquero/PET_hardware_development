@@ -150,20 +150,32 @@ public class crystal_peak_correction implements PlugIn {
 		photoMiniMap.show();
 		
 		//now I can generate the RGBMap
-		ImagePlus[] imgRGBstack = new ImagePlus[2];
+		ImagePlus[] imgRGBstack = new ImagePlus[3];
 		ImageProcessor tmpProc = FWHMMiniMap.getProcessor();
 		tmpProc.multiply(3);
 		
 		imgRGBstack[0] = FWHMMiniMap;
 		imgRGBstack[1] = photoMiniMap;
+		imgRGBstack[2] =  NewImage.createByteImage("blank_channel", miniMapWidth, miniMapHeight, 1, 0);
 		ImagePlus finalRGB = RGBStackMerge.mergeChannels(imgRGBstack, true);
 		finalRGB.show();
 		
+		int nCrystals = miniMap_Detector.sizeX*miniMap_Detector.sizeY;
 		myAnalyzer = new miniMap_Detector();
-		int[] tmpRois = new int[miniMap_Detector.sizeX*miniMap_Detector.sizeY];
-		tmpRois = myAnalyzer.Analyze(FWHMMiniMap);
-		tmpRois = myAnalyzer.Analyze(photoMiniMap);
+		int[] wrongFWHM = new int[nCrystals];
+		int[] wrongPeaks = new int[nCrystals];
+		wrongFWHM = myAnalyzer.Analyze(FWHMMiniMap);
+		wrongPeaks = myAnalyzer.Analyze(photoMiniMap);
 		
+		Roi[] tmpRois= myAnalyzer.getRois();
+	    tmpProc = finalRGB.getProcessor();
+	    tmpProc.setColor(0x000000FF);
+		for (int i = 0; i < nCrystals ; i++){
+			if (wrongFWHM[i] > 0 || wrongPeaks[i] > 0){
+				tmpProc.draw(tmpRois[i]);
+			}
+		}
+	    finalRGB.updateAndDraw();
 		/*int imgID1 = FWHMMiniMap.getID();
 		int imgID2 = photoMiniMap.getID();		
 		IJ.runPlugIn("minimap_Analyzer", String.valueOf(imgID1));
