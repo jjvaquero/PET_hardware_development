@@ -7,10 +7,13 @@
 <fullyQualifiedTypeName name="ij.process.ImageStatistics"/>
 <fullyQualifiedTypeName name="ij.measure.Calibration"/>
 <fullyQualifiedTypeName name="ij.measure.Measurements"/>
-<fullyQualifiedTypeName name="ij.gui.Roi"/>
 <fullyQualifiedTypeName name="ij.plugin.frame.RoiManager"/>
 <fullyQualifiedTypeName name="ij.util.ArrayUtil"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="ij.measure.CurveFitter"/>
+<fullyQualifiedTypeName name="ij.gui.NewImage"/>
 <fullyQualifiedTypeName name="ij.plugin.RGBStackMerge"/>
+<fullyQualifiedTypeName name="ij.gui.Roi"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
