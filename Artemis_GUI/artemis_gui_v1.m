@@ -111,7 +111,7 @@ QUSB_init(quick);
 %configuro la FPGA
 QUSB_FpgaInit(quick);
 %programo la FPGA
-QUSB_FpgaProgram(quick,'QUSBEVB_REVA.rbf'); %daq_multi.rbf
+QUSB_FpgaProgram(quick,'QUSBEVB_REVA.rbf'); %daq_multi.rbf 
 
 %aqui debo primero configurar la fpga y toda esa pelicula y luego activar
 %el timer
@@ -314,10 +314,12 @@ n_error= 0;
   %menor = min([ind1,ind2,ind3,ind4]);
   %cad = strcat(num2str(ind1),'Xb = ',num2str(ind2),'Ya =',num2str(ind3),'Yb = ',num2str(ind4));
   %disp( cad); 
+  canal4 = canal4 + 152; %compenso por el offset del canal3
+  canal1 = canal1 + 105; %compenso por el offset del canal2
 for i = 1: indice-1  %menor
 
-    XA = canal2(i); XB = canal1(i); 
-    YA = canal4(i); YB = canal3(i);
+    XA = canal3(i); XB = canal4(i);  %los +20 es para corregir el offset
+    YA = canal1(i); YB = canal2(i);
    % cad = strcat(num2str(XA),'Xb = ',num2str(XB),'Ya =',num2str(YA),'Yb = ',num2str(YB));
    % disp( cad);
     
@@ -325,17 +327,21 @@ for i = 1: indice-1  %menor
     
     %X = round((XA-XB)/energia*512 + 256);
     %Y = round((YA-YB)/energia*512 + 256);
-    X = round((((XA-XB)/((XA+XB)))+1)*256); %round(((2*(XA-XB)/((YA+YB+XA+XB)))+1)*256);
+    X = round((((XA-XB)/((XA+XB)))+1)*128); %256 %round(((2*(XA-XB)/((YA+YB+XA+XB)))+1)*256);
     Y = round((((YA-YB)/((YA+YB)))+1)*256); %round(((2*(YA-YB)/((YA+YB+XA+XB)))+1)*256);
 
     if (X>0 && X<513) && (Y>0 && Y<513)
+        
         img(X,Y) = img(X,Y) + 1; % energia;
+      % if (X>250 && X<262) && (Y>250 && Y<262)
+       %     img(X,Y) = 10;
+       % end
         %disp(X);
         %disp(energia);
     else
         n_error = n_error+1;
-       disp('X=');disp(strcat(num2str(X),'_XA_',num2str(XA),'_XB_',num2str(XB)));%disp(X); 
-       disp('Y=');disp(strcat(num2str(Y),'_YA_',num2str(YA),'_YB_',num2str(YB)));
+     %  disp('X=');disp(strcat(num2str(X),'_XA_',num2str(XA),'_XB_',num2str(XB)));%disp(X); 
+     %  disp('Y=');disp(strcat(num2str(Y),'_YA_',num2str(YA),'_YB_',num2str(YB)));
     end
 end
 %imshow(mat2gray(img));
@@ -407,6 +413,8 @@ title(handles.axes6,'Canal 4');
 %axes(handles.axes1);h
 %axes(handles.axes1);
 imagesc(handles.imagen,'Parent',handles.axes1);
+xlim(handles.axes1,[0 512]);
+ylim(handles.axes1,[0 256]);
 %aux = imshow(mat2gray(handles.imagen));
 %set(aux,'Parent',handles.axes1);
 %set(aux,'Parent',handles.axes1);
