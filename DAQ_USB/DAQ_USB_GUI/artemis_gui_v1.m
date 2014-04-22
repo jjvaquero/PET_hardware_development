@@ -285,7 +285,7 @@ canal2 = zeros(1,5000); histo2 = zeros(1,4096);
 canal3 = zeros(1,5000); histo3 = zeros(1,4096);
 canal4 = zeros(1,5000); histo4 = zeros(1,4096);
 histoEng = zeros(1,4096);
-imgHisto = uint16(zeros(512,512,512));
+%imgHisto = uint16(zeros(512,512,512));
 
 
 %algoritmo para garantizar que los eventos van uno detras de otro
@@ -367,7 +367,8 @@ for i = 1: indice-1  %menor
         img(X,Y) = img(X,Y) + 1; % energia;
         energiaHist = round(energia/8);
         if( energiaHist> 0 && energiaHist < 512)
-          imgHisto(X,Y,energiaHist+1) = imgHisto(X,Y,energiaHist+1)+1;
+         % handles.img_histo(X,Y,energiaHist+1) = handles.img_histo(X,Y,energiaHist+1)+1;
+         % imgHisto(X,Y,energiaHist+1) = imgHisto(X,Y,energiaHist+1)+1;
         end
       % if (X>250 && X<262) && (Y>250 && Y<262)
        %     img(X,Y) = 10;
@@ -391,8 +392,8 @@ handles.histo2 = handles.histo2 + histo2;
 handles.histo3 = handles.histo3 + histo3; 
 handles.histo4 = handles.histo4 + histo4; 
 handles.imagen = handles.imagen+img;
-handles.img_histo = handles.img_histo + imgHisto;
-handles.eneregyHist = handles.energyHist + histoEng;
+%handles.img_histo = handles.img_histo + imgHisto;
+handles.energyHist = handles.energyHist + histoEng;
 %0.25 readTime
 handles.lastNEvents = indice/0.25;
 
@@ -471,6 +472,8 @@ guidata(handles.guifig, handles);
 
 function plotUpdate(src,event,handles) %Timer function
 
+handles = guidata(handles);
+
 hist_1 = blkproc(handles.histo1(1:4096),[1 4],'mean2');
 hist_2 = blkproc(handles.histo2(1:4096),[1 4],'mean2');
 hist_3 = blkproc(handles.histo3(1:4096),[1 4],'mean2');
@@ -527,7 +530,6 @@ ylim(handles.axes1,[0 256]);
  n_events = handles.lastNEvents; %algo mejor seria
  %sum(temp)/(str2num(get(handles.edit2,'String'))
  set(handles.text2,'String',num2str(n_events));
-
 
 %plot(handles.axes1,temp,'*');
 %set(handles.edit1,'string',num2str(dataConv(1)));
