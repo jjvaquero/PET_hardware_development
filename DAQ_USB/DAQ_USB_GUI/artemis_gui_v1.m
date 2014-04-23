@@ -85,13 +85,15 @@ handles.output = hObject;
 handles.quick = Quick_USB('mi_quick'); %{@TmrFcn,handles.guifig},'BusyMode','Queue',...
  %   'ExecutionMode','FixedRate','Period',2);
 %timer used to read data from the usb
-handles.readTimer = timer('TimerFcn',{@lectPeriodica,handles.guifig}, 'BusyMode','Queue',...
+handles.readTimer = timer('TimerFcn',{@lectPeriodica,hObject}, 'BusyMode','Queue',...
      'ExecutionMode','FixedRate','Period', 1);
+% handles.readTimer = timer('TimerFcn',{@lectPeriodica,handles.guifig}, 'BusyMode','Queue',...
+%     'ExecutionMode','FixedRate','Period', 1);
 %timer used to update the onscreen info
-handles.plotTimer = timer('TimerFcn',{@plotUpdate,handles.guifig}, 'BusyMode','Queue',...
+handles.plotTimer = timer('TimerFcn',{@plotUpdate,hObject}, 'BusyMode','Queue',...
      'ExecutionMode','FixedRate','Period', 1);
  
-guidata(handles.guifig,handles);
+%guidata(handles.guifig,handles);
 
 % Update handles structure
 guidata(hObject, handles);
@@ -147,7 +149,7 @@ pause(1);
  start(readTimer);
  start(plotTimer);
 
- guidata(handles.guifig, handles);
+% guidata(handles.guifig, handles);
 guidata(hObject, handles);
 
 
