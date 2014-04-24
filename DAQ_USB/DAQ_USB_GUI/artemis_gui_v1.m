@@ -77,7 +77,8 @@ handles.lastNEvents = 0;
 %ahora otra variable para almacenar la imagen
 handles.imagen = zeros(imgSize, imgSize);
 % needs to be smaller
-handles.img_histo = uint16(zeros(imgSize,imgSize,histSize/8));
+% just a part of the image
+handles.img_histo = uint16(zeros(100,100,histSize/8));
 
 
 %handles.aux_val = 0; 
@@ -287,7 +288,7 @@ canal2 = zeros(1,5000); histo2 = zeros(1,4096);
 canal3 = zeros(1,5000); histo3 = zeros(1,4096);
 canal4 = zeros(1,5000); histo4 = zeros(1,4096);
 histoEng = zeros(1,4096);
-%imgHisto = uint16(zeros(512,512,512));
+imgHisto = uint16(zeros(100,100,512));
 
 
 %algoritmo para garantizar que los eventos van uno detras de otro
@@ -368,11 +369,11 @@ for i = 1: indice-1  %menor
         
         img(X,Y) = img(X,Y) + 1; % energia;
         energiaHist = round(energia/8);
-        if( energiaHist> 0 && energiaHist < 512)
+        if( energiaHist> 0 && energiaHist < 512 && X > 150 && X<250 && Y>50 && Y<150)
          % handles.img_histo(X,Y,energiaHist+1) = handles.img_histo(X,Y,energiaHist+1)+1;
-         % imgHisto(X,Y,energiaHist+1) = imgHisto(X,Y,energiaHist+1)+1;
+          imgHisto(X-150,Y-50,energiaHist+1) = imgHisto(X-150,Y-50,energiaHist+1)+1;
         end
-      % if (X>250 && X<262) && (Y>250 && Y<262)
+       % if (X>250 && X<262) && (Y>250 && Y<262)
        %     img(X,Y) = 10;
        % end
         %disp(X);
@@ -394,7 +395,7 @@ handles.histo2 = handles.histo2 + histo2;
 handles.histo3 = handles.histo3 + histo3; 
 handles.histo4 = handles.histo4 + histo4; 
 handles.imagen = handles.imagen+img;
-%handles.img_histo = handles.img_histo + imgHisto;
+handles.img_histo = handles.img_histo + imgHisto;
 handles.energyHist = handles.energyHist + histoEng;
 %0.25 readTime
 handles.lastNEvents = indice/0.25;
