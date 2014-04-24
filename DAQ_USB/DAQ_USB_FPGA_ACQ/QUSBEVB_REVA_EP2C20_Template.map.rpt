@@ -1,5 +1,5 @@
 Analysis & Synthesis report for QUSBEVB_REVA_EP2C20_Template
-Mon Apr 21 16:43:18 2014
+Thu Apr 24 18:27:13 2014
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -66,15 +66,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 21 16:43:18 2014    ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 24 18:27:13 2014    ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Web Edition ;
 ; Revision Name                      ; QUSBEVB_REVA_EP2C20_Template             ;
 ; Top-level Entity Name              ; Template                                 ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 269                                      ;
+; Total logic elements               ; 270                                      ;
 ;     Total combinational functions  ; 235                                      ;
-;     Dedicated logic registers      ; 130                                      ;
-; Total registers                    ; 130                                      ;
+;     Dedicated logic registers      ; 131                                      ;
+; Total registers                    ; 131                                      ;
 ; Total pins                         ; 54                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 131,072                                  ;
@@ -172,54 +172,54 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 4      ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                       ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
-; PLL_48M_in.vhd                   ; yes             ; User Wizard-Generated File         ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/PLL_48M_in.vhd             ;
-; Template.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/Template.bdf               ;
-; control_disparo.vhdl             ; yes             ; User VHDL File                     ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/control_disparo.vhdl       ;
-; fifo0.vhd                        ; yes             ; User Wizard-Generated File         ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/fifo0.vhd                  ;
-; Retrasar_entrada.vhd             ; yes             ; User VHDL File                     ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/Retrasar_entrada.vhd       ;
-; control_fifo.vhd                 ; yes             ; User VHDL File                     ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/control_fifo.vhd           ;
-; dcfifo.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dcfifo.tdf          ;
-; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_counter.inc     ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_add_sub.inc     ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altdpram.inc        ;
-; a_graycounter.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_graycounter.inc   ;
-; a_fefifo.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_fefifo.inc        ;
-; a_gray2bin.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_gray2bin.inc      ;
-; dffpipe.inc                      ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dffpipe.inc         ;
-; alt_sync_fifo.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/alt_sync_fifo.inc   ;
-; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_compare.inc     ;
-; altsyncram_fifo.inc              ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altsyncram_fifo.inc ;
-; aglobal111.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/aglobal111.inc      ;
-; db/dcfifo_hnj1.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/dcfifo_hnj1.tdf         ;
-; db/a_graycounter_s96.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/a_graycounter_s96.tdf   ;
-; db/a_graycounter_h2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/a_graycounter_h2c.tdf   ;
-; db/a_graycounter_g2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/a_graycounter_g2c.tdf   ;
-; db/altsyncram_1qu.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/altsyncram_1qu.tdf      ;
-; db/altsyncram_cec1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/altsyncram_cec1.tdf     ;
-; db/decode_o37.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/decode_o37.tdf          ;
-; db/mux_nv7.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/mux_nv7.tdf             ;
-; db/dffpipe_c2e.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/dffpipe_c2e.tdf         ;
-; db/alt_synch_pipe_2r7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/alt_synch_pipe_2r7.tdf  ;
-; db/dffpipe_d09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/dffpipe_d09.tdf         ;
-; db/alt_synch_pipe_3r7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/alt_synch_pipe_3r7.tdf  ;
-; db/dffpipe_e09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/dffpipe_e09.tdf         ;
-; db/cmpr_r16.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/cmpr_r16.tdf            ;
-; db/mux_1u7.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/mux_1u7.tdf             ;
-; altpll.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altpll.tdf          ;
-; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratix_pll.inc     ;
-; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratixii_pll.inc   ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/cycloneii_pll.inc   ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                          ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+
+; PLL_48M_in.vhd                   ; yes             ; User Wizard-Generated File         ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/PLL_48M_in.vhd            ;
+; Template.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/Template.bdf              ;
+; control_disparo.vhdl             ; yes             ; User VHDL File                     ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/control_disparo.vhdl      ;
+; fifo0.vhd                        ; yes             ; User Wizard-Generated File         ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/fifo0.vhd                 ;
+; Retrasar_entrada.vhd             ; yes             ; User VHDL File                     ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/Retrasar_entrada.vhd      ;
+; control_fifo.vhd                 ; yes             ; User VHDL File                     ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/control_fifo.vhd          ;
+; dcfifo.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dcfifo.tdf                             ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_counter.inc                        ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_add_sub.inc                        ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altdpram.inc                           ;
+; a_graycounter.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_graycounter.inc                      ;
+; a_fefifo.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_fefifo.inc                           ;
+; a_gray2bin.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_gray2bin.inc                         ;
+; dffpipe.inc                      ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dffpipe.inc                            ;
+; alt_sync_fifo.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/alt_sync_fifo.inc                      ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_compare.inc                        ;
+; altsyncram_fifo.inc              ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altsyncram_fifo.inc                    ;
+; aglobal111.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/aglobal111.inc                         ;
+; db/dcfifo_hnj1.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/dcfifo_hnj1.tdf        ;
+; db/a_graycounter_s96.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/a_graycounter_s96.tdf  ;
+; db/a_graycounter_h2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/a_graycounter_h2c.tdf  ;
+; db/a_graycounter_g2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/a_graycounter_g2c.tdf  ;
+; db/altsyncram_1qu.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/altsyncram_1qu.tdf     ;
+; db/altsyncram_cec1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/altsyncram_cec1.tdf    ;
+; db/decode_o37.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/decode_o37.tdf         ;
+; db/mux_nv7.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/mux_nv7.tdf            ;
+; db/dffpipe_c2e.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/dffpipe_c2e.tdf        ;
+; db/alt_synch_pipe_2r7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/alt_synch_pipe_2r7.tdf ;
+; db/dffpipe_d09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/dffpipe_d09.tdf        ;
+; db/alt_synch_pipe_3r7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/alt_synch_pipe_3r7.tdf ;
+; db/dffpipe_e09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/dffpipe_e09.tdf        ;
+; db/cmpr_r16.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/cmpr_r16.tdf           ;
+; db/mux_1u7.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/mux_1u7.tdf            ;
+; altpll.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altpll.tdf                             ;
+; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratix_pll.inc                        ;
+; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratixii_pll.inc                      ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/cycloneii_pll.inc                      ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -227,7 +227,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 269    ;
+; Estimated Total logic elements              ; 270    ;
 ;                                             ;        ;
 ; Total combinational functions               ; 235    ;
 ; Logic element usage by number of LUT inputs ;        ;
@@ -239,8 +239,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- normal mode                          ; 218    ;
 ;     -- arithmetic mode                      ; 17     ;
 ;                                             ;        ;
-; Total registers                             ; 130    ;
-;     -- Dedicated logic registers            ; 130    ;
+; Total registers                             ; 131    ;
+;     -- Dedicated logic registers            ; 131    ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
 ; I/O pins                                    ; 54     ;
@@ -250,7 +250,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;        ;
 ; Maximum fan-out node                        ; ifclk  ;
 ; Maximum fan-out                             ; 93     ;
-; Total fan-out                               ; 2053   ;
+; Total fan-out                               ; 2055   ;
 ; Average fan-out                             ; 4.54   ;
 +---------------------------------------------+--------+
 
@@ -260,10 +260,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Library Name ;
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Template                                     ; 235 (2)           ; 130 (0)      ; 131072      ; 0            ; 0       ; 0         ; 54   ; 0            ; |Template                                                                                                                                         ;              ;
+; |Template                                     ; 235 (2)           ; 131 (0)      ; 131072      ; 0            ; 0       ; 0         ; 54   ; 0            ; |Template                                                                                                                                         ;              ;
 ;    |PLL_48M_in:inst4|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst4                                                                                                                        ;              ;
 ;       |altpll:altpll_component|               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst4|altpll:altpll_component                                                                                                ;              ;
-;    |Retrasar_entrada:inst3|                   ; 0 (0)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|Retrasar_entrada:inst3                                                                                                                  ;              ;
+;    |Retrasar_entrada:inst3|                   ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|Retrasar_entrada:inst3                                                                                                                  ;              ;
 ;    |control_disparo:inst|                     ; 16 (16)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_disparo:inst                                                                                                                    ;              ;
 ;    |control_fifo:inst2|                       ; 65 (65)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_fifo:inst2                                                                                                                      ;              ;
 ;    |fifo0:inst1|                              ; 152 (0)           ; 101 (0)      ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1                                                                                                                             ;              ;
@@ -297,14 +297,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                               ;
-+--------+--------------+---------+--------------+--------------+----------------------------+--------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                        ;
-+--------+--------------+---------+--------------+--------------+----------------------------+--------------------------------------------------------+
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |Template|PLL_48M_in:inst4 ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/PLL_48M_in.vhd ;
-; Altera ; FIFO         ; 11.1    ; N/A          ; N/A          ; |Template|fifo0:inst1      ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/fifo0.vhd      ;
-+--------+--------------+---------+--------------+--------------+----------------------------+--------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                   ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                                            ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------+
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |Template|PLL_48M_in:inst4 ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/PLL_48M_in.vhd ;
+; Altera ; FIFO         ; 11.1    ; N/A          ; N/A          ; |Template|fifo0:inst1      ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/fifo0.vhd      ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -377,7 +377,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 130   ;
+; Total registers                              ; 131   ;
 ; Number of registers using Synchronous Clear  ; 19    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
@@ -1036,7 +1036,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1046,7 +1046,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 173 11/01/2011 SJ Web Edition
-    Info: Processing started: Mon Apr 21 16:43:15 2014
+    Info: Processing started: Thu Apr 24 18:27:03 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off daq_fpga_multicanal -c QUSBEVB_REVA_EP2C20_Template
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file pll_48m_in.vhd
@@ -1158,7 +1158,6 @@ Warning (10542): VHDL Variable Declaration warning at control_disparo.vhdl(35): 
 Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(118): signal "ngate_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(119): signal "conv_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "Retrasar_entrada" for hierarchy "Retrasar_entrada:inst3"
-Warning (10036): Verilog HDL or VHDL warning at Retrasar_entrada.vhd(24): object "q5_Entrada" assigned a value but never read
 Info (12128): Elaborating entity "PLL_48M_in" for hierarchy "PLL_48M_in:inst4"
 Info (12128): Elaborating entity "altpll" for hierarchy "PLL_48M_in:inst4|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "PLL_48M_in:inst4|altpll:altpll_component"
@@ -1302,16 +1301,16 @@ Info (17049): 26 registers lost all their fanouts during netlist optimizations. 
     Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]" lost all its fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding node "PLL_48M_in:inst4|altpll:altpll_component|pll"
-Info (21057): Implemented 373 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 374 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 32 input pins
     Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 286 logic cells
+    Info (21061): Implemented 287 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 50 warnings
-    Info: Peak virtual memory: 335 megabytes
-    Info: Processing ended: Mon Apr 21 16:43:18 2014
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 49 warnings
+    Info: Peak virtual memory: 293 megabytes
+    Info: Processing ended: Thu Apr 24 18:27:13 2014
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:09
 
 
