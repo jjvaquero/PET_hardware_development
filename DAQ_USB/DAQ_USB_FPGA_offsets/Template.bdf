@@ -683,7 +683,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect -304 312 -184 408)
+	(rect -304 320 -184 416)
 	(text "clk_div" (rect 5 0 40 12)(font "Arial" ))
 	(text "inst6" (rect 8 80 31 92)(font "Arial" ))
 	(port
@@ -939,32 +939,32 @@ applicable agreement for further details.
 	(pt 416 552)
 )
 (connector
-	(pt -304 344)
-	(pt -344 344)
+	(pt 0 272)
+	(pt 24 272)
+)
+(connector
+	(pt -344 352)
+	(pt -304 352)
+)
+(connector
+	(pt 0 352)
+	(pt -184 352)
+)
+(connector
+	(pt 0 272)
+	(pt 0 352)
 )
 (connector
 	(pt -344 296)
-	(pt -344 344)
+	(pt -344 352)
 )
 (connector
-	(pt -344 344)
+	(pt -344 352)
 	(pt -344 472)
-)
-(connector
-	(pt -184 344)
-	(pt 0 344)
-)
-(connector
-	(pt 0 344)
-	(pt 0 272)
-)
-(connector
-	(pt 0 272)
-	(pt 24 272)
 )
 (junction (pt -344 296))
 (junction (pt 384 376))
 (junction (pt 224 256))
 (junction (pt 32 440))
 (junction (pt 0 72))
-(junction (pt -344 344))
+(junction (pt -344 352))
