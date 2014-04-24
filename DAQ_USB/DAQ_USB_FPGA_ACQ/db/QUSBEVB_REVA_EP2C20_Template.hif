@@ -13952,36 +13952,6 @@ PLL_48M_in:inst4|altpll:altpll_component
 
 # end
 # entity
-Retrasar_entrada
-# storage
-db|QUSBEVB_REVA_EP2C20_Template.(1).cnf
-db|QUSBEVB_REVA_EP2C20_Template.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-retrasar_entrada.vhd
-b3d8e226d71e8418e454a2b4188dc90
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-Retrasar_entrada:inst3
-}
-# macro_sequence
-
-# end
-# entity
 control_fifo
 # storage
 db|QUSBEVB_REVA_EP2C20_Template.(40).cnf
@@ -14012,36 +13982,6 @@ control_fifo:inst2
 
 # end
 # entity
-control_disparo
-# storage
-db|QUSBEVB_REVA_EP2C20_Template.(48).cnf
-db|QUSBEVB_REVA_EP2C20_Template.(48).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-control_disparo.vhdl
-444fdc3bf755eb87742147e4ba656fbd
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-control_disparo:inst
-}
-# macro_sequence
-
-# end
-# entity
 Template
 # storage
 db|QUSBEVB_REVA_EP2C20_Template.(0).cnf
@@ -14057,6 +13997,66 @@ AUTO
 }
 # hierarchies {
 |
+}
+# macro_sequence
+
+# end
+# entity
+Retrasar_entrada
+# storage
+db|QUSBEVB_REVA_EP2C20_Template.(48).cnf
+db|QUSBEVB_REVA_EP2C20_Template.(48).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+retrasar_entrada.vhd
+ed371c8f57a27e3d60cff58fca6ffd68
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Retrasar_entrada:inst3
+}
+# macro_sequence
+
+# end
+# entity
+control_disparo
+# storage
+db|QUSBEVB_REVA_EP2C20_Template.(1).cnf
+db|QUSBEVB_REVA_EP2C20_Template.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+control_disparo.vhdl
+ebc58b896133d5c635f99614f319d6c8
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+control_disparo:inst
 }
 # macro_sequence
 

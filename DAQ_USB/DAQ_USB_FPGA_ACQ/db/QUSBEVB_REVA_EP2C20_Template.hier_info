@@ -1816,6 +1816,7 @@ LLD => Mux3.IN3
 
 |Template|Retrasar_entrada:inst3
 Entrada => q0_Entrada.DATAIN
+clk => q5_Entrada.CLK
 clk => q4_Entrada.CLK
 clk => q3_Entrada.CLK
 clk => q2_Entrada.CLK
