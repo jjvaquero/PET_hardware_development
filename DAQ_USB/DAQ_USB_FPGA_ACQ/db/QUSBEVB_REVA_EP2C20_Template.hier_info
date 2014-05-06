@@ -1729,32 +1729,44 @@ sel[0] => _.IN0
 
 
 |Template|control_fifo:inst2
-n_data => Mux6.IN7
+n_data => Mux5.IN7
 n_data => Mux24.IN7
-n_data => Mux1.IN6
+n_data => Mux2.IN6
 n_data => process_1.IN1
+dataIn_1[0] => Mux0.IN3
 dataIn_1[0] => Mux0.IN4
 dataIn_1[0] => Mux0.IN5
+dataIn_1[1] => Mux7.IN3
 dataIn_1[1] => Mux7.IN4
 dataIn_1[1] => Mux7.IN5
+dataIn_1[2] => Mux8.IN3
 dataIn_1[2] => Mux8.IN4
 dataIn_1[2] => Mux8.IN5
+dataIn_1[3] => Mux9.IN3
 dataIn_1[3] => Mux9.IN4
 dataIn_1[3] => Mux9.IN5
+dataIn_1[4] => Mux10.IN3
 dataIn_1[4] => Mux10.IN4
 dataIn_1[4] => Mux10.IN5
+dataIn_1[5] => Mux11.IN3
 dataIn_1[5] => Mux11.IN4
 dataIn_1[5] => Mux11.IN5
+dataIn_1[6] => Mux12.IN3
 dataIn_1[6] => Mux12.IN4
 dataIn_1[6] => Mux12.IN5
+dataIn_1[7] => Mux13.IN3
 dataIn_1[7] => Mux13.IN4
 dataIn_1[7] => Mux13.IN5
+dataIn_1[8] => Mux14.IN3
 dataIn_1[8] => Mux14.IN4
 dataIn_1[8] => Mux14.IN5
+dataIn_1[9] => Mux15.IN3
 dataIn_1[9] => Mux15.IN4
 dataIn_1[9] => Mux15.IN5
+dataIn_1[10] => Mux16.IN3
 dataIn_1[10] => Mux16.IN4
 dataIn_1[10] => Mux16.IN5
+dataIn_1[11] => Mux17.IN3
 dataIn_1[11] => Mux17.IN4
 dataIn_1[11] => Mux17.IN5
 dataIn_2[0] => Mux0.IN6
@@ -1816,7 +1828,6 @@ LLD => Mux3.IN3
 
 |Template|Retrasar_entrada:inst3
 Entrada => q0_Entrada.DATAIN
-clk => q5_Entrada.CLK
 clk => q4_Entrada.CLK
 clk => q3_Entrada.CLK
 clk => q2_Entrada.CLK
