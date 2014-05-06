@@ -26,9 +26,9 @@ architecture lectura of control_fifo is
 
 --cosas para la maquina de estados
 
-type STATE_TYPE is (E0, E1, E2, E3, E4); 
+type STATE_TYPE is (E0, E1, E2, E3, E4 ,E5); 
 attribute ENUM_ENCODING: STRING; 
-attribute ENUM_ENCODING of STATE_TYPE:type is "0000 0001 0010 0011 0100";
+attribute ENUM_ENCODING of STATE_TYPE:type is "0000 0001 0010 0011 0100 0101";
 
 signal  EA, EP        : STATE_TYPE;  
  
@@ -66,12 +66,16 @@ end process;
 
 process (EA, n_data, clk)  
 begin 
-
+	
+		nRead1<='1'; --las read llevan logica inversa
+		nRead2<='1';
+		nRead3<='1';
 
        case EA is 
 			when E0 =>   
-					nRead1<='1'; --las read llevan logica inversa
-					nRead2<='1';
+					--nRead1<='1'; --las read llevan logica inversa
+					--nRead2<='1';
+					--nRead3<='1';
 					reset <='1';
 					fifo_control<='0';
 					if (n_data='1') then --tengo un dato nuevo para leer 
@@ -84,7 +88,8 @@ begin
 				
 			when E1 =>   --leo el primer conversor
 					nRead1<='0'; --las read llevan logica inversa
-					nRead2<='1';
+					--nRead2<='1';
+					--nRead3<='1';
 					reset <='1';
 					leyendo<='1';
 					fifo_control<='0';
@@ -102,7 +107,8 @@ begin
 		
 			when E2 =>   --leo el segundo conversor
 					nRead1<='0'; --las read llevan logica inversa
-					nRead2<='1';
+					--nRead2<='1';
+					--nRead3<='1';
 					reset <='1';
 					leyendo<='1';
 					fifo_control<='0';
@@ -120,7 +126,7 @@ begin
 					end if;
 					
 			when E3 =>   --leo el tercer conversor
-					nRead1<='1'; --las read llevan logica inversa
+					--nRead1<='1'; --las read llevan logica inversa
 					nRead2<='0';
 					reset <='1';
 					leyendo<='1';
@@ -138,7 +144,7 @@ begin
 					end if;
 					
 			 when E4 =>   --leo el cuarto conversor
-					nRead1<='1'; --las read llevan logica inversa
+					--nRead1<='1'; --las read llevan logica inversa
 					nRead2<='0';
 					reset <='1';
 					--s_write<='0';
@@ -149,13 +155,34 @@ begin
 					--dataOut(15 downto 12)<="0000"; --0001
 					--dataOut(11 downto 0)<=(others=>'0');
 					--dataOut(2 downto 0)<="100";
-					if (leido > 3 ) and (n_data = '0') then --pongo el n_data=0 para que espera nueva conversion
+					if (leido > 3 ) then --pongo el n_data=0 para que espera nueva conversion
+						nRead2<='1';
+						nRead3<='0';
+						leyendo<='0';
+						fifo_control<='1';
+						EP<=E5; 
+					else
+						EP<=E4; 
+					end if;
+					
+			when E5 =>   --leo el quinto
+					--nRead1<='1'; --las read llevan logica inversa
+					nRead3<='0';
+					reset <='1';
+					leyendo<='1';
+					fifo_control<='0';
+					--s_write<='0'; 
+					dataOut(15 downto 12)<="1100";
+					dataOut(11 downto 0)<=dataIn_1(11 downto 0);
+					--if (fifo_clk = '1') then
+					if (leido > 3) and (n_data = '0') then --pongo el n_data=0 para que espera nueva conversion
 						leyendo<='0';
 						fifo_control<='1';
 						EP<=E0; 
 					else
-						EP<=E4; 
+						EP<=E5; 
 					end if;
+					
 				
 							
        end case; 

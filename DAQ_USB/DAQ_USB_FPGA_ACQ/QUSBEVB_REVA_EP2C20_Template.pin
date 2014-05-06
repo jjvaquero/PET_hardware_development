@@ -131,7 +131,7 @@ data_in1[7]                  : D11       : input  : 3.3-V LVTTL       :         
 GND_PLL2                     : D12       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D13       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 5         :                
+NGate_Disp                   : D15       : output : 3.3-V LVTTL       :         : 5         : Y              
 NBusy3                       : D16       : input  : 3.3-V LVTTL       :         : 5         : Y              
 data_in2[11]                 : E1        : input  : 3.3-V LVTTL       :         : 2         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E2        :        :                   :         : 2         :                

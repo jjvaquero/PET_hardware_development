@@ -79,7 +79,7 @@ end process;
 
 --jk <= fs_Entrada & fb_Entrada;
 --Salida <= s;
-Salida <= q5_Entrada;
+Salida <= q4_Entrada;
 
 --  process (clk)
 --  begin  -- process
