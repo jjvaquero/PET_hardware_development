@@ -75,10 +75,10 @@ handles.histo4 = zeros(1,histSize);
 handles.energyHist = zeros(1,histSize);
 handles.lastNEvents = 0;
 %ahora otra variable para almacenar la imagen
-handles.imagen = zeros(imgSize, imgSize);
+handles.imagen = zeros(imgSize, imgSize/2);
 % needs to be smaller
 % just a part of the image
-handles.img_histo = uint16(zeros(100,100,histSize/8));
+handles.img_histo = uint16(zeros(100,100,histSize/8)); %zeros(100,100,histSize/8));
 
 
 %handles.aux_val = 0; 
@@ -126,7 +126,7 @@ function acq_button_Callback(hObject, eventdata, handles)
  %period used by the timers
  readTime = 0.25;
  plotTime = 0.5;
- fpgaConfFile = 'QUSBEVB_REVA.rbf';
+ fpgaConfFile ='QUSBEVB_REVA_EP2C20_Template.rbf'; %'QUSBEVB_REVA.rbf';
 
 quick = handles.quick;  %create a local instance of the quickUSB
 readTimer = handles.readTimer; %same but with the readTimer
@@ -198,8 +198,14 @@ hist4 = handles.histo4;
 imagen = handles.imagen;
 energyHist = handles.energyHist;
 img_histo = handles.img_histo;
+strName = 'data';
+ctmp = clock; 
+for i = 1 : length(ctmp) - 1
+    strName = strcat(strName,'_',num2str(ctmp(i)));
+end
+strName = strcat(strName,'.mat');
 
-save histrograma.mat hist1 hist2 hist3 hist4 imagen energyHist img_histo
+save(strName,'hist1','hist2','hist3','hist4','imagen','energyHist','img_histo');
 
 delete(handles.figure1)
 
@@ -259,8 +265,8 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
-function lectPeriodica(src,event,handles) %Timer function
-handles = guidata(handles);
+function lectPeriodica(src,event,hObject) %Timer function
+handles = guidata(hObject); %handles
 %cla;
 quick = handles.quick;  %instancio el quick creado antes
 %hist = handles.hist; %esto no vale porque hist es temporal
@@ -341,13 +347,13 @@ end
 
 %ahora genero la imagen, para eso leo los datos de cada canal
 %para eso asigno los valores
-img = zeros (512,512);
+img = zeros (512,256);
 n_error= 0;
   %menor = min([ind1,ind2,ind3,ind4]);
   %cad = strcat(num2str(ind1),'Xb = ',num2str(ind2),'Ya =',num2str(ind3),'Yb = ',num2str(ind4));
   %disp( cad); 
-  canal4 = canal4 + 152; %compenso por el offset del canal3
-  canal1 = canal1 + 105; %compenso por el offset del canal2
+  canal4 = canal4 + 150; %compenso por el offset del canal3
+  canal1 = canal1 + 100; %compenso por el offset del canal2
 for i = 1: indice-1  %menor
 
     XA = canal3(i); XB = canal4(i);  %los +20 es para corregir el offset
@@ -355,7 +361,7 @@ for i = 1: indice-1  %menor
    % cad = strcat(num2str(XA),'Xb = ',num2str(XB),'Ya =',num2str(YA),'Yb = ',num2str(YB));
    % disp( cad);
     
-    energia = (XA + XB +YA + YB); %hago un cutre escalado...
+    energia = round((XA + XB +YA + YB)/4); %hago un cutre escalado...
     if( energia> 0 && energia < 4096)
           histoEng(energia+ 1) = histoEng(energia+ 1) + 1;
     end
@@ -365,14 +371,15 @@ for i = 1: indice-1  %menor
     X = round((((XA-XB)/((XA+XB)))+1)*128); %256 %round(((2*(XA-XB)/((YA+YB+XA+XB)))+1)*256);
     Y = round((((YA-YB)/((YA+YB)))+1)*256); %round(((2*(YA-YB)/((YA+YB+XA+XB)))+1)*256);
 
-    if (X>0 && X<513) && (Y>0 && Y<513)
+    if (X>0 && X<257) && (Y>0 && Y<513) %X<513
         
-        img(X,Y) = img(X,Y) + 1; % energia;
+        img(Y,X) = img(Y,X) + 1; % energia;
         energiaHist = round(energia/8);
-        if( energiaHist> 0 && energiaHist < 512 && X > 150 && X<250 && Y>50 && Y<150)
+       if( energiaHist> 0 && energiaHist < 513 && X > 100 && X<200 && Y>300 && Y<400)
          % handles.img_histo(X,Y,energiaHist+1) = handles.img_histo(X,Y,energiaHist+1)+1;
-          imgHisto(X-150,Y-50,energiaHist+1) = imgHisto(X-150,Y-50,energiaHist+1)+1;
-        end
+          imgHisto(Y-300,X-100,energiaHist+1) = imgHisto(Y-300,X-100,energiaHist+1)+1;
+       %   imgHisto(Y,X,energiaHist+1) = imgHisto(Y,X,energiaHist+1)+1;
+       end
        % if (X>250 && X<262) && (Y>250 && Y<262)
        %     img(X,Y) = 10;
        % end
@@ -471,11 +478,12 @@ handles.lastNEvents = indice/0.25;
 % 
 % %plot(handles.axes1,temp,'*');
 % %set(handles.edit1,'string',num2str(dataConv(1)));
-guidata(handles.guifig, handles);
+%guidata(handles.guifig, handles);
+guidata(hObject,handles);
 
-function plotUpdate(src,event,handles) %Timer function
+function plotUpdate(src,event,hObject) %Timer function %handles
 
-handles = guidata(handles);
+handles = guidata(hObject); %handles
 
 hist_1 = blkproc(handles.histo1(1:4096),[1 4],'mean2');
 hist_2 = blkproc(handles.histo2(1:4096),[1 4],'mean2');
@@ -523,8 +531,8 @@ title(handles.axes6,'Canal 4');
 %axes(handles.axes1);h
 %axes(handles.axes1);
 imagesc(handles.imagen,'Parent',handles.axes1);
-xlim(handles.axes1,[0 512]);
-ylim(handles.axes1,[0 256]);
+xlim(handles.axes1,[0 256]);
+ylim(handles.axes1,[0 512]);
 %aux = imshow(mat2gray(handles.imagen));
 %set(aux,'Parent',handles.axes1);
 %set(aux,'Parent',handles.axes1);
@@ -536,7 +544,7 @@ ylim(handles.axes1,[0 256]);
 
 %plot(handles.axes1,temp,'*');
 %set(handles.edit1,'string',num2str(dataConv(1)));
-guidata(handles.guifig, handles);
+guidata(hObject, handles); 
 
 
 
