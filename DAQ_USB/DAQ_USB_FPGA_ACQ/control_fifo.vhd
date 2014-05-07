@@ -70,14 +70,18 @@ begin
 		nRead1<='1'; --las read llevan logica inversa
 		nRead2<='1';
 		nRead3<='1';
+		reset <='1';
+		fifo_control <='0';
+		leyendo<='1';
 
        case EA is 
 			when E0 =>   
 					--nRead1<='1'; --las read llevan logica inversa
 					--nRead2<='1';
 					--nRead3<='1';
-					reset <='1';
-					fifo_control<='0';
+					--reset <='1';
+					--fifo_control<='0';
+					dataOut(15 downto 0)<=(others=>'0'); 
 					if (n_data='1') then --tengo un dato nuevo para leer 
 							nRead1<='0';
 							leyendo<='0';
@@ -90,9 +94,9 @@ begin
 					nRead1<='0'; --las read llevan logica inversa
 					--nRead2<='1';
 					--nRead3<='1';
-					reset <='1';
-					leyendo<='1';
-					fifo_control<='0';
+					--reset <='1';
+					--leyendo<='1';
+					--fifo_control<='0';
 					--s_write<='0'; 
 					dataOut(15 downto 12)<="0001"; 
 					dataOut(11 downto 0)<=dataIn_1(11 downto 0);
@@ -109,9 +113,9 @@ begin
 					nRead1<='0'; --las read llevan logica inversa
 					--nRead2<='1';
 					--nRead3<='1';
-					reset <='1';
-					leyendo<='1';
-					fifo_control<='0';
+					--reset <='1';
+					--leyendo<='1';
+					--fifo_control<='0';
 					--s_write<='0'; 
 					dataOut(15 downto 12)<="0010";
 					dataOut(11 downto 0)<=dataIn_2(11 downto 0);
@@ -128,9 +132,9 @@ begin
 			when E3 =>   --leo el tercer conversor
 					--nRead1<='1'; --las read llevan logica inversa
 					nRead2<='0';
-					reset <='1';
-					leyendo<='1';
-					fifo_control<='0';
+					--reset <='1';
+					--leyendo<='1';
+					--fifo_control<='0';
 					--s_write<='0'; 
 					dataOut(15 downto 12)<="0100";
 					dataOut(11 downto 0)<=dataIn_1(11 downto 0);
@@ -146,10 +150,10 @@ begin
 			 when E4 =>   --leo el cuarto conversor
 					--nRead1<='1'; --las read llevan logica inversa
 					nRead2<='0';
-					reset <='1';
+					--reset <='1';
 					--s_write<='0';
-					fifo_control<='0';
-				   leyendo<='1';	
+					--fifo_control<='0';
+				   --leyendo<='1';	
 					dataOut(15 downto 12)<="1000";
 					dataOut(11 downto 0)<=dataIn_2(11 downto 0);
 					--dataOut(15 downto 12)<="0000"; --0001
@@ -168,9 +172,9 @@ begin
 			when E5 =>   --leo el quinto
 					--nRead1<='1'; --las read llevan logica inversa
 					nRead3<='0';
-					reset <='1';
-					leyendo<='1';
-					fifo_control<='0';
+					--reset <='1';
+					--leyendo<='1';
+					--fifo_control<='0';
 					--s_write<='0'; 
 					dataOut(15 downto 12)<="1100";
 					dataOut(11 downto 0)<=dataIn_1(11 downto 0);
@@ -188,7 +192,6 @@ begin
        end case; 
 		 
 fifo_clk<=fifo_control; --leyendo;
-nRead3<='1'; --creo que esto es lo que me la esta liando...
 end process; 
 
 	

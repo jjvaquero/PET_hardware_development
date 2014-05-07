@@ -21,7 +21,7 @@ end Retrasar_entrada;
 
 architecture rtl of Retrasar_entrada is
 
-signal q0_Entrada, q1_Entrada, q2_Entrada, q3_Entrada, q4_Entrada, q5_Entrada, curr_val: std_logic; 
+signal q0_Entrada, q1_Entrada, q2_Entrada, q3_Entrada, q4_Entrada, q5_Entrada, curr_val: std_logic;  --, q6, q7, q8,
 --signal fs_Entrada, fb_Entrada : std_logic;
 
 signal  s : std_logic;
@@ -74,12 +74,34 @@ if clk'event and clk = '1' then
 end if;
 end process;
 
+--process(clk)
+--begin
+--if clk'event and clk = '1' then
+--	q6 <= q5_Entrada;
+--end if;
+--end process;
+--
+--process(clk)
+--begin
+--if clk'event and clk = '1' then
+--	q7 <= q6;
+--end if;
+--end process;
+--
+--process(clk)
+--begin
+--if clk'event and clk = '1' then
+--	q8 <= q7;
+--end if;
+--end process;
+
+
 --fs_Entrada <= q0_Entrada and q1_Entrada and q2_Entrada and (not q3_Entrada) and (not q4_Entrada) and (not q5_Entrada);
 --fb_Entrada <= q5_Entrada and q4_Entrada and q3_Entrada and (not q0_Entrada) and (not q1_Entrada) and (not q2_Entrada);
 
 --jk <= fs_Entrada & fb_Entrada;
 --Salida <= s;
-Salida <= q4_Entrada;
+Salida <= q4_Entrada; --q4_Entrada
 
 --  process (clk)
 --  begin  -- process

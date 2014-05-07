@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="QUSBEVB_REVA_EP2C20_Template">
-		<CBX_INST_ENTRY INSTANCE_NAME="|Template|fifo0:inst1|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_hnj1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Template|fifo0:inst1|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_fnj1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
