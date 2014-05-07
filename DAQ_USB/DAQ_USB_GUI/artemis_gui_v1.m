@@ -46,7 +46,7 @@ else
 end
 % End initialization code - DO NOT EDIT
 
-% --- Executes just before artemis_gui_v1 is made visible.
+% --- Executes just before artemis_gui_v1'¡¡¡ is made visible.
 function artemis_gui_v1_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
@@ -73,12 +73,15 @@ handles.histo2 = zeros(1,histSize);
 handles.histo3 = zeros(1,histSize);
 handles.histo4 = zeros(1,histSize);
 handles.energyHist = zeros(1,histSize);
+handles.energyHist2 = zeros(1,histSize);
 handles.lastNEvents = 0;
 %ahora otra variable para almacenar la imagen
 handles.imagen = zeros(imgSize, imgSize/2);
+handles.img_eng = zeros(imgSize, imgSize);
 % needs to be smaller
 % just a part of the image
 handles.img_histo = uint16(zeros(100,100,histSize/8)); %zeros(100,100,histSize/8));
+
 
 
 %handles.aux_val = 0; 
@@ -198,6 +201,8 @@ hist4 = handles.histo4;
 imagen = handles.imagen;
 energyHist = handles.energyHist;
 img_histo = handles.img_histo;
+img_Eng = handles.img_eng;
+energyHist2 = handles.energyHist2;
 strName = 'data';
 ctmp = clock; 
 for i = 1 : length(ctmp) - 1
@@ -205,7 +210,7 @@ for i = 1 : length(ctmp) - 1
 end
 strName = strcat(strName,'.mat');
 
-save(strName,'hist1','hist2','hist3','hist4','imagen','energyHist','img_histo');
+save(strName,'hist1','hist2','hist3','hist4','imagen','energyHist','energyHist2','img_histo','img_Eng');
 
 delete(handles.figure1)
 
@@ -272,7 +277,7 @@ quick = handles.quick;  %instancio el quick creado antes
 %hist = handles.hist; %esto no vale porque hist es temporal
 %sin visibilidad para fuera
   %tic
- [data,nRead] = QUSB_ReadFpgaData(quick,10000); %paso a leer 5000 valores
+ [data,nRead] = QUSB_ReadFpgaData(quick,20000); %paso a leer 8000 valores
  %toc   ...me da tiempos de 0.001 es decir vuelve enseguida
  %los datos son leidos a un array de caracteres
  %por ello realizo ahora la conversion necesaria
@@ -280,7 +285,7 @@ quick = handles.quick;  %instancio el quick creado antes
  set(handles.text1,'String',num2str(nRead));
  
 
- for i = 1: 5000 - 1 %10239
+ for i = 1: 10000 - 1 %10239
     %if (mean([data(i-1),data(i),data(i+1)])-data(i) == 0) 
     %no deberian haber nunca dos valores seguids por lo que...
     if (dataConv(i) == dataConv(i+1))
@@ -293,6 +298,7 @@ canal1 = zeros(1,5000); histo1 = zeros(1,4096);
 canal2 = zeros(1,5000); histo2 = zeros(1,4096);
 canal3 = zeros(1,5000); histo3 = zeros(1,4096);
 canal4 = zeros(1,5000); histo4 = zeros(1,4096);
+canal5 = zeros(1,5000); histo5 = zeros(1,4096);
 histoEng = zeros(1,4096);
 imgHisto = uint16(zeros(100,100,512));
 
@@ -300,7 +306,7 @@ imgHisto = uint16(zeros(100,100,512));
 %algoritmo para garantizar que los eventos van uno detras de otro
 indice = 1; %indice comun para todos los canales
 %cad = '';
-for i = 1 : 4996 %2500
+for i = 1 : 9995 %2500
     if (dataConv(i) ~=0 && dataConv(i) <8192 && dataConv(i)>= 4096 ) %compruebo que tengo un elemento del primer canal
         canal1(indice) = dataConv(i) - 4096; 
         %cad = strcat(cad,num2str(canal1(indice)), '  aaa ');
@@ -312,14 +318,18 @@ for i = 1 : 4996 %2500
               if ( dataConv(i+2) <32768 && dataConv(i+2)>= 16384 ) %canal3
                 canal3(indice) = dataConv(i+2) - 16384;
                 %cad = strcat(cad,num2str(canal3(indice)), '  aaa ');
-                 if (dataConv(i+3)>= 32768 ) %cana4
+                 if (dataConv(i+3) < 49152 && dataConv(i+3)>= 32768 ) %cana4
                      canal4(indice) = dataConv(i+3) - 32768; 
+                     if ( dataConv(i+4)>= 49152 )
+                         canal5(indice) = dataConv(i+4) - 49152; 
                     % cad = strcat(cad,num2str(canal4(indice)), '  aaa ');
                      %ahora ya tengo claro que este dato es valido por lo
                      %tanto incremento el indice
                      %no incremento i porque lo hara el ejecutar el bucle
                      %ahora tambien modifico los histogramas
-                     
+                     if( canal5(indice)> 0 && canal5(indice) < 4096)
+                         histo5(canal5(indice)+1) = histo5(canal5(indice)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
+                     end
                      if( canal4(indice)> 0 && canal4(indice) < 4096)
                          histo4(canal4(indice)+1) = histo4(canal4(indice)+ 1) + 1; %el mas uno del hist...es porque matlab empieza en 1 y no en 0
                      end
@@ -334,6 +344,7 @@ for i = 1 : 4996 %2500
                      end
                      indice = indice + 1; 
                      %disp(indice);
+                     end
                      
                  end
               end
@@ -348,6 +359,7 @@ end
 %ahora genero la imagen, para eso leo los datos de cada canal
 %para eso asigno los valores
 img = zeros (512,256);
+imgEng = zeros(512,512);
 n_error= 0;
   %menor = min([ind1,ind2,ind3,ind4]);
   %cad = strcat(num2str(ind1),'Xb = ',num2str(ind2),'Ya =',num2str(ind3),'Yb = ',num2str(ind4));
@@ -373,11 +385,20 @@ for i = 1: indice-1  %menor
 
     if (X>0 && X<257) && (Y>0 && Y<513) %X<513
         
-        img(Y,X) = img(Y,X) + 1; % energia;
-        energiaHist = round(energia/8);
-       if( energiaHist> 0 && energiaHist < 513 && X > 100 && X<200 && Y>300 && Y<400)
+        img(Y,X) = img(Y,X) + 1; % energia;  
+        energiaHist =round(energia/8);
+        energiaHist1 =round(energia/4);
+        energiaGSO = round(canal5(i)/4);
+         if( energiaHist1> 0 && energiaHist1 < 513 && energiaGSO > 0 && energiaGSO<512)
+             imgEng(energiaHist1,energiaGSO) = imgEng(energiaHist1,energiaGSO) +1 ;
+          %   if (ratio > 1500) %asumo que es GSO
+          %     imgEng(energiaHist,energiaGSO) = imgEng(energiaHist,energiaGSO) + 80 ;    
+           %  end
+         end
+        
+       if( energiaHist> 0 && energiaHist < 513 && X > 100 && X<201 && Y>100 && Y<201)
          % handles.img_histo(X,Y,energiaHist+1) = handles.img_histo(X,Y,energiaHist+1)+1;
-          imgHisto(Y-300,X-100,energiaHist+1) = imgHisto(Y-300,X-100,energiaHist+1)+1;
+          imgHisto(Y-100,X-100,energiaHist+1) = imgHisto(Y-100,X-100,energiaHist+1)+1;
        %   imgHisto(Y,X,energiaHist+1) = imgHisto(Y,X,energiaHist+1)+1;
        end
        % if (X>250 && X<262) && (Y>250 && Y<262)
@@ -402,8 +423,10 @@ handles.histo2 = handles.histo2 + histo2;
 handles.histo3 = handles.histo3 + histo3; 
 handles.histo4 = handles.histo4 + histo4; 
 handles.imagen = handles.imagen+img;
+handles.img_eng = handles.img_eng +imgEng;
 handles.img_histo = handles.img_histo + imgHisto;
 handles.energyHist = handles.energyHist + histoEng;
+handles.energyHist2 = handles.energyHist2 + histo5;
 %0.25 readTime
 handles.lastNEvents = indice/0.25;
 
@@ -530,9 +553,11 @@ title(handles.axes6,'Canal 4');
 
 %axes(handles.axes1);h
 %axes(handles.axes1);
-imagesc(handles.imagen,'Parent',handles.axes1);
+imagesc(handles.img_eng,'Parent',handles.axes1);
+%plot(handles.axes1,handles.energyHist2);
+%imagesc(handles.imagen,'Parent',handles.axes1);
 xlim(handles.axes1,[0 256]);
-ylim(handles.axes1,[0 512]);
+ylim(handles.axes1,[0 256]);
 %aux = imshow(mat2gray(handles.imagen));
 %set(aux,'Parent',handles.axes1);
 %set(aux,'Parent',handles.axes1);
