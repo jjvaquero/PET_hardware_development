@@ -97,17 +97,17 @@ BEGIN
 	dcfifo_component : dcfifo
 	GENERIC MAP (
 		intended_device_family => "Cyclone II",
-		lpm_hint => "MAXIMIZE_SPEED=7,",
+		lpm_hint => "MAXIMIZE_SPEED=5,",
 		lpm_numwords => 8192,
 		lpm_showahead => "OFF",
 		lpm_type => "dcfifo",
 		lpm_width => 16,
 		lpm_widthu => 13,
 		overflow_checking => "ON",
-		rdsync_delaypipe => 3,
+		rdsync_delaypipe => 4,
 		underflow_checking => "ON",
 		use_eab => "ON",
-		wrsync_delaypipe => 3
+		wrsync_delaypipe => 4
 	)
 	PORT MAP (
 		data => data,
@@ -141,7 +141,7 @@ END SYN;
 -- Retrieval info: PRIVATE: LegacyRREQ NUMERIC "1"
 -- Retrieval info: PRIVATE: MAX_DEPTH_BY_9 NUMERIC "0"
 -- Retrieval info: PRIVATE: OVERFLOW_CHECKING NUMERIC "0"
--- Retrieval info: PRIVATE: Optimize NUMERIC "1"
+-- Retrieval info: PRIVATE: Optimize NUMERIC "2"
 -- Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 -- Retrieval info: PRIVATE: UNDERFLOW_CHECKING NUMERIC "0"
@@ -161,17 +161,17 @@ END SYN;
 -- Retrieval info: PRIVATE: wsUsedW NUMERIC "0"
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
--- Retrieval info: CONSTANT: LPM_HINT STRING "MAXIMIZE_SPEED=7,"
+-- Retrieval info: CONSTANT: LPM_HINT STRING "MAXIMIZE_SPEED=5,"
 -- Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "8192"
 -- Retrieval info: CONSTANT: LPM_SHOWAHEAD STRING "OFF"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "dcfifo"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "16"
 -- Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "13"
 -- Retrieval info: CONSTANT: OVERFLOW_CHECKING STRING "ON"
--- Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "3"
+-- Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "4"
 -- Retrieval info: CONSTANT: UNDERFLOW_CHECKING STRING "ON"
 -- Retrieval info: CONSTANT: USE_EAB STRING "ON"
--- Retrieval info: CONSTANT: WRSYNC_DELAYPIPE NUMERIC "3"
+-- Retrieval info: CONSTANT: WRSYNC_DELAYPIPE NUMERIC "4"
 -- Retrieval info: USED_PORT: data 0 0 16 0 INPUT NODEFVAL "data[15..0]"
 -- Retrieval info: USED_PORT: q 0 0 16 0 OUTPUT NODEFVAL "q[15..0]"
 -- Retrieval info: USED_PORT: rdclk 0 0 0 0 INPUT NODEFVAL "rdclk"

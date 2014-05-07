@@ -164,7 +164,7 @@ GND_PLL2                     : F12       : gnd    :                   :         
 NBusy4                       : F13       : input  : 3.3-V LVTTL       :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F15       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F16       :        :                   :         : 5         :                
+NBusy_Disp                   : F16       : input  : 3.3-V LVTTL       :         : 5         : Y              
 TMS                          : G1        : input  :                   :         : 2         :                
 TDO                          : G2        : output :                   :         : 2         :                
 VCCIO2                       : G3        : power  :                   : 3.3V    : 2         :                

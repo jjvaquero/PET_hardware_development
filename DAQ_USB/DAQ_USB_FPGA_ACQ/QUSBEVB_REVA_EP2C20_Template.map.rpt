@@ -1,5 +1,5 @@
 Analysis & Synthesis report for QUSBEVB_REVA_EP2C20_Template
-Tue May 06 17:41:21 2014
+Wed May 07 20:30:28 2014
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
 
 
@@ -16,31 +16,30 @@ Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
  10. Registers Protected by Synthesis
- 11. User-Specified and Inferred Latches
- 12. Registers Removed During Synthesis
- 13. Removed Registers Triggering Further Register Optimizations
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Gate-level Retiming
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Source assignments for fifo0:inst1|dcfifo:dcfifo_component
- 19. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated
- 20. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p
- 21. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p
- 22. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp
- 23. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram
- 24. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14
- 25. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr
- 26. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_2r7:rs_dgwp
- 27. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_2r7:rs_dgwp|dffpipe_d09:dffpipe21
- 28. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_3r7:ws_dgrp
- 29. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_3r7:ws_dgrp|dffpipe_e09:dffpipe23
- 30. Parameter Settings for User Entity Instance: fifo0:inst1|dcfifo:dcfifo_component
- 31. Parameter Settings for User Entity Instance: PLL_48M_in:inst4|altpll:altpll_component
- 32. dcfifo Parameter Settings by Entity Instance
- 33. altpll Parameter Settings by Entity Instance
- 34. Elapsed Time Per Partition
- 35. Analysis & Synthesis Messages
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Gate-level Retiming
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for fifo0:inst1|dcfifo:dcfifo_component
+ 18. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated
+ 19. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p
+ 20. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_h2c:wrptr_g1p
+ 21. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_g2c:wrptr_gp
+ 22. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram
+ 23. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14
+ 24. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|dffpipe_c2e:rdaclr
+ 25. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_kv7:rs_dgwp
+ 26. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_kv7:rs_dgwp|dffpipe_f09:dffpipe5
+ 27. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_lv7:ws_dgrp
+ 28. Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_lv7:ws_dgrp|dffpipe_g09:dffpipe8
+ 29. Parameter Settings for User Entity Instance: fifo0:inst1|dcfifo:dcfifo_component
+ 30. Parameter Settings for User Entity Instance: PLL_48M_in:inst4|altpll:altpll_component
+ 31. dcfifo Parameter Settings by Entity Instance
+ 32. altpll Parameter Settings by Entity Instance
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
 
 
 
@@ -66,16 +65,16 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 06 17:41:21 2014    ;
+; Analysis & Synthesis Status        ; Successful - Wed May 07 20:30:28 2014    ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Web Edition ;
 ; Revision Name                      ; QUSBEVB_REVA_EP2C20_Template             ;
 ; Top-level Entity Name              ; Template                                 ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 268                                      ;
-;     Total combinational functions  ; 234                                      ;
-;     Dedicated logic registers      ; 130                                      ;
-; Total registers                    ; 130                                      ;
-; Total pins                         ; 55                                       ;
+; Total logic elements               ; 290                                      ;
+;     Total combinational functions  ; 191                                      ;
+;     Dedicated logic registers      ; 186                                      ;
+; Total registers                    ; 186                                      ;
+; Total pins                         ; 56                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 131,072                                  ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
@@ -172,54 +171,54 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 4      ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                       ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
-; PLL_48M_in.vhd                   ; yes             ; User Wizard-Generated File         ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/PLL_48M_in.vhd             ;
-; Template.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/Template.bdf               ;
-; control_disparo.vhdl             ; yes             ; User VHDL File                     ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/control_disparo.vhdl       ;
-; fifo0.vhd                        ; yes             ; User Wizard-Generated File         ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/fifo0.vhd                  ;
-; Retrasar_entrada.vhd             ; yes             ; User VHDL File                     ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/Retrasar_entrada.vhd       ;
-; control_fifo.vhd                 ; yes             ; User VHDL File                     ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/control_fifo.vhd           ;
-; dcfifo.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dcfifo.tdf          ;
-; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_counter.inc     ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_add_sub.inc     ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altdpram.inc        ;
-; a_graycounter.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_graycounter.inc   ;
-; a_fefifo.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_fefifo.inc        ;
-; a_gray2bin.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_gray2bin.inc      ;
-; dffpipe.inc                      ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dffpipe.inc         ;
-; alt_sync_fifo.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/alt_sync_fifo.inc   ;
-; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_compare.inc     ;
-; altsyncram_fifo.inc              ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altsyncram_fifo.inc ;
-; aglobal111.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/aglobal111.inc      ;
-; db/dcfifo_hnj1.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/dcfifo_hnj1.tdf         ;
-; db/a_graycounter_s96.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/a_graycounter_s96.tdf   ;
-; db/a_graycounter_h2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/a_graycounter_h2c.tdf   ;
-; db/a_graycounter_g2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/a_graycounter_g2c.tdf   ;
-; db/altsyncram_1qu.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/altsyncram_1qu.tdf      ;
-; db/altsyncram_cec1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/altsyncram_cec1.tdf     ;
-; db/decode_o37.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/decode_o37.tdf          ;
-; db/mux_nv7.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/mux_nv7.tdf             ;
-; db/dffpipe_c2e.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/dffpipe_c2e.tdf         ;
-; db/alt_synch_pipe_2r7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/alt_synch_pipe_2r7.tdf  ;
-; db/dffpipe_d09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/dffpipe_d09.tdf         ;
-; db/alt_synch_pipe_3r7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/alt_synch_pipe_3r7.tdf  ;
-; db/dffpipe_e09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/dffpipe_e09.tdf         ;
-; db/cmpr_r16.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/cmpr_r16.tdf            ;
-; db/mux_1u7.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/db/mux_1u7.tdf             ;
-; altpll.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altpll.tdf          ;
-; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratix_pll.inc     ;
-; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratixii_pll.inc   ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/cycloneii_pll.inc   ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                          ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+
+; PLL_48M_in.vhd                   ; yes             ; User Wizard-Generated File         ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/PLL_48M_in.vhd            ;
+; Template.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/Template.bdf              ;
+; control_disparo.vhdl             ; yes             ; User VHDL File                     ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/control_disparo.vhdl      ;
+; fifo0.vhd                        ; yes             ; User Wizard-Generated File         ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/fifo0.vhd                 ;
+; Retrasar_entrada.vhd             ; yes             ; User VHDL File                     ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/Retrasar_entrada.vhd      ;
+; control_fifo.vhd                 ; yes             ; User VHDL File                     ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/control_fifo.vhd          ;
+; Retrasar_entrada_2.vhd           ; yes             ; User VHDL File                     ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/Retrasar_entrada_2.vhd    ;
+; dcfifo.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dcfifo.tdf                             ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_counter.inc                        ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_add_sub.inc                        ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altdpram.inc                           ;
+; a_graycounter.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_graycounter.inc                      ;
+; a_fefifo.inc                     ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_fefifo.inc                           ;
+; a_gray2bin.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/a_gray2bin.inc                         ;
+; dffpipe.inc                      ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/dffpipe.inc                            ;
+; alt_sync_fifo.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/alt_sync_fifo.inc                      ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/lpm_compare.inc                        ;
+; altsyncram_fifo.inc              ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altsyncram_fifo.inc                    ;
+; aglobal111.inc                   ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/aglobal111.inc                         ;
+; db/dcfifo_fnj1.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/dcfifo_fnj1.tdf        ;
+; db/a_graycounter_s96.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/a_graycounter_s96.tdf  ;
+; db/a_graycounter_h2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/a_graycounter_h2c.tdf  ;
+; db/a_graycounter_g2c.tdf         ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/a_graycounter_g2c.tdf  ;
+; db/altsyncram_1qu.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/altsyncram_1qu.tdf     ;
+; db/altsyncram_cec1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/altsyncram_cec1.tdf    ;
+; db/decode_o37.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/decode_o37.tdf         ;
+; db/mux_nv7.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/mux_nv7.tdf            ;
+; db/dffpipe_c2e.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/dffpipe_c2e.tdf        ;
+; db/alt_synch_pipe_kv7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/alt_synch_pipe_kv7.tdf ;
+; db/dffpipe_f09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/dffpipe_f09.tdf        ;
+; db/alt_synch_pipe_lv7.tdf        ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/alt_synch_pipe_lv7.tdf ;
+; db/dffpipe_g09.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/dffpipe_g09.tdf        ;
+; db/cmpr_936.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/db/cmpr_936.tdf           ;
+; altpll.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/altpll.tdf                             ;
+; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratix_pll.inc                        ;
+; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/stratixii_pll.inc                      ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.1/quartus/libraries/megafunctions/cycloneii_pll.inc                      ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -227,31 +226,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 268    ;
+; Estimated Total logic elements              ; 290    ;
 ;                                             ;        ;
-; Total combinational functions               ; 234    ;
+; Total combinational functions               ; 191    ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 107    ;
-;     -- 3 input functions                    ; 78     ;
-;     -- <=2 input functions                  ; 49     ;
+;     -- 4 input functions                    ; 90     ;
+;     -- 3 input functions                    ; 42     ;
+;     -- <=2 input functions                  ; 59     ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 217    ;
-;     -- arithmetic mode                      ; 17     ;
+;     -- normal mode                          ; 166    ;
+;     -- arithmetic mode                      ; 25     ;
 ;                                             ;        ;
-; Total registers                             ; 130    ;
-;     -- Dedicated logic registers            ; 130    ;
+; Total registers                             ; 186    ;
+;     -- Dedicated logic registers            ; 186    ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
-; I/O pins                                    ; 55     ;
+; I/O pins                                    ; 56     ;
 ; Total memory bits                           ; 131072 ;
 ; Total PLLs                                  ; 1      ;
 ;     -- PLLs                                 ; 1      ;
 ;                                             ;        ;
 ; Maximum fan-out node                        ; ifclk  ;
-; Maximum fan-out                             ; 93     ;
-; Total fan-out                               ; 2058   ;
-; Average fan-out                             ; 4.55   ;
+; Maximum fan-out                             ; 149    ;
+; Total fan-out                               ; 2010   ;
+; Average fan-out                             ; 4.31   ;
 +---------------------------------------------+--------+
 
 
@@ -260,30 +259,30 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Library Name ;
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Template                                     ; 234 (2)           ; 130 (0)      ; 131072      ; 0            ; 0       ; 0         ; 55   ; 0            ; |Template                                                                                                                                         ;              ;
+; |Template                                     ; 191 (2)           ; 186 (0)      ; 131072      ; 0            ; 0       ; 0         ; 56   ; 0            ; |Template                                                                                                                                         ;              ;
 ;    |PLL_48M_in:inst4|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst4                                                                                                                        ;              ;
 ;       |altpll:altpll_component|               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|PLL_48M_in:inst4|altpll:altpll_component                                                                                                ;              ;
 ;    |Retrasar_entrada:inst3|                   ; 0 (0)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|Retrasar_entrada:inst3                                                                                                                  ;              ;
+;    |Retrasar_entrada_2:inst8|                 ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|Retrasar_entrada_2:inst8                                                                                                                ;              ;
+;    |control_disparo:inst9|                    ; 16 (16)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_disparo:inst9                                                                                                                   ;              ;
 ;    |control_disparo:inst|                     ; 16 (16)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_disparo:inst                                                                                                                    ;              ;
-;    |control_fifo:inst2|                       ; 64 (64)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_fifo:inst2                                                                                                                      ;              ;
-;    |fifo0:inst1|                              ; 152 (0)           ; 101 (0)      ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1                                                                                                                             ;              ;
-;       |dcfifo:dcfifo_component|               ; 152 (0)           ; 101 (0)      ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component                                                                                                     ;              ;
-;          |dcfifo_hnj1:auto_generated|         ; 152 (5)           ; 101 (27)     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated                                                                          ;              ;
-;             |a_graycounter_g2c:wrptr_gp|      ; 28 (28)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp                                               ;              ;
-;             |a_graycounter_h2c:wrptr_g1p|     ; 26 (26)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p                                              ;              ;
-;             |a_graycounter_s96:rdptr_g1p|     ; 32 (32)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p                                              ;              ;
-;             |altsyncram_1qu:fifo_ram|         ; 19 (0)            ; 3 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram                                                  ;              ;
-;                |altsyncram_cec1:altsyncram14| ; 19 (1)            ; 3 (3)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14                     ;              ;
-;                   |decode_o37:decode_b|       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b ;              ;
-;                   |mux_nv7:mux18|             ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|mux_nv7:mux18       ;              ;
-;             |cmpr_r16:rdempty_eq_comp_msb|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:rdempty_eq_comp_msb                                             ;              ;
-;             |cmpr_r16:wrfull_eq_comp1_msb|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:wrfull_eq_comp1_msb                                             ;              ;
-;             |cmpr_r16:wrfull_eq_comp_msb|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:wrfull_eq_comp_msb                                              ;              ;
-;             |dffpipe_c2e:rdaclr|              ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr                                                       ;              ;
-;             |mux_1u7:rdemp_eq_comp_lsb_mux|   ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux                                            ;              ;
-;             |mux_1u7:rdemp_eq_comp_msb_mux|   ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux                                            ;              ;
-;             |mux_1u7:wrfull_eq_comp_lsb_mux|  ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux                                           ;              ;
-;             |mux_1u7:wrfull_eq_comp_msb_mux|  ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux                                           ;              ;
+;    |control_fifo:inst2|                       ; 48 (48)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|control_fifo:inst2                                                                                                                      ;              ;
+;    |fifo0:inst1|                              ; 109 (0)           ; 142 (0)      ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1                                                                                                                             ;              ;
+;       |dcfifo:dcfifo_component|               ; 109 (0)           ; 142 (0)      ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component                                                                                                     ;              ;
+;          |dcfifo_fnj1:auto_generated|         ; 109 (4)           ; 142 (29)     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated                                                                          ;              ;
+;             |a_graycounter_g2c:wrptr_gp|      ; 27 (27)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_g2c:wrptr_gp                                               ;              ;
+;             |a_graycounter_s96:rdptr_g1p|     ; 39 (39)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p                                              ;              ;
+;             |alt_synch_pipe_kv7:rs_dgwp|      ; 0 (0)             ; 28 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_kv7:rs_dgwp                                               ;              ;
+;                |dffpipe_f09:dffpipe5|         ; 0 (0)             ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_kv7:rs_dgwp|dffpipe_f09:dffpipe5                          ;              ;
+;             |alt_synch_pipe_lv7:ws_dgrp|      ; 0 (0)             ; 28 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_lv7:ws_dgrp                                               ;              ;
+;                |dffpipe_g09:dffpipe8|         ; 0 (0)             ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_lv7:ws_dgrp|dffpipe_g09:dffpipe8                          ;              ;
+;             |altsyncram_1qu:fifo_ram|         ; 20 (0)            ; 5 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram                                                  ;              ;
+;                |altsyncram_cec1:altsyncram14| ; 20 (2)            ; 5 (5)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14                     ;              ;
+;                   |decode_o37:decode_b|       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode_b ;              ;
+;                   |mux_nv7:mux18|             ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|mux_nv7:mux18       ;              ;
+;             |cmpr_936:rdempty_eq_comp|        ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|cmpr_936:rdempty_eq_comp                                                 ;              ;
+;             |cmpr_936:wrfull_eq_comp|         ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|cmpr_936:wrfull_eq_comp                                                  ;              ;
+;             |dffpipe_c2e:rdaclr|              ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template|fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|dffpipe_c2e:rdaclr                                                       ;              ;
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -293,18 +292,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
 ; Name                                                                                                                           ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
 +--------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ALTSYNCRAM ; AUTO ; True Dual Port ; 8192         ; 16           ; 8192         ; 16           ; 131072 ; None ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|ALTSYNCRAM ; AUTO ; True Dual Port ; 8192         ; 16           ; 8192         ; 16           ; 131072 ; None ;
 +--------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                               ;
-+--------+--------------+---------+--------------+--------------+----------------------------+--------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                        ;
-+--------+--------------+---------+--------------+--------------+----------------------------+--------------------------------------------------------+
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |Template|PLL_48M_in:inst4 ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/PLL_48M_in.vhd ;
-; Altera ; FIFO         ; 11.1    ; N/A          ; N/A          ; |Template|fifo0:inst1      ; C:/Users/rchil/Desktop/DAQ_USB_FPGA_ACQ/fifo0.vhd      ;
-+--------+--------------+---------+--------------+--------------+----------------------------+--------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                   ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                                            ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------+
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |Template|PLL_48M_in:inst4 ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/PLL_48M_in.vhd ;
+; Altera ; FIFO         ; 11.1    ; N/A          ; N/A          ; |Template|fifo0:inst1      ; C:/Documents and Settings/rchil/Escritorio/DAQ_USB_FPGA_ACQ/fifo0.vhd      ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -312,35 +311,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 ; Register Name                                                                                ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
 +----------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr|dffe20a[0] ; yes                                                              ; yes                                        ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|dffpipe_c2e:rdaclr|dffe20a[0] ; yes                                                              ; yes                                        ;
 +----------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                     ;
-+-----------------------------------------------------+--------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal      ; Free of Timing Hazards ;
-+-----------------------------------------------------+--------------------------+------------------------+
-; control_fifo:inst2|leyendo                          ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[15]                      ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[14]                      ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[13]                      ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[12]                      ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[11]                      ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[10]                      ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[9]                       ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[8]                       ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[7]                       ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[6]                       ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[5]                       ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[4]                       ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[3]                       ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[2]                       ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[1]                       ; control_fifo:inst2|Mux24 ; yes                    ;
-; control_fifo:inst2|dataOut[0]                       ; control_fifo:inst2|Mux24 ; yes                    ;
-; Number of user-specified and inferred latches = 17  ;                          ;                        ;
-+-----------------------------------------------------+--------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -348,17 +320,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------------------------------------------------------------------------------------------------+--------------------+
 ; Register name                                                                                                                          ; Reason for Removal ;
 +----------------------------------------------------------------------------------------------------------------------------------------+--------------------+
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|addrstall_reg_a[0] ; Lost fanout        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a13                                 ; Lost fanout        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a11                                 ; Lost fanout        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12                                 ; Lost fanout        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a9                                  ; Lost fanout        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a10                                 ; Lost fanout        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8                                  ; Lost fanout        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8..13]                            ; Lost fanout        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[8..13]                                                  ; Lost fanout        ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7..13]                            ; Lost fanout        ;
-; Total Number of Removed Registers = 26                                                                                                 ;                    ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|addrstall_reg_a[0] ; Lost fanout        ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[3..11]                            ; Lost fanout        ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|address_reg_a[0]   ; Lost fanout        ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12,13]                            ; Lost fanout        ;
+; Total Number of Removed Registers = 13                                                                                                 ;                    ;
 +----------------------------------------------------------------------------------------------------------------------------------------+--------------------+
 
 
@@ -367,8 +333,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------------------------------------------------------------------------------------------------+--------------------+-----------------------------------------------------------------------------------------------------------+
 ; Register name                                                                                                                          ; Reason for Removal ; Registers Removed due to This Register                                                                    ;
 +----------------------------------------------------------------------------------------------------------------------------------------+--------------------+-----------------------------------------------------------------------------------------------------------+
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|addrstall_reg_a[0] ; Lost Fanouts       ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13], ;
-;                                                                                                                                        ;                    ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]  ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|addrstall_reg_a[0] ; Lost Fanouts       ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12], ;
+;                                                                                                                                        ;                    ; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]  ;
 +----------------------------------------------------------------------------------------------------------------------------------------+--------------------+-----------------------------------------------------------------------------------------------------------+
 
 
@@ -377,12 +343,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 130   ;
-; Number of registers using Synchronous Clear  ; 19    ;
+; Total registers                              ; 186   ;
+; Number of registers using Synchronous Clear  ; 28    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 34    ;
+; Number of registers using Clock Enable       ; 27    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -392,79 +358,57 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                        ; Fan out ;
 +----------------------------------------------------------------------------------------------------------+---------+
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a0    ; 6       ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdemp_eq_comp_lsb_aeb                     ; 2       ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|rdemp_eq_comp_msb_aeb                     ; 2       ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|parity9       ; 4       ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|sub_parity12a0 ; 1       ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|sub_parity6a0 ; 1       ;
-; Total number of inverted registers = 6                                                                   ;         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_g2c:wrptr_gp|sub_parity12a0 ; 1       ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|sub_parity6a0 ; 1       ;
+; Total number of inverted registers = 2                                                                   ;         ;
 +----------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Gate-level Retiming                                                                                                                        ;
-+-------------------------------------------------------------------------------------------------------------+------------+-----------------+
-; Register Name                                                                                               ; Clock Name ; Created/Deleted ;
-+-------------------------------------------------------------------------------------------------------------+------------+-----------------+
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a13      ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a11      ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12      ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a9       ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a10      ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8       ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]    ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[11]    ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]    ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[9]     ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[10]    ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8]     ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[13]                          ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[11]                          ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[12]                          ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[9]                           ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[10]                          ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[8]                           ; writeOr    ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]     ; ifclk      ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]     ; ifclk      ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]     ; ifclk      ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[10]    ; ifclk      ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]    ; ifclk      ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]    ; ifclk      ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]    ; ifclk      ; Deleted         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a13~0    ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8~0     ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~0    ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~1    ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~2    ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~3    ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~4    ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12~5    ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]~0  ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8]~1   ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~2  ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~3  ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~4  ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~5  ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~6  ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]~7  ; writeOr    ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~0   ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~1   ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]~2   ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]~3   ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[10]~4  ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]~5  ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~6  ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~7  ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~8  ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~9  ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~10 ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~11 ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~12 ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~13 ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~14 ; ifclk      ; Created         ;
-; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~15 ; ifclk      ; Created         ;
-+-------------------------------------------------------------------------------------------------------------+------------+-----------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Gate-level Retiming                                                                                                                                                   ;
++----------------------------------------------------------------------------------------------------------------------------------------+------------+-----------------+
+; Register Name                                                                                                                          ; Clock Name ; Created/Deleted ;
++----------------------------------------------------------------------------------------------------------------------------------------+------------+-----------------+
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[3]                                ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[4]                                ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[5]                                ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[6]                                ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]                                ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]                                ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]                                ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[10]                               ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]                               ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|address_reg_a[0]   ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]                               ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]                               ; ifclk      ; Deleted         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[3]~0                              ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[3]~1                              ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[4]~2                              ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[5]~3                              ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[6]~4                              ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]~5                              ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]~6                              ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]~7                              ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[10]~8                             ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]~9                             ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|address_reg_a[0]~0 ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|address_reg_a[0]~1 ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|address_reg_a[0]~2 ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~10                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]~11                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~12                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~13                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~14                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~15                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~16                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~17                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~18                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~19                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~20                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~21                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~22                            ; ifclk      ; Created         ;
+; fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]~23                            ; ifclk      ; Created         ;
++----------------------------------------------------------------------------------------------------------------------------------------+------------+-----------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -472,7 +416,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------------------------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                         ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------------------------------+----------------------------+
-; 5:1                ; 12 bits   ; 36 LEs        ; 12 LEs               ; 24 LEs                 ; |Template|control_fifo:inst2|Mux17 ;                            ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; |Template|control_fifo:inst2|Mux13 ;                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------------------------------+----------------------------+
 
 
@@ -486,20 +430,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +---------------------------------------------------------------------------------------+
-; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated ;
+; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated ;
 +---------------------------------+-------+------+--------------------------------------+
 ; Assignment                      ; Value ; From ; To                                   ;
 +---------------------------------+-------+------+--------------------------------------+
 ; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                    ;
 ; REMOVE_DUPLICATE_REGISTERS      ; OFF   ; -    ; -                                    ;
 ; POWER_UP_LEVEL                  ; LOW   ; -    ; p0addr                               ;
-; POWER_UP_LEVEL                  ; HIGH  ; -    ; rdemp_eq_comp_lsb_aeb                ;
-; POWER_UP_LEVEL                  ; HIGH  ; -    ; rdemp_eq_comp_msb_aeb                ;
 +---------------------------------+-------+------+--------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p ;
+; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p ;
 +----------------+-------+------+-----------------------------------------------------------------------------------+
 ; Assignment     ; Value ; From ; To                                                                                ;
 +----------------+-------+------+-----------------------------------------------------------------------------------+
@@ -509,7 +451,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +-------------------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p ;
+; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_h2c:wrptr_g1p ;
 +----------------+-------+------+-----------------------------------------------------------------------------------+
 ; Assignment     ; Value ; From ; To                                                                                ;
 +----------------+-------+------+-----------------------------------------------------------------------------------+
@@ -519,7 +461,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +------------------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp ;
+; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_g2c:wrptr_gp ;
 +----------------+-------+------+----------------------------------------------------------------------------------+
 ; Assignment     ; Value ; From ; To                                                                               ;
 +----------------+-------+------+----------------------------------------------------------------------------------+
@@ -529,7 +471,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +---------------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram ;
+; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram ;
 +---------------------------------+--------------------+------+-------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                              ;
 +---------------------------------+--------------------+------+-------------------------------------------------+
@@ -538,7 +480,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14 ;
+; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14 ;
 +---------------------------------+--------------------+------+------------------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                           ;
 +---------------------------------+--------------------+------+------------------------------------------------------------------------------+
@@ -547,7 +489,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +----------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr ;
+; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|dffpipe_c2e:rdaclr ;
 +---------------------------------+-------+------+---------------------------------------------------------+
 ; Assignment                      ; Value ; From ; To                                                      ;
 +---------------------------------+-------+------+---------------------------------------------------------+
@@ -557,7 +499,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +------------------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_2r7:rs_dgwp ;
+; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_kv7:rs_dgwp ;
 +-----------------------+-------+------+---------------------------------------------------------------------------+
 ; Assignment            ; Value ; From ; To                                                                        ;
 +-----------------------+-------+------+---------------------------------------------------------------------------+
@@ -565,17 +507,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-------+------+---------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_2r7:rs_dgwp|dffpipe_d09:dffpipe21 ;
-+---------------------------------+-------+------+---------------------------------------------------------------------------------------+
-; Assignment                      ; Value ; From ; To                                                                                    ;
-+---------------------------------+-------+------+---------------------------------------------------------------------------------------+
-; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                     ;
-+---------------------------------+-------+------+---------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_kv7:rs_dgwp|dffpipe_f09:dffpipe5 ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                   ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                    ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_3r7:ws_dgrp ;
+; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_lv7:ws_dgrp ;
 +-----------------------+-------+------+---------------------------------------------------------------------------+
 ; Assignment            ; Value ; From ; To                                                                        ;
 +-----------------------+-------+------+---------------------------------------------------------------------------+
@@ -583,13 +525,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-------+------+---------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_3r7:ws_dgrp|dffpipe_e09:dffpipe23 ;
-+---------------------------------+-------+------+---------------------------------------------------------------------------------------+
-; Assignment                      ; Value ; From ; To                                                                                    ;
-+---------------------------------+-------+------+---------------------------------------------------------------------------------------+
-; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                     ;
-+---------------------------------+-------+------+---------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_lv7:ws_dgrp|dffpipe_g09:dffpipe8 ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                   ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                    ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------+
@@ -612,15 +554,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                  ;
 ; DELAY_RDUSEDW           ; 1           ; Untyped                                  ;
 ; DELAY_WRUSEDW           ; 1           ; Untyped                                  ;
-; RDSYNC_DELAYPIPE        ; 3           ; Signed Integer                           ;
-; WRSYNC_DELAYPIPE        ; 3           ; Signed Integer                           ;
+; RDSYNC_DELAYPIPE        ; 4           ; Signed Integer                           ;
+; WRSYNC_DELAYPIPE        ; 4           ; Signed Integer                           ;
 ; CLOCKS_ARE_SYNCHRONIZED ; FALSE       ; Untyped                                  ;
-; MAXIMIZE_SPEED          ; 7           ; Untyped                                  ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                  ;
 ; DEVICE_FAMILY           ; Cyclone II  ; Untyped                                  ;
 ; ADD_USEDW_MSB_BIT       ; OFF         ; Untyped                                  ;
 ; WRITE_ACLR_SYNCH        ; OFF         ; Untyped                                  ;
 ; READ_ACLR_SYNCH         ; OFF         ; Untyped                                  ;
-; CBXI_PARAMETER          ; dcfifo_hnj1 ; Untyped                                  ;
+; CBXI_PARAMETER          ; dcfifo_fnj1 ; Untyped                                  ;
 +-------------------------+-------------+------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -665,7 +607,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK5_MULTIPLY_BY              ; 1                            ; Untyped                ;
 ; CLK4_MULTIPLY_BY              ; 1                            ; Untyped                ;
 ; CLK3_MULTIPLY_BY              ; 1                            ; Untyped                ;
-; CLK2_MULTIPLY_BY              ; 5                            ; Signed Integer         ;
+; CLK2_MULTIPLY_BY              ; 25                           ; Signed Integer         ;
 ; CLK1_MULTIPLY_BY              ; 25                           ; Signed Integer         ;
 ; CLK0_MULTIPLY_BY              ; 5                            ; Signed Integer         ;
 ; CLK9_DIVIDE_BY                ; 0                            ; Untyped                ;
@@ -676,7 +618,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK4_DIVIDE_BY                ; 1                            ; Untyped                ;
 ; CLK3_DIVIDE_BY                ; 1                            ; Untyped                ;
 ; CLK2_DIVIDE_BY                ; 24                           ; Signed Integer         ;
-; CLK1_DIVIDE_BY                ; 24                           ; Signed Integer         ;
+; CLK1_DIVIDE_BY                ; 12                           ; Signed Integer         ;
 ; CLK0_DIVIDE_BY                ; 16                           ; Signed Integer         ;
 ; CLK9_PHASE_SHIFT              ; 0                            ; Untyped                ;
 ; CLK8_PHASE_SHIFT              ; 0                            ; Untyped                ;
@@ -1036,7 +978,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1046,7 +988,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 173 11/01/2011 SJ Web Edition
-    Info: Processing started: Tue May 06 17:41:18 2014
+    Info: Processing started: Wed May 07 20:30:17 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off daq_fpga_multicanal -c QUSBEVB_REVA_EP2C20_Template
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file pll_48m_in.vhd
@@ -1066,94 +1008,75 @@ Info (12021): Found 2 design units, including 1 entities, in source file retrasa
 Info (12021): Found 2 design units, including 1 entities, in source file control_fifo.vhd
     Info (12022): Found design unit 1: control_fifo-lectura
     Info (12023): Found entity 1: control_fifo
+Info (12021): Found 2 design units, including 1 entities, in source file retrasar_entrada_2.vhd
+    Info (12022): Found design unit 1: Retrasar_entrada_2-rtl
+    Info (12023): Found entity 1: Retrasar_entrada_2
 Info (12127): Elaborating entity "Template" for the top level hierarchy
 Info (12128): Elaborating entity "fifo0" for hierarchy "fifo0:inst1"
 Info (12128): Elaborating entity "dcfifo" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component"
 Info (12130): Elaborated megafunction instantiation "fifo0:inst1|dcfifo:dcfifo_component"
 Info (12133): Instantiated megafunction "fifo0:inst1|dcfifo:dcfifo_component" with the following parameter:
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
-    Info (12134): Parameter "lpm_hint" = "MAXIMIZE_SPEED=7,"
+    Info (12134): Parameter "lpm_hint" = "MAXIMIZE_SPEED=5,"
     Info (12134): Parameter "lpm_numwords" = "8192"
     Info (12134): Parameter "lpm_showahead" = "OFF"
     Info (12134): Parameter "lpm_type" = "dcfifo"
     Info (12134): Parameter "lpm_width" = "16"
     Info (12134): Parameter "lpm_widthu" = "13"
     Info (12134): Parameter "overflow_checking" = "ON"
-    Info (12134): Parameter "rdsync_delaypipe" = "3"
+    Info (12134): Parameter "rdsync_delaypipe" = "4"
     Info (12134): Parameter "underflow_checking" = "ON"
     Info (12134): Parameter "use_eab" = "ON"
-    Info (12134): Parameter "wrsync_delaypipe" = "3"
-Info (12021): Found 1 design units, including 1 entities, in source file db/dcfifo_hnj1.tdf
-    Info (12023): Found entity 1: dcfifo_hnj1
-Info (12128): Elaborating entity "dcfifo_hnj1" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated"
+    Info (12134): Parameter "wrsync_delaypipe" = "4"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dcfifo_fnj1.tdf
+    Info (12023): Found entity 1: dcfifo_fnj1
+Info (12128): Elaborating entity "dcfifo_fnj1" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated"
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_graycounter_s96.tdf
     Info (12023): Found entity 1: a_graycounter_s96
-Info (12128): Elaborating entity "a_graycounter_s96" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p"
+Info (12128): Elaborating entity "a_graycounter_s96" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p"
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_graycounter_h2c.tdf
     Info (12023): Found entity 1: a_graycounter_h2c
-Info (12128): Elaborating entity "a_graycounter_h2c" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p"
+Info (12128): Elaborating entity "a_graycounter_h2c" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_h2c:wrptr_g1p"
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_graycounter_g2c.tdf
     Info (12023): Found entity 1: a_graycounter_g2c
-Info (12128): Elaborating entity "a_graycounter_g2c" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp"
+Info (12128): Elaborating entity "a_graycounter_g2c" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_g2c:wrptr_gp"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_1qu.tdf
     Info (12023): Found entity 1: altsyncram_1qu
-Info (12128): Elaborating entity "altsyncram_1qu" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram"
+Info (12128): Elaborating entity "altsyncram_1qu" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_cec1.tdf
     Info (12023): Found entity 1: altsyncram_cec1
-Info (12128): Elaborating entity "altsyncram_cec1" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14"
+Info (12128): Elaborating entity "altsyncram_cec1" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14"
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_o37.tdf
     Info (12023): Found entity 1: decode_o37
-Info (12128): Elaborating entity "decode_o37" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode16"
+Info (12128): Elaborating entity "decode_o37" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|decode_o37:decode16"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_nv7.tdf
     Info (12023): Found entity 1: mux_nv7
-Info (12128): Elaborating entity "mux_nv7" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|mux_nv7:mux18"
+Info (12128): Elaborating entity "mux_nv7" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|mux_nv7:mux18"
 Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_c2e.tdf
     Info (12023): Found entity 1: dffpipe_c2e
-Info (12128): Elaborating entity "dffpipe_c2e" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|dffpipe_c2e:rdaclr"
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_2r7.tdf
-    Info (12023): Found entity 1: alt_synch_pipe_2r7
-Info (12128): Elaborating entity "alt_synch_pipe_2r7" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_2r7:rs_dgwp"
-Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_d09.tdf
-    Info (12023): Found entity 1: dffpipe_d09
-Info (12128): Elaborating entity "dffpipe_d09" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_2r7:rs_dgwp|dffpipe_d09:dffpipe21"
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_3r7.tdf
-    Info (12023): Found entity 1: alt_synch_pipe_3r7
-Info (12128): Elaborating entity "alt_synch_pipe_3r7" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_3r7:ws_dgrp"
-Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_e09.tdf
-    Info (12023): Found entity 1: dffpipe_e09
-Info (12128): Elaborating entity "dffpipe_e09" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|alt_synch_pipe_3r7:ws_dgrp|dffpipe_e09:dffpipe23"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_r16.tdf
-    Info (12023): Found entity 1: cmpr_r16
-Info (12128): Elaborating entity "cmpr_r16" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|cmpr_r16:rdempty_eq_comp1_lsb"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_1u7.tdf
-    Info (12023): Found entity 1: mux_1u7
-Info (12128): Elaborating entity "mux_1u7" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|mux_1u7:rdemp_eq_comp_lsb_mux"
+Info (12128): Elaborating entity "dffpipe_c2e" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|dffpipe_c2e:rdaclr"
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_kv7.tdf
+    Info (12023): Found entity 1: alt_synch_pipe_kv7
+Info (12128): Elaborating entity "alt_synch_pipe_kv7" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_kv7:rs_dgwp"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_f09.tdf
+    Info (12023): Found entity 1: dffpipe_f09
+Info (12128): Elaborating entity "dffpipe_f09" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_kv7:rs_dgwp|dffpipe_f09:dffpipe5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_lv7.tdf
+    Info (12023): Found entity 1: alt_synch_pipe_lv7
+Info (12128): Elaborating entity "alt_synch_pipe_lv7" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_lv7:ws_dgrp"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_g09.tdf
+    Info (12023): Found entity 1: dffpipe_g09
+Info (12128): Elaborating entity "dffpipe_g09" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|alt_synch_pipe_lv7:ws_dgrp|dffpipe_g09:dffpipe8"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_936.tdf
+    Info (12023): Found entity 1: cmpr_936
+Info (12128): Elaborating entity "cmpr_936" for hierarchy "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|cmpr_936:rdempty_eq_comp"
 Info (12128): Elaborating entity "control_fifo" for hierarchy "control_fifo:inst2"
-Warning (10492): VHDL Process Statement warning at control_fifo.vhd(98): signal "dataIn_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_fifo.vhd(117): signal "dataIn_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_fifo.vhd(136): signal "dataIn_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_fifo.vhd(154): signal "dataIn_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_fifo.vhd(176): signal "dataIn_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_fifo.vhd(190): signal "fifo_control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at control_fifo.vhd(67): inferring latch(es) for signal or variable "leyendo", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at control_fifo.vhd(67): inferring latch(es) for signal or variable "dataOut", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "dataOut[0]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[1]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[2]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[3]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[4]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[5]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[6]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[7]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[8]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[9]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[10]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[11]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[12]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[13]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[14]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "dataOut[15]" at control_fifo.vhd(67)
-Info (10041): Inferred latch for "leyendo" at control_fifo.vhd(67)
+Warning (10492): VHDL Process Statement warning at control_fifo.vhd(102): signal "dataIn_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_fifo.vhd(121): signal "dataIn_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_fifo.vhd(140): signal "dataIn_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_fifo.vhd(158): signal "dataIn_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_fifo.vhd(180): signal "dataIn_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_fifo.vhd(194): signal "fifo_control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "control_disparo" for hierarchy "control_disparo:inst"
 Warning (10542): VHDL Variable Declaration warning at control_disparo.vhdl(35): used initial value expression for variable "t_integracion" because variable was never assigned a value
 Warning (10492): VHDL Process Statement warning at control_disparo.vhdl(118): signal "ngate_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -1168,13 +1091,13 @@ Info (12133): Instantiated megafunction "PLL_48M_in:inst4|altpll:altpll_componen
     Info (12134): Parameter "clk0_duty_cycle" = "50"
     Info (12134): Parameter "clk0_multiply_by" = "5"
     Info (12134): Parameter "clk0_phase_shift" = "0"
-    Info (12134): Parameter "clk1_divide_by" = "24"
+    Info (12134): Parameter "clk1_divide_by" = "12"
     Info (12134): Parameter "clk1_duty_cycle" = "50"
     Info (12134): Parameter "clk1_multiply_by" = "25"
     Info (12134): Parameter "clk1_phase_shift" = "0"
     Info (12134): Parameter "clk2_divide_by" = "24"
     Info (12134): Parameter "clk2_duty_cycle" = "50"
-    Info (12134): Parameter "clk2_multiply_by" = "5"
+    Info (12134): Parameter "clk2_multiply_by" = "25"
     Info (12134): Parameter "clk2_phase_shift" = "0"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20833"
@@ -1223,96 +1146,48 @@ Info (12133): Instantiated megafunction "PLL_48M_in:inst4|altpll:altpll_componen
     Info (12134): Parameter "port_extclk1" = "PORT_UNUSED"
     Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
+Info (12128): Elaborating entity "Retrasar_entrada_2" for hierarchy "Retrasar_entrada_2:inst8"
+Warning (10036): Verilog HDL or VHDL warning at Retrasar_entrada_2.vhd(24): object "q8" assigned a value but never read
 Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer control_fifo:inst2|Mux1
-Warning (13012): Latch control_fifo:inst2|leyendo has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[2]
-Warning (13012): Latch control_fifo:inst2|dataOut[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[2]
-Warning (13012): Latch control_fifo:inst2|dataOut[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[1]
-Warning (13012): Latch control_fifo:inst2|dataOut[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[2]
-Warning (13012): Latch control_fifo:inst2|dataOut[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
-Warning (13012): Latch control_fifo:inst2|dataOut[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_fifo:inst2|EA[0]
+    Warning (19017): Found clock multiplexer control_fifo:inst2|Mux20
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (13086): Performing gate-level register retiming
-Info (13093): Not allowed to move 41 registers
-    Info (13094): Not allowed to move at least 2 registers because they are in a sequence of registers directly fed by input pins
+Info (13093): Not allowed to move 97 registers
+    Info (13094): Not allowed to move at least 4 registers because they are in a sequence of registers directly fed by input pins
     Info (13095): Not allowed to move at least 1 registers because they feed output pins directly
-    Info (13098): Not allowed to move at least 7 registers because they are fed by registers in a different clock domain
-    Info (13099): Not allowed to move at least 29 registers because they feed registers in a different clock domain
-    Info (13100): Not allowed to move at least 1 registers because they feed clock or asynchronous control signals of other registers
+    Info (13098): Not allowed to move at least 58 registers because they are fed by registers in a different clock domain
+    Info (13099): Not allowed to move at least 30 registers because they feed registers in a different clock domain
+    Info (13100): Not allowed to move at least 3 registers because they feed clock or asynchronous control signals of other registers
     Info (13101): Not allowed to move at least 1 registers due to user assignments
-Info (13089): The Quartus II software applied gate-level register retiming to 2 clock domains
-    Info (13092): The Quartus II software applied gate-level register retiming to clock "writeOr": created 16 new registers, removed 18 registers, left 36 registers untouched
-    Info (13092): The Quartus II software applied gate-level register retiming to clock "ifclk": created 16 new registers, removed 7 registers, left 34 registers untouched
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "NRead3" is stuck at VCC
-Info (17049): 26 registers lost all their fanouts during netlist optimizations. The first 26 are displayed below.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|addrstall_reg_a[0]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a13" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a11" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a12" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a9" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a10" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_h2c:wrptr_g1p|counter8a8" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[13]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[11]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[12]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[9]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[10]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_g2c:wrptr_gp|counter13a[8]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[13]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[11]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[12]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[9]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[10]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|delayed_wrptr_g[8]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[10]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_hnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]" lost all its fanouts during netlist optimizations.
+Info (13089): The Quartus II software applied gate-level register retiming to 1 clock domains
+    Info (13092): The Quartus II software applied gate-level register retiming to clock "ifclk": created 27 new registers, removed 12 registers, left 60 registers untouched
+Info (17049): 13 registers lost all their fanouts during netlist optimizations. The first 13 are displayed below.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|addrstall_reg_a[0]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[3]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[4]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[5]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[6]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[7]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[8]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[9]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[11]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|altsyncram_1qu:fifo_ram|altsyncram_cec1:altsyncram14|address_reg_a[0]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[12]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "fifo0:inst1|dcfifo:dcfifo_component|dcfifo_fnj1:auto_generated|a_graycounter_s96:rdptr_g1p|counter7a[13]" lost all its fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding node "PLL_48M_in:inst4|altpll:altpll_component|pll"
-Info (21057): Implemented 373 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 32 input pins
+Info (21057): Implemented 392 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 33 input pins
     Info (21059): Implemented 23 output pins
-    Info (21061): Implemented 285 logic cells
+    Info (21061): Implemented 303 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 51 warnings
-    Info: Peak virtual memory: 334 megabytes
-    Info: Processing ended: Tue May 06 17:41:21 2014
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 293 megabytes
+    Info: Processing ended: Wed May 07 20:30:28 2014
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:10
 
 
