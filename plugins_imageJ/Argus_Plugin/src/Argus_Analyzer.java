@@ -32,6 +32,8 @@ import ij.io.OpenDialog;
 import ij.plugin.PlugIn;
 import ij.plugin.RGBStackMerge;
 import ij.process.*;
+
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Arrays;
 
@@ -71,6 +73,7 @@ public class Argus_Analyzer implements PlugIn {
 		fInf.height = 168; 
 		fInf.intelByteOrder = true;
 		fInf.fileType = FileInfo.GRAY16_SIGNED;
+		//fInf.fileType = FileInfo.GRAY32_INT;
 		fInf.nImages = 1;
 		fInf.whiteIsZero = false;
 		fInf.compression = 1;
@@ -96,12 +99,20 @@ public class Argus_Analyzer implements PlugIn {
 		imgGSO = fOpen.open(false);
 		
 		
+		IJ.showStatus("Leidas las imágenes");
+		
+		IJ.showStatus("Obteniendo minimapas");
+		
 		//Now I can start the analysis
 		crystalAnalyzer = new crystalAnalyzer(imgLYSO,imgGSO);
 		ImagePlus[] tmpImgs = new ImagePlus[2];
 		tmpImgs = crystalAnalyzer.getMiniMaps();
 		miniMapPeaks = tmpImgs[0];
 		miniMapFWHM = tmpImgs[1];
+		miniMapPeaks.show();
+		miniMapFWHM.show();
+		
+		IJ.showStatus("Analizando minimapas");
 		
 		//now I can analyze each of the miniMaps using the mapAnalyzer
 		int nCrystals = miniMapAnalyzer.sizeX*miniMapAnalyzer.sizeY;
@@ -116,6 +127,8 @@ public class Argus_Analyzer implements PlugIn {
 		wrongFWHM = mapAnalyzer.Analyze(miniMapFWHM);
 		wrongPeaks = mapAnalyzer.Analyze(miniMapPeaks);
 		wrongOrg = mapAnalyzer.Analyze(miniMapa);
+		
+		IJ.showStatus("Generando imagen final en RGB");
 		
 		//Now I generate the final RGB image that will be the final result
 		ImagePlus[] imgRGBstack = new ImagePlus[3];
@@ -139,8 +152,11 @@ public class Argus_Analyzer implements PlugIn {
 	    finalRGB.updateAndDraw();
 		
 	    try{
-	    crystalAnalyzer.exportTXT(fInf.directory);
+	    crystalAnalyzer.exportTXT2(fInf.directory);
 	    //now we will store the wrong detector data
+	    this.printWrongDetectors(wrongOrg, wrongPeaks, wrongFWHM, fInf);
+	    
+	   /*
 	  //first I will print the peaks
     	PrintWriter mPrinter =   new PrintWriter(fInf.directory+"/wrongDetectors.csv");
     	String tmpStr; 
@@ -161,7 +177,7 @@ public class Argus_Analyzer implements PlugIn {
 	    mPrinter.println(tmpStr);	
 	    
 	    mPrinter.close();
-	    
+	    */
 	    }catch(Exception e){
 	    	IJ.log(e.getMessage());
 	    }
@@ -170,6 +186,36 @@ public class Argus_Analyzer implements PlugIn {
 		
 
 		
+	}
+	
+	
+	private void printWrongDetectors(int[] wrong1, int[] wrong2, int[] wrong3, FileInfo localInf) throws FileNotFoundException{
+		PrintWriter mPrinter =   new PrintWriter(localInf.directory+"/wrongDetectors.csv");
+    	String tmpStr; 
+    	
+    	int nCrystals = miniMapAnalyzer.sizeX*miniMapAnalyzer.sizeY;
+    	
+    	for (int i = 0; i< nCrystals ; i++){
+    		if(wrong1[i]> 0){
+    			tmpStr = "1,";
+    		}else{
+    			tmpStr = "0,";
+    		}
+    		if(wrong2[i]> 0){
+    			tmpStr = tmpStr+"1,";
+    		}else{
+    			tmpStr = tmpStr+"0,";
+    		}
+    		if(wrong3[i]> 0){
+    			tmpStr = tmpStr+"1,";
+    		}else{
+    			tmpStr = tmpStr+"0,";
+    		}	
+    	   mPrinter.println(tmpStr);
+    	   tmpStr = "";
+    	}	
+	    
+	    mPrinter.close();
 	}
 	
 

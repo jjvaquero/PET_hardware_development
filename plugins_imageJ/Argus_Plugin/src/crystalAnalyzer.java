@@ -265,6 +265,64 @@ public class crystalAnalyzer {
 	}
 	
 	
+	public void exportTXT2(String path) throws Exception{
+		//first I will have to be sure that the maxPos and FWHM images 
+		//have been populated previously for the two crsytals
+		this.getMaxPos(0); //first the lyso crystal
+		this.getMaxPos(1); // now the gso 
+		
+	    try{
+	    	int[] tmpData = new int[lysoMaxPosProc.getWidth()];
+	    	int lHeight = lysoMaxPosProc.getHeight();
+	    	
+	    	//first I will print the peaks
+	    	PrintWriter mPrinter =   new PrintWriter(path+"/photopeaks.csv");
+	    	String tmpStr; 
+	    	//first I will print the Lyso crystals
+	    	for(int i = 0;  i < lHeight; i++){
+	    		lysoMaxPosProc.getRow(i, 0,tmpData, lysoMaxPosProc.getWidth());
+	    		tmpStr = Arrays.toString(tmpData);
+	    		tmpStr = tmpStr.replace('[', ' ');
+	    		tmpStr = tmpStr.replace(']', ' ');
+		    	mPrinter.println(tmpStr);	    		
+	    	}
+	    	//and now the GSO crystals
+	    	for(int i = 0;  i < lHeight; i++){
+	    		gsoMaxPosProc.getRow(i, 0,tmpData, gsoMaxPosProc.getWidth());
+	    		tmpStr = Arrays.toString(tmpData);
+	    		tmpStr = tmpStr.replace('[', ' ');
+	    		tmpStr = tmpStr.replace(']', ' ');
+		    	mPrinter.println(tmpStr);	    		
+	    	}   	
+	    	mPrinter.close();
+	    	
+	    	
+	    	//now I will print the FWHM
+	    	mPrinter =   new PrintWriter(path+"/fwhm.csv");
+	    	//first the LYSO
+	    	for(int i = 0;  i < lHeight; i++){
+	    		lysoFWHMProc.getRow(i, 0,tmpData, lysoFWHMProc.getWidth());
+	    		tmpStr = Arrays.toString(tmpData);
+	    		tmpStr = tmpStr.replace('[', ' ');
+	    		tmpStr = tmpStr.replace(']', ' ');
+		    	mPrinter.println(tmpStr);	    		
+	    	}
+	    	//now the GSO
+	    	for(int i = 0;  i < lHeight; i++){
+	    		gsoFWHMProc.getRow(i, 0,tmpData, gsoFWHMProc.getWidth());
+	    		tmpStr = Arrays.toString(tmpData);
+	    		tmpStr = tmpStr.replace('[', ' ');
+	    		tmpStr = tmpStr.replace(']', ' ');
+		    	mPrinter.println(tmpStr);	    		
+	    	}	 
+	    	mPrinter.close();
+	    	
+	    }
+		catch(Exception e){
+			IJ.log(e.getMessage());
+		}
+	}
+	
 
     
     //extra functions used by the other members of the class
