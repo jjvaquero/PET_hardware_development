@@ -81,6 +81,9 @@ handles.img_eng = zeros(imgSize, imgSize);
 % needs to be smaller
 % just a part of the image
 handles.img_histo = uint16(zeros(100,100,histSize/8)); %zeros(100,100,histSize/8));
+%barbarie maxima
+%handles.img_histEngs = uint16(zeros(10,10,512,512));
+handles.imgHistPixel = zeros(imgSize,imgSize);
 
 
 
@@ -203,6 +206,8 @@ energyHist = handles.energyHist;
 img_histo = handles.img_histo;
 img_Eng = handles.img_eng;
 energyHist2 = handles.energyHist2;
+%img_histEngs = handles.img_histEngs; 
+img_histEngs = handles.imgHistPixel;
 strName = 'data';
 ctmp = clock; 
 for i = 1 : length(ctmp) - 1
@@ -210,7 +215,7 @@ for i = 1 : length(ctmp) - 1
 end
 strName = strcat(strName,'.mat');
 
-save(strName,'hist1','hist2','hist3','hist4','imagen','energyHist','energyHist2','img_histo','img_Eng');
+save(strName,'hist1','hist2','hist3','hist4','imagen','energyHist','energyHist2','img_histo','img_Eng','img_histEngs'); 
 
 delete(handles.figure1)
 
@@ -301,6 +306,8 @@ canal4 = zeros(1,5000); histo4 = zeros(1,4096);
 canal5 = zeros(1,5000); histo5 = zeros(1,4096);
 histoEng = zeros(1,4096);
 imgHisto = uint16(zeros(100,100,512));
+pixImg = zeros(512,512);
+%img_histEngsl = uint16(zeros(10,10,512,512));
 
 
 %algoritmo para garantizar que los eventos van uno detras de otro
@@ -389,16 +396,22 @@ for i = 1: indice-1  %menor
         energiaHist =round(energia/8);
         energiaHist1 =round(energia/4);
         energiaGSO = round(canal5(i)/4);
-         if( energiaHist1> 0 && energiaHist1 < 513 && energiaGSO > 0 && energiaGSO<512)
+         if( energiaHist1> 0 && energiaHist1 < 513 && energiaGSO > 0 && energiaGSO<513)
              imgEng(energiaHist1,energiaGSO) = imgEng(energiaHist1,energiaGSO) +1 ;
           %   if (ratio > 1500) %asumo que es GSO
           %     imgEng(energiaHist,energiaGSO) = imgEng(energiaHist,energiaGSO) + 80 ;    
            %  end
          end
         
-       if( energiaHist> 0 && energiaHist < 513 && X > 100 && X<201 && Y>100 && Y<201)
+       if( energiaHist> 0 && energiaHist < 513 && X > 85 && X<186 && Y>125 && Y<226)
          % handles.img_histo(X,Y,energiaHist+1) = handles.img_histo(X,Y,energiaHist+1)+1;
-          imgHisto(Y-100,X-100,energiaHist+1) = imgHisto(Y-100,X-100,energiaHist+1)+1;
+         imgHisto(Y-125,X-85,energiaHist+1) = imgHisto(Y-125,X-85,energiaHist+1)+1;
+          if ( (X-85) > 71 && (X-85)<82 && (Y-125)>60 && (Y-125)<71 && energiaGSO > 0 && energiaGSO<513 ) 
+         % if ((X-85) > 60 && (X-85)<71 && (Y-125)>71 && (Y-125)<82 && energiaGSO > 0 && energiaGSO<513 )
+              %img_histEngsl(X-85-62,Y-125-10,energiaHist+1,energiaGSO+1) = img_histEngsl(X-85-62,Y-125-10,energiaHist+1,energiaGSO+1) + 1;
+              %aqui meto el histograma de un pixel...
+              pixImg(energiaHist,energiaGSO) = pixImg(energiaHist,energiaGSO)+1;            
+          end
        %   imgHisto(Y,X,energiaHist+1) = imgHisto(Y,X,energiaHist+1)+1;
        end
        % if (X>250 && X<262) && (Y>250 && Y<262)
@@ -427,6 +440,8 @@ handles.img_eng = handles.img_eng +imgEng;
 handles.img_histo = handles.img_histo + imgHisto;
 handles.energyHist = handles.energyHist + histoEng;
 handles.energyHist2 = handles.energyHist2 + histo5;
+%handles.img_histEngs = handles.img_histEngs + img_histEngsl;
+handles.imgHistPixel = handles.imgHistPixel + pixImg;
 %0.25 readTime
 handles.lastNEvents = indice/0.25;
 
@@ -553,7 +568,7 @@ title(handles.axes6,'Canal 4');
 
 %axes(handles.axes1);h
 %axes(handles.axes1);
-imagesc(handles.img_eng,'Parent',handles.axes1);
+imagesc(handles.imgHistPixel,'Parent',handles.axes1);
 %plot(handles.axes1,handles.energyHist2);
 %imagesc(handles.imagen,'Parent',handles.axes1);
 xlim(handles.axes1,[0 256]);
