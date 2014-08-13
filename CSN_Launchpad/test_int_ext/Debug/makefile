@@ -8,11 +8,14 @@ CG_TOOL_ROOT := c:/ti/ccsv6/tools/compiler/arm_5.1.5
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
+"./utils/ustdlib.obj" \
+"./usb_bulk_structs.obj" \
 "./main.obj" \
 "./lm4f120h5qr_startup_ccs.obj" \
 "../lm4f120h5qr.cmd" \
 -l"libc.a" \
 -l"C:\StellarisWare\driverlib\ccs-cm4f\Debug\driverlib-cm4f.lib" \
+-l"c:/ti/ccsv6/../../StellarisWare/usblib/ccs-cm4f/Debug/usblib-cm4f.lib" \
 
 -include ../makefile.init
 
@@ -22,7 +25,9 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include utils/subdir_vars.mk
 -include subdir_rules.mk
+-include utils/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -129,9 +134,10 @@ all: test_int_ext.out
 test_int_ext.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --display_error_number --diag_warning=225 --diag_wrap=off -z -m"test_int_ext.map" --heap_size=0 --stack_size=512 -i"c:/ti/ccsv6/tools/compiler/arm_5.1.5/lib" -i"c:/ti/ccsv6/tools/compiler/arm_5.1.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="test_int_ext_linkInfo.xml" --rom_model -o "test_int_ext.out" $(ORDERED_OBJS)
+	"c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --relaxed_ansi --gcc --define=ccs="ccs" --define=TARGET_IS_BLIZZARD_RA1 --define=PART_LM4F120H5QR --display_error_number --diag_warning=225 --diag_wrap=off -z -m"test_int_ext.map" --heap_size=0 --stack_size=512 -i"c:/ti/ccsv6/tools/compiler/arm_5.1.5/lib" -i"c:/ti/ccsv6/tools/compiler/arm_5.1.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="test_int_ext_linkInfo.xml" --rom_model -o "test_int_ext.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
+	@$(MAKE) --no-print-directory post-build
 
 test_int_ext.hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: ARM Hex Utility'
@@ -142,13 +148,17 @@ test_int_ext.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "lm4f120h5qr_startup_ccs.pp" "main.pp" 
-	-$(RM) "lm4f120h5qr_startup_ccs.obj" "main.obj" 
+	-$(RM) "lm4f120h5qr_startup_ccs.pp" "main.pp" "usb_bulk_structs.pp" "utils\ustdlib.pp" 
+	-$(RM) "lm4f120h5qr_startup_ccs.obj" "main.obj" "usb_bulk_structs.obj" "utils\ustdlib.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
+post-build:
+	-"c:/ti/ccsv6/utils/tiobj2bin/tiobj2bin" "test_int_ext.out" "test_int_ext.bin" "c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/ofd470" "c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/hex470" "c:/ti/ccsv6/utils/tiobj2bin/mkhex4bin"
+	-@echo ' '
+
 .PHONY: all clean dependents
-.SECONDARY:
+.SECONDARY: post-build
 
 -include ../makefile.targets
 

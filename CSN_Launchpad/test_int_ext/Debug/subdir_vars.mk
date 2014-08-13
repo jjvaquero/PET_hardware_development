@@ -8,26 +8,32 @@ CMD_SRCS += \
 
 C_SRCS += \
 ../lm4f120h5qr_startup_ccs.c \
-../main.c 
+../main.c \
+../usb_bulk_structs.c 
 
 OBJS += \
 ./lm4f120h5qr_startup_ccs.obj \
-./main.obj 
+./main.obj \
+./usb_bulk_structs.obj 
 
 C_DEPS += \
 ./lm4f120h5qr_startup_ccs.pp \
-./main.pp 
+./main.pp \
+./usb_bulk_structs.pp 
 
 C_DEPS__QUOTED += \
 "lm4f120h5qr_startup_ccs.pp" \
-"main.pp" 
+"main.pp" \
+"usb_bulk_structs.pp" 
 
 OBJS__QUOTED += \
 "lm4f120h5qr_startup_ccs.obj" \
-"main.obj" 
+"main.obj" \
+"usb_bulk_structs.obj" 
 
 C_SRCS__QUOTED += \
 "../lm4f120h5qr_startup_ccs.c" \
-"../main.c" 
+"../main.c" \
+"../usb_bulk_structs.c" 
 
 
