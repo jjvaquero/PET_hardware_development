@@ -8,6 +8,14 @@
 //#include "inc/hw_gpio.h"
 #include "driverlib/adc.h"
 
+//libraries used for the USB
+#include "usblib/usblib.h"
+#include "usblib/usb-ids.h"
+#include "usblib/device/usbdevice.h"
+#include "usblib/device/usbdbulk.h"
+#include "utils/ustdlib.h"
+#include "usb_bulk_structs.h"
+
 //ISR function
 extern void ButtonPressInt(void);
 extern void ConvDoneInt(void);
@@ -20,10 +28,35 @@ unsigned long adcTemp[4];
 
 unsigned long intTime = 100; // 50 Mhz -> 20 ns ...10*20 = 100 ns
 int tempValue;
-unsigned short histTemp[4096];
-unsigned short histRecord[4096];
 
-int main(void) {
+
+
+volatile unsigned long g_ulFlags = 0;
+char *g_pcStatus;
+
+//*****************************************************************************
+//
+// Global flag indicating that a USB configuration has been set.
+//
+//*****************************************************************************
+
+
+
+
+
+/*
+ *
+ *
+ *
+//de aqui en adelante es copy pasteo
+ *
+ *
+ *
+ */
+
+
+
+int main() {
 	//system clock config, 50 MHz, using PLL and a 16 Mhz XTAL,  to use 80 Mhz, sysctl_sysdiv_2_5
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5| SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ | SYSCTL_OSC_MAIN);
 	//GPIO conf
@@ -100,10 +133,126 @@ int main(void) {
 
 
 
+	//USB activation and configuration
 
-	while(true){
+	    // Enable the GPIO peripheral used for USB, and configure the USB
+	    // pins.
+
+
+	    GPIOPinTypeUSBAnalog(GPIO_PORTD_BASE, GPIO_PIN_4 | GPIO_PIN_5);
+
+	    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+
+	    //
+	    // Enable the GPIO pins for the LED (PF2 & PF3).
+	    //
+	    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3|GPIO_PIN_2);
+
+	    //
+	    // Initialize the transmit and receive buffers.
+	    //
+	    USBBufferInit((tUSBBuffer *)&g_sTxBuffer);
+	    USBBufferInit((tUSBBuffer *)&g_sRxBuffer);
+
+	    //
+	    // Set the USB stack mode to Device mode with VBUS monitoring.
+	    //
+	    USBStackModeSet(0, USB_MODE_FORCE_DEVICE, 0);  //USB_MODE_FORCE_DEVICE
+
+	    //
+	    // Pass our device information to the USB library and place the device
+	    // on the bus.
+	    //
+	    USBDBulkInit(0, (tUSBDBulkDevice *)&g_sBulkDevice);
+
+	    //
+	    // Clear our local byte counters.
+	    volatile unsigned long ulLoop;
+
+	    //
+	    g_ulRxCount = 0;
+	    g_ulTxCount = 0;
+	    ulRxCount = 0;
+	    ulTxCount = 0;
+
+	    //
+	    // Main application loop.
+	    //
+	    while(1)
+	    {
+	        //
+	        // See if any data has been transferred.
+	        //
+	        if((ulTxCount != g_ulTxCount) || (ulRxCount != g_ulRxCount))
+	        {
+	            //
+	            // Has there been any transmit traffic since we last checked?
+	            //
+	            if(ulTxCount != g_ulTxCount)
+	            {
+	                //
+	                // Turn on the Green LED.
+	                //
+	                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, GPIO_PIN_3);
+
+	                //
+	                // Delay for a bit.
+	                //
+	                for(ulLoop = 0; ulLoop < 150000; ulLoop++)
+	                {
+	                }
+
+	                //
+	                // Turn off the Green LED.
+	                //
+	                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0);
+
+	                //
+	                // Take a snapshot of the latest transmit count.
+	                //
+	                ulTxCount = g_ulTxCount;
+	            }
+
+	            //
+	            // Has there been any receive traffic since we last checked?
+	            //
+	            if(ulRxCount != g_ulRxCount)
+	            {
+	                //
+	                // Turn on the Blue LED.
+	                //
+	                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, GPIO_PIN_2);
+
+	                //
+	                // Delay for a bit.
+	                //
+	                for(ulLoop = 0; ulLoop < 150000; ulLoop++)
+	                {
+	                }
+
+	                //
+	                // Turn off the Blue LED.
+	                //
+	                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0);
+
+	                //
+	                // Take a snapshot of the latest receive count.
+	                //
+	                ulRxCount = g_ulRxCount;
+	            }
+
+	            //
+	            // Update the display of bytes transferred.
+	            //
+	        }
+	    }
+
+
+
+
+	/*while(true){
 		//open main loop, waits for interrupts
-	}
+	}*/
 
 	
 	return 0;
@@ -139,11 +288,10 @@ void ConvDoneInt(void){
 	tempValue = (1475 - ((2475 * adcTemp[0])) / 4096)/10; //adcTemp[0];
 
 	//store the value in the corresponding histogram
-	if (tempValue < 4096) histTemp[tempValue]++;
+	if (tempValue < 4096) histBuff.histTemp[tempValue]++;
 
 	//clear the interrupt flag
 	ADCIntClear(ADC0_BASE, 0 );
-
 
 }
 
