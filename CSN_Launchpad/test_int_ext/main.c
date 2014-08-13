@@ -42,20 +42,6 @@ char *g_pcStatus;
 
 
 
-
-
-/*
- *
- *
- *
-//de aqui en adelante es copy pasteo
- *
- *
- *
- */
-
-
-
 int main() {
 	//system clock config, 50 MHz, using PLL and a 16 Mhz XTAL,  to use 80 Mhz, sysctl_sysdiv_2_5
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5| SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ | SYSCTL_OSC_MAIN);
@@ -64,17 +50,7 @@ int main() {
 	GPIOPinTypeGPIOOutput(GPIO_PORTD_BASE, GPIO_PIN_2 | GPIO_PIN_3); 		//outputs
 	GPIOPinTypeGPIOInput(GPIO_PORTD_BASE, GPIO_PIN_0 | GPIO_PIN_1);			//inputs
 
-/*  Used for the timer controlled converssion scheme
- *
- 	//ISR assigment
-	GPIOPortIntRegister(GPIO_PORTD_BASE,ButtonPressInt);
 
-	// configure and activate the corresponding interrupt
-	GPIOIntTypeSet(GPIO_PORTD_BASE,GPIO_PIN_0, GPIO_RISING_EDGE);
-	GPIOPinIntEnable(GPIO_PORTD_BASE, GPIO_PIN_0);
-	IntEnable(INT_GPIOD);
- *
- */
 	//Pad configuration to detect the adequate input levels
 	GPIOPadConfigSet(GPIO_PORTD_BASE,GPIO_PIN_0 ,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
 	//use the PortD Pin 0 to activate ADC converssion
@@ -83,18 +59,6 @@ int main() {
 
 	//add now adc support, after the external interrupt a timer should be used
 	//to select the given integration time....so...
-
-/* Timer will not be used, because using an external input to start ADC conversion is faster
- *
-	//Timer Configuration
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
-	TimerConfigure( TIMER0_BASE, TIMER_CFG_A_ONE_SHOT); //just timer A running down
-	//integration time
-	TimerLoadSet(TIMER0_BASE, TIMER_A, intTime); //configure the timer
-	//now i configure it to start the adc conversion
-	TimerControlTrigger(TIMER0_BASE, TIMER_A, true);
-*
- */
 
 
 /*
@@ -114,138 +78,132 @@ int main() {
 	ADCIntEnable(ADC0_BASE, 0);
 	//After testing the fastest way is to use an external input to trigger ADC converssion
 	ADCSequenceConfigure(ADC0_BASE, 0 , ADC_TRIGGER_EXTERNAL, 1);
-
-/* Used for the Timer controlled Integration time
- *
- * ADCSequenceConfigure(ADC0_BASE, 0 , ADC_TRIGGER_TIMER, 1); //priority 1 should be enough
- *
- */
 	//configure the sequence step
-	ADCSequenceStepConfigure(ADC0_BASE, 0, 0, ADC_CTL_TS |ADC_CTL_IE| ADC_CTL_END); //read the temp sensor and generate an interrupt
+	ADCSequenceStepConfigure(ADC0_BASE, 0, 0, ADC_CTL_TS |ADC_CTL_IE| ADC_CTL_END);
 	//We use the phase delay to control the integration time given to the system
 	//only specific constant values can be used, for more info read "adc.C" library
 	ADCPhaseDelaySet(ADC0_BASE, ADC_PHASE_0);
     //enable the ADC sequence that i want to use
 	ADCSequenceEnable(ADC0_BASE,0);
 
-
-	IntMasterEnable(); //master interrupt enable, for all interrupts
-
-
-
 	//USB activation and configuration
 
 	    // Enable the GPIO peripheral used for USB, and configure the USB
 	    // pins.
 
+/**
+ * USB bulk transfer device Configuration
+ **/
+	GPIOPinTypeUSBAnalog(GPIO_PORTD_BASE, GPIO_PIN_4 | GPIO_PIN_5);
+	//these will only be used for the LEDs, testing only...
+	//TODO remove this later on
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 
-	    GPIOPinTypeUSBAnalog(GPIO_PORTD_BASE, GPIO_PIN_4 | GPIO_PIN_5);
+	//
+	// Enable the GPIO pins for the LED (PF2 & PF3).
+	//
+	GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3|GPIO_PIN_2);
 
-	    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+	//
+	// Initialize the transmit and receive buffers.
+	//
+	USBBufferInit((tUSBBuffer *)&g_sTxBuffer);
+	USBBufferInit((tUSBBuffer *)&g_sRxBuffer);
 
-	    //
-	    // Enable the GPIO pins for the LED (PF2 & PF3).
-	    //
-	    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3|GPIO_PIN_2);
+	//
+	// Set the USB stack mode to Device mode with VBUS monitoring.
+	//
+	USBStackModeSet(0, USB_MODE_FORCE_DEVICE, 0);  //USB_MODE_FORCE_DEVICE
 
-	    //
-	    // Initialize the transmit and receive buffers.
-	    //
-	    USBBufferInit((tUSBBuffer *)&g_sTxBuffer);
-	    USBBufferInit((tUSBBuffer *)&g_sRxBuffer);
+	//
+	// Pass our device information to the USB library and place the device
+	// on the bus.
+	//
+	USBDBulkInit(0, (tUSBDBulkDevice *)&g_sBulkDevice);
 
-	    //
-	    // Set the USB stack mode to Device mode with VBUS monitoring.
-	    //
-	    USBStackModeSet(0, USB_MODE_FORCE_DEVICE, 0);  //USB_MODE_FORCE_DEVICE
+	//
+	// Clear our local byte counters.
+	volatile unsigned long ulLoop;
 
-	    //
-	    // Pass our device information to the USB library and place the device
-	    // on the bus.
-	    //
-	    USBDBulkInit(0, (tUSBDBulkDevice *)&g_sBulkDevice);
+	//
+	g_ulRxCount = 0;
+	g_ulTxCount = 0;
+	ulRxCount = 0;
+	ulTxCount = 0;
 
-	    //
-	    // Clear our local byte counters.
-	    volatile unsigned long ulLoop;
+	IntMasterEnable(); //master interrupt enable, for all interrupts
 
-	    //
-	    g_ulRxCount = 0;
-	    g_ulTxCount = 0;
-	    ulRxCount = 0;
-	    ulTxCount = 0;
+	//
+	// Main application loop.
+	//
+	while(1)
+	{
+		//
+		// See if any data has been transferred.
+		//
+		if((ulTxCount != g_ulTxCount) || (ulRxCount != g_ulRxCount))
+		{
+			//
+			// Has there been any transmit traffic since we last checked?
+			//
+			if(ulTxCount != g_ulTxCount)
+			{
+				//
+				// Turn on the Green LED.
+				//
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, GPIO_PIN_3);
 
-	    //
-	    // Main application loop.
-	    //
-	    while(1)
-	    {
-	        //
-	        // See if any data has been transferred.
-	        //
-	        if((ulTxCount != g_ulTxCount) || (ulRxCount != g_ulRxCount))
-	        {
-	            //
-	            // Has there been any transmit traffic since we last checked?
-	            //
-	            if(ulTxCount != g_ulTxCount)
-	            {
-	                //
-	                // Turn on the Green LED.
-	                //
-	                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, GPIO_PIN_3);
+				//
+				// Delay for a bit.
+				//
+				for(ulLoop = 0; ulLoop < 150000; ulLoop++)
+				{
+				}
 
-	                //
-	                // Delay for a bit.
-	                //
-	                for(ulLoop = 0; ulLoop < 150000; ulLoop++)
-	                {
-	                }
+				//
+				// Turn off the Green LED.
+				//
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0);
 
-	                //
-	                // Turn off the Green LED.
-	                //
-	                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0);
+				//
+				// Take a snapshot of the latest transmit count.
+				//
+				ulTxCount = g_ulTxCount;
+			}
 
-	                //
-	                // Take a snapshot of the latest transmit count.
-	                //
-	                ulTxCount = g_ulTxCount;
-	            }
+			//
+			// Has there been any receive traffic since we last checked?
+			//
+			if(ulRxCount != g_ulRxCount)
+			{
+				//
+				// Turn on the Blue LED.
+				//
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, GPIO_PIN_2);
 
-	            //
-	            // Has there been any receive traffic since we last checked?
-	            //
-	            if(ulRxCount != g_ulRxCount)
-	            {
-	                //
-	                // Turn on the Blue LED.
-	                //
-	                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, GPIO_PIN_2);
+				//
+				// Delay for a bit.
+				//
+				for(ulLoop = 0; ulLoop < 150000; ulLoop++)
+				{
+				}
 
-	                //
-	                // Delay for a bit.
-	                //
-	                for(ulLoop = 0; ulLoop < 150000; ulLoop++)
-	                {
-	                }
+				//
+				// Turn off the Blue LED.
+				//
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0);
 
-	                //
-	                // Turn off the Blue LED.
-	                //
-	                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0);
+				//
+				// Take a snapshot of the latest receive count.
+				//
+				ulRxCount = g_ulRxCount;
+			}
 
-	                //
-	                // Take a snapshot of the latest receive count.
-	                //
-	                ulRxCount = g_ulRxCount;
-	            }
-
-	            //
-	            // Update the display of bytes transferred.
-	            //
-	        }
-	    }
+			//
+			// Update the display of bytes transferred.
+			//
+		}
+	}
 
 
 
@@ -254,27 +212,14 @@ int main() {
 		//open main loop, waits for interrupts
 	}*/
 
-	
+
 	return 0;
 }
 
-
-/* Needed only when using the timer for the integration time
- *
- * void ButtonPressInt(void){
-
-    //begin to wait the integration time
-	TimerEnable(TIMER0_BASE, TIMER_A);
-
-	//clear interrupt flag
-	GPIOPinIntClear(GPIO_PORTD_BASE, GPIO_PIN_0);
-}
- *
- *
- *
- */
-
-
+/****
+ *  ISR that will be executed after the ADC conversion, started by the
+ *  comparator signal
+ ****/
 void ConvDoneInt(void){
 
 
@@ -285,8 +230,8 @@ void ConvDoneInt(void){
 
 	//read the vale from the ADC
 	ADCSequenceDataGet(ADC0_BASE, 0, adcTemp);
-	tempValue = (1475 - ((2475 * adcTemp[0])) / 4096)/10; //adcTemp[0];
-
+	//tempValue = (1475 - ((2475 * adcTemp[0])) / 4096)/10; //adcTemp[0];
+	tempValue = adcTemp;
 	//store the value in the corresponding histogram
 	if (tempValue < 4096) histBuff.histTemp[tempValue]++;
 
