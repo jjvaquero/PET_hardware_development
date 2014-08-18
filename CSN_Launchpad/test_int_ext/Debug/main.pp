@@ -16,6 +16,9 @@ main.obj: C:/StellarisWare/usblib/device/./usbdevicepriv.h
 main.obj: C:/StellarisWare/usblib/device/usbdbulk.h
 main.obj: C:/StellarisWare/utils/ustdlib.h
 main.obj: c:/ti/ccsv6/tools/compiler/arm_5.1.5/include/stdarg.h
+main.obj: ../usb_bulk_structs.h
+main.obj: C:/StellarisWare/driverlib/ssi.h
+main.obj: C:/StellarisWare/inc/hw_ssi.h
 
 ../main.c: 
 C:/StellarisWare/inc/hw_ints.h: 
@@ -33,3 +36,6 @@ C:/StellarisWare/usblib/device/./usbdevicepriv.h:
 C:/StellarisWare/usblib/device/usbdbulk.h: 
 C:/StellarisWare/utils/ustdlib.h: 
 c:/ti/ccsv6/tools/compiler/arm_5.1.5/include/stdarg.h: 
+../usb_bulk_structs.h: 
+C:/StellarisWare/driverlib/ssi.h: 
+C:/StellarisWare/inc/hw_ssi.h: 
