@@ -179,7 +179,7 @@ int main() {
 	//configure the voltage to 100mV
 	//TODO later on implement o function to compute the value to send
 	//from the desired voltage level
-	  SSIDataPut(SSI0_BASE, 0x00B0);
+	  SSIDataPut(SSI0_BASE, 0x00C0); //0x00B0
 	  while(SSIBusy(SSI0_BASE)){};
 
 
@@ -271,11 +271,6 @@ int main() {
  ****/
 void ConvDoneInt(void){
 
-
-	GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 0);
-	//Here i could add some timing...and later on an ADC conversion
-	//SysCtlDelay(200);
-	GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 8);
 /*
 	//TODO cambiar si cambio por un Switch con logica invertida
 	GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 8);
@@ -298,6 +293,11 @@ void ConvDoneInt(void){
 	//store the value in the corresponding histogram
 	if (tempValue < 4096) {histBuff.histTemp[tempValue]++;}
 	else{ histBuff.histTemp[100] = adcTemp[0]; }
+
+	GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 0);
+	//Here i could add some timing...and later on an ADC conversion
+	SysCtlDelay(200);
+	GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 8);
 
 	//clear the interrupt flag
 	ADCIntClear(ADC0_BASE, 0 );
