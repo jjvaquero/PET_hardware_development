@@ -52,11 +52,14 @@ extern unsigned long g_ulRxCount;
 extern unsigned char g_pucUSBTxBuffer[];
 extern unsigned char g_pucUSBRxBuffer[];
 
+//TODO descomentar lo de abajo al cambiar sendbuffer de sitio
+
 typedef union {
 	unsigned short histTemp[4096];
 	unsigned char histCharBuff[4096*2];
 }sendBuffer;
 
 extern sendBuffer histBuff;
+
 
 #endif

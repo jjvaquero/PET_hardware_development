@@ -365,6 +365,8 @@ EchoNewDataToHost(tUSBDBulkDevice *psDevice, unsigned char *pcData,
 
 
 //Funcion propia para el envio del array a traves del USB
+
+//TODO descomentar lo de abajo al poner sendBuffer en otro sitio
 sendBuffer histBuff;
 static unsigned long
 SendHistDataToHost(tUSBDBulkDevice *psDevice, unsigned char *pcData,

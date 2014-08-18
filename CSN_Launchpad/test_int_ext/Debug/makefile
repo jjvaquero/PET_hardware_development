@@ -9,6 +9,7 @@ CG_TOOL_ROOT := c:/ti/ccsv6/tools/compiler/arm_5.1.5
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
 "./utils/ustdlib.obj" \
+"./usb_bulk_structs.obj" \
 "./main.obj" \
 "./lm4f120h5qr_startup_ccs.obj" \
 "../lm4f120h5qr.cmd" \
@@ -147,8 +148,8 @@ test_int_ext.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "lm4f120h5qr_startup_ccs.pp" "main.pp" "utils\ustdlib.pp" 
-	-$(RM) "lm4f120h5qr_startup_ccs.obj" "main.obj" "utils\ustdlib.obj" 
+	-$(RM) "lm4f120h5qr_startup_ccs.pp" "main.pp" "usb_bulk_structs.pp" "utils\ustdlib.pp" 
+	-$(RM) "lm4f120h5qr_startup_ccs.obj" "main.obj" "usb_bulk_structs.obj" "utils\ustdlib.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
