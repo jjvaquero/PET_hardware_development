@@ -123,8 +123,8 @@ int main() {
 	//
 	// Initialize the transmit and receive buffers.
 	//
-	USBBufferInit((tUSBBuffer *)&g_sTxBuffer);
-	USBBufferInit((tUSBBuffer *)&g_sRxBuffer);
+	//USBBufferInit((tUSBBuffer *)&g_sTxBuffer);
+	//USBBufferInit((tUSBBuffer *)&g_sRxBuffer);
 
 	//
 	// Set the USB stack mode to Device mode with VBUS monitoring.

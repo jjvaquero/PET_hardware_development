@@ -149,8 +149,14 @@ const unsigned char * const g_pStringDescriptors[] =
 //
 //*****************************************************************************
 tBulkInstance g_sBulkInstance;
+tBoolean writeData = false;
+unsigned char sendData[64];
+unsigned long sentIndex = 0;
+unsigned long datRemain = 0;
 
 extern const tUSBBuffer g_sTxBuffer;
+unsigned char txBuffer[64];
+unsigned char rxBuffer[64];
 extern const tUSBBuffer g_sRxBuffer;
 
 unsigned long ulTxCount;
@@ -167,10 +173,10 @@ const tUSBDBulkDevice g_sBulkDevice =
     USB_PID_DOSEMETER,     //USB_PID_BULK,   //
     200,
     USB_CONF_ATTR_SELF_PWR,
-    USBBufferEventCallback,
-    (void *)&g_sRxBuffer,
-    USBBufferEventCallback,
-    (void *)&g_sTxBuffer,
+    RxHandler, //USBBufferEventCallback,
+    rxBuffer, //(void *)&g_sRxBuffer,
+    TxHandler, //,
+    txBuffer, //(void *)&g_sTxBuffer,
     g_pStringDescriptors,
     NUM_STRING_DESCRIPTORS,
     &g_sBulkInstance
@@ -232,6 +238,8 @@ const tUSBBuffer g_sTxBuffer =
  *
  * */
 
+static unsigned long sendHist();
+
 /*****************************************************************************
 //
 // Receive new data and echo it back to the host.
@@ -250,6 +258,8 @@ const tUSBBuffer g_sTxBuffer =
 //
  *
  * *****************************
+ *
+ *
  */
 static unsigned long
 EchoNewDataToHost(tUSBDBulkDevice *psDevice, unsigned char *pcData,
@@ -374,25 +384,25 @@ SendHistDataToHost(tUSBDBulkDevice *psDevice, unsigned char *pcData,
     unsigned long ulLoop, ulSpace, ulCount;
     unsigned long ulReadIndex;
     unsigned long ulWriteIndex;
+    unsigned char readData[64];
     tUSBRingBufObject sTxRing;
 
 
   //TODO luego quito esto
 	int i; //aux var
-	/*for (i = 0 ; i < 4096; i++){
-		histBuff.histTemp[i] = i;
-	}*/
+
 
 	//
 	// Get the current buffer information to allow us to write directly to
 	// the transmit buffer (we already have enough information from the
 	// parameters to access the receive buffer directly).
 	//
-	USBBufferInfoGet(&g_sTxBuffer, &sTxRing);
+	//USBBufferInfoGet(&g_sTxBuffer, &sTxRing);
 
 	//
 	// How much space is there in the transmit buffer?
 	//
+	/*
 	ulSpace = USBBufferSpaceAvailable(&g_sTxBuffer);
 
 	//
@@ -401,10 +411,14 @@ SendHistDataToHost(tUSBDBulkDevice *psDevice, unsigned char *pcData,
 	//ulLoop = (ulSpace < ulNumBytes) ? ulSpace : ulNumBytes;
 	ulLoop = (ulSpace < 100) ? ulSpace : 100;
 	ulCount = ulLoop;
+	*/
+	//while( USBBufferSpaceAvailable(&g_sTxBuffer)<99) {} //wait for the buffer to be free
+	//ulCount = 100;
+	//ulLoop = 100;
 	//
 	// Update our receive counter.
 	//
-	g_ulRxCount += ulNumBytes;
+	//g_ulRxCount += ulNumBytes;
 
 	//
 	// Dump a debug message.
@@ -413,32 +427,53 @@ SendHistDataToHost(tUSBDBulkDevice *psDevice, unsigned char *pcData,
 	//
 	// Set up to process the characters by directly accessing the USB buffers.
 	//
-	ulReadIndex = (unsigned long)(pcData - g_pucUSBRxBuffer);
+	//ulReadIndex = (unsigned long)(pcData - g_pucUSBRxBuffer);
 	//ulWriteIndex = sTxRing.ulWriteIndex;
+	//ulWriteIndex = 0;
+
+	ulCount= USBDBulkPacketRead((void *)&g_sBulkDevice,readData,10,true);
+	ulReadIndex = 0;
 	ulWriteIndex = 0;
 
 
     //now i should read the first 5 characters
 	//and check that they are what i want
-	 if(g_pucUSBRxBuffer[ulReadIndex] == 'D' && g_pucUSBRxBuffer[ulReadIndex+1] == 'A' &&
+	 /*if(g_pucUSBRxBuffer[ulReadIndex] == 'D' && g_pucUSBRxBuffer[ulReadIndex+1] == 'A' &&
 			 g_pucUSBRxBuffer[ulReadIndex+2] == 'T' && g_pucUSBRxBuffer[ulReadIndex+3] == 'A' &&
 			 g_pucUSBRxBuffer[ulReadIndex+4] == '?')
+			 */
+	 if(readData[ulReadIndex] == 'D' && readData[ulReadIndex+1] == 'A' &&
+			 readData[ulReadIndex+2] == 'T' && readData[ulReadIndex+3] == 'A' &&
+			 readData[ulReadIndex+4] == '?')
 	 {
 		 //Now i will send the
 		 //for (i = 0; i < 4096*2-ulWriteIndex; i++){
-	    for (i = ulWriteIndex; i < ulLoop; i++){
+	    for (i = ulWriteIndex; i < 100; i++){
 
-			 g_pucUSBTxBuffer[i] = '0'+i; //histBuff.histCharBuff[i];
+			 sendData[i] = '0'+i; //histBuff.histCharBuff[i];
 		 }
+	    ulCount = 64;
 	 }else{
-		   for (i = ulWriteIndex; i < ulLoop; i++){
+		   for (i = ulWriteIndex; i < ulCount; i++){
 
-					 g_pucUSBTxBuffer[i] = g_pucUSBRxBuffer[ulReadIndex]; //histBuff.histCharBuff[i];
+					 sendData[i] = readData[ulReadIndex]; //histBuff.histCharBuff[i];
 				 }
 	 }
 
 
-	 USBBufferDataWritten(&g_sTxBuffer, ulCount);
+	// USBBufferDataWritten(&g_sTxBuffer, ulCount);
+	 //USBDBulkPacketWrite((void *)&g_sBulkDevice,sendData,ulCount,true);
+	// while( USBDBulkTxPacketAvailable((void *)&g_sBulkDevice)<34)
+	// USBDBulkPacketWrite((void *)&g_sBulkDevice,sendData[2],34,false);
+    for (i = 0 ; i < 4096; i++){
+			histBuff.histTemp[i] = i;
+	 }
+	 datRemain = 8192;
+	 sentIndex = 0;
+	 sendHist();
+	// writeData = true;
+
+
 
 	   //
 	  // We processed as much data as we can directly from the receive buffer so
@@ -446,6 +481,51 @@ SendHistDataToHost(tUSBDBulkDevice *psDevice, unsigned char *pcData,
 	  // update its read pointer appropriately.
 	 //
 	 return(ulCount);
+
+}
+
+static unsigned long
+ sendHist(){
+    int i;
+
+    if(datRemain > 63 && sentIndex < (8192-63)){
+		for (i = 0; i < 64; i++){
+
+			sendData[i] = histBuff.histCharBuff[i+sentIndex]; //'A'+i;
+		}
+		USBDBulkPacketWrite((void *)&g_sBulkDevice,sendData,64,true);
+		sentIndex+=64;
+		datRemain-=64;
+		writeData = true;
+		if (datRemain == 0 || sentIndex == 8192) { writeData = false;}
+    }
+    else if( datRemain > 0 && sentIndex < 8192){
+    	for (i = 0; i < datRemain-1; i++){
+
+    				sendData[i] = 'A'+i;  //histBuff.histCharBuff[i+sentIndex];
+    			}
+    			USBDBulkPacketWrite((void *)&g_sBulkDevice,sendData,datRemain,true);
+    			sentIndex= 8192;
+    			datRemain= 0;
+    			writeData = false;
+
+    }
+    return 64;
+
+}
+
+static unsigned long
+ sendRest(unsigned char *pcData,
+         unsigned long ulNumBytes){
+    int i;
+
+    for (i = 0; i < 64; i++){
+
+		 sendData[i] = 'A'+i; //histBuff.histCharBuff[i];
+	 }
+
+	 USBDBulkPacketWrite((void *)&g_sBulkDevice,sendData,ulNumBytes,true);
+	 writeData = false;
 
 }
 
@@ -476,6 +556,10 @@ TxHandler(void *pvCBData, unsigned long ulEvent, unsigned long ulMsgValue,
     //
     if(ulEvent == USB_EVENT_TX_COMPLETE)
     {
+    	if (writeData == true) {
+    		//sendRest(sendData[2],36);
+    		sendHist();
+    	}
        g_ulTxCount += ulMsgValue;
 
     }
@@ -554,8 +638,8 @@ RxHandler(void *pvCBData, unsigned long ulEvent,
             //
             // Read the new packet and echo it back to the host.
             //
-            //return(SendHistDataToHost(psDevice,pvMsgData, ulMsgValue));
-             return(EchoNewDataToHost(psDevice, pvMsgData, ulMsgValue));
+            return(SendHistDataToHost(psDevice,pvMsgData, ulMsgValue));
+             //return(EchoNewDataToHost(psDevice, pvMsgData, ulMsgValue));
         }
 
         //
