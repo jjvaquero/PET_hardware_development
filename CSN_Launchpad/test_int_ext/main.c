@@ -74,7 +74,7 @@ int main() {
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
 	//Timer used to delay the conversion a given integration time...could probably be removed
 	//triggering conversions directly from the pins and using phase_delay for the ADC conv delay
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
+	//SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
 	//Currently only this ADC, and only sequence 0 are being used
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
 
@@ -92,11 +92,13 @@ int main() {
 	/*
 	 *                 External interrupt configuration
 	 */
+
 	GPIOPortIntRegister(GPIO_PORTD_BASE,ButtonPressInt);
 	GPIOIntTypeSet(GPIO_PORTD_BASE,GPIO_PIN_0, GPIO_RISING_EDGE);
 	GPIOPinIntEnable(GPIO_PORTD_BASE, GPIO_PIN_0);
 	GPIOPinIntClear(GPIO_PORTD_BASE, GPIO_PIN_0);
 	IntEnable(INT_GPIOD);
+
 
 	/*
 	 * 				GPIO Port F Configuration
@@ -137,11 +139,13 @@ int main() {
 	 *
 	 *            using an external input to start the ADC conversion seems to work to fast..
 	 */
+	/*
 	TimerConfigure( TIMER0_BASE, TIMER_CFG_A_ONE_SHOT); //just timer A running down
 	//integration time
 	TimerLoadSet(TIMER0_BASE, TIMER_A, intTime); //configure the timer
 	//now i configure it to start the adc conversion
 	TimerControlTrigger(TIMER0_BASE, TIMER_A, true);
+	*/
 
 	/*
 	 * 		ADC0 Configuration
@@ -163,7 +167,9 @@ int main() {
 	//After testing the fastest way is to use an external input to trigger ADC converssion
 	//TODO uncomment this line to use the external ADC trigger
 	//ADCSequenceConfigure(ADC0_BASE, 0 , ADC_TRIGGER_EXTERNAL, 1);
-	ADCSequenceConfigure(ADC0_BASE, 0 , ADC_TRIGGER_TIMER, 1);
+	//ADCSequenceConfigure(ADC0_BASE, 0 , ADC_TRIGGER_TIMER, 1);
+	//Software started conversion
+	ADCSequenceConfigure(ADC0_BASE, 0 , ADC_TRIGGER_PROCESSOR, 1);
 	//configure the sequence step
 	//ADCSequenceStepConfigure(ADC0_BASE, 0, 0, ADC_CTL_TS |ADC_CTL_IE| ADC_CTL_END);
 	ADCSequenceStepConfigure(ADC0_BASE, 0, 0, ADC_CTL_CH6|ADC_CTL_IE| ADC_CTL_END);
@@ -325,6 +331,9 @@ void ConvDoneInt(void){
 	if (adcTemp[0] < 4096) {histBuff.histTemp[adcTemp[0]]++;}
 	else{ histBuff.histTemp[100] = adcTemp[0]; }
 
+	//wait a bit more
+	SysCtlDelay(10);
+
 	GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 0);
 	//Here i could add some timing...and later on an ADC conversion
 	//SysCtlDelay(10);
@@ -351,7 +360,13 @@ void ButtonPressInt(void){
 	//GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 8);
 
     //begin to wait the integration time
-	TimerEnable(TIMER0_BASE, TIMER_A);
+	//TimerEnable(TIMER0_BASE, TIMER_A);
+
+	//Start ADC conversion now and use it directly instead of using a timer
+	//is better to use an interrupt, because like this i can turn it off
+	//while the current data is being processed
+	ADCProcessorTrigger(ADC0_BASE, 0);
+
 	//Disable this interrupt until the new data has been acquired
 	GPIOPinIntDisable(GPIO_PORTD_BASE, GPIO_PIN_0);
 
