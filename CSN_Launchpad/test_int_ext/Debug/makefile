@@ -8,10 +8,10 @@ CG_TOOL_ROOT := c:/ti/ccsv6/tools/compiler/arm_5.1.5
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
-"./utils/ustdlib.obj" \
-"./usb_bulk_structs.obj" \
-"./main.obj" \
 "./lm4f120h5qr_startup_ccs.obj" \
+"./main.obj" \
+"./usb_bulk_structs.obj" \
+"./utils/ustdlib.obj" \
 "../lm4f120h5qr.cmd" \
 -l"libc.a" \
 -l"C:\StellarisWare\driverlib\ccs-cm4f\Debug\driverlib-cm4f.lib" \
