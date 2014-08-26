@@ -8,6 +8,7 @@ main.obj: C:/StellarisWare/driverlib/sysctl.h
 main.obj: C:/StellarisWare/driverlib/interrupt.h
 main.obj: C:/StellarisWare/driverlib/gpio.h
 main.obj: C:/StellarisWare/driverlib/pin_map.h
+main.obj: C:/StellarisWare/driverlib/timer.h
 main.obj: C:/StellarisWare/driverlib/adc.h
 main.obj: C:/StellarisWare/usblib/usblib.h
 main.obj: C:/StellarisWare/usblib/usb-ids.h
@@ -28,6 +29,7 @@ C:/StellarisWare/driverlib/sysctl.h:
 C:/StellarisWare/driverlib/interrupt.h: 
 C:/StellarisWare/driverlib/gpio.h: 
 C:/StellarisWare/driverlib/pin_map.h: 
+C:/StellarisWare/driverlib/timer.h: 
 C:/StellarisWare/driverlib/adc.h: 
 C:/StellarisWare/usblib/usblib.h: 
 C:/StellarisWare/usblib/usb-ids.h: 

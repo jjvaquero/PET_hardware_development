@@ -465,9 +465,10 @@ SendHistDataToHost(tUSBDBulkDevice *psDevice, unsigned char *pcData,
 	 //USBDBulkPacketWrite((void *)&g_sBulkDevice,sendData,ulCount,true);
 	// while( USBDBulkTxPacketAvailable((void *)&g_sBulkDevice)<34)
 	// USBDBulkPacketWrite((void *)&g_sBulkDevice,sendData[2],34,false);
-    for (i = 0 ; i < 4096; i++){
+
+	 /*for (i = 0 ; i < 4096; i++){
 			histBuff.histTemp[i] = i;
-	 }
+	 }*/
 	 datRemain = 8192;
 	 sentIndex = 0;
 	 sendHist();
@@ -526,6 +527,8 @@ static unsigned long
 
 	 USBDBulkPacketWrite((void *)&g_sBulkDevice,sendData,ulNumBytes,true);
 	 writeData = false;
+
+	 return 64;
 
 }
 
