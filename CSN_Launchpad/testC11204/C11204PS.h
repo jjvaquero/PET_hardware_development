@@ -12,6 +12,7 @@
 #include "driverlib/pin_map.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/uart.h"
+#include <stdlib.h>
 
 #ifndef C11204PS_H_
 #define C11204PS_H_
@@ -40,9 +41,15 @@ class C11204_PS {
 public:
 	C11204_PS(unsigned long portBase);
 
+	/**
+	 *  This function should be called at the peripheral configuration phase
+	 *   the first step would be to check that the port is working properly
+	 *
+	 *   @return negative value in case of error
+	 *   TODO add support for other ports, currently only UART3 will be allowed
+	 */
 	int startCommunication();
-	int updatePort(unsigned long portBase);
-	int* getInfoAndStatus();
+	float* getInfoAndStatus();
 	int setTempCorrFact(float* tempCorrFactor);
 	void setHVOn();
 	void setHVOff();
@@ -55,7 +62,6 @@ public:
 	float getStatus();
 
 	virtual ~C11204_PS();
-};
 
 private:
 	/**
@@ -75,21 +81,25 @@ private:
 	bool checkCRC(unsigned char* buffer, int length);
 
 	/**
-	 *  Converts a value stored as a string in a charr array representing a hex value
-	 *  into a float value  ....Hamamatsu...nough said....
-	 *  @param hexValues array contaning the hexValues as chars
+	 *  Converts a hex value stored in a char array
+	 *  to its proper float value using the Hamamatsu conversion table
+	 *  @param value array contaning the hexValues as chars
+	 *  @param unit unit to be converted
 	 *  @return the corresponding value as a float
 	 */
-	float hexChar2float(unsigned char* hexValues);
+	float unitConv(char* value, char unit);
 	/**
 	 *  Converts a float value to a hex char value...Hamamatsu did it...
 	 *  @param  value value to be converted
 	 *  @return the convereted value
 	 */
-	unsigned char* float2hexChar(float value);
+	char* unitConv(float value, char unit);
 
 	unsigned long port;		/// port base register
-	unsigned char cmdBuff[60]; 	///buffer that will be used for I/O commands
+	bool comOpen;
+	unsigned char cmdIn[60]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[60]; 	///buffer that will be used for I/O commands
 
+};
 
 #endif /* C11204PS_H_ */

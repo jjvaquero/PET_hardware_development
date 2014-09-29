@@ -10,6 +10,7 @@ ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
 "./main.obj" \
 "./lm4f120h5qr_startup_ccs.obj" \
+"./C11204PS.obj" \
 "../lm4f120h5qr.cmd" \
 -l"libc.a" \
 -l"C:\StellarisWare\driverlib\ccs-cm4f\Debug\driverlib-cm4f.lib" \
@@ -142,8 +143,9 @@ testC11204.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
+	-$(RM) "C11204PS.pp" 
 	-$(RM) "lm4f120h5qr_startup_ccs.pp" "main.pp" 
-	-$(RM) "lm4f120h5qr_startup_ccs.obj" "main.obj" 
+	-$(RM) "C11204PS.obj" "lm4f120h5qr_startup_ccs.obj" "main.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
