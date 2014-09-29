@@ -9,15 +9,18 @@
 //#include "utils/uartstdio.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "C11204PS.h"
 
 
 unsigned char cmdOut[60];
-unsigned char cmdIn[60];
+char cmdIn[60];
 int readChar;
 unsigned char aux;
 char cmd[15];
 char* ptr;
+float* ptrFloat;
+float vars[5];
+
 
 
 /**
@@ -62,32 +65,22 @@ void decimal_hex(int n, char hex[]) /* Function to convert decimal to hexadecima
 
 
 int main(void) {
+
 	int i = 0;
 	//system clock config, 50 MHz, using PLL and a 16 Mhz XTAL,  to use 80 Mhz, sysctl_sysdiv_2_5
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5| SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ | SYSCTL_OSC_MAIN);
 
-	//Port D will be used to use UART2
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART3);
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+
+
+
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 
 	//configure the UART to be used with the usb
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 
-	//Pin Configuration
-	GPIOPinConfigure(GPIO_PC6_U3RX);
-	GPIOPinConfigure(GPIO_PC7_U3TX);
-	GPIOPinTypeUART(GPIO_PORTC_BASE, GPIO_PIN_6 | GPIO_PIN_7);
-	//UART configuration, this function also enables the UART Comm
-	UARTConfigSetExpClk(UART3_BASE, SysCtlClockGet(), 38400,
-	        (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_EVEN));
-
 	//LED pin
 	GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2);
-
-
-
 
 	//Pin config
 	GPIOPinConfigure(GPIO_PA0_U0RX);
@@ -95,6 +88,11 @@ int main(void) {
 	GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
 	UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), 115200,
 	(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+
+	startCommunication(UART3_BASE);
+
+
+
 
 //	UARTStdioInit(0);
 	//populate the array now
@@ -129,75 +127,27 @@ int main(void) {
 		  //while (!UARTCharsAvail(UART3_BASE)){
 		  aux = UARTCharGet(UART0_BASE);
 
-		  //test to see if the conversion using sprintf and sscanf works well
-		  for ( i = 0; i< 4 ; i++){
-			  cmd[i] = UARTCharGet(UART0_BASE);
-		  }
-		  UARTCharPut(UART0_BASE,'T');
-		  //Now i can read the data
-		  int value;
-		  // Not working on Stellaris..
-		  //sscanf(cmd, "%4x",&value);
-		   value = (int)strtol(cmd,&ptr,16);
-		  //prepara valores para devolverlos
-		  UARTCharPut(UART0_BASE,'T');
-		  UARTCharPut(UART0_BASE,'0');
-		  UARTCharPut(UART0_BASE,'M');
-		  ltoa((long)value,&cmd[4]);
-		  //sprintf(&cmd[4],"%.4X",value);
-		  decimal_hex(value, &cmd[10]);
-
-		  for ( i = 0; i< 15 ; i++){
-		  	 UARTCharPut(UART0_BASE,cmd[i]);
-		  }
-
-
-
 		  for(i = 0; i < 60; i++){ cmdIn[i] = 0;}
 
-		  while (cmdIn[1] != 'h' || cmdIn[2] !='p' || cmdIn[3] != 'o' ){ // && readChar !=28
+			ptrFloat = getInfoAndStatus(UART3_BASE);
 
-	      //clean the buffer first
-		  while(UARTCharsAvail(UART3_BASE)){ aux = UARTCharGet(UART3_BASE);}
+			for (i = 0; i < 5 ; i++){
+				vars[i] = *ptrFloat;
+				ptrFloat++;
+				readChar += ltoa((long) vars[i], &cmdIn[readChar]);
+				cmdIn[readChar] = ' ';
+				readChar++;
+			}
 
-		  for (i = 0; i < 8 ; i++){
-			  UARTCharPut(UART3_BASE, cmdOut[i]);
-		  }
 
-		   while (UARTBusy(UART3_BASE)){}
-		 // }
-
-		 //Now the read command
-		 //I now i will get 28 bytes so...
-		  readChar = 0;
-		  aux = 0;
-
-		 // GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x04);
-
-		  //wait to get the start of a new message
-		  while(aux != 0x02){
-			  aux = UARTCharGetNonBlocking(UART3_BASE); //NonBlocking
-		  }
-		  cmdIn[readChar++] = aux;
-
-		 // while(UARTCharsAvail(UART3_BASE) && readChar < 60 && readChar ){
-		  while(aux != 0x0D){ //(readChar < 28){
-		  //for (i = 0; i < 28; i++){
-			//  cmdIn[i] = UARTCharGetNonBlocking(UART2_BASE);
-			  aux = UARTCharGetNonBlocking(UART3_BASE); //NonBlocking
-			  //send the read bytes to the usb
-			  if (aux!= 0xFF) {
-				  cmdIn[readChar++]=aux;
-			  }
-		 }
-
-		 }
 
 		  UARTCharPut(UART0_BASE,'\n');
 		  UARTCharPut(UART0_BASE, readChar);
 		  for (i = 0; i <readChar; i++){
 			  UARTCharPut(UART0_BASE, cmdIn[i]);
 		  }
+
+		  readChar = 0;
 
 		 //SysCtlDelay(5000000);
 		// GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
