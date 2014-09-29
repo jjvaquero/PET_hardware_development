@@ -7,12 +7,58 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/uart.h"
 //#include "utils/uartstdio.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 
 
 unsigned char cmdOut[60];
 unsigned char cmdIn[60];
 int readChar;
 unsigned char aux;
+char cmd[15];
+char* ptr;
+
+
+/**
+ *  Copied from  http://www.programiz.com/c-programming/examples/hexadecimal-decimal-convert
+ *
+ */
+void decimal_hex(int n, char hex[]) /* Function to convert decimal to hexadecimal. */
+{
+    int i=3,rem;  // i=4 I will only use numbers smaller than this
+    while (n!=0 && i >= 0)
+    {
+        rem=n%16;
+        switch(rem)
+        {
+            case 10:
+              hex[i]='A';
+              break;
+            case 11:
+              hex[i]='B';
+              break;
+            case 12:
+              hex[i]='C';
+              break;
+            case 13:
+              hex[i]='D';
+              break;
+            case 14:
+              hex[i]='E';
+              break;
+            case 15:
+              hex[i]='F';
+              break;
+            default:
+              hex[i]=rem+'0';
+              break;
+        }
+        i--;
+        n/=16;
+    }
+
+}
 
 
 int main(void) {
@@ -83,6 +129,30 @@ int main(void) {
 		  //while (!UARTCharsAvail(UART3_BASE)){
 		  aux = UARTCharGet(UART0_BASE);
 
+		  //test to see if the conversion using sprintf and sscanf works well
+		  for ( i = 0; i< 4 ; i++){
+			  cmd[i] = UARTCharGet(UART0_BASE);
+		  }
+		  UARTCharPut(UART0_BASE,'T');
+		  //Now i can read the data
+		  int value;
+		  // Not working on Stellaris..
+		  //sscanf(cmd, "%4x",&value);
+		   value = (int)strtol(cmd,&ptr,16);
+		  //prepara valores para devolverlos
+		  UARTCharPut(UART0_BASE,'T');
+		  UARTCharPut(UART0_BASE,'0');
+		  UARTCharPut(UART0_BASE,'M');
+		  ltoa((long)value,&cmd[4]);
+		  //sprintf(&cmd[4],"%.4X",value);
+		  decimal_hex(value, &cmd[10]);
+
+		  for ( i = 0; i< 15 ; i++){
+		  	 UARTCharPut(UART0_BASE,cmd[i]);
+		  }
+
+
+
 		  for(i = 0; i < 60; i++){ cmdIn[i] = 0;}
 
 		  while (cmdIn[1] != 'h' || cmdIn[2] !='p' || cmdIn[3] != 'o' ){ // && readChar !=28
@@ -132,7 +202,6 @@ int main(void) {
 		 //SysCtlDelay(5000000);
 		// GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
 		 //SysCtlDelay(5000000);
-
 
 	  }
 
