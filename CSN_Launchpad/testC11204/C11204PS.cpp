@@ -61,40 +61,28 @@ float unitConv(char* value, char unit){
 
 	return result;
 }
-/**
- *  Converts a float value to a hex char value...Hamamatsu did it...
- *  @param  value value to be converted
- *  @return the convereted value
- */
-char* charConv(float value, char unit){
 
-}
-
-
-/*
-C11204PS::C11204PS(unsigned long portBase) {
-	// TODO Auto-generated constructor stub
-	port = portBase;
-	comOpen = false;
-	int i;
-	for (i = 0; i < 60 ; i++){
-		cmdIn[i] = 0;
-		cmdOut[i] = 0;
-	}
-}
-
-C11204PS::~C11204PS() {
-	// TODO Auto-generated destructor stub
-}
-*/
 
 /**
  *  Copied from  http://www.programiz.com/c-programming/examples/hexadecimal-decimal-convert
  *
  */
-void decimal_hex(int n, char hex[]) /* Function to convert decimal to hexadecimal. */
+void decimal_hex(int n, unsigned char hex[]) /* Function to convert decimal to hexadecimal. */
 {
     int i=3,rem;  // i=4 I will only use numbers smaller than this
+    if ( n < 0 ){ n = 0xFFFF - n*(-1)+1;}
+    /*else{
+    	if(n < 0x0FFF) {
+
+    		hex[0] = '0'; i = 2;
+    	}
+    	if (n < 0x00FF){
+    		hex[1] = '0'; i = 1;
+    	}
+    	if ( n < 0x000F) {
+    		hex[2] = '0'; i = 0;
+    	}
+    }*/
     while (n!=0 && i >= 0)
     {
         rem=n%16;
@@ -125,7 +113,71 @@ void decimal_hex(int n, char hex[]) /* Function to convert decimal to hexadecima
         i--;
         n/=16;
     }
+    for (i = 0; i < 4; i++){
+    	if (hex[i] == 0) hex[i] = '0';
+    }
 
+}
+
+/**
+ *  Converts a float value to a hex char value...Hamamatsu did it...
+ *  @param  value value to be converted
+ *  @param unit that will be converted
+ *  @param outPut  char array containing the value as HEX chars
+ */
+void charConv(float value, char unit, unsigned char outPut[]){
+	int result;
+	//Now choose the proper conversion factor and...voilaaaa
+		switch (unit){
+			case 'V':
+				result = (int)(value/1.812e-3);
+				break;
+			case 'A':
+				result = (int)(value/4.98e-3);
+				break;
+			case 'C':
+				result = (int)((value*-5.5e-3+1.035)/(1.907e-5));
+				break;
+			case 'D':
+				result = (int)(value/1.507e-3);
+				break;
+			case 'T':
+				result = (int)(value*5.225e-2);
+			default:
+				result = -1.0;
+		}
+		decimal_hex(result, outPut);
+}
+
+
+
+
+/**
+ * Computes the CRC
+ * @param buffer data used for the calculation
+ * @pra length length of the current data message
+ * @para CRC obtained CRC output
+ *
+ */
+void computeCRC(unsigned char buffer[], int length, unsigned char CRC[]){
+	  int i = 0;
+	  unsigned char sumVal = 0;
+	  for (i = 0 ; i < length-3; i++){
+	    sumVal+= buffer[i];
+	  }
+	  CRC[0] = ((sumVal & 0xF0)>>4)+ 0x30;
+	  if (CRC[0] > 0x39) CRC[0]+=0x07;
+	  CRC[1] = (sumVal & 0x0F) + 0x30;
+	  if (CRC[1] > 0x39) CRC[1]+=0x07;
+}
+
+bool checkCRC(unsigned char buffer[], int length){
+	  unsigned char CRC[2];
+	  computeCRC(buffer, length, CRC);
+
+	  if(CRC[0] == buffer[length-3] && CRC[1] == buffer[length-2])
+	  {return true;}
+	  else { return false; }
 }
 
 /**
@@ -157,9 +209,73 @@ int startCommunication(unsigned long port){
 }
 
 /**
- *  Used for status monitoring
+ *  Used to check that the correct answer is obtained
+ *  @param cmdOut  command that will be sent
+ *  @param outLength  length of the output message
+ *  @param cmdIn data received from the power supply
+ *  @param inLength  expected length of the received message
+ *  @param port base register of the UART port used
  *
- *  @return Array containing: status, output volt setting, output volt monitor, output current monitor, MPPC temp monitor
+ *  @return -1 in case of error, 0 otherwise
+ */
+int readAnswer(unsigned char cmdOut[], int outLength, unsigned char cmdIn[], int inLength,unsigned long port){
+	//TODO
+	//all the checks and the continous sendind of the output message is due to inastability in the comm
+	//probably this wont be necessary when using a level shifter....
+	//the same with the inLength...currently error messages are being discarded, as they were mainly due to comm failures
+	//and the only way to fix this...was sending another messages as a level shifter is not currently available
+	int i = 0;
+	int readChar = 0;
+	unsigned char aux;
+
+	for (i = 0;  i <inLength ; i++) cmdIn[i] = 0;
+	//Check that we have received the proper answer...being this the same sent command but in lower case, thus the +20
+	while (cmdIn[1] != (cmdOut[1]+32) || cmdIn[2] !=(cmdOut[2]+32) || cmdIn[3] != (cmdOut[3]+32) ){ // && readChar !=28
+
+		//clean the UART buffer first
+		while(UARTCharsAvail(port)){ aux = UARTCharGet(port);}
+
+		for (i = 0; i < outLength ; i++){
+			UARTCharPut(port, cmdOut[i]);
+		}
+		// Wait for all data to be read by the C11204
+		while (UARTBusy(port)){}
+
+		//Now the read command
+		readChar = 0;
+		aux = 0;
+
+
+		//wait to get the start of a new message
+		while(aux != 0x02){
+			aux = UARTCharGetNonBlocking(port); //NonBlocking
+		}
+		cmdIn[readChar++] = aux;
+
+		while(aux != 0x0D){
+			aux = UARTCharGetNonBlocking(port);
+			//send the read bytes to the usb
+			if (aux!= 0xFF) {
+				cmdIn[readChar++]=aux;
+			}
+		}
+
+	}
+
+	//Check that both length are the same
+	if (readChar == inLength){
+		return 0;
+	}else{
+		return -1;
+	}
+}
+
+/**
+ *  Used for status monitoring
+ *  @param port Base register of the port that will be used
+ *  @param outData where the obtained results will be stored
+ *  		 Array containing: status, output volt setting, output volt monitor, output current monitor, MPPC temp monitor
+ *  @return -1 in case of error 0 otherwise
  *
  *  status....							0				1
  *  bit0 	High voltage output 		OFF				ON
@@ -172,15 +288,15 @@ int startCommunication(unsigned long port){
  *	bit7-16	Reserved
  *
  */
-float* getInfoAndStatus(unsigned long port){
-	float outData[5];
-	char aux = 0;
-	int readChar = 0;
+int getInfoAndStatus(unsigned long port, float outData[]){
+	//float outData[5];
 	int i;
 	char hexChar[4];
 
-	unsigned char cmdIn[60]; 	///buffer that will be used for I/O commands
-	unsigned char cmdOut[60]; 	///buffer that will be used for I/O commands
+    int outLength = 8;
+    int inLength = 28;
+	unsigned char cmdIn[28+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[8+5]; 	///buffer that will be used for I/O commands
 
 	//Construct the output message
 	cmdOut[0] = 0x02;
@@ -192,55 +308,25 @@ float* getInfoAndStatus(unsigned long port){
 	cmdOut[6] = 0x43; // CRC2
 	cmdOut[7] = 0x0D; //delimeter
 
-	for (i = 0;  i <60 ; i++) cmdIn[i] = 0;
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
 
-	//all of this checks later on will not be needed
-	while (cmdIn[1] != 'h' || cmdIn[2] !='p' || cmdIn[3] != 'o' ){ // && readChar !=28
-
-		//clean the buffer first
-		while(UARTCharsAvail(port)){ aux = UARTCharGet(port);}
-
-		for (i = 0; i < 8 ; i++){
-			UARTCharPut(port, cmdOut[i]);
-		}
-
-		while (UARTBusy(port)){}
-		// }
-
-		//Now the read command
-		//I now i will get 28 bytes so...
-		readChar = 0;
-		aux = 0;
-
-		// GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x04);
-
-		//wait to get the start of a new message
-		while(aux != 0x02){
-			aux = UARTCharGetNonBlocking(port); //NonBlocking
-		}
-		cmdIn[readChar++] = aux;
-
-		// while(UARTCharsAvail(UART3_BASE) && readChar < 60 && readChar ){
-		while(aux != 0x0D){ //(readChar < 28){
-			//for (i = 0; i < 28; i++){
-			//  cmdIn[i] = UARTCharGetNonBlocking(UART2_BASE);
-			aux = UARTCharGetNonBlocking(port); //NonBlocking
-			//send the read bytes to the usb
-			if (aux!= 0xFF) {
-				cmdIn[readChar++]=aux;
-			}
-		}
-
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		for ( i = 0; i<5; i++) outData[i] = 0.0;
+		return -1;
 	}
 
-	  UARTCharPut(UART0_BASE,'\n');
-	  UARTCharPut(UART0_BASE, readChar);
-	  for (i = 0; i <readChar; i++){
-		  UARTCharPut(UART0_BASE, cmdIn[i]);
-	  }
+	//for debugging only
+	/*
+	UARTCharPut(UART0_BASE,'\n');
+	for (i = 0; i <inLength; i++){
+		UARTCharPut(UART0_BASE, cmdIn[i]);
+	}
+	*/
 
 	//Data conversion into actual floats with actual units...
-
 	// Status Info
 	hexChar[0] = '0';
 	for ( i = 1; i< 4 ; i++) hexChar[i] = cmdIn[i+3];
@@ -252,17 +338,39 @@ float* getInfoAndStatus(unsigned long port){
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+11];
 	outData[2] = unitConv(hexChar,'V');
 	//output current monitor
-	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+15];
+	hexChar[0] = '0';  //range 0x0000 - 0x03FF
+	for ( i = 1; i< 4 ; i++) hexChar[i] = cmdIn[i+15];
 	outData[3] = unitConv(hexChar,'A');
 	//MPPC temp monitor
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+19];
 	outData[4] = unitConv(hexChar,'C');
 
-	return outData;
+	return 0;
 }
-int setTempCorrFact(float* tempCorrFactor){
 
+/**
+ * Set the temperature correction factors, the reference temperature and the reference voltage
+ * @para tempCorrFactor array containing all the new values as floats in their corresponding units (6 values in total)
+ * 		Secondly high temperature side coefficient DT’1, Secondly low temperature side coefficient DT’2,
+ * 		Primary high temperature side coefficient DT1, Primary low temperature side coefficient DT2,
+ * 		Reference voltage Vb, Reference temperature Tb
+ */
+int setTempCorrFact(float tempCorrFactor[]){
+	unsigned char datChar[4];
+	int value = -1000;
+	decimal_hex(value,datChar);
+	int i;
+	for (i = 0 ; i <4 ; i++){
+		UARTCharPut(UART0_BASE,datChar[i]);
+		datChar[i] = 0;
+	}
+
+
+
+	return 0;
 }
+
+
 void setHVOn(){
 
 }
@@ -275,15 +383,110 @@ void switchTempComp(){
 void pSReset(){
 
 }
-void setTempHV(float tempHV){
+
+/**
+ * Temporary setting for the reference voltage
+ * @param port Base register of the UART port used
+ * @param tempHV High voltage value to set
+ *
+ * @returns -1 in case of error, 0 otherwise
+ */
+int setTempHV(unsigned long port, float tempHV){
+
+    int outLength = 12;
+    int inLength = 8;
+	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[12+5]; 	///buffer that will be used for I/O commands
+	unsigned  char tmpBuff[4]; //used for the CRC and the data conversion
+
+	//Construct the output message
+	cmdOut[0] = 0x02;
+
+	cmdOut[1] = 'H';
+	cmdOut[2] = 'B'; //
+	cmdOut[3] = 'V'; //O
+
+	//now follows the 4 data bytes
+	charConv(tempHV,'V', tmpBuff);
+	cmdOut[4] = tmpBuff[0];
+	cmdOut[5] = tmpBuff[1];
+	cmdOut[6] = tmpBuff[2];
+	cmdOut[7] = tmpBuff[3];
+
+	cmdOut[8] = 0x03; // end
+
+	//The two CRC bytes, compute the CRC
+	computeCRC(cmdOut,outLength,tmpBuff);
+	cmdOut[9] = tmpBuff[0];
+	cmdOut[10] = tmpBuff[1];
+
+	cmdOut[11] = 0x0D; //delimeter
+
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		return -1;
+	}
+
+	return 0;
+
 
 }
 float getMPPCTemp(){
 
 }
-float getOutputHV(){
 
+/**
+ * Get the output voltage
+ * @param port Base register addrees of the UART port used
+ *
+ * @return Output voltage in the corresponding units, returns -1 in case of error
+ */
+float getOutputHV(unsigned long port){
+	int i;
+	char hexChar[4];
+	float outData;
+    int outLength = 8;
+    int inLength = 12;
+	unsigned char cmdIn[12+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[8+5]; 	///buffer that will be used for I/O commands
+	unsigned  char tmpBuff[2]; //used for the CRC and the data conversion
+
+	//Construct the output message
+	cmdOut[0] = 0x02;
+
+	cmdOut[1] = 'H';
+	cmdOut[2] = 'G'; //
+	cmdOut[3] = 'V'; //O
+	cmdOut[4] = 0x03; // end
+
+	//The two CRC bytes, compute the CRC
+	computeCRC(cmdOut,outLength,tmpBuff);
+	cmdOut[5] = tmpBuff[0];
+	cmdOut[6] = tmpBuff[1];
+
+	cmdOut[7] = 0x0D; //delimeter
+
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		return -1;
+	}
+
+	//convert the corresponding value
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
+	outData = unitConv(hexChar,'V');
+
+	return outData;
 }
+
+
 float getOutputCurrent(){
 
 }
@@ -292,12 +495,6 @@ float getStatus(){
 }
 
 
-unsigned char* computeCRC(unsigned char* buffer, int length){
-
-}
-bool checkCRC(unsigned char* buffer, int length){
-
-}
 
 
 

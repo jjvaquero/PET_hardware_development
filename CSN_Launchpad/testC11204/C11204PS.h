@@ -61,17 +61,26 @@ extern "C"
 	 *   TODO add support for other ports, currently only UART3 will be allowed
 	 */
 extern	int startCommunication(unsigned long port);
-extern	float* getInfoAndStatus(unsigned long port);
-	int setTempCorrFact(float* tempCorrFactor);
+extern int getInfoAndStatus(unsigned long port, float outData[]);
+extern int setTempCorrFact(float tempCorrFactor[]);
 	void setHVOn();
 	void setHVOff();
 	void switchTempComp();
 	void pSReset();
-	void setTempHV(float tempHV);
+extern int setTempHV(unsigned long port, float tempHV);
 	float getMPPCTemp();
-	float getOutputHV();
+extern float getOutputHV(unsigned long port);
 	float getOutputCurrent();
 	float getStatus();
+
+//Internal Functions
+	void computeCRC(unsigned char buffer[], int length, unsigned char CRC[]);
+	//TODO...the fuck with the compiler.....for some reason is not letting me put bool here....
+//	bool checkCRC(unsigned char buffer[], int length);
+	int readAnswer(unsigned char cmdOut[], int outLength, unsigned char cmdIn[], int inLength, unsigned long port);
+	float unitConv(char* value, char unit);
+	void charConv(float value, char unit, char outPut[]);
+
 
 //	virtual ~C11204PS();
 

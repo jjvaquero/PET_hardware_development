@@ -12,16 +12,6 @@
 #include "C11204PS.h"
 
 
-unsigned char cmdOut[60];
-char cmdIn[60];
-int readChar;
-unsigned char aux;
-char cmd[15];
-char* ptr;
-float* ptrFloat;
-float vars[5];
-
-
 
 /**
  *  Copied from  http://www.programiz.com/c-programming/examples/hexadecimal-decimal-convert
@@ -30,6 +20,7 @@ float vars[5];
 void decimal_hex(int n, char hex[]) /* Function to convert decimal to hexadecimal. */
 {
     int i=3,rem;  // i=4 I will only use numbers smaller than this
+    if ( n < 0 ){ n = 0xFFFF - n*(-1)+1;}
     while (n!=0 && i >= 0)
     {
         rem=n%16;
@@ -67,6 +58,13 @@ void decimal_hex(int n, char hex[]) /* Function to convert decimal to hexadecima
 int main(void) {
 
 	int i = 0;
+	char cmdIn[60];
+	int readChar;
+    unsigned char aux;
+    int errCode;
+	float vars[5];
+	float HVset = 72.0;
+
 	//system clock config, 50 MHz, using PLL and a 16 Mhz XTAL,  to use 80 Mhz, sysctl_sysdiv_2_5
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5| SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ | SYSCTL_OSC_MAIN);
 
@@ -92,18 +90,6 @@ int main(void) {
 	startCommunication(UART3_BASE);
 
 
-
-
-//	UARTStdioInit(0);
-	//populate the array now
-	  cmdOut[0] = 0x02;
-	  cmdOut[1] = 0x48;
-	  cmdOut[2] = 0x50;
-	  cmdOut[3] = 0x4F;
-	  cmdOut[4] = 0x03;
-	  cmdOut[5] = 0x45; //0x00;
-	  cmdOut[6] = 0x43; //0xEA; //x43;
-	  cmdOut[7] = 0x0D;
 	  //Now i will send the data thoroug the serial port
 
 	  UARTCharPut(UART0_BASE, 'E');
@@ -127,36 +113,45 @@ int main(void) {
 		  //while (!UARTCharsAvail(UART3_BASE)){
 		  aux = UARTCharGet(UART0_BASE);
 
-		  for(i = 0; i < 60; i++){ cmdIn[i] = 0;}
+		  //test the voltage setting
+		  errCode = setTempHV(UART3_BASE, HVset);
+		  if(HVset < 80.0){
+			  HVset += 1.00;
+		  }else{
+			  HVset = 72.00;
+		  }
 
-			ptrFloat = getInfoAndStatus(UART3_BASE);
+		  setTempCorrFact(vars);
 
-			for (i = 0; i < 5 ; i++){
-				vars[i] = *ptrFloat;
-				ptrFloat++;
-				readChar += ltoa((long) vars[i], &cmdIn[readChar]);
-				cmdIn[readChar] = ' ';
-				readChar++;
-			}
+		  //read the output voltage
+		  UARTCharPut(UART0_BASE,'V');
+		  vars[0] =  getOutputHV(UART3_BASE);
+		  readChar = 0;
+		  readChar += ltoa((long) vars[0], &cmdIn[readChar]);
+		  cmdIn[readChar] = '\n ';
+		  readChar++;
 
-
-
-		  UARTCharPut(UART0_BASE,'\n');
-		  UARTCharPut(UART0_BASE, readChar);
 		  for (i = 0; i <readChar; i++){
 			  UARTCharPut(UART0_BASE, cmdIn[i]);
 		  }
 
-		  readChar = 0;
 
-		 //SysCtlDelay(5000000);
-		// GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
-		 //SysCtlDelay(5000000);
+		  errCode = getInfoAndStatus(UART3_BASE,vars);
+		  readChar = 0;
+		  if (errCode == 0){
+			  for (i = 0; i < 5 ; i++){
+				  readChar += ltoa((long) vars[i], &cmdIn[readChar]);
+				  cmdIn[readChar] = ' ';
+				  readChar++;
+			  }
+			  UARTCharPut(UART0_BASE,'\n');
+			  UARTCharPut(UART0_BASE, readChar);
+			  for (i = 0; i <readChar; i++){
+				  UARTCharPut(UART0_BASE, cmdIn[i]);
+			  }
+		  }
 
 	  }
-
-
-
 
 
 	return 0;
