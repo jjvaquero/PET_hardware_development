@@ -46,13 +46,6 @@ extern "C"
  * 	Get the output current 						HGC 	Get the output current
  * 	Get the status 								HGS 	Get the status
 
-****///
-
-
-//class C11204PS {
-//public:
-//	C11204PS(unsigned long portBase);
-
 	/**
 	 *  This function should be called at the peripheral configuration phase
 	 *   the first step would be to check that the port is working properly
@@ -62,66 +55,28 @@ extern "C"
 	 */
 extern	int startCommunication(unsigned long port);
 extern int getInfoAndStatus(unsigned long port, float outData[]);
-extern int setTempCorrFact(float tempCorrFactor[]);
-	void setHVOn();
-	void setHVOff();
-	void switchTempComp();
-	void pSReset();
+extern int setTempCorrFact(unsigned long port, float tempCorrFactor[]);
+extern int setHVOn(unsigned long port);
+extern int setHVOff(unsigned long port);
+extern int switchTempComp(unsigned long port, tBoolean status);
+extern int pSReset(unsigned long port);
 extern int setTempHV(unsigned long port, float tempHV);
-	float getMPPCTemp();
+extern float getMPPCTemp(unsigned long port);
 extern float getOutputHV(unsigned long port);
-	float getOutputCurrent();
-	float getStatus();
+extern	float getOutputCurrent(unsigned long port);
+extern	float getStatus(unsigned long port);
+
+//TODO   Read the temperature correction factor
+
 
 //Internal Functions
 	void computeCRC(unsigned char buffer[], int length, unsigned char CRC[]);
 	//TODO...the fuck with the compiler.....for some reason is not letting me put bool here....
-//	bool checkCRC(unsigned char buffer[], int length);
+    tBoolean checkCRC(unsigned char buffer[], int length);
 	int readAnswer(unsigned char cmdOut[], int outLength, unsigned char cmdIn[], int inLength, unsigned long port);
 	float unitConv(char* value, char unit);
 	void charConv(float value, char unit, char outPut[]);
 
-
-//	virtual ~C11204PS();
-
-//private:
-	/**
-	 *  Computes the CRC
-	 *  @param buffer array on which the CRC will be computed
-	 *  @param length length of current array, message size is command dependant
-	 *  @return computed CRC bytes, always 2 bytes
-	 */
-//	unsigned char* computeCRC(unsigned char* buffer, int length);
-
-	/**
-	 *  Checks the CRC
-	 *  @param buffer array on which the CRC will be computed
-	 *  @param length length of current array, message size is command dependant
-	 *  @return true if CRC is ok
-	 */
-//	bool checkCRC(unsigned char* buffer, int length);
-
-	/**
-	 *  Converts a hex value stored in a char array
-	 *  to its proper float value using the Hamamatsu conversion table
-	 *  @param value array contaning the hexValues as chars
-	 *  @param unit unit to be converted
-	 *  @return the corresponding value as a float
-	 */
-//	float unitConv(char* value, char unit);
-	/**
-	 *  Converts a float value to a hex char value...Hamamatsu did it...
-	 *  @param  value value to be converted
-	 *  @return the convereted value
-	 */
-//	char* charConv(float value, char unit);
-
-/*	unsigned long port;		/// port base register
-	bool comOpen;
-	unsigned char cmdIn[60]; 	///buffer that will be used for I/O commands
-	unsigned char cmdOut[60]; 	///buffer that will be used for I/O commands
-
-};*/
 
 	//*****************************************************************************
 	//

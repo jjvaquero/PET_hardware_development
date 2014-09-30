@@ -64,6 +64,7 @@ int main(void) {
     int errCode;
 	float vars[5];
 	float HVset = 72.0;
+	float tempCorrFactors[6];
 
 	//system clock config, 50 MHz, using PLL and a 16 Mhz XTAL,  to use 80 Mhz, sysctl_sysdiv_2_5
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5| SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ | SYSCTL_OSC_MAIN);
@@ -112,7 +113,11 @@ int main(void) {
 		  //Send the hpo command until i get an answer from the system
 		  //while (!UARTCharsAvail(UART3_BASE)){
 		  aux = UARTCharGet(UART0_BASE);
-
+/*
+ *  				Allreay tested
+ *
+ *
+ *
 		  //test the voltage setting
 		  errCode = setTempHV(UART3_BASE, HVset);
 		  if(HVset < 80.0){
@@ -120,8 +125,6 @@ int main(void) {
 		  }else{
 			  HVset = 72.00;
 		  }
-
-		  setTempCorrFact(vars);
 
 		  //read the output voltage
 		  UARTCharPut(UART0_BASE,'V');
@@ -134,6 +137,31 @@ int main(void) {
 		  for (i = 0; i <readChar; i++){
 			  UARTCharPut(UART0_BASE, cmdIn[i]);
 		  }
+*/
+
+
+		  /*
+		  * 		Secondly high temperature side coefficient DT’1, Secondly low temperature side coefficient DT’2,
+		  * 		Primary high temperature side coefficient DT1, Primary low temperature side coefficient DT2,
+		  * 		Reference voltage Vb, Reference temperature Tb
+		  */
+		  if(HVset < 80.0){
+		  			  HVset += 1.00;
+		  		  }else{
+		  			  HVset = 72.00;
+		  		  }
+		  tempCorrFactors[0] = 0.0; tempCorrFactors[1] = 0.0;
+		  tempCorrFactors[2] = 100.0; tempCorrFactors[3] = 100.0;
+		  tempCorrFactors[4] = HVset; tempCorrFactors[5] = 25.0;
+
+		  setTempCorrFact(UART3_BASE, tempCorrFactors);
+
+		  switchTempComp(UART3_BASE, false);
+
+		  //turn on HV
+		  setHVOn(UART3_BASE);
+		  //turn off HV
+		  //setHVOff(UART3_BASE);
 
 
 		  errCode = getInfoAndStatus(UART3_BASE,vars);
@@ -145,7 +173,7 @@ int main(void) {
 				  readChar++;
 			  }
 			  UARTCharPut(UART0_BASE,'\n');
-			  UARTCharPut(UART0_BASE, readChar);
+			 // UARTCharPut(UART0_BASE, readChar);
 			  for (i = 0; i <readChar; i++){
 				  UARTCharPut(UART0_BASE, cmdIn[i]);
 			  }

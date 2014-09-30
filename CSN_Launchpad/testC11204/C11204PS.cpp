@@ -126,7 +126,10 @@ void decimal_hex(int n, unsigned char hex[]) /* Function to convert decimal to h
  *  @param outPut  char array containing the value as HEX chars
  */
 void charConv(float value, char unit, unsigned char outPut[]){
-	int result;
+
+	int result,i;
+	//Make that the output array is clear
+	for (i = 0; i < 4 ; i++) {outPut[i] = 0;}
 	//Now choose the proper conversion factor and...voilaaaa
 		switch (unit){
 			case 'V':
@@ -171,7 +174,7 @@ void computeCRC(unsigned char buffer[], int length, unsigned char CRC[]){
 	  if (CRC[1] > 0x39) CRC[1]+=0x07;
 }
 
-bool checkCRC(unsigned char buffer[], int length){
+tBoolean checkCRC(unsigned char buffer[], int length){
 	  unsigned char CRC[2];
 	  computeCRC(buffer, length, CRC);
 
@@ -319,30 +322,30 @@ int getInfoAndStatus(unsigned long port, float outData[]){
 	}
 
 	//for debugging only
-	/*
+
 	UARTCharPut(UART0_BASE,'\n');
 	for (i = 0; i <inLength; i++){
 		UARTCharPut(UART0_BASE, cmdIn[i]);
 	}
-	*/
+
 
 	//Data conversion into actual floats with actual units...
 	// Status Info
-	hexChar[0] = '0';
-	for ( i = 1; i< 4 ; i++) hexChar[i] = cmdIn[i+3];
+	//hexChar[0] = '0';
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
 	outData[0] = (float)strtol(hexChar,0,16);
 	//output volt setting
-	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+7];
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+8];
 	outData[1] = unitConv(hexChar,'V');
 	//output volt monitor
-	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+11];
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+12];
 	outData[2] = unitConv(hexChar,'V');
 	//output current monitor
-	hexChar[0] = '0';  //range 0x0000 - 0x03FF
-	for ( i = 1; i< 4 ; i++) hexChar[i] = cmdIn[i+15];
+	//hexChar[0] = '0';  //range 0x0000 - 0x03FF
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+16];
 	outData[3] = unitConv(hexChar,'A');
 	//MPPC temp monitor
-	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+19];
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+20];
 	outData[4] = unitConv(hexChar,'C');
 
 	return 0;
@@ -354,33 +357,250 @@ int getInfoAndStatus(unsigned long port, float outData[]){
  * 		Secondly high temperature side coefficient DT’1, Secondly low temperature side coefficient DT’2,
  * 		Primary high temperature side coefficient DT1, Primary low temperature side coefficient DT2,
  * 		Reference voltage Vb, Reference temperature Tb
+ * 	@param port Base register address of the UART port used
+ *
+ * 	@return -1 in case of error 0 otherwise
  */
-int setTempCorrFact(float tempCorrFactor[]){
-	unsigned char datChar[4];
-	int value = -1000;
-	decimal_hex(value,datChar);
-	int i;
-	for (i = 0 ; i <4 ; i++){
-		UARTCharPut(UART0_BASE,datChar[i]);
-		datChar[i] = 0;
+int setTempCorrFact(unsigned long port, float tempCorrFactor[]){
+
+	int outLength = 32;
+	int inLength = 8;
+	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[32+5]; 	///buffer that will be used for I/O commands
+	unsigned  char tmpBuff[4]; //used for the CRC and the data conversion
+
+	//Construct the output message
+	cmdOut[0] = 0x02;
+
+	cmdOut[1] = 'H';
+	cmdOut[2] = 'S'; //
+	cmdOut[3] = 'T'; //O
+
+	//Secondly high temperature side coefficient DT’1
+	charConv(tempCorrFactor[0],'D', tmpBuff);
+	cmdOut[4] = tmpBuff[0];
+	cmdOut[5] = tmpBuff[1];
+	cmdOut[6] = tmpBuff[2];
+	cmdOut[7] = tmpBuff[3];
+
+	//Secondly low temperature side coefficient DT’2
+	charConv(tempCorrFactor[1],'D', tmpBuff);
+	cmdOut[8] = tmpBuff[0];
+	cmdOut[9] = tmpBuff[1];
+	cmdOut[10] = tmpBuff[2];
+	cmdOut[11] = tmpBuff[3];
+
+	//Primary high temperature side coefficient DT1
+	charConv(tempCorrFactor[2],'T', tmpBuff);
+	cmdOut[12] = tmpBuff[0];
+	cmdOut[13] = tmpBuff[1];
+	cmdOut[14] = tmpBuff[2];
+	cmdOut[15] = tmpBuff[3];
+
+	//Primary low temperature side coefficient DT2
+	charConv(tempCorrFactor[3],'T', tmpBuff);
+	cmdOut[16] = tmpBuff[0];
+	cmdOut[17] = tmpBuff[1];
+	cmdOut[18] = tmpBuff[2];
+	cmdOut[19] = tmpBuff[3];
+
+	//Reference voltage Vb
+	charConv(tempCorrFactor[4],'V', tmpBuff);
+	cmdOut[20] = tmpBuff[0];
+	cmdOut[21] = tmpBuff[1];
+	cmdOut[22] = tmpBuff[2];
+	cmdOut[23] = tmpBuff[3];
+
+	//Reference temperature Tb
+	charConv(tempCorrFactor[5],'C', tmpBuff);
+	cmdOut[24] = tmpBuff[0];
+	cmdOut[25] = tmpBuff[1];
+	cmdOut[26] = tmpBuff[2];
+	cmdOut[27] = tmpBuff[3];
+
+	cmdOut[28] = 0x03; // end
+
+	//The two CRC bytes, compute the CRC
+	computeCRC(cmdOut,outLength,tmpBuff);
+	cmdOut[29] = tmpBuff[0];
+	cmdOut[30] = tmpBuff[1];
+
+	cmdOut[31] = 0x0D; //delimeter
+
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		return -1;
 	}
-
-
 
 	return 0;
 }
 
+/**
+ * 	High voltage output ON
+ */
+int setHVOn(unsigned long port){
+	int outLength = 8;
+	int inLength = 8;
+	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[8+5]; 	///buffer that will be used for I/O commands
+	unsigned  char tmpBuff[2]; //used for the CRC and the data conversion
 
-void setHVOn(){
+	//Construct the output message
+	cmdOut[0] = 0x02;
+
+	cmdOut[1] = 'H';
+	cmdOut[2] = 'O';
+	cmdOut[3] = 'N';
+
+	cmdOut[4] = 0x03; // end
+
+	//The two CRC bytes, compute the CRC
+	computeCRC(cmdOut,outLength,tmpBuff);
+	cmdOut[5] = tmpBuff[0];
+	cmdOut[6] = tmpBuff[1];
+
+	cmdOut[7] = 0x0D; //delimeter
+
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		return -1;
+	}
+
+	return 0;
 
 }
-void setHVOff(){
+
+/**
+ * 	High voltage output OFF
+ */
+int setHVOff(unsigned long port){
+	int outLength = 8;
+	int inLength = 8;
+	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[8+5]; 	///buffer that will be used for I/O commands
+	unsigned  char tmpBuff[2]; //used for the CRC and the data conversion
+
+	//Construct the output message
+	cmdOut[0] = 0x02;
+
+	cmdOut[1] = 'H';
+	cmdOut[2] = 'O';
+	cmdOut[3] = 'F';
+
+	cmdOut[4] = 0x03; // end
+
+	//The two CRC bytes, compute the CRC
+	computeCRC(cmdOut,outLength,tmpBuff);
+	cmdOut[5] = tmpBuff[0];
+	cmdOut[6] = tmpBuff[1];
+
+	cmdOut[7] = 0x0D; //delimeter
+
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		return -1;
+	}
+
+	return 0;
 
 }
-void switchTempComp(){
+
+/**
+ * Switch the temperature compensation mode
+ * @param port UART port to use
+ * @param status Wether to turn it on or off
+ *
+ * @return -1 in case of error 0 otherwise
+ */
+int switchTempComp(unsigned long port, tBoolean status){
+
+	int outLength = 9;
+	int inLength = 8;
+	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[9+5]; 	///buffer that will be used for I/O commands
+	unsigned  char tmpBuff[2]; //used for the CRC and the data conversion
+
+	//Construct the output message
+	cmdOut[0] = 0x02;
+
+	cmdOut[1] = 'H';
+	cmdOut[2] = 'C';
+	cmdOut[3] = 'M';
+
+	//On or Off ...byte...ouuu yeahh pure Hamamatsu style
+	if (status== true) {cmdOut[4] = '1';}
+	else{ cmdOut[4] = '0';}
+
+	cmdOut[5] = 0x03; // end
+
+	//The two CRC bytes, compute the CRC
+	computeCRC(cmdOut,outLength,tmpBuff);
+	cmdOut[6] = tmpBuff[0];
+	cmdOut[7] = tmpBuff[1];
+
+	cmdOut[8] = 0x0D; //delimeter
+
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		return -1;
+	}
+
+	return 0;
 
 }
-void pSReset(){
+
+/**
+ * Reset of power supply
+ */
+int pSReset(unsigned long port){
+	int outLength = 8;
+	int inLength = 8;
+	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[8+5]; 	///buffer that will be used for I/O commands
+	unsigned  char tmpBuff[2]; //used for the CRC and the data conversion
+
+	//Construct the output message
+	cmdOut[0] = 0x02;
+
+	cmdOut[1] = 'H';
+	cmdOut[2] = 'R';
+	cmdOut[3] = 'E';
+
+	cmdOut[4] = 0x03; // end
+
+	//The two CRC bytes, compute the CRC
+	computeCRC(cmdOut,outLength,tmpBuff);
+	cmdOut[5] = tmpBuff[0];
+	cmdOut[6] = tmpBuff[1];
+
+	cmdOut[7] = 0x0D; //delimeter
+
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		return -1;
+	}
+
+	return 0;
 
 }
 
@@ -433,9 +653,53 @@ int setTempHV(unsigned long port, float tempHV){
 
 	return 0;
 
-
 }
-float getMPPCTemp(){
+
+/**
+ * 	Temperature acquisition MPPC
+ *	@param port UART port
+ *	@return MPPC temp value in deg C, -1 in case of error
+ */
+float getMPPCTemp(unsigned long port){
+    int outLength = 8;
+    int inLength = 12;
+    float outData;
+    char hexChar[4];
+    int i;
+	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[12+5]; 	///buffer that will be used for I/O commands
+	unsigned  char tmpBuff[4]; //used for the CRC and the data conversion
+
+	//Construct the output message
+	cmdOut[0] = 0x02;
+
+	cmdOut[1] = 'H';
+	cmdOut[2] = 'G';
+	cmdOut[3] = 'T';
+
+	cmdOut[4] = 0x03; // end
+
+	//The two CRC bytes, compute the CRC
+	computeCRC(cmdOut,outLength,tmpBuff);
+	cmdOut[5] = tmpBuff[0];
+	cmdOut[6] = tmpBuff[1];
+
+	cmdOut[7] = 0x0D; //delimeter
+
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		return -1;
+	}
+
+	//convert the corresponding value
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
+	outData = unitConv(hexChar,'C');
+
+	return outData;
 
 }
 
@@ -486,11 +750,101 @@ float getOutputHV(unsigned long port){
 	return outData;
 }
 
+/**
+ * Get the output current
+ * @param port Base register addrees of the UART port used
+ *
+ * @return Output current in the corresponding units, returns -1 in case of error
+ */
+float getOutputCurrent(unsigned long port){
+    int outLength = 8;
+    int inLength = 12;
+    float outData;
+    char hexChar[4];
+    int i;
+	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[12+5]; 	///buffer that will be used for I/O commands
+	unsigned  char tmpBuff[4]; //used for the CRC and the data conversion
 
-float getOutputCurrent(){
+	//Construct the output message
+	cmdOut[0] = 0x02;
 
+	cmdOut[1] = 'H';
+	cmdOut[2] = 'G';
+	cmdOut[3] = 'C';
+
+	cmdOut[4] = 0x03; // end
+
+	//The two CRC bytes, compute the CRC
+	computeCRC(cmdOut,outLength,tmpBuff);
+	cmdOut[5] = tmpBuff[0];
+	cmdOut[6] = tmpBuff[1];
+
+	cmdOut[7] = 0x0D; //delimeter
+
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		return -1;
+	}
+
+	//convert the corresponding value
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
+	outData = unitConv(hexChar,'A');
+
+	return outData;
 }
-float getStatus(){
+
+/**
+ * Get the current status of the C11204
+ * @param port Base register addrees of the UART port used
+ *
+ * @return Output voltage in the corresponding units, returns -1 in case of error
+ */
+float getStatus(unsigned long port){
+    int outLength = 8;
+    int inLength = 12;
+    float outData;
+    char hexChar[4];
+    int i;
+	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[12+5]; 	///buffer that will be used for I/O commands
+	unsigned  char tmpBuff[4]; //used for the CRC and the data conversion
+
+	//Construct the output message
+	cmdOut[0] = 0x02;
+
+	cmdOut[1] = 'H';
+	cmdOut[2] = 'G';
+	cmdOut[3] = 'S';
+
+	cmdOut[4] = 0x03; // end
+
+	//The two CRC bytes, compute the CRC
+	computeCRC(cmdOut,outLength,tmpBuff);
+	cmdOut[5] = tmpBuff[0];
+	cmdOut[6] = tmpBuff[1];
+
+	cmdOut[7] = 0x0D; //delimeter
+
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		return -1;
+	}
+
+	//convert the corresponding value
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
+	outData = (float)strtol(hexChar,0,16);
+
+	return outData;
+
 
 }
 
