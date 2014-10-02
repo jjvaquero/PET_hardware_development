@@ -4,13 +4,13 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := c:/ti/ccsv6/tools/compiler/arm_5.1.5
+CG_TOOL_ROOT := c:/ti/ccsv6/tools/compiler/arm_5.1.8
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
-"./main.obj" \
-"./lm4f120h5qr_startup_ccs.obj" \
 "./C11204PS.obj" \
+"./lm4f120h5qr_startup_ccs.obj" \
+"./main.obj" \
 "../lm4f120h5qr.cmd" \
 -l"libc.a" \
 -l"C:\StellarisWare\driverlib\ccs-cm4f\Debug\driverlib-cm4f.lib" \
@@ -130,13 +130,13 @@ all: testC11204.out
 testC11204.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define="ccs" --define=PART_LM4F120H5QR --display_error_number --diag_warning=225 --diag_wrap=off -z -m"testC11204.map" --heap_size=0 --stack_size=512 -i"c:/ti/ccsv6/tools/compiler/arm_5.1.5/lib" -i"c:/ti/ccsv6/tools/compiler/arm_5.1.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="testC11204_linkInfo.xml" --rom_model -o "testC11204.out" $(ORDERED_OBJS)
+	"c:/ti/ccsv6/tools/compiler/arm_5.1.8/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define="ccs" --define=PART_LM4F120H5QR --display_error_number --diag_warning=225 --diag_wrap=off -z -m"testC11204.map" --heap_size=0 --stack_size=512 -i"c:/ti/ccsv6/tools/compiler/arm_5.1.8/lib" -i"c:/ti/ccsv6/tools/compiler/arm_5.1.8/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="testC11204_linkInfo.xml" --rom_model -o "testC11204.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 testC11204.hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: ARM Hex Utility'
-	"c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/armhex"  -o "testC11204.hex" $(EXE_OUTPUTS__QUOTED)
+	"c:/ti/ccsv6/tools/compiler/arm_5.1.8/bin/armhex"  -o "testC11204.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $@'
 	@echo ' '
 
