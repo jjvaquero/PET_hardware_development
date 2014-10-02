@@ -1,14 +1,13 @@
 /*
  * C11204PS.cpp
  *
- *  Created on: 25/09/2014
+ * 		Library designed to communicate with the Hamamatsu power supply C11204
+ *
+ *  Created on: 02/10/2014
  *      Author: rchil
  */
 
 #include "C11204PS.h"
-
-
-
 
 
 /*
@@ -29,15 +28,15 @@
 /**
  *  Converts a hex value stored in a char array
  *  to its proper float value using the Hamamatsu conversion table
- *  @param value array contaning the hexValues as chars
+ *  @param value array contaning the hexCharues as chars
  *  @param unit unit to be converted
  *  @return the corresponding value as a float
  */
 float unitConv(char* value, char unit){
 	float tmpVal; //here i will place the value as integer after taking it from the string
 	float result; //value that will be returned
-	char* ptr;
-	tmpVal = (float)strtol(value,&ptr,16);
+	//char* ptr;
+	tmpVal = (float)strtol(value,0,16);
 
 	//Now choose the proper conversion factor and...voilaaaa
 	switch (unit){
@@ -55,6 +54,7 @@ float unitConv(char* value, char unit){
 			break;
 		case 'T':
 			result = tmpVal*5.225e-2;
+			break;
 		default:
 			result = -1.0;
 	}
@@ -145,7 +145,8 @@ void charConv(float value, char unit, unsigned char outPut[]){
 				result = (int)(value/1.507e-3);
 				break;
 			case 'T':
-				result = (int)(value*5.225e-2);
+				result = (int)(value/5.225e-2);
+				break;
 			default:
 				result = -1.0;
 		}
@@ -294,8 +295,7 @@ int readAnswer(unsigned char cmdOut[], int outLength, unsigned char cmdIn[], int
 int getInfoAndStatus(unsigned long port, float outData[]){
 	//float outData[5];
 	int i;
-	char hexChar[4];
-
+	char hexChar[5];
     int outLength = 8;
     int inLength = 28;
 	unsigned char cmdIn[28+5]; 	///buffer that will be used for I/O commands
@@ -321,19 +321,19 @@ int getInfoAndStatus(unsigned long port, float outData[]){
 		return -1;
 	}
 
+	/*
 	//for debugging only
-
 	UARTCharPut(UART0_BASE,'\n');
 	for (i = 0; i <inLength; i++){
 		UARTCharPut(UART0_BASE, cmdIn[i]);
 	}
+	*/
 
-
+	hexChar[4] = 0; //needed as end of string for strtol
 	//Data conversion into actual floats with actual units...
 	// Status Info
-	//hexChar[0] = '0';
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
-	outData[0] = (float)strtol(hexChar,0,16);
+	outData[0] = (float)strtol(hexChar,0,10);
 	//output volt setting
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+8];
 	outData[1] = unitConv(hexChar,'V');
@@ -351,9 +351,151 @@ int getInfoAndStatus(unsigned long port, float outData[]){
 	return 0;
 }
 
+int readTempCorrFact(unsigned long port, float outData[]){
+	int i;
+	unsigned char tmpBuff[2];
+	char hexChar[5];
+	int outLength = 8;
+	int inLength = 32;
+	unsigned char cmdIn[32+5]; 	///buffer that will be used for I/O commands
+	unsigned char cmdOut[8+5]; 	///buffer that will be used for I/O commands
+
+	//Construct the output message
+	cmdOut[0] = 0x02;
+	cmdOut[1] = 'H';
+	cmdOut[2] = 'R';
+	cmdOut[3] = 'T';
+
+	cmdOut[4] = 0x03; // end
+
+	//The two CRC bytes, compute the CRC
+	computeCRC(cmdOut,outLength,tmpBuff);
+	cmdOut[5] = tmpBuff[0];  //CRC1
+	cmdOut[6] = tmpBuff[1];  //CRC2
+
+	cmdOut[7] = 0x0D; //delimeter
+
+	//Read the expected answer from the comm port
+	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	//Check the CRC
+	if (!checkCRC(cmdIn, inLength)){
+		//In case something went wrong return an empty vector
+		for ( i = 0; i<6; i++) outData[i] = 0.0;
+		return -1;
+	}
+
+	/*
+	//for debugging only
+	UARTCharPut(UART0_BASE,'\n');
+	for (i = 0; i <inLength; i++){
+		UARTCharPut(UART0_BASE, cmdIn[i]);
+	}
+	*/
+	hexChar[4] = 0; //needed as end of string for strtol
+	//Data conversion into actual floats with actual units...
+	// Secondly high temperature side coefficient DT’1
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
+	outData[0] = unitConv(hexChar,'D');
+	//Secondly low temperature side coefficient DT’2
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+8];
+	outData[1] =unitConv(hexChar,'D');
+	//Primary high temperature side coefficient DT1
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+12];
+	outData[2] = unitConv(hexChar,'T');
+	//Primary low temperature side coefficient DT2
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+16];
+	outData[3] = unitConv(hexChar,'T');
+	//Reference voltage Vb
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+20];
+	outData[4] = unitConv(hexChar,'V');
+	//Reference voltage Tb
+	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+24];
+	outData[5] =unitConv(hexChar,'C');
+
+	return 0;
+}
+
+
+
+/*  Only god and the compiler know why inside this function calls to strtol where not working....
+ *
+ *
+
+int getTempCorrFact(unsigned long port, float outTemp[]){
+		int i;
+		unsigned char tmpBuff[2];
+		char hexChar[5];
+	    int outLength = 8;
+	    int inLength = 32;
+		unsigned char cmdIn[32+5]; 	///buffer that will be used for I/O commands
+		unsigned char cmdOut[8+5]; 	///buffer that will be used for I/O commands
+
+		//Construct the output message
+		cmdOut[0] = 0x02;
+		cmdOut[1] = 'H';
+		cmdOut[2] = 'R';
+		cmdOut[3] = 'T';
+
+		cmdOut[4] = 0x03; // end
+
+		//The two CRC bytes, compute the CRC
+		computeCRC(cmdOut,outLength,tmpBuff);
+		cmdOut[5] = tmpBuff[0];  //CRC1
+		cmdOut[6] = tmpBuff[1];  //CRC2
+
+		cmdOut[7] = 0x0D; //delimeter
+
+		//Read the expected answer from the comm port
+		readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+		//Check the CRC
+		if (!checkCRC(cmdIn, inLength)){
+			//In case something went wrong return an empty vector
+			for ( i = 0; i<6; i++) outTemp[i] = 0.0;
+			return -1;
+		}
+
+		//for debugging only
+		UARTCharPut(UART0_BASE,'\n');
+		for (i = 0; i <inLength; i++){
+			UARTCharPut(UART0_BASE, cmdIn[i]);
+		}
+		UARTCharPut(UART0_BASE,'\n');
+
+		//Data conversion into actual floats with actual units...
+		// Secondly high temperature side coefficient DT’1
+		for ( i = 0; i< 4 ; i++) hexChar[i] = '0';// cmdIn[i+4];}
+		for( i = 0; i < 4 ; i++){
+			UARTCharPut(UART0_BASE,hexChar[i]);
+		}
+		outTemp[0] = (float)strtol(hexChar,0,16); //unitConv(hexChar,'D');
+		//Secondly low temperature side coefficient DT’2
+		for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+8];
+		outTemp[1] =(float)strtol(hexChar,0,16); // unitConv(hexChar,'D');
+		//Primary high temperature side coefficient DT1
+		for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+12];
+		outTemp[2] = (float)strtol(hexChar,0,16); //unitConv(hexChar,'T');
+		//Primary low temperature side coefficient DT2
+		for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+16];
+		outTemp[3] =(float)strtol(hexChar,0,16); // unitConv(hexChar,'T');
+		//Reference voltage Vb
+		for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+20];
+		outTemp[4] = (float)strtol(hexChar,0,16); //unitConv(hexChar,'V');
+		//Reference voltage Tb
+		for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+24];
+		outTemp[5] =(float)strtol(hexChar,0,16); // unitConv(hexChar,'C');
+
+		return 0;
+}
+*/
+
+
+
 /**
  * Set the temperature correction factors, the reference temperature and the reference voltage
- * @para tempCorrFactor array containing all the new values as floats in their corresponding units (6 values in total)
+ * @para tempCorrFactor array containing all the values to be set
+ * 		as floats in their corresponding units (6 values in total)
  * 		Secondly high temperature side coefficient DT’1, Secondly low temperature side coefficient DT’2,
  * 		Primary high temperature side coefficient DT1, Primary low temperature side coefficient DT2,
  * 		Reference voltage Vb, Reference temperature Tb
@@ -664,7 +806,7 @@ float getMPPCTemp(unsigned long port){
     int outLength = 8;
     int inLength = 12;
     float outData;
-    char hexChar[4];
+    char hexChar[5];
     int i;
 	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
 	unsigned char cmdOut[12+5]; 	///buffer that will be used for I/O commands
@@ -695,6 +837,7 @@ float getMPPCTemp(unsigned long port){
 		return -1;
 	}
 
+	hexChar[4] = 0; //needed as end of string for strtol
 	//convert the corresponding value
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
 	outData = unitConv(hexChar,'C');
@@ -711,7 +854,7 @@ float getMPPCTemp(unsigned long port){
  */
 float getOutputHV(unsigned long port){
 	int i;
-	char hexChar[4];
+	char hexChar[5];
 	float outData;
     int outLength = 8;
     int inLength = 12;
@@ -743,6 +886,7 @@ float getOutputHV(unsigned long port){
 		return -1;
 	}
 
+	hexChar[4] = 0; //needed as end of string for strtol
 	//convert the corresponding value
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
 	outData = unitConv(hexChar,'V');
@@ -760,7 +904,7 @@ float getOutputCurrent(unsigned long port){
     int outLength = 8;
     int inLength = 12;
     float outData;
-    char hexChar[4];
+    char hexChar[5];
     int i;
 	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
 	unsigned char cmdOut[12+5]; 	///buffer that will be used for I/O commands
@@ -791,6 +935,7 @@ float getOutputCurrent(unsigned long port){
 		return -1;
 	}
 
+	hexChar[4] = 0; //needed as end of string for strtol
 	//convert the corresponding value
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
 	outData = unitConv(hexChar,'A');
@@ -803,12 +948,22 @@ float getOutputCurrent(unsigned long port){
  * @param port Base register addrees of the UART port used
  *
  * @return Output voltage in the corresponding units, returns -1 in case of error
+ *
+ *	status....							0				1
+ *  bit0 	High voltage output 		OFF				ON
+ *	bit1 	Over-current protection 	No 				Yes
+ *	bit2 	Current value 				within specs	outside specs
+ *	bit3 	MPPC temperature sensor 	Disconnect 		Connect
+ *	bit4 	MPPC temperature sensor 	Within specs 	Outside specs
+ *	bit5 	Reserve 1
+ *	bit6 	Temperature correction 		Invalid 		Effectiveness
+ *	bit7-16	Reserved
  */
 float getStatus(unsigned long port){
     int outLength = 8;
     int inLength = 12;
     float outData;
-    char hexChar[4];
+    char hexChar[5];
     int i;
 	unsigned char cmdIn[8+5]; 	///buffer that will be used for I/O commands
 	unsigned char cmdOut[12+5]; 	///buffer that will be used for I/O commands
@@ -839,9 +994,10 @@ float getStatus(unsigned long port){
 		return -1;
 	}
 
+	hexChar[4] = 0; //needed as end of string for strtol
 	//convert the corresponding value
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
-	outData = (float)strtol(hexChar,0,16);
+	outData = (float)strtol(hexChar,0,10);
 
 	return outData;
 

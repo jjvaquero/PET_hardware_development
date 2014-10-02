@@ -62,9 +62,10 @@ int main(void) {
 	int readChar;
     unsigned char aux;
     int errCode;
+    float tmpVolt;
 	float vars[5];
 	float HVset = 72.0;
-	float tempCorrFactors[6];
+	float tempCorrs[6];
 
 	//system clock config, 50 MHz, using PLL and a 16 Mhz XTAL,  to use 80 Mhz, sysctl_sysdiv_2_5
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5| SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ | SYSCTL_OSC_MAIN);
@@ -113,6 +114,8 @@ int main(void) {
 		  //Send the hpo command until i get an answer from the system
 		  //while (!UARTCharsAvail(UART3_BASE)){
 		  aux = UARTCharGet(UART0_BASE);
+		  UARTCharPut(UART0_BASE,aux);
+		  UARTCharPut(UART0_BASE,'\n');
 /*
  *  				Allreay tested
  *
@@ -137,6 +140,13 @@ int main(void) {
 		  for (i = 0; i <readChar; i++){
 			  UARTCharPut(UART0_BASE, cmdIn[i]);
 		  }
+
+		  //turn on HV
+		  //setHVOn(UART3_BASE);
+		  //turn off HV
+		  //setHVOff(UART3_BASE);
+
+		  switchTempComp(UART3_BASE, false);
 */
 
 
@@ -149,19 +159,18 @@ int main(void) {
 		  			  HVset += 1.00;
 		  		  }else{
 		  			  HVset = 72.00;
-		  		  }
-		  tempCorrFactors[0] = 0.0; tempCorrFactors[1] = 0.0;
-		  tempCorrFactors[2] = 100.0; tempCorrFactors[3] = 100.0;
-		  tempCorrFactors[4] = HVset; tempCorrFactors[5] = 25.0;
+		  }
+		  tempCorrs[0] = 0.0; tempCorrs[1] = 0.0;
+		  tempCorrs[2] = 100.0; tempCorrs[3] = 100.0;
+		  tempCorrs[4] = HVset; tempCorrs[5] = 25.0;
 
-		  setTempCorrFact(UART3_BASE, tempCorrFactors);
+		  setTempCorrFact(UART3_BASE, tempCorrs);
 
-		  switchTempComp(UART3_BASE, false);
 
-		  //turn on HV
-		  setHVOn(UART3_BASE);
-		  //turn off HV
-		  //setHVOff(UART3_BASE);
+
+		  //read and send through UART0 the new temp corr fact values
+		  //make sure i set them all to zero
+		  //for (i = 0; i < 6 ; i++){ tempCorrFactors[i] = 0;}
 
 
 		  errCode = getInfoAndStatus(UART3_BASE,vars);
@@ -172,11 +181,36 @@ int main(void) {
 				  cmdIn[readChar] = ' ';
 				  readChar++;
 			  }
-			  UARTCharPut(UART0_BASE,'\n');
 			 // UARTCharPut(UART0_BASE, readChar);
 			  for (i = 0; i <readChar; i++){
 				  UARTCharPut(UART0_BASE, cmdIn[i]);
 			  }
+		  }
+		  UARTCharPut(UART0_BASE,'\n');
+
+		  errCode = readTempCorrFact(UART3_BASE,tempCorrs);//;getTempCorrFact(UART3_BASE,tempCorrs);
+		  readChar = 0;
+		  if (errCode == 0){
+			  for (i = 0; i < 6 ; i++){
+				  readChar += ltoa((long) tempCorrs[i], &cmdIn[readChar]);
+				  cmdIn[readChar] = ' ';
+				  readChar++;
+			  }
+			 // UARTCharPut(UART0_BASE, readChar);
+			  for (i = 0; i <readChar; i++){
+				  UARTCharPut(UART0_BASE, cmdIn[i]);
+			  }
+		  }
+		  UARTCharPut(UART0_BASE,'\n');
+		  UARTCharPut(UART0_BASE,'T');
+		  tmpVolt =  getOutputCurrent(UART3_BASE);
+		  readChar = 0;
+		  readChar += ltoa((long) tmpVolt, &cmdIn[readChar]);
+		  cmdIn[readChar] = 13;
+		  readChar++;
+
+		  for (i = 0; i <readChar; i++){
+			  UARTCharPut(UART0_BASE, cmdIn[i]);
 		  }
 
 	  }
