@@ -111,32 +111,32 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-testC11204.out \
+test_bluetooth.out \
 
 EXE_OUTPUTS__QUOTED += \
-"testC11204.out" \
+"test_bluetooth.out" \
 
 BIN_OUTPUTS += \
-testC11204.hex \
+test_bluetooth.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"testC11204.hex" \
+"test_bluetooth.hex" \
 
 
 # All Target
-all: testC11204.out
+all: test_bluetooth.out
 
 # Tool invocations
-testC11204.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+test_bluetooth.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"c:/ti/ccsv6/tools/compiler/arm_5.1.8/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define="ccs" --define=PART_LM4F120H5QR --display_error_number --diag_warning=225 --diag_wrap=off -z -m"testC11204.map" --heap_size=0 --stack_size=512 -i"c:/ti/ccsv6/tools/compiler/arm_5.1.8/lib" -i"c:/ti/ccsv6/tools/compiler/arm_5.1.8/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="testC11204_linkInfo.xml" --rom_model -o "testC11204.out" $(ORDERED_OBJS)
+	"c:/ti/ccsv6/tools/compiler/arm_5.1.8/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define="ccs" --define=PART_LM4F120H5QR --display_error_number --diag_warning=225 --diag_wrap=off -z -m"test_bluetooth.map" --heap_size=0 --stack_size=512 -i"c:/ti/ccsv6/tools/compiler/arm_5.1.8/lib" -i"c:/ti/ccsv6/tools/compiler/arm_5.1.8/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="test_bluetooth_linkInfo.xml" --rom_model -o "test_bluetooth.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-testC11204.hex: $(EXE_OUTPUTS)
+test_bluetooth.hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: ARM Hex Utility'
-	"c:/ti/ccsv6/tools/compiler/arm_5.1.8/bin/armhex"  -o "testC11204.hex" $(EXE_OUTPUTS__QUOTED)
+	"c:/ti/ccsv6/tools/compiler/arm_5.1.8/bin/armhex"  -o "test_bluetooth.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $@'
 	@echo ' '
 
