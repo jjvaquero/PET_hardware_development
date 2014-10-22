@@ -249,7 +249,6 @@ int readAnswer(unsigned char cmdOut[], int outLength, unsigned char cmdIn[], int
 		readChar = 0;
 		aux = 0;
 
-
 		//wait to get the start of a new message
 		while(aux != 0x02){
 			aux = UARTCharGetNonBlocking(port); //NonBlocking
