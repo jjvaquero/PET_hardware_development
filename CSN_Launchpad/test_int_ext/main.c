@@ -9,16 +9,24 @@
 #include "driverlib/adc.h"
 
 //libraries used for the USB
+
+/*
+ *  Not used in this version
+ *
 #include "usblib/usblib.h"
 #include "usblib/usb-ids.h"
 #include "usblib/device/usbdevice.h"
 #include "usblib/device/usbdbulk.h"
 #include "utils/ustdlib.h"
 #include "usb_bulk_structs.h"
+*/
 
 //libraries for the SPI
 #include "driverlib/ssi.h"
 #include "inc/hw_ssi.h"
+
+//libraries for the C11204 power supply
+#include "C11204PS.h"
 
 //ISR function
 
@@ -36,6 +44,10 @@ unsigned long intTime = 5; // 50 Mhz -> 20 ns ...10*20 = 200 ns
 unsigned long ulData = 0;
 //int tempValue;
 
+//variables for the C11204
+float HVset;
+float tempCorrs[6];
+
 
 volatile unsigned long g_ulFlags = 0;
 char *g_pcStatus;
@@ -47,23 +59,31 @@ char *g_pcStatus;
 //*****************************************************************************
 
 //TODO quitar esto de aqui y ponerlo de forma que los USB send lo puedan ver
-/*
+
 typedef union {
 	unsigned short histTemp[4096];
 	unsigned char histCharBuff[4096*2];
 }sendBuffer;
 
 sendBuffer histBuff;
-*/
 
+tBoolean datFull = false;
 
 int main() {
+
+	unsigned char aux;
+	int i,readChar;
+	float vars[6];
+	int errCode;
+	char cmdIn[60];
+
 	//system clock config, 50 MHz, using PLL and a 16 Mhz XTAL,  to use 80 Mhz, sysctl_sysdiv_2_5
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5| SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ | SYSCTL_OSC_MAIN);
 
 
-	//Port A will be used for the SPI, using SSI0
+	//Port A will be used for the SPI, using SSI0....and also for UART
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI0);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 	//Port F is used to control the Button Interrupts and the LED
 	//TODO could be removed in future designs
@@ -93,6 +113,7 @@ int main() {
 	 *                 External interrupt configuration
 	 */
 
+	//External interrupt
 	GPIOPortIntRegister(GPIO_PORTD_BASE,ButtonPressInt);
 	GPIOIntTypeSet(GPIO_PORTD_BASE,GPIO_PIN_0, GPIO_RISING_EDGE);
 	GPIOPinIntEnable(GPIO_PORTD_BASE, GPIO_PIN_0);
@@ -134,6 +155,14 @@ int main() {
 	// Enable the SSI module.
 	SSIEnable(SSI0_BASE);
 
+
+	/*
+	 * 		C11204 Power supply configuration
+	 *
+	 */
+	startCommunication(UART3_BASE);
+
+
 	/*
 	 *            Timer configuration
 	 *
@@ -168,7 +197,7 @@ int main() {
 	//TODO uncomment this line to use the external ADC trigger
 	//ADCSequenceConfigure(ADC0_BASE, 0 , ADC_TRIGGER_EXTERNAL, 1);
 	//ADCSequenceConfigure(ADC0_BASE, 0 , ADC_TRIGGER_TIMER, 1);
-	//Software started conversion
+	//Software started conversion ... has proven to be unstable modfying integration times
 	ADCSequenceConfigure(ADC0_BASE, 0 , ADC_TRIGGER_PROCESSOR, 1);
 	//configure the sequence step
 	//ADCSequenceStepConfigure(ADC0_BASE, 0, 0, ADC_CTL_TS |ADC_CTL_IE| ADC_CTL_END);
@@ -180,18 +209,13 @@ int main() {
 	ADCSequenceEnable(ADC0_BASE,0);
 
 
-
 	/*
 	 * 				USB bulk transfer device Configuration
-	 */
+	 *
+	 * 				Not used on this version
+
 	//No need to call GPIOPinCOnfigure for the USB to work properly
 	GPIOPinTypeUSBAnalog(GPIO_PORTD_BASE, GPIO_PIN_4 | GPIO_PIN_5);
-
-	//
-	// Initialize the transmit and receive buffers.
-	//
-	//USBBufferInit((tUSBBuffer *)&g_sTxBuffer);
-	//USBBufferInit((tUSBBuffer *)&g_sRxBuffer);
 
 	//
 	// Set the USB stack mode to Device mode with VBUS monitoring.
@@ -211,86 +235,98 @@ int main() {
 	g_ulTxCount = 0;
 	ulRxCount = 0;
 	ulTxCount = 0;
+	*/
+	//Pin config
+	GPIOPinConfigure(GPIO_PA0_U0RX);
+	GPIOPinConfigure(GPIO_PA1_U0TX);
+	GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+	UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), 115200,
+			(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
 
 
 
 	IntMasterEnable(); //master interrupt enable, for all interrupts
 
+	 UARTCharPut(UART0_BASE,'C');
+	 UARTCharPut(UART0_BASE,'O');
+	 UARTCharPut(UART0_BASE,'M');
+
 	//Starts the DAC configuration routine
 	SPISendCmd();
 
+	HVset = 73.7;
+	tempCorrs[0] = 0.0; tempCorrs[1] = 0.0;
+	tempCorrs[2] = 10.0; tempCorrs[3] = 10.0;
+	tempCorrs[4] = HVset; tempCorrs[5] = 25.0;
+
+	setTempCorrFact(UART3_BASE, tempCorrs);
+	setHVOn(UART3_BASE);
 	//
 	// Main application loop.
 	//
 	while(true)
 	{
-		/*
-		//
-		// See if any data has been transferred.
-		//
-		if((ulTxCount != g_ulTxCount) || (ulRxCount != g_ulRxCount))
-		{
-			//
-			// Has there been any transmit traffic since we last checked?
-			//
-			if(ulTxCount != g_ulTxCount)
-			{
-				//
-				// Turn on the Green LED.
-				//
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, GPIO_PIN_3);
+		//put a while to read from UART0
+		  //while (!UARTCharsAvail(UART3_BASE)){
+		  aux = UARTCharGet(UART0_BASE);
 
-				//
-				// Delay for a bit.
-				//
-				for(ulLoop = 0; ulLoop < 150000; ulLoop++)
-				{
-				}
+		  GPIOPinIntDisable(GPIO_PORTD_BASE, GPIO_PIN_0);
+		  //send the data using the USART0
+		  if(aux == 'v'){
+			  SPISendCmd();
+		  }
+		  else if (aux == 'd'){
 
-				//
-				// Turn off the Green LED.
-				//
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0);
+			  setTempCorrFact(UART3_BASE, tempCorrs);
 
-				//
-				// Take a snapshot of the latest transmit count.
-				//
-				ulTxCount = g_ulTxCount;
-			}
+			  setHVOn(UART3_BASE);
 
-			//
-			// Has there been any receive traffic since we last checked?
-			//
-			if(ulRxCount != g_ulRxCount)
-			{
-				//
-				// Turn on the Blue LED.
-				//
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, GPIO_PIN_2);
+			  errCode = getInfoAndStatus(UART3_BASE,vars);
+			  readChar = 0;
+			  if (errCode == 0){
+				  for (i = 0; i < 5 ; i++){
+					  if (i == 3) vars[i]*=1000;
+					  readChar += ltoa((long) vars[i], &cmdIn[readChar]);
+					  cmdIn[readChar] = ' ';
+					  readChar++;
+				  }
+				  // UARTCharPut(UART0_BASE, readChar);
+				  for (i = 0; i <readChar; i++){
+					  UARTCharPut(UART0_BASE, cmdIn[i]);
+				  }
+			  }
+			  UARTCharPut(UART0_BASE,'\n');
+			  errCode = readTempCorrFact(UART3_BASE,tempCorrs);//;getTempCorrFact(UART3_BASE,tempCorrs);
+			  readChar = 0;
+			  if (errCode == 0){
+				  for (i = 0; i < 6 ; i++){
+					  readChar += ltoa((long) tempCorrs[i], &cmdIn[readChar]);
+					  cmdIn[readChar] = ' ';
+					  readChar++;
+				  }
+				  // UARTCharPut(UART0_BASE, readChar);
+				  for (i = 0; i <readChar; i++){
+					  UARTCharPut(UART0_BASE, cmdIn[i]);
+				  }
+			  }
+			  UARTCharPut(UART0_BASE,'\n');
+		  }else{
+		  UARTCharPut(UART0_BASE,aux);
+		  UARTCharPut(UART0_BASE, '\n');
+		  for (i = 0; i < 4096*2; i++){
+			  UARTCharPut(UART0_BASE,histBuff.histCharBuff[i]);
 
-				//
-				// Delay for a bit.
-				//
-				for(ulLoop = 0; ulLoop < 150000; ulLoop++)
-				{
-				}
+		  }
+		  }
+		  //clear the histogram once it has been sent
+		  for (i = 0; i < 4096; i++){
+			  histBuff.histTemp[i] = 0;
+		  }
+		  //allow new data to be stored
+		  datFull = false;
+		  GPIOPinIntEnable(GPIO_PORTD_BASE, GPIO_PIN_0);
 
-				//
-				// Turn off the Blue LED.
-				//
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0);
 
-				//
-				// Take a snapshot of the latest receive count.
-				//
-				ulRxCount = g_ulRxCount;
-			}
-
-			//
-			// Update the display of bytes transferred.
-			//
-		}
-		*/
 	}
 
 
@@ -323,16 +359,15 @@ void ConvDoneInt(void){
 	//SysCtlDelay(200);
 	GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 0);
 */
-
 	//read the vale from the ADC
 	ADCSequenceDataGet(ADC0_BASE, 0, adcTemp);
 	//tempValue = (1475 - ((2475 * adcTemp[0])) / 4096)/10; //adcTemp[0];
 	//store the value in the corresponding histogram
-	if (adcTemp[0] < 4096) {histBuff.histTemp[adcTemp[0]]++;}
-	else{ histBuff.histTemp[100] = adcTemp[0]; }
-
-	//wait a bit more
-	SysCtlDelay(10);
+	if (adcTemp[0] < 4096 && !datFull) {
+		histBuff.histTemp[adcTemp[0]]++;
+		if(histBuff.histTemp[adcTemp[0]] > 65500) {datFull = true;}
+	}
+	//else{ histBuff.histTemp[100] = adcTemp[0]; }
 
 	GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 0);
 	//Here i could add some timing...and later on an ADC conversion
@@ -342,11 +377,12 @@ void ConvDoneInt(void){
 	//clear the interrupt flag
 	ADCIntClear(ADC0_BASE, 0 );
 
+	//Not used when the conversion starts with the pin
+
 	//clear interrupt flag
 	GPIOPinIntClear(GPIO_PORTD_BASE, GPIO_PIN_0);
 
 	GPIOPinIntEnable(GPIO_PORTD_BASE, GPIO_PIN_0);
-
 }
 
 /* Needed only when using the timer for the integration time
@@ -384,12 +420,12 @@ void SPISendCmd(void){
 	SSIDataPut(SSI0_BASE, ulData);
 	while(SSIBusy(SSI0_BASE)){};
 
-	ulData = 0x00000270; //0x006C6C; //'ll'
+	ulData = 0x00000250; //0x006C6C; //'27'
 	SysCtlDelay(500);
 	SSIDataPut(SSI0_BASE, ulData);
 	while(SSIBusy(SSI0_BASE)){};
 
-	ulData = 0x00000270; //0x00006F21; //'o!'
+	ulData = 0x00000250; //0x00006F21; //'o!'
 	SysCtlDelay(500);
 	SSIDataPut(SSI0_BASE, ulData);
 	while(SSIBusy(SSI0_BASE)){};
@@ -400,6 +436,7 @@ void SPISendCmd(void){
 	SysCtlDelay(5000000);
 
 	GPIOPinIntClear(GPIO_PORTF_BASE, GPIO_PIN_4);
+	GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2 | GPIO_PIN_3, 0);
 
 }
 

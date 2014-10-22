@@ -8,9 +8,9 @@ CG_TOOL_ROOT := c:/ti/ccsv6/tools/compiler/arm_5.1.5
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
+"./C11204PS.obj" \
 "./lm4f120h5qr_startup_ccs.obj" \
 "./main.obj" \
-"./usb_bulk_structs.obj" \
 "./utils/ustdlib.obj" \
 "../lm4f120h5qr.cmd" \
 -l"libc.a" \
@@ -115,46 +115,47 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-test_int_ext.out \
+test_serial_output.out \
 
 EXE_OUTPUTS__QUOTED += \
-"test_int_ext.out" \
+"test_serial_output.out" \
 
 BIN_OUTPUTS += \
-test_int_ext.hex \
+test_serial_output.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"test_int_ext.hex" \
+"test_serial_output.hex" \
 
 
 # All Target
-all: test_int_ext.out
+all: test_serial_output.out
 
 # Tool invocations
-test_int_ext.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+test_serial_output.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --relaxed_ansi --gcc --define=ccs="ccs" --define=TARGET_IS_BLIZZARD_RA1 --define=PART_LM4F120H5QR --display_error_number --diag_warning=225 --diag_wrap=off -z -m"test_int_ext.map" --heap_size=0 --stack_size=512 -i"c:/ti/ccsv6/tools/compiler/arm_5.1.5/lib" -i"c:/ti/ccsv6/tools/compiler/arm_5.1.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="test_int_ext_linkInfo.xml" --rom_model -o "test_int_ext.out" $(ORDERED_OBJS)
+	"c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --relaxed_ansi --gcc --define=ccs="ccs" --define=TARGET_IS_BLIZZARD_RA1 --define=PART_LM4F120H5QR --display_error_number --diag_warning=225 --diag_wrap=off -z -m"test_serial_output.map" --heap_size=0 --stack_size=512 -i"c:/ti/ccsv6/tools/compiler/arm_5.1.5/lib" -i"c:/ti/ccsv6/tools/compiler/arm_5.1.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="test_serial_output_linkInfo.xml" --rom_model -o "test_serial_output.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
 
-test_int_ext.hex: $(EXE_OUTPUTS)
+test_serial_output.hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: ARM Hex Utility'
-	"c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/armhex"  -o "test_int_ext.hex" $(EXE_OUTPUTS__QUOTED)
+	"c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/armhex"  -o "test_serial_output.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "lm4f120h5qr_startup_ccs.pp" "main.pp" "usb_bulk_structs.pp" "utils\ustdlib.pp" 
-	-$(RM) "lm4f120h5qr_startup_ccs.obj" "main.obj" "usb_bulk_structs.obj" "utils\ustdlib.obj" 
+	-$(RM) "C11204PS.pp" 
+	-$(RM) "lm4f120h5qr_startup_ccs.pp" "main.pp" "utils\ustdlib.pp" 
+	-$(RM) "C11204PS.obj" "lm4f120h5qr_startup_ccs.obj" "main.obj" "utils\ustdlib.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
 post-build:
-	-"c:/ti/ccsv6/utils/tiobj2bin/tiobj2bin" "test_int_ext.out" "test_int_ext.bin" "c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/ofd470" "c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/hex470" "c:/ti/ccsv6/utils/tiobj2bin/mkhex4bin"
+	-"c:/ti/ccsv6/utils/tiobj2bin/tiobj2bin" "test_serial_output.out" "test_serial_output.bin" "c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/ofd470" "c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/hex470" "c:/ti/ccsv6/utils/tiobj2bin/mkhex4bin"
 	-@echo ' '
 
 .PHONY: all clean dependents

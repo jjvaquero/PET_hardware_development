@@ -55,7 +55,7 @@ extern uint32_t __STACK_TOP;
 //
 
 //*****************************************************************************
-extern void USB0DeviceIntHandler(void);
+//extern void USB0DeviceIntHandler(void);
 extern void ButtonPressInt(void);
 extern void ConvDoneInt(void);
 extern void SPISendCmd(void);
@@ -90,7 +90,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // GPIO Port A
     IntDefaultHandler,                      // GPIO Port B
     IntDefaultHandler,                      // GPIO Port C
-    ButtonPressInt,                      // GPIO Port D
+    ButtonPressInt,                      // GPIO Port D		//ButtonPressInt
     IntDefaultHandler,                      // GPIO Port E
     IntDefaultHandler,                      // UART0 Rx and Tx
     IntDefaultHandler,                      // UART1 Rx and Tx
@@ -131,7 +131,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // CAN2
     0,                                      // Reserved
     IntDefaultHandler,                      // Hibernate
-    USB0DeviceIntHandler,                   // USB0,                      // USB0
+    IntDefaultHandler,                   // USB0,                      //
     IntDefaultHandler,                      // PWM Generator 3
     IntDefaultHandler,                      // uDMA Software Transfer
     IntDefaultHandler,                      // uDMA Error
