@@ -76,7 +76,7 @@ handles.energyHist = zeros(1,histSize);
 handles.energyHist2 = zeros(1,histSize);
 handles.lastNEvents = 0;
 %ahora otra variable para almacenar la imagen
-handles.imagen = zeros(imgSize, imgSize/2);
+handles.imagen = zeros(imgSize, imgSize); %/2);
 handles.img_eng = zeros(imgSize, imgSize);
 % needs to be smaller
 % just a part of the image
@@ -132,7 +132,7 @@ function acq_button_Callback(hObject, eventdata, handles)
  %period used by the timers
  readTime = 0.25;
  plotTime = 0.5;
- fpgaConfFile ='QUSBEVB_REVA_EP2C20_Template.rbf'; %'QUSBEVB_REVA.rbf';
+ fpgaConfFile ='QUSBEVB_REVA_EP2C20_Template.rbf'; %'QUSBEVB_REVA.rbf'; 'offsets.rbf'
 
 quick = handles.quick;  %create a local instance of the quickUSB
 readTimer = handles.readTimer; %same but with the readTimer
@@ -365,14 +365,14 @@ end
 
 %ahora genero la imagen, para eso leo los datos de cada canal
 %para eso asigno los valores
-img = zeros (512,256);
+img = zeros (512,512); %256);
 imgEng = zeros(512,512);
 n_error= 0;
   %menor = min([ind1,ind2,ind3,ind4]);
   %cad = strcat(num2str(ind1),'Xb = ',num2str(ind2),'Ya =',num2str(ind3),'Yb = ',num2str(ind4));
   %disp( cad); 
-  canal4 = canal4 + 150; %compenso por el offset del canal3
-  canal1 = canal1 + 100; %compenso por el offset del canal2
+ % canal4 = canal4 + 150; %compenso por el offset del canal3
+ % canal1 = canal1 + 100; %compenso por el offset del canal2
 for i = 1: indice-1  %menor
 
     XA = canal3(i); XB = canal4(i);  %los +20 es para corregir el offset
@@ -387,10 +387,10 @@ for i = 1: indice-1  %menor
     
     %X = round((XA-XB)/energia*512 + 256);
     %Y = round((YA-YB)/energia*512 + 256);
-    X = round((((XA-XB)/((XA+XB)))+1)*128); %256 %round(((2*(XA-XB)/((YA+YB+XA+XB)))+1)*256);
+    X = round((((XA-XB)/((XA+XB)))+1)*256); %128 %round(((2*(XA-XB)/((YA+YB+XA+XB)))+1)*256);
     Y = round((((YA-YB)/((YA+YB)))+1)*256); %round(((2*(YA-YB)/((YA+YB+XA+XB)))+1)*256);
 
-    if (X>0 && X<257) && (Y>0 && Y<513) %X<513
+    if (X>0 && X<513) && (Y>0 && Y<513) %X<257
         
         img(Y,X) = img(Y,X) + 1; % energia;  
         energiaHist =round(energia/8);
@@ -568,11 +568,11 @@ title(handles.axes6,'Canal 4');
 
 %axes(handles.axes1);h
 %axes(handles.axes1);
-imagesc(handles.imgHistPixel,'Parent',handles.axes1);
+imagesc(handles.imagen,'Parent',handles.axes1);
 %plot(handles.axes1,handles.energyHist2);
 %imagesc(handles.imagen,'Parent',handles.axes1);
-xlim(handles.axes1,[0 256]);
-ylim(handles.axes1,[0 256]);
+xlim(handles.axes1,[1 512]);
+ylim(handles.axes1,[1 512]);
 %aux = imshow(mat2gray(handles.imagen));
 %set(aux,'Parent',handles.axes1);
 %set(aux,'Parent',handles.axes1);
