@@ -35,7 +35,8 @@ entity module_1_stub is
     ADC_DataIn : in std_logic_vector(31 downto 0);
     processing_system7_0_FCLK_RESET0_N_pin : out std_logic;
     processing_system7_0_FCLK_CLK1_pin : out std_logic;
-    processing_system7_0_FCLK_RESET1_N_pin : out std_logic
+    processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
+    axi_gpio_1_GPIO_IO_O_pin : out std_logic_vector(1 downto 0)
   );
 end module_1_stub;
 
@@ -69,7 +70,8 @@ architecture STRUCTURE of module_1_stub is
       ADC_DataIn : in std_logic_vector(31 downto 0);
       processing_system7_0_FCLK_RESET0_N_pin : out std_logic;
       processing_system7_0_FCLK_CLK1_pin : out std_logic;
-      processing_system7_0_FCLK_RESET1_N_pin : out std_logic
+      processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
+      axi_gpio_1_GPIO_IO_O_pin : out std_logic_vector(1 downto 0)
     );
   end component;
 
@@ -106,7 +108,8 @@ begin
       ADC_DataIn => ADC_DataIn,
       processing_system7_0_FCLK_RESET0_N_pin => processing_system7_0_FCLK_RESET0_N_pin,
       processing_system7_0_FCLK_CLK1_pin => processing_system7_0_FCLK_CLK1_pin,
-      processing_system7_0_FCLK_RESET1_N_pin => processing_system7_0_FCLK_RESET1_N_pin
+      processing_system7_0_FCLK_RESET1_N_pin => processing_system7_0_FCLK_RESET1_N_pin,
+      axi_gpio_1_GPIO_IO_O_pin => axi_gpio_1_GPIO_IO_O_pin
     );
 
 end architecture STRUCTURE;

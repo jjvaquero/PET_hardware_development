@@ -7,8 +7,7 @@ entity PWM_Controller is
    port (
     Clk : in std_logic;
     DutyCycle : in std_logic_vector(31 downto 0);
-	PWM_out : out std_logic_vector(7 downto 0); 
-	REL1: out std_logic 
+	PWM_out : out std_logic_vector(6 downto 0)
     );
 end PWM_Controller;
 
@@ -32,9 +31,9 @@ architecture behaviour of PWM_Controller is
 			end if;
 		end if;
 		if ( count < to_integer(unsigned(DutyCycle))) then
-           PWM_out<= X"FF"; REL1<='1';
+           PWM_out<= b"1111111"; --X"FF";
         else
-           PWM_out<= X"00";  REL1<='0';
+           PWM_out<= b"0000000"; -- X"00"; 
 	    end if;
 	    
 	   

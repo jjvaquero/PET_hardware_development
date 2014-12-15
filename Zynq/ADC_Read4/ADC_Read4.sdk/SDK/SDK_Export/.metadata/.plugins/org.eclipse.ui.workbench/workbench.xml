@@ -37,18 +37,13 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.sdk/SDK/SDK_Export/ADC_test_leds/src/main.c" title="main.c" tooltip="ADC_test_leds/src/main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ADC_test_leds/src/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1430" selectionTopPixel="585"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ps7_init.c" partName="ps7_init.c" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.sdk/SDK/SDK_Export/module_1_hw_platform/ps7_init.c" title="ps7_init.c" tooltip="module_1_hw_platform/ps7_init.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/module_1_hw_platform/ps7_init.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="522586" selectionTopPixel="175543"/>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.sdk/SDK/SDK_Export/Test1/src/main.c" title="main.c" tooltip="Test1/src/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test1/src/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4634" selectionTopPixel="2385"/>
 </editor>
 </editors>
 <views>
@@ -58,13 +53,14 @@
 <view id="org.eclipse.cdt.ui.CView" partName="C/C++ Projects">
 <viewState horizontalPosition="0" verticalPosition="0">
 <expanded>
-<element path="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\ADC_Read4\ADC_Read4.sdk\SDK\SDK_Export\ADC_test_leds"/>
 <element path="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\ADC_Read4\ADC_Read4.sdk\SDK\SDK_Export\ADC_test_leds\src"/>
 <element path="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\ADC_Read4\ADC_Read4.sdk\SDK\SDK_Export\hello"/>
 <element path="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\ADC_Read4\ADC_Read4.sdk\SDK\SDK_Export\standalone_bsp_0"/>
+<element path="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\ADC_Read4\ADC_Read4.sdk\SDK\SDK_Export\Test1"/>
+<element path="C:\Users\rchil\Desktop\Artemis\Software_desarrollado\Zynq\ADC_Read4\ADC_Read4.sdk\SDK\SDK_Export\Test1\src"/>
 </expanded>
 <selection>
-<element path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.sdk/SDK/SDK_Export/ADC_test_leds"/>
+<element path="C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.sdk/SDK/SDK_Export/Test1"/>
 </selection>
 <customFilters userDefinedPatternsEnabled="false">
 <xmlDefinedFilters>
@@ -99,7 +95,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Errors (4 items)"/>
+<category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -224,7 +220,7 @@
 </presentation>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.30736715" ratioLeft="509" ratioRight="1147" relationship="2" relative="topLeft"/>
+<info part="org.eclipse.ui.editorss" ratio="0.20652173" ratioLeft="342" ratioRight="1314" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottom" ratio="0.6587452" ratioLeft="693" ratioRight="359" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
@@ -259,8 +255,6 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ADC_test_leds/src/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/standalone_bsp_0/system.mss"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ADC_test_leds/src/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/gpio_v3_00_a/src/xgpio_sinit.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/gpio_v3_00_a/src/xgpio_g.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/libsrc/gpio_v3_00_a/src/xgpio.c"/>
@@ -271,140 +265,148 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/module_1_hw_platform/ps7_init.tcl"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.lscript.editor" path="/ADC_test_leds/src/lscript.ld"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/ADC_test_leds/src/README.txt"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/module_1_hw_platform/ps7_init.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.lscript.editor" path="/Test1/src/lscript.ld"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Test1/src/main.c"/>
 </editors>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1148" y="0"/>
-</item>
-<item historyLabel="system.mss" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1227" y="15"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1252" y="0"/>
-</item>
-<item historyLabel="xgpio_sinit.c" index="3">
+<item historyLabel="xgpio_sinit.c" index="1">
 <position info="not_deleted" x="5271" y="16"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="1612" y="0"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="3">
+<item historyLabel="xgpio_sinit.c" index="1">
 <position info="not_deleted" x="5509" y="0"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="1631" y="0"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="3">
+<item historyLabel="xgpio_sinit.c" index="1">
 <position info="not_deleted" x="5509" y="0"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="3">
+<item historyLabel="xgpio_sinit.c" index="1">
 <position info="not_deleted" x="5595" y="1"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="3">
+<item historyLabel="xgpio_sinit.c" index="1">
 <position info="not_deleted" x="4232" y="0"/>
 </item>
-<item historyLabel="xgpio_g.c" index="4">
+<item historyLabel="xgpio_g.c" index="2">
 <position info="not_deleted" x="551" y="83"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="3">
+<item historyLabel="xgpio_sinit.c" index="1">
 <position info="not_deleted" x="5741" y="0"/>
 </item>
-<item historyLabel="xgpio.c" index="5">
+<item historyLabel="xgpio.c" index="3">
 <position info="not_deleted" x="5636" y="19"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="3">
+<item historyLabel="xgpio_sinit.c" index="1">
 <position info="not_deleted" x="5741" y="0"/>
 </item>
-<item historyLabel="xgpio.c" index="5">
+<item historyLabel="xgpio.c" index="3">
 <position info="not_deleted" x="6237" y="0"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="3">
+<item historyLabel="xgpio_sinit.c" index="1">
 <position info="not_deleted" x="5741" y="0"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="2399" y="0"/>
 </item>
-<item historyLabel="xgpio_sinit.c" index="3">
+<item historyLabel="xgpio_sinit.c" index="1">
 <position info="not_deleted" x="5741" y="0"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="2399" y="0"/>
 </item>
-<item historyLabel="xgpio.c" index="5">
+<item historyLabel="xgpio.c" index="3">
 <position info="not_deleted" x="6237" y="0"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="2399" y="0"/>
 </item>
-<item historyLabel="ps7_init.c" index="6">
+<item historyLabel="ps7_init.c" index="4">
 <position info="not_deleted" x="7169" y="0"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="1894" y="0"/>
 </item>
-<item historyLabel="system.xml" index="7"/>
-<item historyLabel="system.mss" index="8"/>
-<item historyLabel="system.xml" index="7"/>
-<item historyLabel="system.mss" index="8"/>
-<item historyLabel="main.c" index="2">
+<item historyLabel="system.xml" index="5"/>
+<item historyLabel="system.mss" index="6"/>
+<item historyLabel="system.xml" index="5"/>
+<item historyLabel="system.mss" index="6"/>
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="1894" y="0"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="1555" y="0"/>
 </item>
-<item historyLabel="ps7_init.c" index="6">
+<item historyLabel="ps7_init.c" index="4">
 <position info="not_deleted" x="1987" y="0"/>
 </item>
-<item historyLabel="ps7_init.h" index="9">
+<item historyLabel="ps7_init.h" index="7">
 <position info="not_deleted" x="4647" y="6"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="1555" y="0"/>
 </item>
-<item historyLabel="ps7_init.c" index="6">
+<item historyLabel="ps7_init.c" index="4">
 <position info="not_deleted" x="1987" y="0"/>
 </item>
-<item historyLabel="ps7_init.h" index="9">
+<item historyLabel="ps7_init.h" index="7">
 <position info="not_deleted" x="4758" y="0"/>
 </item>
-<item historyLabel="ps7_init.c" index="6">
+<item historyLabel="ps7_init.c" index="4">
 <position info="not_deleted" x="522586" y="11"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="1555" y="0"/>
 </item>
-<item historyLabel="ps7_init.c" index="6">
+<item historyLabel="ps7_init.c" index="4">
 <position info="not_deleted" x="522586" y="11"/>
 </item>
-<item historyLabel="ps7_init.h" index="9">
+<item historyLabel="ps7_init.h" index="7">
 <position info="not_deleted" x="4758" y="0"/>
 </item>
-<item historyLabel="ps7_init.c" index="6">
+<item historyLabel="ps7_init.c" index="4">
 <position info="not_deleted" x="522586" y="11"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="1555" y="0"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="148" y="0"/>
 </item>
-<item historyLabel="ps7_init.tcl" index="10">
+<item historyLabel="ps7_init.tcl" index="8">
 <position info="not_deleted" x="31275" y="0"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="954" y="0"/>
 </item>
-<item historyLabel="lscript.ld" index="11"/>
-<item historyLabel="main.c" index="2">
+<item historyLabel="lscript.ld" index="9"/>
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="954" y="0"/>
 </item>
-<item historyLabel="README.txt" index="12">
+<item historyLabel="README.txt" index="10">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item active="true" historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="954" y="0"/>
+</item>
+<item historyLabel="ps7_init.c" index="11">
+<position info="not_deleted" x="522586" y="11"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="343" y="0"/>
+</item>
+<item historyLabel="xparameters.h" index="12">
+<position info="not_deleted" x="1013" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="1025" y="0"/>
+</item>
+<item historyLabel="lscript.ld" index="13"/>
+<item active="true" historyLabel="main.c" index="14">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -423,6 +425,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="Test1/src/main.c">
+<persistable path="/Test1/src/main.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.lscript.editor" name="lscript.ld" tooltip="Test1/src/lscript.ld">
+<persistable path="/Test1/src/lscript.ld"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xparameters.h" tooltip="standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h">
+<persistable path="/standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="README.txt" tooltip="ADC_test_leds/src/README.txt">
 <persistable path="/ADC_test_leds/src/README.txt"/>
 </file>

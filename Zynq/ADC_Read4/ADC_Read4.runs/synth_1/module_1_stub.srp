@@ -3,7 +3,7 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: module_1_stub.prj
 
@@ -74,30 +74,32 @@ Parsing architecture <STRUCTURE> of entity <module_1>.
 Parsing VHDL file "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" into library work
 Parsing entity <module_1_stub>.
 Parsing architecture <STRUCTURE> of entity <module_1_stub>.
-WARNING:HDLCompiler:946 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 359: Actual for formal port io_reset is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 368: Actual for formal port io_reset is neither a static name nor a globally static expression
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
 
 Elaborating entity <module_1_stub> (architecture <STRUCTURE>) from library <work>.
-WARNING:HDLCompiler:89 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 134: <ibufds> remains a black-box since it has no binding entity.
-WARNING:HDLCompiler:89 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 140: <ibufgds> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 139: <ibufds> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 145: <ibufgds> remains a black-box since it has no binding entity.
 
 Elaborating entity <module_1> (architecture <>) from library <work>.
 
 Elaborating entity <PWM_Controller> (architecture <behaviour>) from library <work>.
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" Line 34: dutycycle should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" Line 33: dutycycle should be on the sensitivity list of the process
 
 Elaborating entity <BitSlip_Ctrl> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 77: datain should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 79: datain should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 103: datain should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 105: datain should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 107: datain should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 111: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 78: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 80: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 104: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 106: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 115: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 119: datain should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 132: datain should be on the sensitivity list of the process
 
 Elaborating entity <selectio_wiz_v4_1_0> (architecture <xilinx>) with generics from library <work>.
+WARNING:HDLCompiler:634 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 54: Net <sADC_Data[11]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -106,11 +108,11 @@ Elaborating entity <selectio_wiz_v4_1_0> (architecture <xilinx>) with generics f
 Synthesizing Unit <module_1_stub>.
     Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd".
     Set property "BOX_TYPE = user_black_box" for instance <module_1_i>.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 203: Output port <O> of the instance <ibuf3> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 208: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 240: Output port <REL1> of the instance <PWM1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 249: Output port <delayEn> of the instance <BitSlipCtrl1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 249: Output port <done> of the instance <BitSlipCtrl1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 208: Output port <O> of the instance <ibuf3> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 215: Output port <processing_system7_0_FCLK_RESET0_N_pin> of the instance <module_1_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 257: Output port <dataOut> of the instance <BitSlipCtrl1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" line 257: Output port <delayEn> of the instance <BitSlipCtrl1> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <sADC_Data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <module_1_stub> synthesized.
@@ -119,9 +121,9 @@ Synthesizing Unit <PWM_Controller>.
     Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd".
 WARNING:Xst:647 - Input <DutyCycle<31:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 32-bit register for signal <count>.
-    Found 32-bit adder for signal <count[31]_GND_7_o_add_0_OUT> created at line 29.
-    Found 32-bit comparator greater for signal <count[31]_GND_7_o_LessThan_2_o> created at line 30
-    Found 32-bit comparator greater for signal <REL1> created at line 34
+    Found 32-bit adder for signal <count[31]_GND_7_o_add_0_OUT> created at line 28.
+    Found 32-bit comparator greater for signal <count[31]_GND_7_o_LessThan_2_o> created at line 29
+    Found 32-bit comparator greater for signal <GND_7_o_count[31]_LessThan_5_o> created at line 33
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  32 D-type flip-flop(s).
@@ -130,22 +132,41 @@ Unit <PWM_Controller> synthesized.
 
 Synthesizing Unit <BitSlip_Ctrl>.
     Related source file is "C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd".
-    Found 2-bit register for signal <currState>.
-    Found finite state machine <FSM_0> for signal <currState>.
-    -----------------------------------------------------------------------
-    | States             | 4                                              |
-    | Transitions        | 7                                              |
-    | Inputs             | 2                                              |
-    | Outputs            | 4                                              |
-    | Clock              | Clk (rising_edge)                              |
-    | Reset              | Rst_INV_3_o (positive)                         |
-    | Reset type         | synchronous                                    |
-    | Reset State        | s0                                             |
-    | Power Up State     | s0                                             |
-    | Encoding           | auto                                           |
-    | Implementation     | LUT                                            |
-    -----------------------------------------------------------------------
-    Found 32-bit adder for signal <counter[31]_GND_8_o_add_6_OUT> created at line 96.
+    Found 3-bit register for signal <currState>.
+    Found 32-bit adder for signal <counter[31]_GND_8_o_add_11_OUT> created at line 108.
+    Found 8x8-bit Read Only RAM for signal <_n0162>
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_28_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_30_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_32_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_34_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_36_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_38_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_40_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_42_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_44_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_48_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_50_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_52_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_54_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_56_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_58_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_60_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_62_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_64_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_66_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_68_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_70_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_72_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_74_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_76_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_78_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_80_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_82_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_84_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_86_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_88_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_90_o> created at line 70.
+    Found 1-bit 3-to-1 multiplexer for signal <currState[2]_X_8_o_Mux_46_o> created at line 70.
 WARNING:Xst:737 - Found 1-bit latch for signal <counter<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <counter<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <counter<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -178,27 +199,20 @@ WARNING:Xst:737 - Found 1-bit latch for signal <counter<3>>. Latches may be gene
 WARNING:Xst:737 - Found 1-bit latch for signal <counter<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <counter<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <counter<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataOut<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <bitSlip>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <done>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 32-bit comparator greater for signal <n0006> created at line 92
+    Found 32-bit comparator lessequal for signal <n0006> created at line 93
+    Found 32-bit comparator lessequal for signal <counter[31]_INV_7_o> created at line 109
     Summary:
+	inferred   1 RAM(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred  46 Latch(s).
-	inferred   1 Comparator(s).
-	inferred  41 Multiplexer(s).
-	inferred   1 Finite State Machine(s).
+	inferred   3 D-type flip-flop(s).
+	inferred  37 Latch(s).
+	inferred   2 Comparator(s).
+	inferred  34 Multiplexer(s).
 Unit <BitSlip_Ctrl> synthesized.
 
 Synthesizing Unit <selectio_wiz_v4_1_0>.
@@ -213,19 +227,21 @@ Unit <selectio_wiz_v4_1_0> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
+# RAMs                                                 : 1
+ 8x8-bit single-port Read Only RAM                     : 1
 # Adders/Subtractors                                   : 2
  32-bit adder                                          : 2
-# Registers                                            : 1
+# Registers                                            : 2
+ 3-bit register                                        : 1
  32-bit register                                       : 1
-# Latches                                              : 46
- 1-bit latch                                           : 46
-# Comparators                                          : 3
- 32-bit comparator greater                             : 3
-# Multiplexers                                         : 41
- 1-bit 2-to-1 multiplexer                              : 38
- 2-bit 2-to-1 multiplexer                              : 2
- 32-bit 2-to-1 multiplexer                             : 1
-# FSMs                                                 : 1
+# Latches                                              : 37
+ 1-bit latch                                           : 37
+# Comparators                                          : 4
+ 32-bit comparator greater                             : 2
+ 32-bit comparator lessequal                           : 2
+# Multiplexers                                         : 34
+ 1-bit 3-to-1 multiplexer                              : 32
+ 32-bit 2-to-1 multiplexer                             : 2
 
 =========================================================================
 
@@ -237,10 +253,26 @@ Reading core <..\..\ADC_Read4.srcs\sources_1\edk\module_1\implementation/module_
 Reading core <..\..\ADC_Read4.srcs\sources_1\edk\module_1\implementation/module_1_axi_gpio_0_wrapper.ngc>.
 Reading core <..\..\ADC_Read4.srcs\sources_1\edk\module_1\implementation/module_1_processing_system7_0_wrapper.ngc>.
 Reading core <..\..\ADC_Read4.srcs\sources_1\edk\module_1\implementation/module_1_axi_interconnect_1_wrapper.ngc>.
+Reading core <..\..\ADC_Read4.srcs\sources_1\edk\module_1\implementation/module_1_axi_gpio_1_wrapper.ngc>.
 Loading core <module_1_axi_gpio_0_wrapper> for timing and area information for instance <axi_gpio_0>.
 Loading core <module_1_processing_system7_0_wrapper> for timing and area information for instance <processing_system7_0>.
 Loading core <module_1_axi_interconnect_1_wrapper> for timing and area information for instance <axi_interconnect_1>.
+Loading core <module_1_axi_gpio_1_wrapper> for timing and area information for instance <axi_gpio_1>.
 Loading core <module_1> for timing and area information for instance <module_1_i>.
+
+Synthesizing (advanced) Unit <BitSlip_Ctrl>.
+INFO:Xst:3231 - The small RAM <Mram__n0162> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <currState>     |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <BitSlip_Ctrl> synthesized (advanced).
 
 Synthesizing (advanced) Unit <PWM_Controller>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
@@ -250,33 +282,31 @@ Unit <PWM_Controller> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
+# RAMs                                                 : 1
+ 8x8-bit single-port distributed Read Only RAM         : 1
 # Adders/Subtractors                                   : 2
  32-bit adder                                          : 2
 # Counters                                             : 1
  32-bit up counter                                     : 1
-# Comparators                                          : 3
- 32-bit comparator greater                             : 3
-# Multiplexers                                         : 41
- 1-bit 2-to-1 multiplexer                              : 38
- 2-bit 2-to-1 multiplexer                              : 2
- 32-bit 2-to-1 multiplexer                             : 1
-# FSMs                                                 : 1
+# Registers                                            : 3
+ Flip-Flops                                            : 3
+# Comparators                                          : 4
+ 32-bit comparator greater                             : 2
+ 32-bit comparator lessequal                           : 2
+# Multiplexers                                         : 34
+ 1-bit 3-to-1 multiplexer                              : 32
+ 32-bit 2-to-1 multiplexer                             : 2
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <BitSlipCtrl1/FSM_0> on signal <currState[1:2]> with user encoding.
--------------------
- State | Encoding
--------------------
- s0    | 00
- s1    | 01
- s2    | 10
- s3    | 11
--------------------
+WARNING:Xst:1710 - FF/Latch <dataOut_11> (without init value) has a constant value of 0 in block <BitSlip_Ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <nextState_2> has a constant value of 0 in block <BitSlip_Ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <currState_2> has a constant value of 0 in block <BitSlip_Ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1294 - Latch <nextState_1> is equivalent to a wire in block <BitSlip_Ctrl>.
+WARNING:Xst:1294 - Latch <nextState_0> is equivalent to a wire in block <BitSlip_Ctrl>.
 
 WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_SRSTB>; this signal is connected to multiple drivers.
 Drivers are: 
@@ -298,20 +328,19 @@ Optimizing unit <module_1_stub> ...
 Optimizing unit <BitSlip_Ctrl> ...
 
 Optimizing unit <selectio_wiz_v4_1_0> ...
-WARNING:Xst:2677 - Node <BitSlipCtrl1/done> of sequential type is unconnected in block <module_1_stub>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block module_1_stub, actual ratio is 0.
 INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
 INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
 INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> 
 
 Final Macro Processing ...
 
@@ -343,37 +372,38 @@ Top Level Output File Name         : module_1_stub.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1108
-#      GND                         : 8
-#      INV                         : 104
+# BELS                             : 1199
+#      GND                         : 9
+#      INV                         : 108
 #      LUT1                        : 93
-#      LUT2                        : 92
-#      LUT3                        : 186
-#      LUT4                        : 236
-#      LUT5                        : 33
-#      LUT6                        : 147
-#      MUXCY                       : 123
-#      MUXF7                       : 1
-#      VCC                         : 5
+#      LUT2                        : 63
+#      LUT3                        : 163
+#      LUT4                        : 284
+#      LUT5                        : 84
+#      LUT6                        : 173
+#      MUXCY                       : 135
+#      VCC                         : 7
 #      XORCY                       : 80
-# FlipFlops/Latches                : 535
-#      FD                          : 59
-#      FDC                         : 6
-#      FDE                         : 125
-#      FDR                         : 122
-#      FDRE                        : 114
-#      FDSE                        : 64
-#      LD                          : 45
-# Shift Registers                  : 64
-#      SRLC16E                     : 64
+# FlipFlops/Latches                : 562
+#      FD                          : 73
+#      FDC                         : 9
+#      FDE                         : 127
+#      FDR                         : 135
+#      FDRE                        : 119
+#      FDSE                        : 66
+#      LD                          : 33
+# RAMS                             : 1
+#      FIFO18E1                    : 1
+# Shift Registers                  : 66
+#      SRLC16E                     : 66
 # Clock Buffers                    : 3
 #      BUFG                        : 3
-# IO Buffers                       : 19
+# IO Buffers                       : 20
 #      IBUF                        : 5
 #      IBUFDS                      : 2
 #      IBUFG                       : 1
 #      IBUFGDS                     : 2
-#      OBUF                        : 9
+#      OBUF                        : 10
 # Others                           : 5
 #      BUFIO                       : 1
 #      BUFR                        : 1
@@ -387,24 +417,26 @@ Selected Device : 7z020clg484-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             535  out of  106400     0%  
- Number of Slice LUTs:                  955  out of  53200     1%  
-    Number used as Logic:               891  out of  53200     1%  
-    Number used as Memory:               64  out of  17400     0%  
-       Number used as SRL:               64
+ Number of Slice Registers:             562  out of  106400     0%  
+ Number of Slice LUTs:                 1034  out of  53200     1%  
+    Number used as Logic:               968  out of  53200     1%  
+    Number used as Memory:               66  out of  17400     0%  
+       Number used as SRL:               66
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1037
-   Number with an unused Flip Flop:     502  out of   1037    48%  
-   Number with an unused LUT:            82  out of   1037     7%  
-   Number of fully used LUT-FF pairs:   453  out of   1037    43%  
-   Number of unique control sets:        24
+ Number of LUT Flip Flop pairs used:   1121
+   Number with an unused Flip Flop:     559  out of   1121    49%  
+   Number with an unused LUT:            87  out of   1121     7%  
+   Number of fully used LUT-FF pairs:   475  out of   1121    42%  
+   Number of unique control sets:        32
 
 IO Utilization: 
- Number of IOs:                         147
- Number of bonded IOBs:                  20  out of    200    10%  
+ Number of IOs:                         148
+ Number of bonded IOBs:                  21  out of    200    10%  
 
 Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of    140     0%  
+    Number using FIFO only:               1
  Number of BUFG/BUFGCTRL/BUFHCEs:         3  out of    104     2%  
 
 ---------------------------
@@ -425,37 +457,37 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------------------------------------------------------------------+--------------------------------+-------+
-Clock Signal                                                                                   | Clock buffer(FF name)          | Load  |
------------------------------------------------------------------------------------------------+--------------------------------+-------+
-module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>                    | BUFG                           | 552   |
-sDCLK                                                                                          | IBUFG+BUFR                     | 3     |
-BitSlipCtrl1/currState[1]_PWR_8_o_Mux_87_o(BitSlipCtrl1/Mmux_currState[1]_PWR_8_o_Mux_87_o11:O)| NONE(*)(BitSlipCtrl1/dataOut_0)| 12    |
-BitSlipCtrl1/currState[1]_PWR_53_o_Mux_111_o(BitSlipCtrl1/currState__n0143<1>1:O)              | NONE(*)(BitSlipCtrl1/bitSlip)  | 1     |
-BitSlipCtrl1/currState_FSM_FFd2                                                                | BUFG                           | 32    |
------------------------------------------------------------------------------------------------+--------------------------------+-------+
-(*) These 2 clock signal(s) are generated by combinatorial logic,
+---------------------------------------------------------------------------+------------------------------+-------+
+Clock Signal                                                               | Clock buffer(FF name)        | Load  |
+---------------------------------------------------------------------------+------------------------------+-------+
+module_1_i/axi_gpio_1/GPIO_IO_O<1>                                         | NONE(FIFO18E1_CD)            | 1     |
+sDCLK                                                                      | IBUFG+BUFR                   | 4     |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                         | 593   |
+BitSlipCtrl1/currState_0                                                   | BUFG                         | 32    |
+BitSlipCtrl1/Mram__n01626(BitSlipCtrl1/Mram__n016261:O)                    | NONE(*)(BitSlipCtrl1/bitSlip)| 1     |
+---------------------------------------------------------------------------+------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
---------------------------------------+----------------------------+-------+
-Control Signal                        | Buffer(FF name)            | Load  |
---------------------------------------+----------------------------+-------+
-SelIO/N1(SelIO/C:P)                   | NONE(SelIO/clkout_buf_inst)| 1     |
-SelIO/sADC_DataIn<31:12><1>(SelIO/D:G)| NONE(SelIO/clkout_buf_inst)| 1     |
---------------------------------------+----------------------------+-------+
+-------------------------------------+----------------------------+-------+
+Control Signal                       | Buffer(FF name)            | Load  |
+-------------------------------------+----------------------------+-------+
+SelIO/LEDS_0_OBUF(SelIO/C:P)         | NONE(SelIO/clkout_buf_inst)| 1     |
+SelIO/fifoDataIn<31:12><1>(SelIO/D:G)| NONE(SelIO/clkout_buf_inst)| 1     |
+-------------------------------------+----------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 3.868ns (Maximum Frequency: 258.532MHz)
-   Minimum input arrival time before clock: 2.172ns
-   Maximum output required time after clock: 2.637ns
-   Maximum combinational path delay: 0.885ns
+   Minimum period: 3.843ns (Maximum Frequency: 260.213MHz)
+   Minimum input arrival time before clock: 2.296ns
+   Maximum output required time after clock: 3.082ns
+   Maximum combinational path delay: 0.898ns
 
 Timing Details:
 ---------------
@@ -463,227 +495,217 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
-  Clock period: 3.868ns (frequency: 258.532MHz)
-  Total number of paths / destination ports: 18186 / 1018
+  Clock period: 3.843ns (frequency: 260.213MHz)
+  Total number of paths / destination ports: 18956 / 1081
 -------------------------------------------------------------------------
-Delay:               3.868ns (Levels of Logic = 8)
-  Source:            module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 (FF)
-  Destination:       module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0 (FF)
+Delay:               3.843ns (Levels of Logic = 6)
+  Source:            module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:       module_1_i/axi_gpio_1/axi_gpio_1/gpio_core_1/GPIO_DBus_i_30 (FF)
   Source Clock:      module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
   Destination Clock: module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
 
-  Data Path: module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 to module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+  Data Path: module_1_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to module_1_i/axi_gpio_1/axi_gpio_1/gpio_core_1/GPIO_DBus_i_30
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               9   0.282   0.688  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d<1>)
+     LUT4:I0->O            5   0.053   0.752  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_arvalid<1>1 (axi_interconnect_1/cb_mf_arvalid<1>)
+     LUT5:I0->O           14   0.053   0.687  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[1].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1 (M_AXI_ARVALID<1>)
+     end scope: 'module_1_i/axi_interconnect_1:M_AXI_ARVALID<1>'
+     begin scope: 'module_1_i/axi_gpio_1:S_AXI_ARVALID'
+     LUT3:I0->O            2   0.053   0.745  axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/Mmux_bus2ip_addr_i31 (axi_gpio_1/bus2ip_addr<6>)
+     LUT6:I0->O            1   0.053   0.413  axi_gpio_1/gpio_core_1/Mmux_Read_Reg_In<0>111 (axi_gpio_1/gpio_core_1/Read_Reg_In<1>)
+     LUT5:I4->O            1   0.053   0.000  axi_gpio_1/gpio_core_1/GPIO_DBus_i_31_rstpot (axi_gpio_1/gpio_core_1/GPIO_DBus_i_31_rstpot)
+     FD:D                      0.011          axi_gpio_1/gpio_core_1/GPIO_DBus_i_31
+    ----------------------------------------
+    Total                      3.843ns (0.558ns logic, 3.285ns route)
+                                       (14.5% logic, 85.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'BitSlipCtrl1/currState_0'
+  Clock period: 3.605ns (frequency: 277.429MHz)
+  Total number of paths / destination ports: 35088 / 32
+-------------------------------------------------------------------------
+Delay:               3.605ns (Levels of Logic = 36)
+  Source:            BitSlipCtrl1/counter_0 (LATCH)
+  Destination:       BitSlipCtrl1/counter_22 (LATCH)
+  Source Clock:      BitSlipCtrl1/currState_0 rising
+  Destination Clock: BitSlipCtrl1/currState_0 rising
+
+  Data Path: BitSlipCtrl1/counter_0 to BitSlipCtrl1/counter_22
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.389   0.399  counter_0 (counter_0)
+     INV:I->O              1   0.067   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_lut<0>_INV_0 (Madd_counter[31]_GND_8_o_add_11_OUT_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<0> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<1> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<2> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<3> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<4> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<5> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<6> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<7> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<8> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<9> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<10> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<11> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<12> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<13> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<13>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<14> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<14>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<15> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<15>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<16> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<16>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<17> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<17>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<18> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<18>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<19> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<19>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<20> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<20>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<21> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<21>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<22> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<22>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<23> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<23>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<24> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<24>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<25> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<25>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<26> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<26>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<27> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<27>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<28> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<28>)
+     MUXCY:CI->O           1   0.015   0.000  Madd_counter[31]_GND_8_o_add_11_OUT_cy<29> (Madd_counter[31]_GND_8_o_add_11_OUT_cy<29>)
+     XORCY:CI->O           3   0.320   0.739  Madd_counter[31]_GND_8_o_add_11_OUT_xor<30> (counter[31]_GND_8_o_add_11_OUT<30>)
+     LUT5:I0->O            0   0.053   0.000  Mcompar_counter[31]_GND_8_o_LessThan_13_o_lutdi5 (Mcompar_counter[31]_GND_8_o_LessThan_13_o_lutdi5)
+     MUXCY:DI->O           1   0.278   0.000  Mcompar_counter[31]_GND_8_o_LessThan_13_o_cy<5> (Mcompar_counter[31]_GND_8_o_LessThan_13_o_cy<5>)
+     MUXCY:CI->O          32   0.015   0.566  Mcompar_counter[31]_GND_8_o_LessThan_13_o_cy<6> (counter[31]_GND_8_o_LessThan_13_o)
+     LUT5:I4->O            1   0.053   0.000  Mmux_currState[2]_X_8_o_Mux_28_o1301 (currState[2]_X_8_o_Mux_88_o)
+     LD:D                     -0.021          counter_1
+    ----------------------------------------
+    Total                      3.605ns (1.901ns logic, 1.704ns route)
+                                       (52.7% logic, 47.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sDCLK'
+  Clock period: 1.102ns (frequency: 907.748MHz)
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Delay:               1.102ns (Levels of Logic = 1)
+  Source:            BitSlipCtrl1/currState_1 (FF)
+  Destination:       BitSlipCtrl1/currState_1 (FF)
+  Source Clock:      sDCLK rising
+  Destination Clock: sDCLK rising
+
+  Data Path: BitSlipCtrl1/currState_1 to BitSlipCtrl1/currState_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             37   0.282   0.756  currState_1 (currState_1)
+     LUT3:I0->O            1   0.053   0.000  currState[2]_X_8_o_Mux_94_o1 (nextState<1>)
+     FDR:D                     0.011          currState_1
+    ----------------------------------------
+    Total                      1.102ns (0.346ns logic, 0.756ns route)
+                                       (31.4% logic, 68.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'module_1_i/axi_gpio_1/GPIO_IO_O<1>'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.240ns (Levels of Logic = 2)
+  Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 (PAD)
+  Destination:       FIFO18E1_CD (UNKNOWN)
+  Destination Clock: module_1_i/axi_gpio_1/GPIO_IO_O<1> rising
+
+  Data Path: module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 to FIFO18E1_CD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    PS7:FCLKRESETN1        1   0.000   0.000  processing_system7_0/PS7_i (FCLK_RESET1_N)
+     end scope: 'module_1_i/processing_system7_0:FCLK_RESET1_N'
+     end scope: 'module_1_i:processing_system7_0_FCLK_RESET1_N_pin'
+     INV:I->O              6   0.067   0.432  IntRst1_INV_0 (IntRst)
+     FIFO18E1:RSTREG           0.342          FIFO18E1_CD
+    ----------------------------------------
+    Total                      1.240ns (0.808ns logic, 0.432ns route)
+                                       (65.2% logic, 34.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Total number of paths / destination ports: 407 / 243
+-------------------------------------------------------------------------
+Offset:              2.296ns (Levels of Logic = 5)
+  Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID (PAD)
+  Destination:       module_1_i/axi_gpio_1/axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1 (FF)
+  Destination Clock: module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID to module_1_i/axi_gpio_1/axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    PS7:MAXIGP0WVALID      7   0.000   0.000  processing_system7_0/PS7_i (M_AXI_GP0_WVALID)
+     end scope: 'module_1_i/processing_system7_0:M_AXI_GP0_WVALID'
+     begin scope: 'module_1_i/axi_interconnect_1:S_AXI_WVALID<0>'
+     LUT6:I0->O            2   0.053   0.608  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[1].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/M_AXI_WVALID1 (M_AXI_WVALID<1>)
+     end scope: 'module_1_i/axi_interconnect_1:M_AXI_WVALID<1>'
+     begin scope: 'module_1_i/axi_gpio_1:S_AXI_WVALID'
+     LUT3:I0->O            1   0.053   0.739  axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1 (axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1)
+     LUT6:I0->O            1   0.053   0.000  axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In3 (axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In)
+     FDR:D                     0.011          axi_gpio_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+    ----------------------------------------
+    Total                      2.296ns (0.949ns logic, 1.347ns route)
+                                       (41.3% logic, 58.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sDCLK'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              1.223ns (Levels of Logic = 3)
+  Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 (PAD)
+  Destination:       BitSlipCtrl1/currState_1 (FF)
+  Destination Clock: sDCLK rising
+
+  Data Path: module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 to BitSlipCtrl1/currState_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    PS7:FCLKRESETN1        1   0.000   0.000  processing_system7_0/PS7_i (FCLK_RESET1_N)
+     end scope: 'module_1_i/processing_system7_0:FCLK_RESET1_N'
+     end scope: 'module_1_i:processing_system7_0_FCLK_RESET1_N_pin'
+     INV:I->O              6   0.067   0.432  IntRst1_INV_0 (IntRst)
+     begin scope: 'BitSlipCtrl1:Rst_inv'
+     FDR:R                     0.325          currState_0
+    ----------------------------------------
+    Total                      1.223ns (0.791ns logic, 0.432ns route)
+                                       (64.7% logic, 35.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Total number of paths / destination ports: 1036 / 73
+-------------------------------------------------------------------------
+Offset:              3.082ns (Levels of Logic = 6)
+  Source:            module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 (FF)
+  Destination:       module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WREADY (PAD)
+  Source Clock:      module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: module_1_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 to module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WREADY
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               4   0.282   0.505  axi_gpio_0/ip2bus_wrack_i_D1 (axi_gpio_0/ip2bus_wrack_i_D1)
-     LUT2:I0->O            5   0.053   0.662  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1 (S_AXI_WREADY)
-     end scope: 'module_1_i/axi_gpio_0:S_AXI_AWREADY'
-     begin scope: 'module_1_i/axi_interconnect_1:M_AXI_AWREADY<0>'
-     LUT5:I1->O            1   0.053   0.602  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW1_F (N31)
-     LUT3:I0->O            2   0.053   0.419  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW11 (N15)
-     LUT6:I5->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1_G (N40)
-     MUXF7:I1->O           4   0.217   0.433  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1 (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_awready_mux)
-     LUT6:I5->O            2   0.053   0.419  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/out1 (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/aa_awready)
-     LUT6:I5->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set)
-     FDR:D                     0.011          axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+     LUT2:I0->O            3   0.053   0.616  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1 (S_AXI_WREADY)
+     end scope: 'module_1_i/axi_gpio_0:S_AXI_WREADY'
+     begin scope: 'module_1_i/axi_interconnect_1:M_AXI_WREADY<0>'
+     LUT3:I0->O            1   0.053   0.635  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/S_AXI_WREADY1 (DEBUG_MC_MP_WDATACONTROL<1>)
+     LUT6:I2->O            4   0.053   0.433  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_wready_mux_inst/o_i (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_wready_mux_inst/o_i)
+     LUT5:I4->O            1   0.053   0.399  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/si_wready1 (DEBUG_SF_CB_WDATACONTROL<1>)
+     end scope: 'module_1_i/axi_interconnect_1:S_AXI_WREADY<0>'
+     begin scope: 'module_1_i/processing_system7_0:M_AXI_GP0_WREADY'
+    PS7:MAXIGP0WREADY          0.000          processing_system7_0/PS7_i
     ----------------------------------------
-    Total                      3.868ns (0.828ns logic, 3.040ns route)
-                                       (21.4% logic, 78.6% route)
+    Total                      3.082ns (0.494ns logic, 2.588ns route)
+                                       (16.0% logic, 84.0% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'sDCLK'
-  Clock period: 1.134ns (frequency: 881.517MHz)
-  Total number of paths / destination ports: 4 / 2
--------------------------------------------------------------------------
-Delay:               1.134ns (Levels of Logic = 1)
-  Source:            BitSlipCtrl1/currState_FSM_FFd1 (FF)
-  Destination:       BitSlipCtrl1/currState_FSM_FFd1 (FF)
-  Source Clock:      sDCLK rising
-  Destination Clock: sDCLK rising
-
-  Data Path: BitSlipCtrl1/currState_FSM_FFd1 to BitSlipCtrl1/currState_FSM_FFd1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q             36   0.282   0.788  currState_FSM_FFd1 (currState_FSM_FFd1)
-     LUT5:I1->O            1   0.053   0.000  currState_FSM_FFd1-In1 (currState_FSM_FFd1-In)
-     FDR:D                     0.011          currState_FSM_FFd1
-    ----------------------------------------
-    Total                      1.134ns (0.346ns logic, 0.788ns route)
-                                       (30.5% logic, 69.5% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'BitSlipCtrl1/currState_FSM_FFd2'
-  Clock period: 2.416ns (frequency: 413.912MHz)
-  Total number of paths / destination ports: 2448 / 32
--------------------------------------------------------------------------
-Delay:               2.416ns (Levels of Logic = 9)
-  Source:            BitSlipCtrl1/counter_2 (LATCH)
-  Destination:       BitSlipCtrl1/counter_31 (LATCH)
-  Source Clock:      BitSlipCtrl1/currState_FSM_FFd2 rising
-  Destination Clock: BitSlipCtrl1/currState_FSM_FFd2 rising
-
-  Data Path: BitSlipCtrl1/counter_2 to BitSlipCtrl1/counter_31
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.389   0.739  counter_2 (counter_2)
-     LUT5:I0->O            1   0.053   0.000  Mcompar_n0006_lut<0> (Mcompar_n0006_lut<0>)
-     MUXCY:S->O            1   0.291   0.000  Mcompar_n0006_cy<0> (Mcompar_n0006_cy<0>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_n0006_cy<1> (Mcompar_n0006_cy<1>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_n0006_cy<2> (Mcompar_n0006_cy<2>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_n0006_cy<3> (Mcompar_n0006_cy<3>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_n0006_cy<4> (Mcompar_n0006_cy<4>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_n0006_cy<5> (Mcompar_n0006_cy<5>)
-     MUXCY:CI->O          34   0.178   0.638  Mcompar_n0006_cy<6> (Mcompar_n0006_cy<6>)
-     LUT3:I1->O            1   0.053   0.000  Mmux_currState[1]_counter[0]_Mux_84_o132 (currState[1]_counter[0]_Mux_84_o)
-     LD:D                     -0.021          counter_0
-    ----------------------------------------
-    Total                      2.416ns (1.039ns logic, 1.377ns route)
-                                       (43.0% logic, 57.0% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
-  Total number of paths / destination ports: 378 / 227
--------------------------------------------------------------------------
-Offset:              2.172ns (Levels of Logic = 5)
-  Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID (PAD)
-  Destination:       module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1 (FF)
-  Destination Clock: module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
-
-  Data Path: module_1_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID to module_1_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    PS7:MAXIGP0WVALID      4   0.000   0.000  processing_system7_0/PS7_i (M_AXI_GP0_WVALID)
-     end scope: 'module_1_i/processing_system7_0:M_AXI_GP0_WVALID'
-     begin scope: 'module_1_i/axi_interconnect_1:S_AXI_WVALID<0>'
-     LUT5:I1->O            2   0.053   0.608  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/M_AXI_WVALID1 (DEBUG_MP_MR_WDATACONTROL<0>)
-     end scope: 'module_1_i/axi_interconnect_1:M_AXI_WVALID<0>'
-     begin scope: 'module_1_i/axi_gpio_0:S_AXI_WVALID'
-     LUT3:I0->O            1   0.053   0.739  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1 (axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1)
-     LUT6:I0->O            1   0.053   0.000  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In3 (axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In)
-     FDR:D                     0.011          axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
-    ----------------------------------------
-    Total                      2.172ns (0.825ns logic, 1.347ns route)
-                                       (38.0% logic, 62.0% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'sDCLK'
-  Total number of paths / destination ports: 26 / 4
--------------------------------------------------------------------------
-Offset:              1.484ns (Levels of Logic = 3)
-  Source:            SelIO/pins[0].iserdese2_master:Q5 (PAD)
-  Destination:       BitSlipCtrl1/currState_FSM_FFd1 (FF)
-  Destination Clock: sDCLK rising
-
-  Data Path: SelIO/pins[0].iserdese2_master:Q5 to BitSlipCtrl1/currState_FSM_FFd1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    ISERDESE2:Q5           2   0.000   0.000  pins[0].iserdese2_master (DATA_IN_TO_DEVICE<2>)
-     end scope: 'SelIO:DATA_IN_TO_DEVICE<2>'
-     begin scope: 'BitSlipCtrl1:dataIn<2>'
-     LUT6:I0->O            4   0.053   0.622  PWR_8_o_dataIn[11]_equal_3_o<11>2 (PWR_8_o_dataIn[11]_equal_3_o<11>1)
-     LUT5:I2->O            1   0.053   0.000  currState_FSM_FFd1-In1 (currState_FSM_FFd1-In)
-     FDR:D                     0.011          currState_FSM_FFd1
-    ----------------------------------------
-    Total                      1.484ns (0.862ns logic, 0.622ns route)
-                                       (58.1% logic, 41.9% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'BitSlipCtrl1/currState[1]_PWR_8_o_Mux_87_o'
-  Total number of paths / destination ports: 12 / 12
--------------------------------------------------------------------------
-Offset:              0.405ns (Levels of Logic = 1)
-  Source:            SelIO/pins[0].iserdese2_master:Q6 (PAD)
-  Destination:       BitSlipCtrl1/dataOut_0 (LATCH)
-  Destination Clock: BitSlipCtrl1/currState[1]_PWR_8_o_Mux_87_o falling
-
-  Data Path: SelIO/pins[0].iserdese2_master:Q6 to BitSlipCtrl1/dataOut_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    ISERDESE2:Q6           2   0.000   0.000  pins[0].iserdese2_master (DATA_IN_TO_DEVICE<0>)
-     end scope: 'SelIO:DATA_IN_TO_DEVICE<0>'
-     begin scope: 'BitSlipCtrl1:dataIn<0>'
-     LD:D                     -0.021          dataOut_0
-    ----------------------------------------
-    Total                      0.405ns (0.405ns logic, 0.000ns route)
-                                       (100.0% logic, 0.0% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'BitSlipCtrl1/currState[1]_PWR_53_o_Mux_111_o'
-  Total number of paths / destination ports: 12 / 1
--------------------------------------------------------------------------
-Offset:              1.356ns (Levels of Logic = 3)
-  Source:            SelIO/pins[0].iserdese2_master:Q2 (PAD)
-  Destination:       BitSlipCtrl1/bitSlip (LATCH)
-  Destination Clock: BitSlipCtrl1/currState[1]_PWR_53_o_Mux_111_o falling
-
-  Data Path: SelIO/pins[0].iserdese2_master:Q2 to BitSlipCtrl1/bitSlip
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    ISERDESE2:Q2           2   0.000   0.000  pins[0].iserdese2_master (DATA_IN_TO_DEVICE<8>)
-     end scope: 'SelIO:DATA_IN_TO_DEVICE<8>'
-     begin scope: 'BitSlipCtrl1:dataIn<8>'
-     LUT6:I0->O            4   0.053   0.505  PWR_8_o_dataIn[11]_equal_3_o<11>1 (PWR_8_o_dataIn[11]_equal_3_o<11>)
-     LUT3:I1->O            1   0.053   0.000  Mmux_currState[1]_GND_8_o_Mux_110_o11 (currState[1]_GND_8_o_Mux_110_o)
-     LD:D                     -0.021          bitSlip
-    ----------------------------------------
-    Total                      1.356ns (0.851ns logic, 0.505ns route)
-                                       (62.8% logic, 37.2% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
-  Total number of paths / destination ports: 1108 / 74
--------------------------------------------------------------------------
-Offset:              2.637ns (Levels of Logic = 20)
-  Source:            module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_31 (FF)
-  Destination:       LEDS<7> (PAD)
-  Source Clock:      module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
-
-  Data Path: module_1_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_31 to LEDS<7>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDRE:C->Q             4   0.282   0.655  axi_gpio_0/gpio_core_1/gpio_Data_Out_31 (GPIO_IO_O<0>)
-     end scope: 'module_1_i/axi_gpio_0:GPIO_IO_O<0>'
-     end scope: 'module_1_i:LED_DutyCycle<0>'
-     begin scope: 'PWM1:DutyCycle<0>'
-     LUT4:I0->O            1   0.053   0.000  Mcompar_REL1_lut<0> (Mcompar_REL1_lut<0>)
-     MUXCY:S->O            1   0.291   0.000  Mcompar_REL1_cy<0> (Mcompar_REL1_cy<0>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<1> (Mcompar_REL1_cy<1>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<2> (Mcompar_REL1_cy<2>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<3> (Mcompar_REL1_cy<3>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<4> (Mcompar_REL1_cy<4>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<5> (Mcompar_REL1_cy<5>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<6> (Mcompar_REL1_cy<6>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<7> (Mcompar_REL1_cy<7>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<8> (Mcompar_REL1_cy<8>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<9> (Mcompar_REL1_cy<9>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<10> (Mcompar_REL1_cy<10>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<11> (Mcompar_REL1_cy<11>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<12> (Mcompar_REL1_cy<12>)
-     MUXCY:CI->O           1   0.015   0.000  Mcompar_REL1_cy<13> (Mcompar_REL1_cy<13>)
-     MUXCY:CI->O           1   0.178   0.485  Mcompar_REL1_cy<14> (Mcompar_REL1_cy<14>)
-     LUT4:I2->O            8   0.053   0.445  Mcompar_REL1_cy<15>_inv1 (REL1)
-     end scope: 'PWM1:REL1'
-     OBUF:I->O                 0.000          LEDS_7_OBUF (LEDS<7>)
-    ----------------------------------------
-    Total                      2.637ns (1.052ns logic, 1.585ns route)
-                                       (39.9% logic, 60.1% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'BitSlipCtrl1/currState[1]_PWR_53_o_Mux_111_o'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'BitSlipCtrl1/Mram__n01626'
   Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
 Offset:              0.794ns (Levels of Logic = 1)
   Source:            BitSlipCtrl1/bitSlip (LATCH)
   Destination:       SelIO/pins[1].iserdese2_master:BITSLIP (PAD)
-  Source Clock:      BitSlipCtrl1/currState[1]_PWR_53_o_Mux_111_o falling
+  Source Clock:      BitSlipCtrl1/Mram__n01626 falling
 
   Data Path: BitSlipCtrl1/bitSlip to SelIO/pins[1].iserdese2_master:BITSLIP
                                 Gate     Net
@@ -701,7 +723,7 @@ Offset:              0.794ns (Levels of Logic = 1)
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 139 / 136
 -------------------------------------------------------------------------
-Delay:               0.885ns (Levels of Logic = 3)
+Delay:               0.898ns (Levels of Logic = 3)
   Source:            module_1_i/processing_system7_0/processing_system7_0/PS7_i:FCLKRESETN1 (PAD)
   Destination:       SelIO/pins[1].iserdese2_master:RST (PAD)
 
@@ -712,64 +734,72 @@ Delay:               0.885ns (Levels of Logic = 3)
     PS7:FCLKRESETN1        1   0.000   0.000  processing_system7_0/PS7_i (FCLK_RESET1_N)
      end scope: 'module_1_i/processing_system7_0:FCLK_RESET1_N'
      end scope: 'module_1_i:processing_system7_0_FCLK_RESET1_N_pin'
-     INV:I->O              4   0.067   0.419  PL_Rst_INV_10_o1_INV_0 (PL_Rst_INV_10_o)
+     INV:I->O              6   0.067   0.432  IntRst1_INV_0 (IntRst)
      begin scope: 'SelIO:IO_RESET'
     ISERDESE2:RST              0.000          pins[0].iserdese2_master
     ----------------------------------------
-    Total                      0.885ns (0.466ns logic, 0.419ns route)
-                                       (52.7% logic, 47.3% route)
+    Total                      0.898ns (0.466ns logic, 0.432ns route)
+                                       (51.9% logic, 48.1% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock BitSlipCtrl1/currState[1]_PWR_53_o_Mux_111_o
+Clock to Setup on destination clock BitSlipCtrl1/Mram__n01626
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-sDCLK          |         |         |    1.090|         |
+sDCLK          |         |         |    0.974|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock BitSlipCtrl1/currState_FSM_FFd2
--------------------------------+---------+---------+---------+---------+
-                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
--------------------------------+---------+---------+---------+---------+
-BitSlipCtrl1/currState_FSM_FFd2|    2.416|         |         |         |
-sDCLK                          |    1.090|         |         |         |
--------------------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock BitSlipCtrl1/currState_0
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+BitSlipCtrl1/currState_0|    3.605|         |         |         |
+sDCLK                   |    1.604|         |         |         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock module_1_i/axi_gpio_1/GPIO_IO_O<1>
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    1.108|         |         |         |
+---------------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>
 ---------------------------------------------------------------------------+---------+---------+---------+---------+
                                                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------------------------------------------------------------+---------+---------+---------+---------+
-BitSlipCtrl1/currState[1]_PWR_8_o_Mux_87_o                                 |         |    0.795|         |         |
-module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    3.868|         |         |         |
+module_1_i/axi_gpio_1/GPIO_IO_O<1>                                         |    1.288|         |         |         |
+module_1_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    3.843|         |         |         |
 ---------------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock sDCLK
--------------------------------+---------+---------+---------+---------+
-                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
--------------------------------+---------+---------+---------+---------+
-BitSlipCtrl1/currState_FSM_FFd2|    2.544|         |         |         |
-sDCLK                          |    1.134|         |         |         |
--------------------------------+---------+---------+---------+---------+
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+BitSlipCtrl1/currState_0|    2.355|         |         |         |
+sDCLK                   |    1.102|         |         |         |
+------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 13.41 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 13.24 secs
  
 --> 
 
-Total memory usage is 453740 kilobytes
+Total memory usage is 487408 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   61 (   0 filtered)
+Number of warnings :   59 (   0 filtered)
 Number of infos    :   15 (   0 filtered)
 

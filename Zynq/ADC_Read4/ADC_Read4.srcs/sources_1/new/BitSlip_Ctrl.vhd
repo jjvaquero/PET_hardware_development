@@ -45,7 +45,7 @@ end BitSlip_Ctrl;
 architecture Behavioral of BitSlip_Ctrl is
 
 --states used for the FSM
- type states is (S0,S1,S2,S3);
+ type states is (S0,S1,S2,S3,S4);
  signal currState, nextState : states; 
  
  
@@ -66,7 +66,7 @@ begin
       variable datTmp : std_logic_vector(5 downto 0);
     begin 
         delayEn<=b"00"; --by deafault not active
-        
+        done<='1';
         case currState is
             when S0=> --used only to set counter :=0
                 counter:=0;
@@ -74,20 +74,21 @@ begin
                 --dataOut<=(others=>'0');
             when S1 =>
                 --check if pattern is the same
+               done<='1';
                if (dataIn = b"111111000000") then
                      nextState <= S3;  --now it should be done....
                      dataOut<=dataIn;
+                     counter:=0;
                      bitslip<='0'; 
                 else 
                     bitSlip<='1'; --assert bitSlip for one clkDiv_Cycle
-                    done<='0';
                     nextState<=S2;
                 
                 end if;
              when S2 =>
                 --deassert bitSlip for at least three clock cycles
                 bitSlip<='0';
-                done<='0';
+                done<='1';
                 --dataOut<=(others=>'0');
                 if (counter >= 2) then
                     nextState<=S1;
@@ -98,11 +99,18 @@ begin
                end if;
              when S3 =>
                 bitSlip<='0'; --<= '0';
-                done<='1';
+                done<='1';  --de-assert sdata so that ADC starts working
                 --dataOut<=dataIn;
                 if (dataIn = b"111111000000") then
                     nextState <= S3;
                     dataOut<=dataIn;
+                    --para terminar
+                    counter:= counter+1; 
+                    if (counter >= 2) then
+                         done<='0';
+                         counter:=11;
+                         nextState<= S4;
+                    end if;                   
                 else
                     datTmp := (dataIn(11),dataIn(9),dataIn(7), dataIn(5),dataIn(3),dataIn(1));
                     if  (not(datTmp = b"111000")) then
@@ -115,8 +123,13 @@ begin
                    -- delayEn<=b"11"; --modifies the delay value
                     --luego poner 11
                     nextState <=S0;
-                    done<='0';
-                end if;               
+                    done<='1';
+                end if;    
+               --estado final alcanzado tras conseguir 10 valores iguales seguidos  
+               when S4=>
+                 bitSlip<='0';
+                 done<='0';
+                 dataOut<=dataIn;                          
          end case; 
          
          

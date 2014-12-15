@@ -64,7 +64,8 @@ CORE_STATE_DEVELOPMENT_FILES =
 
 WRAPPER_NGC_FILES = implementation/module_1_processing_system7_0_wrapper.ngc \
 implementation/module_1_axi_gpio_0_wrapper.ngc \
-implementation/module_1_axi_interconnect_1_wrapper.ngc
+implementation/module_1_axi_interconnect_1_wrapper.ngc \
+implementation/module_1_axi_gpio_1_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 

@@ -5,49 +5,55 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="946" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 359: Actual for formal port <arg fmt="%s" index="1">io_reset</arg> is neither a static name nor a globally static expression
+<msg type="warning" file="HDLCompiler" num="946" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 368: Actual for formal port <arg fmt="%s" index="1">io_reset</arg> is neither a static name nor a globally static expression
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 134: &lt;<arg fmt="%s" index="1">ibufds</arg>&gt; remains a black-box since it has no binding entity.
+<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 139: &lt;<arg fmt="%s" index="1">ibufds</arg>&gt; remains a black-box since it has no binding entity.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 140: &lt;<arg fmt="%s" index="1">ibufgds</arg>&gt; remains a black-box since it has no binding entity.
+<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 145: &lt;<arg fmt="%s" index="1">ibufgds</arg>&gt; remains a black-box since it has no binding entity.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" Line 34: <arg fmt="%s" index="1">dutycycle</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/imports/Zynq_Intro/PWM_Controller.vhd" Line 33: <arg fmt="%s" index="1">dutycycle</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 77: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 78: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 79: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 80: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 103: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 104: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 105: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 106: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 107: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 115: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 111: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 119: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">203</arg>: Output port &lt;<arg fmt="%s" index="3">O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ibuf3</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/new/BitSlip_Ctrl.vhd" Line 132: <arg fmt="%s" index="1">datain</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">208</arg>: Output port &lt;<arg fmt="%s" index="3">processing_system7_0_FCLK_RESET0_N_pin</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">module_1_i</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd" Line 54: Net &lt;<arg fmt="%s" index="1">sADC_Data[11]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">240</arg>: Output port &lt;<arg fmt="%s" index="3">REL1</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PWM1</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">208</arg>: Output port &lt;<arg fmt="%s" index="3">O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ibuf3</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">249</arg>: Output port &lt;<arg fmt="%s" index="3">delayEn</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">BitSlipCtrl1</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">215</arg>: Output port &lt;<arg fmt="%s" index="3">processing_system7_0_FCLK_RESET0_N_pin</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">module_1_i</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">249</arg>: Output port &lt;<arg fmt="%s" index="3">done</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">BitSlipCtrl1</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">257</arg>: Output port &lt;<arg fmt="%s" index="3">dataOut</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">BitSlipCtrl1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/rchil/Desktop/Artemis/Software_desarrollado/Zynq/ADC_Read4/ADC_Read4.srcs/sources_1/edk/module_1/module_1_stub.vhd</arg>&quot; line <arg fmt="%s" index="2">257</arg>: Output port &lt;<arg fmt="%s" index="3">delayEn</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">BitSlipCtrl1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">sADC_Data</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">DutyCycle&lt;31:31&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -149,46 +155,37 @@
 <msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">counter&lt;0&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">nextState&lt;2&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">nextState&lt;1&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">nextState&lt;0&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
 <msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;11&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;10&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;9&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;8&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;7&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;6&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;5&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;4&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;3&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;2&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;1&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">dataOut&lt;0&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
 <msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">bitSlip</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">done</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+<msg type="info" file="Xst" num="3231" delta="new" >The small RAM &lt;<arg fmt="%s" index="1">Mram__n0162</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">dataOut_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">BitSlip_Ctrl</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">nextState_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">BitSlip_Ctrl</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">currState_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">BitSlip_Ctrl</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="new" >Latch &lt;<arg fmt="%s" index="1">nextState_1</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">BitSlip_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="new" >Latch &lt;<arg fmt="%s" index="1">nextState_0</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">BitSlip_Ctrl</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="528" delta="new" >Multi-source in Unit &lt;<arg fmt="%s" index="1">processing_system7_0</arg>&gt; on signal &lt;<arg fmt="%s" index="2">PS_SRSTB</arg>&gt;; this signal is connected to multiple drivers.
@@ -200,34 +197,31 @@
 <msg type="warning" file="Xst" num="528" delta="new" >Multi-source in Unit &lt;<arg fmt="%s" index="1">processing_system7_0</arg>&gt; on signal &lt;<arg fmt="%s" index="2">PS_PORB</arg>&gt;; this signal is connected to multiple drivers.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">BitSlipCtrl1/done</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_1_stub</arg>&gt;.
-</msg>
-
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_gpio_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_interconnect_1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_interconnect_1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_gpio_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_interconnect_1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_interconnect_1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1&gt; </arg>
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_interconnect_1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_gpio_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_interconnect_1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1&gt; </arg>
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_interconnect_1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_interconnect_1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_gpio_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_interconnect_1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_interconnect_1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.

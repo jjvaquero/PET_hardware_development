@@ -6,7 +6,7 @@ C:\Xilinx\14.5\ISE_DS\ISE\.
 -1
 Opened constraints file module_1_stub.pcf.
 
-Tue Aug 20 13:28:38 2013
+Thu Oct 17 16:31:42 2013
 
 C:\Xilinx\14.5\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -w -intstyle pa module_1_stub_routed.ncd module_1_stub.bit module_1_stub.pcf 
 
@@ -91,15 +91,10 @@ There were 0 CONFIG constraint(s) processed from module_1_stub.pcf.
 
 
 Running DRC.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   BitSlipCtrl1/currState[1]_PWR_53_o_Mux_111_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   BitSlipCtrl1/currState[1]_PWR_8_o_Mux_87_o is sourced by a combinatorial pin.
-   This is not good design practice. Use the CE pin to control the loading of
-   data into the flip-flop.
-DRC detected 0 errors and 2 warnings.  Please see the previously displayed
+WARNING:PhysDesignRules:372 - Gated clock. Clock net BitSlipCtrl1/Mram__n01626
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
 Creating bit map...
 Saving bit stream in "module_1_stub.bit".

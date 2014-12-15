@@ -3,7 +3,7 @@ xc7z020clg484-1
 -lang
 vhdl
 -intstyle
-pa
+default
 -toplevel
 no
 -ti
