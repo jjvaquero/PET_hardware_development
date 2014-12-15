@@ -1,6 +1,6 @@
-13:34:06 **** Incremental Build of configuration Debug for project ADC_test_leds ****
+16:48:59 **** Incremental Build of configuration Debug for project ADC_test_leds ****
 make all 
 make: No se hace nada para `all'.
 
-13:34:06 Build Finished (took 67ms)
+16:48:59 Build Finished (took 64ms)
 

@@ -1,6 +1,6 @@
-13:34:05 **** Incremental Build of configuration Debug for project hello ****
+16:48:58 **** Incremental Build of configuration Debug for project hello ****
 make all 
 make: No se hace nada para `all'.
 
-13:34:05 Build Finished (took 72ms)
+16:48:58 Build Finished (took 68ms)
 

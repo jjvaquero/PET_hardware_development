@@ -37,6 +37,8 @@ entity module_1_stub is
     FCLKP1: out std_logic;  --reloj usado para el conversor,sal por JA4
     --FCLKP2: out std_logic;  --TODO borrar...sale por JB4
     --FCLKP3: out std_logic;  --sale por JB2
+    --used to control the sync pattern
+    SData: out std_logic;
     --pines para datos
     ADC_Data1: in std_logic_vector(1 downto 0);
     ADC_Data0: in std_logic_vector(1 downto 0);
@@ -51,14 +53,17 @@ architecture STRUCTURE of module_1_stub is
   signal sADC_DataIn : std_logic_vector(31 downto 0):=(others => '0');
   signal sADC_Data: std_logic_vector(11 downto 0);
   signal sprocessing_system7_0_FCLK_CLK0_pin : std_logic;
-  signal PL_Rst: std_logic;
-  signal s_aux, sADC_Data1,  sADC_Data0, sDCLK, sFCLK: std_logic;
+  signal PL_Rst, IntRst: std_logic;
+  signal sADC_Data1,  sADC_Data0, sDCLK, sFCLK: std_logic;
   signal dat_aux : std_logic;
   signal data_In: std_logic_vector (1 downto 0);
   signal clk_Feedback, clk_Bit, clk_Div : std_logic;
   signal sBitSlip: std_logic;
   signal sDelay: std_logic_vector(1 downto 0);
   signal sClkExtIn, sClkExtOut : std_logic;
+  signal fifoDataIn: std_logic_vector(31 downto 0); 
+  signal sfifoControlPins: std_logic_vector(1 downto 0);
+  
 
 
 
@@ -92,6 +97,7 @@ architecture STRUCTURE of module_1_stub is
       processing_system7_0_FCLK_CLK1_pin: out std_logic; 
       processing_system7_0_FCLK_RESET0_N_pin : out std_logic;  --reset used in my PL
       processing_system7_0_FCLK_RESET1_N_pin : out std_logic;
+      axi_gpio_1_GPIO_IO_O_pin : out std_logic_vector(1 downto 0);
       ADC_DataIn: in std_logic_vector(31 downto 0) --lo conecto a sADC_DataIn     
       --LEDS: out std_logic_vector(7 downto 0)
     );
@@ -101,8 +107,7 @@ architecture STRUCTURE of module_1_stub is
   port(
     Clk: in std_logic; 
     DutyCycle: in std_logic_vector(31 downto 0);
-    PWM_out : out std_logic_vector(7 downto 0); 
-    REL1: out std_logic
+    PWM_out : out std_logic_vector(6 downto 0) 
     );
   end component;
   
@@ -201,6 +206,8 @@ begin
   ibuf1 : IBUFDS  port map (I=>ADC_Data1(0), IB=>ADC_Data1(1), O=>sADC_Data1);   
   ibuf2 : IBUFGDS port map (I=>DCLK(0), IB=>DCLK(1), O=>sDCLK);
   ibuf3 : IBUFGDS port map (I=>FCLK(0), IB=>FCLK(1), O=>sFCLK);
+  
+  IntRst<=not(PL_Rst);
 
         
   
@@ -234,6 +241,8 @@ begin
       processing_system7_0_FCLK_CLK1_pin => sClkExtIn,
       --processing_system7_0_FCLK_RESET0_N_pin => sprocessing_system7_0_FCLK_RESET0_N_pin,
       processing_system7_0_FCLK_RESET1_N_pin => PL_Rst,
+      --used to control sync pattern
+      axi_gpio_1_GPIO_IO_O_pin => sfifoControlPins,
       ADC_DataIn => sADC_DataIn
     );
     
@@ -241,11 +250,10 @@ begin
     port map(
         Clk => sprocessing_system7_0_FCLK_CLK0_pin, 
         DutyCycle => sLED_DutyCycle, 
-        PWM_out => LEDS,
-        REL1=>s_aux
+        PWM_out => LEDS(7 downto 1)
         );
         
-        
+    --SData<='1';
     BitSlipCtrl1 : BitSlip_Ctrl 
     Port map ( 
        dataIn => sADC_Data, --sADC_DataIn(11 downto 0),
@@ -254,10 +262,11 @@ begin
         bitSlip => sBitSlip,
         --done -- lo dejo sin conectar de momento...lo podria sacar por algun pin
         done =>dat_aux,
-        dataOut=> sADC_DataIn(11 downto 0),
+        dataOut=> open,
         delayEn=> sDelay
         );
 
+  
    
    --senales de SelectIO
    --meto aqui un delay que asumo sera igual para ambos datos..sino..luego delays independientes...
@@ -347,7 +356,7 @@ begin
    port map(
      -- From the system into the device
      DATA_IN_FROM_PINS       =>data_In,
-     DATA_IN_TO_DEVICE       =>sADC_Data,
+     DATA_IN_TO_DEVICE       =>fifoDataIn(11 downto 0),
    
      BITSLIP                 =>sBitSlip,                    -- Bitslip module is enabled in NETWORKING mode
                                                                    -- User should tie it to '0' if not needed
@@ -381,10 +390,56 @@ begin
 
     --BUFIO_inst : BUFIO port map ( I=> sClkExtIn, O=>sClkExtOut);
             
-    sADC_DataIn(31 downto 12)<=(others => '0');
+    --sADC_DataIn(31 downto 12)<=(others => '0');
+    fifoDataIn(31 downto 12)<=(others=>'0');
     FCLKP1<=sClkExtIn; --dat_aux; --sDCLK; --s_aux;
+    LEDS(0) <= dat_aux; 
+    SData <= dat_aux;
     --FCLKP2<=sADC_Data1;
     --FCLKP3<=sFCLK;
+    
+        -- 7 Series
+    -- Xilinx HDL Libraries Guide, version 14.5
+        FIFO18E1_CD : FIFO18E1
+        generic map (
+            ALMOST_EMPTY_OFFSET => X"0080", -- Sets the almost empty threshold
+            ALMOST_FULL_OFFSET => X"0080", -- Sets almost full threshold
+            DATA_WIDTH => 36,--18   -- Sets data width to 4-36 --18
+            DO_REG => 1, -- Enable output register (1-0) Must be 1 if EN_SYN = FALSE
+            EN_SYN => FALSE, -- Specifies FIFO as dual-clock (FALSE) or Synchronous (TRUE)
+            FIFO_MODE => "FIFO18_36", --FIFO18", -- Sets mode to FIFO18 or FIFO18_36
+            FIRST_WORD_FALL_THROUGH => FALSE, -- Sets the FIFO FWFT to FALSE, TRUE
+            INIT => X"00000000", -- Initial values on output port
+            SIM_DEVICE => "7SERIES", -- Must be set to "7SERIES" for simulation behavior
+            SRVAL => X"00000000" -- Set/Reset value for output port
+        )
+        port map (
+            -- Read Data: 32-bit (each) output: Read output data
+            DO => sADC_DataIn, -- 32-bit output: Data output
+            DOP => open, -- 4-bit output: Parity data output
+            -- Status: 1-bit (each) output: Flags and other FIFO status outputs
+            ALMOSTEMPTY => open, -- 1-bit output: Almost empty flag
+            ALMOSTFULL => open, -- 1-bit output: Almost full flag
+            EMPTY => open, -- 1-bit output: Empty flag
+            FULL => open, -- 1-bit output: Full flag
+            RDCOUNT => open, -- 12-bit output: Read count
+            RDERR => open, -- 1-bit output: Read error
+            WRCOUNT => open, -- 12-bit output: Write count
+            WRERR => open, -- 1-bit output: Write error
+            -- Read Control Signals: 1-bit (each) input: Read clock, enable and reset input signals
+            RDCLK => sfifoControlPins(1), -- 1-bit input: Read clock
+            RDEN => sfifoControlPins(0), -- 1-bit input: Read enable
+            REGCE => '1', -- 1-bit input: Clock enable
+            RST => IntRst, -- 1-bit input: Asynchronous Reset
+            RSTREG => IntRst, -- 1-bit input: Output register set/reset
+            -- Write Control Signals: 1-bit (each) input: Write clock and enable input signals
+            WRCLK => clk_Div, -- 1-bit input: Write clock
+            WREN => '1', -- 1-bit input: Write enable
+            -- Write Data: 32-bit (each) input: Write input data
+            DI => fifoDataIn, -- 32-bit input: Data input
+            DIP => "0000"-- 4-bit input: Parity input
+        );
+                -- End of FIFO18E1_inst instantiation
     
 
 end architecture STRUCTURE;
