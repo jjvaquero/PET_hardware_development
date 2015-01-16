@@ -32,7 +32,8 @@
 
 void ButtonPressInt();
 void ConvDoneInt();
-void SPISendCmd();
+void SPISendCmd(int valThreshold);
+void msgProc();
 
 
 /*
@@ -41,7 +42,6 @@ void SPISendCmd();
 unsigned long adcTemp[4];
 
 unsigned long intTime = 5; // 50 Mhz -> 20 ns ...10*20 = 200 ns
-unsigned long ulData = 0;
 //int tempValue;
 
 //variables for the C11204
@@ -68,6 +68,10 @@ typedef union {
 sendBuffer histBuff;
 
 tBoolean datFull = false;
+
+//Serial communication buffer
+unsigned char buffIn[10];
+unsigned char buffOut[10];
 
 int main() {
 
@@ -125,6 +129,8 @@ int main() {
 	 * 				GPIO Port F Configuration
 	 */
 	GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3|GPIO_PIN_2);
+	// Uncomment this to use an external interrupt for the threshold configuration
+	/*
 	GPIODirModeSet(GPIO_PORTF_BASE, GPIO_PIN_4, GPIO_DIR_MODE_IN);
 	GPIOPadConfigSet(GPIO_PORTF_BASE,GPIO_PIN_4 ,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
 	// configure and activate the corresponding interrupt
@@ -134,6 +140,7 @@ int main() {
 	//make sure the interrupt is cleared at start
 	GPIOPinIntClear(GPIO_PORTF_BASE,GPIO_PIN_4);
 	IntEnable(INT_GPIOF);
+	*/
 
 
 	/**
@@ -251,29 +258,56 @@ int main() {
 	 UARTCharPut(UART0_BASE,'O');
 	 UARTCharPut(UART0_BASE,'M');
 
+//Start the standard configuration
 	//Starts the DAC configuration routine
-	SPISendCmd();
+	SPISendCmd(300);  //set it to 300mV by default
 
+	//Configure the HV power supply
 	HVset = 73.7;
 	tempCorrs[0] = 0.0; tempCorrs[1] = 0.0;
-	tempCorrs[2] = 10.0; tempCorrs[3] = 10.0;
+	tempCorrs[2] = 56.0; tempCorrs[3] = 56.0;
 	tempCorrs[4] = HVset; tempCorrs[5] = 25.0;
 
 	setTempCorrFact(UART3_BASE, tempCorrs);
 	setHVOn(UART3_BASE);
+
+	 //clear the input buffer
+	 for (i = 0; i < 10; i++){
+		 buffIn[i] = 0;
+	 }
 	//
 	// Main application loop.
 	//
 	while(true)
 	{
 		//put a while to read from UART0
-		  //while (!UARTCharsAvail(UART3_BASE)){
-		  aux = UARTCharGet(UART0_BASE);
+		while (buffIn[0] != 0xFE || buffIn[1] != 0xFE ){
+		 while (!UARTCharsAvail(UART0_BASE)){}
+		//read the message header
+			buffIn[0] = UARTCharGet(UART0_BASE);
+			buffIn[1] = UARTCharGet(UART0_BASE);
+		}
+			 //now I read the rest of the command
+			 buffIn[2] = UARTCharGet(UART0_BASE);
+			 buffIn[3] = UARTCharGet(UART0_BASE);
+			 buffIn[4] = UARTCharGet(UART0_BASE);
 
-		  GPIOPinIntDisable(GPIO_PORTD_BASE, GPIO_PIN_0);
+		 GPIOPinIntDisable(GPIO_PORTD_BASE, GPIO_PIN_0);
+
+
+
+		 msgProc();
+		 GPIOPinIntEnable(GPIO_PORTD_BASE, GPIO_PIN_0);
+
+		 //clear the input buffer
+		 for (i = 0; i < 10; i++){
+			 buffIn[i] = 0;
+		 }
+		 /*
+
 		  //send the data using the USART0
-		  if(aux == 'v'){
-			  SPISendCmd();
+		  if(buffIn == 'v'){
+			  SPISendCmd(300);
 		  }
 		  else if (aux == 'd'){
 
@@ -326,18 +360,15 @@ int main() {
 		  datFull = false;
 		  GPIOPinIntEnable(GPIO_PORTD_BASE, GPIO_PIN_0);
 
+		  */
+
 
 	}
 
-
-
-
-	/*while(true){
-		//open main loop, waits for interrupts
-	}*/
-
 	return 0;
 }
+
+
 
 /****
  *  ISR that will be executed after the ADC conversion, started by the
@@ -385,6 +416,8 @@ void ConvDoneInt(void){
 	GPIOPinIntEnable(GPIO_PORTD_BASE, GPIO_PIN_0);
 }
 
+
+
 /* Needed only when using the timer for the integration time
  *
  */
@@ -411,32 +444,118 @@ void ButtonPressInt(void){
 	//Better clear it after the conversion
 }
 
-void SPISendCmd(void){
+/*
+ *   To set the threshold voltage on the TLV5624
+ *   valThreshold, value to set in mV
+ */
+void SPISendCmd(int valThreshold){
+
+	unsigned long ulData = 0;
+	int code = 0;
 	//FLASH the LED, turning it...blue-green
-	 //Send a hello world message
-	GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2 | GPIO_PIN_3 , 8);
-	ulData = 0x00009001; //0x00004865; //'He'
+	//GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2 | GPIO_PIN_3 , 8);
+	ulData = 0x00009001; // Configure it to use the internal reference
+						 //and set it to be 1.024 V
 	SysCtlDelay(5000000);
 	SSIDataPut(SSI0_BASE, ulData);
 	while(SSIBusy(SSI0_BASE)){};
 
-	ulData = 0x00000250; //0x006C6C; //'27'
+	//compute the DAC code to send
+	//code = V*2^n/(2*ref)
+	code = valThreshold*125/1000; //no need to round, not floats used
+	code*=16; //doing a 4 bits left shift
+	ulData = 0x00000FF0 & code;  //
+	//ulData = 0x00000250;
 	SysCtlDelay(500);
 	SSIDataPut(SSI0_BASE, ulData);
 	while(SSIBusy(SSI0_BASE)){};
 
-	ulData = 0x00000250; //0x00006F21; //'o!'
+	//ulData = 0x00000250;
+	//Send the data two times just to be sure it worked
 	SysCtlDelay(500);
 	SSIDataPut(SSI0_BASE, ulData);
 	while(SSIBusy(SSI0_BASE)){};
 
 	SysCtlDelay(5000);
 
-	GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2 | GPIO_PIN_3, 4);
-	SysCtlDelay(5000000);
+	//GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2 | GPIO_PIN_3, 4);
+	//SysCtlDelay(5000);
 
-	GPIOPinIntClear(GPIO_PORTF_BASE, GPIO_PIN_4);
-	GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2 | GPIO_PIN_3, 0);
+	//GPIOPinIntClear(GPIO_PORTF_BASE, GPIO_PIN_4);
+	//GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2 | GPIO_PIN_3, 0);
+
+}
+
+/*
+ *   To process data coming from the serial port
+ *
+ *   TODO pass the buffer as an argument and stop using a global variable
+ *   hacer algo mas decente tb que los if anidados...duele a la vista
+ *
+ *   Commands	Argument
+ *   SHV   		2bytes		--> sets the high voltate, the value to set will be received as the voltage*100
+ *   GHV  		no argument --> sends back high voltage data
+ *   STH		2 bytes		--> sets  the threshold value value received as mV
+ *   GTP		no argument	--> sends back the temperature of the MPPC
+ *   DAT		no argument	--> sends back the stored histogram
+ */
+void msgProc(){
+	int i;
+	//check the contents of the message received
+	if(buffIn[2] == 'S' && buffIn[3] == 'H' && buffIn[4] =='V'){
+		//first I will read the new value
+		buffIn[5] = UARTCharGet(UART0_BASE);
+		buffIn[6] = UARTCharGet(UART0_BASE);
+		int HVtemp = buffIn[5] | buffIn[6] << 8;
+		HVset = (float)HVtemp/100.00;
+		tempCorrs[0] = 0.0; tempCorrs[1] = 0.0;
+		tempCorrs[2] = 56.0; tempCorrs[3] = 56.0;
+		tempCorrs[4] = HVset; tempCorrs[5] = 25.0;
+
+		setTempCorrFact(UART3_BASE, tempCorrs);
+		//send the header first
+		UARTCharPut(UART0_BASE,0xFE);
+		UARTCharPut(UART0_BASE,0xFE);
+		//answer with the same...but in small letters
+		UARTCharPut(UART0_BASE,'s');
+		UARTCharPut(UART0_BASE,'h');
+		UARTCharPut(UART0_BASE,'v');
+
+	}
+	else if(buffIn[2] == 'S' && buffIn[3] == 'T' && buffIn[4] =='H'){
+		//first I will read the new value
+		buffIn[5] = UARTCharGet(UART0_BASE);
+		buffIn[6] = UARTCharGet(UART0_BASE);
+		int THtemp = buffIn[5] | buffIn[6] << 8;
+		SPISendCmd(THtemp);
+		//send the header first
+		UARTCharPut(UART0_BASE,0xFE);
+		UARTCharPut(UART0_BASE,0xFE);
+		//answer with the same...but in small letters
+		UARTCharPut(UART0_BASE,'s');
+		UARTCharPut(UART0_BASE,'h');
+		UARTCharPut(UART0_BASE,'i');
+	}
+
+   else if(buffIn[2] == 'D' && buffIn[3] == 'A' && buffIn[4] =='T'){
+	   //send the header first
+		UARTCharPut(UART0_BASE,0xFE);
+		UARTCharPut(UART0_BASE,0xFE);
+	   //answer with the same...but in small letters
+		UARTCharPut(UART0_BASE,'d');
+		UARTCharPut(UART0_BASE,'a');
+		UARTCharPut(UART0_BASE,'t');
+		for (i = 0; i < 4096*2; i++){
+			UARTCharPut(UART0_BASE,histBuff.histCharBuff[i]);
+
+		}
+		//clear the histogram once it has been sent
+		for (i = 0; i < 4096; i++){
+			histBuff.histTemp[i] = 0;
+		}
+		//allow new data to be stored
+		datFull = false;
+	}
 
 }
 
