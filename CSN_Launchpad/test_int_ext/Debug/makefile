@@ -139,6 +139,7 @@ test_serial_output.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
 
+test_int_ext.hex: $(EXE_OUTPUTS)
 test_serial_output.hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: ARM Hex Utility'
 	"c:/ti/ccsv6/tools/compiler/arm_5.1.5/bin/armhex"  -o "test_serial_output.hex" $(EXE_OUTPUTS__QUOTED)
