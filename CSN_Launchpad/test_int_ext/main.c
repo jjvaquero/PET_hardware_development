@@ -263,9 +263,9 @@ int main() {
 	SPISendCmd(300);  //set it to 300mV by default
 
 	//Configure the HV power supply
-	HVset = 73.7;
+	HVset = 74.24;
 	tempCorrs[0] = 0.0; tempCorrs[1] = 0.0;
-	tempCorrs[2] = 56.0; tempCorrs[3] = 56.0;
+	tempCorrs[2] = 0.0; tempCorrs[3] = 0.0;
 	tempCorrs[4] = HVset; tempCorrs[5] = 25.0;
 
 	setTempCorrFact(UART3_BASE, tempCorrs);
@@ -501,6 +501,10 @@ void SPISendCmd(int valThreshold){
  */
 void msgProc(){
 	int i;
+	union intchar{
+		float dat; // i can use because i asume no value to be > 16000...
+		unsigned char data[4];
+	}int2char;
 	//check the contents of the message received
 	if(buffIn[2] == 'S' && buffIn[3] == 'H' && buffIn[4] =='V'){
 		//first I will read the new value
@@ -509,7 +513,7 @@ void msgProc(){
 		int HVtemp = buffIn[5] | buffIn[6] << 8;
 		HVset = (float)HVtemp/100.00;
 		tempCorrs[0] = 0.0; tempCorrs[1] = 0.0;
-		tempCorrs[2] = 56.0; tempCorrs[3] = 56.0;
+		tempCorrs[2] = 0.0; tempCorrs[3] = 0.0;
 		tempCorrs[4] = HVset; tempCorrs[5] = 25.0;
 
 		setTempCorrFact(UART3_BASE, tempCorrs);
@@ -555,6 +559,26 @@ void msgProc(){
 		}
 		//allow new data to be stored
 		datFull = false;
+	}
+	//used to read the temp every minute
+    else if(buffIn[2] == 'T' && buffIn[3] == 'E' && buffIn[4] =='M'){
+	   //send the header first
+		UARTCharPut(UART0_BASE,0xFE);
+		UARTCharPut(UART0_BASE,0xFE);
+	   //answer with the same...but in small letters
+		UARTCharPut(UART0_BASE,'t');
+		UARTCharPut(UART0_BASE,'e');
+		UARTCharPut(UART0_BASE,'m');
+		//read the data from the hamamatsu
+
+		int2char.dat= getMPPCTemp(UART3_BASE);
+		//lets try another function
+		//getInfoAndStatus(UART3_BASE, tempCorrs);
+		//int2char.dat = tempCorrs[4];
+		for (i = 0 ; i < 4 ; i++){
+			UARTCharPut(UART0_BASE,int2char.data[i]);
+		}
+
 	}
 
 }
