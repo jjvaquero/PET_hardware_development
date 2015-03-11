@@ -409,7 +409,7 @@ int readTempCorrFact(unsigned long port, float outData[]){
 	//Reference voltage Vb
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+20];
 	outData[4] = unitConv(hexChar,'V');
-	//Reference temperature Tb
+	//Reference voltage Tb
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+24];
 	outData[5] =unitConv(hexChar,'C');
 
@@ -571,14 +571,6 @@ int setTempCorrFact(unsigned long port, float tempCorrFactor[]){
 
 	//Read the expected answer from the comm port
 	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
-
-	/*for debugging only
-	UARTCharPut(UART0_BASE,'s');
-	UARTCharPut(UART0_BASE,' ');
-	for (i = 0; i < 32; i++){
-		UARTCharPut(UART0_BASE,cmdOut[i]);
-	}
-	*/
 
 	//Check the CRC
 	if (!checkCRC(cmdIn, inLength)){
