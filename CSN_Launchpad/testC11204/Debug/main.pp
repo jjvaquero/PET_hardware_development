@@ -14,6 +14,7 @@ main.obj: c:/ti/ccsv6/tools/compiler/arm_5.1.8/include/linkage.h
 main.obj: c:/ti/ccsv6/tools/compiler/arm_5.1.8/include/stdarg.h
 main.obj: c:/ti/ccsv6/tools/compiler/arm_5.1.8/include/stdlib.h
 main.obj: ../C11204PS.h
+main.obj: C:/StellarisWare/driverlib/debug.h
 main.obj: c:/ti/ccsv6/tools/compiler/arm_5.1.8/include/stdlib.h
 
 ../main.c: 
@@ -30,4 +31,5 @@ c:/ti/ccsv6/tools/compiler/arm_5.1.8/include/linkage.h:
 c:/ti/ccsv6/tools/compiler/arm_5.1.8/include/stdarg.h: 
 c:/ti/ccsv6/tools/compiler/arm_5.1.8/include/stdlib.h: 
 ../C11204PS.h: 
+C:/StellarisWare/driverlib/debug.h: 
 c:/ti/ccsv6/tools/compiler/arm_5.1.8/include/stdlib.h: 

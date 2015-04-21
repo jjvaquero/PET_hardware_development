@@ -14,15 +14,15 @@
  *  Hamamatsu conversion table....ouuu yeahh!!!!!...cause sending floats is sooo mainstream...and u know...i always had a thing for strings
  *
  *  Function 				Data range	Conversion 							Unit
- *  Output voltage monitor 	0～65535 	1.812×10-3 							V   --> 'V'
- *  Output current monitor 	0～1024 		4.980×10-3 							mA  --> 'A'
- *  MPPC temp monitor		0～65535 	(val*1.907×10-5-1.035)/(-5.5×10-3)	C	--> 'C'
- *  temp coefficient DT'1	-1000～1000	1.507×10-3			 				mV/°C2	-->'D'
- *  temp coefficient DT’2	-1000～1000	1.507×10-3 							mV/°C2	-->'D'
- *  temp coefficient DT1	0～65535		5.225×10-2 							mV/°C	-->'T'
- *  temp coefficient DT2	0～65535		5.225×10-2 							mV/°C	-->'T'
- *	Reference voltage Vb 	0～65535 	1.812×10-3 							V	-->'V'
- *	Reference temp Tb 		0～65535 	(val*1.907×10-5-1.035)/(-5.5×10-3) °C	-->'C'
+ *  Output voltage monitor 	0ï½ž65535 	1.812Ã—10-3 							V   --> 'V'
+ *  Output current monitor 	0ï½ž1024 		4.980Ã—10-3 							mA  --> 'A'
+ *  MPPC temp monitor		0ï½ž65535 	(val*1.907Ã—10-5-1.035)/(-5.5Ã—10-3)	C	--> 'C'
+ *  temp coefficient DT'1	-1000ï½ž1000	1.507Ã—10-3			 				mV/Â°C2	-->'D'
+ *  temp coefficient DTâ€™2	-1000ï½ž1000	1.507Ã—10-3 							mV/Â°C2	-->'D'
+ *  temp coefficient DT1	0ï½ž65535		5.225Ã—10-2 							mV/Â°C	-->'T'
+ *  temp coefficient DT2	0ï½ž65535		5.225Ã—10-2 							mV/Â°C	-->'T'
+ *	Reference voltage Vb 	0ï½ž65535 	1.812Ã—10-3 							V	-->'V'
+ *	Reference temp Tb 		0ï½ž65535 	(val*1.907Ã—10-5-1.035)/(-5.5Ã—10-3) Â°C	-->'C'
  */
 
 /**
@@ -195,17 +195,30 @@ tBoolean checkCRC(unsigned char buffer[], int length){
 
 int startCommunication(unsigned long port){
 	//Check that the right port have been set
-	if (port != UART3_BASE) return -1;
+	if (port != UART5_BASE) return -1;
 
 	//Peripheral configuration
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART3);
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART5);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
 	//Pin Configuration
-	GPIOPinConfigure(GPIO_PC6_U3RX);
-	GPIOPinConfigure(GPIO_PC7_U3TX);
-	GPIOPinTypeUART(GPIO_PORTC_BASE, GPIO_PIN_6 | GPIO_PIN_7);
+
+	/******************
+	 * Needed only to use NMI-PD7 needs to be unlocked, otherwise the code will not work
+	 */
+/*
+    //
+    // Enable port PD7 for UART2 U2TX
+    // First open the lock and select the bits we want to modify in the GPIO commit register.
+    //
+    HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY_DD;
+    HWREG(GPIO_PORTD_BASE + GPIO_O_CR) = 0x80;
+*/
+
+	GPIOPinConfigure(GPIO_PE4_U5RX);
+	GPIOPinConfigure(GPIO_PE5_U5TX);
+	GPIOPinTypeUART(GPIO_PORTE_BASE, GPIO_PIN_4 | GPIO_PIN_5);
 	//UART configuration, this function also enables the UART Comm
-	UARTConfigSetExpClk(UART3_BASE, SysCtlClockGet(), 38400,
+	UARTConfigSetExpClk(UART5_BASE, SysCtlClockGet(), 38400,
 	        (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_EVEN));
 	//update this variable that will later be used to check comm has been opened
 	//comOpen = true;
@@ -248,6 +261,7 @@ int readAnswer(unsigned char cmdOut[], int outLength, unsigned char cmdIn[], int
 		//Now the read command
 		readChar = 0;
 		aux = 0;
+
 
 		//wait to get the start of a new message
 		while(aux != 0x02){
@@ -393,10 +407,10 @@ int readTempCorrFact(unsigned long port, float outData[]){
 	*/
 	hexChar[4] = 0; //needed as end of string for strtol
 	//Data conversion into actual floats with actual units...
-	// Secondly high temperature side coefficient DT’1
+	// Secondly high temperature side coefficient DTâ€™1
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+4];
 	outData[0] = unitConv(hexChar,'D');
-	//Secondly low temperature side coefficient DT’2
+	//Secondly low temperature side coefficient DTâ€™2
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+8];
 	outData[1] =unitConv(hexChar,'D');
 	//Primary high temperature side coefficient DT1
@@ -408,7 +422,7 @@ int readTempCorrFact(unsigned long port, float outData[]){
 	//Reference voltage Vb
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+20];
 	outData[4] = unitConv(hexChar,'V');
-	//Reference voltage Tb
+	//Reference temperature Tb
 	for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+24];
 	outData[5] =unitConv(hexChar,'C');
 
@@ -463,13 +477,13 @@ int getTempCorrFact(unsigned long port, float outTemp[]){
 		UARTCharPut(UART0_BASE,'\n');
 
 		//Data conversion into actual floats with actual units...
-		// Secondly high temperature side coefficient DT’1
+		// Secondly high temperature side coefficient DTâ€™1
 		for ( i = 0; i< 4 ; i++) hexChar[i] = '0';// cmdIn[i+4];}
 		for( i = 0; i < 4 ; i++){
 			UARTCharPut(UART0_BASE,hexChar[i]);
 		}
 		outTemp[0] = (float)strtol(hexChar,0,16); //unitConv(hexChar,'D');
-		//Secondly low temperature side coefficient DT’2
+		//Secondly low temperature side coefficient DTâ€™2
 		for ( i = 0; i< 4 ; i++) hexChar[i] = cmdIn[i+8];
 		outTemp[1] =(float)strtol(hexChar,0,16); // unitConv(hexChar,'D');
 		//Primary high temperature side coefficient DT1
@@ -495,7 +509,7 @@ int getTempCorrFact(unsigned long port, float outTemp[]){
  * Set the temperature correction factors, the reference temperature and the reference voltage
  * @para tempCorrFactor array containing all the values to be set
  * 		as floats in their corresponding units (6 values in total)
- * 		Secondly high temperature side coefficient DT’1, Secondly low temperature side coefficient DT’2,
+ * 		Secondly high temperature side coefficient DTâ€™1, Secondly low temperature side coefficient DTâ€™2,
  * 		Primary high temperature side coefficient DT1, Primary low temperature side coefficient DT2,
  * 		Reference voltage Vb, Reference temperature Tb
  * 	@param port Base register address of the UART port used
@@ -517,14 +531,14 @@ int setTempCorrFact(unsigned long port, float tempCorrFactor[]){
 	cmdOut[2] = 'S'; //
 	cmdOut[3] = 'T'; //O
 
-	//Secondly high temperature side coefficient DT’1
+	//Secondly high temperature side coefficient DTâ€™1
 	charConv(tempCorrFactor[0],'D', tmpBuff);
 	cmdOut[4] = tmpBuff[0];
 	cmdOut[5] = tmpBuff[1];
 	cmdOut[6] = tmpBuff[2];
 	cmdOut[7] = tmpBuff[3];
 
-	//Secondly low temperature side coefficient DT’2
+	//Secondly low temperature side coefficient DTâ€™2
 	charConv(tempCorrFactor[1],'D', tmpBuff);
 	cmdOut[8] = tmpBuff[0];
 	cmdOut[9] = tmpBuff[1];
@@ -570,6 +584,14 @@ int setTempCorrFact(unsigned long port, float tempCorrFactor[]){
 
 	//Read the expected answer from the comm port
 	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
+
+	/*for debugging only
+	UARTCharPut(UART0_BASE,'s');
+	UARTCharPut(UART0_BASE,' ');
+	for (i = 0; i < 32; i++){
+		UARTCharPut(UART0_BASE,cmdOut[i]);
+	}
+	*/
 
 	//Check the CRC
 	if (!checkCRC(cmdIn, inLength)){
