@@ -368,6 +368,10 @@ end
 img = zeros (512,512); %256);
 imgEng = zeros(512,512);
 n_error= 0;
+x1_img = 250; 
+x2_img = 351; 
+y1_img = 250; 
+y2_img = 351;
   %menor = min([ind1,ind2,ind3,ind4]);
   %cad = strcat(num2str(ind1),'Xb = ',num2str(ind2),'Ya =',num2str(ind3),'Yb = ',num2str(ind4));
   %disp( cad); 
@@ -375,8 +379,8 @@ n_error= 0;
  % canal1 = canal1 + 100; %compenso por el offset del canal2
 for i = 1: indice-1  %menor
 
-    XA = canal3(i); XB = canal4(i);  %los +20 es para corregir el offset
-    YA = canal1(i); YB = canal2(i);
+    XA = canal3(i); XB = canal4(i);  %los +15 a channel 3 para crystal chino
+    YA = canal1(i); YB = canal2(i);  % +10 a canal 2 para chino
    % cad = strcat(num2str(XA),'Xb = ',num2str(XB),'Ya =',num2str(YA),'Yb = ',num2str(YB));
    % disp( cad);
     
@@ -403,15 +407,15 @@ for i = 1: indice-1  %menor
            %  end
          end
         
-       if( energiaHist> 0 && energiaHist < 513 && X > 85 && X<186 && Y>125 && Y<226)
+       if( energiaHist> 0 && energiaHist < 513 && X > x1_img && X<x2_img && Y>y1_img && Y<y2_img)
          % handles.img_histo(X,Y,energiaHist+1) = handles.img_histo(X,Y,energiaHist+1)+1;
-         imgHisto(Y-125,X-85,energiaHist+1) = imgHisto(Y-125,X-85,energiaHist+1)+1;
-          if ( (X-85) > 71 && (X-85)<82 && (Y-125)>60 && (Y-125)<71 && energiaGSO > 0 && energiaGSO<513 ) 
+         imgHisto(Y-y1_img,X-x1_img,energiaHist+1) = imgHisto(Y-y1_img,X-x1_img,energiaHist+1)+1;
+          if ( (X-x1_img) > 71 && (X-x1_img)<82 && (Y-y1_img)>60 && (Y-y1_img)<71 && energiaGSO > 0 && energiaGSO<513 ) 
          % if ((X-85) > 60 && (X-85)<71 && (Y-125)>71 && (Y-125)<82 && energiaGSO > 0 && energiaGSO<513 )
               %img_histEngsl(X-85-62,Y-125-10,energiaHist+1,energiaGSO+1) = img_histEngsl(X-85-62,Y-125-10,energiaHist+1,energiaGSO+1) + 1;
               %aqui meto el histograma de un pixel...
               pixImg(energiaHist,energiaGSO) = pixImg(energiaHist,energiaGSO)+1;            
-          end
+         end
        %   imgHisto(Y,X,energiaHist+1) = imgHisto(Y,X,energiaHist+1)+1;
        end
        % if (X>250 && X<262) && (Y>250 && Y<262)
@@ -568,11 +572,11 @@ title(handles.axes6,'Canal 4');
 
 %axes(handles.axes1);h
 %axes(handles.axes1);
-imagesc(handles.imagen,'Parent',handles.axes1);
+imagesc(handles.imagen(1:510,1:510),'Parent',handles.axes1);
 %plot(handles.axes1,handles.energyHist2);
 %imagesc(handles.imagen,'Parent',handles.axes1);
-xlim(handles.axes1,[1 512]);
-ylim(handles.axes1,[1 512]);
+xlim(handles.axes1,[1 510]);
+ylim(handles.axes1,[1 510]);
 %aux = imshow(mat2gray(handles.imagen));
 %set(aux,'Parent',handles.axes1);
 %set(aux,'Parent',handles.axes1);
