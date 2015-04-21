@@ -89,7 +89,7 @@ int main(void) {
 	UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), 115200,
 	(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
 
-	startCommunication(UART3_BASE);
+	startCommunication(UART5_BASE);
 
 
 	  //Now i will send the data thoroug the serial port
@@ -156,13 +156,13 @@ int main(void) {
 		  * 		Reference voltage Vb, Reference temperature Tb
 		  */
 
-		  HVset = 72.82;
+		  HVset = 75.00;
 
 		  tempCorrs[0] = 0.0; tempCorrs[1] = 0.0;
-		  tempCorrs[2] = 100.0; tempCorrs[3] = 100.0;
+		  tempCorrs[2] = 0.0; tempCorrs[3] = 0.0;
 		  tempCorrs[4] = HVset; tempCorrs[5] = 25.0;
 
-		  setTempCorrFact(UART3_BASE, tempCorrs);
+		  setTempCorrFact(UART5_BASE, tempCorrs);
 
 
 
@@ -171,7 +171,7 @@ int main(void) {
 		  //for (i = 0; i < 6 ; i++){ tempCorrFactors[i] = 0;}
 
 
-		  errCode = getInfoAndStatus(UART3_BASE,vars);
+		  errCode = getInfoAndStatus(UART5_BASE,vars);
 		  readChar = 0;
 		  if (errCode == 0){
 			  for (i = 0; i < 5 ; i++){
@@ -186,7 +186,7 @@ int main(void) {
 		  }
 		  UARTCharPut(UART0_BASE,'\n');
 
-		  errCode = readTempCorrFact(UART3_BASE,tempCorrs);//;getTempCorrFact(UART3_BASE,tempCorrs);
+		  errCode = readTempCorrFact(UART5_BASE,tempCorrs);//;getTempCorrFact(UART3_BASE,tempCorrs);
 		  readChar = 0;
 		  if (errCode == 0){
 			  for (i = 0; i < 6 ; i++){
@@ -201,7 +201,7 @@ int main(void) {
 		  }
 		  UARTCharPut(UART0_BASE,'\n');
 		  UARTCharPut(UART0_BASE,'T');
-		  tmpVolt =  getOutputCurrent(UART3_BASE);
+		  tmpVolt =  getOutputCurrent(UART5_BASE);
 		  readChar = 0;
 		  readChar += ltoa((long) tmpVolt, &cmdIn[readChar]);
 		  cmdIn[readChar] = 13;

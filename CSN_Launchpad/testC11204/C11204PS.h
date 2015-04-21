@@ -14,6 +14,8 @@
 #include "driverlib/pin_map.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/uart.h"
+#include "driverlib/debug.h"
+//#include <inc/hw_gpio.h>
 #include <stdlib.h>
 
 #ifndef C11204PS_H_
