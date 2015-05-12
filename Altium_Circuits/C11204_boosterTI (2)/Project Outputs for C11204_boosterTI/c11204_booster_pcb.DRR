@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: c11204_booster_pcb.PcbDoc   17/03/2015  20:05:44
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : c11204_booster_pcb.TXT
+EIA File   : c11204_booster_pcb.DRL
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        0.55mm (21.654mil)       Round          64               179.27 mm (7.06 Inch)
+T2        0.6mm (23.622mil)        Round          25               155.02 mm (6.10 Inch)
+T3        0.9mm (35.433mil)        Round          16               110.55 mm (4.35 Inch)
+T4        1.15mm (45.276mil)       Round          40               139.70 mm (5.50 Inch)
+---------------------------------------------------------------------------
+Totals                                            145              584.54 mm (23.01 Inch)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

@@ -1,0 +1,7 @@
+DRC Rules Export File for PCB: C:\Users\rchil\Desktop\Pruebas_SiPM\C11204_TI_booster_pack\C11204_boosterTI\c11204_booster_pcb.PcbDoc
+RuleKind=Clearance|RuleName=Clearance_1|Scope=Board|Minimum=19.69
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=10.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=10.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width_1|Scope=Board|Minimum=10.00
