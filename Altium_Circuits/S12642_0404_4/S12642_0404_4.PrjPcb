@@ -32,12 +32,12 @@ DItemRevisionGUID=
 
 [Document1]
 DocumentPath=etapa_1.SchDoc
-AnnotationEnabled=1
+AnnotationEnabled=0
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
+AnnotateScope=Only Selected Parts
+AnnotateOrder=4
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -52,7 +52,7 @@ AnnotationEnabled=0
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
-AnnotateScope=All
+AnnotateScope=Only Selected Parts
 AnnotateOrder=0
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
@@ -64,11 +64,11 @@ GenerateClassCluster=0
 
 [Document3]
 DocumentPath=etapa1_suma.SchDoc
-AnnotationEnabled=0
+AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
-AnnotateScope=All
+AnnotateScope=Only Selected Parts
 AnnotateOrder=1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
@@ -80,7 +80,7 @@ GenerateClassCluster=0
 
 [Document4]
 DocumentPath=etapa1_anger_X.SchDoc
-AnnotationEnabled=1
+AnnotationEnabled=0
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
@@ -96,7 +96,7 @@ GenerateClassCluster=0
 
 [Document5]
 DocumentPath=etapa1_anger_Y.SchDoc
-AnnotationEnabled=1
+AnnotationEnabled=0
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
