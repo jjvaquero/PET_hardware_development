@@ -31,7 +31,7 @@ PushECOToAnnotationFile=1
 DItemRevisionGUID=
 
 [Document1]
-DocumentPath=NADP.SchDoc
+DocumentPath=Nutaq_Adaptor.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -61,6 +61,10 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Nutaq_Adaptor\Design Rule Check - Nutap_Adpt.html
+DItemRevisionGUID=
 
 [PCBConfiguration1]
 ReleaseItemId=
