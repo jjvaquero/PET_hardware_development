@@ -48,7 +48,7 @@ GenerateClassCluster=0
 
 [Document2]
 DocumentPath=etapa3_anger_Y.SchDoc
-AnnotationEnabled=0
+AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
