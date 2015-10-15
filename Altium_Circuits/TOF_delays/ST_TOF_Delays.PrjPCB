@@ -95,7 +95,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 
 [Document5]
-DocumentPath=tof_sideXtal.PcbDoc
+DocumentPath=tof_sideXtal_gnd_relief.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
