@@ -13,6 +13,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.integrate import trapz
+from scipy.interpolate import interp1d
 import bisect
 
 strDir = os.getcwd()
@@ -143,8 +144,72 @@ removeUnwantedEvents(chX,chY)
 
 #now the data is clean
 
+#run again the functions to find the maximums and the threshold values
+
+maxMeanX = getMaxMeanValue(chX,chY)    
+maxThPosArrayX = np.asarray(getThPos(chX,maxMeanX))
+
+mEvent = chX[2]
+eventTh = maxThPosArrayX[2]
+
+initSlope = np.mean([(mEvent[eventTh]-mEvent[eventTh-1]),(mEvent[eventTh-1]-mEvent[eventTh-2])])
+slope = initSlope
+slopeProportion = 20 #change this value to get only the actual slope
+
+currInd = eventTh
+while((slope > initSlope/slopeProportion) and ((eventTh-currInd)<30)):
+    currInd=currInd-1
+    slope = np.mean([(mEvent[currInd]-mEvent[currInd-1]),(mEvent[currInd-1]-mEvent[currInd-2])])
+currInd   
 
 
+leftC = currInd-3 # take three more samples
+rightC = eventTh # dont take more on this side as i dont care about the upper side of the curve
+
+
+#no need for an interpolator...i want a polyfit....
+"""
+#use a cubic interpolator
+x = np.linspace(t[leftC],t[rightC],rightC-leftC)
+y = mEvent[leftC:rightC]
+fInterp = interp1d(x,y,kind='cubic')
+
+#now use it to actually interpolate more values...lets say...100
+xN = np.linspace(t[leftC],t[rightC],100)
+yN = fInterp(xN)
+
+plt.figure()
+plt.plot(x,y)
+plt.plot(xN,yN)
+"""
+
+#use a cubic interpolator
+x = np.linspace(t[leftC],t[rightC],rightC-leftC)
+y = mEvent[leftC:rightC]
+fAux = np.polyfit(x,y,3)
+fInterp = np.poly1d(fAux)
+
+# extrapolate new values
+xN = np.linspace(t[leftC-5],t[rightC],100)
+yN = fInterp(xN)  
+
+#take the first ten values for the mean
+nValsMeanFilt = 10
+filtMean = np.mean(mEvent[leftC-nValsMeanFilt-1:leftC-1])
+#remove the offset
+yN[:] = [var - filtMean for var in yN]
+#find the point rise up point
+edgePos = bisect.bisect(yN,filtMean)
+tPickUp = xN[edgePos] 
+
+plt.figure()
+plt.plot(x,y)
+plt.plot(xN,yN)
+plt.plot(tPickUp,yN[edgePos])
+
+
+
+"""
 
 plt.figure()
 for event in chX:
@@ -154,7 +219,7 @@ plt.figure()
 for event in chY:
     plt.plot(event)
     
-
+"""
 
 
 """
