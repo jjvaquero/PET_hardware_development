@@ -61,7 +61,18 @@ def getThPos(chA,thValue):
         maxThPos.append(bisect.bisect(chA[i],thValue))
     
     return maxThPos
-# getThPos function end  
+# getThPos function end
+
+# function to remove the offsets of the values that will be used....very rustic
+def removeOffsetSimple(event,maxPos):
+    #correct the offset
+    auxArray = np.asarray(event)
+    # 50 is to not take the actual pulse, but be always before the pulse
+    offset = np.mean(auxArray[0:maxPos-50])
+    auxArray[:] = [var - offset for var in auxArray]
+    return auxArray
+# removeOffsetSimple function end
+    
 
 # function that takes the two channels that will be compared for timing
 # and removes any unwanted events, both inputs should be lists
@@ -83,19 +94,12 @@ def removeUnwantedEvents(chA, chB):
     # of the first half of the event
     for i in range(0,len(chA)):
         #correct the offset
-        auxArrayA = np.asarray(chA[i])
-        # 50 is to not take the actual pulse, but be always before the pulse
-        offsetA = np.mean(auxArrayA[0:maxThPosArrayA[i]-50])
-        auxArrayA[:] = [var - offsetA for var in auxArrayA]
         #now find the integral values
-        meanIntValsA.append(trapz(np.abs(auxArrayA[0:maxThPosArrayA[i]-50])))
+        meanIntValsA.append(trapz(np.abs(removeOffsetSimple(chA[i],maxThPosArrayA[i])[0:maxThPosArrayA[i]-50])))
         #abs is used for all data to take out big oscillations as well
+        meanIntValsB.append(trapz(np.abs(removeOffsetSimple(chB[i],maxThPosArrayB[i])[0:maxThPosArrayB[i]-50])))
+        
     
-        auxArrayB = np.asarray(chB[i])
-        offsetB = np.mean(auxArrayB[0:maxThPosArrayB[i]-50])
-        auxArrayB[:] = [var - offsetB for var in auxArrayB]
-        #now find the integral values
-        meanIntValsB.append(trapz(np.abs(auxArrayB[0:maxThPosArrayB[i]-50])))
     
         
     
