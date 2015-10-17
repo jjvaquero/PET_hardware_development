@@ -13,12 +13,11 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.integrate import trapz
-from scipy.interpolate import interp1d
 import bisect
 
 strDir = os.getcwd()
 fNames = glob.glob(strDir+"/20mm 69V/*.h5")
-nEventsRead = 100 #for debuging so I don't need to read everything....
+nEventsRead = 10000 #for debuging so I don't need to read everything....
 #nFiles = len(fNames)
 ch1 = []
 ch2 = []
@@ -54,13 +53,31 @@ def getMaxMeanValue(chA,chB):
     
     return maxMean
 # getMaxMeanValue function end
+    
+# function to find the mean maximum value to later on use it for event detection
+def getMaxMeanValue1(chA):
+    maxVals = []
+    #use the two channels as they should have similar signals
+    for i in range(0,len(chA)):
+        maxVals.append(chA[i].max())        
+    
+    maxMean = np.mean(maxVals)
+    maxMean-= maxMean/10
+    
+    return maxMean
 
 # function used to get the index of the trhesholds for all events
 def getThPos(chA,thValue):
     maxThPos = []
     for i in range(0,len(chA)): 
-        maxThPos.append(bisect.bisect(chA[i],thValue))
-    
+        thVal = thValue
+        thPos = bisect.bisect(chA[i],thValue)       
+        while (thPos >= len(chA[i])-100):
+            thVal-=thVal/10
+            thPos=bisect.bisect(chA[i],thVal)
+        maxThPos.append(thPos)
+   
+    plt.plot(maxThPos)   
     return maxThPos
 # getThPos function end
 
@@ -101,12 +118,7 @@ def removeUnwantedEvents(chA, chB):
         meanIntValsB.append(trapz(np.abs(removeOffsetSimple(chB[i],maxThPosArrayB[i])[0:maxThPosArrayB[i]-50])))
         
     
-    
-        
-    
     #find the means
-    plt.plot(meanIntValsA)
-    plt.plot(meanIntValsB)
     meanIntsA = np.mean(meanIntValsA)
     meanIntsB = np.mean(meanIntValsB)
     
@@ -117,7 +129,7 @@ def removeUnwantedEvents(chA, chB):
     # delList = [] #list of events to be removed
                 # events should be deleted from the two channels
     for i in range(0,len(chA)):
-        if meanIntValsA[i] > meanIntsA*2.5 or meanIntValsB[i] > meanIntsB*2.5:
+        if (meanIntValsA[i] > meanIntsA*2.5 or meanIntValsB[i] > meanIntsB*2.5 or maxThPosArrayB[i]>1500 or maxThPosArrayA[i]>1500):
             #should probably use*3
             #delList.append(i)
             #plt.plot(chA[i])
@@ -133,7 +145,59 @@ def removeUnwantedEvents(chA, chB):
     #TODO ask Josh if I should also remove events that start to soon
         
 # removeUnwantedEvents function end
+        
 
+# function used to get the leading edge trigger time
+def findEdgeTimes(chA, slopeProp=20, nValsMean=10):
+  
+    
+    maxMean = getMaxMeanValue1(chA)    
+    maxThPosArray = np.asarray(getThPos(chA,maxMean))
+    plt.figure
+    plt.plot(maxThPosArray)
+    tEdgeTimes= []
+    plt.figure
+    for i in range(0,len(chA)):
+        mEvent = np.asarray(chA[i])
+        eventTh = maxThPosArray[i]
+        
+        initSlope = np.mean([(mEvent[eventTh]-mEvent[eventTh-1]),(mEvent[eventTh-1]-mEvent[eventTh-2])])
+        slope = initSlope
+        #slopeProportion = 20 #change this value to get only the actual slope    
+        currInd = eventTh
+        while((slope > initSlope/slopeProp) and ((eventTh-currInd)<30)):
+            currInd=currInd-1
+            slope = np.mean([(mEvent[currInd]-mEvent[currInd-1]),(mEvent[currInd-1]-mEvent[currInd-2])])
+        currInd   
+        
+        leftC = currInd-3 # take three more samples
+        rightC = eventTh # dont take more on this side as i dont care about the upper side of the curve
+        
+        #use a polynomial fit
+        x = np.linspace(t[leftC],t[rightC],rightC-leftC)
+        y = mEvent[leftC:rightC]
+        fAux = np.polyfit(x,y,3)
+        fInterp = np.poly1d(fAux)
+        
+        # extrapolate new values
+        xN = np.linspace(t[leftC-5],t[rightC],100)
+        yN = fInterp(xN)  
+        
+        #take the first ten values for the mean
+        filtMean = np.mean(mEvent[leftC-nValsMean-1:leftC-1])
+        #remove the offset
+        yN[:] = [var - filtMean for var in yN]
+        #find the point rise up point
+        edgePos = bisect.bisect(yN,filtMean)
+        if (edgePos > 0 and edgePos < 100):
+            tEdgeTimes.append(xN[edgePos])
+        else:
+            tEdgeTimes.append(0)
+            plt.plot(x,y)
+            plt.plot(xN,yN)
+    
+    return tEdgeTimes
+# findEdgeTimes function end
     
 
 #copy
@@ -142,72 +206,27 @@ chY = list(ch2)
 #check that the event is valid
 removeUnwantedEvents(chX,chY)
 
-#now the data is clean
+
 
 #run again the functions to find the maximums and the threshold values
+chXEdge = np.asarray(findEdgeTimes(chX))
+chYEdge = np.asarray(findEdgeTimes(chY))
 
-maxMeanX = getMaxMeanValue(chX,chY)    
-maxThPosArrayX = np.asarray(getThPos(chX,maxMeanX))
-
-mEvent = chX[2]
-eventTh = maxThPosArrayX[2]
-
-initSlope = np.mean([(mEvent[eventTh]-mEvent[eventTh-1]),(mEvent[eventTh-1]-mEvent[eventTh-2])])
-slope = initSlope
-slopeProportion = 20 #change this value to get only the actual slope
-
-currInd = eventTh
-while((slope > initSlope/slopeProportion) and ((eventTh-currInd)<30)):
-    currInd=currInd-1
-    slope = np.mean([(mEvent[currInd]-mEvent[currInd-1]),(mEvent[currInd-1]-mEvent[currInd-2])])
-currInd   
-
-
-leftC = currInd-3 # take three more samples
-rightC = eventTh # dont take more on this side as i dont care about the upper side of the curve
-
-
-#no need for an interpolator...i want a polyfit....
-"""
-#use a cubic interpolator
-x = np.linspace(t[leftC],t[rightC],rightC-leftC)
-y = mEvent[leftC:rightC]
-fInterp = interp1d(x,y,kind='cubic')
-
-#now use it to actually interpolate more values...lets say...100
-xN = np.linspace(t[leftC],t[rightC],100)
-yN = fInterp(xN)
+timeDiffs= []
+count =0
+for i in range(0,len(chXEdge)):
+    if (chXEdge[i] > 0 and chYEdge[i]>0):
+        timeDiffs.append(chXEdge[i]-chYEdge[i])
+    else:
+        count+=1
+    
+timeDiffHist = np.histogram(timeDiffs,1024)
 
 plt.figure()
-plt.plot(x,y)
-plt.plot(xN,yN)
-"""
+plt.plot(timeDiffHist[0])
 
-#use a cubic interpolator
-x = np.linspace(t[leftC],t[rightC],rightC-leftC)
-y = mEvent[leftC:rightC]
-fAux = np.polyfit(x,y,3)
-fInterp = np.poly1d(fAux)
-
-# extrapolate new values
-xN = np.linspace(t[leftC-5],t[rightC],100)
-yN = fInterp(xN)  
-
-#take the first ten values for the mean
-nValsMeanFilt = 10
-filtMean = np.mean(mEvent[leftC-nValsMeanFilt-1:leftC-1])
-#remove the offset
-yN[:] = [var - filtMean for var in yN]
-#find the point rise up point
-edgePos = bisect.bisect(yN,filtMean)
-tPickUp = xN[edgePos] 
-
-plt.figure()
-plt.plot(x,y)
-plt.plot(xN,yN)
-plt.plot(tPickUp,yN[edgePos])
-
-
+for event in chX :
+    plt.plot(event)
 
 """
 
