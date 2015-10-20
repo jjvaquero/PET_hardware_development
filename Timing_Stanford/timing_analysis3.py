@@ -8,12 +8,15 @@ Created on Mon Oct 19 11:38:39 2015
 #libraries taken from the previous implementation so....probably will be better to take some out
 
 #import all the needed libraries
-#  import h5py #not needed if I am using stored pulses 
-# import random
-# import glob
-# import os
+import h5py #not needed if I am using stored pulses 
+import random
+import glob
+import os
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.integrate import trapz
+import scipy
+import bisect
 import pickle
 
 import pulse_proc_common as pulseProc
@@ -21,23 +24,25 @@ import pulse_proc_common as pulseProc
 # the reading data from files is commented since I am using already stored pulses
 # left here to remeber that the pusles have been randomly selected
 
-"""
+# version a saco paco, que mete todos los valores posibles
+
 #used to test different filtering, anaysis algorithms
 strDir = os.getcwd()
 fNames = glob.glob(strDir+"/20mm 69V/*.h5")
-nEventsRead = 10 #for debuging so I don't need to read everything....
+nEventsRead = 100 #step size that will be used to avoid overloading the RAM...
 #nFiles = len(fNames)
 ch1 = []
 ch2 = []
 ch3 = []
 ch4 = []
 
-#downsample the number of evets to acquire
-downNames = random.sample(fNames, nEventsRead)
+
+#randomly sample events...or not....
+#downNames = random.sample(fNames,len(fNames))
+downNames = list(fNames)
 #could also use this function to randomize the order of the events
 # this will make the processing more robust if I do it by dividing the data in to smaller pieces
 # like this I will remove temporary artifcats
-
 
 for fileName in fNames[1:nEventsRead]: #later on do it for all data
     fData = h5py.File(fileName, 'r')
