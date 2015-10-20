@@ -15,29 +15,6 @@ import numpy as np
 from scipy.integrate import trapz
 import bisect
 
-strDir = os.getcwd()
-fNames = glob.glob(strDir+"/20mm 69V/*.h5")
-nEventsRead = 10000 #for debuging so I don't need to read everything....
-#nFiles = len(fNames)
-ch1 = []
-ch2 = []
-ch3 = []
-ch4 = []
-
-
-for fileName in fNames[1:nEventsRead]: #later on do it for all data
-    fData = h5py.File(fileName, 'r')
-    ch1.append(fData['Waveforms/Channel 1/Channel 1Data'].value)
-    ch2.append(fData['Waveforms/Channel 2/Channel 2Data'].value)
-    ch3.append(trapz(fData['Waveforms/Channel 3/Channel 3Data'].value))
-    ch4.append(trapz(fData['Waveforms/Channel 4/Channel 4Data'].value))
-    fData.close()
-
-
-
-#to have a time vector in nanoseconds
-t=np.linspace(0,len(ch1[1])*0.05,len(ch1[1])) #sampling time 50 ps
-
 
 # function to find the mean maximum value to later on use it for event detection
 def getMaxMeanValue(chA,chB):
@@ -198,6 +175,34 @@ def findEdgeTimes(chA, slopeProp=20, nValsMean=10):
     
     return tEdgeTimes
 # findEdgeTimes function end
+
+
+
+#main function
+
+strDir = os.getcwd()
+fNames = glob.glob(strDir+"/20mm 69V/*.h5")
+nEventsRead = 10000 #for debuging so I don't need to read everything....
+#nFiles = len(fNames)
+ch1 = []
+ch2 = []
+ch3 = []
+ch4 = []
+
+
+for fileName in fNames[1:nEventsRead]: #later on do it for all data
+    fData = h5py.File(fileName, 'r')
+    ch1.append(fData['Waveforms/Channel 1/Channel 1Data'].value)
+    ch2.append(fData['Waveforms/Channel 2/Channel 2Data'].value)
+    ch3.append(trapz(fData['Waveforms/Channel 3/Channel 3Data'].value))
+    ch4.append(trapz(fData['Waveforms/Channel 4/Channel 4Data'].value))
+    fData.close()
+
+
+
+#to have a time vector in nanoseconds
+t=np.linspace(0,len(ch1[1])*0.05,len(ch1[1])) #sampling time 50 ps
+
     
 
 #copy
