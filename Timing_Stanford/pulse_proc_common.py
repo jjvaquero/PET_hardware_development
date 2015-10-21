@@ -78,17 +78,21 @@ def getThPos1(chA):
     #recheck to make sure that the max values taken are not outside the "trust interval"
     # trust interval = mean - mean*(1-0.34) --- mean+mean*(1-0.34)
     leftMargin = round(meanThPos*1.66)
-    rightMargin = round(meanThPos*0.66)
+    rightMargin = round(meanThPos*0.6)
     for i in range(0, len(chA)):
         if (maxThPos[i]>leftMargin or maxThPos[i]< rightMargin):
             tmpArray = np.asarray(chA[i])
             thPos = leftMargin + bisect.bisect(tmpArray[leftMargin:rightMargin],thValue) 
             thVal = thValue
-            while (thPos >= rightMargin-100):
+            while (thPos >= rightMargin-100 and thVal>thValue/2):
                 thVal-=thVal/10
-                thPos = leftMargin + bisect.bisect(tmpArray[leftMargin:rightMargin],thValue) 
-            
-            maxThPos[i] = thPos
+                thPos = leftMargin + bisect.bisect(tmpArray[leftMargin:rightMargin],thVal) 
+            if thVal<thValue/2:
+                plt.plot(tmpArray)
+                maxThPos[i] = 0 #mark this values to not use them later on
+                #TODO improve this to remove this value from the two time vectors
+            else:
+                maxThPos[i] = thPos
     
     return maxThPos
 # getThPos1 function end
@@ -105,78 +109,85 @@ def findEdgeTimes1(chA, slopeProp=10, nCurveVals=15):
     for i in range(0,len(chA)):
         mEvent = np.asarray(chA[i])
         eventTh = maxThPosArray[i]
-        
-        initSlope = np.mean([(mEvent[eventTh]-mEvent[eventTh-1]),(mEvent[eventTh-1]-mEvent[eventTh-2])])
-        slope = initSlope
-        #slopeProportion = 20 #change this value to get only the actual slope    
-        currInd = eventTh
-        while((slope > initSlope/slopeProp) and ((eventTh-currInd)<30)):
-            currInd=currInd-1
-            slope = np.mean([(mEvent[currInd]-mEvent[currInd-1]),(mEvent[currInd-1]-mEvent[currInd-2])])
-        
-        leftC = currInd # take three more samples
-        rightC = eventTh # dont take more on this side as i dont care about the upper side of the curve
-        #to have a time vector in nanoseconds
+        if eventTh > 0: #events with problems have been marked with a 0
+            initSlope = np.mean([(mEvent[eventTh]-mEvent[eventTh-1]),(mEvent[eventTh-1]-mEvent[eventTh-2])])
+            slope = initSlope
+            #slopeProportion = 20 #change this value to get only the actual slope    
+            currInd = eventTh
+            while((slope > initSlope/slopeProp) and ((eventTh-currInd)<30)):
+                currInd=currInd-1
+                slope = np.mean([(mEvent[currInd]-mEvent[currInd-1]),(mEvent[currInd-1]-mEvent[currInd-2])])
+    
+            #dont take measurements for values outside of the range
+    
             
-        #time vector needed for the curve fitting part
-        t=np.linspace(0,len(chA[1])*0.05,len(chA[1])) #sampling time 50 ps
-        
-        #use a polynomial fit
-        x1 = np.linspace(t[leftC],t[rightC],rightC-leftC)
-        y1 = mEvent[leftC:rightC]
-        #fAux = np.polyfit(x,y,3)
-        # try using a smaller order polynomial for the curve
-        fAux1 = np.polyfit(x1,y1,1)
-        fInterp = np.poly1d(fAux1)
-        # extrapolate new values
-        #xEdge = np.linspace(t[leftC-nCurveVals/2],t[rightC],100)
-        xEdge = np.linspace(t[leftC-nCurveVals],t[leftC+nCurveVals],round(nCurveVals*2)*10)
-        yEdge = fInterp(xEdge)  
-        
-        #repeat the process for the values in the baseline
-        rightB = currInd - nCurveVals #start after the end of the curve to make sure I get the baseline
-         # the value to use will be fixed
-        leftB = rightB - (rightC-leftC)*2 # take two times more values than on the edge
-        #now use curve fitting and extroplation again
-        x = np.linspace(t[leftB],t[rightB],rightB-leftB)
-        y = mEvent[leftB:rightB]
-        #fAux = np.polyfit(x,y,3)
-        # try using a smaller order polynomial for the curve
-        fAux = np.polyfit(x,y,1)
-        fInterp = np.poly1d(fAux)      
-        # extrapolate new values
-        #xBase = np.linspace(t[leftB-nCurveVals],t[rightC+nCurveVals],100) # make sure they intersect
-        xBase = np.linspace(t[rightB],t[leftC+nCurveVals],round(nCurveVals*2)*10) # make sure they intersect
-        yBase = fInterp(xBase)  
-        
-        #now I just need to find the intersection
-        minDist = 100
-        thValX = 0
-        thValY = 0
-        #TODO esto sera lento de cojones...buscar como darles la misma longitud y empezar de atras a alante
-        #i can now solve the two lines....a lo gita king
-        
-        """"
-        for j in range(0,len(yEdge)):
-            for k in range(0,len(yBase)):
-                #calculo la distancia
-                dist = distance.euclidean([xBase[k],yBase[k]],[xEdge[j],yEdge[j]])
-                #dist = np.sqrt(np.power((xBase[k]-xEdge[j]),2)+np.power(yBase[k]-yEdge[j],2))
-                if dist<minDist:
-                    minDist = dist
-                    thValX = (xEdge[j]+xBase[k])/2 #mean of the two values
-                    thValY = (yEdge[j]+yBase[k])/2 
-        """
-        thValX = (fAux[1]-fAux1[1])/(fAux1[0]-fAux[0])
-        thValY = fAux1[0]*thValX+fAux1[1]
-        # plot one in every 10 values to check that it works
-        if i == 10 or i==45:
-            plt.plot(xEdge,yEdge)
-            plt.plot(x1,y1)
-            plt.plot(xBase,yBase)
-            plt.plot(x,y)
-            plt.plot(thValX,thValY,'ro')
-        tEdgeTimes[i] = (thValX)
+            leftC = currInd # take three more samples
+            rightC = eventTh # dont take more on this side as i dont care about the upper side of the curve
+            #to have a time vector in nanoseconds
+                
+            #time vector needed for the curve fitting part
+            t=np.linspace(0,len(chA[1])*0.05,len(chA[1])) #sampling time 50 ps
+            
+            #use a polynomial fit
+            x1 = np.linspace(t[leftC],t[rightC],rightC-leftC)
+            y1 = mEvent[leftC:rightC]
+            #fAux = np.polyfit(x,y,3)
+            # try using a smaller order polynomial for the curve
+            fAux1 = np.polyfit(x1,y1,1)
+            fInterp = np.poly1d(fAux1)
+            # extrapolate new values
+            #xEdge = np.linspace(t[leftC-nCurveVals/2],t[rightC],100)
+            xEdge = np.linspace(t[leftC-nCurveVals],t[leftC+nCurveVals],round(nCurveVals*2)*10)
+            yEdge = fInterp(xEdge)  
+            
+            #repeat the process for the values in the baseline
+            rightB = currInd - nCurveVals #start after the end of the curve to make sure I get the baseline
+             # the value to use will be fixed
+            leftB = rightB - (rightC-leftC)*2 # take two times more values than on the edge
+            #now use curve fitting and extroplation again
+            x = np.linspace(t[leftB],t[rightB],rightB-leftB)
+            y = mEvent[leftB:rightB]
+            #fAux = np.polyfit(x,y,3)
+            # try using a smaller order polynomial for the curve
+            fAux = np.polyfit(x,y,1)
+            fInterp = np.poly1d(fAux)      
+            # extrapolate new values
+            #xBase = np.linspace(t[leftB-nCurveVals],t[rightC+nCurveVals],100) # make sure they intersect
+            xBase = np.linspace(t[rightB],t[leftC+nCurveVals],round(nCurveVals*2)*10) # make sure they intersect
+            yBase = fInterp(xBase)  
+            
+            #now I just need to find the intersection
+            minDist = 100
+            thValX = 0
+            thValY = 0
+            #TODO esto sera lento de cojones...buscar como darles la misma longitud y empezar de atras a alante
+            #i can now solve the two lines....a lo gita king
+            
+            """"
+            for j in range(0,len(yEdge)):
+                for k in range(0,len(yBase)):
+                    #calculo la distancia
+                    dist = distance.euclidean([xBase[k],yBase[k]],[xEdge[j],yEdge[j]])
+                    #dist = np.sqrt(np.power((xBase[k]-xEdge[j]),2)+np.power(yBase[k]-yEdge[j],2))
+                    if dist<minDist:
+                        minDist = dist
+                        thValX = (xEdge[j]+xBase[k])/2 #mean of the two values
+                        thValY = (yEdge[j]+yBase[k])/2 
+            """
+            thValX = (fAux[1]-fAux1[1])/(fAux1[0]-fAux[0])
+            #thValY = fAux1[0]*thValX+fAux1[1]
+            # plot one in every 10 values to check that it works
+            """
+            if i == 10 or i==45:
+                 plt.plot(xEdge,yEdge)
+                 plt.plot(x1,y1)
+                 plt.plot(xBase,yBase)
+                 plt.plot(x,y)
+                 plt.plot(thValX,thValY,'ro')
+            """
+            tEdgeTimes[i] = (thValX)
+        else:
+            tEdgeTimes[i] = 0
     
  
     return tEdgeTimes
