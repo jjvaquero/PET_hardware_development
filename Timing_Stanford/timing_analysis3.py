@@ -79,8 +79,8 @@ while remaining >0:
     #check that the event is valid
     #pulseProc.removeUnwantedEvents(chX,chY)
     #test filters
-    timesX = pulseProc.findEdgeTimes1(ch1,5,30)
-    timesY = pulseProc.findEdgeTimes1(ch2,5,30)
+    timesX = pulseProc.findEdgeTimes1(ch1,20,50)
+    timesY = pulseProc.findEdgeTimes1(ch2,20,50)
     
     #find the difference between the two values
     #diff = np.zeros(len(timesX))
