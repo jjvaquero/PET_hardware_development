@@ -35,16 +35,18 @@ fNames = glob.glob(strDir+"/20mm 69V/*.h5")
 #randomly sample events...or not....
 #downNames = random.sample(fNames,len(fNames))
 downNames = list(fNames)
+
 #could also use this function to randomize the order of the events
 # this will make the processing more robust if I do it by dividing the data in to smaller pieces
 # like this I will remove temporary artifcats
 
+#filter events according to the true coincidence algorithm
+pulseProc.coincidenceDetect(downNames,0.3)
+
 #main loop that will be run until all file have been read
 remaining = len(downNames)
 #list where global results will be stored
-diff = []
-energyHist1 = np.zeros(1024) #energy histograms
-energyHist2 = np.zeros(1024) #energy histograms
+diffVal = []
 
 while remaining >0:
     
@@ -57,16 +59,14 @@ while remaining >0:
     #clear the variables where data will be stored
     ch1 = []
     ch2 = []
-    ch3 = []
-    ch4 = []
-
+    
     # read a chunk of data
     for fileName in fNames[len(downNames)-remaining:(len(downNames)-remaining)+nEventsRead]: #later on do it for all data
         fData = h5py.File(fileName, 'r')
         ch1.append(fData['Waveforms/Channel 1/Channel 1Data'].value)
         ch2.append(fData['Waveforms/Channel 2/Channel 2Data'].value)
-        ch3.append(trapz(fData['Waveforms/Channel 3/Channel 3Data'].value))
-        ch4.append(trapz(fData['Waveforms/Channel 4/Channel 4Data'].value))
+        #use only the timing channels, energy channels have already been used
+        # for coincidence identification
         fData.close()
     
     #update the number of reamining elemnts to read
@@ -79,20 +79,14 @@ while remaining >0:
     #check that the event is valid
     #pulseProc.removeUnwantedEvents(chX,chY)
     #test filters
-    timesX = pulseProc.findEdgeTimes1(ch1)
-    timesY = pulseProc.findEdgeTimes1(ch2)
+    timesX = pulseProc.findEdgeTimes1(ch1,5,30)
+    timesY = pulseProc.findEdgeTimes1(ch2,5,30)
     
     #find the difference between the two values
     #diff = np.zeros(len(timesX))
     for i in range(0,len(timesX)):
         if (timesX[i] != 0 and timesY[i] != 0):
-            diff.append(timesX[i] - timesY[i])
-    
-    #update the energy histograms
-    hist1Tmp = np.histogram(ch3,1024)
-    hist2Tmp = np.histogram(ch4,1024)
-    energyHist1 = np.add(energyHist1,hist1Tmp[0])
-    energyHist2 = np.add(energyHist2,hist2Tmp[0])
+            diffVal.append(timesX[i] - timesY[i])
     
     
     print('curr lims {0:5d} {1:5d}'.format(len(downNames)-remaining, (len(downNames)-remaining)+nEventsRead))
@@ -100,12 +94,15 @@ while remaining >0:
 
     
 #now i have to make a histogram 
-diffHist = np.histogram(diff,1024)
+diffHist = np.histogram(diffVal,4096,[-63,64])
 plt.figure()
 plt.plot(diffHist[0])
-plt.figure()
-plt.plot(energyHist1)
-plt.plot(energyHist2)
+#finally find the fwhm
+popt,pcov = pulseProc.fwhmCal(diffHist[0],20)
+#the result in ns
+fwhmTime = popt[2]*2.355 #popt2 = sigma
+CTRns = fwhmTime*128/4096
+
 
 #ahora meter esto en un bucle y lanzarlo las 1000 veces con trozos de 100 eventos
 # para ir poblando el histograma sin que pete la ram

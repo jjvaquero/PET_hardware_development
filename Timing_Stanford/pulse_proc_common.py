@@ -5,13 +5,59 @@ Created on Mon Oct 19 16:51:31 2015
 @author: rigo
 """
 
+
 #import all the needed libraries
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.integrate import trapz
 import bisect
 from scipy.spatial import distance
+from scipy.optimize import curve_fit
+import h5py #not needed if I am using stored pulses 
 
+
+
+# function used to keep only those events that are considered true coincidences
+# cosidered as such those that are inside the fwhm
+# recives as the input the list of all files to use 
+# and a parameter to modify the width of the window of accepted events
+def coincidenceDetect(fNames,interval = 0):
+    ch3=[]
+    ch4=[]
+    for fileName in fNames: #later on do it for all data
+        fData = h5py.File(fileName, 'r')
+          
+        #only data from the energy channels will be taken into account
+        ch3.append(trapz(fData['Waveforms/Channel 3/Channel 3Data'].value))
+        ch4.append(trapz(fData['Waveforms/Channel 4/Channel 4Data'].value))
+        #integrating the energy signals works best
+        fData.close()
+     
+    #TODO consider the option of adding some pulse processing before just moving on with the data   
+    #now ch3 and ch4 have an energy value for each stored event
+    #after checking at the values I could use a     
+    histCh3 = np.histogram(ch3,512,[0,2048])
+    histCh4 = np.histogram(ch4,512,[0,2048])
+    
+    maxEng3, minEng3 = energyBorders(histCh3[0])
+    maxEng4, minEng4 = energyBorders(histCh4[0])
+    
+    #chX = list(ch3)
+    #chY = list(ch4)
+    #compensate for the compression used before
+    #now prepare to remove unwanted events
+    for i in range(len(fNames)):  #widened the margins so that more events could fit in
+        #if (chX[i] > maxEng3*4.5 or chX[i] < minEng3*3.5 or chY[i] > maxEng4*4.5 or chY[i] < minEng4*3.5 ):
+        if (ch3[i] > maxEng3*(4+interval) or ch3[i] < minEng3*(4-interval) \
+        or ch4[i] > maxEng4*(4+interval) or ch4[i] < minEng4*(4-interval) ):
+            #should probably use*3
+            fNames[i] = 'rem'
+            
+    #remove the marked values
+    for i in range(0,fNames.count('rem')):
+        fNames.remove('rem')
+
+#end of coincidenceDetect
 
 # function to find the mean maximum value to later on use it for event detection
 def getMaxMeanValue(chA,chB):
@@ -27,7 +73,7 @@ def getMaxMeanValue(chA,chB):
     
     return maxMean
 # getMaxMeanValue function end
-    
+
 # function to find the mean maximum value to later on use it for event detection
 def getMaxMeanValue1(chA,reduc):
     maxVals = []
@@ -192,6 +238,109 @@ def findEdgeTimes1(chA, slopeProp=10, nCurveVals=15):
  
     return tEdgeTimes
 # findEdgeTimes1 function end
+    
+# function used to find the fwhm of a histogram
+# thVal will be the value from which the algorithm will start recording values
+def fwhmCal(histArray,thVal):
+
+#quick and dirty without using built in functions
+#find the first time it crosses the vth value
+    left= 0
+    index = 0
+    while( left == 0 and index <len(histArray)-1):
+        if histArray[index] > thVal:
+            left = index
+        index+=1
+    #I can now jump to the max value, only one peak should exist
+    index = np.argmax(histArray)
+    right = 0
+    while (right == 0 and index <len(histArray)-1):
+        if histArray[index]<thVal:
+            right = index
+        index+=1
+    
+    mCurve = histArray[left:right]
+    #TODO mejorar esto, demasiadas variables innecesarias
+    #fit this curve to a gaussian function     
+    x = range(len(mCurve))
+    y = mCurve
+    
+    #n = len(x)                          #the number of data
+    #mean = sum(x*y)/n                   #note this correction
+    #sigma = sum(y*(x-mean)**2)/n        #note this correction
+    
+    def gaus(x,a,x0,sigma):
+        return a*np.exp(-(x-x0)**2/(2*sigma**2))
+    
+    popt,pcov = curve_fit(gaus,x,y) #,p0=[1,mean,sigma])  
+    
+    #plot the values to see that it works
+    plt.figure()
+    plt.plot(x,y)
+    plt.plot(x,y,'b',label='data')
+    plt.plot(x,gaus(x,*popt),'r:',label='fit')
+      
+    return popt, pcov
+# end of fwhmCal
+    
+#modification of the previous function to compensate for the noise the measurement    
+def energyBorders(histArray):
+#quick and dirty without using built in functions
+#find the first time it crosses the vth value
+    
+    #this time i will have to start from the right
+    thVal = histArray.max()/10
+    index = len(histArray)-1
+    right = 0
+    while (right == 0 and index > 1):
+        if histArray[index]>thVal:
+            right = index
+        index-=1
+    #now I should move to the position of the max
+    index = np.argmax(histArray)
+    thVal = histArray.max()-histArray.max()/10
+    left= 0
+    while( left == 0 and index > 1):
+        if histArray[index] < thVal:
+            left = index
+        index-=1
+    
+    mCurve = histArray[left:right]
+    #TODO mejorar esto, demasiadas variables innecesarias
+    #fit this curve to a gaussian function     
+    x = range(len(mCurve))
+    y = mCurve
+    
+    #n = len(x)                          #the number of data
+    #mean = sum(x*y)/n                   #note this correction
+    #sigma = sum(y*(x-mean)**2)/n        #note this correction
+    
+    def gaus(x,a,x0,sigma):
+        return a*np.exp(-(x-x0)**2/(2*sigma**2))
+    
+    popt,pcov = curve_fit(gaus,x,y) #,p0=[1,mean,sigma])  
+    yN = gaus(x,*popt)
+    maxPos = np.argmax(yN)
+    right = 0
+    index = maxPos
+    thVal = yN.max()
+    while (right == 0 and index <len(yN)-1):
+        if yN[index] < thVal/2:
+            right = index
+        index+=1
+    
+    maxEng = left+right
+    minEng = maxEng - (right-maxPos)*2
+    
+    """
+    #plot the values to see that it works
+    plt.figure()
+    plt.plot(x,y)
+    plt.plot(x,y,'b',label='data')
+    plt.plot(x,gaus(x,*popt),'r:',label='fit')
+    """  
+    return maxEng,minEng
+# end of energyBorders
     
 
 
