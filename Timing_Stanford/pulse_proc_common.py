@@ -123,8 +123,8 @@ def getThPos1(chA):
     
     #recheck to make sure that the max values taken are not outside the "trust interval"
     # trust interval = mean - mean*(1-0.34) --- mean+mean*(1-0.34)
-    leftMargin = round(meanThPos*1.66)
-    rightMargin = round(meanThPos*0.6)
+    leftMargin = round(meanThPos*1.2)
+    rightMargin = round(meanThPos*0.8)
     for i in range(0, len(chA)):
         if (maxThPos[i]>leftMargin or maxThPos[i]< rightMargin):
             tmpArray = np.asarray(chA[i])
