@@ -11,15 +11,16 @@
 %judging from the reuslts I will take the values that correspond to 0.3
 %...TODO...I could probably iterate to see how it looks
 
-polyVs = zeros(4,3);
-load fittedCurvesA.mat
-polyVs(1,:) = polyVals(5,:); %polyComps(5,:);
-load fittedCurvesB.mat
-polyVs(2,:) = polyVals(5,:); %polyComps(5,:);
-load fittedCurvesC.mat
-polyVs(3,:) = polyVals(5,:); %polyComps(5,:);
-load fittedCurvesD.mat
-polyVs(4,:) = polyVals(5,:); %polyComps(5,:);
+ polyVs = zeros(4,3);
+% load fittedCurvesA.mat
+ polyVs(1,:) = polyVals(1,:); %polyComps(5,:);
+% load fittedCurvesB.mat
+ polyVs(2,:) = polyVals(2,:); %polyComps(5,:);
+% load fittedCurvesC.mat
+ polyVs(3,:) = polyVals(3,:); %polyComps(5,:);
+% load fittedCurvesD.mat
+ polyVs(4,:) = polyVals(4,:); %polyComps(5,:);
+
 
 %select the folder where the data is stored
 dirName = uigetdir();
