@@ -21,7 +21,7 @@ remFiles = nFiles; % files left to read
 toRead = 0; %files to read on each iteration
 val = 0;
 
-remFiles = 5000;
+
 while remFiles >0  
     %check how many values will be read this time
     if remFiles > bSize
@@ -30,7 +30,7 @@ while remFiles >0
         toRead = remFiles;
     end
     
-    for i = cPos: cPos+toRead
+    for i = cPos: cPos+toRead-1
         %read the data from the h5 files
         fName = strcat(dirName,'\',fList(i,:));
         chB=double(hdf5read(fName,'Waveforms/Channel 1/Channel 1Data'));
