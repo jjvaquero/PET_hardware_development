@@ -143,17 +143,17 @@ legend(['A';'B';'C';'D']);
 % %algoritmo...
 floodImg = zeros(imgSize,imgSize);
 floodImgPeaks = zeros(imgSize,imgSize);
- for i = 1 : size(nWidths,2)%no he leido todos los archivos...arreglarlo
-     if size(find(nWidths(:,i)' > 10e-9),2)> 3 %ya lo he comprobado ants...
+ for i = 1 : size(pWidths,2)%no he leido todos los archivos...arreglarlo
+     if size(find(pWidths(:,i)' > 1e-9),2)> 3 %ya lo he comprobado ants...
          %organize the values
 %          A = feval(polyVals(1,:),pWidths(1,i));
 %          B = polyval(polyVals(2,:),pWidths(2,i));
 %          C = polyval(polyVals(3,:),pWidths(3,i));
 %          D = polyval(polyVals(4,:),pWidths(4,i));
-         A = feval(expFit1,nWidths(1,i));
-         B = feval(expFit2,nWidths(2,i));
-         C = feval(expFit3,nWidths(3,i));
-         D = feval(expFit4,nWidths(4,i));
+         A = feval(expFit1,pWidths(1,i));
+         B = feval(expFit2,pWidths(2,i));
+         C = feval(expFit3,pWidths(3,i));
+         D = feval(expFit4,pWidths(4,i));
          En = A+B+C+D;
          X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
          Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
