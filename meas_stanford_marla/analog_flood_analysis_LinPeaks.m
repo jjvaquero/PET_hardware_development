@@ -19,15 +19,14 @@ remFiles = nFiles; % files left to read
 toRead = 0; %files to read on each iteration
 % from a previous test, a Vth of 0.4 seems to keep almost the same amount
 % of values as a smaller Vth so...i will shift around this value
-valThs = 0.25:0.025:0.45;
+valTh = 0.35; %valor ya elegido
 acceptedEvts = zeros(1,size(valThs,2)); %number of accepted events
     
-%remFiles = 200; %para pruebas rapidas
+remFiles = 500; %para pruebas rapidas
 %vector containing the widths of all pulse
-pWidths = zeros(size(valThs,2),remFiles); % lo mismo son demasiados...
+pWidths = zeros(4,remFiles); % solo pruebo un valor
 pAmps = zeros(4,remFiles); 
 
-remFiles = 5000;
 while remFiles >0
     %check how many values will be read this time
     if remFiles > bSize
@@ -60,28 +59,22 @@ while remFiles >0
         pAmps(4,i+cPos) = max(chD);
         
         %do it like this to minimize the number of I/O operations
-        for x = 1: size(valThs,2)
-            valTh = valThs(x);
-            
-            chAc = chA;
+        %los tengo que meter todos en allCh
+        allCh = [chA'; chB'; chC'; chD'];
+        for j = 1 : 4
             % convert it to an square signal
-            inds = (find(chA>valTh)); %to avoid oscilations due to noise
-            chAc((min(inds):max(inds)))= 1;
-            chAc(1:min(inds))= 0;
-            chAc(max(inds):size(chAc,1))= 0;
+            inds = (find(allCh(j,:)'>valTh)); %to avoid oscilations due to noise
+            allCh(j,(min(inds):max(inds)))= 1;
+            allCh(j,1:min(inds))= 0;
+            allCh(j,max(inds):size(allCh,2))= 0;         
             % find the pulse width
             if size(inds,1) > 5
-                pWidth = pulsewidth(chAc,200e9);
+                pWidths(j,i+cPos) = pulsewidth(allCh(j,:),200e9);
             else
-                pWidth = 0;
+               pWidths(j,i+cPos) = 0;
             end
-                       
-            % condition to the check that the pulse widths make sense
-            if  pWidth > 5e-9
-                acceptedEvts(x) = acceptedEvts(x)+1;
-            end
-            pWidths(x,i+cPos) = pWidth;
         end
+        
     end
     % could add a condition to save the data...if needed....
     
@@ -91,8 +84,6 @@ while remFiles >0
     
 end
 
-%plot to check that it worked
-plot(valThs,acceptedEvts);
 %plotting the actual result
 figure;
 plot(pWidths,pAmps,'*');
@@ -100,9 +91,9 @@ legend(num2str(valThs'));
 % try fitting a 3rd order polynomial 
 fittedCurves = zeros(size(pWidths));
 t = linspace(min(min(pWidths)),max(max(pWidths)),size(pWidths,2));
-polyVals = zeros(9,3);
+polyVals = zeros(4,3);
 for i = 1 : size(pWidths,1)
-    [x,y] = prepareCurveData(pWidths(i,:),pAmps);
+    [x,y] = prepareCurveData(pWidths(i,:),pAmps(i,:));
     polyVals(i,:) = polyfit(x,y,2);
     fittedCurves(i,:) = polyval(polyVals(i,:),t);
 end
@@ -113,7 +104,7 @@ save fittedCurvesA.mat polyVals pWidths pAmps polyVals t
 
 %to test the exp function
 for i = 1 : size(pWidths,1)
-    [x,y] = prepareCurveData(pWidths(i,:),pAmps);
+    [x,y] = prepareCurveData(pWidths(i,:),pAmps(i,:));
     expFit = fit(x,y,'exp1');
     fittedCurves(i,:) = feval(expFit,t);
 end
@@ -123,30 +114,31 @@ legend(num2str(valThs'));
  %jarrrr tengo que tener las amplitudes de todos lso canales....
 %hacer la imagen aqui es mucho mas rapido que con el otro tocho
 % %algoritmo...
-% for i = 1 : 5000 %no he leido todos los archivos...arreglarlo
-%     if size(find(pWidths > 10e-9),2)> 3
-%               %organize the values
-%             A = feval(polyVs,pWidths(1));
-%             B = feval(polyVs,pWidths(2));
-%             C = feval(polyVs,pWidths(3));
-%             D = feval(polyVs,pWidths(4));
-%             En = A+B+C+D;
-%             X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
-%             Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
-%             valW = valW+1;
-%         else
-%             X = 0; Y = 0;
-%         end       
-%         %TODO 
-%         % add support for histogram measurement
-%         
-%         %generate the image and the histograms
-%         %if En>0 && En<imgSize
-%         %    enHist(En) = enHist(En)+1;
-%         %image generation
-%         if X>0 && X<imgSize && Y>0 && Y<imgSize
-%             floodImg(X,Y) = floodImg(X,Y)+1;
-%             val = val+1;
-%         end
-
+floodImg = zeros(imgSize*2,imgSize*2);
+ for i = 1 : 500 %no he leido todos los archivos...arreglarlo
+     if size(find(pWidths(:,i) > 10e-9),2)> 3
+         %organize the values
+         A = polyval(polyVals(1,:),pWidths(1,i));
+         B = polyval(polyVals(2,:),pWidths(2,i));
+         C = polyval(polyVals(3,:),pWidths(3,i));
+         D = polyval(polyVals(4,:),pWidths(4,i));
+         En = A+B+C+D;
+         X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
+         Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
+         valW = valW+1;
+     else
+         X = 0; Y = 0;
+     end
+     %TODO
+     % add support for histogram measurement
+     
+     %generate the image and the histograms
+     %if En>0 && En<imgSize
+     %    enHist(En) = enHist(En)+1;
+     %image generation
+     if X>0 && X<imgSize && Y>0 && Y<imgSize
+         floodImg(X,Y) = floodImg(X,Y)+1;
+         val = val+1;
+     end
+ end
 
