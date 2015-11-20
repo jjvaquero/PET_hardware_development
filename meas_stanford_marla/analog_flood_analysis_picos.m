@@ -77,6 +77,8 @@ while remFiles >0
     imagesc(floodImg);
 end
 
+save floodImg_peaks.mat floodImg
+
     
 
 
