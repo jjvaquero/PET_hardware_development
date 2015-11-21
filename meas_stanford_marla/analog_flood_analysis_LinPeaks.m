@@ -19,7 +19,7 @@ remFiles = nFiles; % files left to read
 toRead = 0; %files to read on each iteration
 % from a previous test, a Vth of 0.4 seems to keep almost the same amount
 % of values as a smaller Vth so...i will shift around this value
-valTh = 0.35; %valor ya elegido
+valTh = 0.15; %valor ya elegido
     
 %remFiles = 500; %para pruebas rapidas
 %vector containing the widths of all pulse
@@ -99,7 +99,7 @@ end
 plot(t,fittedCurves);
 legend(['A';'B';'C';'D']);
 
-save fittedCurvesA.mat polyVals pWidths pAmps polyVals t
+save fittedCurves_vth.mat polyVals pWidths pAmps polyVals t
 
 %to test the exp function
 for i = 1 : size(pWidths,1)
@@ -110,18 +110,24 @@ end
 %nada...a lo gitano porque nose como hacer pa que l marla me lo guarda en
 % listas
 %attempt to clean  my data...
+nT = sort(pWidths');
+nT = nT';
+nT = nT(:,24500:49001);
 indArr = 1;
 nAmps = []; %zeros(4,25000);
-nWidths = []; % nAmps;
-for i = 1 : size(pWidths,2)
-    %store only values that will be used to create the image later on
-     if size(find(pWidths(:,i)' > 1e-9),2)>= 3 
-         nAmps(:,indArr) = pAmps(:,i);
-         nWidths(:,indArr) = pWidths(:,i);
-         indArr = indArr+1;
-     end
+nWidths = [];
+indArray = zeros(1,4); 
+for i = 2 : size(nT,2)
+    %one amp value per time value...also ...all sorted...nice...
+    for j = 1: 4
+        if nT(j,i)~=nT(j,i-1)
+           indArray(j) = indArray(j)+1;
+           nAmps(j,indArray(j)) = mean(pAmps(j,(find(pWidths(j,:)==nT(j,i)))));
+           nWidths(j,indArray(j)) = nT(j,i);
+        end
+    end
 end
-strFit = 'poly5';
+strFit = 'fourier4';
 [x,y] = prepareCurveData(nWidths(1,:),nAmps(1,:));
 expFit1 = fit(x,y,strFit);
 fittedCurves(1,:) = feval(expFit1,t);
@@ -162,9 +168,9 @@ floodImgPeaks = zeros(imgSize,imgSize);
          B1 = pAmps(2,i);
          C1 = pAmps(3,i);
          D1 = pAmps(4,i);
-         En1 = A+B+C+D;
-         X1 = round(((A1+D1)-(B1+C1))/En*imgSize/2)+imgSize/2;
-         Y1 = round(((A1+B1)-(C1+D1))/En*imgSize/2)+imgSize/2;
+         En1 = A1+B1+C1+D1;
+         X1 = round(((A1+D1)-(B1+C1))/En1*imgSize/2)+imgSize/2;
+         Y1 = round(((A1+B1)-(C1+D1))/En1*imgSize/2)+imgSize/2;
      else
          X = 0; Y = 0;
          X1 = 0; Y1 = 0;
@@ -176,7 +182,7 @@ floodImgPeaks = zeros(imgSize,imgSize);
      %if En>0 && En<imgSize
      %    enHist(En) = enHist(En)+1;
      %image generation
-     if X>0 && X<imgSize*2 && Y>0 && Y<imgSize*2
+     if X>0 && X<imgSize && Y>0 && Y<imgSize
          floodImg(X,Y) = floodImg(X,Y)+1;
          val = val+1;
      end
