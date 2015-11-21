@@ -21,8 +21,7 @@ remFiles = nFiles; % files left to read
 toRead = 0; %files to read on each iteration
 val = 0;
 valThs = 0.1:0.05:0.35;
-floodImg = zeros(size(valThs(1,:)),imgSize,imgSize);
-
+floodImg = zeros(size(valThs,2),imgSize,imgSize);
 
 while remFiles >0  
     %check how many values will be read this time
@@ -105,17 +104,16 @@ while remFiles >0
     remFiles = remFiles-toRead;
     cPos = cPos+toRead;
     
-    % pa ver que va pirulando
-    imagesc(floodImg);
 end
 
 save floodImg_peaksVth.mat floodImg valThs
 
 %try plotting all the values
 figure;
-for i = size(valThs,1)
+for i = 1: size(valThs,2)
     subplot(2,3,i);
-    imagesc(floodImg(i,:,:));
+    imagesc(squeeze(floodImg(i,:,:)));
+    title(num2str(valThs(i)));
 end
 
     
