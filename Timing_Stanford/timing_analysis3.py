@@ -47,6 +47,8 @@ pulseProc.coincidenceDetect(downNames,0.3)
 remaining = len(downNames)
 #list where global results will be stored
 diffVal = []
+timesXTot = [];
+timesYTot = [];
 
 while remaining >0:
     
@@ -81,6 +83,8 @@ while remaining >0:
     #test filters
     timesX = pulseProc.findEdgeTimes1(ch1,20,50)
     timesY = pulseProc.findEdgeTimes1(ch2,20,50)
+    timesXTot.append(timesX);
+    timesYTot.append(timesY);
     
     #find the difference between the two values
     #diff = np.zeros(len(timesX))
@@ -90,6 +94,14 @@ while remaining >0:
     
     
     print('curr lims {0:5d} {1:5d}'.format(len(downNames)-remaining, (len(downNames)-remaining)+nEventsRead))
+    
+    #add skew correction and try it ...
+    #diffVal = [];
+    #skew = timesY.mean()-timesX.mean();
+    #for i in range(0,len(timesX)):
+    #    if (timesX[i] != 0 and timesY[i] != 0):
+    #        diffVal.append(timesX[i] - (timesY[i]-skew))
+    
     
 
     
