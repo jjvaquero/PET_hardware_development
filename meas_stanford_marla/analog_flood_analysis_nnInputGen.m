@@ -5,119 +5,67 @@
 %load the file with the widths and the amplitudes
 load('fittedCurves_vth015.mat');
 
-%first load the 0.35 thresholds and use them for fitting
-%load('fitted_curves_vth_035.mat')
-%nada...a lo gitano porque nose como hacer pa que l marla me lo guarda en
-% listas
-%attempt to clean  my data...
-nT = sort(pAmps');
-nT = nT';
-nT = nT(:,24500:49001);
-nAmps = []; %zeros(4,25000);
-nWidths = [];
-indArray = zeros(1,4); 
-for i = 2 : size(nT,2)
-    %one amp value per time value...also ...all sorted...nice...
-    for j = 1: 4
-        if nT(j,i)~=nT(j,i-1)
-           indArray(j) = indArray(j)+1;
-           nWidths(j,indArray(j)) = mean(pWidths(j,(find(pAmps(j,:)==nT(j,i)))));
-           nAmps(j,indArray(j)) = nT(j,i);
+%variables where data will be stored
+nData = 10000; %amount of data to save
+outPos = zeros(2,nData); % X, Y values
+inWidths = zeros(4,nData); % A,B,C,D widths
+storedVals = 0;
+imgSize = 256;
+floodImg = zeros(imgSize, imgSize);
+index = 0;
+while storedVals < nData || index > size(pWidths,2)
+    %use only values where all pulses are more than 1 ns in length
+    index = index+1;
+    if (size(find(pWidths(:,index)' > 1e-9),2)> 3)
+        % compute the X, Y values
+        A = pAmps(1,index);
+        B = pAmps(2,index);
+        C = pAmps(3,index);
+        D = pAmps(4,index);
+        En = A+B+C+D;
+        X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
+        Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
+        %check that these values could be used to generate an image
+        if X>0 && X<imgSize && Y>0 && Y<imgSize
+            storedVals = storedVals+1;
+            inWidths(:,storedVals) = pWidths(:,index);
+            outPos(:,storedVals) = [X;Y];
+            floodImg(X,Y) = floodImg(X,Y)+1;
         end
     end
 end
-% pfff....auun mas turbio....ajustar los dos....
-% nT = sort(nWidths');
-% nT = nT';
-% nWidths2 = [];
-% nAmps2 = [];
-% indArray = zeros(1,4); 
-% for i = 2 : size(nT,2)
-%     %one amp value per time value...also ...all sorted...nice...
-%     for j = 1: 4
-%         if nT(j,i)~=nT(j,i-1)
-%            indArray(j) = indArray(j)+1;
-%            nAmps2(j,indArray(j)) = mean(nAmps(j,(find(nWidths(j,:)==nT(j,i)))));
-%            nWidths2(j,indArray(j)) = nT(j,i);
-%         end
-%     end
-% end
-strFit = strTest{var}; %'poly3';  %exp1 se ve bien para 0.35
-[x,y] = prepareCurveData(nWidths(1,:),nAmps(1,:));
-expFit1 = fit(x,y,strFit);
-fittedCurves(1,:) = feval(expFit1,t);
-[x,y] = prepareCurveData(nWidths(2,:),nAmps(2,:));
-expFit2 = fit(x,y,strFit);
-fittedCurves(2,:) = feval(expFit2,t);
-[x,y] = prepareCurveData(nWidths(3,:),nAmps(3,:));
-expFit3 = fit(x,y,strFit);
-fittedCurves(3,:) = feval(expFit3,t);
-[x,y] = prepareCurveData(nWidths(4,:),nAmps(4,:));
-expFit4 = fit(x,y,strFit);
-fittedCurves(4,:) = feval(expFit4,t);
 
-plot(t,fittedCurves);
-legend(['A';'B';'C';'D']);
+%save the values
+save 'nn_inputs_vth015.mat' 'outPos' 'inWidths' 'floodImg'
 
-%for the image generation used the values with a lower vth
-%load('fittedCurves_vth015.mat');
-
- %jarrrr tengo que tener las amplitudes de todos lso canales....
-%hacer la imagen aqui es mucho mas rapido que con el otro tocho
-% %algoritmo...
-floodImg = zeros(imgSize,imgSize);
-floodImgPeaks = zeros(imgSize,imgSize);
-valW = 0;
- for i = 1 : size(pWidths,2)%no he leido todos los archivos...arreglarlo
-     if (size(find(pWidths(:,i)' > 1e-9),2)> 3)  && (size(find(pWidths(:,i)' < 50e-9),2)> 3)  %ya lo he comprobado ants...
-         %organize the values
-%          A = feval(polyVals(1,:),pWidths(1,i));
-%          B = polyval(polyVals(2,:),pWidths(2,i));
-%          C = polyval(polyVals(3,:),pWidths(3,i));
-%          D = polyval(polyVals(4,:),pWidths(4,i));
-         A = feval(expFit1,pWidths(1,i));
-         B = feval(expFit2,pWidths(2,i));
-         C = feval(expFit3,pWidths(3,i));
-         D = feval(expFit4,pWidths(4,i));
-         En = A+B+C+D;
-         X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
-         Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
-         valW = valW+1;
-         A1 = pAmps(1,i);
-         B1 = pAmps(2,i);
-         C1 = pAmps(3,i);
-         D1 = pAmps(4,i);
-         En1 = A1+B1+C1+D1;
-         X1 = round(((A1+D1)-(B1+C1))/En1*imgSize/2)+imgSize/2;
-         Y1 = round(((A1+B1)-(C1+D1))/En1*imgSize/2)+imgSize/2;
-     else
-         X = 0; Y = 0;
-         X1 = 0; Y1 = 0;
-     end
-     %TODO
-     % add support for histogram measurement
-     
-     %generate the image and the histograms
-     %if En>0 && En<imgSize
-     %    enHist(En) = enHist(En)+1;
-     %image generation
-     if X>0 && X<imgSize && Y>0 && Y<imgSize
-         floodImg(X,Y) = floodImg(X,Y)+1;
-         val = val+1;
-     end
-     if X1>0 && X1<imgSize && Y1>0 && Y1<imgSize
-         floodImgPeaks(X1,Y1) = floodImgPeaks(X1,Y1)+1;
-     end
- end
- %imagesc(floodImgPeaks);
- %figure;
- %imagesc(floodImg);
- %title(strFit);
- imgs(var,:,:) = floodImg;
-%try plotting all the images....
-figure;
-for i = 1: size(strTest,1)
-    subplot(2,4,i);
-    imagesc(squeeze(imgs(i,:,:)));
-    title(strTest{i});
+%repeat it to keep the values to check the solution
+%variables where data will be stored
+nData = 10000; %amount of data to save
+outPos2 = zeros(2,nData); % X, Y values
+inWidths2 = zeros(4,nData); % A,B,C,D widths
+storedVals = 0;
+floodImg2 = zeros(imgSize, imgSize);
+while storedVals < nData || index > size(pWidths,2)
+    %use only values where all pulses are more than 1 ns in length
+    index = index+1;
+    if (size(find(pWidths(:,index)' > 1e-9),2)> 3)
+        % compute the X, Y values
+        A = pAmps(1,index);
+        B = pAmps(2,index);
+        C = pAmps(3,index);
+        D = pAmps(4,index);
+        En = A+B+C+D;
+        X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
+        Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
+        %check that these values could be used to generate an image
+        if X>0 && X<imgSize && Y>0 && Y<imgSize
+            storedVals = storedVals+1;
+            inWidths2(:,storedVals) = pWidths(:,index);
+            outPos2(:,storedVals) = [X;Y];
+            floodImg2(X,Y) = floodImg2(X,Y)+1;
+        end
+    end
 end
+
+%save the values
+save 'nn_validation_vth015.mat' 'outPos2' 'inWidths2' 'floodImg2'
