@@ -1,128 +1,95 @@
-%rcp 17  nov 2015
+%rcp 24 nov 2015
 %
-% try to find a combination of good fitting and good image....
+% this will do all the processing on this measurement...
+% divide the code using %%% to later execute it by parts
 
-%a lo brutorrrr
-strTest = [{'exp1'};{'exp2'};{'poly2'};{'poly3'};{'poly4'};{'poly5'};{'fourier3'};{'fourier4'}];
-imgs = zeros(size(strTest,2),256,256);
 
-load('fittedCurves_vth015.mat');
-for var = 1 : size(strTest,1)
+%%
+%   First the plot showing the number of events that I will keep by using
+%   different threshold values
+%
 
-%first load the 0.35 thresholds and use them for fitting
-%load('fitted_curves_vth_035.mat')
-%nada...a lo gitano porque nose como hacer pa que l marla me lo guarda en
-% listas
-%attempt to clean  my data...
-nT = sort(pAmps');
-nT = nT';
-nT = nT(:,24500:49001);
-nAmps = []; %zeros(4,25000);
-nWidths = [];
-indArray = zeros(1,4); 
-for i = 2 : size(nT,2)
-    %one amp value per time value...also ...all sorted...nice...
-    for j = 1: 4
-        if nT(j,i)~=nT(j,i-1)
-           indArray(j) = indArray(j)+1;
-           nWidths(j,indArray(j)) = mean(pWidths(j,(find(pAmps(j,:)==nT(j,i)))));
-           nAmps(j,indArray(j)) = nT(j,i);
+%select the folder where the data is stored
+dirName = uigetdir();
+%list all the h5 files inside this directory
+fList = ls(strcat(dirName,'\','*.h5'));
+
+nFiles = size(fList,1); % number of files to read
+% size of the block I will read
+bSize = 1000;  % this is to avoid Marla from hanging
+% position in the array of file names
+cPos = 1; % jarrrr por el puto marla es 1....
+remFiles = nFiles; % files left to read
+toRead = 0; %files to read on each iteration
+valThs = 0.1:0.05:0.9;
+acceptedEvts = zeros(1,size(valThs,2)); %number of accepted events
+
+
+
+    
+remFiles = 2100; %para pruebas rapidas
+while remFiles >0
+    %check how many values will be read this time
+    if remFiles > bSize
+        toRead = bSize;
+    else
+        toRead = remFiles;
+    end
+    
+    for i = cPos: cPos+toRead-1
+        %read the data from the h5 files
+        fName = strcat(dirName,'\',fList(i,:));
+        chB=double(hdf5read(fName,'Waveforms/Channel 1/Channel 1Data'));
+        chD=double(hdf5read(fName,'Waveforms/Channel 2/Channel 2Data'));
+        chC=double(hdf5read(fName,'Waveforms/Channel 3/Channel 3Data'));
+        chA=double(hdf5read(fName,'Waveforms/Channel 4/Channel 4Data'));
+           
+        %do it like this to minimize the number of I/O operations
+        for x = 1: size(valThs,2)
+            %better put them in an array...to avoid repeating code
+            allCh = [chA'; chB'; chC'; chD'];
+            pWidth = zeros(1,4);
+            indVals = 0; %used to only measure pulsewidths on events 
+              %on which all 4 channels qualify 
+            for j = 1 : 4
+                %offset correction
+                allCh(j,:) = allCh(j,:)-mean(allCh(j,1:500));
+                % convert it to an square signal
+                inds = find(allCh(j,:)>valThs(x)); %to avoid oscilations due to noise
+                if size(inds,2) > 5 
+                    allCh(j,(min(inds):max(inds)))= 1;
+                    allCh(j,1:min(inds))= 0;
+                    allCh(j,max(inds):size(allCh,2))= 0;
+                    indVals = indVals +1;
+                    % 50 e-12 --- sampling rate = 20e9
+                    pWidth(j) = (max(inds)-min(inds))*50e-12; 
+                end
+            end
+            %pulsewidth is a very precise algorithm...but not needed for
+            %this estimation so instead...just a subtraction and a
+            % multiplication
+%             if indVals == 4
+%                 for j = 1:4
+%                     pWidths(j) = pulsewidth(allCh(j,:),200e9);                    
+%                 end
+%             end
+            
+            % condition to the check that the pulse widths make sense
+            if (size(find(pWidth > 5e-9),2)> 3) && (size(find(pWidth <100e-9),2)> 3)
+                acceptedEvts(x) = acceptedEvts(x)+1;
+            end
         end
     end
+    % could add a condition to save the data...if needed....
+    
+    % update remFiles and cPos
+    remFiles = remFiles-toRead;
+    cPos = cPos+toRead;
+    
 end
-% pfff....auun mas turbio....ajustar los dos....
-% nT = sort(nWidths');
-% nT = nT';
-% nWidths2 = [];
-% nAmps2 = [];
-% indArray = zeros(1,4); 
-% for i = 2 : size(nT,2)
-%     %one amp value per time value...also ...all sorted...nice...
-%     for j = 1: 4
-%         if nT(j,i)~=nT(j,i-1)
-%            indArray(j) = indArray(j)+1;
-%            nAmps2(j,indArray(j)) = mean(nAmps(j,(find(nWidths(j,:)==nT(j,i)))));
-%            nWidths2(j,indArray(j)) = nT(j,i);
-%         end
-%     end
-% end
-strFit = strTest{var}; %'poly3';  %exp1 se ve bien para 0.35
-[x,y] = prepareCurveData(nWidths(1,:),nAmps(1,:));
-expFit1 = fit(x,y,strFit);
-fittedCurves(1,:) = feval(expFit1,t);
-[x,y] = prepareCurveData(nWidths(2,:),nAmps(2,:));
-expFit2 = fit(x,y,strFit);
-fittedCurves(2,:) = feval(expFit2,t);
-[x,y] = prepareCurveData(nWidths(3,:),nAmps(3,:));
-expFit3 = fit(x,y,strFit);
-fittedCurves(3,:) = feval(expFit3,t);
-[x,y] = prepareCurveData(nWidths(4,:),nAmps(4,:));
-expFit4 = fit(x,y,strFit);
-fittedCurves(4,:) = feval(expFit4,t);
 
-plot(t,fittedCurves);
-legend(['A';'B';'C';'D']);
-
-%for the image generation used the values with a lower vth
-%load('fittedCurves_vth015.mat');
-
- %jarrrr tengo que tener las amplitudes de todos lso canales....
-%hacer la imagen aqui es mucho mas rapido que con el otro tocho
-% %algoritmo...
-floodImg = zeros(imgSize,imgSize);
-floodImgPeaks = zeros(imgSize,imgSize);
-valW = 0;
- for i = 1 : size(pWidths,2)%no he leido todos los archivos...arreglarlo
-     if (size(find(pWidths(:,i)' > 1e-9),2)> 3)  && (size(find(pWidths(:,i)' < 50e-9),2)> 3)  %ya lo he comprobado ants...
-         %organize the values
-%          A = feval(polyVals(1,:),pWidths(1,i));
-%          B = polyval(polyVals(2,:),pWidths(2,i));
-%          C = polyval(polyVals(3,:),pWidths(3,i));
-%          D = polyval(polyVals(4,:),pWidths(4,i));
-         A = feval(expFit1,pWidths(1,i));
-         B = feval(expFit2,pWidths(2,i));
-         C = feval(expFit3,pWidths(3,i));
-         D = feval(expFit4,pWidths(4,i));
-         En = A+B+C+D;
-         X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
-         Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
-         valW = valW+1;
-         A1 = pAmps(1,i);
-         B1 = pAmps(2,i);
-         C1 = pAmps(3,i);
-         D1 = pAmps(4,i);
-         En1 = A1+B1+C1+D1;
-         X1 = round(((A1+D1)-(B1+C1))/En1*imgSize/2)+imgSize/2;
-         Y1 = round(((A1+B1)-(C1+D1))/En1*imgSize/2)+imgSize/2;
-     else
-         X = 0; Y = 0;
-         X1 = 0; Y1 = 0;
-     end
-     %TODO
-     % add support for histogram measurement
-     
-     %generate the image and the histograms
-     %if En>0 && En<imgSize
-     %    enHist(En) = enHist(En)+1;
-     %image generation
-     if X>0 && X<imgSize && Y>0 && Y<imgSize
-         floodImg(X,Y) = floodImg(X,Y)+1;
-         val = val+1;
-     end
-     if X1>0 && X1<imgSize && Y1>0 && Y1<imgSize
-         floodImgPeaks(X1,Y1) = floodImgPeaks(X1,Y1)+1;
-     end
- end
- %imagesc(floodImgPeaks);
- %figure;
- %imagesc(floodImg);
- %title(strFit);
- imgs(var,:,:) = floodImg;
-end
-%try plotting all the images....
+%plot the final result
+plot(valThs,acceptedEvts);
 figure;
-for i = 1: size(strTest,1)
-    subplot(2,4,i);
-    imagesc(squeeze(imgs(i,:,:)));
-    title(strTest{i});
-end
+%to get as percentage
+plot(valThs,(acceptedEvts/2100)*100);
