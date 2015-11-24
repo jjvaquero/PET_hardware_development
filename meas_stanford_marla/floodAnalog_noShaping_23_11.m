@@ -62,7 +62,10 @@ while remFiles >0
                     allCh(j,max(inds):size(allCh,2))= 0;
                     indVals = indVals +1;
                     % 50 e-12 --- sampling rate = 20e9
-                    pWidth(j) = (max(inds)-min(inds))*50e-12; 
+                    % el cacharro ha volvido a meterme el redondeo...
+                    % asi que....
+                    % 5 e-12 --- sampling rate 200e9
+                    pWidth(j) = (max(inds)-min(inds))*5e-12; 
                 end
             end
             %pulsewidth is a very precise algorithm...but not needed for
@@ -75,7 +78,9 @@ while remFiles >0
 %             end
             
             % condition to the check that the pulse widths make sense
-            if (size(find(pWidth > 5e-9),2)> 3) && (size(find(pWidth <100e-9),2)> 3)
+            % second condition removed in this case I have no idea on how
+            % big will pulses be
+            if (size(find(pWidth > 5e-9),2)> 3) % && (size(find(pWidth <100e-9),2)> 3)
                 acceptedEvts(x) = acceptedEvts(x)+1;
             end
         end
