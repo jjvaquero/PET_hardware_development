@@ -27,7 +27,7 @@ acceptedEvts = zeros(1,size(valThs,2)); %number of accepted events
 %
 
     
-remFiles = 2100; %para pruebas rapidas
+%remFiles = 2100; %para pruebas rapidas
 while remFiles >0
     %check how many values will be read this time
     if remFiles > bSize
@@ -65,7 +65,7 @@ while remFiles >0
                     % el cacharro ha volvido a meterme el redondeo...
                     % asi que....
                     % 5 e-12 --- sampling rate 200e9
-                    pWidth(j) = (max(inds)-min(inds))*5e-12; 
+                    pWidth(j) = (max(inds)-min(inds)); %*5e-12; 
                 end
             end
             %pulsewidth is a very precise algorithm...but not needed for
@@ -80,7 +80,7 @@ while remFiles >0
             % condition to the check that the pulse widths make sense
             % second condition removed in this case I have no idea on how
             % big will pulses be
-            if (size(find(pWidth > 5e-9),2)> 3) % && (size(find(pWidth <100e-9),2)> 3)
+            if (size(find(pWidth > 5e-9/5e-12),2)> 3) % && (size(find(pWidth <100e-9),2)> 3)
                 acceptedEvts(x) = acceptedEvts(x)+1;
             end
         end
@@ -100,7 +100,7 @@ figure;
 plot(valThs,(acceptedEvts/2100)*100);
 
 %save the values in chase they are needed later
-save('floodAnalog_noShaping_2311_res.mat','valThs','acceptedEvts');
+save('floodAnalog_noShaping_2311_resN.mat','valThs','acceptedEvts');
 %save(filename,variables,'-append')
 
 %valuable interval to see how well it behaves 0.5 - 0.75
@@ -112,7 +112,7 @@ save('floodAnalog_noShaping_2311_res.mat','valThs','acceptedEvts');
 %  Now generate flood images using all of the data
 %
 %select the folder where the data is stored
-dirName = uigetdir();
+%dirName = uigetdir();
 %list all the h5 files inside this directory
 fList = ls(strcat(dirName,'\','*.h5'));
 
@@ -132,7 +132,7 @@ floodImg = zeros(size(valThs2,2),imgSize,imgSize);
 pWidths = zeros(size(valThs2,2),4,remFiles); % solo pruebo un valor
 pAmps = zeros(4,remFiles); 
 
-remFiles = 5000;
+%remFiles = 5000;
 while remFiles >0  
     %check how many values will be read this time
     if remFiles > bSize
@@ -183,13 +183,15 @@ while remFiles >0
                     allCh(j,1:min(inds))= 0;
                     allCh(j,max(inds):size(allCh,2))= 0;
                     indVals = indVals +1;
-                    pWidth(j) = (max(inds)-min(inds))*5e-12; 
+                    %lo paso todo al dominio del num de muestras a ver que
+                    %pasa
+                    pWidth(j) = (max(inds)-min(inds)); %*5e-12; 
                 end
             end
 
             
             % condition to the check that the pulse widths make sense
-            if (size(find(pWidth > 5e-9),2)> 3) 
+            if (size(find(pWidth > 5e-9/5e-12),2)> 3) 
                 if X>0 && X<imgSize && Y>0 && Y<imgSize
                     floodImg(x,X,Y) = floodImg(x,X,Y)+1;
                 end                
@@ -228,7 +230,7 @@ vals = squeeze(vals);
 plot(vals,pAmps(1,:),'.');
 legend(num2str(valThs2'));
 
-save('floodAnalog_noShaping_2311_res.mat','valThs2','floodImg','pAmps','pWidths','-append');
+save('floodAnalog_noShaping_2311_resN.mat','valThs2','floodImg','pAmps','pWidths','-append');
 
 %%
 % Now I should try making images with the widths
@@ -238,7 +240,7 @@ floodImgWidths = zeros(size(valThs2,2),imgSize,imgSize);
 %to keep the previous naming
 remFiles = size(pWidths,3);
 % for quick testing
-remFiles = 5000;
+%remFiles = 5000;
 for i = 1 : size(valThs2,2)
     for j = 1 : remFiles
         A = pWidths(i,1,j); 
@@ -249,7 +251,7 @@ for i = 1 : size(valThs2,2)
         X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
         Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
         % condition to the check that the pulse widths make sense
-        if (size(find(pWidths(i,:,j) > 5e-9),2)> 3) %&& (size(find(pWidths(i,:,j )< 150e-9),2)> 3)
+        if (size(find(pWidths(i,:,j) > 5e-9/5e-12),2)> 3) %&& (size(find(pWidths(i,:,j )< 150e-9),2)> 3)
             if X>0 && X<imgSize && Y>0 && Y<imgSize
                 floodImgWidths(i,X,Y) = floodImgWidths(i,X,Y)+1;
             end
@@ -263,50 +265,62 @@ for i = 1: size(valThs2,2)
     imagesc(squeeze(floodImgWidths(i,:,:)));
     title(num2str(valThs2(i)));
 end
-save('floodAnalog_noShaping_2311_res.mat','floodImgWidths','-append');
+save('floodAnalog_noShaping_2311_resN.mat','floodImgWidths','-append');
 
 %%
 %  Use curve fitting to calculate the new results
 %
 %do it only fot the 0.45 Vth value
 pulseWidths =  squeeze(pWidths(7,:,:));
-strFit = 'exp2';
-[x,y] = prepareCurveData(pulseWidths(1,:),pAmps(1,:));
-expFit1 = fit(x,y,strFit);
-[x,y] = prepareCurveData(pulseWidths(2,:),pAmps(2,:));
-expFit2 = fit(x,y,strFit);
-[x,y] = prepareCurveData(pulseWidths(3,:),pAmps(3,:));
-expFit3 = fit(x,y,strFit);
-[x,y] = prepareCurveData(pulseWidths(4,:),pAmps(4,:));
-expFit4 = fit(x,y,strFit);
-t = linspace(min(min(pulseWidths)),max(max(pulseWidths)),size(pulseWidths,2));
-%see how good my fit is
-fittedCurves(1,:) = feval(expFit1,t);
-fittedCurves(2,:) = feval(expFit2,t);
-fittedCurves(3,:) = feval(expFit3,t);
-fittedCurves(4,:) = feval(expFit4,t);
-figure;
-plot(t,fittedCurves);
-legend(['A';'B';'C';'D']);
-%generate a new image with the fitted data
-imgFitted = zeros(imgSize,imgSize);
-for i = 1 : size(pulseWidths,2)
-    if (size(find(pulseWidths(:,i)' > 1e-9),2)> 3) % && (size(find(pulseWidths(:,i)' < 50e-9),2)> 3)  %ya lo he comprobado ants...
-         A = feval(expFit1,pulseWidths(1,i));
-         B = feval(expFit2,pulseWidths(2,i));
-         C = feval(expFit3,pulseWidths(3,i));
-         D = feval(expFit4,pulseWidths(4,i));
-         En = A+B+C+D;
-         X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
-         Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
-         if X>0 && X<imgSize && Y>0 && Y<imgSize
-             imgFitted(X,Y) = imgFitted(X,Y)+1;             
-         end
+%try different fittings
+strTest = [{'exp1'};{'exp2'};{'poly2'};{'poly3'};{'poly4'};{'poly5'}];
+%create a flood for all the differente fittings
+floodFitted = zeros(size(strTest,1),imgSize,imgSize);
+for j = 1 : size(strTest,1)
+    strFit = strTest{j};
+    [x,y] = prepareCurveData(pulseWidths(1,:),pAmps(1,:));
+    expFit1 = fit(x,y,strFit);
+    [x,y] = prepareCurveData(pulseWidths(2,:),pAmps(2,:));
+    expFit2 = fit(x,y,strFit);
+    [x,y] = prepareCurveData(pulseWidths(3,:),pAmps(3,:));
+    expFit3 = fit(x,y,strFit);
+    [x,y] = prepareCurveData(pulseWidths(4,:),pAmps(4,:));
+    expFit4 = fit(x,y,strFit);
+    t = linspace(min(min(pulseWidths)),max(max(pulseWidths)),size(pulseWidths,2));
+    %see how good my fit is
+    % fittedCurves(1,:) = feval(expFit1,t);
+    % fittedCurves(2,:) = feval(expFit2,t);
+    % fittedCurves(3,:) = feval(expFit3,t);
+    % fittedCurves(4,:) = feval(expFit4,t);
+    % %figure;
+    % plot(t,fittedCurves);
+    % legend(['A';'B';'C';'D']);
+    %generate the image
+    for i = 1 : size(pulseWidths,2)
+        if (size(find(pulseWidths(:,i)' > 5e-9/5e-12),2)> 3) % && (size(find(pulseWidths(:,i)' < 50e-9),2)> 3)  %ya lo he comprobado ants...
+            A = feval(expFit1,pulseWidths(1,i));
+            B = feval(expFit2,pulseWidths(2,i));
+            C = feval(expFit3,pulseWidths(3,i));
+            D = feval(expFit4,pulseWidths(4,i));
+            En = A+B+C+D;
+            X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
+            Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
+            if X>0 && X<imgSize && Y>0 && Y<imgSize
+                floodFitted(j,X,Y) = floodFitted(j,X,Y)+1;
+            end
+        end
     end
 end
-figure; 
-imagesc(imgFitted);
-save('floodAnalog_noShaping_2311_res.mat','imgFitted','-append');
+%try plotting all the values
+figure;
+for i = 1: size(strTest,1)
+    subplot(2,3,i);
+    imagesc(squeeze(floodFitted(i,:,:)));
+    title(num2str(strTest{i}));
+end
+save('floodAnalog_noShaping_2311_resN.mat','imgFitted','-append');
+
+%todo add the neural network part
 
 
 
