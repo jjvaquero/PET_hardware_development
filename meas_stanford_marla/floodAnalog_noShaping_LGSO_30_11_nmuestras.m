@@ -13,7 +13,10 @@
 dirName = uigetdir();
 %list all the h5 files inside this directory
 fList = ls(strcat(dirName,'\','*.h5'));
-sRate = 5e-12; %sample rate used
+sRate = 50e-12; %sample rate used
+%name of the file where the results will be stored
+fSavName = 'floodAnalog_noShaping_LGSO_3011_resN.mat';
+
 
 nFiles = size(fList,1); % number of files to read
 % size of the block I will read
@@ -22,10 +25,10 @@ bSize = 1000;  % this is to avoid Marla from hanging
 cPos = 1; % jarrrr por el puto marla es 1....
 remFiles = nFiles; % files left to read
 toRead = 0; %files to read on each iteration
-valThs = 0.1:0.05:0.9;
+valThs = 0.05:0.05:0.7;
 acceptedEvts = zeros(1,size(valThs,2)); %number of accepted events
 
-%sample rate used
+%
 
     
 %remFiles = 2100; %para pruebas rapidas
@@ -101,7 +104,7 @@ figure;
 plot(valThs,(acceptedEvts/2100)*100);
 
 %save the values in chase they are needed later
-save('floodAnalog_noShaping_2311_resN.mat','valThs','acceptedEvts');
+save(fSavName,'valThs','acceptedEvts');
 %save(filename,variables,'-append')
 
 %valuable interval to see how well it behaves 0.5 - 0.75
@@ -128,7 +131,7 @@ cPos = 1; % jarrrr por el puto marla es 1....
 remFiles = nFiles; % files left to read
 toRead = 0; %files to read on each iteration
 val = 0;
-valThs2 = 0.15:0.05:0.7; 
+valThs2 = 0.05:0.05:0.6; 
 floodImg = zeros(size(valThs2,2),imgSize,imgSize);
 pWidths = zeros(size(valThs2,2),4,remFiles); % solo pruebo un valor
 pAmps = zeros(4,remFiles); 
@@ -231,7 +234,7 @@ vals = squeeze(vals);
 plot(vals,pAmps(1,:),'.');
 legend(num2str(valThs2'));
 
-save('floodAnalog_noShaping_2311_resN.mat','valThs2','floodImg','pAmps','pWidths','-append');
+save(fSavName,'valThs2','floodImg','pAmps','pWidths','-append');
 
 %%
 % Now I should try making images with the widths
@@ -266,7 +269,7 @@ for i = 1: size(valThs2,2)
     imagesc(squeeze(floodImgWidths(i,:,:)));
     title(num2str(valThs2(i)));
 end
-save('floodAnalog_noShaping_2311_resN.mat','floodImgWidths','-append');
+save(fSavName,'floodImgWidths','-append');
 
 %%
 %  Use curve fitting to calculate the new results
@@ -298,7 +301,7 @@ for j = 1 : size(strTest,1)
     % legend(['A';'B';'C';'D']);
     %generate the image
     for i = 1 : size(pulseWidths,2)
-        if (size(find(pulseWidths(:,i)' > 5e-9/sRate),2)> 3)% && (size(find(pAmps(:,i)'>1),2)<3) %(size(find(pulseWidths(:,i)' < 160e-9/sRate),2)> 1)  %ya lo he comprobado ants...
+        if (size(find(pulseWidths(:,i)' > 5e-9/sRate),2)> 3) % && (size(find(pulseWidths(:,i)' < 50e-9),2)> 3)  %ya lo he comprobado ants...
             A = feval(expFit1,pulseWidths(1,i));
             B = feval(expFit2,pulseWidths(2,i));
             C = feval(expFit3,pulseWidths(3,i));
@@ -319,7 +322,7 @@ for i = 1: size(strTest,1)
     imagesc(squeeze(floodFitted(i,:,:)));
     title(num2str(strTest{i}));
 end
-save('floodAnalog_noShaping_2311_resN.mat','imgFitted','-append');
+save(fSavName,'floodFitted','-append');
 
 %%
 %   Try using a neural network for image generation....classification 
@@ -327,8 +330,8 @@ save('floodAnalog_noShaping_2311_resN.mat','imgFitted','-append');
 %
 %
 %variables where data will be stored
-vThSel = 1; %lowest threshold value, in this case 0.1
-nData = 10000; %amount of data to save
+vThSel = 2; %lowest threshold value, in this case 0.1
+nData = 5000; %amount of data to save
 outPos1 = zeros(2,nData); % X, Y values
 inWidths1 = zeros(4,nData); % A,B,C,D widths
 storedVals = 0;
@@ -360,7 +363,7 @@ end
 
 %repeat it to keep the values to check the solution
 %variables where data will be stored
-nData = 10000; %amount of data to save
+nData = 5000; %amount of data to save
 outPos2 = zeros(2,nData); % X, Y values
 inWidths2 = zeros(4,nData); % A,B,C,D widths
 storedVals = 0;
