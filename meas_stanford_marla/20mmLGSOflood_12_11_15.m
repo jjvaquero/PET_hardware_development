@@ -1,6 +1,5 @@
-clc%clear only if not cancel uigetfile
-clear
 [fnH5 path]=uigetfile({'*.h5','HDF5 (*.h5)'},'Select HDF5 files','MultiSelect','on');
+fSaveName = '20mmLGSOflood_12_11_15.mat';
 
 
 %clear only if not cancel uigetfile
@@ -21,7 +20,8 @@ while leftVals > 0
     if leftVals > 10000
         nEventsToRead = 10000;
     else
-        nEventsToRead = leftVals;     
+        nEventsToRead = leftVals; 
+    end
     for kk=((nWrite*nEventsToRead)+1:nEventsToRead %size(fnH5,2)
         pfnH5=strcat(path,fnH5{kk});
         %disp(pfnH5)
@@ -40,52 +40,65 @@ while leftVals > 0
         squareEnergy(find(energyCh'<thesVal))= 0;
         squareEnergy(find(energyCh'>thesVal))= 1;
         widths = pulsewidth(squareEnergy,20e9);
-        if size(widths,2)== 4
+        if size(find(widths > 5e-9),1) == 4
             validCount = validCount+1;
             validEventsEn(validCount,:) = energyCh;
             validEventsTm(validCount,:) = timingCh;
         end
         
     end
+ end
+ % the number of valid events will be so low that i dont have to worry
+ % about processing to much data
+ %save the valid events in case i need them afterwards
+ save(fSaveName,'validEventsEn','validEventsTm');
     
-    %now the data processing part...this could be copied to another file and
-    %just read the data from first_results.mat
-    
-    %first the easiest...generate an energy histogram
-    energies = zeros(1,size(validEventsTm,1));
-    for i = 1:size(validEventsTm,1)
-        % use this or trapz...whatever is faster
-        %energies(i) = pulsewidth(validEventsTm(i,:),20e9)';
-        %nada trapz porque lo otro da el follon...
-        energies(i) = trapz(validEventsTm(i,:));
-    end
-    %now do the histogram and plot it
-    histoEn = hist(energies,256);
-    
-    %try and create a flood image
-    img = zeros(256,256);
-    energies = zeros(1,size(validEventsEn,1));
-    for i = 1 : size(validEventsEn,1)
-        squareEnergy = validEventsEn(i,:);
-        squareEnergy(find(validEventsEn(i,:)'<thesVal))= 0;
-        squareEnergy(find(validEventsEn(i,:)'> thesVal))= 1;
-        widths = pulsewidth(squareEnergy,20e9);
-        A = widths(1);
-        B = widths(2);
-        C = widths(3);
-        D = widths(4);
-        energies(i) = A+B+C+D;
-        %anger logic part
-        X = round(((A+D)-(B+C))/energies(i)*128)+128;
-        Y = round(((A+B)-(C+D))/energies(i)*128)+128;
-        img(X,Y) = img(X,Y)+1;
-    end
-    %now ...another energy histogram
-    histoEnCh = hist(energies,256);
-    % chan chan chan....
-    %imagesc(img);
-end
+ %now the data processing part...this could be copied to another file and
+ %just read the data from first_results.mat
+ %first the easiest...generate an energy histogram
+ energies = zeros(1,size(validEventsTm,1));
+ for i = 1:size(validEventsTm,1)
+     % use this or trapz...whatever is faster
+     %energies(i) = pulsewidth(validEventsTm(i,:),20e9)';
+     %nada trapz porque lo otro da el follon...
+     energies(i) = trapz(validEventsTm(i,:));
+ end
+ %now do the histogram and plot it
+ histoTm = hist(energies,256);
+ 
+ %try and create a flood image
+ imgSize = 256;
+ img = zeros(imgSize,imgSize);
+ energies = zeros(1,size(validEventsEn,1));
+ for i = 1 : size(validEventsEn,1)
+     squareEnergy = validEventsEn(i,:);
+     squareEnergy(find(validEventsEn(i,:)'<thesVal))= 0;
+     squareEnergy(find(validEventsEn(i,:)'> thesVal))= 1;
+     widths = pulsewidth(squareEnergy,20e9);
+     A = widths(1);
+     B = widths(2);
+     C = widths(3);
+     D = widths(4);
+     energies(i) = A+B+C+D;
+     %anger logic part
+     X = round(((A+D)-(B+C))/energies(i)*imgSize/2)+imgSize/2;
+     Y = round(((A+B)-(C+D))/energies(i)*imgSize/2)+imgSize/2;
+     if X>0 && X<imgSize && Y>0 && Y<imgSize
+         img(X,Y) = img(X,Y)+1;
+     end
+ end
+ %now ...another energy histogram
+ histoEnCh = hist(energies,256);
 
+%now I can plot the two histograms
+figure; 
+subplot(1,2,1); plot(histoTm); title('Timing');
+subplot(1,2,2); plot(histoEnCh); title('Energy');
+%another image to show the actual detected image
+figure; 
+imagesc(img);
+%save all the corresponding values
+save(fSaveName,'histoTm','histoEnCh','img','-append');
    
 
 
