@@ -19,7 +19,7 @@ dirName = uigetdir();
 fList = ls(strcat(dirName,'\','*.h5'));
 sRate = 50e-12; %sample rate used
 %name of the file where the results will be stored
-fSaveName = 'timing_20mm_69V.mat';
+fSaveName = 'timing_3x3x3LGSO_30_11_15.mat';
 
 nFiles = size(fList,1); % number of files to read
 % size of the block I will read
@@ -57,12 +57,12 @@ end
 %using bin limits allows me to later convert the data back to the energy
 % info, some values of en2 are left out, but the effect on the histogram is
 % almost nothing
-histoEn1 = hist(energies(1,:),512,'BinLimits',[1 512*4]);
-histoEn2 = hist(energies(2,:),512,'BinLimits',[1 512*4]);
+[histoEn1x,histoEn1y] = hist(energies(1,:),512);
+[histoEn2x,histoEn2y] = hist(energies(2,:),512);
 %plot these two
 figure; 
-subplot(1,2,1); plot(histoEn1);title('Energy 1');
-subplot(1,2,2); plot(histoEn2);title('Energy 2');
+subplot(1,2,1); plot(histoEn1x,histoEn1y);title('Energy 1');
+subplot(1,2,2); plot(histoEn2x,histoEn2y);title('Energy 2');
 %adjust a gaussian to the data
 
 %fit a guassian to these values
@@ -70,27 +70,27 @@ subplot(1,2,2); plot(histoEn2);title('Energy 2');
 strFit = 'gauss1';
 validInterval = zeros(2,2);
 %values choosen from visual inspection of the data
-gaussVals = histoEn1(133:196); 
-t = 133:196;
-[x,y] = prepareCurveData(t,gaussVals);
+gaussVals = histoEn1x(77:186); 
+t = 77:186;
+[x,y] = prepareCurveData(histoEn1y(t),gaussVals);
 gFit = fit(x,y,strFit);
-vals = feval(gFit,t);
+vals = feval(gFit,histoEn1y(t));
 %to check that it works 
-% figure; plot(t,gaussVals); hold on; plot(t,vals);
+%figure; plot(histoEn1y(t),gaussVals); hold on; plot(histoEn1y(t),vals);
 [v,mPos] = max(vals);
-maxVal = t(mPos);
-validInterval(1,:) = [(maxVal-gFit.c1*2.35)*4,(maxVal+gFit.c1*2.35)*4];
+maxVal = histoEn1y(t(mPos));
+validInterval(1,:) = [(maxVal-gFit.c1*2),(maxVal+gFit.c1*2)];
 %repeat this for the second energy channel
-gaussVals = histoEn2(205:268);
-t = 205:268;
-[x,y] = prepareCurveData(t,gaussVals);
+gaussVals = histoEn2x(111:195);
+t = 111:195;
+[x,y] = prepareCurveData(histoEn2y(t),gaussVals);
 gFit = fit(x,y,strFit);
-vals = feval(gFit,t);
+vals = feval(gFit,histoEn2y(t));
 %to check that it works 
-% figure; plot(t,gaussVals); hold on; plot(t,vals);
+%figure; plot(histoEn2y(t),gaussVals); hold on; plot(histoEn2y(t),vals);
 [v,mPos] = max(vals);
-maxVal = t(mPos);
-validInterval(2,:) = [(maxVal-gFit.c1*2.35)*4,(maxVal+gFit.c1*2.35)*4];
+maxVal = histoEn2y(t(mPos));
+validInterval(2,:) = [(maxVal-gFit.c1*2),(maxVal+gFit.c1*2)];
 
 %  now I can keep only those events that qualify as valid events on both
 %  channels
@@ -113,7 +113,7 @@ save(fSaveName,'valEvents','histoEn1','histoEn2');
 nFiles = size(fList,1); % number of files to read
 % size of the block I will read
 
-VthMid = 0.03; %from the data
+VthMid = 0.02; %from the data
 dSize = 2e-9/50e-12; %amount of values to use for the checks
 vCrossings = zeros(2,nEvents);
 baseMeans = ones(2,nEvents);
@@ -171,7 +171,7 @@ save(fSaveName,'valEvents2','-append');
 
 %process only the needed data
 tSample = 50e-12; 
-medVal = 0.03;
+medVal = 0.02;
 %thV = 15e-4; % luego volver a hacerlo para iterar
 thV = 40e-4:5e-4:115e-4;
 tCh1 = zeros(size(thV,2),size(valEvents2,2));
@@ -190,21 +190,23 @@ for i = 1:size(valEvents2,2)
 end
 
 crtVals = zeros(size(thV,2),size(thV,2));
+tDiff=(medCrossings(2)-medCrossings(1))*50e-12;
 figure;
 for i = 1: size(thV,2)
     for j = 1 : size(thV,2)
-        diffVals = tCh1(i,:)-tCh2(j,:);
+        diffVals = tCh1(i,:)-(tCh2(j,:)-tDiff);
         [hx,hy] = hist(diffVals,512);
         strFit = 'gauss1';
         [x,y] = prepareCurveData(hy,hx);
         gFit = fit(x,y,strFit);
         vals = feval(gFit,hy);
         crtVals(i,j) = gFit.c1*2.35;
-        %subplot(4,4,i);
-        %plot(hy,hx); hold on; plot(hy,vals);
-        %title(num2str(thV(i)));
+%         subplot(4,4,i);
+%         plot(hy,hx); hold on; plot(hy,vals);
+%         title(num2str(thV(i)));
     end
 end
+figure;
 imagesc(crtVals);
 save(fSaveName,'tCh1','tCh2','crtVals','thV','-append');
 
