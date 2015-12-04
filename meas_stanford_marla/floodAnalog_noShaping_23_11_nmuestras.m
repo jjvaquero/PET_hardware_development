@@ -14,6 +14,7 @@ dirName = uigetdir();
 %list all the h5 files inside this directory
 fList = ls(strcat(dirName,'\','*.h5'));
 sRate = 5e-12; %sample rate used
+fSaveName = 'floodAnalog_noShaping_2311_resN.mat';
 
 nFiles = size(fList,1); % number of files to read
 % size of the block I will read
@@ -98,10 +99,10 @@ end
 plot(valThs,acceptedEvts);
 figure;
 %to get as percentage
-plot(valThs,(acceptedEvts/2100)*100);
+plot(valThs,(acceptedEvts/nFiles)*100);
 
 %save the values in chase they are needed later
-save('floodAnalog_noShaping_2311_resN.mat','valThs','acceptedEvts');
+save(fSaveName,'valThs','acceptedEvts');
 %save(filename,variables,'-append')
 
 %valuable interval to see how well it behaves 0.5 - 0.75
@@ -127,7 +128,6 @@ bSize = 1000;  % this is to avoid Marla from hanging
 cPos = 1; % jarrrr por el puto marla es 1....
 remFiles = nFiles; % files left to read
 toRead = 0; %files to read on each iteration
-val = 0;
 valThs2 = 0.15:0.05:0.7; 
 floodImg = zeros(size(valThs2,2),imgSize,imgSize);
 pWidths = zeros(size(valThs2,2),4,remFiles); % solo pruebo un valor
@@ -166,10 +166,10 @@ while remFiles >0
         X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
         Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
         %store the amplitude values in case they are needed later
-        pAmps(1,i+cPos) = max(chA);
-        pAmps(2,i+cPos) = max(chB);
-        pAmps(3,i+cPos) = max(chC);
-        pAmps(4,i+cPos) = max(chD);
+        pAmps(1,i) = max(chA);
+        pAmps(2,i) = max(chB);
+        pAmps(3,i) = max(chC);
+        pAmps(4,i) = max(chD);
         for x = 1: size(valThs2,2)
             %better put them in an array...to avoid repeating code
             allCh = [chA'; chB'; chC'; chD'];
@@ -197,7 +197,7 @@ while remFiles >0
                     floodImg(x,X,Y) = floodImg(x,X,Y)+1;
                 end                
             end
-            pWidths(x,:,i+cPos) = pWidth;
+            pWidths(x,:,i) = pWidth;
         end
         %TODO 
         % add support for histogram measurement
@@ -231,7 +231,7 @@ vals = squeeze(vals);
 plot(vals,pAmps(1,:),'.');
 legend(num2str(valThs2'));
 
-save('floodAnalog_noShaping_2311_resN.mat','valThs2','floodImg','pAmps','pWidths','-append');
+save(fSaveName,'valThs2','floodImg','pAmps','pWidths','-append');
 
 %%
 % Now I should try making images with the widths
@@ -266,7 +266,7 @@ for i = 1: size(valThs2,2)
     imagesc(squeeze(floodImgWidths(i,:,:)));
     title(num2str(valThs2(i)));
 end
-save('floodAnalog_noShaping_2311_resN.mat','floodImgWidths','-append');
+save(fSaveName,'floodImgWidths','-append');
 
 %%
 %  Use curve fitting to calculate the new results
@@ -319,7 +319,7 @@ for i = 1: size(strTest,1)
     imagesc(squeeze(floodFitted(i,:,:)));
     title(num2str(strTest{i}));
 end
-save('floodAnalog_noShaping_2311_resN.mat','imgFitted','-append');
+save(fSaveName,'imgFitted','-append');
 
 %%
 %   Try using a neural network for image generation....classification 
