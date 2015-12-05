@@ -14,7 +14,7 @@ dirName = uigetdir();
 %list all the h5 files inside this directory
 fList = ls(strcat(dirName,'\','*.h5'));
 sRate = 5e-12; %sample rate used
-fSaveName = 'analog_flood_all_17_11_15.mat';
+fSaveName = 'floodAnalog_shaping_LGSOGe68_24_11_15.mat';
 
 nFiles = size(fList,1); % number of files to read
 % size of the block I will read
@@ -41,10 +41,10 @@ while remFiles >0
     for i = cPos: cPos+toRead-1
         %read the data from the h5 files
         fName = strcat(dirName,'\',fList(i,:));
-        chB=double(hdf5read(fName,'Waveforms/Channel 1/Channel 1Data'));
+        chA=double(hdf5read(fName,'Waveforms/Channel 1/Channel 1Data'));
         chD=double(hdf5read(fName,'Waveforms/Channel 2/Channel 2Data'));
         chC=double(hdf5read(fName,'Waveforms/Channel 3/Channel 3Data'));
-        chA=double(hdf5read(fName,'Waveforms/Channel 4/Channel 4Data'));
+        chB=double(hdf5read(fName,'Waveforms/Channel 4/Channel 4Data'));
            
         %do it like this to minimize the number of I/O operations
         for x = 1: size(valThs,2)
@@ -145,10 +145,10 @@ while remFiles >0
     for i = cPos: cPos+toRead-1
         %read the data from the h5 files
         fName = strcat(dirName,'\',fList(i,:));
-        chB=double(hdf5read(fName,'Waveforms/Channel 1/Channel 1Data'));
+        chA=double(hdf5read(fName,'Waveforms/Channel 1/Channel 1Data'));
         chD=double(hdf5read(fName,'Waveforms/Channel 2/Channel 2Data'));
         chC=double(hdf5read(fName,'Waveforms/Channel 3/Channel 3Data'));
-        chA=double(hdf5read(fName,'Waveforms/Channel 4/Channel 4Data'));
+        chB=double(hdf5read(fName,'Waveforms/Channel 4/Channel 4Data'));
         
         %integral calculation
         %offset correction
@@ -158,18 +158,18 @@ while remFiles >0
         chD = chD-mean(chD(1:500));
         %do it like this to minimize the number of I/O operations
         %only need to make this mat once per event
-        A = max(chA);
-        B = max(chB);
-        C = max(chC);
-        D = max(chD);
+        A = trapz(chA); %max(chA);
+        B = trapz(chB); %max(chB);
+        C = trapz(chC); %max(chC);
+        D = trapz(chD); % max(chD);
         En = A+B+C+D;
         X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
         Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
         %store the amplitude values in case they are needed later
-        pAmps(1,i) = A;
-        pAmps(2,i) = B;
-        pAmps(3,i) = C;
-        pAmps(4,i) = D;
+        pAmps(1,i) = max(chA);
+        pAmps(2,i) = max(chB);
+        pAmps(3,i) = max(chC);
+        pAmps(4,i) = max(chD);
         for x = 1: size(valThs2,2)
             %better put them in an array...to avoid repeating code
             allCh = [chA'; chB'; chC'; chD'];
