@@ -20,3 +20,26 @@ end
 diffVals = tCr1-tCr2;
 [hx,hy] = hist(diffVals,2048);
 plot(hx,hy);
+
+%%
+%   Test para analizar los datos de josh a ver que le sale a el
+%
+load('results-200to100.mat')
+crtVals = zeros(size(timestamp1,1),size(timestamp1,2));
+figure;
+for i = 1: size(timestamp1,1)
+    for j = 1 : size(timestamp1,2)
+        diffVals =squeeze(timestamp1(i,j,:)-timestamp2(i,j,:));
+        [hx,hy] = hist(diffVals,2048);
+        strFit = 'gauss1';
+        [x,y] = prepareCurveData(hy,hx);
+        gFit = fit(x,y,strFit);
+        vals = feval(gFit,hy);
+        crtVals(i,j) = gFit.c1*2.35;
+        subplot(4,4,i);
+        plot(hy,hx); hold on; plot(hy,vals);
+        title(num2str(i));
+    end
+end
+figure;
+imagesc(crtVals);
