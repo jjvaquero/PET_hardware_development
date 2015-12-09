@@ -6,12 +6,11 @@
 %variables where data will be stored
 vThSel = 1; %lowest threshold value, in this case 0.1
 nData = 7500; %amount of data to save
-outPos1 = zeros(2,nData); % X, Y values
-inWidths1 = zeros(4,nData); % A,B,C,D widths
+netOuts = zeros(4,nData); % X, Y values
+netIns = zeros(4,nData); % A,B,C,D widths
 storedVals = 0;
 sRate = 5e-12;
 imgSize = 256;
-floodNN1 = zeros(imgSize, imgSize);
 index = 0;
 %this values will be used for training
 while storedVals < nData && index < size(pWidths,3)
@@ -19,49 +18,28 @@ while storedVals < nData && index < size(pWidths,3)
     index = index+1;
     if (size(find(pWidths(vThSel,:,index) > 5e-9/sRate),2)> 3)
         % compute the X, Y values
-        A = pAmps(1,index);
-        B = pAmps(2,index);
-        C = pAmps(3,index);
-        D = pAmps(4,index);
-        En = A+B+C+D;
-        X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
-        Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
-        %check that these values could be used to generate an image
-        if X>0 && X<imgSize && Y>0 && Y<imgSize
-            storedVals = storedVals+1;
-            inWidths1(:,storedVals) = pWidths(vThSel,:,index);
-            outPos1(:,storedVals) = [X;Y];
-            floodNN1(X,Y) = floodNN1(X,Y)+1;
-        end
+        storedVals = storedVals+1;
+        netIns(:,storedVals) =  pWidths(vThSel,:,index);
+        netOuts(:,storedVals) = pAmps(:,index);
+        storedVals = storedVals+1;
     end
 end
 
 %repeat it to keep the values to check the solution
 %variables where data will be stored
 nData = 7500; %amount of data to save
-outPos2 = zeros(2,nData); % X, Y values
-inWidths2 = zeros(4,nData); % A,B,C,D widths
+netIns2 = zeros(4,nData); % X, Y values
+netOuts2 = zeros(4,nData); % A,B,C,D widths
 storedVals = 0;
-floodNN2 = zeros(imgSize, imgSize);
 while storedVals < nData && index < size(pWidths,3)
     %use only values where all pulses are more than 1 ns in length
     index = index+1;
     if (size(find(pWidths(vThSel,:,index) > 5e-9/sRate),2)> 3)
         % compute the X, Y values
-        A = pAmps(1,index);
-        B = pAmps(2,index);
-        C = pAmps(3,index);
-        D = pAmps(4,index);
-        En = A+B+C+D;
-        X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
-        Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
-        %check that these values could be used to generate an image
-        if X>0 && X<imgSize && Y>0 && Y<imgSize
-            storedVals = storedVals+1;
-            inWidths2(:,storedVals) = pWidths(vThSel,:,index);
-            outPos2(:,storedVals) = [X;Y];
-            floodNN2(X,Y) = floodNN2(X,Y)+1;
-        end
+        storedVals = storedVals+1;
+        netIns2(:,storedVals)  =  pWidths(vThSel,:,index);
+        netOuts2(:,storedVals)  = pAmps(:,index);
+        
     end
 end
 
@@ -69,11 +47,11 @@ end
 %   Divide it in two to test only the network part
 %
 %now generate the network...train it and...see the result
-inputs = inWidths1;
-targets = outPos1;
+inputs = netIns;
+targets = netOuts;
 % Create a Fitting Network
-hiddenLayerSize = [256 16 4]; %100; % [64 16];
-net = fitnet(hiddenLayerSize,'trainrp');
+hiddenLayerSize = 512; %100; % [64 16];
+net = fitnet(hiddenLayerSize,'trainlm');
 
 
 % Setup Division of Data for Training, Validation, Testing
@@ -81,14 +59,14 @@ net.divideParam.trainRatio = 75/100;
 net.divideParam.valRatio = 15/100;
 net.divideParam.testRatio = 15/100;
 %modify the training parameters
-%net.trainParam.max_fail = 8;
+%net.trainParam.max_fail = 12;
 
 
 % Train the Network
 [net,tr] = train(net,inputs,targets);
 
 % Test the Network
-outputs = net(inWidths2);
+outputs = net(netIns2);
 %errors = gsubtract(outPos2,outputs);
 %performance = perform(net,outPos2,outputs)
 
@@ -96,9 +74,14 @@ outputs = net(inWidths2);
 val = 0;
 floodImgNN = zeros(imgSize,imgSize);
 for i = 1 : size(outputs,2)
-    if (size(find(inWidths2(:,i) > 5e-9/sRate),1)> 3)
-        X = round(outputs(1,i));
-        Y = round(outputs(2,i));
+    if (size(find(netIns2(:,i) > 5e-9/sRate),1)> 3)
+        A = outputs(1,i);
+        B = outputs(2,i);
+        C = outputs(3,i);
+        D = outputs(4,i);
+        En = A+B+C+D;
+        X = round(((A+D)-(B+C))/En*imgSize/2)+imgSize/2;
+        Y = round(((A+B)-(C+D))/En*imgSize/2)+imgSize/2;
         if X>0 && X<imgSize && Y>0 && Y<imgSize
             floodImgNN(X,Y) = floodImgNN(X,Y)+1;
             val = val+1;
