@@ -5,11 +5,11 @@
 %
 %variables where data will be stored
 vThSel = 1; %lowest threshold value, in this case 0.1
-nData = 7500; %amount of data to save
+nData = 2500; %amount of data to save
 outPos1 = zeros(2,nData); % X, Y values
 inWidths1 = zeros(4,nData); % A,B,C,D widths
 storedVals = 0;
-sRate = 5e-12;
+sRate = 50e-12;
 imgSize = 256;
 floodNN1 = zeros(imgSize, imgSize);
 index = 0;
@@ -38,7 +38,7 @@ end
 
 %repeat it to keep the values to check the solution
 %variables where data will be stored
-nData = 7500; %amount of data to save
+nData = 2500; %amount of data to save
 outPos2 = zeros(2,nData); % X, Y values
 inWidths2 = zeros(4,nData); % A,B,C,D widths
 storedVals = 0;
@@ -72,8 +72,8 @@ end
 inputs = inWidths1;
 targets = outPos1;
 % Create a Fitting Network
-hiddenLayerSize = [256 16 4]; %100; % [64 16];
-net = fitnet(hiddenLayerSize,'trainrp');
+hiddenLayerSize = [128 64 16]; %100; % [64 16];
+net = fitnet(hiddenLayerSize,'trainlm');
 
 
 % Setup Division of Data for Training, Validation, Testing
@@ -81,14 +81,15 @@ net.divideParam.trainRatio = 75/100;
 net.divideParam.valRatio = 15/100;
 net.divideParam.testRatio = 15/100;
 %modify the training parameters
-%net.trainParam.max_fail = 8;
+net.trainParam.max_fail = 15;
 
 
 % Train the Network
 [net,tr] = train(net,inputs,targets);
 
 % Test the Network
-outputs = net(inWidths2);
+insT = [inWidths1,inWidths2];
+outputs = net(insT);
 %errors = gsubtract(outPos2,outputs);
 %performance = perform(net,outPos2,outputs)
 
@@ -96,7 +97,7 @@ outputs = net(inWidths2);
 val = 0;
 floodImgNN = zeros(imgSize,imgSize);
 for i = 1 : size(outputs,2)
-    if (size(find(inWidths2(:,i) > 5e-9/sRate),1)> 3)
+    if (size(find(insT(:,i) > 5e-9/sRate),1)> 3)
         X = round(outputs(1,i));
         Y = round(outputs(2,i));
         if X>0 && X<imgSize && Y>0 && Y<imgSize
