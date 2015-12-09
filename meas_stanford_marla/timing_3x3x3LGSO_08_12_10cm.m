@@ -79,7 +79,7 @@ vals = feval(gFit,t);
 %figure; plot(t,gaussVals); hold on; plot(t,vals);
 [v,mPos] = max(vals);
 maxVal = t(mPos);
-validInterval(1,:) = [(maxVal-gFit.c1*2.35),(maxVal+gFit.c1*2.35)];
+validInterval(1,:) = [(maxVal-gFit.c1*2),(maxVal+gFit.c1*2)];
 %repeat this for the second energy channel
 gaussVals = histoEn2x(436:506);
 t = histoEn2y(436:506);
@@ -90,7 +90,7 @@ vals = feval(gFit,t);
 %figure; plot(t,gaussVals); hold on; plot(t,vals);
 [v,mPos] = max(vals);
 maxVal = t(mPos);
-validInterval(2,:) = [(maxVal-gFit.c1*2.35),(maxVal+gFit.c1*2.35)];
+validInterval(2,:) = [(maxVal-gFit.c1*2),(maxVal+gFit.c1*2)];
 
 %  now I can keep only those events that qualify as valid events on both
 %  channels
@@ -108,14 +108,14 @@ for i = 1: size(energies,2)
     end     
 end
 %save the results 
-save(fSaveName,'valEvents','histoEn1','histoEn2');
+save(fSaveName,'valEvents','histoEn1x','histoEn2x');
 
 %discard even more events now taking into account the position of the Vth
 % crossing- this time Vth will be 0.03
 nFiles = size(fList,1); % number of files to read
 % size of the block I will read
 
-VthMid = 0.03; %from the data
+VthMid = 0.02; %from the data
 dSize = 2e-9/50e-12; %amount of values to use for the checks
 vCrossings = zeros(2,nEvents);
 baseMeans = ones(2,nEvents);
@@ -173,9 +173,13 @@ save(fSaveName,'valEvents2','-append');
 
 %process only the needed data
 tSample = 50e-12; 
-medVal = 0.03;
+% medVal = 0.02;
+% %thV = 15e-4; % luego volver a hacerlo para iterar
+% thV = 25e-4:5e-4:100e-4;
+medVal = 0.02;
+nData = 2e-9;
 %thV = 15e-4; % luego volver a hacerlo para iterar
-thV = 25e-4:5e-4:100e-4;
+thV =  linspace(5e-4,0.01,16);
 tCh1 = zeros(size(thV,2),size(valEvents2,2));
 tCh2 = tCh1;
 
@@ -185,16 +189,18 @@ for i = 1:size(valEvents2,2)
     Tm1=double(hdf5read(fName,'Waveforms/Channel 3/Channel 3Data'));
     Tm2=double(hdf5read(fName,'Waveforms/Channel 4/Channel 4Data'));
     %do it like this to minimize the number of I/O operations
-    for j = 1 : size(thV,2)
-        tCh1(j,i) = getThPos(Tm1,thV(j),medVal,tSample);
-        tCh2(j,i) = getThPos(Tm2,thV(j),medVal,tSample);
-    end
+%     for j = 1 : size(thV,2)
+%         tCh1(j,i) = getThPos(Tm1,thV(j),medVal,tSample);
+%         tCh2(j,i) = getThPos(Tm2,thV(j),medVal,tSample);
+%     end
+    tCh1(:,i) = getThPos2(Tm1,thV,medVal,nData,tSample);
+    tCh2(:,i) = getThPos2(Tm2,thV,medVal,nData,tSample);
 end
 
 crtVals = zeros(size(thV,2),size(thV,2));
 %to imrpove the binning
 %binEdges  = linspace(-1.5e9,1.5e-9,512);
-figure;
+%figure;
 for i = 1: size(thV,2)
     for j = 1 : size(thV,2)
         diffVals = tCh1(i,:)-tCh2(j,:);
@@ -203,10 +209,15 @@ for i = 1: size(thV,2)
         [x,y] = prepareCurveData(hy,hx);
         gFit = fit(x,y,strFit);
         vals = feval(gFit,hy);
-        crtVals(i,j) = gFit.c1*2.35*sRate;
-        subplot(4,4,i);
-        plot(hy,hx); hold on; plot(hy,vals);
-        title(num2str(thV(i)));
+        %crtVals(i,j) = gFit.c1*2.35*sRate;
+        if max(y) > 20
+            crtVals(i,j) = gFit.c1*2.35*tSample;
+        else
+            crtVals(i,j) = NaN;
+        end
+       % subplot(4,4,i);
+       % plot(hy,hx); hold on; plot(hy,vals);
+        %title(num2str(thV(i)));
     end
 end
 figure;
