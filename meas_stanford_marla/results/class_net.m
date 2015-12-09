@@ -64,14 +64,14 @@ inputs = netInputs;
 targets = netOutputs;
 
 % Create a Pattern Recognition Network
-hiddenLayerSize = 100;
+hiddenLayerSize = [512 128];
 net = patternnet(hiddenLayerSize);
 
 
 % Setup Division of Data for Training, Validation, Testing
-net.divideParam.trainRatio = 60/100;
-net.divideParam.valRatio = 20/100;
-net.divideParam.testRatio = 20/100;
+net.divideParam.trainRatio = 75/100;
+net.divideParam.valRatio = 15/100;
+net.divideParam.testRatio = 15/100;
 
 
 % Train the Network
@@ -83,7 +83,7 @@ errors = gsubtract(targets,outputs);
 performance = perform(net,targets,outputs)
 
 % View the Network
-view(net)
+%view(net)
 
 % Plots
 % Uncomment these lines to enable various plots.
@@ -105,5 +105,7 @@ netOutputs2 = imgClass(:,10001:20000);
 
 
 outS = net(netInputs2);
+plotconfusion(netOutputs2,outS);
 %esto me da solo el scatter, dividirlo en solo 16 clases usando cuadraddos
 %y luego dividirlos otra vez para detectar solo el scatter
+save redClass.mat net outS netOutputs2
