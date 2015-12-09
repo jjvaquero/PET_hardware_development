@@ -10,8 +10,9 @@ plot(valThs,(acceptedEvts/nFiles)*100);
 %the threshold value
 %try plotting all the values
 figure;
-for i = 1: size(valThs2,2)
-    subplot(3,4,i);
+for i = 1: size(valThs2,2)/2 %size(valThs2,2)
+    %subplot(3,4,i);
+    subplot(2,3,i);
     imagesc(squeeze(floodImg(i,:,:)));
     colormap('hot');
     title(num2str(valThs2(i)));
@@ -20,8 +21,9 @@ end
 %flood maps generated from using the widths
 %try plotting all the values
 figure;
-for i = 1: size(valThs2,2)
-    subplot(3,4,i);
+for i = 1: size(valThs2,2)/2 %size(valThs2,2)
+    %subplot(3,4,i);
+    subplot(2,3,i);
     imagesc(squeeze(floodImgWidths(i,:,:)));
     colormap('hot');
     title(num2str(valThs2(i)));
@@ -87,8 +89,8 @@ end
 %pongo esto así a lo bruto para poder elegir que Vth usar
 %do it only fot the 0.45 Vth value
 imgSize = 256;
-sRate = 5e-12; %cambia en algunas medidas
-pulseWidths =  squeeze(pWidths(4,:,:));
+sRate = 50e-12; %cambia en algunas medidas
+pulseWidths =  squeeze(pWidths(2,:,:));
 %try different fittings
 strTest = [{'exp1'};{'exp2'};{'poly2'};{'poly3'};{'poly4'};{'poly5'}];
 %create a flood for all the differente fittings

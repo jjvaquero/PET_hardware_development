@@ -26,7 +26,11 @@ t2 = linspace(t(1),t(end),nData*1000);
 %first interpolation
 interEvent = interp1(t,event(t),t2,'pchip'); %mismo que cubic
 %now find the crossing
-fCross= t2(find(interEvent< (thVal-baseLine),1,'last'));
+if baseLine > 0
+    fCross= t2(find(interEvent< (thVal-baseLine),1,'last'));
+else
+    fCross= t2(find(interEvent< (thVal+baseLine),1,'last'));
+end
 %use a second interpolation from the first values to get a finer
 % measurement
 % t3 = (fCross-nData):(fCross+nData);
@@ -44,5 +48,5 @@ else
     defCross = fCross;
 end
 %defCross = fCross;
-tCrossing = defCross*tSample;
+tCrossing = defCross; %*tSample;
 
