@@ -89,7 +89,7 @@ end
 %pongo esto así a lo bruto para poder elegir que Vth usar
 %do it only fot the 0.45 Vth value
 imgSize = 256;
-sRate = 50e-12; %cambia en algunas medidas
+sRate = 5e-12; %cambia en algunas medidas
 pulseWidths =  squeeze(pWidths(2,:,:));
 %try different fittings
 strTest = [{'exp1'};{'exp2'};{'poly2'};{'poly3'};{'poly4'};{'poly5'}];
