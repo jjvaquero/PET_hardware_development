@@ -172,8 +172,9 @@ save(fSaveName,'valEvents2','-append');
 %process only the needed data
 tSample = 50e-12; 
 medVal = 0.03;
+nData = 1.5e-9;
 %thV = 15e-4; % luego volver a hacerlo para iterar
-thV = 40e-4:5e-4:115e-4;
+thV =  linspace(5e-4,0.01,16);
 tCh1 = zeros(size(thV,2),size(valEvents2,2));
 tCh2 = tCh1;
 
@@ -183,10 +184,12 @@ for i = 1:size(valEvents2,2)
     Tm1=double(hdf5read(fName,'Waveforms/Channel 1/Channel 1Data'));
     Tm2=double(hdf5read(fName,'Waveforms/Channel 2/Channel 2Data'));
     %do it like this to minimize the number of I/O operations
-    for j = 1 : size(thV,2)
-        tCh1(j,i) = getThPos(Tm1,thV(j),medVal,tSample);
-        tCh2(j,i) = getThPos(Tm2,thV(j),medVal,tSample);
-    end
+%     for j = 1 : size(thV,2)
+%         tCh1(j,i) = getThPos(Tm1,thV(j),medVal,tSample);
+%         tCh2(j,i) = getThPos(Tm2,thV(j),medVal,tSample);
+%     end
+    tCh1(:,i) = getThPos2(Tm1,thV,medVal,nData,tSample);
+    tCh2(:,i) = getThPos2(Tm2,thV,medVal,nData,tSample);
 end
 
 crtVals = zeros(size(thV,2),size(thV,2));
@@ -199,7 +202,11 @@ for i = 1: size(thV,2)
         [x,y] = prepareCurveData(hy,hx);
         gFit = fit(x,y,strFit);
         vals = feval(gFit,hy);
-        crtVals(i,j) = gFit.c1*2.35;
+        if max(y) > 10 
+            crtVals(i,j) = gFit.c1*2.35*tSample;
+        else
+            crtVals(i,j) = NaN;
+        end
         %subplot(4,4,i);
         %plot(hy,hx); hold on; plot(hy,vals);
         %title(num2str(thV(i)));
