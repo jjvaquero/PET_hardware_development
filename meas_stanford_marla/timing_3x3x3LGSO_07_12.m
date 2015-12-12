@@ -79,7 +79,7 @@ vals = feval(gFit,t);
 %figure; plot(t,gaussVals); hold on; plot(t,vals);
 [v,mPos] = max(vals);
 maxVal = t(mPos);
-validInterval(1,:) = [(maxVal-gFit.c1*2),(maxVal+gFit.c1*2)];
+validInterval(1,:) = [(maxVal-gFit.c1/sqrt(2)*2),(maxVal+gFit.c1/sqrt(2)*2)];
 %repeat this for the second energy channel
 gaussVals = histoEn2x(392:486);
 t = histoEn2y(392:486);
@@ -90,7 +90,7 @@ vals = feval(gFit,t);
 %figure; plot(t,gaussVals); hold on; plot(t,vals);
 [v,mPos] = max(vals);
 maxVal = t(mPos);
-validInterval(2,:) = [(maxVal-gFit.c1*2),(maxVal+gFit.c1*2)];
+validInterval(2,:) = [(maxVal-gFit.c1/sqrt(2)*2),(maxVal+gFit.c1/sqrt(2)*2)];
 
 %  now I can keep only those events that qualify as valid events on both
 %  channels
@@ -173,10 +173,10 @@ save(fSaveName,'valEvents2','-append');
 
 %process only the needed data
 tSample = 50e-12; 
-medVal = 0.02;
-nData = 2e-9;
+medVal = 0.03;
+nData = 4.5e-9;
 %thV = 15e-4; % luego volver a hacerlo para iterar
-thV =  linspace(5e-4,0.01,16);
+thV =  linspace(1e-4,0.02,16);
 tCh1 = zeros(size(thV,2),size(valEvents2,2));
 tCh2 = tCh1;
 
@@ -199,13 +199,13 @@ figure;
 for i = 1: size(thV,2)
     for j = 1 : size(thV,2)
         diffVals = tCh1(i,:)-tCh2(j,:);
-        [hx,hy] = hist(diffVals,512);
+        [hx,hy] = hist(diffVals,100);
         strFit = 'gauss1';
         [x,y] = prepareCurveData(hy,hx);
         gFit = fit(x,y,strFit);
         vals = feval(gFit,hy);
         if max(y) > 10 
-            crtVals(i,j) = gFit.c1*2.35*tSample;
+            crtVals(i,j) = gFit.c1/sqrt(2)*2.35*tSample;
         else
             crtVals(i,j) = NaN;
         end

@@ -22,7 +22,9 @@ nData = nDataIn/tSample;
 %first I need to find the crossing of medTh
 medCross = find(event > medTh,1);
 %take two nanoseconds before the crossing
-baseLine = mean(event((medCross-nData*3/2):(medCross-nData)));
+%take only 500ps before the event
+tBaseline = 500e-12/tSample;
+baseLine = mean(event((medCross-nData-tBaseline):(medCross-nData)));
 t = (medCross-nData):medCross;
 %now interpolate the new data
 t2 = linspace(t(1),t(end),nData*1000);
@@ -35,6 +37,9 @@ interEvent = interp1(t,event(t),t2,'pchip'); %mismo que cubic
 % end
 %now find the crossing
 fCross = 0;
+% plot(t,event((medCross-nData):medCross),'.');
+% hold on; 
+% plot(t2,interEvent);
 defCross = zeros(1,size(thVal,2));
 for i = 1 : size(thVal,2)
     if baseLine > 0
@@ -48,7 +53,14 @@ for i = 1 : size(thVal,2)
     else
         defCross(i) = fCross;
     end
+%     plot(defCross(i),thVal(i),'.');
 end
+
+
+
+%hold on; 
+%plot(t2,interEvent);
+
 %use a second interpolation from the first values to get a finer
 % measurement
 % t3 = (fCross-nData):(fCross+nData);
@@ -62,4 +74,3 @@ end
 %data this should not be needed
 %defCross = fCross;
 tCrossing = defCross; %*tSample;
-

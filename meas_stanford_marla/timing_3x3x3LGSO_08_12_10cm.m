@@ -70,8 +70,8 @@ subplot(1,2,2); plot(histoEn2y,histoEn2x);title('Energy 2');
 strFit = 'gauss1';
 validInterval = zeros(2,2);
 %values choosen from visual inspection of the data
-gaussVals = histoEn1x(82:160); 
-t = histoEn1y(82:160);
+gaussVals = histoEn1x(111:160); 
+t = histoEn1y(111:160);
 [x,y] = prepareCurveData(t,gaussVals);
 gFit = fit(x,y,strFit);
 vals = feval(gFit,t);
@@ -79,7 +79,7 @@ vals = feval(gFit,t);
 %figure; plot(t,gaussVals); hold on; plot(t,vals);
 [v,mPos] = max(vals);
 maxVal = t(mPos);
-validInterval(1,:) = [(maxVal-gFit.c1*2),(maxVal+gFit.c1*2)];
+validInterval(1,:) = [(maxVal-gFit.c1/sqrt(2)*2),(maxVal+gFit.c1/sqrt(2)*2)];
 %repeat this for the second energy channel
 gaussVals = histoEn2x(436:506);
 t = histoEn2y(436:506);
@@ -90,7 +90,7 @@ vals = feval(gFit,t);
 %figure; plot(t,gaussVals); hold on; plot(t,vals);
 [v,mPos] = max(vals);
 maxVal = t(mPos);
-validInterval(2,:) = [(maxVal-gFit.c1*2),(maxVal+gFit.c1*2)];
+validInterval(2,:) = [(maxVal-gFit.c1/sqrt(2)*2),(maxVal+gFit.c1/sqrt(2)*2)];
 
 %  now I can keep only those events that qualify as valid events on both
 %  channels
@@ -115,7 +115,7 @@ save(fSaveName,'valEvents','histoEn1x','histoEn2x');
 nFiles = size(fList,1); % number of files to read
 % size of the block I will read
 
-VthMid = 0.02; %from the data
+VthMid = 0.03; %from the data
 dSize = 2e-9/50e-12; %amount of values to use for the checks
 vCrossings = zeros(2,nEvents);
 baseMeans = ones(2,nEvents);
@@ -176,10 +176,10 @@ tSample = 50e-12;
 % medVal = 0.02;
 % %thV = 15e-4; % luego volver a hacerlo para iterar
 % thV = 25e-4:5e-4:100e-4;
-medVal = 0.02;
-nData = 2e-9;
+medVal = 0.03;
+nData = 4.5e-9;
 %thV = 15e-4; % luego volver a hacerlo para iterar
-thV =  linspace(5e-4,0.01,16);
+thV =  linspace(1e-3,0.02,16);
 tCh1 = zeros(size(thV,2),size(valEvents2,2));
 tCh2 = tCh1;
 
@@ -198,31 +198,31 @@ for i = 1:size(valEvents2,2)
 end
 
 crtVals = zeros(size(thV,2),size(thV,2));
-%to imrpove the binning
-%binEdges  = linspace(-1.5e9,1.5e-9,512);
-%figure;
+figure;
 for i = 1: size(thV,2)
     for j = 1 : size(thV,2)
         diffVals = tCh1(i,:)-tCh2(j,:);
-        [hx,hy] = hist(diffVals,512) ; %,'BinEdges',binEdges);
+        %size of the histogram should make it so that i have 30-40ps bins
+        %to find that (min(min(tCh1))-max(max(tCh1)))/100*tSample
+        [hx,hy] = hist(diffVals,100); 
         strFit = 'gauss1';
         [x,y] = prepareCurveData(hy,hx);
         gFit = fit(x,y,strFit);
         vals = feval(gFit,hy);
-        %crtVals(i,j) = gFit.c1*2.35*sRate;
-        if max(y) > 20
-            crtVals(i,j) = gFit.c1*2.35*tSample;
+        if max(y) > 10 
+            crtVals(i,j) = gFit.c1/sqrt(2)*2.35*tSample;
         else
             crtVals(i,j) = NaN;
         end
-       % subplot(4,4,i);
-       % plot(hy,hx); hold on; plot(hy,vals);
-        %title(num2str(thV(i)));
+        if i == j                      
+            subplot(4,4,i);
+            plot(hy,hx); hold on; plot(hy,vals);
+            title(num2str(thV(i)));
+        end
     end
 end
 figure;
 imagesc(crtVals);
 save(fSaveName,'tCh1','tCh2','crtVals','thV','-append');
-
 
 
