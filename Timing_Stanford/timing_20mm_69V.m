@@ -57,12 +57,12 @@ end
 %using bin limits allows me to later convert the data back to the energy
 % info, some values of en2 are left out, but the effect on the histogram is
 % almost nothing
-histoEn1 = hist(energies(1,:),512,'BinLimits',[1 512*4]);
-histoEn2 = hist(energies(2,:),512,'BinLimits',[1 512*4]);
+[histoEn1x,histoEn1y] = hist(energies(1,:),512);
+[histoEn2x,histoEn2y] = hist(energies(2,:),512);
 %plot these two
 figure; 
-subplot(1,2,1); plot(histoEn1);title('Energy 1');
-subplot(1,2,2); plot(histoEn2);title('Energy 2');
+subplot(1,2,1); plot(histoEn1y,histoEn1x);title('Energy 1');
+subplot(1,2,2); plot(histoEn2y,histoEn2x);title('Energy 2');
 %adjust a gaussian to the data
 
 %fit a guassian to these values
@@ -70,27 +70,27 @@ subplot(1,2,2); plot(histoEn2);title('Energy 2');
 strFit = 'gauss1';
 validInterval = zeros(2,2);
 %values choosen from visual inspection of the data
-gaussVals = histoEn1(133:196); 
-t = 133:196;
+gaussVals = histoEn1x(133:196); 
+t = histoEn1y(133:196);
 [x,y] = prepareCurveData(t,gaussVals);
 gFit = fit(x,y,strFit);
 vals = feval(gFit,t);
 %to check that it works 
-% figure; plot(t,gaussVals); hold on; plot(t,vals);
+%figure; plot(t,gaussVals); hold on; plot(t,vals);
 [v,mPos] = max(vals);
 maxVal = t(mPos);
-validInterval(1,:) = [(maxVal-gFit.c1*2.35)*4,(maxVal+gFit.c1*2.35)*4];
+validInterval(1,:) = [(maxVal-gFit.c1/sqrt(2)*2.35),(maxVal+gFit.c1/sqrt(2)*2.35)];
 %repeat this for the second energy channel
-gaussVals = histoEn2(205:268);
-t = 205:268;
+gaussVals = histoEn2x(205:268);
+t = histoEn2y(205:268);
 [x,y] = prepareCurveData(t,gaussVals);
 gFit = fit(x,y,strFit);
 vals = feval(gFit,t);
 %to check that it works 
-% figure; plot(t,gaussVals); hold on; plot(t,vals);
+%figure; plot(t,gaussVals); hold on; plot(t,vals);
 [v,mPos] = max(vals);
 maxVal = t(mPos);
-validInterval(2,:) = [(maxVal-gFit.c1*2.35)*4,(maxVal+gFit.c1*2.35)*4];
+validInterval(2,:) = [(maxVal-gFit.c1/sqrt(2)*2.35),(maxVal+gFit.c1/sqrt(2)*2.35)];
 
 %  now I can keep only those events that qualify as valid events on both
 %  channels
@@ -106,7 +106,7 @@ for i = 1: size(energies,2)
     end     
 end
 %save the results 
-save(fSaveName,'valEvents','histoEn1','histoEn2');
+save(fSaveName,'valEvents','histoEn1x','histoEn2x');
 
 %discard even more events now taking into account the position of the Vth
 % crossing- this time Vth will be 0.03
@@ -136,7 +136,7 @@ for i = 1: nEvents
 end
 %now another validation
 medCrossings = [median(vCrossings(1,:)), median(vCrossings(2,:))];
-bMeansTh = [-0.002, 0.002];
+bMeansTh = [-0.003, 0.003]; %-0.002, 0.002
 nEvents2 = 0;
 valEvents2 = [];
 for i = 1: nEvents
@@ -171,10 +171,10 @@ save(fSaveName,'valEvents2','-append');
 
 %process only the needed data
 tSample = 50e-12; 
-medVal = 0.03;
+medVal = 0.04;
 nData = 1.5e-9;
 %thV = 15e-4; % luego volver a hacerlo para iterar
-thV =  linspace(5e-4,0.01,16);
+thV =  linspace(1e-3,0.015,16);
 tCh1 = zeros(size(thV,2),size(valEvents2,2));
 tCh2 = tCh1;
 
@@ -197,21 +197,27 @@ figure;
 for i = 1: size(thV,2)
     for j = 1 : size(thV,2)
         diffVals = tCh1(i,:)-tCh2(j,:);
-        [hx,hy] = hist(diffVals,512);
+        %size of the histogram should make it so that i have 30-40ps bins
+        %to find that (min(min(tCh1))-max(max(tCh1)))/100*tSample
+        [hx,hy] = hist(diffVals,100); 
         strFit = 'gauss1';
         [x,y] = prepareCurveData(hy,hx);
         gFit = fit(x,y,strFit);
         vals = feval(gFit,hy);
         if max(y) > 10 
-            crtVals(i,j) = gFit.c1*2.35*tSample;
+            crtVals(i,j) = gFit.c1/sqrt(2)*2.35*tSample;
         else
             crtVals(i,j) = NaN;
         end
-        %subplot(4,4,i);
-        %plot(hy,hx); hold on; plot(hy,vals);
-        %title(num2str(thV(i)));
+        if i == j
+                       
+            subplot(4,4,i);
+            plot(hy,hx); hold on; plot(hy,vals);
+            title(num2str(thV(i)));
+        end
     end
 end
+figure;
 imagesc(crtVals);
 save(fSaveName,'tCh1','tCh2','crtVals','thV','-append');
 
