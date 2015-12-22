@@ -89,6 +89,7 @@ unsigned char buffOut[10];
 
 
 
+
 int main(void) {
 
 	int i = 0;
@@ -130,8 +131,8 @@ int main(void) {
 
 	//set up the ports to use
 	//startCommunication(UART3_BASE);
-	startCommunicationUART1();
-	startCommunicationUART2();
+//	startCommunicationUART1();
+//	startCommunicationUART2();
 	startCommunicationUART3();
 	startCommunicationUART5();
 
@@ -140,7 +141,6 @@ int main(void) {
 	mPort3 = UART3_BASE;
 	mPort5 = UART5_BASE;
 
-	UARTCharPut(UART0_BASE,'b');
 	HVset = 61.6;  //Safe HV value for the S12642 detectors
 
 	tempCorrs[0] = 0.0; tempCorrs[1] = 0.0;
@@ -149,25 +149,21 @@ int main(void) {
 
 	//Fisrt I will set them all at the same HV
 	// the idea is that later on a program will modify this HV usin the serial port
-    setTempCorrFact(mPort1, tempCorrs);
-	UARTCharPut(UART0_BASE,'T');
+
+//    setTempCorrFact(mPort1, tempCorrs);
+
 	HVset = 62.2;tempCorrs[4] = HVset;
-	setTempCorrFact(mPort2, tempCorrs);
-	UARTCharPut(UART0_BASE,'e');
+//	setTempCorrFact(mPort2, tempCorrs);
 	HVset = 66.6;tempCorrs[4] = HVset;
 	setTempCorrFact(mPort3, tempCorrs);
-	UARTCharPut(UART0_BASE,'r');
 	HVset = 68.5;tempCorrs[4] = HVset;
 	setTempCorrFact(mPort5, tempCorrs);
-
-	UARTCharPut(UART0_BASE,'\n');
-
-
 
 	//make sure comm is working
 //	errCode = getInfoAndStatus(mPort1,vars);
 	errCode = getInfoAndStatus(mPort3,vars);
 	readChar = 0;
+
 	if (errCode == 0){
 		for (i = 0; i < 5 ; i++){
 			readChar += ltoa((long) vars[i], &cmdIn[readChar]);
@@ -184,6 +180,7 @@ int main(void) {
 
 	UARTCharPut(UART0_BASE,'d');
 	UARTCharPut(UART0_BASE,'o');
+
 	//
 	// Main application loop.
 	//
