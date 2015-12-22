@@ -319,7 +319,7 @@ void startCommunicationUART3(){
 		//UART configuration, this function also enables the UART Comm
 //		UARTConfigSetExpClk(UART3_BASE, SysCtlClockGet(), 38400,
 //		        (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_EVEN));
-		UARTConfigSetExpClk(UART3_BASE, 16000000, 38400,
+		UARTConfigSetExpClk(UART3_BASE, SysCtlClockGet(), 38400,
 		        (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_EVEN));
 }
 
@@ -718,14 +718,14 @@ int setTempCorrFact(unsigned long port, float tempCorrFactor[]){
 
 	//Read the expected answer from the comm port
 	readAnswer(cmdOut, outLength, cmdIn, inLength, port);
-
+/*
 	//for debugging only
 	UARTCharPut(UART0_BASE,'s');
 	UARTCharPut(UART0_BASE,' ');
 	for (int i = 0; i < 32; i++){
 		UARTCharPut(UART0_BASE,cmdOut[i]);
 	}
-
+*/
 
 	//Check the CRC
 	if (!checkCRC(cmdIn, inLength)){
