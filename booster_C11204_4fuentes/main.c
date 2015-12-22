@@ -109,7 +109,7 @@ int main(void) {
 
 
 	//system clock config, 50 MHz, using PLL and a 16 Mhz XTAL,  to use 80 Mhz, sysctl_sysdiv_2_5
-	SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
+	SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC |SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
 
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
@@ -130,8 +130,8 @@ int main(void) {
 
 	//set up the ports to use
 	//startCommunication(UART3_BASE);
-//	startCommunicationUART1();
-//	startCommunicationUART2();
+	startCommunicationUART1();
+	startCommunicationUART2();
 	startCommunicationUART3();
 	startCommunicationUART5();
 
@@ -141,7 +141,7 @@ int main(void) {
 	mPort5 = UART5_BASE;
 
 	UARTCharPut(UART0_BASE,'b');
-	HVset = 65.7;  //Safe HV value for the S12642 detectors
+	HVset = 61.6;  //Safe HV value for the S12642 detectors
 
 	tempCorrs[0] = 0.0; tempCorrs[1] = 0.0;
 	tempCorrs[2] = 0.0; tempCorrs[3] = 0.0;
@@ -149,16 +149,16 @@ int main(void) {
 
 	//Fisrt I will set them all at the same HV
 	// the idea is that later on a program will modify this HV usin the serial port
-//  setTempCorrFact(mPort1, tempCorrs);
+    setTempCorrFact(mPort1, tempCorrs);
 	UARTCharPut(UART0_BASE,'T');
-	HVset = 66.7;tempCorrs[4] = HVset;
-//	setTempCorrFact(mPort2, tempCorrs);
+	HVset = 62.2;tempCorrs[4] = HVset;
+	setTempCorrFact(mPort2, tempCorrs);
 	UARTCharPut(UART0_BASE,'e');
-	HVset = 68.5;tempCorrs[4] = HVset;
+	HVset = 66.6;tempCorrs[4] = HVset;
 	setTempCorrFact(mPort3, tempCorrs);
 	UARTCharPut(UART0_BASE,'r');
 	HVset = 68.5;tempCorrs[4] = HVset;
-//	setTempCorrFact(mPort5, tempCorrs);
+	setTempCorrFact(mPort5, tempCorrs);
 
 	UARTCharPut(UART0_BASE,'\n');
 
