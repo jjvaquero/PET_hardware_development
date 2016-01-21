@@ -98,6 +98,10 @@ GenerateClassCluster=0
 DocumentPath=..\S12642_0404_etap1\Project Outputs for PMT_8500\Design Rule Check - etapa_1.html
 DItemRevisionGUID=
 
+[GeneratedDocument2]
+DocumentPath=Project Outputs for PMT_8500\Design Rule Check - SiPM_16ChOut.html
+DItemRevisionGUID=
+
 [PCBConfiguration1]
 ReleaseItemId=
 CurrentRevision=
