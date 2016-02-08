@@ -130,10 +130,10 @@ int main(void) {
 
 	//set up the ports to use
 	//startCommunication(UART3_BASE);
-//	startCommunicationUART1();
-//	startCommunicationUART2();
-	startCommunicationUART3();
-	startCommunicationUART5();
+//	startCommunicationUART1();   //Connected to U1
+//	startCommunicationUART2();   //Connected to U2
+	startCommunicationUART3();   //Connected to U3
+//	startCommunicationUART5();   //Connected to U4
 
 	mPort1 = UART1_BASE;
 	mPort2 = UART2_BASE;
@@ -150,14 +150,15 @@ int main(void) {
 	//Fisrt I will set them all at the same HV
 	// the idea is that later on a program will modify this HV usin the serial port
 //  setTempCorrFact(mPort1, tempCorrs);
-	UARTCharPut(UART0_BASE,'T');
+/*	UARTCharPut(UART0_BASE,'T');
 	HVset = 66.7;tempCorrs[4] = HVset;
 //	setTempCorrFact(mPort2, tempCorrs);
 	UARTCharPut(UART0_BASE,'e');
-	HVset = 72.5;tempCorrs[4] = HVset;
+*/
+	HVset = 66.5;tempCorrs[4] = HVset;
 	setTempCorrFact(mPort3, tempCorrs);
-	UARTCharPut(UART0_BASE,'r');
-	HVset = 72.5;tempCorrs[4] = HVset;
+//	UARTCharPut(UART0_BASE,'r');
+//	HVset = 72.5;tempCorrs[4] = HVset;
 //	setTempCorrFact(mPort5, tempCorrs);
 
 	UARTCharPut(UART0_BASE,'\n');
