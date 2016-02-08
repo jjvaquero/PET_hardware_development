@@ -131,10 +131,10 @@ int main(void) {
 
 	//set up the ports to use
 	//startCommunication(UART3_BASE);
-//	startCommunicationUART1();
-//	startCommunicationUART2();
-	startCommunicationUART3();
-	startCommunicationUART5();
+//	startCommunicationUART1();   //connected to U1
+//	startCommunicationUART2();   //connected to U2
+	startCommunicationUART3();   //connected to U3
+//	startCommunicationUART5();   //connected to U4
 
 	mPort1 = UART1_BASE;
 	mPort2 = UART2_BASE;
@@ -154,10 +154,10 @@ int main(void) {
 
 	HVset = 62.2;tempCorrs[4] = HVset;
 //	setTempCorrFact(mPort2, tempCorrs);
-	HVset = 66.6;tempCorrs[4] = HVset;
-	setTempCorrFact(mPort3, tempCorrs);
 	HVset = 68.5;tempCorrs[4] = HVset;
-	setTempCorrFact(mPort5, tempCorrs);
+	setTempCorrFact(mPort3, tempCorrs);
+//	HVset = 68.5;tempCorrs[4] = HVset;
+//	setTempCorrFact(mPort5, tempCorrs);
 
 	//make sure comm is working
 //	errCode = getInfoAndStatus(mPort1,vars);
