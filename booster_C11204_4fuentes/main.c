@@ -89,7 +89,6 @@ unsigned char buffOut[10];
 
 
 
-
 int main(void) {
 
 	int i = 0;
@@ -110,7 +109,7 @@ int main(void) {
 
 
 	//system clock config, 50 MHz, using PLL and a 16 Mhz XTAL,  to use 80 Mhz, sysctl_sysdiv_2_5
-	SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC |SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
+	SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
 
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
@@ -131,17 +130,18 @@ int main(void) {
 
 	//set up the ports to use
 	//startCommunication(UART3_BASE);
-//	startCommunicationUART1();   //connected to U1
-//	startCommunicationUART2();   //connected to U2
-	startCommunicationUART3();   //connected to U3
-//	startCommunicationUART5();   //connected to U4
+//	startCommunicationUART1();
+//	startCommunicationUART2();
+	startCommunicationUART3();
+	startCommunicationUART5();
 
 	mPort1 = UART1_BASE;
 	mPort2 = UART2_BASE;
 	mPort3 = UART3_BASE;
 	mPort5 = UART5_BASE;
 
-	HVset = 61.6;  //Safe HV value for the S12642 detectors
+	UARTCharPut(UART0_BASE,'b');
+	HVset = 72.5;  //Safe HV value for the S12642 detectors
 
 	tempCorrs[0] = 0.0; tempCorrs[1] = 0.0;
 	tempCorrs[2] = 0.0; tempCorrs[3] = 0.0;
@@ -149,21 +149,25 @@ int main(void) {
 
 	//Fisrt I will set them all at the same HV
 	// the idea is that later on a program will modify this HV usin the serial port
-
-//    setTempCorrFact(mPort1, tempCorrs);
-
-	HVset = 62.2;tempCorrs[4] = HVset;
+//  setTempCorrFact(mPort1, tempCorrs);
+	UARTCharPut(UART0_BASE,'T');
+	HVset = 66.7;tempCorrs[4] = HVset;
 //	setTempCorrFact(mPort2, tempCorrs);
-	HVset = 68.5;tempCorrs[4] = HVset;
+	UARTCharPut(UART0_BASE,'e');
+	HVset = 72.5;tempCorrs[4] = HVset;
 	setTempCorrFact(mPort3, tempCorrs);
-//	HVset = 68.5;tempCorrs[4] = HVset;
+	UARTCharPut(UART0_BASE,'r');
+	HVset = 72.5;tempCorrs[4] = HVset;
 //	setTempCorrFact(mPort5, tempCorrs);
+
+	UARTCharPut(UART0_BASE,'\n');
+
+
 
 	//make sure comm is working
 //	errCode = getInfoAndStatus(mPort1,vars);
 	errCode = getInfoAndStatus(mPort3,vars);
 	readChar = 0;
-
 	if (errCode == 0){
 		for (i = 0; i < 5 ; i++){
 			readChar += ltoa((long) vars[i], &cmdIn[readChar]);
@@ -180,7 +184,6 @@ int main(void) {
 
 	UARTCharPut(UART0_BASE,'d');
 	UARTCharPut(UART0_BASE,'o');
-
 	//
 	// Main application loop.
 	//
