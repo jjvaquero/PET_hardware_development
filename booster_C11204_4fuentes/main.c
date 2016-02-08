@@ -155,7 +155,7 @@ int main(void) {
 //	setTempCorrFact(mPort2, tempCorrs);
 	UARTCharPut(UART0_BASE,'e');
 */
-	HVset = 66.5;tempCorrs[4] = HVset;
+	HVset = 55.5;tempCorrs[4] = HVset;
 	setTempCorrFact(mPort3, tempCorrs);
 //	UARTCharPut(UART0_BASE,'r');
 //	HVset = 72.5;tempCorrs[4] = HVset;
