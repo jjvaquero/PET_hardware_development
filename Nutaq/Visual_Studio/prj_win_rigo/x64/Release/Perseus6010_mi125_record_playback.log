@@ -1,0 +1,28 @@
+﻿Build started 25/05/2015 5:17:54 PM.
+     1>Project "C:\Nutaq\ADP6\ADP_MicroTCA\examples_perseus6010\perseus6010_mi125_record_playback\host\prj_win\Perseus6010_mi125_record_playback.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "x64\Release\perseus6010_mi125_record.lastbuildstate".
+       InitializeBuildStatus:
+         Touching "x64\Release\perseus6010_mi125_record.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\types_headers\inc /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\bus_access_lib\inc /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\rtdex_lib\inc /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\record_playback_lib\inc /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\eapi\inc /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\lyt_std_lib\inc /I..\inc /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\mi125_lib\inc /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\perseus601x_lib\inc /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\map_headers\inc /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\media_headers\inc /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\utils\inc /IC:\Nutaq\ADP6\ADP_MicroTCA\sdk\ppssync_lib\inc /Z7 /nologo /W3 /WX- /O2 /GL /D _CRT_SECURE_NO_DEPRECATE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc100.pdb" /Gd /TC /errorReport:prompt ..\..\..\..\sdk\utils\src\adp_buff_fct.c ..\src\adp_mi125_record_test.c ..\..\..\..\sdk\utils\src\adp_record_playback.c ..\..\..\..\sdk\utils\src\mac_utils.c ..\..\..\..\sdk\utils\src\media_utils.c ..\..\..\..\sdk\utils\src\mi125_settings.c
+         adp_buff_fct.c
+         adp_mi125_record_test.c
+         adp_record_playback.c
+         mac_utils.c
+         media_utils.c
+         mi125_settings.c
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Nutaq\ADP6\ADP_MicroTCA\examples_perseus6010\perseus6010_mi125_record_playback\host\prj_win\x64\Release\perseus6010_mi125_record.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Nutaq\ADP6\ADP_MicroTCA\sdk\winpcap_lib\lib\win64 /LIBPATH:C:\Nutaq\ADP6\ADP_MicroTCA\sdk\lib_win64 eapi_mi125_win64.lib adp_bus_access_win64.lib adp_rtdex_win64.lib lyr_std_lib_win64.lib adp_recplay_win64.lib eapi_win64.lib Iphlpapi.lib wpcap.lib wsock32.lib Ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBCMT /MANIFEST /ManifestFile:"x64\Release\perseus6010_mi125_record.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Nutaq\ADP6\ADP_MicroTCA\examples_perseus6010\perseus6010_mi125_record_playback\host\prj_win\x64\Release\perseus6010_mi125_record.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"C:\Nutaq\ADP6\ADP_MicroTCA\examples_perseus6010\perseus6010_mi125_record_playback\host\prj_win\x64\Release\perseus6010_mi125_record.lib" /MACHINE:X64 x64\Release\adp_buff_fct.obj
+         x64\Release\adp_mi125_record_test.obj
+         x64\Release\adp_record_playback.obj
+         x64\Release\mac_utils.obj
+         x64\Release\media_utils.obj
+         x64\Release\mi125_settings.obj
+     1>LINK : fatal error C1047: The object or library file 'C:\Nutaq\ADP6\ADP_MicroTCA\sdk\lib_win64\eapi_mi125_win64.lib' was created with an older compiler than other objects; rebuild old objects and libraries
+     1>LINK : fatal error LNK1257: code generation failed
+     1>Done Building Project "C:\Nutaq\ADP6\ADP_MicroTCA\examples_perseus6010\perseus6010_mi125_record_playback\host\prj_win\Perseus6010_mi125_record_playback.vcxproj" (rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.02
