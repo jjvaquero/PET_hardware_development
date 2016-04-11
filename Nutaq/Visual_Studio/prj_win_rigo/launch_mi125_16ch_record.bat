@@ -7,7 +7,7 @@ IF %PROCESSOR_ARCHITECTURE%==x86 (
 )   
 
 REM Record file name
-SET REC_FILENAME=%ADPROOT%\examples_perseus6010\Perseus6010_mi125_record_playback\bin\record.bin
+SET REC_FILENAME=G:\medidas_nutaq\record.bin
 REM Perseus ip address
 SET IP_ADDR_PERSEUS=192.168.0.101
 REM 16 channels mode (bottom)
@@ -17,12 +17,12 @@ SET CLKSRC=0
 REM Internal software trigger
 SET TRIGSRC=0
 REM Record size in number of samples per channel
-SET SAMPLESPERCHANNEL=655360
+SET SAMPLESPERCHANNEL=6553600
 REM file where processed pulses will be stored
-SET PULSE_FILENAME=%ADPROOT%\examples_perseus6010\Perseus6010_mi125_record_playback\bin\pulses.bin
+SET PULSE_FILENAME=G:\medidas_nutaq\pulses.bin
 REM threshold value that will be used
 SET THRESHOLD_VALUE=300
 REM number of repetitions that will be executed
-SET REPT_NUMB=99000
+SET REPT_NUMB=2
 
 %APP_ROOT%\perseus6010_mi125_record.exe %CHANNELSMODE% %TRIGSRC% %REC_FILENAME% %IP_ADDR_PERSEUS% %CLKSRC% %SAMPLESPERCHANNEL% %PULSE_FILENAME% %THRESHOLD_VALUE% %REPT_NUMB%
