@@ -201,13 +201,13 @@ void findPulses(char* inputFileName, char* outputFileName, int thresholdValue,in
 	fseek(rdFile, 0L, SEEK_SET);
 	//I will run this N times to read all the data
 	nEvents=0;
-	for (i = 0; i<fileSize/dataSize; i++){
+	for (i = 0; i<fileSize/(dataSize*2); i++){
 		//in fread the size of the values to read is specified in bytes....so the second argument should be 2
 		 result = fread (buffIn,sizeof(short),dataSize,rdFile);
 		 //read on the values until i can find the value that i want
 		 rdIndex = 0;
 		 wrIndex =0;
-		 while( rdIndex < dataSize-nChannels){
+		 while( rdIndex < result-(nChannels*recordSize)){ //nChannels*recordSize to throw away the last event
 			 //for loop to check if a trigger happpened on all the 16 channels
 			 for (j = 0; j<nChannels; j++){
 				 if ((buffIn[rdIndex+j] > thresholdValue) || (buffIn[rdIndex+j] < (thresholdValue*-1))){
@@ -215,15 +215,11 @@ void findPulses(char* inputFileName, char* outputFileName, int thresholdValue,in
 				 }
 			 }
 			 
-			 //check to see if the value surpasess the given threshold
-			 //this only checks for a trigger on channel 1
-			// if ( buffIn[rdIndex] > thresholdValue ){  //TODO modify this to take all channels into account buffIn[rdIndex] > thresholdValue || 
 			 // If I detect and event in any of the channels, I will record all channels
 			 if (trigEvt > 0 ){
 				 //check that I am not at the beggining
-				 //TODO mejorar esto
-				
-				 if (rdIndex > recordSize/2){
+				 //TODO mejorar esto				
+				 if (rdIndex > recordSize/2){  //wait to be at least in the first trigger
 					 //size in memcpy is specified in bytes
 					 memcpy (&buffOut[wrIndex], &buffIn[rdIndex-(recordSize/2)*nChannels], (recordSize+recordSize/2)*sizeof(short)*nChannels);
 					 // these are short arrays, so no *sizeof(short) needed
@@ -246,7 +242,7 @@ void findPulses(char* inputFileName, char* outputFileName, int thresholdValue,in
 		// maxEvt = 1 MeVt/s   -- fsample = 125 Mhz... so the maximum event rate
 		// in bytes is ---> fileSize/(32*125)
 		// this check is needed to detect some measurements in which data seems to be repeated
-		if(nEvents > 0 && nEvents < result/(16*125*10)) {  // *10 added to check for less events
+		if(nEvents > 0) {// && nEvents < result/(16*125*10)) {  // *10 added to check for less events
 			fwrite (buffOut , sizeof(short), wrIndex, wrFile);	 
 		}
 	}
@@ -257,7 +253,7 @@ void findPulses(char* inputFileName, char* outputFileName, int thresholdValue,in
 	if (nEvents < fileSize/(32*125*10)){
 		remove(inputFileName);
 	}
-
+	
 }
 
 int main( int argc, char* argv[] )
