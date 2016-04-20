@@ -1,0 +1,3 @@
+<<<<<<< .mine
+"./C11204PS.obj" "./lm4f120h5qr_startup_ccs.obj" "./main.obj" "./usb_bulk_structs.obj" "./utils/ustdlib.obj" "../lm4f120h5qr.cmd" -l"libc.a" -l"C:\StellarisWare\driverlib\ccs-cm4f\Debug\driverlib-cm4f.lib" -l"c:/ti/ccsv6/../../StellarisWare/usblib/ccs-cm4f/Debug/usblib-cm4f.lib" =======
+"./C11204PS.obj" "./lm4f120h5qr_startup_ccs.obj" "./main.obj" "./utils/ustdlib.obj" "../lm4f120h5qr.cmd" -l"libc.a" -l"C:\StellarisWare\driverlib\ccs-cm4f\Debug\driverlib-cm4f.lib" -l"c:/ti/ccsv6/../../StellarisWare/usblib/ccs-cm4f/Debug/usblib-cm4f.lib" >>>>>>> .r211
