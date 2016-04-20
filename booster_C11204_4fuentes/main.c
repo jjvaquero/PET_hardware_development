@@ -105,6 +105,7 @@ int main(void) {
     unsigned long mPort2;
     unsigned long mPort3;
     unsigned long mPort5;
+    unsigned long usedPort; // to choose when using only one UART
 
 
 
@@ -130,18 +131,20 @@ int main(void) {
 
 	//set up the ports to use
 	//startCommunication(UART3_BASE);
-//	startCommunicationUART1();   //Connected to U1
-//	startCommunicationUART2();   //Connected to U2
+	startCommunicationUART1();   //Connected to U1
+	startCommunicationUART2();   //Connected to U2
 	startCommunicationUART3();   //Connected to U3
-//	startCommunicationUART5();   //Connected to U4
+	startCommunicationUART5();   //Connected to U4
 
 	mPort1 = UART1_BASE;
 	mPort2 = UART2_BASE;
 	mPort3 = UART3_BASE;
 	mPort5 = UART5_BASE;
+	//next line should be changed to choose which UART to use
+	usedPort = mPort1;
 
 	UARTCharPut(UART0_BASE,'b');
-	HVset = 72.5;  //Safe HV value for the S12642 detectors
+	HVset = 68.0;  //Safe HV value for the S12642 detectors
 
 	tempCorrs[0] = 0.0; tempCorrs[1] = 0.0;
 	tempCorrs[2] = 0.0; tempCorrs[3] = 0.0;
@@ -155,8 +158,11 @@ int main(void) {
 //	setTempCorrFact(mPort2, tempCorrs);
 	UARTCharPut(UART0_BASE,'e');
 */
-	HVset = 55.5;tempCorrs[4] = HVset;
-	setTempCorrFact(mPort3, tempCorrs);
+	HVset = 68.0;tempCorrs[4] = HVset;
+	setHVOff(usedPort);	//High voltage output OFF
+	SysCtlDelay(200); //add a delay....
+	setTempCorrFact(usedPort, tempCorrs);
+	setHVOn(usedPort); //High voltage ON
 //	UARTCharPut(UART0_BASE,'r');
 //	HVset = 72.5;tempCorrs[4] = HVset;
 //	setTempCorrFact(mPort5, tempCorrs);
@@ -167,7 +173,7 @@ int main(void) {
 
 	//make sure comm is working
 //	errCode = getInfoAndStatus(mPort1,vars);
-	errCode = getInfoAndStatus(mPort3,vars);
+	errCode = getInfoAndStatus(usedPort,vars);
 	readChar = 0;
 	if (errCode == 0){
 		for (i = 0; i < 5 ; i++){
