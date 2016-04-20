@@ -157,7 +157,7 @@ pause(1);
 %after the FPGA have been configured, i can start the timers
  set(readTimer,'Period',readTime);
  set(plotTimer,'Period',plotTime);
- set(timerSave,'Period',60*5);
+ set(timerSave,'Period',60*5); %para que tarde 5 minutos
  
  start(readTimer);
  start(plotTimer);
@@ -388,8 +388,8 @@ n_error= 0;
  % canal1 = canal1 + 140; %compenso por el offset del canal2
 for i = 1: indice-1  %menor
 
-    XA = canal2(i); XB = canal1(i);  %los +15 a channel 3 para crystal chino
-    YA = canal4(i); YB = canal3(i);  % +10 a canal 2 para chino
+    XA = canal3(i); XB = canal1(i);  %los +15 a channel 3 para crystal chino
+    YA = canal2(i); YB = canal4(i);  % +10 a canal 2 para chino
    % cad = strcat(num2str(XA),'Xb = ',num2str(XB),'Ya =',num2str(YA),'Yb = ',num2str(YB));
    % disp( cad);
     
@@ -479,7 +479,7 @@ end
 plot(handles.axes2,hist_1);
 ylim(handles.axes2,[0 tope]);
 xlim(handles.axes2,[0 1024]);
-set(handles.axes2,'YScale','Log');
+%set(handles.axes2,'YScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes2,'Canal 1');
 
@@ -487,7 +487,7 @@ title(handles.axes2,'Canal 1');
 plot(handles.axes3,hist_3);
 ylim(handles.axes3,[0 tope]);
 xlim(handles.axes3,[0 1024]);
-set(handles.axes3,'YScale','Log');
+%set(handles.axes3,'YScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes3,'Canal 3');
 
@@ -495,7 +495,7 @@ title(handles.axes3,'Canal 3');
 plot(handles.axes5,hist_2);
 ylim(handles.axes5,[0 tope]);
 xlim(handles.axes5,[0 1024]);
-set(handles.axes5,'YScale','Log');
+%set(handles.axes5,'YScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes5,'Canal 2');
 
@@ -503,7 +503,7 @@ title(handles.axes5,'Canal 2');
 plot(handles.axes6,hist_4);
 ylim(handles.axes6,[0 tope]);
 xlim(handles.axes6,[0 1024]);
-set(handles.axes6,'YScale','Log');
+%set(handles.axes6,'YScale','Log');
 %xlim(handles.axes2,[1 4096]);
 title(handles.axes6,'Canal 4');
 
@@ -512,8 +512,8 @@ title(handles.axes6,'Canal 4');
 imagesc(handles.imagen(1:510,1:510),'Parent',handles.axes1);
 %plot(handles.axes1,handles.energyHist2);
 %imagesc(handles.imagen,'Parent',handles.axes1);
-xlim(handles.axes1,[1 512]);
-ylim(handles.axes1,[1 512]);
+xlim(handles.axes1,[100 300]);
+ylim(handles.axes1,[100 300]);
 %aux = imshow(mat2gray(handles.imagen));
 %set(aux,'Parent',handles.axes1);
 %set(aux,'Parent',handles.axes1);
@@ -596,7 +596,7 @@ img_Eng = handles.img_eng;
 energyHist2 = handles.energyHist2;
 %img_histEngs = handles.img_histEngs; 
 img_histEngs = handles.imgHistPixel;
-strName = 'Na_22_mBlanc';
+strName = 'Na22_matBk_peq';
 ctmp = clock; 
 for i = 1 : length(ctmp) - 1
     strName = strcat(strName,'_',num2str(ctmp(i)));
