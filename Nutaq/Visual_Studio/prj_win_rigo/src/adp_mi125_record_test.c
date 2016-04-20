@@ -105,7 +105,7 @@
 
 //TODO libraries needed for the name fix...remove afterwards
 #include <string.h>
-
+#include <time.h>
 
 // WARNING: to run this demo under LINUX, you may need root privilege
 
@@ -267,7 +267,7 @@ int main( int argc, char* argv[] )
 	// TODO remove this when done testing
 	char strDigit[10];
 	char fName[256];  //espero que sea lo bastante grande....
-
+	clock_t begin_time;
 
 	// Initialize eapi before use 
 	res = eapi_init();
@@ -469,7 +469,7 @@ int main( int argc, char* argv[] )
 	// Setup record transfer
 	//TODO cambiado paa ver si asi lee solo cuatro canales
 	//uRecordSize = CAPTURED_SAMPLES_PER_CHANNEL * 16 * 2;
-	uRecordSize = CAPTURED_SAMPLES_PER_CHANNEL * 16 * 2;
+	uRecordSize = CAPTURED_SAMPLES_PER_CHANNEL * 4 * 2;
 	res = SetupRecord(hRecPlay, uRecordSize, eRecPlayTrigExternal, 0, 0, FRAMESIZE);
 	if( FAILURE(res) )
 	{
@@ -545,7 +545,11 @@ int main( int argc, char* argv[] )
 		sprintf(strDigit, "%05d", i);
 		strcpy(fName,RecordFileName);
 		strcat(fName,strDigit);
+
+		//to measure time
+		begin_time = clock();
 		res = RetrieveRecordedDataToFile(eMedia, hBusAccess, hRecPlay,  RTDEX_CHANNEL, uAddrTrig, uTrigOffset, FRAMESIZE, uRecordSize, FRAMEGAP,fName); // RecordFileName);
+		printf("Time diff %f \n" ,((float)(clock () - begin_time) /CLOCKS_PER_SEC));
 		//TODO end of the changes
 
 		if( res )
@@ -563,7 +567,7 @@ int main( int argc, char* argv[] )
 		*/
 		//TODO here is where I should add my own code to test the signal processing stufff
 		//findPulses(RecordFileName, PulseFileName, ThresholdValue,16);
-		findPulses(fName, PulseFileName, ThresholdValue,16);
+		findPulses(fName, PulseFileName, ThresholdValue,4);
 	}
 		printf( "Press any key to terminate");
 		GETCH();

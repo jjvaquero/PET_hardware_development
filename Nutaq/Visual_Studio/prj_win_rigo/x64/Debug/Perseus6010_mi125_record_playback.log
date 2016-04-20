@@ -1,4 +1,4 @@
-﻿Build started 11/04/2016 12:12:37 PM.
+﻿Build started 20/04/2016 1:37:35 PM.
      1>Project "C:\Nutaq\ADP6\ADP_MicroTCA\examples_perseus6010\perseus6010_mi125_record_playback\host\prj_win_rigo\Perseus6010_mi125_record_playback.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "x64\Debug\perseus6010_mi125_record.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -24,4 +24,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.90
+Time Elapsed 00:00:01.00
