@@ -21,8 +21,8 @@ SET SAMPLESPERCHANNEL=6553600
 REM file where processed pulses will be stored
 SET PULSE_FILENAME=G:\medidas_nutaq\pulses.bin
 REM threshold value that will be used
-SET THRESHOLD_VALUE=300
-REM number of repetitions that will be executed
-SET REPT_NUMB=2
+SET THRESHOLD_VALUE=450
+REM number of repetitions that will be executed, 99999 max
+SET REPT_NUMB=560
 
 %APP_ROOT%\perseus6010_mi125_record.exe %CHANNELSMODE% %TRIGSRC% %REC_FILENAME% %IP_ADDR_PERSEUS% %CLKSRC% %SAMPLESPERCHANNEL% %PULSE_FILENAME% %THRESHOLD_VALUE% %REPT_NUMB%
