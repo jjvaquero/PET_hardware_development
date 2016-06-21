@@ -61,7 +61,7 @@ AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
-AnnotateScope=Ignore Selected Parts
+AnnotateScope=Only Selected Parts
 AnnotateOrder=0
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
@@ -71,6 +71,10 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FIYYKMLP
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for placa_asier_v1\Design Rule Check - placa_asier_v1.html
+DItemRevisionGUID=
 
 [Configuration1]
 Name=Default Configuration
