@@ -1,0 +1,11 @@
+DRC Rules Export File for PCB: D:\rigo_uc3m_drive\repo_lim\Altium_Circuits\S12642_0404_etap1\etapa_1.PcbDoc
+RuleKind=Width|RuleName=Width_2|Scope=Board|Minimum=5.98
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion_2|Scope=Board|Minimum=1.97
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=1.97
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=6.00
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=6.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion_1|Scope=Board|Minimum=0.98
+RuleKind=Width|RuleName=Width_1|Scope=Board|Minimum=10.00
+RuleKind=Clearance|RuleName=Clearance_1|Scope=Board|Minimum=8.00
+RuleKind=Clearance|RuleName=Clearance_2|Scope=Board|Minimum=5.91
